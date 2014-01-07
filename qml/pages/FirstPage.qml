@@ -31,7 +31,6 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 import QtWebKit 3.0
-import QtWebKit.experimental 1.0
 
 Page {
     id: page
@@ -136,6 +135,8 @@ Page {
            siteURL = url */    // WTF: Create a loop on redirects ?
         //}
 
+        // We don't want pageStackNavigation to interfere
+        overridePageStackNavigation: true
         header: PageHeader {height: 0}
 
         // Prevent crashes by loading the mobile site instead of the desktop one // TODO: Make all this configurable via config later on
