@@ -102,12 +102,17 @@ Page {
         Rectangle {
             anchors.fill: parent
             border.width: 2
-            opacity: 0.5
-            border.color: "black"
+            opacity: 0.98
+            border.color: "red"
+            gradient: Gradient {
+                GradientStop { position: 0.0; color: "#262626" }
+                GradientStop { position: 0.85; color: "#1F1F1F"}
+            }
             Label {
                 anchors.fill: parent
-                color: "black" //Theme.fontColorHighlight
+                color: "white" //Theme.fontColorHighlight
                 text: errorText
+                font.bold: true
                 anchors.verticalCenter: parent.verticalCenter
                 anchors.horizontalCenter: parent.horizontalCenter
                 horizontalAlignment: Text.AlignHCenter

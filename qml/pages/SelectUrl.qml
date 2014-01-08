@@ -6,7 +6,7 @@ Page
     id: urlPage
     //anchors.fill: parent
     allowedOrientations: Orientation.All
-    showNavigationIndicator: false
+    showNavigationIndicator: true
     forwardNavigation: false
 
     // Needs to be set as dialog behaves buggy somehow

@@ -38,7 +38,7 @@ ApplicationWindow
     id: mainWindow
     property string siteURL: "about:bookmarks" //"http://talk.maemo.org"  // TODO: Make this configurable via db
     property bool urlLoading: false
-    property string version: "0.0.8"
+    property string version: "0.8"
     property string appname: "Webcat Browser"
     property string appicon: "qrc:/harbour-webcat.png"
     property string errorText: ""
@@ -51,12 +51,6 @@ ApplicationWindow
     Component
     {
         id: tabView
-//        Timer {
-//            repeat: false
-//            running: true
-//            interval: 100
-//            onTriggered: pageStack.push(Qt.resolvedUrl("pages/FirstPage.qml"), {bookmarks: modelUrls});
-//        }
         FirstPage {
             bookmarks: modelUrls
         }
@@ -64,33 +58,37 @@ ApplicationWindow
 
     function openNewTab(pageid, url) {
         console.log("openNewTab: "+ pageid + ', currentTab: ' + currentTab);
-        if (hasTabOpen) {
-            console.debug("1. Pagid: " + pageid)
-            //tabModel.insert(0, { "title": "Loading..", "url": url, "pageid": pageid } );
-            tabModel.append({ "title": "Loading..", "url": url, "pageid": pageid });
-        } else {
-            console.debug("2. Pagid: " + pageid)
-            tabModel.set(0, { "title": "Loading..", "url": url, "pageid": pageid } );
-        }
         var webView = tabView.createObject(mainWindow, { id: pageid, objectName: pageid } );
         webView.url = url;
-
         currentTab = pageid;
-        //tabListView.currentIndex = 0 // move highlight to top
-        if (initialPage == "" || initialPage == undefined) {
-            console.debug("New Page loading...");
+        if (hasTabOpen) {
+            //console.debug("1. Pagid: " + pageid)
+            //tabModel.insert(0, { "title": "Loading..", "url": url, "pageid": pageid } );
+            tabModel.append({ "title": "Loading..", "url": url, "pageid": pageid });
+            if (tabModel.contains(pageStack.currentPage.pageId)) {
+                //console.debug("Push to pageStack")
+                pageStack.push(webView, {bookmarks: modelUrls, tabModel: tabModel, pageId: pageid});
+            }
+            else {
+                //console.debug("Replace stack")
+                pageStack.replace(webView, {bookmarks: modelUrls, tabModel: tabModel, pageId: pageid});
+            }
+        } else {
+            //console.debug("2. Pagid: " + pageid)
+            tabModel.set(0, { "title": "Loading..", "url": url, "pageid": pageid } );
+            //console.debug("New Page loading...");
             pageStack.push(webView, {bookmarks: modelUrls, tabModel: tabModel, pageId: pageid});
         }
     }
 
     function switchToTab(pageid) {
         console.log("switchToTab: "+ pageid + " , from: " + currentTab); //+ ' , at ' + tabListView.currentIndex);
-        if (currentTab !== pageid ) {
+        //if (currentTab !== pageid ) {
             pageStack.replace(pageStack.find(function(page) {
                 return page.pageId == pageid;})
-                ,PageStackAction.Animated);
+                              ,PageStackAction.Animated);
             currentTab = pageid;
-        }
+        //}
     }
 
     function closeTab(deleteIndex, pageid) {
@@ -99,12 +97,16 @@ ApplicationWindow
         tabModel.remove(deleteIndex);
         if (deleteIndex != 0) currentTab = tabModel.get(deleteIndex-1).pageid;
         else currentTab = tabModel.get(0).pageid;
-//        pageStack.pop(pageStack.find(function(page) {
-//            return page.pageId == currentTab;})
-//            ,PageStackAction.Animated);
-        pageStack.replace(pageStack.find(function(page) {
-            return page.pageId == currentTab;})
-                               ,PageStackAction.Animated);
+        if (! deleteIndex == tabModel.count - 1) {
+            pageStack.replace(pageStack.find(function(page) {
+                return page.pageId == currentTab;})
+                              ,PageStackAction.Animated);
+        }
+        else {
+            pageStack.pop(pageStack.find(function(page) {
+                return page.pageId == currentTab;})
+                          ,PageStackAction.Animated);
+        }
 
         if (hasTabOpen) {
             switchToTab(currentTab)
@@ -132,6 +134,14 @@ ApplicationWindow
                 }
             }
             return 0;
+        }
+        function contains(id) {
+            for (var i=0; i<count; i++) {
+                if (get(i).pageid == id)  { // type transformation is intended here
+                    return true;
+                }
+            }
+            return false;
         }
 
     }
@@ -194,7 +204,7 @@ ApplicationWindow
 
     Component.onCompleted: {
         //console.debug("Initial Page:" + initialPage)
-        openNewTab("page"+salt(), "about:blank");
+        openNewTab("page"+salt(), siteURL);
     }
 
 }
