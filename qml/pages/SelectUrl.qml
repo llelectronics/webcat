@@ -59,25 +59,85 @@ Page
                 id: topPanel
                 title: qsTr("Bookmarks")
             }
+            VerticalScrollDecorator {}
             delegate: ListItem {
-                Label { text: title ; anchors.verticalCenter: parent.verticalCenter}
-                onClicked: { siteURL = url; dataContainer.url = siteURL; pageStack.pop(); dataContainer.toolbar.state = "minimized" }
+                id: myListItem
+                property bool menuOpen: contextMenu != null && contextMenu.parent === myListItem
+                property Item contextMenu
+
+                height: menuOpen ? contextMenu.height + contentItem.height : contentItem.height
+
+                function remove() {
+                    var removal = removalComponent.createObject(myListItem)
+                    ListView.remove.connect(removal.deleteAnimation.start)
+                    removal.execute(contentItem, "Deleting " + title, function() { bookmarks.removeBookmark(url); } )
+                }
+                BackgroundItem {
+                    id: contentItem
+                    Label {
+                        text: title
+                        anchors.verticalCenter: parent.verticalCenter
+                        color: contentItem.down || menuOpen ? Theme.highlightColor : Theme.primaryColor
+                    }
+                    onClicked: {
+                        siteURL = url;
+                        dataContainer.url = siteURL;
+                        dataContainer.agent = agent;
+                        pageStack.pop();
+                        dataContainer.toolbar.state = "minimized"
+                    }
+                    onPressAndHold: {
+                        if (!contextMenu)
+                            contextMenu = contextMenuComponent.createObject(repeater1)
+                        contextMenu.show(myListItem)
+                    }
+                }
+                Component {
+                    id: removalComponent
+                    RemorseItem {
+                        property QtObject deleteAnimation: SequentialAnimation {
+                            PropertyAction { target: myListItem; property: "ListView.delayRemove"; value: true }
+                            NumberAnimation {
+                                target: myListItem
+                                properties: "height,opacity"; to: 0; duration: 300
+                                easing.type: Easing.InOutQuad
+                            }
+                            PropertyAction { target: myListItem; property: "ListView.delayRemove"; value: false }
+                        }
+                        onCanceled: destroy();
+                    }
+                }
+                Component {
+                    id: contextMenuComponent
+                    ContextMenu {
+                        id: menu
+                        MenuItem {
+                            text: "Delete"
+                            onClicked: {
+                                menu.parent.remove();
+                            }
+                        }
+                    }
+                }
             }
             PullDownMenu {
                 MenuItem {
                     text: qsTr("About ")+appname
-                    onClicked: pageStack.push(Qt.resolvedUrl("AboutPage.qml"))
+                    onClicked: pageStack.push(Qt.resolvedUrl("AboutPage.qml"));
+                }
+                MenuItem {
+                    text: qsTr("Add Bookmark")
+                    onClicked: pageStack.push(Qt.resolvedUrl("AddBookmark.qml"), { bookmarks: urlPage.bookmarks });
                 }
                 MenuItem {
                     text: qsTr("New Tab")
-                    onClicked: { mainWindow.openNewTab("page"+mainWindow.salt(), "about:blank"); }
+                    onClicked: mainWindow.openNewTab("page"+mainWindow.salt(), "about:bookmarks");
                 }
                 MenuItem {
                     text: qsTr("Close Tab")
                     visible: tabModel.count > 1
-                    onClicked: { mainWindow.closeTab(tabListView.currentIndex, tabModel.get(tabListView.currentIndex).pageid); }
+                    onClicked: mainWindow.closeTab(tabListView.currentIndex, tabModel.get(tabListView.currentIndex).pageid);
                 }
-                // Add Bookmark MenuItem for manually adding bookmark here
             }
         }
 
@@ -88,10 +148,10 @@ Page
                 Rectangle {
                     width: 150
                     height: 72
-//                    gradient: Gradient {
-//                        GradientStop { position: 0.0; color: "#262626" }
-//                        GradientStop { position: 0.85; color: "#1F1F1F"}
-//                    }
+                    //                    gradient: Gradient {
+                    //                        GradientStop { position: 0.0; color: "#262626" }
+                    //                        GradientStop { position: 0.85; color: "#1F1F1F"}
+                    //                    }
                     color: "transparent"
                     Text {
                         text: {

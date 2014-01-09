@@ -15,7 +15,10 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.48.3.1 r9886"
-   sodipodi:docname="Neues Dokument 1">
+   sodipodi:docname="webcat.svg"
+   inkscape:export-filename="/home/leszek/Downloads/work/sailfish/harbour-webcat/harbour-webcat.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
   <defs
      id="defs4">
     <linearGradient
@@ -70,21 +73,19 @@
        x1="28"
        gradientUnits="userSpaceOnUse"
        id="linearGradient2999">
-			<stop
-   id="stop3001"
-   style="stop-color:#fffb00;stop-opacity:1;"
-   offset="0" />
-<stop
-   offset="0.5"
-   style="stop-color:#ffd900;stop-opacity:1;"
-   id="stop3050" />
-
-			<stop
-   id="stop3003"
-   style="stop-color:#ff8b00;stop-opacity:1;"
-   offset="1" />
-
-		</linearGradient>
+      <stop
+         id="stop3001"
+         style="stop-color:#fffb00;stop-opacity:1;"
+         offset="0" />
+      <stop
+         offset="0.5"
+         style="stop-color:#ffd900;stop-opacity:1;"
+         id="stop3050" />
+      <stop
+         id="stop3003"
+         style="stop-color:#ff8b00;stop-opacity:1;"
+         offset="1" />
+    </linearGradient>
     <linearGradient
        id="linearGradient5243"
        gradientUnits="userSpaceOnUse"
@@ -92,17 +93,15 @@
        y1="57.5"
        x2="28"
        y2="0">
-			<stop
-   offset="0"
-   style="stop-color:#e15800;stop-opacity:1;"
-   id="stop12" />
-
-			<stop
-   offset="1"
-   style="stop-color:#ffd402;stop-opacity:1;"
-   id="stop14" />
-
-		</linearGradient>
+      <stop
+         offset="0"
+         style="stop-color:#e15800;stop-opacity:1;"
+         id="stop12" />
+      <stop
+         offset="1"
+         style="stop-color:#ffd402;stop-opacity:1;"
+         id="stop14" />
+    </linearGradient>
     <linearGradient
        id="linearGradient3671">
       <stop
@@ -149,14 +148,6 @@
        y1="111"
        x2="76.375603"
        y2="7.5035906" />
-    <filter
-       inkscape:collect="always"
-       id="filter4017">
-      <feGaussianBlur
-         inkscape:collect="always"
-         stdDeviation="1.206542"
-         id="feGaussianBlur4019" />
-    </filter>
     <clipPath
        clipPathUnits="userSpaceOnUse"
        id="clipPath4025">
@@ -2897,6 +2888,14 @@
        y1="-3.0905473"
        x2="51.625942"
        y2="35.567139" />
+    <filter
+       inkscape:collect="always"
+       id="filter4718">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="0.21515614"
+         id="feGaussianBlur4720" />
+    </filter>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -2905,9 +2904,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1"
+     inkscape:zoom="9.6162791"
      inkscape:cx="43"
-     inkscape:cy="43"
+     inkscape:cy="38.840387"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -2924,7 +2923,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -2934,11 +2933,12 @@
      id="layer1"
      transform="translate(0,-966.36218)">
     <path
-       style="fill:url(#radialGradient3765);fill-opacity:1;fill-rule:nonzero;stroke:none"
+       style="fill:url(#radialGradient3765);fill-opacity:1;fill-rule:nonzero;stroke:#ffff00;stroke-opacity:1;filter:url(#filter4718)"
        d="m 0,966.36218 c 0,0 -0.05470973,2.74464 0,36.00002 0.0117282,27.7147 30.599676,50.0895 50,50 19.158396,-0.088 36,0 36,0 0,0 0,0 0,-36 0,-31.84703 -30.262578,-50.00002 -50,-50.00002 -31.249917,-0.22569 -36,0 -36,0 z"
        id="path2987"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccscscc" />
+       sodipodi:nodetypes="ccscscc"
+       transform="matrix(0.97579414,0,0,0.97579414,1.0527154,24.481279)" />
     <path
        inkscape:connector-curvature="0"
        style="fill:#000000"

@@ -37,6 +37,8 @@ Page {
     allowedOrientations: Orientation.All
     property alias url: webview.url
     property alias toolbar: toolbar
+    property string agent: userAgent
+
     property ListModel bookmarks
     property ListModel tabModel
     property string pageId
@@ -146,7 +148,7 @@ Page {
 
         // Prevent crashes by loading the mobile site instead of the desktop one // TODO: Make all this configurable via config later on
         //experimental.userAgent: "Mozilla/5.0 (Linux; U; Android 2.2; en-us; Nexus One Build/FRF91) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1"
-        experimental.userAgent: "Mozilla/5.0 (Maemo; Linux; Jolla; Sailfish; Mobile) AppleWebKit/534.13 (KHTML, like Gecko) NokiaBrowser/8.5.0 Mobile Safari/534.13"
+        experimental.userAgent: page.agent
         experimental.preferences.minimumFontSize: 16  // We need readable fonts on g+, youtube and so on. This might hurt tmo though
         experimental.preferences.defaultFontSize: 20
         experimental.preferences.defaultFixedFontSize: 18
@@ -458,7 +460,7 @@ Page {
                 if (favorited) {
                     bookmarks.removeBookmark(webview.url.toString())
                 } else {
-                    bookmarks.addBookmark(webview.url.toString(), webview.title)
+                    bookmarks.addBookmark(webview.url.toString(), webview.title, userAgent)
                 }
             }
         }

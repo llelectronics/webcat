@@ -9,15 +9,18 @@ function getDatabase() {
 function initialize() {
     var db = getDatabase();
     db.transaction(
-                function(tx) {
-                    // Create the history table if it doesn't already exist
+                function(tx,er) {
+                    // Create the bookmarks table if it doesn't already exist
                     // If the table exists, this is skipped
                     tx.executeSql('CREATE TABLE IF NOT EXISTS bookmarks(title TEXT, url TEXT)');
+                    // Compatibility Check with older version and add agent column if not exists. SQLITE does not support ALTER with EXISTS statement
+                    tx.executeSql('SELECT agent FROM bookmarks');
+                    if (er) tx.executeSql('ALTER TABLE bookmarks ADD COLUMN agent TEXT;');
                 });
 }
 
 // This function is used to write bookmarks into the database
-function addBookmark(title,url) {
+function addBookmark(title,url,agent) {
     var date = new Date();
     var db = getDatabase();
     var res = "";
@@ -26,7 +29,7 @@ function addBookmark(title,url) {
         removeBookmark(url);
         console.debug("Adding to bookmarks db:" + title + " " + url);
 
-        var rs = tx.executeSql('INSERT OR REPLACE INTO bookmarks VALUES (?,?);', [title,url]);
+        var rs = tx.executeSql('INSERT OR REPLACE INTO bookmarks VALUES (?,?,?);', [title,url,agent]);
         if (rs.rowsAffected > 0) {
             res = "OK";
             console.log ("Saved to database");
@@ -61,7 +64,9 @@ function getBookmarks() {
     db.transaction(function(tx) {
         var rs = tx.executeSql('SELECT * FROM bookmarks ORDER BY bookmarks.title;');
         for (var i = 0; i < rs.rows.length; i++) {
-            modelUrls.append({"title" : rs.rows.item(i).title, "url" : rs.rows.item(i).url});
+            // For compatibility reasons with older versions
+            if (rs.rows.item(i).agent) modelUrls.append({"title" : rs.rows.item(i).title, "url" : rs.rows.item(i).url, "agent" : rs.rows.item(i).agent});
+            else modelUrls.append({"title" : rs.rows.item(i).title, "url" : rs.rows.item(i).url, "agent" : "Mozilla/5.0 (Maemo; Linux; Jolla; Sailfish; Mobile) AppleWebKit/534.13 (KHTML, like Gecko) NokiaBrowser/8.5.0 Mobile Safari/534.13"});
             //console.debug("Get Bookmarks from db:" + rs.rows.item(i).title, rs.rows.item(i).url)
         }
     })

@@ -24,7 +24,9 @@ OTHER_FILES += qml/harbour-webcat.qml \
     qml/pages/SelectUrl.qml \
     qml/pages/helper/userscript.js \
     qml/pages/helper/db.js \
-    qml/pages/PopOver.qml
+    qml/pages/PopOver.qml \
+    qml/pages/AddBookmark.qml \
+    qml/pages/UserAgentDialog.qml
 
 RESOURCES += \
     qrc.qrc
