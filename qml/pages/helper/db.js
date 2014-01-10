@@ -16,6 +16,7 @@ function initialize() {
                     // Compatibility Check with older version and add agent column if not exists. SQLITE does not support ALTER with EXISTS statement
                     tx.executeSql('SELECT agent FROM bookmarks');
                     if (er) tx.executeSql('ALTER TABLE bookmarks ADD COLUMN agent TEXT;');
+                    tx.executeSql('CREATE TABLE IF NOT EXISTS settings(setting TEXT, value TEXT)');
                 });
 }
 
@@ -68,6 +69,53 @@ function getBookmarks() {
             if (rs.rows.item(i).agent) modelUrls.append({"title" : rs.rows.item(i).title, "url" : rs.rows.item(i).url, "agent" : rs.rows.item(i).agent});
             else modelUrls.append({"title" : rs.rows.item(i).title, "url" : rs.rows.item(i).url, "agent" : "Mozilla/5.0 (Maemo; Linux; Jolla; Sailfish; Mobile) AppleWebKit/534.13 (KHTML, like Gecko) NokiaBrowser/8.5.0 Mobile Safari/534.13"});
             //console.debug("Get Bookmarks from db:" + rs.rows.item(i).title, rs.rows.item(i).url)
+        }
+    })
+}
+
+// This function is used to write settings into the database
+function addSetting(setting,value) {
+    var db = getDatabase();
+    var res = "";
+    db.transaction(function(tx) {
+        var rs = tx.executeSql('INSERT OR REPLACE INTO settings VALUES (?,?);', [setting,value]);
+        if (rs.rowsAffected > 0) {
+            res = "OK";
+            console.log ("Setting written to database");
+        } else {
+            res = "Error";
+            console.log ("Error writing setting to database");
+        }
+    }
+    );
+    // The function returns “OK” if it was successful, or “Error” if it wasn't
+    return res;
+}
+
+function stringToBoolean(str) {
+    switch(str.toLowerCase()){
+    case "true": case "yes": case "1": return true;
+    case "false": case "no": case "0": case null: return false;
+    default: return Boolean(string);
+    }
+}
+
+// This function is used to retrieve settings from database
+function getSettings() {
+    var db = getDatabase();
+    var respath="";
+    db.transaction(function(tx) {
+        var rs = tx.executeSql('SELECT * FROM settings;');
+        for (var i = 0; i < rs.rows.length; i++) {
+            if (rs.rows.item(i).setting == "minimumFontSize") mainWindow.minimumFontSize = parseInt(rs.rows.item(i).value)
+            else if (rs.rows.item(i).setting == "defaultFontSize") mainWindow.defaultFontSize = parseInt(rs.rows.item(i).value)
+            else if (rs.rows.item(i).setting == "defaultFixedFontSize") mainWindow.defaultFixedFontSize = parseInt(rs.rows.item(i).value)
+            else if (rs.rows.item(i).setting == "loadImages") mainWindow.loadImages = stringToBoolean(rs.rows.item(i).value)
+            else if (rs.rows.item(i).setting == "privateBrowsing") mainWindow.privateBrowsing = stringToBoolean(rs.rows.item(i).value)
+            else if (rs.rows.item(i).setting == "dnsPrefetch") mainWindow.dnsPrefetch = stringToBoolean(rs.rows.item(i).value)
+            else if (rs.rows.item(i).setting == "userAgent") mainWindow.userAgent = rs.rows.item(i).value
+            else if (rs.rows.item(i).setting == "homepage") mainWindow.siteURL = rs.rows.item(i).value
+            else if (rs.rows.item(i).setting == "offlineWebApplicationCache") mainWindow.offlineWebApplicationCache = stringToBoolean(rs.rows.item(i).value)
         }
     })
 }

@@ -37,8 +37,18 @@ import "pages/helper/tabhelper.js" as Tab
 ApplicationWindow
 {
     id: mainWindow
+
+    // default settings
     property string siteURL: "about:bookmarks" //"http://talk.maemo.org"  // TODO: Make this configurable via db
     property string userAgent: "Mozilla/5.0 (Maemo; Linux; Jolla; Sailfish; Mobile) AppleWebKit/534.13 (KHTML, like Gecko) NokiaBrowser/8.5.0 Mobile Safari/534.13"
+    property int defaultFontSize: 20
+    property int defaultFixedFontSize: 18
+    property int minimumFontSize: 16 // We need readable fonts on g+, youtube and so on. This might hurt tmo though
+    property bool loadImages: true
+    property bool dnsPrefetch: true
+    property bool privateBrowsing: false
+    property bool offlineWebApplicationCache: false
+
 
     property bool urlLoading: false
     property string version: "0.8"
@@ -262,6 +272,8 @@ ApplicationWindow
     Component.onCompleted: {
         //console.debug("Initial Page:" + initialPage)
         openNewTab("page"+salt(), siteURL);
+        // Load Settings
+        DB.getSettings();
     }
 }
 

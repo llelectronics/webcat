@@ -134,27 +134,23 @@ Page {
     SilicaWebView {
         id: webview
         url: siteURL
-        // Don't use fixed values otherwise you won't make it into harbour
-        //        width: page.orientation == Orientation.Portrait ? 540 : 960
-        //        height: page.orientation == Orientation.Portrait ? 960 : 540
+
         anchors.fill: parent // automatically changed width and heights according to orientation
-        //onUrlChanged: {
-        /* user clicked a link */
-        /*if (siteURL != url)
-           siteURL = url */    // WTF: Create a loop on redirects ?
-        //}
 
         // We don't want pageStackNavigation to interfere
         overridePageStackNavigation: true
         header: PageHeader {height: 0}
 
-        // Prevent crashes by loading the mobile site instead of the desktop one // TODO: Make all this configurable via config later on
-        //experimental.userAgent: "Mozilla/5.0 (Linux; U; Android 2.2; en-us; Nexus One Build/FRF91) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1"
+        // Settings loaded from mainWindow
         experimental.userAgent: page.agent
-        experimental.preferences.minimumFontSize: 16  // We need readable fonts on g+, youtube and so on. This might hurt tmo though
-        experimental.preferences.defaultFontSize: 20
-        experimental.preferences.defaultFixedFontSize: 18
-        experimental.preferences.dnsPrefetchEnabled: true
+        experimental.preferences.minimumFontSize: mainWindow.minimumFontSize
+        experimental.preferences.defaultFontSize: mainWindow.defaultFontSize
+        experimental.preferences.defaultFixedFontSize: mainWindow.defaultFixedFontSize
+        experimental.preferences.dnsPrefetchEnabled: mainWindow.dnsPrefetch
+        experimental.preferences.autoLoadImages: mainWindow.loadImages
+        experimental.preferences.offlineWebApplicationCacheEnabled: mainWindow.offlineWebApplicationCache
+        experimental.preferences.privateBrowsingEnabled: mainWindow.privateBrowsing
+
 
         // Scale the websites like g+ and others a little bit for better reading
         experimental.deviceWidth: page.width / 1.5
@@ -183,12 +179,8 @@ Page {
                 }
                 break;
             }
-            // TODO: Need to add a contextmenu for opening up pages in new tab
             case 'longpress': {
                 showContextMenu(data.href);
-                // Open a new tab for now
-                //console.debug(fixUrl(data.href));
-                //openNewTab('page-'+salt(), fixUrl(data.href));
             }
             }
         }
