@@ -64,15 +64,15 @@ ApplicationWindow
         Tab.itemMap[pageid] = webView;
         currentTab = pageid;
         if (hasTabOpen) {
-            //console.debug("1. Pagid: " + pageid)
+            //console.debug("Other Tab loading with Pagid: " + pageid)
             //tabModel.insert(0, { "title": "Loading..", "url": url, "pageid": pageid } );
             tabModel.append({ "title": "Loading..", "url": url, "pageid": pageid });
             pageStack.clear();
-            pageStack.push(Tab.itemMap[pageid], {bookmarks: modelUrls, tabModel: tabModel, pageId: pageid})
+            pageStack.push(Tab.itemMap[pageid], {bookmarks: modelUrls, tabModel: tabModel, pageId: pageid, loadHP: false})
         } else {
-            //console.debug("2. Pagid: " + pageid)
+            //console.debug("First Tab loading with Pageid: " + pageid)
             tabModel.set(0, { "title": "Loading..", "url": url, "pageid": pageid } );
-            pageStack.push(Tab.itemMap[pageid], {bookmarks: modelUrls, tabModel: tabModel, pageId: pageid})
+            pageStack.push(Tab.itemMap[pageid], {bookmarks: modelUrls, tabModel: tabModel, pageId: pageid, loadHP: true})
         }
     }
 

@@ -42,6 +42,7 @@ Page {
     property ListModel bookmarks
     property ListModel tabModel
     property SilicaListView tabListView
+    property bool loadHP
     property string pageId
     backNavigation: false
     forwardNavigation: false
@@ -208,7 +209,7 @@ Page {
             else
             {
                 urlLoading = false;
-                if (url == "about:bookmarks") pageStack.push(Qt.resolvedUrl("SelectUrl.qml"), { dataContainer: page, siteURL: webview.url, bookmarks: page.bookmarks, siteTitle: webview.title})
+                if (url == "about:bookmarks" && loadHP === true) pageStack.push(Qt.resolvedUrl("SelectUrl.qml"), { dataContainer: page, siteURL: webview.url, bookmarks: page.bookmarks, siteTitle: webview.title})
                 tabModel.setProperty(tabModel.getIndexFromId(currentTab), "title", webview.title);
                 //console.debug(tabModel.get(0).title);
             }

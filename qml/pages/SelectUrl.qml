@@ -252,7 +252,7 @@ Page
         }
     }
     Component.onCompleted: {
-        tabListView.currentIndex = tabModel.getIndex(siteTitle);
+        tabListView.currentIndex = tabModel.getIndexFromId(mainWindow.currentTab);
     }
 
     //    Row {
