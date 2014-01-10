@@ -224,6 +224,12 @@ Page {
             onClicked: contextMenu.visible = false
         }
     } // WebView
+    FancyScroller {
+        flickable: webview
+
+        onUpScrolling: if (toolbar.state === "minimized") toolbar.state = "expanded"
+        onDownScrolling: if (toolbar.state === "expanded") toolbar.state = "minimized"
+    }
 
     // ToolBar
     Rectangle {

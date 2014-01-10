@@ -84,7 +84,7 @@ Page
                         dataContainer.url = siteURL;
                         dataContainer.agent = agent;
                         pageStack.pop();
-                        dataContainer.toolbar.state = "minimized"
+                        //dataContainer.toolbar.state = "minimized"
                     }
                     onPressAndHold: {
                         if (!contextMenu)

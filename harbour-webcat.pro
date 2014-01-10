@@ -28,7 +28,8 @@ OTHER_FILES += qml/harbour-webcat.qml \
     qml/pages/AddBookmark.qml \
     qml/pages/UserAgentDialog.qml \
     qml/pages/helper/tabhelper.js \
-    qml/pages/SettingsPage.qml
+    qml/pages/SettingsPage.qml \
+    qml/pages/FancyScroller.qml
 
 RESOURCES += \
     qrc.qrc
