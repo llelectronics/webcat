@@ -4,6 +4,8 @@ import Sailfish.Silica 1.0
 Page {
     id: addBookmarkPage
 
+    allowedOrientations: Orientation.All
+
     property string uAgentTitle : "Default Jolla Webkit"
     property string uAgent: "Mozilla/5.0 (Maemo; Linux; Jolla; Sailfish; Mobile) AppleWebKit/534.13 (KHTML, like Gecko) NokiaBrowser/8.5.0 Mobile Safari/534.13"
 
@@ -21,17 +23,23 @@ Page {
                 return "http://"+valid;
         }
     }
-
-    Column {
+    Flickable {
+        width:parent.width
+        height: parent.height - head.height
         anchors.top: head.bottom
-        anchors.topMargin: 25
-        width: parent.width
-        spacing: 25
-        function enterPress() {
-            if (bookmarkTitle.focus == true) bookmarkUrl.focus = true
-            else if (bookmarkUrl.focus == true) { addBtn.focus = true; bookmarkUrl.text = fixUrl(bookmarkUrl.text);}
-            else if (addBtn.focus == true) addBtn.clicked();
-        }
+        contentHeight: col.height
+
+        Column {
+            id: col
+            anchors.top: head.bottom
+            anchors.topMargin: 25
+            width: parent.width
+            spacing: 25
+            function enterPress() {
+                if (bookmarkTitle.focus == true) bookmarkUrl.focus = true
+                else if (bookmarkUrl.focus == true) { addBtn.focus = true; bookmarkUrl.text = fixUrl(bookmarkUrl.text);}
+                else if (addBtn.focus == true) addBtn.clicked();
+            }
 
         TextField {
             id: bookmarkTitle
@@ -73,6 +81,7 @@ Page {
         }
         Keys.onEnterPressed: enterPress();
         Keys.onReturnPressed: enterPress();
+        }
     }
 
 }

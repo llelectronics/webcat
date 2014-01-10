@@ -4,6 +4,8 @@ import Sailfish.Silica 1.0
 Page {
     property QtObject dataContainer
 
+    allowedOrientations: Orientation.All
+
     SilicaListView {
         id: userAgentComboMenu
         anchors.fill: parent

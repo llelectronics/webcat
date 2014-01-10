@@ -32,6 +32,7 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 import "pages"
 import "pages/helper/db.js" as DB
+import "pages/helper/tabhelper.js" as Tab
 
 ApplicationWindow
 {
@@ -49,8 +50,7 @@ ApplicationWindow
     property bool hasTabOpen: (tabModel.count !== 0)
     property alias tabView: tabView
 
-    Component
-    {
+    Component {
         id: tabView
         FirstPage {
             bookmarks: modelUrls
@@ -61,35 +61,25 @@ ApplicationWindow
         console.log("openNewTab: "+ pageid + ', currentTab: ' + currentTab);
         var webView = tabView.createObject(mainWindow, { id: pageid, objectName: pageid } );
         webView.url = url;
+        Tab.itemMap[pageid] = webView;
         currentTab = pageid;
         if (hasTabOpen) {
             //console.debug("1. Pagid: " + pageid)
             //tabModel.insert(0, { "title": "Loading..", "url": url, "pageid": pageid } );
             tabModel.append({ "title": "Loading..", "url": url, "pageid": pageid });
-            if (tabModel.contains(pageStack.currentPage.pageId)) {
-                //console.debug("Push to pageStack")
-                pageStack.push(webView, {bookmarks: modelUrls, tabModel: tabModel, pageId: pageid});
-            }
-            else {
-                //console.debug("Replace stack")
-                pageStack.replace(webView, {bookmarks: modelUrls, tabModel: tabModel, pageId: pageid});
-            }
+            pageStack.clear();
+            pageStack.push(Tab.itemMap[pageid], {bookmarks: modelUrls, tabModel: tabModel, pageId: pageid})
         } else {
             //console.debug("2. Pagid: " + pageid)
             tabModel.set(0, { "title": "Loading..", "url": url, "pageid": pageid } );
-            //console.debug("New Page loading...");
-            pageStack.push(webView, {bookmarks: modelUrls, tabModel: tabModel, pageId: pageid});
+            pageStack.push(Tab.itemMap[pageid], {bookmarks: modelUrls, tabModel: tabModel, pageId: pageid})
         }
     }
 
     function switchToTab(pageid) {
-        console.log("switchToTab: "+ pageid + " , from: " + currentTab); //+ ' , at ' + tabListView.currentIndex);
-        //if (currentTab !== pageid ) {
-            pageStack.replace(pageStack.find(function(page) {
-                return page.pageId == pageid;})
-                              ,PageStackAction.Animated);
-            currentTab = pageid;
-        //}
+        //console.log("switchToTab: "+ pageid + " , from: " + currentTab); //+ ' , at ' + tabListView.currentIndex);
+        pageStack.replaceAbove(null, Tab.itemMap[pageid],{bookmarks: modelUrls, tabModel: tabModel, pageId: pageid}); // Nice 'null' trick for replaceAbove thanks to jpnurmi from irc for pointing that out
+        currentTab = pageid;
     }
 
     function closeTab(deleteIndex, pageid) {
@@ -98,29 +88,21 @@ ApplicationWindow
         tabModel.remove(deleteIndex);
         if (deleteIndex != 0) currentTab = tabModel.get(deleteIndex-1).pageid;
         else currentTab = tabModel.get(0).pageid;
-        if (! deleteIndex == tabModel.count - 1) {
-            pageStack.replace(pageStack.find(function(page) {
-                return page.pageId == currentTab;})
-                              ,PageStackAction.Animated);
-        }
-        else {
-            pageStack.pop(pageStack.find(function(page) {
-                return page.pageId == currentTab;})
-                          ,PageStackAction.Animated);
-        }
 
         if (hasTabOpen) {
             switchToTab(currentTab)
         } else {
             currentTab = ""; // clean currentTab
         }
+
+        Tab.itemMap[pageid].destroy();
+        delete(Tab.itemMap[pageid]);
     }
 
     function salt(){
         var salt = ""
-        var RandomString = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
         for( var i=0; i < 5; i++ ) {
-            salt += RandomString.charAt(Math.floor(Math.random() * RandomString.length));
+            salt += Tab.RandomString.charAt(Math.floor(Math.random() * Tab.RandomString.length));
         }
         return salt
     }
@@ -136,6 +118,16 @@ ApplicationWindow
             }
             return 0;
         }
+
+        function getIndexFromId(id) {
+            for (var i=0; i<count; i++) {
+                if (get(i).pageid == id)  { // type transformation is intended here
+                    return i;
+                }
+            }
+            return 0;
+        }
+
         function contains(id) {
             for (var i=0; i<count; i++) {
                 if (get(i).pageid == id)  { // type transformation is intended here
@@ -271,7 +263,6 @@ ApplicationWindow
         //console.debug("Initial Page:" + initialPage)
         openNewTab("page"+salt(), siteURL);
     }
-
 }
 
 
