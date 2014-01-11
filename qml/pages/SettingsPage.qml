@@ -52,7 +52,7 @@ Page {
 
             PageHeader {
                 id: head
-                title: "Add Bookmark"
+                title: "Settings"
             }
             SectionHeader {
                 text: "Appearance"
