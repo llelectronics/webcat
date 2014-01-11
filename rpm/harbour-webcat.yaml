@@ -1,7 +1,7 @@
 Name: harbour-webcat
 Summary: A simple webbrowser with tab support
 Version: 0.8
-Release: 2
+Release: 3
 Group: Qt/Qt
 URL: http://example.org/
 License: LICENSE
@@ -17,7 +17,6 @@ PkgConfigBR:
 - Qt5Core
 - sailfishapp >= 0.0.10
 Requires:
-- qt5-qtgraphicaleffects
 - sailfishsilica-qt5 >= 0.10.9
 Files:
 - '%{_bindir}'

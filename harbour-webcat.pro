@@ -29,7 +29,12 @@ OTHER_FILES += qml/harbour-webcat.qml \
     qml/pages/UserAgentDialog.qml \
     qml/pages/helper/tabhelper.js \
     qml/pages/SettingsPage.qml \
-    qml/pages/FancyScroller.qml
+    qml/pages/FancyScroller.qml \
+    qml/pages/DropShadow.qml \
+    qml/pages/helper/FastGlow.qml \
+    qml/pages/helper/GaussianGlow.qml \
+    qml/pages/helper/SourceProxy.qml \
+    qml/pages/helper/GaussianDirectionalBlur.qml
 
 RESOURCES += \
     qrc.qrc

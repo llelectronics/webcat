@@ -14,13 +14,12 @@ Name:       harbour-webcat
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    A simple webbrowser with tab support
 Version:    0.8
-Release:    2
+Release:    3
 Group:      Qt/Qt
 License:    LICENSE
 URL:        http://example.org/
 Source0:    %{name}-%{version}.tar.bz2
 Source100:  harbour-webcat.yaml
-Requires:   qt5-qtgraphicaleffects
 Requires:   sailfishsilica-qt5 >= 0.10.9
 BuildRequires:  pkgconfig(Qt5Quick)
 BuildRequires:  pkgconfig(Qt5Qml)
