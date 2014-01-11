@@ -271,9 +271,9 @@ ApplicationWindow
 
     Component.onCompleted: {
         //console.debug("Initial Page:" + initialPage)
-        openNewTab("page"+salt(), siteURL);
         // Load Settings
         DB.getSettings();
+        openNewTab("page"+salt(), siteURL);
     }
 }
 

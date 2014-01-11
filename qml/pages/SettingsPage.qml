@@ -5,8 +5,26 @@ import "helper/db.js" as DB
 Page {
     id: settingsPage
 
+    allowedOrientations: Orientation.All
+
     property string uAgentTitle : "Custom"
     property string uAgent: mainWindow.userAgent
+
+    // Easy fix only for when http:// or https:// is missing
+    function fixUrl(nonFixedUrl) {
+        var valid = nonFixedUrl
+        if (valid.indexOf(":")<0) {
+                return "http://"+valid;
+        } else return valid
+    }
+
+    // TODO : Maybe it can be made as convenient as AddBookmark !?
+    function enterPress() {
+        if (hp.focus == true) { hp.text = fixUrl(hp.text);hp.focus = false; }
+    }
+
+    Keys.onReturnPressed: enterPress();
+    Keys.onEnterPressed: enterPress();
 
     SilicaFlickable {
         id: flick
@@ -31,12 +49,7 @@ Page {
             id: col
             width: parent.width
             spacing: 15
-            // TODO : Maybe it can be made as convenient as AddBookmark !?
-            //        function enterPress() {
-            //            if (bookmarkTitle.focus == true) bookmarkUrl.focus = true
-            //            else if (bookmarkUrl.focus == true) { addBtn.focus = true; bookmarkUrl.text = fixUrl(bookmarkUrl.text);}
-            //            else if (addBtn.focus == true) addBtn.clicked();
-            //        }
+
             PageHeader {
                 id: head
                 title: "Add Bookmark"
@@ -160,6 +173,7 @@ Page {
                     id: hp
                     text: mainWindow.siteURL
                     inputMethodHints: Qt.ImhUrlCharactersOnly
+                    onFocusChanged: if (focus == true) selectAll();
                 }
             }
             TextSwitch {
@@ -208,6 +222,7 @@ Page {
                 text: "Save Settings"
                 anchors.horizontalCenter: parent.horizontalCenter
                 onClicked: {
+                    hp.text = fixUrl(hp.text);
                     DB.addSetting("homepage", hp.text);
                     DB.addSetting("minimumFontSize", minimumFontCombo.value.toString());
                     DB.addSetting("defaultFontSize", defaultFontCombo.value.toString());

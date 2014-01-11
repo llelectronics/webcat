@@ -3,7 +3,7 @@ import Sailfish.Silica 1.0
 
 Item {
     property SilicaWebView flickable: parent
-    property int threshold: 1500
+    property int threshold: 2500
     property bool _activeUp
     property bool _activeDown
     signal upScrolling

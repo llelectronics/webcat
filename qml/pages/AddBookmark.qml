@@ -21,7 +21,7 @@ Page {
         var valid = nonFixedUrl
         if (valid.indexOf(":")<0) {
                 return "http://"+valid;
-        }
+        } else return valid
     }
     Flickable {
         width:parent.width
