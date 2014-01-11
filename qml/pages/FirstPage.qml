@@ -141,6 +141,16 @@ Page {
         overridePageStackNavigation: true
         header: PageHeader {height: 0}
 
+        onUrlChanged: {
+            // There seems to be a bug where back and forward navigation is not shown even if webview.canGoBack or ~Forward
+            backIcon.visible = true
+            forIcon.visible = webview.canGoForward
+            if ((/^rtsp:/).test(url) || (/^rtmp:/).test(url) || (/^mms:/).test(url)) {
+                console.debug("Remote link clicked. Open with external viewer")
+                Qt.openUrlExternally(url);
+            }
+        }
+
         // Settings loaded from mainWindow
         experimental.userAgent: page.agent
         experimental.preferences.minimumFontSize: mainWindow.minimumFontSize
@@ -153,7 +163,7 @@ Page {
 
 
         // Scale the websites like g+ and others a little bit for better reading
-        experimental.deviceWidth: page.width / 1.5
+        experimental.deviceWidth: page.width / 1.25
         experimental.deviceHeight: page.height
         experimental.itemSelector: PopOver {}
         experimental.preferences.fullScreenEnabled: true
@@ -196,7 +206,11 @@ Page {
             {
                 urlLoading = false;
                 errorText = "Load failed\n"+loadRequest.errorString
-                popup.visible = true
+                // Don't show error on rtsp, rtmp or mms links as they are opened externally
+                if (! (/^rtsp:/).test(url) || (/^rtmp:/).test(url) || (/^mms:/).test(url)) {
+                    console.debug("Load failed rtsp,rtmp or mms not detected and no valid http or https");
+                    popup.visible = true
+                }
             }
             else
             {
@@ -212,9 +226,11 @@ Page {
             if (schemaRE.test(request.url)) {
                 request.action = WebView.AcceptRequest;
             } else {
-                request.action = WebView.IgnoreRequest;
-                popup.visible = true
-                // delegate request.url here
+                if (!(/^rtsp:/).test(request.url) || !(/^rtmp:/).test(request.url) || !(/^mms:/).test(request.url)) {
+                    request.action = WebView.IgnoreRequest;
+                    popup.visible = true
+                    // delegate request.url here
+                }
             }
         }
         MouseArea {

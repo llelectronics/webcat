@@ -12,10 +12,7 @@ function initialize() {
                 function(tx,er) {
                     // Create the bookmarks table if it doesn't already exist
                     // If the table exists, this is skipped
-                    tx.executeSql('CREATE TABLE IF NOT EXISTS bookmarks(title TEXT, url TEXT)');
-                    // Compatibility Check with older version and add agent column if not exists. SQLITE does not support ALTER with EXISTS statement
-                    tx.executeSql('SELECT agent FROM bookmarks');
-                    if (er) tx.executeSql('ALTER TABLE bookmarks ADD COLUMN agent TEXT;');
+                    tx.executeSql('CREATE TABLE IF NOT EXISTS bookmarks(title TEXT, url TEXT, agent TEXT)');
                     tx.executeSql('CREATE TABLE IF NOT EXISTS settings(setting TEXT, value TEXT)');
                 });
 }

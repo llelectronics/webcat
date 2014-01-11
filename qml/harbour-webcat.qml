@@ -210,11 +210,6 @@ ApplicationWindow
             url: "http://reviewjolla.blogspot.se/"
             agent: "Mozilla/5.0 (Maemo; Linux; Jolla; Sailfish; Mobile) AppleWebKit/534.13 (KHTML, like Gecko) NokiaBrowser/8.5.0 Mobile Safari/534.13"
         }
-        // Load Bookmarks
-        Component.onCompleted: {
-            DB.initialize();
-            DB.getBookmarks();
-        }
     }
 
     ListModel {
@@ -271,6 +266,9 @@ ApplicationWindow
 
     Component.onCompleted: {
         //console.debug("Initial Page:" + initialPage)
+        // Load Bookmarks
+        DB.initialize();
+        DB.getBookmarks();
         // Load Settings
         DB.getSettings();
         openNewTab("page"+salt(), siteURL);
