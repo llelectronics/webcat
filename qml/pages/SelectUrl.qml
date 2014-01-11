@@ -27,28 +27,6 @@ Page
         width: parent.width
         height: parent.height
         spacing: Theme.paddingLarge
-        //        TextField{
-        //            id: entryURL
-        //            text: siteURL
-        //            font.pixelSize: Theme.fontSizeMedium
-        //            width: parent.width
-        //            placeholderText: qsTr("Enter an url")
-        //            inputMethodHints: Qt.ImhUrlCharactersOnly
-        //            focus: true
-        //            Keys.onReturnPressed: {
-        //                var valid = entryURL.text
-        //                if (valid.indexOf(":")<0) {
-        //                    if (valid.indexOf(".")<0 || valid.indexOf(" ")>=0) {
-        //                        // Fall back to a search engine; hard-code Google
-        //                        entryURL.text = "http://www.google.com/search?q="+valid
-        //                    } else {
-        //                        entryURL.text = "http://"+valid
-        //                    }
-        //                    urlPage.accept()
-        //                }
-        //            }
-        //            onFocusChanged: if (focus === true) entryURL.selectAll()
-        //        }
 
         SilicaListView {
             id: repeater1
@@ -145,17 +123,27 @@ Page
             }
         }
 
+        Gradient {
+            id: hightlight
+            GradientStop { position: 0.0; color: Theme.highlightColor }
+            GradientStop { position: 0.10; color: "#262626" }
+            GradientStop { position: 0.85; color: "#1F1F1F"}
+        }
+
+        Gradient {
+            id: normalBg
+            GradientStop { position: 0.0; color: "#262626" }
+            GradientStop { position: 0.85; color: "#1F1F1F"}
+        }
+
         Component {
             id: tabDelegate
             Row {
                 spacing: 10
                 Rectangle {
+                    id: tabBg
                     width: 150
                     height: 72
-                    //                    gradient: Gradient {
-                    //                        GradientStop { position: 0.0; color: "#262626" }
-                    //                        GradientStop { position: 0.85; color: "#1F1F1F"}
-                    //                    }
                     color: "transparent"
                     Text {
                         text: {
@@ -177,6 +165,12 @@ Page
                 }
             }
         }
+
+        Rectangle {
+            id: tabListBg
+            height: 72
+            width: parent.width
+            gradient: normalBg
 
         SilicaListView {
             id: tabListView
@@ -239,7 +233,8 @@ Page
                 Rectangle {
                 width: parent.width; height: 72
                 gradient: Gradient {
-                    GradientStop { position: 0.0; color: "#262626" }
+                    GradientStop { position: 0.0; color: Theme.highlightColor }
+                    GradientStop { position: 0.10; color: "#262626" }
                     GradientStop { position: 0.85; color: "#1F1F1F"}
                 }
             }
@@ -253,6 +248,7 @@ Page
             }
             highlightMoveDuration: 2
             highlightFollowsCurrentItem: true
+        }
         }
     }
     Component.onCompleted: {

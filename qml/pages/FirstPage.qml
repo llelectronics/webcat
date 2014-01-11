@@ -135,7 +135,8 @@ Page {
         id: webview
         url: siteURL
 
-        anchors.fill: parent // automatically changed width and heights according to orientation
+        width: page.width
+        height: page.height - 20 // minimized toolbar size. We don't want to set the toolbar.height here otherwise it would make webview resizing which is painfully slow
 
         // We don't want pageStackNavigation to interfere
         overridePageStackNavigation: true
@@ -191,6 +192,10 @@ Page {
             }
             case 'longpress': {
                 showContextMenu(data.href);
+            }
+            case 'input': {
+                // Seems not to work reliably as only input hide on keyboard hide is received
+                if (toolbar.state == "expanded") toolbar.state = "minimized"
             }
             }
         }

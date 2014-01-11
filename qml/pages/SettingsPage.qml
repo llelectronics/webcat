@@ -18,6 +18,18 @@ Page {
         } else return valid
     }
 
+    function loadDefaults() {
+        hp.text = "about:bookmarks";
+        minimumFontCombo.currentIndex = 34 - 16;
+        defaultFontCombo.currentIndex = 34 - 20;
+        defaultFixedFontCombo.currentIndex = 34 - 18;
+        loadImagesSwitch.checked = true;
+        privateBrowsingSwitch.checked = false;
+        dnsPrefetchSwitch.checked = true;
+        agentString.text = "Mozilla/5.0 (Maemo; Linux; Jolla; Sailfish; Mobile) AppleWebKit/534.13 (KHTML, like Gecko) NokiaBrowser/8.5.0 Mobile Safari/534.13"
+        offlineWebApplicationCacheSwitch.checked = true;
+    }
+
     // TODO : Maybe it can be made as convenient as AddBookmark !?
     function enterPress() {
         if (hp.focus == true) { hp.text = fixUrl(hp.text);hp.focus = false; }
@@ -33,6 +45,11 @@ Page {
 
 
         PullDownMenu {
+            MenuItem {
+                text: qsTr("Load Defaults")
+                onClicked: loadDefaults();
+            }
+
             MenuItem {
                 text: qsTr("Save Settings")
                 onClicked: saveBtn.clicked(null);
