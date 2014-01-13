@@ -45,12 +45,14 @@ Dialog {
         DB.addSetting("userAgent", agentString.text);
         DB.addSetting("offlineWebApplicationCache", offlineWebApplicationCacheSwitch.checked.toString());
         DB.addSetting("userAgentName", userAgentCombo.value);
+        DB.addSetting("searchEngine", searchEngine.text);
         DB.getSettings();
     }
 
     // TODO : Maybe it can be made as convenient as AddBookmark !?
     function enterPress() {
         if (hp.focus == true) { hp.text = fixUrl(hp.text);hp.focus = false; }
+        else if (searchEngine.focus == true) { searchEngine.text = fixUrl(searchEngine.text); searchEngine.focus = false; }
     }
 
     onAccepted: saveSettings();
@@ -89,12 +91,12 @@ Dialog {
             spacing: 15
 
             SectionHeader {
-                text: "Appearance"
+                text: qsTr("Appearance")
             }
             ComboBox {
                 id: defaultFontCombo
                 anchors.horizontalCenter: parent.horizontalCenter
-                label: "Default Font Size"
+                label: qsTr("Default Font Size")
                 currentIndex: 34 - parseInt(mainWindow.defaultFontSize)
                 menu: ContextMenu {
                     MenuItem { text: "34"}
@@ -128,7 +130,7 @@ Dialog {
             ComboBox {
                 id: defaultFixedFontCombo
                 anchors.horizontalCenter: parent.horizontalCenter
-                label: "Default Fixed Font Size"
+                label: qsTr("Default Fixed Font Size")
                 currentIndex: 34 - parseInt(mainWindow.defaultFixedFontSize)
                 menu: ContextMenu {
                     MenuItem { text: "34" }
@@ -162,7 +164,7 @@ Dialog {
             ComboBox {
                 id: minimumFontCombo
                 anchors.horizontalCenter: parent.horizontalCenter
-                label: "Minimum Font Size"
+                label: qsTr("Minimum Font Size")
                 currentIndex: 34 - parseInt(mainWindow.minimumFontSize)
                 menu: ContextMenu {
                     MenuItem { text: "34" }
@@ -195,19 +197,40 @@ Dialog {
             }
 
             SectionHeader {
-                text: "General"
+                text: qsTr("General")
             }
             Row {
                 anchors.horizontalCenter: parent.horizontalCenter
                 spacing: 25
                 Label {
-                    text: "Homepage: "
+                    text: qsTr("Homepage: ")
                 }
                 TextField {
                     id: hp
                     text: mainWindow.siteURL
                     inputMethodHints: Qt.ImhUrlCharactersOnly
                     onFocusChanged: if (focus == true) selectAll();
+                }
+            }
+            Row {
+                anchors.horizontalCenter: parent.horizontalCenter
+                spacing: 10
+                Label {
+                    id: searchlbl
+                    text: qsTr("Search Engine: ")
+                }
+                TextField {
+                    id: searchEngine
+                    text: mainWindow.searchEngine
+                    inputMethodHints: Qt.ImhUrlCharactersOnly
+                    width: hp.width
+                    onFocusChanged: if (focus == true) selectAll();
+                    Label {
+                        text: qsTr("Use %s for character where search term will be put")
+                        anchors.top: parent.bottom
+                        font.pointSize: Theme.fontSizeSmall
+                        width: searchEngine.width
+                    }
                 }
             }
             TextSwitch {
@@ -219,7 +242,7 @@ Dialog {
             TextSwitch {
                 id: privateBrowsingSwitch
                 anchors.horizontalCenter: parent.horizontalCenter
-                text: "Private Browsing"
+                text: qsTr("Private Browsing")
                 checked: mainWindow.privateBrowsing
             }
             SectionHeader {
@@ -228,7 +251,7 @@ Dialog {
             ValueButton {
                 anchors.horizontalCenter: parent.horizontalCenter
                 id: userAgentCombo
-                label: "User Agent:"
+                label: qsTr("User Agent:")
                 value: uAgentTitle
                 onClicked: pageStack.push(Qt.resolvedUrl("UserAgentDialog.qml"), {dataContainer: settingsPage});
             }

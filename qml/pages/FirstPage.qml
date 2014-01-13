@@ -35,6 +35,13 @@ import QtWebKit 3.0
 Page {
     id: page
     allowedOrientations: Orientation.All
+
+    // minimize toolbar when switching to landscape
+    onOrientationChanged: {
+        if (orientation == Orientation.Landscape && toolbar.state == "expanded") toolbar.state = "minimized"
+        else if (orientation == Orientation.Portrait && toolbar.state == "minimized") toolbar.state = "expanded"
+    }
+
     property alias url: webview.url
     property alias toolbar: toolbar
     property string agent: userAgent
@@ -53,7 +60,8 @@ Page {
         if (valid.indexOf(":")<0) {
             if (valid.indexOf(".")<0 || valid.indexOf(" ")>=0) {
                 // Fall back to a search engine; hard-code Google
-                url = "http://www.google.com/search?q="+valid
+                //url = "http://www.google.com/search?q="+valid
+                url = mainWindow.searchEngine.replace("%s",valid)
             } else {
                 url = "http://"+valid
             }
@@ -66,7 +74,8 @@ Page {
         else if (valid.indexOf(":")<0) {
             if (valid.indexOf(".")<0 || valid.indexOf(" ")>=0) {
                 // Fall back to a search engine; hard-code Google
-                return "http://www.google.com/search?q="+valid;
+                //return "http://www.google.com/search?q="+valid;
+                return url = mainWindow.searchEngine.replace("%s",valid)
             } else {
                 return "http://"+valid;
             }

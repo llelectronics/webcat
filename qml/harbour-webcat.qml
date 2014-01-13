@@ -49,6 +49,7 @@ ApplicationWindow
     property bool privateBrowsing: false
     property bool offlineWebApplicationCache: false
     property string userAgentName: "Default Jolla Webkit"
+    property string searchEngine: "http://www.google.com/search?q=%s"
 
 
     property bool urlLoading: false
