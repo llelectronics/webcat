@@ -113,7 +113,7 @@ Page
                 }
                 MenuItem {
                     text: qsTr("New Tab")
-                    onClicked: mainWindow.openNewTab("page"+mainWindow.salt(), "about:bookmarks");
+                    onClicked: mainWindow.openNewTab("page"+mainWindow.salt(), "about:blank", false);
                 }
                 MenuItem {
                     text: qsTr("Close Tab")
@@ -195,7 +195,7 @@ Page
                     anchors.fill: parent;
                     onClicked: {
                         //console.debug("New Tab clicked")
-                        mainWindow.openNewTab("page-"+mainWindow.salt(), "about:blank");
+                        mainWindow.openNewTab("page-"+mainWindow.salt(), "about:blank", false);
                     }
                 }
             }

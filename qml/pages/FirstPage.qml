@@ -199,9 +199,9 @@ Page {
             switch (data.type) {
             case 'link': {
                 if (data.target === '_blank') { // open link in new tab
-                    openNewTab('page-'+salt(), fixUrl(data.href));
+                    openNewTab('page-'+salt(), fixUrl(data.href), false);
                 }
-                else if (data.target) openNewTab('page-'+salt(), fixUrl(data.href));
+                else if (data.target) openNewTab('page-'+salt(), fixUrl(data.href), false);
                 break;
             }
             case 'longpress': {
@@ -235,7 +235,8 @@ Page {
             {
                 urlLoading = false;
                 if (url == "about:bookmarks" && loadHP === true) pageStack.push(Qt.resolvedUrl("SelectUrl.qml"), { dataContainer: page, siteURL: webview.url, bookmarks: page.bookmarks, siteTitle: webview.title})
-                tabModel.setProperty(tabModel.getIndexFromId(currentTab), "title", webview.title);
+                if (mainWindow.currentTabBg != "") mainWindow.tabModel.setProperty(mainWindow.tabModel.getIndexFromId(mainWindow.currentTabBg), "title", webview.title);
+                else mainWindow.tabModel.setProperty(mainWindow.tabModel.getIndexFromId(mainWindow.currentTab), "title", webview.title);
                 //console.debug(tabModel.get(0).title);
             }
         }
@@ -566,7 +567,7 @@ Page {
             }
             Button {
                 text: "Open in New Tab"
-                onClicked: { mainWindow.openNewTab("page"+salt(), fixUrl(contextUrl.text)); contextMenu.visible = false }
+                onClicked: { mainWindow.openNewTab("page"+salt(), fixUrl(contextUrl.text), true); contextMenu.visible = false }
             }
             Button {
                 text: "Copy Link"

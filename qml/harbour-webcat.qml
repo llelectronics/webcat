@@ -59,8 +59,10 @@ ApplicationWindow
     property string errorText: ""
     cover: undefined
     property string currentTab: ""
+    property string currentTabBg: ""
     property bool hasTabOpen: (tabModel.count !== 0)
     property alias tabView: tabView
+    property alias tabModel: tabModel
 
     Component {
         id: tabView
@@ -69,22 +71,28 @@ ApplicationWindow
         }
     }
 
-    function openNewTab(pageid, url) {
+    function openNewTab(pageid, url, inBackground) {
         console.log("openNewTab: "+ pageid + ', currentTab: ' + currentTab);
         var webView = tabView.createObject(mainWindow, { id: pageid, objectName: pageid } );
         webView.url = url;
         Tab.itemMap[pageid] = webView;
-        currentTab = pageid;
         if (hasTabOpen) {
             //console.debug("Other Tab loading with Pagid: " + pageid)
             //tabModel.insert(0, { "title": "Loading..", "url": url, "pageid": pageid } );
             tabModel.append({ "title": "Loading..", "url": url, "pageid": pageid });
-            pageStack.clear();
-            pageStack.push(Tab.itemMap[pageid], {bookmarks: modelUrls, tabModel: tabModel, pageId: pageid, loadHP: false})
+            currentTabBg = pageid;
+            if (!inBackground) {
+                pageStack.clear();
+                pageStack.push(Tab.itemMap[pageid], {bookmarks: modelUrls, tabModel: tabModel, pageId: pageid, loadHP: false});
+                currentTab = pageid;
+                currentTabBg = "";
+            }
         } else {
             //console.debug("First Tab loading with Pageid: " + pageid)
             tabModel.set(0, { "title": "Loading..", "url": url, "pageid": pageid } );
             pageStack.push(Tab.itemMap[pageid], {bookmarks: modelUrls, tabModel: tabModel, pageId: pageid, loadHP: true})
+            currentTab = pageid;
+            currentTabBg = "";
         }
     }
 
@@ -273,7 +281,7 @@ ApplicationWindow
         DB.getBookmarks();
         // Load Settings
         DB.getSettings();
-        openNewTab("page"+salt(), siteURL);
+        openNewTab("page"+salt(), siteURL, false);
     }
 }
 
