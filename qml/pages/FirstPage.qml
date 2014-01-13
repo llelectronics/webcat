@@ -31,6 +31,7 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 import QtWebKit 3.0
+import "helper/jsmime.js" as JSMIME
 
 Page {
     id: page
@@ -59,8 +60,6 @@ Page {
         var valid = requestUrl
         if (valid.indexOf(":")<0) {
             if (valid.indexOf(".")<0 || valid.indexOf(" ")>=0) {
-                // Fall back to a search engine; hard-code Google
-                //url = "http://www.google.com/search?q="+valid
                 url = mainWindow.searchEngine.replace("%s",valid)
             } else {
                 url = "http://"+valid
@@ -70,11 +69,8 @@ Page {
     // Todo: Need to merge fixUrl with loadUrl if latter is even necessary anymore
     function fixUrl(nonFixedUrl) {
         var valid = nonFixedUrl
-        if (valid.match("^/")) return url + valid  // Necessary for reddit or google news i page but it will break local filesystem support, so you NEED to enter file:// infront
-        else if (valid.indexOf(":")<0) {
+        if (valid.indexOf(":")<0) {
             if (valid.indexOf(".")<0 || valid.indexOf(" ")>=0) {
-                // Fall back to a search engine; hard-code Google
-                //return "http://www.google.com/search?q="+valid;
                 return url = mainWindow.searchEngine.replace("%s",valid)
             } else {
                 return "http://"+valid;
@@ -159,6 +155,9 @@ Page {
                 console.debug("Remote link clicked. Open with external viewer")
                 Qt.openUrlExternally(url);
             }
+            if (JSMIME.getMimesByPath(url.toString()).toString().match("^audio") || JSMIME.getMimesByPath(url.toString()).toString().match("^video")) {
+                // Audio or Video link clicked. Download should start now
+            }
         }
 
         // Settings loaded from mainWindow
@@ -183,6 +182,11 @@ Page {
         experimental.userScripts: [Qt.resolvedUrl("helper/userscript.js")]
         experimental.preferences.navigatorQtObjectEnabled: true
 
+        experimental.onDownloadRequested: {
+            // Call downloadmanager here with the url
+            console.debug("Download requested");
+        }
+
         experimental.onMessageReceived: {
             console.log('onMessageReceived: ' + message.data );
             var data = null
@@ -197,6 +201,7 @@ Page {
                 if (data.target === '_blank') { // open link in new tab
                     openNewTab('page-'+salt(), fixUrl(data.href));
                 }
+                else if (data.target) openNewTab('page-'+salt(), fixUrl(data.href));
                 break;
             }
             case 'longpress': {
@@ -204,7 +209,7 @@ Page {
             }
             case 'input': {
                 // Seems not to work reliably as only input hide on keyboard hide is received
-                if (toolbar.state == "expanded") toolbar.state = "minimized"
+                if (toolbar.state == "expanded" && data.state == "show" && ! urlText.focus == true) toolbar.state = "minimized"
             }
             }
         }

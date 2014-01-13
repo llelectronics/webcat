@@ -6,10 +6,11 @@ function checkNode(e, node) {
         var link = new Object({'type':'link', 'pageX': e.pageX, 'pageY': e.pageY})
         if (node.hasAttribute('target'))
             link.target = node.getAttribute('target');
-        link.href = node.getAttribute('href');
+        link.href = node.href //node.getAttribute('href'); // We want always the absolute link
         navigator.qt.postMessage( JSON.stringify(link) );
     }
 }
+
 
 for (var i=0; i<frames.length; i++) {
     if(typeof(frames[i].contentWindow.document)!=="undefined")
@@ -76,7 +77,7 @@ function longPressed(x, y, element) {
     var data = new Object({'type': 'longpress', 'pageX': x, 'pageY': y})
     data.href = 'CANT FIND LINK'
     if (element.tagName === 'A') {
-        data.href = element.getAttribute('href');
+        data.href = element.href //getAttribute('href'); // We always want the absolute link
     } else if (element.parentNode.tagName === 'A') {
         data.href = element.parentNode.getAttribute('href');
     }
@@ -91,7 +92,7 @@ function longPressed(x, y, element) {
         var children = element.childNodes;
         for (var i = 0; i < children.length; i++) {
             if(children[i].tagName === 'A')
-                data.href = children[i].getAttribute('href');
+                data.href = children[i].href //getAttribute('href'); // We always want the absolute link
         }
     }
     navigator.qt.postMessage( JSON.stringify(data) );

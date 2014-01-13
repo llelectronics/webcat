@@ -34,7 +34,8 @@ OTHER_FILES += qml/harbour-webcat.qml \
     qml/pages/helper/FastGlow.qml \
     qml/pages/helper/GaussianGlow.qml \
     qml/pages/helper/SourceProxy.qml \
-    qml/pages/helper/GaussianDirectionalBlur.qml
+    qml/pages/helper/GaussianDirectionalBlur.qml \
+    qml/pages/helper/jsmime.js
 
 RESOURCES += \
     qrc.qrc
