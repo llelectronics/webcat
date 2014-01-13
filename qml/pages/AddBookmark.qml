@@ -8,8 +8,8 @@ Dialog {
 
     acceptDestinationAction: PageStackAction.Pop
 
-    property string uAgentTitle : "Default Jolla Webkit"
-    property string uAgent: "Mozilla/5.0 (Maemo; Linux; Jolla; Sailfish; Mobile) AppleWebKit/534.13 (KHTML, like Gecko) NokiaBrowser/8.5.0 Mobile Safari/534.13"
+    property string uAgentTitle : mainWindow.userAgentName
+    property string uAgent: mainWindow.userAgent
 
     property ListModel bookmarks
 

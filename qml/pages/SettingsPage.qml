@@ -9,7 +9,7 @@ Dialog {
 
     acceptDestinationAction: PageStackAction.Pop
 
-    property string uAgentTitle : "Custom"
+    property string uAgentTitle : mainWindow.userAgentName
     property string uAgent: mainWindow.userAgent
 
 
@@ -44,6 +44,7 @@ Dialog {
         DB.addSetting("dnsPrefetch", dnsPrefetchSwitch.checked.toString());
         DB.addSetting("userAgent", agentString.text);
         DB.addSetting("offlineWebApplicationCache", offlineWebApplicationCacheSwitch.checked.toString());
+        DB.addSetting("userAgentName", userAgentCombo.value);
         DB.getSettings();
     }
 

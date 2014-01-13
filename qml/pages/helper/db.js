@@ -113,6 +113,7 @@ function getSettings() {
             else if (rs.rows.item(i).setting == "userAgent") mainWindow.userAgent = rs.rows.item(i).value
             else if (rs.rows.item(i).setting == "homepage") mainWindow.siteURL = rs.rows.item(i).value
             else if (rs.rows.item(i).setting == "offlineWebApplicationCache") mainWindow.offlineWebApplicationCache = stringToBoolean(rs.rows.item(i).value)
+            else if (rs.rows.item(i).setting == "userAgentName") mainWindow.userAgentName = rs.rows.item(i).value
         }
     })
 }

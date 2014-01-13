@@ -48,6 +48,7 @@ ApplicationWindow
     property bool dnsPrefetch: true
     property bool privateBrowsing: false
     property bool offlineWebApplicationCache: false
+    property string userAgentName: "Default Jolla Webkit"
 
 
     property bool urlLoading: false
