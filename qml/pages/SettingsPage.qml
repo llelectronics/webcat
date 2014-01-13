@@ -2,13 +2,16 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 import "helper/db.js" as DB
 
-Page {
+Dialog {
     id: settingsPage
 
     allowedOrientations: Orientation.All
 
+    acceptDestinationAction: PageStackAction.Pop
+
     property string uAgentTitle : "Custom"
     property string uAgent: mainWindow.userAgent
+
 
     // Easy fix only for when http:// or https:// is missing
     function fixUrl(nonFixedUrl) {
@@ -30,10 +33,26 @@ Page {
         offlineWebApplicationCacheSwitch.checked = true;
     }
 
+    function saveSettings() {
+        hp.text = fixUrl(hp.text);
+        DB.addSetting("homepage", hp.text);
+        DB.addSetting("minimumFontSize", minimumFontCombo.value.toString());
+        DB.addSetting("defaultFontSize", defaultFontCombo.value.toString());
+        DB.addSetting("defaultFixedFontSize", defaultFixedFontCombo.value.toString());
+        DB.addSetting("loadImages", loadImagesSwitch.checked.toString());
+        DB.addSetting("privateBrowsing", privateBrowsingSwitch.checked.toString());
+        DB.addSetting("dnsPrefetch", dnsPrefetchSwitch.checked.toString());
+        DB.addSetting("userAgent", agentString.text);
+        DB.addSetting("offlineWebApplicationCache", offlineWebApplicationCacheSwitch.checked.toString());
+        DB.getSettings();
+    }
+
     // TODO : Maybe it can be made as convenient as AddBookmark !?
     function enterPress() {
         if (hp.focus == true) { hp.text = fixUrl(hp.text);hp.focus = false; }
     }
+
+    onAccepted: saveSettings();
 
     Keys.onReturnPressed: enterPress();
     Keys.onEnterPressed: enterPress();
@@ -41,20 +60,20 @@ Page {
     SilicaFlickable {
         id: flick
         anchors.fill: parent
-        contentHeight: col.height
+        contentHeight: col.height + head.height
 
+        DialogHeader {
+            id: head
+            acceptText: qsTr("Save Settings")
+        }
 
         PullDownMenu {
             MenuItem {
                 text: qsTr("Load Defaults")
                 onClicked: loadDefaults();
             }
-
-            MenuItem {
-                text: qsTr("Save Settings")
-                onClicked: saveBtn.clicked(null);
-            }
         }
+
         PushUpMenu {
             MenuItem {
                 text: qsTr("Goto top")
@@ -65,12 +84,9 @@ Page {
         Column {
             id: col
             width: parent.width
+            anchors.top: head.bottom
             spacing: 15
 
-            PageHeader {
-                id: head
-                title: "Settings"
-            }
             SectionHeader {
                 text: "Appearance"
             }
@@ -233,25 +249,6 @@ Page {
                 anchors.horizontalCenter: parent.horizontalCenter
                 text: "Offline Web Application Cache"
                 checked: mainWindow.offlineWebApplicationCache
-            }
-            Button {
-                id: saveBtn
-                text: "Save Settings"
-                anchors.horizontalCenter: parent.horizontalCenter
-                onClicked: {
-                    hp.text = fixUrl(hp.text);
-                    DB.addSetting("homepage", hp.text);
-                    DB.addSetting("minimumFontSize", minimumFontCombo.value.toString());
-                    DB.addSetting("defaultFontSize", defaultFontCombo.value.toString());
-                    DB.addSetting("defaultFixedFontSize", defaultFixedFontCombo.value.toString());
-                    DB.addSetting("loadImages", loadImagesSwitch.checked.toString());
-                    DB.addSetting("privateBrowsing", privateBrowsingSwitch.checked.toString());
-                    DB.addSetting("dnsPrefetch", dnsPrefetchSwitch.checked.toString());
-                    DB.addSetting("userAgent", agentString.text);
-                    DB.addSetting("offlineWebApplicationCache", offlineWebApplicationCacheSwitch.checked.toString());
-                    DB.getSettings();
-                    pageStack.pop();
-                }
             }
 
         }

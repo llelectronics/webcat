@@ -1,20 +1,17 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 
-Page {
+Dialog {
     id: addBookmarkPage
 
     allowedOrientations: Orientation.All
+
+    acceptDestinationAction: PageStackAction.Pop
 
     property string uAgentTitle : "Default Jolla Webkit"
     property string uAgent: "Mozilla/5.0 (Maemo; Linux; Jolla; Sailfish; Mobile) AppleWebKit/534.13 (KHTML, like Gecko) NokiaBrowser/8.5.0 Mobile Safari/534.13"
 
     property ListModel bookmarks
-
-    PageHeader {
-        id: head
-        title: "Add Bookmark"
-    }
 
     // Easy fix only for when http:// or https:// is missing
     function fixUrl(nonFixedUrl) {
@@ -23,11 +20,21 @@ Page {
                 return "http://"+valid;
         } else return valid
     }
+
+    function addBookmark() {
+        console.debug("Creating new bookmark" + bookmarkUrl.text.toString() + bookmarkTitle.text + agentString.text);
+        bookmarks.addBookmark(bookmarkUrl.text.toString(), bookmarkTitle.text, agentString.text);
+    }
+
     Flickable {
         width:parent.width
-        height: parent.height - head.height
-        anchors.top: head.bottom
-        contentHeight: col.height
+        height: parent.height
+        contentHeight: col.height + head.height
+
+        DialogHeader {
+            id: head
+            acceptText: qsTr("Add Bookmark")
+        }
 
         Column {
             id: col
@@ -37,8 +44,7 @@ Page {
             spacing: 25
             function enterPress() {
                 if (bookmarkTitle.focus == true) bookmarkUrl.focus = true
-                else if (bookmarkUrl.focus == true) { addBtn.focus = true; bookmarkUrl.text = fixUrl(bookmarkUrl.text);}
-                else if (addBtn.focus == true) addBtn.clicked();
+                else if (bookmarkUrl.focus == true) { bookmarkUrl.text = fixUrl(bookmarkUrl.text);}
             }
 
         TextField {
@@ -68,16 +74,6 @@ Page {
             readOnly: true
             width: parent.width - 20
             text: uAgent
-        }
-        Button {
-            id: addBtn
-            text: "Add Bookmark"
-            anchors.horizontalCenter: parent.horizontalCenter
-            onClicked: {
-                console.debug("Creating new bookmark" + bookmarkUrl.text.toString() + bookmarkTitle.text + agentString.text);
-                bookmarks.addBookmark(bookmarkUrl.text.toString(), bookmarkTitle.text, agentString.text);
-                pageStack.pop();
-            }
         }
         Keys.onEnterPressed: enterPress();
         Keys.onReturnPressed: enterPress();
