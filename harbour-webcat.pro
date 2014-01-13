@@ -40,3 +40,5 @@ OTHER_FILES += qml/harbour-webcat.qml \
 RESOURCES += \
     qrc.qrc
 
+HEADERS +=
+

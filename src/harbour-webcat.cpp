@@ -34,7 +34,6 @@
 
 #include <sailfishapp.h>
 
-
 int main(int argc, char *argv[])
 {
     // SailfishApp::main() will display "qml/template.qml", if you need more
@@ -46,6 +45,37 @@ int main(int argc, char *argv[])
     //
     // To display the view, call "show()" (will show fullscreen on device).
 
-    return SailfishApp::main(argc, argv);
+    QGuiApplication *app = SailfishApp::application(argc, argv);
+    QQuickView *view = SailfishApp::createView(); // I get a white background with this.
+    view->setSource(SailfishApp::pathTo("qml/harbour-webcat.qml"));  // So I do this ;)
+
+    QObject *object = view->rootObject();
+
+    QString file;
+    for(int i=1; i<argc; i++) {
+        if (!QString(argv[i]).startsWith("/") && !QString(argv[i]).startsWith("http://") && !QString(argv[i]).startsWith("rtsp://")
+                && !QString(argv[i]).startsWith("mms://") && !QString(argv[i]).startsWith("file://") && !QString(argv[i]).startsWith("https://") && !QString(argv[i]).startsWith("www.")) {
+            QString pwd("");
+            char * PWD;
+            PWD = getenv ("PWD");
+            pwd.append(PWD);
+            file = pwd + "/" + QString(argv[i]);
+        }
+        else if (QString(argv[i]).startsWith("www.")) file = "http://" + QString(argv[i]);
+        else file = QString(argv[i]);
+    }
+
+    qDebug() << file.isEmpty();
+    if (!file.isEmpty()) {
+        qDebug() << "Loading url " + file;
+        object->setProperty("siteURL", file);
+        qDebug() << object->property("siteURL");
+    }
+    QMetaObject::invokeMethod(object, "loadInitialTab");
+
+    view->show();
+
+
+    return app->exec();
 }
 

@@ -71,6 +71,14 @@ ApplicationWindow
         }
     }
 
+    function loadInitialTab() {
+        openNewTab("page"+salt(), siteURL, false);
+    }
+
+    function loadInNewTab(url) {
+        openNewTab("page"+salt(), url, false);
+    }
+
     function openNewTab(pageid, url, inBackground) {
         console.log("openNewTab: "+ pageid + ', currentTab: ' + currentTab);
         var webView = tabView.createObject(mainWindow, { id: pageid, objectName: pageid } );
@@ -281,7 +289,7 @@ ApplicationWindow
         DB.getBookmarks();
         // Load Settings
         DB.getSettings();
-        openNewTab("page"+salt(), siteURL, false);
+        //openNewTab("page"+salt(), siteURL, false);
     }
 }
 
