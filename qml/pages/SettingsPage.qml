@@ -31,6 +31,7 @@ Dialog {
         dnsPrefetchSwitch.checked = true;
         agentString.text = "Mozilla/5.0 (Maemo; Linux; Jolla; Sailfish; Mobile) AppleWebKit/534.13 (KHTML, like Gecko) NokiaBrowser/8.5.0 Mobile Safari/534.13"
         offlineWebApplicationCacheSwitch.checked = true;
+        searchEngine.text = "http://www.google.com/search?q=%s"
     }
 
     function saveSettings() {
@@ -217,6 +218,7 @@ Dialog {
                 }
             }
             Row {
+                // TODO: Make a ValueButton out of it and add a List with predefined search engines
                 anchors.horizontalCenter: parent.horizontalCenter
                 spacing: 10
                 Label {
@@ -227,14 +229,9 @@ Dialog {
                     id: searchEngine
                     text: mainWindow.searchEngine
                     inputMethodHints: Qt.ImhUrlCharactersOnly
+                    placeholderText: "%s for searchterm"
                     width: hp.width
                     onFocusChanged: if (focus == true) selectAll();
-                    Label {
-                        text: qsTr("Use %s for character where search term will be put")
-                        anchors.top: parent.bottom
-                        font.pointSize: Theme.fontSizeSmall
-                        width: searchEngine.width
-                    }
                 }
             }
             TextSwitch {
