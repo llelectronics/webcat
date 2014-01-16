@@ -33,6 +33,7 @@
 #endif
 
 #include <sailfishapp.h>
+#include "myclass.h"
 
 int main(int argc, char *argv[])
 {
@@ -46,8 +47,9 @@ int main(int argc, char *argv[])
     // To display the view, call "show()" (will show fullscreen on device).
 
     QGuiApplication *app = SailfishApp::application(argc, argv);
-    QQuickView *view = SailfishApp::createView(); // I get a white background with this.
-    view->setSource(SailfishApp::pathTo("qml/harbour-webcat.qml"));  // So I do this ;)
+    QQuickView *view = SailfishApp::createView();
+
+    view->setSource(SailfishApp::pathTo("qml/harbour-webcat.qml"));
 
     QObject *object = view->rootObject();
 
@@ -65,7 +67,7 @@ int main(int argc, char *argv[])
         else file = QString(argv[i]);
     }
 
-    qDebug() << file.isEmpty();
+    //qDebug() << file.isEmpty();
     if (!file.isEmpty()) {
         qDebug() << "Loading url " + file;
         object->setProperty("siteURL", file);
@@ -73,8 +75,14 @@ int main(int argc, char *argv[])
     }
     QMetaObject::invokeMethod(object, "loadInitialTab");
 
-    view->show();
 
+    MyClass myClass(view);
+    QObject::connect(object, SIGNAL(clearCookies()),
+                     &myClass, SLOT(clearCookies()));
+    QObject::connect(object, SIGNAL(openNewWindow(QString)),
+                     &myClass, SLOT(openNewWindow(QString)));
+
+    view->show();
 
     return app->exec();
 }

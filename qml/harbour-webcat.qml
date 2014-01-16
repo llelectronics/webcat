@@ -64,6 +64,9 @@ ApplicationWindow
     property alias tabView: tabView
     property alias tabModel: tabModel
 
+    signal clearCookies()
+    signal openNewWindow(string hrefUrl)
+
     Component {
         id: tabView
         FirstPage {

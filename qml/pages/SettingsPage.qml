@@ -72,6 +72,10 @@ Dialog {
 
         PullDownMenu {
             MenuItem {
+                text: qsTr("Clear Cookies")
+                onClicked: mainWindow.clearCookies();
+            }
+            MenuItem {
                 text: qsTr("Load Defaults")
                 onClicked: loadDefaults();
             }

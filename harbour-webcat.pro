@@ -10,7 +10,8 @@ TARGET = harbour-webcat
 
 CONFIG += sailfishapp
 
-SOURCES += src/harbour-webcat.cpp
+SOURCES += src/harbour-webcat.cpp \
+    src/myclass.cpp
 
 OTHER_FILES += qml/harbour-webcat.qml \
     qml/cover/CoverPage.qml \
@@ -40,5 +41,6 @@ OTHER_FILES += qml/harbour-webcat.qml \
 RESOURCES += \
     qrc.qrc
 
-HEADERS +=
+HEADERS += \
+    src/myclass.h
 

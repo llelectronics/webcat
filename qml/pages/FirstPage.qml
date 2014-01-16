@@ -561,16 +561,25 @@ Page {
             anchors.bottomMargin: 10
             anchors.horizontalCenter: parent.horizontalCenter
             spacing: 8
+            // Not really necessary as you can just click on the link
+//            Button {
+//                text: "Open"
+//                width: widestBtn.width
+//                onClicked: { webview.url = fixUrl(contextUrl.text); contextMenu.visible = false }
+//            }
             Button {
-                text: "Open"
-                onClicked: { webview.url = fixUrl(contextUrl.text); contextMenu.visible = false }
+                id: widestBtn
+                text: "Open in New Window"
+                onClicked: { mainWindow.openNewWindow(fixUrl(contextUrl.text)); contextMenu.visible = false }
             }
             Button {
                 text: "Open in New Tab"
+                width: widestBtn.width
                 onClicked: { mainWindow.openNewTab("page"+salt(), fixUrl(contextUrl.text), true); contextMenu.visible = false }
             }
             Button {
                 text: "Copy Link"
+                width: widestBtn.width
                 onClicked: { contextUrl.selectAll(); contextUrl.copy(); contextMenu.visible = false }
             }
         }
