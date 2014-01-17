@@ -79,7 +79,7 @@ function longPressed(x, y, element) {
     if (element.tagName === 'A') {
         data.href = element.href //getAttribute('href'); // We always want the absolute link
     } else if (element.parentNode.tagName === 'A') {
-        data.href = element.parentNode.getAttribute('href');
+        data.href = element.parentNode.href //getAttribute('href') // We always want the absolute link;
     }
 /*
         var node = element.cloneNode(true);

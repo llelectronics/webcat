@@ -8,6 +8,8 @@ Dialog {
 
     acceptDestinationAction: PageStackAction.Pop
 
+    onAccepted: bookmarks.addBookmark(bookmarkUrl.text.toString(), bookmarkTitle.text, agentString.text);
+
     property string uAgentTitle : mainWindow.userAgentName
     property string uAgent: mainWindow.userAgent
 
