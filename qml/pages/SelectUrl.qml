@@ -50,6 +50,13 @@ Page
                     ListView.remove.connect(removal.deleteAnimation.start)
                     removal.execute(contentItem, "Deleting " + title, function() { bookmarks.removeBookmark(url); } )
                 }
+                function openNewTab() {
+                    mainWindow.openNewTab("page"+mainWindow.salt(),url,true);
+                }
+                function openNewWindow() {
+                    mainWindow.openNewWindow(url);
+                }
+
                 BackgroundItem {
                     id: contentItem
                     Label {
@@ -89,6 +96,18 @@ Page
                     id: contextMenuComponent
                     ContextMenu {
                         id: menu
+                        MenuItem {
+                            text: "Open in new Tab"
+                            onClicked: {
+                                menu.parent.openNewTab();
+                            }
+                        }
+                        MenuItem {
+                            text: "Open in new Window"
+                            onClicked: {
+                                menu.parent.openNewWindow();
+                            }
+                        }
                         MenuItem {
                             text: "Delete"
                             onClicked: {
@@ -179,16 +198,16 @@ Page
 
             // new tab button
             header: Rectangle {
-                width: 100
+                width: 80
                 height: 72
                 gradient: Gradient {
                     GradientStop { position: 0.0; color: "#262626" }
                     GradientStop { position: 0.85; color: "#1F1F1F"}
                 }
                 Text {
-                    text: "<b>New Tab</b>"
+                    text: "<b>+</b>"
                     color: "white"
-                    font.pointSize: 15
+                    font.pointSize: 25
                     anchors.centerIn: parent
                 }
                 MouseArea {
@@ -203,16 +222,16 @@ Page
             // close tab button
             footer: Rectangle {
                 visible: tabModel.count > 1
-                width: 100
+                width: 80
                 height: 72
                 gradient: Gradient {
                     GradientStop { position: 0.0; color: "#262626" }
                     GradientStop { position: 0.85; color: "#1F1F1F"}
                 }
                 Text {
-                    text: "<b>Close Tab</b>"
+                    text: "<b>x</b>"
                     color: "white"
-                    font.pointSize: 15
+                    font.pointSize: 25
                     anchors.centerIn: parent
                 }
                 MouseArea {
