@@ -379,6 +379,19 @@ Page {
             enabled: toolbar.state == "minimized"
             anchors.fill: toolbar
             onClicked: toolbar.state = "expanded"
+            property int mx
+            onPressed: {
+                // Gesture detecting here
+                mx = mouse.x
+            }
+            onReleased: {
+                if (mouse.x < mx - 150) { //Right to left swipe
+                    webview.goBack();
+                }
+                else if (mouse.x > mx + 150) { // Left to right swipe
+                    webview.goForward();
+                }
+            }
         }
 
         IconButton {
