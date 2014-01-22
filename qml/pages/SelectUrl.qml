@@ -196,8 +196,6 @@ Page
             width: parent.width
             height: 72
 
-            Component.onCompleted: mainWindow.tabListView = tabListView
-
             // new tab button
             header: Rectangle {
                 width: 80
@@ -274,6 +272,7 @@ Page
     }
     Component.onCompleted: {
         tabListView.currentIndex = tabModel.getIndexFromId(mainWindow.currentTab);
+        mainWindow.currentTabIndex = tabListView.currentIndex
     }
 
     //    Row {

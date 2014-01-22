@@ -63,7 +63,8 @@ ApplicationWindow
     property bool hasTabOpen: (tabModel.count !== 0)
     property alias tabView: tabView
     property alias tabModel: tabModel
-    property SilicaListView tabListView
+    property int currentTabIndex: 1
+
 
     signal clearCookies()
     signal openNewWindow(string hrefUrl)

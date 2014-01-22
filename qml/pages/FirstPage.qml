@@ -55,6 +55,12 @@ Page {
     backNavigation: false
     forwardNavigation: false
     showNavigationIndicator: false
+    property QtObject _ngfEffect
+
+    Component.onCompleted: {
+        _ngfEffect = Qt.createQmlObject("import org.nemomobile.ngf 1.0; NonGraphicalFeedback { event: 'pulldown_lock' }",
+                           minimizeButton, 'NonGraphicalFeedback');
+    }
 
     function loadUrl(requestUrl) {
         var valid = requestUrl
@@ -411,17 +417,26 @@ Page {
             onPositionChanged: {
                 if (extraToolbar.opacity == 1) {
                     console.debug("X Position: " + mouse.x)
-                    if (mouse.x > 100 && mouse.x < 200) { minimizeButton.highlighted = false; newTabButton.highlighted = true; closeTabButton.highlighted = false }
-                    else if (mouse.x < 100) { minimizeButton.highlighted = true; newTabButton.highlighted = false; closeTabButton.highlighted = false }
-                    else if (mouse.x > 200 && mouse.x < 300) { minimizeButton.highlighted = false; newTabButton.highlighted = false; closeTabButton.highlighted = true }
-                    else if (mouse.x < 200 && mouse.x > 100) { minimizeButton.highlighted = false; newTabButton.highlighted = true; closeTabButton.highlighted = false }
+                    if (mouse.x > newTabButton.x && mouse.x < newWindowButton.x) { minimizeButton.highlighted = false; newTabButton.highlighted = true; newWindowButton.highlighted = false; reloadThisButton.highlighted = false; orientationLockButton.highlighted = false }
+                    else if (mouse.x < newTabButton.x) {minimizeButton.highlighted = true; newTabButton.highlighted = false; newWindowButton.highlighted = false; reloadThisButton.highlighted = false; orientationLockButton.highlighted = false }
+                    else if (mouse.x > newWindowButton.x && mouse.x < reloadThisButton.x) { minimizeButton.highlighted = false; newTabButton.highlighted = false; newWindowButton.highlighted = true; reloadThisButton.highlighted = false; orientationLockButton.highlighted = false }
+                    else if (mouse.x < newWindowButton.x && mouse.x > newTabButton.x) { minimizeButton.highlighted = false; newTabButton.highlighted = true; newWindowButton.highlighted = false; reloadThisButton.highlighted = false; orientationLockButton.highlighted = false }
+                    else if (mouse.x > reloadThisButton.x && mouse.x < orientationLockButton.x) { minimizeButton.highlighted = false; newTabButton.highlighted = false; newWindowButton.highlighted = false; reloadThisButton.highlighted = true; orientationLockButton.highlighted = false }
+                    else if (mouse.x < reloadThisButton.x && mouse.x > newTabButton.x) { minimizeButton.highlighted = false; newTabButton.highlighted = false; newWindowButton.highlighted = true; reloadThisButton.highlighted = false; orientationLockButton.highlighted = false }
+                    else if (mouse.x > orientationLockButton.x && mouse.x < orientationLockButton.x + orientationLockButton.width + Theme.paddingMedium) { minimizeButton.highlighted = false; newTabButton.highlighted = false; newWindowButton.highlighted = false; reloadThisButton.highlighted = false; orientationLockButton.highlighted = true }
+                    else if (mouse.x < orientationLockButton.x && mouse.x < reloadThisButton.x) { minimizeButton.highlighted = false; newTabButton.highlighted = false; newWindowButton.highlighted = false; reloadThisButton.highlighted = true; orientationLockButton.highlighted = false }
+                    else if (mouse.x > orientationLockButton.x + orientationLockButton.width + Theme.paddingMedium) { minimizeButton.highlighted = false; newTabButton.highlighted = false; newWindowButton.highlighted = false; reloadThisButton.highlighted = false; orientationLockButton.highlighted = false }
+                    else if (mouse.x < orientationLockButton.x + orientationLockButton.width + Theme.paddingMedium && mouse.x < orientationLockButton.x) { minimizeButton.highlighted = false; newTabButton.highlighted = false; newWindowButton.highlighted = false; reloadThisButton.highlighted = false; orientationLockButton.highlighted = true }
                 }
             }
 
             onReleased: {
                 if (extraToolbar.opacity == 1 && minimizeButton.highlighted == true) { minimizeButton.clicked(undefined); extraToolbar.opacity = 0 }
-                if (extraToolbar.opacity == 1 && newTabButton.highlighted == true) { newTabButton.clicked(undefined); extraToolbar.opacity = 0 }
-                if (extraToolbar.opacity == 1 && closeTabButton.highlighted == true) { closeTabButton.clicked(undefined); extraToolbar.opacity = 0 }
+                else if (extraToolbar.opacity == 1 && newTabButton.highlighted == true) { newTabButton.clicked(undefined); extraToolbar.opacity = 0 }
+                else if (extraToolbar.opacity == 1 && newWindowButton.highlighted == true) { newWindowButton.clicked(undefined); extraToolbar.opacity = 0 }
+                else if (extraToolbar.opacity == 1 && reloadThisButton.highlighted == true) { reloadThisButton.clicked(undefined); extraToolbar.opacity = 0 }
+                else if (extraToolbar.opacity == 1 && orientationLockButton.highlighted == true) { orientationLockButton.clicked(undefined); extraToolbar.opacity = 0 }
+                else if (extraToolbar.opacity == 1) extraToolbar.opacity = 0
             }
 
             Label {
@@ -568,9 +583,13 @@ Page {
             font.bold: true
             font.pixelSize: parent.height - (minimizeButton.height + 10)
             text: {
-                if (minimizeButton.highlighted) return qsTr("Minimize")
-                else if (newTabButton.highlighted) return qsTr("New Tab")
-                else if (closeTabButton.highlighted) return qsTr("Close Tab")
+                if (minimizeButton.highlighted) { _ngfEffect.play(); return qsTr("Minimize") }
+                else if (newTabButton.highlighted) { _ngfEffect.play(); return qsTr("New Tab") }
+                else if (newWindowButton.highlighted) { _ngfEffect.play(); return qsTr("New Window") }
+                else if (reloadThisButton.highlighted) { _ngfEffect.play(); return qsTr("Reload") }
+                else if (orientationLockButton.highlighted) { _ngfEffect.play(); return qsTr("Lock Orientation") }
+                else if (extraToolbar.opacity == 1) { _ngfEffect.play(); return qsTr("Close menu") }
+                else return "Extra Toolbar"
             }
         }
 
@@ -604,8 +623,8 @@ Page {
         }
 
         IconButton {
-            id: closeTabButton
-            icon.source: "image://theme/icon-m-clear"
+            id: newWindowButton
+            icon.source: "image://theme/icon-m-add"
             anchors.left: newTabButton.right
             anchors.leftMargin: Theme.paddingMedium
             anchors.bottom: parent.bottom
@@ -614,10 +633,46 @@ Page {
             icon.width: 64
             width: 64
             height: 64
-            visible: tabModel.count > 1
-            // TODO: For this to work we need to get tabListView out of selectURL into harbour-webcat.qml I guess
-            onClicked: mainWindow.closeTab(mainWindow.tabListView.currentIndex, pageid);
+            onClicked: mainWindow.openNewWindow("about:bookmarks");
         }
+
+
+        IconButton {
+            id: reloadThisButton
+            icon.source: "image://theme/icon-m-refresh"
+            anchors.left: newWindowButton.right
+            anchors.leftMargin: Theme.paddingMedium
+            anchors.bottom: parent.bottom
+            anchors.bottomMargin: 2
+            icon.height: 64
+            icon.width: 64
+            width: 64
+            height: 64
+            onClicked: webview.reload();
+        }
+
+        IconButton {
+            id: orientationLockButton
+            icon.source: "image://theme/icon-m-backup"
+            anchors.left: reloadThisButton.right
+            anchors.leftMargin: Theme.paddingMedium
+            anchors.bottom: parent.bottom
+            anchors.bottomMargin: 2
+            icon.height: 64
+            icon.width: 64
+            width: 64
+            height: 64
+            Image {
+                source: "image://theme/icon-m-reset"
+                anchors.fill: parent
+                visible: page.allowedOrientations !== Orientation.All
+            }
+            onClicked: {
+                if (page.allowedOrientations === Orientation.All) page.allowedOrientations = page.orientation
+                else page.allowedOrientations = Orientation.All
+            }
+        }
+
     }
 
 

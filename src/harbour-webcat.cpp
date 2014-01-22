@@ -55,7 +55,8 @@ int main(int argc, char *argv[])
 
     QString file;
     for(int i=1; i<argc; i++) {
-        if (!QString(argv[i]).startsWith("/") && !QString(argv[i]).startsWith("http://") && !QString(argv[i]).startsWith("rtsp://")
+        if (QString(argv[i]) == "about:bookmarks") file = "about:bookmarks";
+        else if (!QString(argv[i]).startsWith("/") && !QString(argv[i]).startsWith("http://") && !QString(argv[i]).startsWith("rtsp://")
                 && !QString(argv[i]).startsWith("mms://") && !QString(argv[i]).startsWith("file://") && !QString(argv[i]).startsWith("https://") && !QString(argv[i]).startsWith("www.")) {
             QString pwd("");
             char * PWD;
