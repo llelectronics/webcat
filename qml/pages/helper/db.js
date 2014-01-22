@@ -1,5 +1,7 @@
 //db.js
 .import QtQuick.LocalStorage 2.0 as LS
+
+var defaultAgent="Mozilla/5.0 (Maemo; Linux; Jolla; Sailfish; Mobile) AppleWebKit/534.13 (KHTML, like Gecko) NokiaBrowser/8.5.0 Mobile Safari/534.13"
 // First, let's create a short helper function to get the database connection
 function getDatabase() {
     return LS.LocalStorage.openDatabaseSync("webcatbrowser", "0.8", "StorageDatabase", 100000);
@@ -13,6 +15,16 @@ function initialize() {
                     // Create the bookmarks table if it doesn't already exist
                     // If the table exists, this is skipped
                     tx.executeSql('CREATE TABLE IF NOT EXISTS bookmarks(title TEXT, url TEXT, agent TEXT)');
+                    var table  = tx.executeSql("SELECT * FROM bookmarks");
+                    // Insert default bookmarks if no bookmarks are set / empty bookmarks db
+                    if (table.rows.length === 0) {
+                        tx.executeSql('INSERT INTO bookmarks VALUES (?,?,?);', ["Jolla Together", "http://together.jolla.com/", defaultAgent]);
+                        tx.executeSql('INSERT INTO bookmarks VALUES (?,?,?);', ["Maemo forum", "http://talk.maemo.org/", defaultAgent]);
+                        tx.executeSql('INSERT INTO bookmarks VALUES (?,?,?);', ["Jolla users", "http://jollausers.com/", defaultAgent]);
+                        tx.executeSql('INSERT INTO bookmarks VALUES (?,?,?);', ["Jolla users forum", "http://forum.jollausers.com/", defaultAgent]);
+                        tx.executeSql('INSERT INTO bookmarks VALUES (?,?,?);', ["Jolla Tides", "http://jollatides.com/", defaultAgent]);
+                        tx.executeSql('INSERT INTO bookmarks VALUES (?,?,?);', ["Review Jolla", "http://reviewjolla.blogspot.se/", defaultAgent]);
+                    }
                     tx.executeSql('CREATE TABLE IF NOT EXISTS settings(setting TEXT, value TEXT)');
                 });
 }

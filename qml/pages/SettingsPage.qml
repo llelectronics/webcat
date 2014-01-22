@@ -73,6 +73,10 @@ Dialog {
 
         PullDownMenu {
             MenuItem {
+                text: qsTr("Add default bookmarks")
+                onClicked: mainWindow.addDefaultBookmarks();
+            }
+            MenuItem {
                 text: qsTr("Clear Cookies")
                 onClicked: mainWindow.clearCookies();
             }

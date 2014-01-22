@@ -74,6 +74,15 @@ ApplicationWindow
         }
     }
 
+    function addDefaultBookmarks() {
+        modelUrls.addBookmark("http://together.jolla.com/", "Jolla Together", userAgent);
+        modelUrls.addBookmark("http://talk.maemo.org/","Maemo forum", userAgent);
+        modelUrls.addBookmark("http://jollausers.com/","Jolla users", userAgent);
+        modelUrls.addBookmark("http://forum.jollausers.com/","Jolla users forum", userAgent);
+        modelUrls.addBookmark("http://jollatides.com/", "Jolla Tides", userAgent);
+        modelUrls.addBookmark("http://reviewjolla.blogspot.se/", "Review Jolla", userAgent);
+    }
+
     function loadInitialTab() {
         openNewTab("page"+salt(), siteURL, false);
     }
@@ -201,36 +210,38 @@ ApplicationWindow
             DB.addBookmark(siteTitle,siteUrl,agent);
         }
 
-        ListElement {
-            title: "Jolla Together"
-            url: "http://together.jolla.com/"
-            agent: "Mozilla/5.0 (Maemo; Linux; Jolla; Sailfish; Mobile) AppleWebKit/534.13 (KHTML, like Gecko) NokiaBrowser/8.5.0 Mobile Safari/534.13"
-        }
-        ListElement {
-            title: "Maemo forum"
-            url: "http://talk.maemo.org/"
-            agent: "Mozilla/5.0 (Maemo; Linux; Jolla; Sailfish; Mobile) AppleWebKit/534.13 (KHTML, like Gecko) NokiaBrowser/8.5.0 Mobile Safari/534.13"
-        }
-        ListElement {
-            title: "Jolla users"
-            url: "http://jollausers.com/"
-            agent: "Mozilla/5.0 (Maemo; Linux; Jolla; Sailfish; Mobile) AppleWebKit/534.13 (KHTML, like Gecko) NokiaBrowser/8.5.0 Mobile Safari/534.13"
-        }
-        ListElement {
-            title: "Jolla users forum"
-            url: "http://forum.jollausers.com/"
-            agent: "Mozilla/5.0 (Maemo; Linux; Jolla; Sailfish; Mobile) AppleWebKit/534.13 (KHTML, like Gecko) NokiaBrowser/8.5.0 Mobile Safari/534.13"
-        }
-        ListElement {
-            title: "Jolla Tides"
-            url: "http://jollatides.com/"
-            agent: "Mozilla/5.0 (Maemo; Linux; Jolla; Sailfish; Mobile) AppleWebKit/534.13 (KHTML, like Gecko) NokiaBrowser/8.5.0 Mobile Safari/534.13"
-        }
-        ListElement {
-            title: "Review Jolla"
-            url: "http://reviewjolla.blogspot.se/"
-            agent: "Mozilla/5.0 (Maemo; Linux; Jolla; Sailfish; Mobile) AppleWebKit/534.13 (KHTML, like Gecko) NokiaBrowser/8.5.0 Mobile Safari/534.13"
-        }
+
+    // No more default bookmarks as on users request
+//        ListElement {
+//            title: "Jolla Together"
+//            url: "http://together.jolla.com/"
+//            agent: "Mozilla/5.0 (Maemo; Linux; Jolla; Sailfish; Mobile) AppleWebKit/534.13 (KHTML, like Gecko) NokiaBrowser/8.5.0 Mobile Safari/534.13"
+//        }
+//        ListElement {
+//            title: "Maemo forum"
+//            url: "http://talk.maemo.org/"
+//            agent: "Mozilla/5.0 (Maemo; Linux; Jolla; Sailfish; Mobile) AppleWebKit/534.13 (KHTML, like Gecko) NokiaBrowser/8.5.0 Mobile Safari/534.13"
+//        }
+//        ListElement {
+//            title: "Jolla users"
+//            url: "http://jollausers.com/"
+//            agent: "Mozilla/5.0 (Maemo; Linux; Jolla; Sailfish; Mobile) AppleWebKit/534.13 (KHTML, like Gecko) NokiaBrowser/8.5.0 Mobile Safari/534.13"
+//        }
+//        ListElement {
+//            title: "Jolla users forum"
+//            url: "http://forum.jollausers.com/"
+//            agent: "Mozilla/5.0 (Maemo; Linux; Jolla; Sailfish; Mobile) AppleWebKit/534.13 (KHTML, like Gecko) NokiaBrowser/8.5.0 Mobile Safari/534.13"
+//        }
+//        ListElement {
+//            title: "Jolla Tides"
+//            url: "http://jollatides.com/"
+//            agent: "Mozilla/5.0 (Maemo; Linux; Jolla; Sailfish; Mobile) AppleWebKit/534.13 (KHTML, like Gecko) NokiaBrowser/8.5.0 Mobile Safari/534.13"
+//        }
+//        ListElement {
+//            title: "Review Jolla"
+//            url: "http://reviewjolla.blogspot.se/"
+//            agent: "Mozilla/5.0 (Maemo; Linux; Jolla; Sailfish; Mobile) AppleWebKit/534.13 (KHTML, like Gecko) NokiaBrowser/8.5.0 Mobile Safari/534.13"
+//        }
     }
 
     ListModel {
