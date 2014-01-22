@@ -400,8 +400,28 @@ Page {
             anchors.left: toolbar.left
             anchors.leftMargin: Theme.paddingSmall
             onClicked: pageStack.push(Qt.resolvedUrl("SelectUrl.qml"), { dataContainer: page, siteURL: webview.url, bookmarks: page.bookmarks, siteTitle: webview.title})
+            property int mx
             onPressAndHold: {
-                if (toolbar.state == "expanded") toolbar.state = "minimized"
+                //if (toolbar.state == "expanded") toolbar.state = "minimized"
+                //TODO show extraToolbar
+                if (extraToolbar.opacity == 0) extraToolbar.opacity = 1
+                minimizeButton.highlighted = true
+                mx = mouse.x
+            }
+            onPositionChanged: {
+                if (extraToolbar.opacity == 1) {
+                    console.debug("X Position: " + mouse.x)
+                    if (mouse.x > 100 && mouse.x < 200) { minimizeButton.highlighted = false; newTabButton.highlighted = true; closeTabButton.highlighted = false }
+                    else if (mouse.x < 100) { minimizeButton.highlighted = true; newTabButton.highlighted = false; closeTabButton.highlighted = false }
+                    else if (mouse.x > 200 && mouse.x < 300) { minimizeButton.highlighted = false; newTabButton.highlighted = false; closeTabButton.highlighted = true }
+                    else if (mouse.x < 200 && mouse.x > 100) { minimizeButton.highlighted = false; newTabButton.highlighted = true; closeTabButton.highlighted = false }
+                }
+            }
+
+            onReleased: {
+                if (extraToolbar.opacity == 1 && minimizeButton.highlighted == true) { minimizeButton.clicked(undefined); extraToolbar.opacity = 0 }
+                if (extraToolbar.opacity == 1 && newTabButton.highlighted == true) { newTabButton.clicked(undefined); extraToolbar.opacity = 0 }
+                if (extraToolbar.opacity == 1 && closeTabButton.highlighted == true) { closeTabButton.clicked(undefined); extraToolbar.opacity = 0 }
             }
 
             Label {
@@ -515,6 +535,92 @@ Page {
         }
     }
 
+    // Extra Toolbar
+    Rectangle {
+        id: extraToolbar
+        width: page.width
+        state: "expanded"
+        //color: Theme.highlightBackgroundColor // As alternative perhaps maybe someday
+        gradient: Gradient {
+            GradientStop { position: 0.0; color: "#262626" }
+            GradientStop { position: 0.85; color: "#1F1F1F"}
+        }
+        height: 96
+        opacity: 0
+        anchors.bottom: toolbar.top
+        anchors.bottomMargin: -2
+        Rectangle { // grey seperation between page and toolbar
+            id: toolbarExtraSep
+            height: 2
+            width: parent.width
+            anchors.top: parent.top
+            color: "grey"
+        }
+        Behavior on opacity {
+            NumberAnimation { duration: 200; easing.type: Easing.InOutQuad }
+        }
+
+        Label {
+            id: actionLbl
+            anchors.top: parent.top
+            anchors.topMargin: 3
+            anchors.horizontalCenter: parent.horizontalCenter
+            font.bold: true
+            font.pixelSize: parent.height - (minimizeButton.height + 10)
+            text: {
+                if (minimizeButton.highlighted) return qsTr("Minimize")
+                else if (newTabButton.highlighted) return qsTr("New Tab")
+                else if (closeTabButton.highlighted) return qsTr("Close Tab")
+            }
+        }
+
+        IconButton {
+            id: minimizeButton
+            icon.source: "image://theme/icon-cover-next-song"
+            rotation: 90
+            anchors.left: extraToolbar.left
+            anchors.leftMargin: Theme.paddingSmall
+            anchors.bottom: parent.bottom
+            anchors.bottomMargin: 2
+            icon.height: 64
+            icon.width: 64
+            width: 64
+            height: 64
+            onClicked: if (toolbar.state == "expanded") toolbar.state = "minimized"
+        }
+
+        IconButton {
+            id: newTabButton
+            icon.source: "image://theme/icon-m-add"
+            anchors.left: minimizeButton.right
+            anchors.leftMargin: Theme.paddingMedium
+            anchors.bottom: parent.bottom
+            anchors.bottomMargin: 2
+            icon.height: 64
+            icon.width: 64
+            width: 64
+            height: 64
+            onClicked: mainWindow.loadInNewTab("about:bookmarks");
+        }
+
+        IconButton {
+            id: closeTabButton
+            icon.source: "image://theme/icon-m-clear"
+            anchors.left: newTabButton.right
+            anchors.leftMargin: Theme.paddingMedium
+            anchors.bottom: parent.bottom
+            anchors.bottomMargin: 2
+            icon.height: 64
+            icon.width: 64
+            width: 64
+            height: 64
+            visible: tabModel.count > 1
+            // TODO: For this to work we need to get tabListView out of selectURL into harbour-webcat.qml I guess
+            onClicked: mainWindow.closeTab(mainWindow.tabListView.currentIndex, pageid);
+        }
+    }
+
+
     // On Loading show cancel loading button
     Rectangle {
         gradient: Gradient {
@@ -575,11 +681,11 @@ Page {
             anchors.horizontalCenter: parent.horizontalCenter
             spacing: 8
             // Not really necessary as you can just click on the link
-//            Button {
-//                text: "Open"
-//                width: widestBtn.width
-//                onClicked: { webview.url = fixUrl(contextUrl.text); contextMenu.visible = false }
-//            }
+            //            Button {
+            //                text: "Open"
+            //                width: widestBtn.width
+            //                onClicked: { webview.url = fixUrl(contextUrl.text); contextMenu.visible = false }
+            //            }
             Button {
                 id: widestBtn
                 text: "Open in New Window"

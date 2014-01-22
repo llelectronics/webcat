@@ -196,6 +196,8 @@ Page
             width: parent.width
             height: 72
 
+            Component.onCompleted: mainWindow.tabListView = tabListView
+
             // new tab button
             header: Rectangle {
                 width: 80
