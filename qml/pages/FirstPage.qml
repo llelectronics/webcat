@@ -404,15 +404,15 @@ Page {
                 if (toolbar.state == "expanded") toolbar.state = "minimized"
             }
 
-            //            Label {
-            //                text: tabs.count
-            //                x: (parent.width - contentWidth) / 2 - 5
-            //                y: (parent.height - contentHeight) / 2 - 5
-            //                font.pixelSize: Theme.fontSizeExtraSmall
-            //                font.bold: true
-            //                color: tabPageButton.down ? Theme.highlightColor : Theme.highlightDimmerColor
-            //                horizontalAlignment: Text.AlignHCenter
-            //            }
+            Label {
+                text: tabModel.count
+                x: (parent.width - contentWidth) / 2 - 5
+                y: (parent.height - contentHeight) / 2 - 5
+                font.pixelSize: Theme.fontSizeExtraSmall
+                font.bold: true
+                color: gotoButton.down ? Theme.highlightColor : Theme.highlightDimmerColor
+                horizontalAlignment: Text.AlignHCenter
+            }
         }
 
         IconButton {
