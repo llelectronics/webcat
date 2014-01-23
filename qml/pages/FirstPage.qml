@@ -522,7 +522,6 @@ Page {
                 }
                 else {
                     page.suggestionView.visible = false;
-                    //mainWindow.historyModel.clear();
                 }
             }
 
@@ -616,8 +615,8 @@ Page {
             anchors.leftMargin: Theme.paddingSmall
             anchors.bottom: parent.bottom
             anchors.bottomMargin: 2
-            icon.height: 64
-            icon.width: 64
+            icon.height: 48
+            icon.width: 48
             width: 64
             height: 64
             onClicked: if (toolbar.state == "expanded") toolbar.state = "minimized"
@@ -625,13 +624,13 @@ Page {
 
         IconButton {
             id: newTabButton
-            icon.source: "image://theme/icon-m-add"
+            icon.source: "image://theme/icon-cover-new"
             anchors.left: minimizeButton.right
             anchors.leftMargin: Theme.paddingMedium
             anchors.bottom: parent.bottom
             anchors.bottomMargin: 2
-            icon.height: 64
-            icon.width: 64
+            icon.height: 48
+            icon.width: 48
             width: 64
             height: 64
             onClicked: mainWindow.loadInNewTab("about:bookmarks");
@@ -639,7 +638,7 @@ Page {
 
         IconButton {
             id: newWindowButton
-            icon.source: "image://theme/icon-m-add"
+            icon.source: "image://theme/icon-m-tab"
             anchors.left: newTabButton.right
             anchors.leftMargin: Theme.paddingMedium
             anchors.bottom: parent.bottom
@@ -648,6 +647,10 @@ Page {
             icon.width: 64
             width: 64
             height: 64
+            Image {
+                anchors.fill: parent
+                source: "image://theme/icon-m-add"
+            }
             onClicked: mainWindow.openNewWindow("about:bookmarks");
         }
 

@@ -204,12 +204,19 @@ Page
                     GradientStop { position: 0.0; color: "#262626" }
                     GradientStop { position: 0.85; color: "#1F1F1F"}
                 }
-                Text {
-                    text: "<b>+</b>"
-                    color: "white"
-                    font.pointSize: 25
+//                Text {
+//                    text: "<b>+</b>"
+//                    color: "white"
+//                    font.pointSize: 25
+//                    anchors.centerIn: parent
+//                }
+                Image {
+                    width:48
+                    height: 48
                     anchors.centerIn: parent
+                    source : "image://theme/icon-cover-new" // This image is 96x96 and does not have a big border so make it smaller
                 }
+
                 MouseArea {
                     anchors.fill: parent;
                     onClicked: {
@@ -228,11 +235,17 @@ Page
                     GradientStop { position: 0.0; color: "#262626" }
                     GradientStop { position: 0.85; color: "#1F1F1F"}
                 }
-                Text {
-                    text: "<b>x</b>"
-                    color: "white"
-                    font.pointSize: 25
+//                Text {
+//                    text: "<b>x</b>"
+//                    color: "white"
+//                    font.pointSize: 25
+//                    anchors.centerIn: parent
+//                }
+                Image {
+                    width:64
+                    height: 64
                     anchors.centerIn: parent
+                    source : "image://theme/icon-m-close" // This image is 64x64 and does have a big border so leave it as is
                 }
                 MouseArea {
                     anchors.fill: parent;
