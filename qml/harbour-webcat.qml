@@ -258,6 +258,22 @@ ApplicationWindow
 
     ListModel {
         id: historyModel
+
+        function contains(siteUrl) {
+            var suffix = "/";
+            var str = siteUrl.toString();
+            for (var i=0; i<count; i++) {
+                if (get(i).url == str)  {
+                    return true;
+                }
+                // check if url endswith '/' and return true if url-'/' = models url
+                else if (str.indexOf(suffix, str.length - suffix.length) !== -1) {
+                    if (get(i).url == str.substring(0, str.length-1)) return true;
+                }
+            }
+            return false;
+        }
+
     }
 
 

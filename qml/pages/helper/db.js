@@ -197,7 +197,7 @@ function searchHistory(searchTerm) {
         }
         for (var i = 0; i < rs1.rows.length; i++) {
             // Add to historySuggestions here
-            mainWindow.historyModel.append({"url" : rs1.rows.item(i).url});
+            if (! historyModel.contains(rs1.rows.item(i).url)) mainWindow.historyModel.append({"url" : rs1.rows.item(i).url});
             //console.debug(rs.rows.item(i).url);
         }
     }

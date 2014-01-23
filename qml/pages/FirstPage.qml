@@ -516,12 +516,13 @@ Page {
                 }
             }
             onTextChanged: {
-                if (text.length > 2 && focus == true) {
+                mainWindow.historyModel.clear();
+                if (text.length > 1 && focus == true) {
                     DB.searchHistory(text.toString());
                 }
                 else {
                     page.suggestionView.visible = false;
-                    mainWindow.historyModel.clear();
+                    //mainWindow.historyModel.clear();
                 }
             }
 
