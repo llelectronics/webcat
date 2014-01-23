@@ -50,6 +50,7 @@ ApplicationWindow
     property bool offlineWebApplicationCache: false
     property string userAgentName: "Default Jolla Webkit"
     property string searchEngine: "http://www.google.com/search?q=%s"
+    property string searchEngineName: "Google"
 
 
     property bool urlLoading: false
@@ -248,6 +249,10 @@ ApplicationWindow
 
     UserAgents {
         id: userAgentModel
+    }
+
+    SearchEngines {
+        id: searchEngineModel
     }
 
 

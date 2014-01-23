@@ -42,4 +42,8 @@ ListModel {
         title: "Izik"
         uri: "http://izik.com/?q=%s"
     }
+    ListElement {
+        title: "Custom"
+        uri: ""
+    }
 }

@@ -11,6 +11,8 @@ Dialog {
 
     property string uAgentTitle : mainWindow.userAgentName
     property string uAgent: mainWindow.userAgent
+    property string searchEngineTitle: mainWindow.searchEngineName
+    property string searchEngineUri: mainWindow.searchEngine
 
 
     // Easy fix only for when http:// or https:// is missing
@@ -32,6 +34,7 @@ Dialog {
         agentString.text = "Mozilla/5.0 (Maemo; Linux; Jolla; Sailfish; Mobile) AppleWebKit/534.13 (KHTML, like Gecko) NokiaBrowser/8.5.0 Mobile Safari/534.13"
         offlineWebApplicationCacheSwitch.checked = true;
         searchEngine.text = "http://www.google.com/search?q=%s"
+        searchEngineCombo.value = "Google"
     }
 
     function saveSettings() {
@@ -47,6 +50,7 @@ Dialog {
         DB.addSetting("offlineWebApplicationCache", offlineWebApplicationCacheSwitch.checked.toString());
         DB.addSetting("userAgentName", userAgentCombo.value);
         DB.addSetting("searchEngine", searchEngine.text);
+        DB.addSetting("searchEngineName", searchEngineCombo.value)
         DB.getSettings();
     }
 
@@ -221,17 +225,26 @@ Dialog {
                     onFocusChanged: if (focus == true) selectAll();
                 }
             }
+            ValueButton {
+                anchors.horizontalCenter: parent.horizontalCenter
+                id: searchEngineCombo
+                label: qsTr("Search Engine:")
+                value: searchEngineTitle
+                onClicked: pageStack.push(Qt.resolvedUrl("SearchEngineDialog.qml"), {dataContainer: settingsPage});
+            }
             Row {
+                id: customSearchEngine
+                visible: searchEngineCombo.value === qsTr("Custom")
                 // TODO: Make a ValueButton out of it and add a List with predefined search engines
                 anchors.horizontalCenter: parent.horizontalCenter
                 spacing: 10
                 Label {
                     id: searchlbl
-                    text: qsTr("Search Engine: ")
+                    text: qsTr("Engine Url: ")
                 }
                 TextField {
                     id: searchEngine
-                    text: mainWindow.searchEngine
+                    text: searchEngineUri
                     inputMethodHints: Qt.ImhUrlCharactersOnly
                     placeholderText: "%s for searchterm"
                     width: hp.width
