@@ -32,6 +32,7 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 import QtWebKit 3.0
 import "helper/jsmime.js" as JSMIME
+import "helper/db.js" as DB
 
 Page {
     id: page
@@ -56,6 +57,7 @@ Page {
     forwardNavigation: false
     showNavigationIndicator: false
     property QtObject _ngfEffect
+    property alias suggestionView: suggestionView
 
     Component.onCompleted: {
         _ngfEffect = Qt.createQmlObject("import org.nemomobile.ngf 1.0; NonGraphicalFeedback { event: 'pulldown_lock' }",
@@ -164,6 +166,8 @@ Page {
             if (JSMIME.getMimesByPath(url.toString()).toString().match("^audio") || JSMIME.getMimesByPath(url.toString()).toString().match("^video")) {
                 // Audio or Video link clicked. Download should start now
             }
+            // Add to url history
+            DB.addHistory(url);
         }
 
         // Settings loaded from mainWindow
@@ -511,6 +515,16 @@ Page {
                     refreshButton.visible = false
                 }
             }
+            onTextChanged: {
+                if (text.length > 2 && focus == true) {
+                    DB.searchHistory(text.toString());
+                }
+                else {
+                    page.suggestionView.visible = false;
+                    mainWindow.historyModel.clear();
+                }
+            }
+
             Keys.onEnterPressed: {
                 urlText.focus = false;  // Close keyboard
                 webview.url = fixUrl(urlText.text);
@@ -757,6 +771,19 @@ Page {
                 onClicked: { contextUrl.selectAll(); contextUrl.copy(); contextMenu.visible = false }
             }
         }
+    }
+    Suggestions {
+        id: suggestionView
+        model: mainWindow.historyModel
+//        anchors.top: parent.top
+//        anchors.topMargin: Theme.paddingLarge
+        anchors.bottom: toolbar.top
+        anchors.bottomMargin: - 3
+        anchors.horizontalCenter: parent.horizontalCenter
+        width: parent.width - 60
+        height: parent.height / 3
+        visible: false
+        onSelected: { webview.url = url ; visible = false }
     }
 }
 

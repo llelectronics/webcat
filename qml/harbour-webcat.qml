@@ -65,6 +65,7 @@ ApplicationWindow
     property alias tabView: tabView
     property alias tabModel: tabModel
     property int currentTabIndex: 1
+    property alias historyModel: historyModel
 
 
     signal clearCookies()
@@ -253,6 +254,10 @@ ApplicationWindow
 
     SearchEngines {
         id: searchEngineModel
+    }
+
+    ListModel {
+        id: historyModel
     }
 
 

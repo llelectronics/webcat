@@ -39,7 +39,8 @@ OTHER_FILES += qml/harbour-webcat.qml \
     qml/pages/helper/jsmime.js \
     qml/pages/UserAgents.qml \
     qml/pages/SearchEngines.qml \
-    qml/pages/SearchEngineDialog.qml
+    qml/pages/SearchEngineDialog.qml \
+    qml/pages/Suggestions.qml
 
 RESOURCES += \
     qrc.qrc
