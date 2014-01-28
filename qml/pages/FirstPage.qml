@@ -192,6 +192,19 @@ Page {
         experimental.userScripts: [Qt.resolvedUrl("helper/userscript.js")]
         experimental.preferences.navigatorQtObjectEnabled: true
 
+        experimental.certificateVerificationDialog: Item {
+            Component.onCompleted: {
+                var dialog = pageStack.push(Qt.resolvedUrl("ConfirmDialog.qml"),
+                                            {"label":  "Accept certificate from " + url + " ?"})
+                dialog.accepted.connect(function() {
+                    model.accept();
+                })
+                dialog.rejected.connect(function() {
+                    model.reject();
+                })
+            }
+       }
+
         experimental.onDownloadRequested: {
             // Call downloadmanager here with the url
             console.debug("Download requested");

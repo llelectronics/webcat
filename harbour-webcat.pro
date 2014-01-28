@@ -40,7 +40,8 @@ OTHER_FILES += qml/harbour-webcat.qml \
     qml/pages/UserAgents.qml \
     qml/pages/SearchEngines.qml \
     qml/pages/SearchEngineDialog.qml \
-    qml/pages/Suggestions.qml
+    qml/pages/Suggestions.qml \
+    qml/pages/ConfirmDialog.qml
 
 RESOURCES += \
     qrc.qrc
