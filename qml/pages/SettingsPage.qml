@@ -220,7 +220,7 @@ Dialog {
                 }
                 TextField {
                     id: hp
-                    text: mainWindow.siteURL
+                    text: mainWindow.homepage  // FIX: on new Window loading siteURL != homepage set in settings so add a new var homepage in mainWindow
                     inputMethodHints: Qt.ImhUrlCharactersOnly
                     onFocusChanged: if (focus == true) selectAll();
                 }

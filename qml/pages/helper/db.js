@@ -130,7 +130,7 @@ function getSettings() {
             else if (rs.rows.item(i).setting == "privateBrowsing") mainWindow.privateBrowsing = stringToBoolean(rs.rows.item(i).value)
             else if (rs.rows.item(i).setting == "dnsPrefetch") mainWindow.dnsPrefetch = stringToBoolean(rs.rows.item(i).value)
             else if (rs.rows.item(i).setting == "userAgent") mainWindow.userAgent = rs.rows.item(i).value
-            else if (rs.rows.item(i).setting == "homepage") mainWindow.siteURL = rs.rows.item(i).value
+            else if (rs.rows.item(i).setting == "homepage") { mainWindow.siteURL = rs.rows.item(i).value ; mainWindow.homepage = rs.rows.item(i).value }
             else if (rs.rows.item(i).setting == "offlineWebApplicationCache") mainWindow.offlineWebApplicationCache = stringToBoolean(rs.rows.item(i).value)
             else if (rs.rows.item(i).setting == "userAgentName") mainWindow.userAgentName = rs.rows.item(i).value
             else if (rs.rows.item(i).setting == "searchEngine") mainWindow.searchEngine = rs.rows.item(i).value
