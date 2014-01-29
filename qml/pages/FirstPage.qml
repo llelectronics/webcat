@@ -245,6 +245,7 @@ Page {
             {
                 urlLoading = true;
                 contextMenu.visible = false;
+                mediaDownloadRec.visible = false;
             }
             else if (loadRequest.status == WebView.LoadFailedStatus)
             {
@@ -257,9 +258,9 @@ Page {
                         console.debug("Load failed audio or video file not detected and no valid http or https");
                         popup.visible = true
                     }
-                    else {
-                        // Try to open with systems media player / or the download manager
-                        Qt.openUrlExternally(url);
+                    else if ((/handled by the media engine/).test(errorText)) {
+                        //TODO: Enable Downloadmanager here
+                        mediaDownloadRec.visible = true
                     }
                 }
             }
@@ -724,6 +725,7 @@ Page {
 
     // On Loading show cancel loading button
     Rectangle {
+        id: loadingRec
         gradient: Gradient {
             GradientStop { position: 0.0; color: "transparent" }
             GradientStop { position: 0.65; color: Theme.highlightBackgroundColor}
@@ -741,6 +743,40 @@ Page {
             anchors.verticalCenter: parent.verticalCenter
 
         }
+    }
+
+    // On Media Loaded show download button
+    Rectangle {
+        id: mediaDownloadRec
+        gradient: Gradient {
+            GradientStop { position: 0.0; color: "#262626" }
+            GradientStop { position: 0.85; color: "#1F1F1F"}
+        }
+        anchors.bottom: {
+            if (loadingRec.visible == true) return loadingRec.top
+            else return toolbar.top
+        }
+        anchors.bottomMargin: Theme.paddingSmall
+        width: parent.width
+        height: 72
+        visible: false
+
+        IconButton {
+            icon.source: "image://theme/icon-m-device-download"
+            onClicked:  pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": url});
+            anchors.right: parent.right
+            anchors.rightMargin: Theme.paddingSmall
+            anchors.verticalCenter: parent.verticalCenter
+        }
+        IconButton {
+            icon.source: "image://theme/icon-m-folder"
+            onClicked:  Qt.openUrlExternally(url);
+            anchors.left: parent.left
+            anchors.leftMargin: Theme.paddingSmall
+            anchors.verticalCenter: parent.verticalCenter
+        }
+
+
     }
 
     // Long press contextmenu for link
