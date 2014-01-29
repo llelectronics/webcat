@@ -58,6 +58,7 @@ Page {
     showNavigationIndicator: false
     property QtObject _ngfEffect
     property alias suggestionView: suggestionView
+    property bool imageLongPressAvailability;
 
     Component.onCompleted: {
         _ngfEffect = Qt.createQmlObject("import org.nemomobile.ngf 1.0; NonGraphicalFeedback { event: 'pulldown_lock' }",
@@ -230,7 +231,14 @@ Page {
                 break;
             }
             case 'longpress': {
-                showContextMenu(data.href);
+                if (data.img) {
+                    imageLongPressAvailability = true;
+                    showContextMenu(data.img);
+                }
+                else {
+                    imageLongPressAvailability = false;
+                    showContextMenu(data.href);
+                }
             }
             case 'input': {
                 // Seems not to work reliably as only input hide on keyboard hide is received
@@ -785,14 +793,10 @@ Page {
         visible: false
         anchors.bottom: toolbar.top
         anchors.bottomMargin: -toolbarSep.height
-        width: parent.width; height: 0
-        onVisibleChanged: {
-            //console.debug(visible);
-            if (visible == true) {
-                //console.debug("Now showing contextmenu")
-                height = contextUrl.height + contextButtons.height + Theme.paddingMedium
-            }
-            else height = 0
+        width: parent.width;
+        height: {
+            if (visible == true) return contextUrl.height + contextButtons.height + Theme.paddingMedium
+            else return 0
         }
         Behavior on height {
             NumberAnimation { target: contextMenu; property: "height"; duration: 350; easing.type: Easing.InOutQuad }
@@ -837,6 +841,12 @@ Page {
                 text: "Copy Link"
                 width: widestBtn.width
                 onClicked: { contextUrl.selectAll(); contextUrl.copy(); contextMenu.visible = false }
+            }
+            Button {
+                text: "Save Image"
+                width: widestBtn.width
+                visible: imageLongPressAvailability
+                onClicked: { pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": contextUrl.text}); contextMenu.visible = false }
             }
         }
     }

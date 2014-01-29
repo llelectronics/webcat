@@ -9,6 +9,10 @@ function checkNode(e, node) {
         link.href = node.href //node.getAttribute('href'); // We want always the absolute link
         navigator.qt.postMessage( JSON.stringify(link) );
     }
+    else if (nodeName === 'img') {
+        var data = new Object({'type':'image', 'pageX': e.pageX, 'pageY': e.pageY})
+        data.img = node.getAttribute('src');
+    }
 }
 
 
@@ -80,7 +84,12 @@ function longPressed(x, y, element) {
         data.href = element.href //getAttribute('href'); // We always want the absolute link
     } else if (element.parentNode.tagName === 'A') {
         data.href = element.parentNode.href //getAttribute('href') // We always want the absolute link;
+    } else if (element.tagName === 'IMG') {
+        data.img = element.getAttribute('src');
+    } else if (element.parentNode.tagName === 'IMG') {
+        data.img = element.parentNode.getAttribute('src');
     }
+
 /*
         var node = element.cloneNode(true);
         while(node) {
@@ -93,6 +102,8 @@ function longPressed(x, y, element) {
         for (var i = 0; i < children.length; i++) {
             if(children[i].tagName === 'A')
                 data.href = children[i].href //getAttribute('href'); // We always want the absolute link
+            else if (children[i].tagName === 'img')
+                data.img = children[i].getAttribute('src');
         }
     }
     navigator.qt.postMessage( JSON.stringify(data) );
