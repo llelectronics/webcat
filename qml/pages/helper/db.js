@@ -66,11 +66,11 @@ function removeBookmark(url) {
     var respath="";
     db.transaction(function(tx) {
         var rs = tx.executeSql('DELETE FROM bookmarks WHERE url=(?);', [url]);
-        if (rs.rowsAffected > 0) {
-            console.debug("Url found and removed");
-        } else {
-            console.debug("Url not found");
-        }
+//        if (rs.rowsAffected > 0) {
+//            console.debug("Url found and removed");
+//        } else {
+//            console.debug("Url not found");
+//        }
     })
 }
 
@@ -147,11 +147,11 @@ function addHistory(url) {
     db.transaction(function(tx) {
         // Remove and readd if url already in history
         var rs0 = tx.executeSql('delete from history where url=(?);',[url]);
-        if (rs0.rowsAffected > 0) {
-            console.debug("Url already found and removed to readd it");
-        } else {
-            console.debug("Url not found so add it newly");
-        }
+//        if (rs0.rowsAffected > 0) {
+//            console.debug("Url already found and removed to readd it");
+//        } else {
+//            console.debug("Url not found so add it newly");
+//        }
 
         var rs = tx.executeSql('INSERT OR REPLACE INTO history VALUES (?,?);', [date.getTime(),url]);
         if (rs.rowsAffected > 0) {

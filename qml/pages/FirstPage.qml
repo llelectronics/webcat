@@ -165,6 +165,7 @@ Page {
             }
             if (JSMIME.getMimesByPath(url.toString()).toString().match("^audio") || JSMIME.getMimesByPath(url.toString()).toString().match("^video")) {
                 // Audio or Video link clicked. Download should start now
+                console.debug("Video or Audio Link clicked... download should start now")
             }
             // Add to url history
             DB.addHistory(url);
@@ -225,7 +226,7 @@ Page {
                 if (data.target === '_blank') { // open link in new tab
                     openNewTab('page-'+salt(), fixUrl(data.href), false);
                 }
-                else if (data.target) openNewTab('page-'+salt(), fixUrl(data.href), false);
+                else if (data.target && data.target != "_parent") openNewTab('page-'+salt(), fixUrl(data.href), false);
                 break;
             }
             case 'longpress': {
@@ -252,7 +253,14 @@ Page {
                 // Don't show error on rtsp, rtmp or mms links as they are opened externally
                 if (! (/^rtsp:/).test(url) || (/^rtmp:/).test(url) || (/^mms:/).test(url)) {
                     console.debug("Load failed rtsp,rtmp or mms not detected and no valid http or https");
-                    popup.visible = true
+                    if (! (/handled by the media engine/).test(errorText)) {
+                        console.debug("Load failed audio or video file not detected and no valid http or https");
+                        popup.visible = true
+                    }
+                    else {
+                        // Try to open with systems media player / or the download manager
+                        Qt.openUrlExternally(url);
+                    }
                 }
             }
             else
