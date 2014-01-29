@@ -11,7 +11,8 @@ TARGET = harbour-webcat
 CONFIG += sailfishapp
 
 SOURCES += src/harbour-webcat.cpp \
-    src/myclass.cpp
+    src/myclass.cpp \
+    src/DownloadManager.cpp
 
 OTHER_FILES += qml/harbour-webcat.qml \
     qml/cover/CoverPage.qml \
@@ -41,11 +42,13 @@ OTHER_FILES += qml/harbour-webcat.qml \
     qml/pages/SearchEngines.qml \
     qml/pages/SearchEngineDialog.qml \
     qml/pages/Suggestions.qml \
-    qml/pages/ConfirmDialog.qml
+    qml/pages/ConfirmDialog.qml \
+    qml/pages/DownloadManager.qml
 
 RESOURCES += \
     qrc.qrc
 
 HEADERS += \
-    src/myclass.h
+    src/myclass.h \
+    src/DownloadManager.hpp
 

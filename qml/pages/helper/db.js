@@ -177,14 +177,16 @@ function searchHistory(searchTerm) {
 //            console.debug(rs.rows.item(0).url)
 //        }
 //        else console.debug("Not working")
+        var hisFound
 
         if (rs.rows.length > 0) {
             // Clear previous historySuggestions here
             mainWindow.historyModel.clear();
             // And show history suggestions
             page.suggestionView.visible = true;
+            hisFound = true;
         }
-        else  page.suggestionView.visible = false;
+        else { page.suggestionView.visible = false; hisFound = false }
         for (var i = 0; i < rs.rows.length; i++) {
             // Add to historySuggestions here
             mainWindow.historyModel.append({"url" : rs.rows.item(i).url});
@@ -196,7 +198,7 @@ function searchHistory(searchTerm) {
             // Show bookmarks suggestions
             if (page.suggestionView.visible == false) page.suggestionView.visible = true;
         }
-        else  page.suggestionView.visible = false;
+        else if (hisFound != true) page.suggestionView.visible = false;
         for (var i = 0; i < rs1.rows.length; i++) {
             // Add to historySuggestions here
             if (! historyModel.contains(rs1.rows.item(i).url)) mainWindow.historyModel.append({"url" : rs1.rows.item(i).url});

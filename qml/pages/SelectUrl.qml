@@ -127,6 +127,10 @@ Page
                     onClicked: pageStack.push(Qt.resolvedUrl("SettingsPage.qml"));
                 }
                 MenuItem {
+                    text: qsTr("Download Manager")
+                    onClicked: pageStack.push(Qt.resolvedUrl("DownloadManager.qml"));
+                }
+                MenuItem {
                     text: qsTr("Add Bookmark")
                     onClicked: pageStack.push(Qt.resolvedUrl("AddBookmark.qml"), { bookmarks: urlPage.bookmarks });
                 }

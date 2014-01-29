@@ -207,7 +207,8 @@ Page {
 
         experimental.onDownloadRequested: {
             // Call downloadmanager here with the url
-            console.debug("Download requested");
+            console.debug("Download requested: " + url);
+            pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": url});
         }
 
         experimental.onMessageReceived: {
@@ -408,10 +409,10 @@ Page {
                 mx = mouse.x
             }
             onReleased: {
-                if (mx != -1 && mouse.x < mx - 170) { //Right to left swipe
+                if (mx != -1 && mouse.x < mx - 155) { //Right to left swipe
                     webview.goBack();
                 }
-                else if (mx != -1 && mouse.x > mx + 170) { // Left to right swipe
+                else if (mx != -1 && mouse.x > mx + 155) { // Left to right swipe
                     webview.goForward();
                 }
             }

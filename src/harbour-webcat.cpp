@@ -34,6 +34,7 @@
 
 #include <sailfishapp.h>
 #include "myclass.h"
+#include "DownloadManager.hpp"
 
 int main(int argc, char *argv[])
 {
@@ -82,6 +83,11 @@ int main(int argc, char *argv[])
                      &myClass, SLOT(clearCookies()));
     QObject::connect(object, SIGNAL(openNewWindow(QString)),
                      &myClass, SLOT(openNewWindow(QString)));
+
+    // Create download manager object
+    DownloadManager manager;
+
+    view->engine()->rootContext()->setContextProperty("_manager", &manager);
 
     view->show();
 
