@@ -371,7 +371,7 @@ Page {
                 name: "minimized"
                 PropertyChanges {
                     target: toolbar
-                    height: 20
+                    height: 22
                 }
                 PropertyChanges {
                     target: urlTitle
@@ -426,10 +426,10 @@ Page {
                 mx = mouse.x
             }
             onReleased: {
-                if (mx != -1 && mouse.x < mx - 155) { //Right to left swipe
+                if (mx != -1 && mouse.x < mx - 150) { //Right to left swipe
                     webview.goBack();
                 }
-                else if (mx != -1 && mouse.x > mx + 155) { // Left to right swipe
+                else if (mx != -1 && mouse.x > mx + 150) { // Left to right swipe
                     webview.goForward();
                 }
             }
