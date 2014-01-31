@@ -850,6 +850,12 @@ Page {
             }
         }
     }
+    MouseArea {
+        id: suggestionsOverlay;
+        anchors.fill: parent;
+        enabled: suggestionView.visible
+        onClicked: suggestionView.visible = false
+    }
     Suggestions {
         id: suggestionView
         model: mainWindow.historyModel
@@ -859,7 +865,12 @@ Page {
         anchors.bottomMargin: - 3
         anchors.horizontalCenter: parent.horizontalCenter
         width: parent.width - 60
-        height: parent.height / 3
+        height: //parent.height / 2
+        {
+            var max = parent.height / 2
+            if (80 * mainWindow.historyModel.count <= max) return 80 * mainWindow.historyModel.count
+            else return parent.height / 2
+        }
         visible: false
         onSelected: { webview.url = url ; visible = false }
     }
