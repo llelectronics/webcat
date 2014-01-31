@@ -48,6 +48,9 @@ int main(int argc, char *argv[])
     // To display the view, call "show()" (will show fullscreen on device).
 
     QGuiApplication *app = SailfishApp::application(argc, argv);
+    app->setApplicationName("harbour-webcat");   // Hopefully no location changes with libsailfishapp affecting config
+    //app->setOrganizationName("Webcat");
+    app->setApplicationVersion("0.9");
     QQuickView *view = SailfishApp::createView();
 
     view->setSource(SailfishApp::pathTo("qml/harbour-webcat.qml"));
