@@ -1,5 +1,29 @@
 var frames = document.documentElement.getElementsByTagName('iframe');
 
+function getImgFullUri(uri) {
+    if ((uri.slice(0, 7) === 'http://') ||
+        (uri.slice(0, 8) === 'https://') ||
+        (uri.slice(0, 7) === 'file://')) {
+        return uri;
+    } else if (uri.slice(0, 1) === '/') {
+        var docuri = document.documentURI;
+        var firstcolon = docuri.indexOf('://');
+        var protocol = 'http://';
+        if (firstcolon !== -1) {
+            protocol = docuri.slice(0, firstcolon + 3);
+        }
+        return protocol + document.domain + uri;
+    } else {
+        var base = document.baseURI;
+        var lastslash = base.lastIndexOf('/');
+        if (lastslash === -1) {
+            return base + '/' + uri;
+        } else {
+            return base.slice(0, lastslash + 1) + uri;
+        }
+    }
+}
+
 function checkNode(e, node) {
     // hook for Open in New Tab (link with target)
     if (node.tagName === 'A') {
@@ -9,9 +33,9 @@ function checkNode(e, node) {
         link.href = node.href //node.getAttribute('href'); // We want always the absolute link
         navigator.qt.postMessage( JSON.stringify(link) );
     }
-    else if (nodeName === 'img') {
+    else if (nodeName === 'IMG') {
         var data = new Object({'type':'image', 'pageX': e.pageX, 'pageY': e.pageY})
-        data.img = node.getAttribute('src');
+        data.img = getImgFullUri(node.getAttribute('src'));
     }
 }
 
@@ -85,9 +109,9 @@ function longPressed(x, y, element) {
     } else if (element.parentNode.tagName === 'A') {
         data.href = element.parentNode.href //getAttribute('href') // We always want the absolute link;
     } else if (element.tagName === 'IMG') {
-        data.img = element.getAttribute('src');
+        data.img = getImgFullUri(element.getAttribute('src'));
     } else if (element.parentNode.tagName === 'IMG') {
-        data.img = element.parentNode.getAttribute('src');
+        data.img = getImgFullUri(element.parentNode.getAttribute('src'));
     }
 
 /*
@@ -102,8 +126,8 @@ function longPressed(x, y, element) {
         for (var i = 0; i < children.length; i++) {
             if(children[i].tagName === 'A')
                 data.href = children[i].href //getAttribute('href'); // We always want the absolute link
-            else if (children[i].tagName === 'img')
-                data.img = children[i].getAttribute('src');
+            else if (children[i].tagName === 'IMG')
+                data.img = getImgFullUri(children[i].getAttribute('src'));
         }
     }
     navigator.qt.postMessage( JSON.stringify(data) );
