@@ -451,9 +451,12 @@ Page {
             onPressAndHold: {
                 //if (toolbar.state == "expanded") toolbar.state = "minimized"
                 //TODO show extraToolbar
-                if (extraToolbar.opacity == 0) extraToolbar.opacity = 1
-                minimizeButton.highlighted = true
-                mx = mouse.x
+                if (extraToolbar.opacity == 0) {
+                    extraToolbar.visible = true
+                    extraToolbar.opacity = 1
+                    minimizeButton.highlighted = true
+                    mx = mouse.x
+                }
             }
             onPositionChanged: {
                 if (extraToolbar.opacity == 1) {
@@ -478,6 +481,7 @@ Page {
                 else if (extraToolbar.opacity == 1 && reloadThisButton.highlighted == true) { reloadThisButton.clicked(undefined); extraToolbar.opacity = 0 }
                 else if (extraToolbar.opacity == 1 && orientationLockButton.highlighted == true) { orientationLockButton.clicked(undefined); extraToolbar.opacity = 0 }
                 else if (extraToolbar.opacity == 1) extraToolbar.opacity = 0
+                extraToolbar.visible = false;
             }
 
             Label {
@@ -605,7 +609,6 @@ Page {
     Rectangle {
         id: extraToolbar
         width: page.width
-        state: "expanded"
         //color: Theme.highlightBackgroundColor // As alternative perhaps maybe someday
         gradient: Gradient {
             GradientStop { position: 0.0; color: "#262626" }
@@ -613,6 +616,7 @@ Page {
         }
         height: 96
         opacity: 0
+        visible: false
         anchors.bottom: toolbar.top
         anchors.bottomMargin: -2
         Rectangle { // grey seperation between page and toolbar
