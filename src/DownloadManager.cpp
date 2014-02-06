@@ -46,6 +46,7 @@
 #include <QtCore/QTimer>
 #include <QtNetwork/QNetworkReply>
 #include <QtNetwork/QNetworkRequest>
+#include <QDir>
 
 DownloadManager::DownloadManager(QObject *parent)
     : QObject(parent), m_currentDownload(0), m_downloadedCount(0), m_totalCount(0), m_progressTotal(0), m_progressValue(0)
@@ -117,7 +118,7 @@ QString DownloadManager::saveFileName(const QUrl &url)
         basename = "download";
 
     // Replace the file name with 'download' if the URL provides no file name.
-    basename = "/home/nemo/Downloads/" + basename; // locate in tmp directory
+    basename =  QDir::homePath() + "/Downloads/" + basename; // locate in downloads directory of users home
 
     /**
      * Check if the file name exists already, if so, append an increasing number and test again.
