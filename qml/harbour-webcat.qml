@@ -42,13 +42,13 @@ ApplicationWindow
     property string siteURL: "about:bookmarks" //"http://talk.maemo.org"
     property string homepage: "about:bookmarks"
     property string userAgent: "Mozilla/5.0 (Maemo; Linux; Jolla; Sailfish; Mobile) AppleWebKit/534.13 (KHTML, like Gecko) NokiaBrowser/8.5.0 Mobile Safari/534.13"
-    property int defaultFontSize: 20
-    property int defaultFixedFontSize: 18
-    property int minimumFontSize: 16 // We need readable fonts on g+, youtube and so on. This might hurt tmo though
+    property int defaultFontSize: 24
+    property int defaultFixedFontSize: 22
+    property int minimumFontSize: 20 // We need readable fonts on g+, youtube and so on. This might hurt tmo though
     property bool loadImages: true
     property bool dnsPrefetch: true
     property bool privateBrowsing: false
-    property bool offlineWebApplicationCache: false
+    property bool offlineWebApplicationCache: true
     property string userAgentName: "Default Jolla Webkit"
     property string searchEngine: "http://www.google.com/search?q=%s"
     property string searchEngineName: "Google"
