@@ -204,11 +204,18 @@ ApplicationWindow
             return false;
         }
 
+        function editBookmark(oldTitle, siteTitle, siteUrl, agent) {
+            for (var i=0; i<count; i++) {
+                if (get(i).title === oldTitle) set(i,{"title":siteTitle, "url":siteUrl, "agent": agent});
+            }
+            DB.addBookmark(siteTitle,siteUrl,agent);
+        }
+
         function removeBookmark(siteUrl) {
             for (var i=0; i<count; i++) {
                 if (get(i).url === siteUrl) remove(i);
-                DB.removeBookmark(siteUrl);
             }
+            DB.removeBookmark(siteUrl);
         }
 
         function addBookmark(siteUrl, siteTitle, agent) {

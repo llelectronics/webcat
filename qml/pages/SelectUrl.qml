@@ -56,6 +56,9 @@ Page
                 function openNewWindow() {
                     mainWindow.openNewWindow(url);
                 }
+                function editBookmark() {
+                    pageStack.push(Qt.resolvedUrl("AddBookmark.qml"), { bookmarks: urlPage.bookmarks, editBookmark: true, uAgent: agent, bookmarkUrl: url, bookmarkTitle: title, oldTitle: title });
+                }
 
                 BackgroundItem {
                     id: contentItem
@@ -97,19 +100,25 @@ Page
                     ContextMenu {
                         id: menu
                         MenuItem {
-                            text: "Open in new Tab"
+                            text: qsTr("Open in new Tab")
                             onClicked: {
                                 menu.parent.openNewTab();
                             }
                         }
                         MenuItem {
-                            text: "Open in new Window"
+                            text: qsTr("Open in new Window")
                             onClicked: {
                                 menu.parent.openNewWindow();
                             }
                         }
                         MenuItem {
-                            text: "Delete"
+                            text: qsTr("Edit")
+                            onClicked: {
+                                menu.parent.editBookmark();
+                            }
+                        }
+                        MenuItem {
+                            text: qsTr("Delete")
                             onClicked: {
                                 menu.parent.remove();
                             }

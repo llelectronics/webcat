@@ -8,10 +8,15 @@ Dialog {
 
     acceptDestinationAction: PageStackAction.Pop
 
-    onAccepted: bookmarks.addBookmark(bookmarkUrl.text.toString(), bookmarkTitle.text, agentString.text);
+    onAccepted: addBookmark(); //bookmarks.addBookmark(bookmarkUrl.text.toString(), bookmarkTitle.text, agentString.text);
 
     property string uAgentTitle : mainWindow.userAgentName
     property string uAgent: mainWindow.userAgent
+
+    property bool editBookmark: false
+    property string oldTitle;
+    property alias bookmarkTitle: bookmarkTitle.text
+    property alias bookmarkUrl: bookmarkUrl.text
 
     property ListModel bookmarks
 
@@ -24,8 +29,11 @@ Dialog {
     }
 
     function addBookmark() {
-        console.debug("Creating new bookmark" + bookmarkUrl.text.toString() + bookmarkTitle.text + agentString.text);
-        bookmarks.addBookmark(bookmarkUrl.text.toString(), bookmarkTitle.text, agentString.text);
+        //console.debug("Creating new bookmark" + bookmarkUrl.text.toString() + bookmarkTitle.text + agentString.text);
+        // Syntax: function editBookmark(oldTitle, siteTitle, siteUrl, agent)
+        //console.debug("[EditBookmark]: " + editBookmark + " [oldTitle]: " + oldTitle)
+        if (editBookmark && oldTitle != "") bookmarks.editBookmark(oldTitle,bookmarkTitle.text,bookmarkUrl.text.toString(),agentString.text);
+        else bookmarks.addBookmark(bookmarkUrl.text.toString(), bookmarkTitle.text, agentString.text);
     }
 
     Flickable {
@@ -35,7 +43,7 @@ Dialog {
 
         DialogHeader {
             id: head
-            acceptText: qsTr("Add Bookmark")
+            acceptText: editBookmark ? qsTr("Edit Bookmark") : qsTr("Add Bookmark")
         }
 
         Column {
@@ -45,8 +53,9 @@ Dialog {
             width: parent.width
             spacing: 25
             function enterPress() {
-                if (bookmarkTitle.focus == true) bookmarkUrl.focus = true
+                if (bookmarkTitle.focus == true && editBookmark == false) bookmarkUrl.focus = true
                 else if (bookmarkUrl.focus == true) { bookmarkUrl.text = fixUrl(bookmarkUrl.text);}
+                else if (bookmarkTitle.focus == true && editBookmark == true) { accepted(); pageStack.pop(); }
             }
 
         TextField {
@@ -62,6 +71,7 @@ Dialog {
             anchors.horizontalCenter: parent.horizontalCenter
             placeholderText: "URL of bookmark"
             inputMethodHints: Qt.ImhUrlCharactersOnly
+            visible: editBookmark ? false : true
         }
         ValueButton {
             anchors.horizontalCenter: parent.horizontalCenter
