@@ -8,6 +8,8 @@
 #include <QQuickView>
 #include <QQmlEngine>
 #include <QProcess>
+#include <QStandardPaths>
+#include <QCoreApplication>
 
 class MyClass : public QObject
 {
@@ -23,12 +25,17 @@ public slots:
     void privateMode();
 
     void clearCookies();
+    void clearCache();
 
     void openNewWindow(const QString &url);
 
 private:
     QDir *myHome;
     QString h;
+    QString config_dir;
+    QString data_dir;
+    QString cache_dir;
+    void clear(QString dir);
 };
 
 #endif // MYCLASS_H

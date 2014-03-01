@@ -33,10 +33,6 @@ function checkNode(e, node) {
         link.href = node.href //node.getAttribute('href'); // We want always the absolute link
         navigator.qt.postMessage( JSON.stringify(link) );
     }
-    else if (nodeName === 'IMG') {
-        var data = new Object({'type':'image', 'pageX': e.pageX, 'pageY': e.pageY})
-        data.img = getImgFullUri(node.getAttribute('src'));
-    }
 }
 
 

@@ -224,6 +224,7 @@ Page {
             }
             switch (data.type) {
             case 'link': {
+                console.debug("Link clicked with target" + data.target);
                 if (data.target === '_blank') { // open link in new tab
                     openNewTab('page-'+salt(), fixUrl(data.href), false);
                 }
@@ -345,26 +346,32 @@ Page {
                 PropertyChanges {
                     target: gotoButton
                     visible: true
+                    enabled: true
                 }
                 PropertyChanges {
                     target: backIcon
                     visible: webview.canGoBack
+                    enabled: true
                 }
                 PropertyChanges {
                     target: forIcon
                     visible: webview.canGoForward
+                    enabled: true
                 }
                 PropertyChanges {
                     target: urlText
                     visible: true
+                    enabled: true
                 }
                 PropertyChanges {
                     target: refreshButton
                     visible: false
+                    enabled: true
                 }
                 PropertyChanges {
                     target: bookmarkButton
                     visible: true
+                    enabled: true
                 }
             },
             State {
@@ -380,26 +387,32 @@ Page {
                 PropertyChanges {
                     target: gotoButton
                     visible: false
+                    enabled: false
                 }
                 PropertyChanges {
                     target: backIcon
                     visible: false
+                    enabled: false
                 }
                 PropertyChanges {
-                    target: forIcon
+                    target: forIconmainWindow
                     visible: false
+                    enabled: false
                 }
                 PropertyChanges {
                     target: urlText
                     visible: false
+                    enabled: false
                 }
                 PropertyChanges {
                     target: refreshButton
                     visible: false
+                    enabled: false
                 }
                 PropertyChanges {
                     target: bookmarkButton
                     visible: false
+                    enabled: false
                 }
             }
         ]

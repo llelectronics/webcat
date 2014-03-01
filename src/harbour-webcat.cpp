@@ -80,10 +80,11 @@ int main(int argc, char *argv[])
     }
     QMetaObject::invokeMethod(object, "loadInitialTab");
 
-
     MyClass myClass(view);
     QObject::connect(object, SIGNAL(clearCookies()),
                      &myClass, SLOT(clearCookies()));
+    QObject::connect(object, SIGNAL(clearCache()),
+                     &myClass, SLOT(clearCache()));
     QObject::connect(object, SIGNAL(openNewWindow(QString)),
                      &myClass, SLOT(openNewWindow(QString)));
 

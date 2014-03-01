@@ -43,7 +43,11 @@ ListModel {
         agent: "Opera/9.80 (J2ME/MIDP; Opera Mini/9 (Compatible; MSIE:9.0; iPhone; BlackBerry9700; AppleWebKit/24.746; U; en) Presto/2.5.25 Version/10.54"
     }
     ListElement {
-        title: "Blackberry 10"
+        title: "Blackberry 7 (Bold 9900)"
+        agent: "Mozilla/5.0 (BlackBerry; U; BlackBerry 9900; en) AppleWebKit/534.11+ (KHTML, like Gecko) Version/7.1.0.346 Mobile Safari/534.11+"
+    }
+    ListElement {
+        title: "Blackberry 10 (Q10)"
         agent: "Mozilla/5.0 (BB10; Kbd) AppleWebKit/537.35+ (KHTML, like Gecko) Version/10.2.0.1803 Mobile Safari/537.35+"
     }
     ListElement {

@@ -60,10 +60,20 @@ Dialog {
         else if (searchEngine.focus == true) { searchEngine.text = fixUrl(searchEngine.text); searchEngine.focus = false; }
     }
 
+    function clearCache() {
+        remorse.execute(qsTr("Clear cache"), function() { mainWindow.clearCache(); } )
+    }
+
+    function clearCookies() {
+        remorse.execute(qsTr("Clear Cookies and restart"), function() { mainWindow.clearCookies(); } )
+    }
+
     onAccepted: saveSettings();
 
     Keys.onReturnPressed: enterPress();
     Keys.onEnterPressed: enterPress();
+
+    RemorsePopup { id: remorse }
 
     SilicaFlickable {
         id: flick
@@ -81,8 +91,12 @@ Dialog {
                 onClicked: mainWindow.addDefaultBookmarks();
             }
             MenuItem {
+                text: qsTr("Clear Cache")
+                onClicked: clearCache();
+            }
+            MenuItem {
                 text: qsTr("Clear Cookies")
-                onClicked: mainWindow.clearCookies();
+                onClicked: clearCookies();
             }
             MenuItem {
                 text: qsTr("Load Defaults")
