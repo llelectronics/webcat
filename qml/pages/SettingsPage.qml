@@ -68,6 +68,11 @@ Dialog {
         remorse.execute(qsTr("Clear Cookies and restart"), function() { mainWindow.clearCookies(); } )
     }
 
+    function clearHistory() {
+        remorse.execute(qsTr("Clear History"), function() { DB.clearTable("history"); } )
+    }
+
+
     onAccepted: saveSettings();
 
     Keys.onReturnPressed: enterPress();
@@ -97,6 +102,10 @@ Dialog {
             MenuItem {
                 text: qsTr("Clear Cookies")
                 onClicked: clearCookies();
+            }
+            MenuItem {
+                text: qsTr("Clear History")
+                onClicked: clearHistory();
             }
             MenuItem {
                 text: qsTr("Load Defaults")
