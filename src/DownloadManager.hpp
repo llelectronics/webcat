@@ -50,6 +50,9 @@
 #include <QtCore/QTime>
 #include <QtCore/QUrl>
 #include <QtNetwork/QNetworkAccessManager>
+//  Not allowed yet I guess. Leave it here until it is allowed
+//#include <transferengineinterface.h>
+//#include <transfertypes.h>
 
 class QNetworkReply;
 
@@ -168,6 +171,10 @@ private:
 
     // The list of status messages
     QStringList m_statusMessage;
+
+    //  Not allowed yet I guess. Leave it here until it is allowed
+    // Access to global dbus transferengine interface
+    //TransferEngineInterface *m_transferClient;
 };
 
 #endif

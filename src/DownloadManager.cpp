@@ -51,6 +51,11 @@
 DownloadManager::DownloadManager(QObject *parent)
     : QObject(parent), m_currentDownload(0), m_downloadedCount(0), m_totalCount(0), m_progressTotal(0), m_progressValue(0)
 {
+//  Not allowed yet I guess. Leave it here until it is allowed
+//    m_transferClient = new TransferEngineInterface("org.nemo.transferengine",
+//                                                   "/org/nemo/transferengine",
+//                                                   QDBusConnection::sessionBus(),
+//                                                   this);
 }
 
 QString DownloadManager::errorMessage() const
@@ -189,6 +194,31 @@ void DownloadManager::startNextDownload()
 
     // Start the timer so that we can calculate the download speed later on
     m_downloadTime.start();
+
+//  Not allowed yet I guess. Leave it here until it is allowed
+//    QStringList callback;
+//    QMimeDatabase db;
+//    callback << "org.webcat.browser" << "/" << "org.webcat.browser";
+//    QDBusPendingReply<int> reply = m_transferClient->createDownload(QFileInfo(filename).fileName(),
+//                                                                    QString("image://theme/icon-launcher-browser"),
+//                                                                    QString("image://theme/icon-launcher-browser"),
+//                                                                    filename.toString(),
+//                                                                    db.mimeTypeForUrl(url).toString(),
+//                                                                    progressTotal().toULongLong(),
+//                                                                    callback,
+//                                                                    QString("cancelTransfer"),
+//                                                                    QString("restartTransfer"));
+//    reply.waitForFinished();
+
+//    if (reply.isError()) {
+//        qWarning() << "DownloadManager::recvObserve: failed to get transfer ID!" << reply.error();
+//        return;
+//    }
+
+//    int transferId(reply.value());
+
+//    m_transferClient->startTransfer(transferId);
+
 }
 //! [0]
 
