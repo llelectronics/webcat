@@ -87,9 +87,19 @@ int main(int argc, char *argv[])
                      &myClass, SLOT(clearCache()));
     QObject::connect(object, SIGNAL(openNewWindow(QString)),
                      &myClass, SLOT(openNewWindow(QString)));
+    QObject::connect(object, SIGNAL(openWithvPlayer(QString)),
+                     &myClass, SLOT(openWithvPlayer(QString)));
 
     // Create download manager object
     DownloadManager manager;
+
+    QFile vPlayer("/usr/bin/harbour-videoPlayer");
+    if (vPlayer.exists()) {
+      object->setProperty("vPlayerExists", true);
+    }
+    else {
+        object->setProperty("vPlayerExists", false);
+    }
 
     view->engine()->rootContext()->setContextProperty("_manager", &manager);
 

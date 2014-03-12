@@ -67,16 +67,25 @@ ApplicationWindow
     property alias tabModel: tabModel
     property int currentTabIndex: 1
     property alias historyModel: historyModel
+    property bool vPlayerExists
+
+    property QtObject firstPage
 
 
     signal clearCookies()
     signal clearCache()
     signal openNewWindow(string hrefUrl)
+    signal openWithvPlayer(string url)
 
     Component {
         id: tabView
         FirstPage {
+            id: fPage
             bookmarks: modelUrls
+
+            Component.onCompleted: {
+                mainWindow.firstPage = fPage
+            }
         }
     }
 

@@ -82,3 +82,9 @@ void MyClass::openNewWindow(const QString &url) {
     proc->startDetached("/usr/bin/harbour-webcat", QStringList(url));
 }
 
+void MyClass::openWithvPlayer(const QString &url) {
+    qDebug() << "[myclass.cpp]: trying to start harbour-videoPlayer -p " + url;
+    QProcess *proc = new QProcess();
+    proc->startDetached("/usr/bin/harbour-videoPlayer -p \"" + url + "\"");
+}
+

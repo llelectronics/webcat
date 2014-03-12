@@ -28,6 +28,7 @@ public slots:
     void clearCache();
 
     void openNewWindow(const QString &url);
+    void openWithvPlayer(const QString &url);
 
 private:
     QDir *myHome;

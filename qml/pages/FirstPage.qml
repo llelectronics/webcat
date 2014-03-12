@@ -33,6 +33,7 @@ import Sailfish.Silica 1.0
 import QtWebKit 3.0
 import "helper/jsmime.js" as JSMIME
 import "helper/db.js" as DB
+import "helper/yt.js" as YT
 
 Page {
     id: page
@@ -59,10 +60,18 @@ Page {
     property QtObject _ngfEffect
     property alias suggestionView: suggestionView
     property bool imageLongPressAvailability;
+    property bool mediaYt;
+    property bool mediaLink;
+    property string ytStreamUrl;
+    property bool ytUrlLoading;
 
     Component.onCompleted: {
         _ngfEffect = Qt.createQmlObject("import org.nemomobile.ngf 1.0; NonGraphicalFeedback { event: 'pulldown_lock' }",
                            minimizeButton, 'NonGraphicalFeedback');
+    }
+
+    onMediaLinkChanged: {
+        mediaDownloadRec.visible = !mediaDownloadRec.visible
     }
 
     function loadUrl(requestUrl) {
@@ -168,6 +177,17 @@ Page {
                 // Audio or Video link clicked. Download should start now
                 console.debug("Video or Audio Link clicked... download should start now")
             }
+            if (YT.checkYoutube(url.toString())) {
+                mediaYt = true;
+                ytUrlLoading = true
+                mediaLink = true;
+            }
+            else {
+                mediaYt = false;
+                mediaLink = false;
+                ytUrlLoading = false
+            }
+
             // Add to url history
             DB.addHistory(url);
         }
@@ -254,7 +274,7 @@ Page {
             {
                 urlLoading = true;
                 contextMenu.visible = false;
-                mediaDownloadRec.visible = false;
+                mediaLink = false;
             }
             else if (loadRequest.status == WebView.LoadFailedStatus)
             {
@@ -269,7 +289,7 @@ Page {
                     }
                     else if ((/handled by the media engine/).test(errorText)) {
                         //TODO: Enable Downloadmanager here
-                        mediaDownloadRec.visible = true
+                        mediaLink = true;
                     }
                 }
             }
@@ -781,21 +801,48 @@ Page {
             if (loadingRec.visible == true) return loadingRec.top
             else return toolbar.top
         }
-        anchors.bottomMargin: Theme.paddingSmall
+        //anchors.bottomMargin: Theme.paddingSmall // This looks ugly
         width: parent.width
         height: 72
         visible: false
+        onVisibleChanged: {
+            if (visible && mediaYt) {
+                YT.getYoutubeDirectStream(url.toString())
+            }
+        }
+        ProgressCircle {
+            id: progressCircleYt
+            z: 2
+            anchors.centerIn: parent
+            visible: ytUrlLoading
+            width: 32
+            height: 32
+            Timer {
+                interval: 32
+                repeat: true
+                onTriggered: progressCircle.value = (progressCircle.value + 0.005) % 1.0
+                running: ytUrlLoading
+            }
+        }
 
         IconButton {
             icon.source: "image://theme/icon-m-device-download"
-            onClicked:  pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": url});
+            onClicked:  {
+                if (mediaYt) pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": ytStreamUrl});
+                else pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": url});
+            }
+            visible: ! progressCircleYt.visible
             anchors.right: parent.right
             anchors.rightMargin: Theme.paddingSmall
             anchors.verticalCenter: parent.verticalCenter
         }
         IconButton {
-            icon.source: "image://theme/icon-m-folder"
-            onClicked:  Qt.openUrlExternally(url);
+            icon.source: "image://theme/icon-m-play"
+            onClicked:  {
+                if (mainWindow.vPlayerExists && mediaYt) mainWindow.openWithvPlayer(ytStreamUrl); //mainWindow.openWithvPlayer(url); // perhaps make this configurable
+                else Qt.openUrlExternally(url);
+            }
+            visible: ! progressCircleYt.visible
             anchors.left: parent.left
             anchors.leftMargin: Theme.paddingSmall
             anchors.verticalCenter: parent.verticalCenter
@@ -864,6 +911,11 @@ Page {
                 width: widestBtn.width
                 visible: imageLongPressAvailability
                 onClicked: { pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": contextUrl.text}); contextMenu.visible = false }
+            }
+            Button {
+                text: "Save Link"
+                width: widestBtn.width
+                onClicked: { pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": fixUrl(contextUrl.text)}); }
             }
         }
     }
