@@ -920,7 +920,7 @@ Page {
             Button {
                 text: "Save Link"
                 width: widestBtn.width
-                onClicked: { pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": fixUrl(contextUrl.text)}); }
+                onClicked: { pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": fixUrl(contextUrl.text)}); contextMenu.visible = false }
             }
         }
     }
