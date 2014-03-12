@@ -17,6 +17,7 @@ class MyClass : public QObject
 
 public:
     MyClass(QQuickView *v);
+    ~MyClass();
     QQuickView *view;
     QQmlEngine *engine;
 
@@ -28,6 +29,7 @@ public slots:
     void clearCache();
 
     void openNewWindow(const QString &url);
+    void openPrivateNewWindow(const QString &url);
     void openWithvPlayer(const QString &url);
 
 private:

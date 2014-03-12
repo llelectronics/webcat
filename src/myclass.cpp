@@ -17,6 +17,16 @@ MyClass::MyClass(QQuickView *v)
     data_dir = QStandardPaths::writableLocation(QStandardPaths::DataLocation);
 
     cache_dir = QStandardPaths::writableLocation(QStandardPaths::CacheLocation);
+
+    //qDebug() << data_dir;
+}
+
+MyClass::~MyClass() {
+    if (data_dir.contains("PRIVATE")) {
+        qDebug() << "[myclass.cpp]: Seems to be a private browsing mode so remove the data_dir for it...";
+        clear(data_dir); // Site specific stuff
+        clear(data_dir + "/.QtWebKit"); // The rest (cookies, bookmarks, settings and so on)
+    }
 }
 
 // Not used for now until I figure out how to implement this in a sane manner.
@@ -80,6 +90,11 @@ void MyClass::clearCache() {
 void MyClass::openNewWindow(const QString &url) {
     QProcess *proc = new QProcess();
     proc->startDetached("/usr/bin/harbour-webcat", QStringList(url));
+}
+
+void MyClass::openPrivateNewWindow(const QString &url) {
+    QProcess *proc = new QProcess();
+    proc->startDetached("/usr/bin/harbour-webcat --private " + url);
 }
 
 void MyClass::openWithvPlayer(const QString &url) {

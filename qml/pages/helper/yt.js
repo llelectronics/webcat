@@ -81,17 +81,19 @@ function getYoutubeStream(youtube_id) {
 
             var videoInfoSplit = videoInfo.split("&");
             var streams;
-            try {
-                for (var i = 0; i < videoInfo.length; i++) {
+
+            for (var i = 0; i < videoInfo.length; i++) {
+                try {
                     var paramPair = videoInfoSplit[i].split("=");
-                    if (paramPair[0] === "url_encoded_fmt_stream_map") {
-                        streams = decodeURIComponent(paramPair[1]);
-                        break;
-                    }
+                } catch(e) {
+                    console.debug("[yt.js]: " + e)
                 }
-            } catch(e) {
-                console.debug("[yt.js]: " + e)
+                if (paramPair[0] === "url_encoded_fmt_stream_map") {
+                    streams = decodeURIComponent(paramPair[1]);
+                    break;
+                }
             }
+
 
             if (!streams) {
                 var msg = "YouTube videoInfo parsing: url_encoded_fmt_stream_map not found";

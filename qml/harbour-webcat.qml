@@ -75,6 +75,7 @@ ApplicationWindow
     signal clearCookies()
     signal clearCache()
     signal openNewWindow(string hrefUrl)
+    signal openPrivateNewWindow(string hrefUrl)
     signal openWithvPlayer(string url)
 
     Component {

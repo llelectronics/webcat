@@ -48,7 +48,45 @@ int main(int argc, char *argv[])
     // To display the view, call "show()" (will show fullscreen on device).
 
     QGuiApplication *app = SailfishApp::application(argc, argv);
-    app->setApplicationName("harbour-webcat");   // Hopefully no location changes with libsailfishapp affecting config
+
+    QString file;
+
+
+    // Sometimes I get the feeling I don't know what I do. But it works and the only limitation so far is that '--private' needs to be the first argument
+    if (QString(argv[1]) == "--private") {
+        // Load private mode here
+        app->setApplicationName("harbour-webcat_PRIVATE");
+        for(int i=1; i<argc; i++) {
+            if (QString(argv[i]) == "about:bookmarks") file = "about:bookmarks";
+            else if (!QString(argv[i]).startsWith("/") && !QString(argv[i]).startsWith("http://") && !QString(argv[i]).startsWith("rtsp://")
+                     && !QString(argv[i]).startsWith("mms://") && !QString(argv[i]).startsWith("file://") && !QString(argv[i]).startsWith("https://") && !QString(argv[i]).startsWith("www.")) {
+                QString pwd("");
+                char * PWD;
+                PWD = getenv ("PWD");
+                pwd.append(PWD);
+                file = pwd + "/" + QString(argv[i]);
+            }
+            else if (QString(argv[i]).startsWith("www.")) file = "http://" + QString(argv[i]);
+            else file = QString(argv[i]);
+        }
+    }
+    else {
+        app->setApplicationName("harbour-webcat");   // Hopefully no location changes with libsailfishapp affecting config
+        for(int i=1; i<argc; i++) {
+            if (QString(argv[i]) == "about:bookmarks") file = "about:bookmarks";
+            else if (!QString(argv[i]).startsWith("/") && !QString(argv[i]).startsWith("http://") && !QString(argv[i]).startsWith("rtsp://")
+                     && !QString(argv[i]).startsWith("mms://") && !QString(argv[i]).startsWith("file://") && !QString(argv[i]).startsWith("https://") && !QString(argv[i]).startsWith("www.")) {
+                QString pwd("");
+                char * PWD;
+                PWD = getenv ("PWD");
+                pwd.append(PWD);
+                file = pwd + "/" + QString(argv[i]);
+            }
+            else if (QString(argv[i]).startsWith("www.")) file = "http://" + QString(argv[i]);
+            else file = QString(argv[i]);
+        }
+    }
+
     //app->setOrganizationName("Webcat");
     app->setApplicationVersion("0.9");
     QQuickView *view = SailfishApp::createView();
@@ -56,21 +94,6 @@ int main(int argc, char *argv[])
     view->setSource(SailfishApp::pathTo("qml/harbour-webcat.qml"));
 
     QObject *object = view->rootObject();
-
-    QString file;
-    for(int i=1; i<argc; i++) {
-        if (QString(argv[i]) == "about:bookmarks") file = "about:bookmarks";
-        else if (!QString(argv[i]).startsWith("/") && !QString(argv[i]).startsWith("http://") && !QString(argv[i]).startsWith("rtsp://")
-                && !QString(argv[i]).startsWith("mms://") && !QString(argv[i]).startsWith("file://") && !QString(argv[i]).startsWith("https://") && !QString(argv[i]).startsWith("www.")) {
-            QString pwd("");
-            char * PWD;
-            PWD = getenv ("PWD");
-            pwd.append(PWD);
-            file = pwd + "/" + QString(argv[i]);
-        }
-        else if (QString(argv[i]).startsWith("www.")) file = "http://" + QString(argv[i]);
-        else file = QString(argv[i]);
-    }
 
     //qDebug() << file.isEmpty();
     if (!file.isEmpty()) {
@@ -87,6 +110,8 @@ int main(int argc, char *argv[])
                      &myClass, SLOT(clearCache()));
     QObject::connect(object, SIGNAL(openNewWindow(QString)),
                      &myClass, SLOT(openNewWindow(QString)));
+    QObject::connect(object, SIGNAL(openPrivateNewWindow(QString)),
+                     &myClass, SLOT(openPrivateNewWindow(QString)));
     QObject::connect(object, SIGNAL(openWithvPlayer(QString)),
                      &myClass, SLOT(openWithvPlayer(QString)));
 
@@ -95,7 +120,7 @@ int main(int argc, char *argv[])
 
     QFile vPlayer("/usr/bin/harbour-videoPlayer");
     if (vPlayer.exists()) {
-      object->setProperty("vPlayerExists", true);
+        object->setProperty("vPlayerExists", true);
     }
     else {
         object->setProperty("vPlayerExists", false);
@@ -107,4 +132,3 @@ int main(int argc, char *argv[])
 
     return app->exec();
 }
-

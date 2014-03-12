@@ -415,7 +415,7 @@ Page {
                     enabled: false
                 }
                 PropertyChanges {
-                    target: forIconmainWindow
+                    target: forIcon
                     visible: false
                     enabled: false
                 }
@@ -820,7 +820,7 @@ Page {
             Timer {
                 interval: 32
                 repeat: true
-                onTriggered: progressCircle.value = (progressCircle.value + 0.005) % 1.0
+                onTriggered: progressCircleYt.value = (progressCircleYt.value + 0.005) % 1.0
                 running: ytUrlLoading
             }
         }
@@ -892,7 +892,7 @@ Page {
             //                onClicked: { webview.url = fixUrl(contextUrl.text); contextMenu.visible = false }
             //            }
             Button {
-                id: widestBtn
+                width: widestBtn.width
                 text: "Open in New Window"
                 onClicked: { mainWindow.openNewWindow(fixUrl(contextUrl.text)); contextMenu.visible = false }
             }
@@ -900,6 +900,11 @@ Page {
                 text: "Open in New Tab"
                 width: widestBtn.width
                 onClicked: { mainWindow.openNewTab("page"+salt(), fixUrl(contextUrl.text), true); contextMenu.visible = false }
+            }
+            Button {
+                id: widestBtn
+                text: "Open in Private New Window"
+                onClicked: { mainWindow.openPrivateNewWindow(fixUrl(contextUrl.text)); contextMenu.visible = false }
             }
             Button {
                 text: "Copy Link"
