@@ -227,6 +227,19 @@ Page {
             }
        }
 
+        experimental.authenticationDialog: Item {
+            Component.onCompleted: {
+                var dialog = pageStack.push(Qt.resolvedUrl("AuthenticationDialog.qml"),
+                                            {"hostname":  model.hostname, "realm": model.realm})
+                dialog.accepted.connect(function() {
+                    model.accept(dialog.username, dialog.password)
+                })
+                dialog.rejected.connect(function() {
+                    model.reject()
+                })
+            }
+       }
+
         experimental.onDownloadRequested: {
             // Call downloadmanager here with the url
             console.debug("Download requested: " + url);
