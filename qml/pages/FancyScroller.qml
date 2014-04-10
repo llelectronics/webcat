@@ -8,11 +8,14 @@ Item {
     property bool _activeDown
     signal upScrolling
     signal downScrolling
+    width: parent.width
 
     BackgroundItem {
         visible: opacity > 0
         y: 0
-        width: flickable.width
+        width: upImg.width * 2
+        anchors.right: parent.right
+        anchors.rightMargin: Theme.paddingLarge
         height: Theme.itemSizeLarge
         highlighted: pressed
         opacity: _activeUp ? 1 : 0
@@ -51,7 +54,9 @@ Item {
     BackgroundItem {
         visible: opacity > 0
         y: flickable.height - height
-        width: flickable.width
+        width: downImg.width * 2
+        anchors.right: parent.right
+        anchors.rightMargin: Theme.paddingLarge
         height: Theme.itemSizeLarge
         highlighted: pressed
         opacity: _activeDown ? 1 : 0
@@ -76,6 +81,7 @@ Item {
 //            }
 
             Image {
+                id: downImg
                 anchors.centerIn: parent
                 source: "image://theme/icon-l-down"
             }
