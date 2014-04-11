@@ -181,11 +181,13 @@ Page {
                 mediaYt = true;
                 ytUrlLoading = true
                 mediaLink = true;
+                mediaDownloadRec.visible = true
             }
             else {
                 mediaYt = false;
                 mediaLink = false;
                 ytUrlLoading = false
+                mediaDownloadRec.visible = false
             }
 
             // Add to url history
