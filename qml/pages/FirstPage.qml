@@ -225,6 +225,7 @@ Page {
                 })
                 dialog.rejected.connect(function() {
                     model.reject();
+                    webview.stop();
                 })
             }
        }
