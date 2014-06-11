@@ -10,87 +10,87 @@ Item {
     signal downScrolling
     width: parent.width
 
-    BackgroundItem {
-        visible: opacity > 0
-        y: 0
-        width: upImg.width * 2
-        anchors.right: parent.right
-        anchors.rightMargin: Theme.paddingLarge
-        height: Theme.itemSizeLarge
-        highlighted: pressed
-        opacity: _activeUp ? 1 : 0
+//    BackgroundItem {
+//        visible: opacity > 0
+//        y: 0
+//        width: upImg.width * 2
+//        anchors.right: parent.right
+//        anchors.rightMargin: Theme.paddingLarge
+//        height: Theme.itemSizeLarge
+//        highlighted: pressed
+//        opacity: _activeUp ? 1 : 0
 
-        Behavior on opacity {
-            NumberAnimation { duration: 300; easing.type: Easing.InOutQuad }
-        }
+//        Behavior on opacity {
+//            NumberAnimation { duration: 300; easing.type: Easing.InOutQuad }
+//        }
 
-        Rectangle {
-            width: 64
-            height: 64
-            anchors.right: parent.right
-            anchors.rightMargin: Theme.paddingLarge
-            anchors.verticalCenter: parent.verticalCenter
-            radius: 75
-            color: Theme.highlightBackgroundColor
-            opacity: 0.8
-//            gradient: Gradient {
-//                GradientStop { position: 0.0; color: "transparent" }
-//                GradientStop { position: 0.5; color: Theme.highlightBackgroundColor}
-//                GradientStop { position: 1.0; color: "transparent" }
+//        Rectangle {
+//            width: 64
+//            height: 64
+//            anchors.right: parent.right
+//            anchors.rightMargin: Theme.paddingLarge
+//            anchors.verticalCenter: parent.verticalCenter
+//            radius: 75
+//            color: Theme.highlightBackgroundColor
+//            opacity: 0.8
+////            gradient: Gradient {
+////                GradientStop { position: 0.0; color: "transparent" }
+////                GradientStop { position: 0.5; color: Theme.highlightBackgroundColor}
+////                GradientStop { position: 1.0; color: "transparent" }
+////            }
+
+//            Image {
+//                id: upImg
+//                anchors.centerIn: parent
+//                source: "image://theme/icon-l-up"
 //            }
+//        }
 
-            Image {
-                id: upImg
-                anchors.centerIn: parent
-                source: "image://theme/icon-l-up"
-            }
-        }
+//        onPressed: {
+//            flickable.scrollToTop();
+//        }
+//    }
 
-        onPressed: {
-            flickable.scrollToTop();
-        }
-    }
+//    BackgroundItem {
+//        visible: opacity > 0
+//        y: flickable.height - height
+//        width: downImg.width * 2
+//        anchors.right: parent.right
+//        anchors.rightMargin: Theme.paddingLarge
+//        height: Theme.itemSizeLarge
+//        highlighted: pressed
+//        opacity: _activeDown ? 1 : 0
 
-    BackgroundItem {
-        visible: opacity > 0
-        y: flickable.height - height
-        width: downImg.width * 2
-        anchors.right: parent.right
-        anchors.rightMargin: Theme.paddingLarge
-        height: Theme.itemSizeLarge
-        highlighted: pressed
-        opacity: _activeDown ? 1 : 0
+//        Behavior on opacity {
+//            NumberAnimation { duration: 300; easing.type: Easing.InOutQuad }
+//        }
 
-        Behavior on opacity {
-            NumberAnimation { duration: 300; easing.type: Easing.InOutQuad }
-        }
+//        Rectangle {
+//            width: 64
+//            height: 64
+//            anchors.right: parent.right
+//            anchors.rightMargin: Theme.paddingLarge
+//            anchors.verticalCenter: parent.verticalCenter
+//            radius: 75
+//            color: Theme.highlightBackgroundColor
+//            opacity: 0.8
+////            gradient: Gradient {
+////                GradientStop { position: 0.0; color: "transparent" }
+////                GradientStop { position: 0.5; color: Theme.highlightBackgroundColor}
+////                GradientStop { position: 1.0; color: "transparent" }
+////            }
 
-        Rectangle {
-            width: 64
-            height: 64
-            anchors.right: parent.right
-            anchors.rightMargin: Theme.paddingLarge
-            anchors.verticalCenter: parent.verticalCenter
-            radius: 75
-            color: Theme.highlightBackgroundColor
-            opacity: 0.8
-//            gradient: Gradient {
-//                GradientStop { position: 0.0; color: "transparent" }
-//                GradientStop { position: 0.5; color: Theme.highlightBackgroundColor}
-//                GradientStop { position: 1.0; color: "transparent" }
+//            Image {
+//                id: downImg
+//                anchors.centerIn: parent
+//                source: "image://theme/icon-l-down"
 //            }
+//        }
 
-            Image {
-                id: downImg
-                anchors.centerIn: parent
-                source: "image://theme/icon-l-down"
-            }
-        }
-
-        onPressed: {
-            flickable.scrollToBottom();
-        }
-    }
+//        onPressed: {
+//            flickable.scrollToBottom();
+//        }
+//    }
 
     Connections {
         target: flickable

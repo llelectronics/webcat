@@ -188,10 +188,26 @@ Page
                         elide: Text.ElideRight
                     }
                     MouseArea {
+                        property int ymouse;
                         anchors { top: parent.top; left: parent.left; bottom: parent.bottom; right: parent.right; rightMargin: 40}
+                        onPressAndHold: {
+                            if (tabModel.count > 1) {
+                                ymouse = mouse.y
+                                tabCloseMsg.opacity = 1.0
+                            }
+                        }
                         onClicked: {
-                            tabListView.currentIndex = index;
-                            mainWindow.switchToTab(model.pageid);
+                            if (tabListView.currentIndex == index) { pageStack.pop() }
+                            else {
+                                tabListView.currentIndex = index;
+                                mainWindow.switchToTab(model.pageid);
+                            }
+                        }
+                        onReleased: {
+                            if (tabCloseMsg.opacity == 1.0 && mouse.y < ymouse - 50) {
+                                mainWindow.closeTab(index, tabModel.get(tabListView.currentIndex).pageid)
+                            }
+                            tabCloseMsg.opacity = 0
                         }
                     }
                 }
@@ -299,6 +315,19 @@ Page
     Component.onCompleted: {
         tabListView.currentIndex = tabModel.getIndexFromId(mainWindow.currentTab);
         mainWindow.currentTabIndex = tabListView.currentIndex
+    }
+
+    Label {
+        id: tabCloseMsg
+        opacity: 0
+        font.pixelSize: Theme.fontSizeExtraLarge
+        font.bold: true
+        anchors.bottom: parent.bottom
+        anchors.bottomMargin: tabListBg.height * 2
+        anchors.horizontalCenter: parent.horizontalCenter
+        text: qsTr("Swipe up to close tab")
+        Behavior on opacity {
+            NumberAnimation { target: tabCloseMsg; property: "opacity"; duration: 200; easing.type: Easing.InOutQuad } }
     }
 
     //    Row {
