@@ -279,7 +279,7 @@ Page {
             }
             switch (data.type) {
             case 'link': {
-                console.debug("Link clicked with target" + data.target);
+                //console.debug("Link clicked with target" + data.target);
                 if (data.target === '_blank') { // open link in new tab
                     openNewTab('page-'+salt(), fixUrl(data.href), false);
                 }
@@ -291,11 +291,24 @@ Page {
                     imageLongPressAvailability = true;
                     showContextMenu(data.img);
                 }
-                else {
+                else if (data.href && data.href != "CANT FIND LINK") {
                     imageLongPressAvailability = false;
                     showContextMenu(data.href);
                 }
+                if ('text' in data) {
+                    selection.mimedata = data.text;
+                    selection.show(data.left, data.top, data.width, data.height)
+                }
             }
+            case 'selectionadjusted' : {
+                if ('text' in data) {
+                    //console.debug("[firstPage.qml] Copy text in adjusted selection")
+                    selection.mimedata = data.text;
+                    selection.copy();
+                }
+            }
+
+
             case 'input': {
                 // Seems not to work reliably as only input hide on keyboard hide is received
                 if (toolbar.state == "expanded" && data.state == "show" && ! urlText.focus == true) toolbar.state = "minimized"
@@ -351,12 +364,78 @@ Page {
                 }
             }
         }
+
+        Selection {
+            id: selection
+
+            anchors.fill: parent
+            visible: false
+
+            property var mimedata: null
+
+            function createData() {
+                if (mimedata === null) {
+                    hiddenTxtBox.text = ""
+                }
+            }
+
+            function clearData() {
+                if (mimedata !== null) {
+                    delete mimedata
+                    mimedata = null
+                    hiddenTxtBox.text = ""
+                }
+            }
+
+            function actionTriggered() {
+                selection.visible = false
+            }
+
+            function show(x, y, width, height) {
+                var scale = webview.experimental.test.contentsScale * webview.experimental.test.devicePixelRatio
+                rect.x = x * scale + webview.contentX
+                rect.y = y * scale + webview.contentY
+                rect.width = width * scale
+                rect.height = height * scale
+                //console.debug("x:"+x+" y:"+y+" width:"+width+" height:"+height)
+                visible = true
+                //__showPopover()
+            }
+
+            onTextClicked: {
+                pageStack.push(Qt.resolvedUrl("SelectionEditPage.qml"), { editText: hiddenTxtBox.text })
+            }
+
+            onResized: {
+                //console.debug("[firstPage.qml] Resized selection. postMessage to userscript.js")
+                var message = new Object
+                message.type = 'adjustselection'
+                var rect = selection.rect
+                var scale = webview.experimental.test.contentsScale * webview.experimental.test.devicePixelRatio
+                message.left = Math.round((rect.x - webview.contentX) / scale)
+                message.right = Math.round((rect.x + rect.width - webview.contentX) / scale)
+                message.top = Math.round((rect.y - webview.contentY) / scale)
+                message.bottom = Math.round((rect.y + rect.height - webview.contentY) / scale)
+                //console.debug("[firstPage.qml] PostMessage: " + JSON.stringify(message))
+                webview.experimental.postMessage(JSON.stringify(message))
+                //webview.experimental.postMessage( JSON.stringify(read) );
+            }
+
+            function copy() {
+                hiddenTxtBox.text = mimedata;
+                //console.debug("Marked text: " + mimedata);
+                hiddenTxtBox.selectAll();
+                hiddenTxtBox.copy();
+            }
+        }
+
         MouseArea {
             id: contextOverlay;
             anchors.fill: parent;
             enabled: contextMenu.visible
             onClicked: contextMenu.visible = false
         }
+
     } // WebView
     FancyScroller {
         flickable: webview
@@ -930,6 +1009,7 @@ Page {
                 margins: 20; topMargin: 10
             }
         }
+
         Column {
             id: contextButtons
             anchors.bottom: parent.bottom
@@ -998,6 +1078,10 @@ Page {
         }
         visible: false
         onSelected: { webview.url = url ; visible = false }
+    }
+    TextArea {
+        id: hiddenTxtBox
+        visible: false
     }
 }
 

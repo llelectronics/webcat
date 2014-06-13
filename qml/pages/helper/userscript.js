@@ -24,6 +24,78 @@ function getImgFullUri(uri) {
     }
 }
 
+function elementContainedInBox(element, box) {
+    var rect = element.getBoundingClientRect();
+    return ((box.left <= rect.left) && (box.right >= rect.right) &&
+            (box.top <= rect.top) && (box.bottom >= rect.bottom));
+}
+
+//function getSelectedData(element) {
+//    var node = element;
+//    var data = new Object;
+
+//    var nodeName = node.nodeName.toLowerCase();
+//    if (nodeName === 'img') {
+//        data.img = getImgFullUri(node.getAttribute('src'));
+//    } else if (nodeName === 'a') {
+//        data.href = node.href;
+//        data.title = node.title;
+//    }
+
+//    // If the parent tag is a hyperlink, we want it too.
+//    var parent = node.parentNode;
+//    if ((nodeName !== 'a') && parent && (parent.nodeName.toLowerCase() === 'a')) {
+//        data.href = parent.href;
+//        data.title = parent.title;
+//        node = parent;
+//    }
+
+//    return data;
+//}
+
+function adjustSelection(selection) {
+    // FIXME: allow selecting two consecutive blocks, instead of
+    // interpolating to the containing block.
+
+    var data = new Object;
+
+    //console.debug("[userscript.js] Jumped into adjustSelection")
+
+    var centerX = (selection.left + selection.right) / 2;
+    var centerY = (selection.top + selection.bottom) / 2;
+    var element = document.elementFromPoint(centerX, centerY);
+    var parent = element;
+    while (elementContainedInBox(parent, selection)) {
+        parent = parent.parentNode;
+    }
+    element = parent;
+
+    node = element.cloneNode(true);
+    // filter out script nodes
+    var scripts = node.getElementsByTagName('script');
+    while (scripts.length > 0) {
+        var scriptNode = scripts[0];
+        if (scriptNode.parentNode) {
+            scriptNode.parentNode.removeChild(scriptNode);
+        }
+    }
+    data.html = node.outerHTML;
+    data.nodeName = node.nodeName.toLowerCase();
+    // FIXME: extract the text and images in the order they appear in the block,
+    // so that this order is respected when the data is pushed to the clipboard.
+    data.text = node.textContent;
+    var images = [];
+    var imgs = node.getElementsByTagName('img');
+    for (var i = 0; i < imgs.length; i++) {
+        images.push(getImgFullUri(imgs[i].getAttribute('src')));
+    }
+    if (images.length > 0) {
+        data.images = images;
+    }
+
+    return data
+}
+
 function checkNode(e, node) {
     // hook for Open in New Tab (link with target)
     if (node.tagName === 'A') {
@@ -74,8 +146,9 @@ document.documentElement.addEventListener('click', (function(e) {
 }), true);
 
 navigator.qt.onmessage = function(ev) {
+    //console.debug("[userscript.js] message received")
     var data = JSON.parse(ev.data)
-    if (data.type == 'readability') {
+    if (data.type === 'readability') {
 
         readStyle='style-novel';
         readSize='size-large';
@@ -85,6 +158,13 @@ navigator.qt.onmessage = function(ev) {
         _readability_script.type = 'text/javascript';
         _readability_script.text = data.content;
         document.getElementsByTagName('head')[0].appendChild(_readability_script);
+    }
+    else if (data.type === 'adjustselection') {
+        //console.debug("[userscript.js] 'query' received")
+        var selection = adjustSelection(data);
+        selection.type = 'selectionadjusted';
+        navigator.qt.postMessage(JSON.stringify(selection));
+
     }
 }
 
@@ -126,8 +206,39 @@ function longPressed(x, y, element) {
                 data.img = getImgFullUri(children[i].getAttribute('src'));
         }
     }
+
+    var boundingRect = element.getBoundingClientRect();
+    data.left = boundingRect.left;
+    data.top = Math.round(boundingRect.top);
+    data.width = boundingRect.width;
+    data.height = boundingRect.height;
+
+    node = element.cloneNode(true);
+    // filter out script nodes
+    var scripts = node.getElementsByTagName('script');
+    while (scripts.length > 0) {
+        var scriptNode = scripts[0];
+        if (scriptNode.parentNode) {
+            scriptNode.parentNode.removeChild(scriptNode);
+        }
+    }
+    data.html = node.outerHTML;
+    data.nodeName = node.nodeName.toLowerCase();
+    // FIXME: extract the text and images in the order they appear in the block,
+    // so that this order is respected when the data is pushed to the clipboard.
+    data.text = node.textContent;
+    var images = [];
+    var imgs = node.getElementsByTagName('img');
+    for (var i = 0; i < imgs.length; i++) {
+        images.push(getImgFullUri(imgs[i].getAttribute('src')));
+    }
+    if (images.length > 0) {
+        data.images = images;
+    }
+
     navigator.qt.postMessage( JSON.stringify(data) );
 }
+
 document.addEventListener('touchstart', (function(event) {
     if (event.touches.length == 1) {
         currentTouch = event.touches[0];
