@@ -64,6 +64,7 @@ Page {
     property bool mediaLink;
     property string ytStreamUrl;
     property bool ytUrlLoading;
+    property bool readerMode: false
 
     Component.onCompleted: {
         _ngfEffect = Qt.createQmlObject("import org.nemomobile.ngf 1.0; NonGraphicalFeedback { event: 'pulldown_lock' }",
@@ -100,6 +101,24 @@ Page {
     function showContextMenu(hrefUrl) {
         contextMenu.visible = true;
         contextUrl.text = hrefUrl;
+    }
+
+    function toggleReaderMode() {
+        if (readerMode) {
+            webview.reload();
+        } else {
+            // FIXME: dirty hack to load js from local file
+            var xhr = new XMLHttpRequest;
+            xhr.open("GET", "./helper/readability.js");
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == XMLHttpRequest.DONE) {
+                    var read = new Object({'type':'readability', 'content': xhr.responseText });
+                    webview.experimental.postMessage( JSON.stringify(read) );
+                }
+            }
+            xhr.send();
+        }
+        readerMode = !readerMode;
     }
 
     ProgressCircle {
@@ -291,6 +310,7 @@ Page {
                 urlLoading = true;
                 contextMenu.visible = false;
                 mediaLink = false;
+                readerMode = false;
             }
             else if (loadRequest.status == WebView.LoadFailedStatus)
             {
@@ -509,17 +529,14 @@ Page {
             }
             onPositionChanged: {
                 if (extraToolbar.opacity == 1) {
-                    console.debug("X Position: " + mouse.x)
-                    if (mouse.x > newTabButton.x && mouse.x < newWindowButton.x) { minimizeButton.highlighted = false; newTabButton.highlighted = true; newWindowButton.highlighted = false; reloadThisButton.highlighted = false; orientationLockButton.highlighted = false }
-                    else if (mouse.x < newTabButton.x) {minimizeButton.highlighted = true; newTabButton.highlighted = false; newWindowButton.highlighted = false; reloadThisButton.highlighted = false; orientationLockButton.highlighted = false }
-                    else if (mouse.x > newWindowButton.x && mouse.x < reloadThisButton.x) { minimizeButton.highlighted = false; newTabButton.highlighted = false; newWindowButton.highlighted = true; reloadThisButton.highlighted = false; orientationLockButton.highlighted = false }
-                    else if (mouse.x < newWindowButton.x && mouse.x > newTabButton.x) { minimizeButton.highlighted = false; newTabButton.highlighted = true; newWindowButton.highlighted = false; reloadThisButton.highlighted = false; orientationLockButton.highlighted = false }
-                    else if (mouse.x > reloadThisButton.x && mouse.x < orientationLockButton.x) { minimizeButton.highlighted = false; newTabButton.highlighted = false; newWindowButton.highlighted = false; reloadThisButton.highlighted = true; orientationLockButton.highlighted = false }
-                    else if (mouse.x < reloadThisButton.x && mouse.x > newTabButton.x) { minimizeButton.highlighted = false; newTabButton.highlighted = false; newWindowButton.highlighted = true; reloadThisButton.highlighted = false; orientationLockButton.highlighted = false }
-                    else if (mouse.x > orientationLockButton.x && mouse.x < orientationLockButton.x + orientationLockButton.width + Theme.paddingMedium) { minimizeButton.highlighted = false; newTabButton.highlighted = false; newWindowButton.highlighted = false; reloadThisButton.highlighted = false; orientationLockButton.highlighted = true }
-                    else if (mouse.x < orientationLockButton.x && mouse.x < reloadThisButton.x) { minimizeButton.highlighted = false; newTabButton.highlighted = false; newWindowButton.highlighted = false; reloadThisButton.highlighted = true; orientationLockButton.highlighted = false }
-                    else if (mouse.x > orientationLockButton.x + orientationLockButton.width + Theme.paddingMedium) { minimizeButton.highlighted = false; newTabButton.highlighted = false; newWindowButton.highlighted = false; reloadThisButton.highlighted = false; orientationLockButton.highlighted = false }
-                    else if (mouse.x < orientationLockButton.x + orientationLockButton.width + Theme.paddingMedium && mouse.x < orientationLockButton.x) { minimizeButton.highlighted = false; newTabButton.highlighted = false; newWindowButton.highlighted = false; reloadThisButton.highlighted = false; orientationLockButton.highlighted = true }
+                    //console.debug("X Position: " + mouse.x)
+                    if (mouse.x > newTabButton.x && mouse.x < newWindowButton.x) { minimizeButton.highlighted = false; newTabButton.highlighted = true; newWindowButton.highlighted = false; reloadThisButton.highlighted = false; orientationLockButton.highlighted = false; readerModeButton.highlighted = false }
+                    else if (mouse.x < newTabButton.x) {minimizeButton.highlighted = true; newTabButton.highlighted = false; newWindowButton.highlighted = false; reloadThisButton.highlighted = false; orientationLockButton.highlighted = false; readerModeButton.highlighted = false }
+                    else if (mouse.x > newWindowButton.x && mouse.x < reloadThisButton.x) { minimizeButton.highlighted = false; newTabButton.highlighted = false; newWindowButton.highlighted = true; reloadThisButton.highlighted = false; orientationLockButton.highlighted = false; readerModeButton.highlighted = false }
+                    else if (mouse.x > reloadThisButton.x && mouse.x < orientationLockButton.x) { minimizeButton.highlighted = false; newTabButton.highlighted = false; newWindowButton.highlighted = false; reloadThisButton.highlighted = true; orientationLockButton.highlighted = false; readerModeButton.highlighted = false }
+                    else if (mouse.x > orientationLockButton.x && mouse.x < orientationLockButton.x + orientationLockButton.width + Theme.paddingMedium) { minimizeButton.highlighted = false; newTabButton.highlighted = false; newWindowButton.highlighted = false; reloadThisButton.highlighted = false; orientationLockButton.highlighted = true; readerModeButton.highlighted = false }
+                    else if (mouse.x > readerModeButton.x && mouse.x < readerModeButton.x + readerModeButton.width + Theme.paddingMedium) { minimizeButton.highlighted = false; newTabButton.highlighted = false; newWindowButton.highlighted = false; reloadThisButton.highlighted = false; orientationLockButton.highlighted = false; readerModeButton.highlighted = true }
+                    else if (mouse.x > readerModeButton.x + readerModeButton.width + Theme.paddingMedium) { minimizeButton.highlighted = false; newTabButton.highlighted = false; newWindowButton.highlighted = false; reloadThisButton.highlighted = false; orientationLockButton.highlighted = false; readerModeButton.highlighted = false }
                 }
             }
 
@@ -529,6 +546,7 @@ Page {
                 else if (extraToolbar.opacity == 1 && newWindowButton.highlighted == true) { newWindowButton.clicked(undefined); extraToolbar.opacity = 0 }
                 else if (extraToolbar.opacity == 1 && reloadThisButton.highlighted == true) { reloadThisButton.clicked(undefined); extraToolbar.opacity = 0 }
                 else if (extraToolbar.opacity == 1 && orientationLockButton.highlighted == true) { orientationLockButton.clicked(undefined); extraToolbar.opacity = 0 }
+                else if (extraToolbar.opacity == 1 && readerModeButton.highlighted == true) { readerModeButton.clicked(undefined); extraToolbar.opacity = 0 }
                 else if (extraToolbar.opacity == 1) extraToolbar.opacity = 0
                 extraToolbar.visible = false;
             }
@@ -692,6 +710,7 @@ Page {
                 else if (newWindowButton.highlighted) { _ngfEffect.play(); return qsTr("New Window") }
                 else if (reloadThisButton.highlighted) { _ngfEffect.play(); return qsTr("Reload") }
                 else if (orientationLockButton.highlighted) { _ngfEffect.play(); return qsTr("Lock Orientation") }
+                else if (readerModeButton.highlighted) { _ngfEffect.play(); return qsTr("Reader Mode") }
                 else if (extraToolbar.opacity == 1) { _ngfEffect.play(); return qsTr("Close menu") }
                 else return "Extra Toolbar"
             }
@@ -778,6 +797,22 @@ Page {
             onClicked: {
                 if (page.allowedOrientations === Orientation.All) page.allowedOrientations = page.orientation
                 else page.allowedOrientations = Orientation.All
+            }
+        }
+
+        IconButton {
+            id: readerModeButton
+            icon.source: "image://theme/icon-m-message"
+            anchors.left: orientationLockButton.right
+            anchors.leftMargin: Theme.paddingMedium
+            anchors.bottom: parent.bottom
+            anchors.bottomMargin: 2
+            icon.height: 64
+            icon.width: 64
+            width: 64
+            height: 64
+            onClicked: {
+                toggleReaderMode()
             }
         }
 
