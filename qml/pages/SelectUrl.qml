@@ -143,6 +143,14 @@ Page
                     text: qsTr("Add Bookmark")
                     onClicked: pageStack.push(Qt.resolvedUrl("AddBookmark.qml"), { bookmarks: urlPage.bookmarks });
                 }
+//                MenuItem {
+//                    text: qsTr("New Private Window")
+//                    onClicked: mainWindow.openPrivateNewWindow("http://about:blank");
+//                }
+//                MenuItem {
+//                    text: qsTr("New Window")
+//                    onClicked: mainWindow.openNewWindow("http://about:blank");
+//                }
                 MenuItem {
                     text: qsTr("New Tab")
                     onClicked: mainWindow.openNewTab("page"+mainWindow.salt(), "about:blank", false);
@@ -247,10 +255,33 @@ Page
                 }
 
                 MouseArea {
-                    anchors.fill: parent;
+                    property int ymouse;
+                    anchors.fill: parent
                     onClicked: {
                         //console.debug("New Tab clicked")
                         mainWindow.openNewTab("page-"+mainWindow.salt(), "about:blank", false);
+                    }
+                    onPressAndHold: {
+                            ymouse = mouse.y
+                            tabCloseMsg.text = qsTr("Swipe up to open new window")
+                            tabCloseMsg.opacity = 1.0
+                    }
+                    onPositionChanged: {
+                        if (tabCloseMsg.opacity == 1.0 && mouse.y < ymouse - 50 && mouse.y > ymouse - 120) {
+                            tabCloseMsg.text = qsTr("Swipe up to open new window")
+                        }
+                        else if (tabCloseMsg.opacity == 1.0 && mouse.y < ymouse - 120) {
+                            tabCloseMsg.text = qsTr("Swipe up to open private window")
+                        }
+                    }
+                    onReleased: {
+                        if (tabCloseMsg.opacity == 1.0 && mouse.y < ymouse - 50 && mouse.y > ymouse - 120) {
+                            mainWindow.openNewWindow("http://about:blank");
+                        }
+                        else if (tabCloseMsg.opacity == 1.0 && mouse.y < ymouse - 120) {
+                            mainWindow.openPrivateNewWindow("http://about:blank");
+                        }
+                        tabCloseMsg.opacity = 0
                     }
                 }
             }
@@ -317,17 +348,34 @@ Page
         mainWindow.currentTabIndex = tabListView.currentIndex
     }
 
-    Label {
+    Rectangle {
         id: tabCloseMsg
+        gradient: Gradient {
+            GradientStop { position: 0.0; color: "transparent" }
+            GradientStop { position: 0.5; color: "#262626" }
+            GradientStop { position: 0.50; color: "#262626" }
+            GradientStop { position: 0.95; color: "transparent"}
+        }
         opacity: 0
-        font.pixelSize: Theme.fontSizeExtraLarge
-        font.bold: true
+        width: parent.width
+        height: Theme.fontSizeLarge + Theme.paddingLarge
         anchors.bottom: parent.bottom
         anchors.bottomMargin: tabListBg.height * 2
-        anchors.horizontalCenter: parent.horizontalCenter
-        text: qsTr("Swipe up to close tab")
+        property alias text: tabCloseMsgTxt.text
         Behavior on opacity {
-            NumberAnimation { target: tabCloseMsg; property: "opacity"; duration: 200; easing.type: Easing.InOutQuad } }
+            NumberAnimation { target: tabCloseMsg; property: "opacity"; duration: 200; easing.type: Easing.InOutQuad }
+        }
+        Label {
+            id: tabCloseMsgTxt
+            opacity: parent.opacity
+            font.pixelSize: Theme.fontSizeLarge
+            font.bold: true
+            //anchors.bottom: parent.bottom
+            //anchors.bottomMargin: tabListBg.height * 2
+            anchors.horizontalCenter: parent.horizontalCenter
+            text: qsTr("Swipe up to close tab")
+
+        }
     }
 
     //    Row {

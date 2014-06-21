@@ -317,6 +317,9 @@ Dialog {
             }
 
         }
+        VerticalScrollDecorator {
+            flickable: flick
+        }
     }
 
 }

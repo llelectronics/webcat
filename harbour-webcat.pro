@@ -45,7 +45,12 @@ OTHER_FILES += qml/harbour-webcat.qml \
     qml/pages/ConfirmDialog.qml \
     qml/pages/AuthenticationDialog.qml \
     qml/pages/DownloadManager.qml \
-    qml/pages/helper/yt.js
+    qml/pages/helper/yt.js \
+    qml/pages/Selection.qml \
+    qml/pages/SelectionHandle.qml \
+    qml/pages/img/multi_selection_handle.png \
+    qml/pages/SelectionEditPage.qml \
+    qml/pages/helper/readability.js
 
 RESOURCES += \
     qrc.qrc

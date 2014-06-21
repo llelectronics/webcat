@@ -435,6 +435,11 @@ Page {
             enabled: contextMenu.visible
             onClicked: contextMenu.visible = false
         }
+        VerticalScrollDecorator {
+            color: Theme.highlightColor // Otherwise we might end up with white decorator on white background
+            width: Theme.paddingSmall // We want to see it properly
+            flickable: webview
+        }
 
     } // WebView
     FancyScroller {
