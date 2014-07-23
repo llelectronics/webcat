@@ -7,6 +7,8 @@ function getDatabase() {
     return LS.LocalStorage.openDatabaseSync("webcatbrowser", "0.8", "StorageDatabase", 100000);
 }
 
+String.prototype.contains = function(it) { return this.indexOf(it) != -1; };
+
 // At the start of the application, we can initialize the tables we need if they haven't been created yet
 function initialize() {
     var db = getDatabase();
@@ -172,12 +174,16 @@ function searchHistory(searchTerm) {
     db.transaction(function(tx) {
         // Search history first
         var rs = tx.executeSql("SELECT url FROM history WHERE url LIKE ?;", ["%" + searchTerm + "%"]);
+        // Search bookmarks second
+        var rs1 = tx.executeSql("SELECT url FROM bookmarks WHERE url LIKE ?;", ["%" + searchTerm + "%"]);
+
 //        if (rs.rowsAffected > 0) {
 //            console.debug("Successfully executed")
 //            console.debug(rs.rows.item(0).url)
 //        }
 //        else console.debug("Not working")
         var hisFound
+        var r = /^((https?|file)\:)\/\/(.[^/]+)/;  // Did I mention before how I hate regex. It took my an hour to figure this out and make it work :P
 
         if (rs.rows.length > 0) {
             // Clear previous historySuggestions here
@@ -187,13 +193,13 @@ function searchHistory(searchTerm) {
             hisFound = true;
         }
         else { page.suggestionView.visible = false; hisFound = false }
+
         for (var i = 0; i < rs.rows.length; i++) {
             // Add to historySuggestions here
+            if (! historyModel.contains(rs.rows.item(i).url.match(r)[0]) && rs.rows.item(i).url.match(r)[0].indexOf(searchTerm) != -1) mainWindow.historyModel.insert(0,{"url" : rs.rows.item(i).url.match(r)[0]});
             mainWindow.historyModel.append({"url" : rs.rows.item(i).url});
             //console.debug(rs.rows.item(i).url);
         }
-        // Search bookmarks second
-        var rs1 = tx.executeSql("SELECT url FROM bookmarks WHERE url LIKE ?;", ["%" + searchTerm + "%"]);
         if (rs1.rows.length > 0) {
             // Show bookmarks suggestions
             if (page.suggestionView.visible == false) page.suggestionView.visible = true;
@@ -201,6 +207,7 @@ function searchHistory(searchTerm) {
         else if (hisFound != true) page.suggestionView.visible = false;
         for (var i = 0; i < rs1.rows.length; i++) {
             // Add to historySuggestions here
+            if (! historyModel.contains(rs1.rows.item(i).url.match(r)[0]) && rs1.rows.item(i).url.match(r)[0].indexOf(searchTerm) != -1) mainWindow.historyModel.append(0, {"url" : rs1.rows.item(i).url.match(r)[0]});
             if (! historyModel.contains(rs1.rows.item(i).url)) mainWindow.historyModel.append({"url" : rs1.rows.item(i).url});
             //console.debug(rs.rows.item(i).url);
         }
