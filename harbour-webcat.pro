@@ -59,6 +59,8 @@ HEADERS += \
     src/myclass.h \
     src/DownloadManager.hpp
 
+QT += network
+
 # Hmm... not allowed for now I guess
 #PKGCONFIG += nemotransferengine-qt5
 
