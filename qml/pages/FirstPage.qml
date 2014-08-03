@@ -224,9 +224,10 @@ Page {
         experimental.preferences.privateBrowsingEnabled: mainWindow.privateBrowsing
 
 
+        // SEEMs not to work anymore (at least G+ changed its site)
         // Scale the websites like g+ and others a little bit for better reading
-        experimental.deviceWidth: page.width / 1.25
-        experimental.deviceHeight: page.height
+        //experimental.deviceWidth: page.width / 1.25
+        //experimental.deviceHeight: page.height
         experimental.itemSelector: PopOver {}
         experimental.preferences.fullScreenEnabled: true
         experimental.preferences.developerExtrasEnabled: true
@@ -312,6 +313,10 @@ Page {
             case 'input': {
                 // Seems not to work reliably as only input hide on keyboard hide is received
                 if (toolbar.state == "expanded" && data.state == "show" && ! urlText.focus == true) toolbar.state = "minimized"
+            }
+            case 'search': {
+                errorText = data.errorMsg;
+                popup.visible = true;
             }
             }
         }
@@ -418,7 +423,6 @@ Page {
                 message.bottom = Math.round((rect.y + rect.height - webview.contentY) / scale)
                 //console.debug("[firstPage.qml] PostMessage: " + JSON.stringify(message))
                 webview.experimental.postMessage(JSON.stringify(message))
-                //webview.experimental.postMessage( JSON.stringify(read) );
             }
 
             function copy() {
@@ -596,11 +600,23 @@ Page {
 
         IconButton {
             id: gotoButton
-            icon.source: "image://theme/icon-m-tabs"
+            icon.source: searchButton ? "image://theme/icon-m-search"  : "image://theme/icon-m-tabs"
             anchors.left: toolbar.left
             anchors.leftMargin: Theme.paddingSmall
-            onClicked: pageStack.push(Qt.resolvedUrl("SelectUrl.qml"), { dataContainer: page, siteURL: webview.url, bookmarks: page.bookmarks, siteTitle: webview.title})
+            onClicked: {
+                if (!searchButton) {
+                    pageStack.push(Qt.resolvedUrl("SelectUrl.qml"), { dataContainer: page, siteURL: webview.url, bookmarks: page.bookmarks, siteTitle: webview.title})
+                }
+                else {
+                    var message = new Object
+                    message.type = 'search'
+                    message.searchTerm = urlText.text
+                    webview.experimental.postMessage(JSON.stringify(message))
+                    //DB.findString(urlText.text)
+                }
+            }
             property int mx
+            property bool searchButton: false
             onPressAndHold: {
                 //if (toolbar.state == "expanded") toolbar.state = "minimized"
                 //TODO show extraToolbar
@@ -698,6 +714,7 @@ Page {
                     forIcon.visible = false
                     bookmarkButton.visible = false
                     refreshButton.visible = true
+                    gotoButton.searchButton = true
                     selectAll();
                 }
                 else {
@@ -705,6 +722,7 @@ Page {
                     forIcon.visible = webview.canGoForward
                     bookmarkButton.visible = true
                     refreshButton.visible = false
+                    gotoButton.searchButton = false
                 }
             }
             onTextChanged: {

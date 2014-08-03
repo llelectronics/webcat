@@ -166,6 +166,9 @@ navigator.qt.onmessage = function(ev) {
         navigator.qt.postMessage(JSON.stringify(selection));
 
     }
+    else if (data.type === "search") {
+        findString(data.searchTerm)
+    }
 }
 
 // FIXME: experiementing on tap and hold
@@ -267,3 +270,21 @@ document.addEventListener('touchmove', (function(event) {
         currentTouch = null;
     }
 }), true);
+
+function findString(str) {
+ //if (parseInt(navigator.appVersion)<4) return;
+ var strFound;
+ if (window.find) {
+  strFound=self.find(str);
+  if (!strFound) {
+   strFound=self.find(str,0,1);
+   while (self.find(str,0,1)) continue;
+  }
+ }
+ if (!strFound) {
+     var data = new Object({'type': 'search', 'errorMsg': "String '" + str + "' not found!"})
+     navigator.qt.postMessage( JSON.stringify(data) );
+     //alert ("String '"+str+"' not found!")
+ }
+ return;
+}
