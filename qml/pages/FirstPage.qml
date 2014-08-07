@@ -65,6 +65,8 @@ Page {
     property string ytStreamUrl;
     property bool ytUrlLoading;
     property bool readerMode: false
+    property bool nightMode: false
+    property bool searchMode: false
 
     Component.onCompleted: {
         _ngfEffect = Qt.createQmlObject("import org.nemomobile.ngf 1.0; NonGraphicalFeedback { event: 'pulldown_lock' }",
@@ -329,6 +331,8 @@ Page {
                 contextMenu.visible = false;
                 mediaLink = false;
                 readerMode = false;
+                searchMode = false;
+                nightMode = false;
             }
             else if (loadRequest.status == WebView.LoadFailedStatus)
             {
@@ -630,24 +634,27 @@ Page {
             onPositionChanged: {
                 if (extraToolbar.opacity == 1) {
                     //console.debug("X Position: " + mouse.x)
-                    if (mouse.x > newTabButton.x && mouse.x < newWindowButton.x) { minimizeButton.highlighted = false; newTabButton.highlighted = true; newWindowButton.highlighted = false; reloadThisButton.highlighted = false; orientationLockButton.highlighted = false; readerModeButton.highlighted = false }
-                    else if (mouse.x < newTabButton.x) {minimizeButton.highlighted = true; newTabButton.highlighted = false; newWindowButton.highlighted = false; reloadThisButton.highlighted = false; orientationLockButton.highlighted = false; readerModeButton.highlighted = false }
-                    else if (mouse.x > newWindowButton.x && mouse.x < reloadThisButton.x) { minimizeButton.highlighted = false; newTabButton.highlighted = false; newWindowButton.highlighted = true; reloadThisButton.highlighted = false; orientationLockButton.highlighted = false; readerModeButton.highlighted = false }
-                    else if (mouse.x > reloadThisButton.x && mouse.x < orientationLockButton.x) { minimizeButton.highlighted = false; newTabButton.highlighted = false; newWindowButton.highlighted = false; reloadThisButton.highlighted = true; orientationLockButton.highlighted = false; readerModeButton.highlighted = false }
-                    else if (mouse.x > orientationLockButton.x && mouse.x < orientationLockButton.x + orientationLockButton.width + Theme.paddingMedium) { minimizeButton.highlighted = false; newTabButton.highlighted = false; newWindowButton.highlighted = false; reloadThisButton.highlighted = false; orientationLockButton.highlighted = true; readerModeButton.highlighted = false }
-                    else if (mouse.x > readerModeButton.x && mouse.x < readerModeButton.x + readerModeButton.width + Theme.paddingMedium) { minimizeButton.highlighted = false; newTabButton.highlighted = false; newWindowButton.highlighted = false; reloadThisButton.highlighted = false; orientationLockButton.highlighted = false; readerModeButton.highlighted = true }
-                    else if (mouse.x > readerModeButton.x + readerModeButton.width + Theme.paddingMedium) { minimizeButton.highlighted = false; newTabButton.highlighted = false; newWindowButton.highlighted = false; reloadThisButton.highlighted = false; orientationLockButton.highlighted = false; readerModeButton.highlighted = false }
+                    if (mouse.x > newTabButton.x && mouse.x < newWindowButton.x) { minimizeButton.highlighted = false; newTabButton.highlighted = true; newWindowButton.highlighted = false; reloadThisButton.highlighted = false; orientationLockButton.highlighted = false; readerModeButton.highlighted = false; searchModeButton.highlighted = false; }
+                    else if (mouse.x < newTabButton.x) {minimizeButton.highlighted = true; newTabButton.highlighted = false; newWindowButton.highlighted = false; reloadThisButton.highlighted = false; orientationLockButton.highlighted = false; readerModeButton.highlighted = false; searchModeButton.highlighted = false; }
+                    else if (mouse.x > newWindowButton.x && mouse.x < reloadThisButton.x) { minimizeButton.highlighted = false; newTabButton.highlighted = false; newWindowButton.highlighted = true; reloadThisButton.highlighted = false; orientationLockButton.highlighted = false; readerModeButton.highlighted = false; searchModeButton.highlighted = false; }
+                    else if (mouse.x > reloadThisButton.x && mouse.x < orientationLockButton.x) { minimizeButton.highlighted = false; newTabButton.highlighted = false; newWindowButton.highlighted = false; reloadThisButton.highlighted = true; orientationLockButton.highlighted = false; readerModeButton.highlighted = false; searchModeButton.highlighted = false; }
+                    else if (mouse.x > orientationLockButton.x && mouse.x < orientationLockButton.x + orientationLockButton.width + Theme.paddingMedium) { minimizeButton.highlighted = false; newTabButton.highlighted = false; newWindowButton.highlighted = false; reloadThisButton.highlighted = false; orientationLockButton.highlighted = true; readerModeButton.highlighted = false; searchModeButton.highlighted = false; }
+                    else if (mouse.x > readerModeButton.x && mouse.x < readerModeButton.x + readerModeButton.width + Theme.paddingMedium) { minimizeButton.highlighted = false; newTabButton.highlighted = false; newWindowButton.highlighted = false; reloadThisButton.highlighted = false; orientationLockButton.highlighted = false; readerModeButton.highlighted = true; searchModeButton.highlighted = false; }
+                    else if (mouse.x > searchModeButton.x && mouse.x < searchModeButton.x + searchModeButton.width + Theme.paddingMedium) { minimizeButton.highlighted = false; newTabButton.highlighted = false; newWindowButton.highlighted = false; reloadThisButton.highlighted = false; orientationLockButton.highlighted = false; readerModeButton.highlighted = false; searchModeButton.highlighted = true; }
+                    else if (mouse.x > searchModeButton.x + searchModeButton.width + Theme.paddingMedium) { minimizeButton.highlighted = false; newTabButton.highlighted = false; newWindowButton.highlighted = false; reloadThisButton.highlighted = false; orientationLockButton.highlighted = false; readerModeButton.highlighted = false; searchModeButton.highlighted = false; }
                 }
             }
 
             onReleased: {
-                if (extraToolbar.opacity == 1 && minimizeButton.highlighted == true) { minimizeButton.clicked(undefined); extraToolbar.opacity = 0 }
-                else if (extraToolbar.opacity == 1 && newTabButton.highlighted == true) { newTabButton.clicked(undefined); extraToolbar.opacity = 0 }
-                else if (extraToolbar.opacity == 1 && newWindowButton.highlighted == true) { newWindowButton.clicked(undefined); extraToolbar.opacity = 0 }
-                else if (extraToolbar.opacity == 1 && reloadThisButton.highlighted == true) { reloadThisButton.clicked(undefined); extraToolbar.opacity = 0 }
-                else if (extraToolbar.opacity == 1 && orientationLockButton.highlighted == true) { orientationLockButton.clicked(undefined); extraToolbar.opacity = 0 }
-                else if (extraToolbar.opacity == 1 && readerModeButton.highlighted == true) { readerModeButton.clicked(undefined); extraToolbar.opacity = 0 }
-                else if (extraToolbar.opacity == 1) extraToolbar.opacity = 0
+                if (extraToolbar.opacity == 1 && minimizeButton.highlighted == true) { minimizeButton.clicked(undefined);}
+                else if (extraToolbar.opacity == 1 && newTabButton.highlighted == true) { newTabButton.clicked(undefined); }
+                else if (extraToolbar.opacity == 1 && newWindowButton.highlighted == true) { newWindowButton.clicked(undefined);}
+                else if (extraToolbar.opacity == 1 && reloadThisButton.highlighted == true) { reloadThisButton.clicked(undefined);}
+                else if (extraToolbar.opacity == 1 && orientationLockButton.highlighted == true) { orientationLockButton.clicked(undefined); }
+                else if (extraToolbar.opacity == 1 && readerModeButton.highlighted == true) { readerModeButton.clicked(undefined); }
+                else if (extraToolbar.opacity == 1 && searchModeButton.highlighted == true) { searchModeButton.clicked(undefined); }
+                else if (extraToolbar.opacity == 1) extraToolbar.opacity = 0; extraToolbar.visible = false;
+                extraToolbar.opacity = 0;
                 extraToolbar.visible = false;
             }
 
@@ -761,14 +768,27 @@ Page {
         IconButton {
             id: bookmarkButton
             property bool favorited: bookmarks.count > 0 && bookmarks.contains(webview.url)
-            icon.source: favorited ? "image://theme/icon-m-favorite-selected" : "image://theme/icon-m-favorite"
+            icon.source: {
+                if (readerMode) nightMode ? "image://theme/icon-camera-wb-sunny" : "image://theme/icon-camera-wb-tungsten"
+                else favorited ? "image://theme/icon-m-favorite-selected" : "image://theme/icon-m-favorite"
+            }
             anchors.right: parent.right
             anchors.rightMargin: Theme.paddingSmall
             onClicked: {
-                if (favorited) {
-                    bookmarks.removeBookmark(webview.url.toString())
-                } else {
-                    bookmarks.addBookmark(webview.url.toString(), webview.title, userAgent)
+                if (readerMode) {
+                    if (!nightMode)
+                        webview.experimental.evaluateJavaScript("document.body.style.backgroundColor=\"#262626\"; document.body.style.color=\"#FFFFFF\"");
+                    else
+                        webview.experimental.evaluateJavaScript("document.body.style.backgroundColor=\"#f4f4f4\"; document.body.style.color=\"#000000\"");
+
+                    nightMode = !nightMode
+                }
+                else {
+                    if (favorited) {
+                        bookmarks.removeBookmark(webview.url.toString())
+                    } else {
+                        bookmarks.addBookmark(webview.url.toString(), webview.title, userAgent)
+                    }
                 }
             }
         }
@@ -784,6 +804,7 @@ Page {
             GradientStop { position: 0.85; color: "#1F1F1F"}
         }
         height: 96
+        z: 90
         opacity: 0
         visible: false
         anchors.bottom: toolbar.top
@@ -799,6 +820,7 @@ Page {
             NumberAnimation { duration: 200; easing.type: Easing.InOutQuad }
         }
 
+
         Label {
             id: actionLbl
             anchors.top: parent.top
@@ -813,6 +835,7 @@ Page {
                 else if (reloadThisButton.highlighted) { _ngfEffect.play(); return qsTr("Reload") }
                 else if (orientationLockButton.highlighted) { _ngfEffect.play(); return qsTr("Lock Orientation") }
                 else if (readerModeButton.highlighted) { _ngfEffect.play(); return qsTr("Reader Mode") }
+                else if (searchModeButton.highlighted) { _ngfEffect.play(); return qsTr("Search") }
                 else if (extraToolbar.opacity == 1) { _ngfEffect.play(); return qsTr("Close menu") }
                 else return "Extra Toolbar"
             }
@@ -915,6 +938,24 @@ Page {
             height: 64
             onClicked: {
                 toggleReaderMode()
+                readerModeButton.highlighted = false
+            }
+        }
+
+        IconButton {
+            id: searchModeButton
+            icon.source: "image://theme/icon-m-search"
+            anchors.left: readerModeButton.right
+            anchors.leftMargin: Theme.paddingMedium
+            anchors.bottom: parent.bottom
+            anchors.bottomMargin: 2
+            icon.height: 64
+            icon.width: 64
+            width: 64
+            height: 64
+            onClicked: {
+                searchMode = !searchMode
+                searchModeButton.highlighted = false
             }
         }
 
@@ -996,6 +1037,84 @@ Page {
                 else Qt.openUrlExternally(url);
             }
             visible: ! progressCircleYt.visible
+            anchors.left: parent.left
+            anchors.leftMargin: Theme.paddingSmall
+            anchors.verticalCenter: parent.verticalCenter
+        }
+
+
+    }
+
+    // On Media Loaded show download button
+    Rectangle {
+        id: searchBar
+        gradient: Gradient {
+            GradientStop { position: 0.0; color: "#262626" }
+            GradientStop { position: 0.85; color: "#1F1F1F"}
+        }
+        anchors.bottom: {
+            if (loadingRec.visible == true) return loadingRec.top
+            else return toolbar.top
+        }
+        //anchors.bottomMargin: Theme.paddingSmall // This looks ugly
+        width: parent.width
+        height: 72
+        visible: searchMode
+
+        function search() {
+            searchText.focus = false;  // Close keyboard
+            var message = new Object
+            message.type = 'search'
+            message.searchTerm = searchText.text
+            webview.experimental.postMessage(JSON.stringify(message))
+        }
+
+        // Close button
+        IconButton {
+            id: closeSearchButton
+            icon.source: "image://theme/icon-m-close"
+            onClicked:  {
+                searchMode = false;
+            }
+            anchors.right: parent.right
+            anchors.rightMargin: Theme.paddingSmall
+            anchors.verticalCenter: parent.verticalCenter
+        }
+
+        TextField {
+            id: searchText
+            inputMethodHints: Qt.ImhNoAutoUppercase
+            //text: placeholderText
+            placeholderText: qsTr("Enter searchterm")
+            font.pixelSize: Theme.fontSizeMedium
+            y: parent.height / 2 - height / 4
+            anchors.left: {
+                searchIcon.right
+            }
+            anchors.leftMargin: Theme.paddingVerySmall
+            width: parent.width - closeSearchButton.width - searchIcon.width
+            onFocusChanged: {
+                if (focus) {
+                    selectAll();
+                }
+            }
+
+            Keys.onEnterPressed: {
+                searchBar.search();
+            }
+
+            Keys.onReturnPressed: {
+               searchBar.search();
+            }
+
+        }
+
+        IconButton {
+            id: searchIcon
+            icon.source: "image://theme/icon-m-search"
+            onClicked:  {
+                searchBar.search();
+            }
             anchors.left: parent.left
             anchors.leftMargin: Theme.paddingSmall
             anchors.verticalCenter: parent.verticalCenter
@@ -1107,5 +1226,3 @@ Page {
         visible: false
     }
 }
-
-
