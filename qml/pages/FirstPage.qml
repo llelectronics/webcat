@@ -604,20 +604,11 @@ Page {
 
         IconButton {
             id: gotoButton
-            icon.source: searchButton ? "image://theme/icon-m-search"  : "image://theme/icon-m-tabs"
+            icon.source: "image://theme/icon-m-tabs"
             anchors.left: toolbar.left
             anchors.leftMargin: Theme.paddingSmall
             onClicked: {
-                if (!searchButton) {
                     pageStack.push(Qt.resolvedUrl("SelectUrl.qml"), { dataContainer: page, siteURL: webview.url, bookmarks: page.bookmarks, siteTitle: webview.title})
-                }
-                else {
-                    var message = new Object
-                    message.type = 'search'
-                    message.searchTerm = urlText.text
-                    webview.experimental.postMessage(JSON.stringify(message))
-                    //DB.findString(urlText.text)
-                }
             }
             property int mx
             property bool searchButton: false
