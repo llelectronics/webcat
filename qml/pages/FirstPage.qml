@@ -448,6 +448,21 @@ Page {
             width: Theme.paddingSmall // We want to see it properly
             flickable: webview
         }
+        Keys.onPressed: {
+            if (event.key == Qt.Key_T) webview.scrollToTop()
+            else if (event.key == Qt.Key_B) webview.scrollToBottom()
+            else if (event.key == Qt.Key_K) gotoButton.clicked(undefined)
+            else if (event.key == Qt.Key_S) searchModeButton.clicked(undefined)
+            else if (event.key == Qt.Key_R) readerModeButton.clicked(undefined)
+            else if (event.key == Qt.Key_L) webview.reload()
+            else if (event.key == Qt.Key_U) { toolbar.state = "expanded" ; urlText.selectAll(); urlText.forceActiveFocus() }
+            else if (event.key == Qt.Key_W && event.modifiers == Qt.ShiftModifier) newWindowButton.clicked(undefined)
+            else if (event.key == Qt.Key_W) newTabButton.clicked(undefined)
+            else if (event.key == Qt.Key_P) webview.goBack()
+            else if (event.key == Qt.Key_N) webview.goForward()
+            else if (searchBar.visible == true && (event.key == Qt.Key_Enter || event.key == Qt.Key_Return)) searchIcon.clicked(undefined)
+        }
+
 
     } // WebView
     FancyScroller {
@@ -947,6 +962,7 @@ Page {
             onClicked: {
                 searchMode = !searchMode
                 searchModeButton.highlighted = false
+                searchText.forceActiveFocus();
             }
         }
 
@@ -1092,10 +1108,12 @@ Page {
 
             Keys.onEnterPressed: {
                 searchBar.search();
+                webview.forceActiveFocus();
             }
 
             Keys.onReturnPressed: {
                searchBar.search();
+               webview.forceActiveFocus();
             }
 
         }
