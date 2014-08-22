@@ -98,6 +98,9 @@ function getYoutubeStream(youtube_id) {
             if (!streams) {
                 var msg = "YouTube videoInfo parsing: url_encoded_fmt_stream_map not found";
                 console.debug(msg);
+                // Last chance if we don't get the direct video stream url parse the youtube url directly to external player
+                mainWindow.firstPage.ytUrlLoading = false
+                mainWindow.firstPage.ytStreamUrl = getYoutubeVid(mainWindow.firstPage.url)
                 return;
             }
             var streamsSplit = streams.split("&");
