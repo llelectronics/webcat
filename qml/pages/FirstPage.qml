@@ -317,8 +317,10 @@ Page {
                 if (toolbar.state == "expanded" && data.state == "show" && ! urlText.focus == true) toolbar.state = "minimized"
             }
             case 'search': {
-                errorText = data.errorMsg;
-                popup.visible = true;
+                if (data.errorMsg != undefined && data.errorMsg != "") {
+                    errorText = data.errorMsg;
+                    popup.visible = true;
+                }
             }
             }
         }
