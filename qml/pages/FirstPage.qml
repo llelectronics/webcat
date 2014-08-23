@@ -413,6 +413,7 @@ Page {
 
             onTextClicked: {
                 pageStack.push(Qt.resolvedUrl("SelectionEditPage.qml"), { editText: hiddenTxtBox.text })
+                actionTriggered();
             }
 
             onResized: {

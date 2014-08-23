@@ -158,4 +158,18 @@ Item {
             }
         }
     }
+
+    Rectangle {
+        x: __rect.width - width / 2
+        y: __topHandle.y - width / 2
+        width: 56
+        height: 56
+        radius: 28
+        color: "red"
+        IconButton {
+            anchors.fill: parent
+            icon.source: "image://theme/icon-m-close"
+            onClicked: __container.visible = false
+        }
+    }
 }
