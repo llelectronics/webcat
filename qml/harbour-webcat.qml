@@ -30,6 +30,7 @@
 
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import QtQuick.Window 2.1
 import "pages"
 import "pages/helper/db.js" as DB
 import "pages/helper/tabhelper.js" as Tab
@@ -90,6 +91,16 @@ ApplicationWindow
         }
     }
 
+    function saveSession(sessionName) {
+        for (var i = 0; i < tabModel.count; i++) {
+            DB.addSession(sessionName,i,tabModel.get(i).url,tabModel.count)
+        }
+    }
+
+    function loadSession(sessionName) {
+        DB.getSession(sessionName)
+    }
+
     function addDefaultBookmarks() {
         modelUrls.addBookmark("http://together.jolla.com/", "Jolla Together", userAgent);
         modelUrls.addBookmark("http://talk.maemo.org/","Maemo forum", userAgent);
@@ -111,6 +122,7 @@ ApplicationWindow
         console.log("openNewTab: "+ pageid + ', currentTab: ' + currentTab);
         var webView = tabView.createObject(mainWindow, { id: pageid, objectName: pageid } );
         webView.url = url;
+        webView.pageId = pageid;
         Tab.itemMap[pageid] = webView;
         if (hasTabOpen) {
             //console.debug("Other Tab loading with Pagid: " + pageid)
@@ -142,11 +154,12 @@ ApplicationWindow
         //console.log('closeTab: ' + pageid + ' at ' + deleteIndex + ': ' + tabModel.get(deleteIndex))
         //console.log('\ttabListView.model.get(deleteIndex): ' + tabListView.model.get(deleteIndex).pageid)
         tabModel.remove(deleteIndex);
+        var curTab = currentTab
         if (deleteIndex != 0) currentTab = tabModel.get(deleteIndex-1).pageid;
         else currentTab = tabModel.get(0).pageid;
 
         if (hasTabOpen) {
-            switchToTab(currentTab)
+            if (curTab != currentTab) switchToTab(currentTab)
         } else {
             currentTab = ""; // clean currentTab
         }
@@ -191,6 +204,12 @@ ApplicationWindow
                 }
             }
             return false;
+        }
+
+        function updateUrl(id,url) {
+            var idx = getIndexFromId(id);
+            //console.debug("Updating index:" + idx + " with url:" + url);
+            setProperty(idx, "url", String(url));
         }
 
     }
@@ -305,6 +324,20 @@ ApplicationWindow
         // Load Settings
         DB.getSettings();
         //openNewTab("page"+salt(), siteURL, false);
+    }
+
+    // Let time run to save session every minute
+    // TODO: make configurable and somehow
+    Timer {
+        interval: 60000; running: true; repeat: true
+        onTriggered: saveSession("lastSession")
+    }
+    // What a hack to create a on Closing behavior
+    Window {
+        visible: false
+        onClosing: {
+            saveSession("lastSession")
+        }
     }
 }
 

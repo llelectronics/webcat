@@ -35,6 +35,8 @@ function initialize() {
                     BEGIN \
                         DELETE FROM history WHERE history.uid IN (SELECT history.uid FROM history ORDER BY history.uid limit (select count(*) -100 from history)); \
                     END;')
+
+                    tx.executeSql('CREATE TABLE IF NOT EXISTS sessions(session TEXT, tab INTEGER, url TEXT, sessionTabs INTEGER, UNIQUE(session, tab))');
                 });
 }
 
@@ -158,10 +160,10 @@ function addHistory(url) {
         var rs = tx.executeSql('INSERT OR REPLACE INTO history VALUES (?,?);', [date.getTime(),url]);
         if (rs.rowsAffected > 0) {
             res = "OK";
-            console.log ("Saved to database");
+            //console.log ("Saved to database");
         } else {
             res = "Error";
-            console.log ("Error saving to database");
+            //console.log ("Error saving to database");
         }
     }
     );
@@ -231,4 +233,40 @@ function clearTable(table) {
     );
     // The function returns “OK” if it was successful, or “Error” if it wasn't
     return res;
+}
+
+// This function is used to write bookmarks into the database
+function addSession(session,tab,url,sessionTabs) {
+    var db = getDatabase();
+    var res = "";
+    db.transaction(function(tx) {
+        console.debug("Adding to sessions db:" + session + " " + url);
+
+        var rs = tx.executeSql('INSERT OR REPLACE INTO sessions VALUES (?,?,?,?);', [session,tab,url,sessionTabs]);
+        if (rs.rowsAffected > 0) {
+            res = "OK";
+            //console.log ("Saved to database");
+        } else {
+            res = "Error";
+            //console.log ("Error saving to database");
+        }
+    }
+    );
+    // The function returns “OK” if it was successful, or “Error” if it wasn't
+    return res;
+}
+
+// This function is used to retrieve bookmarks from database
+function getSession(session) {
+    var db = getDatabase();
+    var respath="";
+    db.transaction(function(tx) {
+        var rs = tx.executeSql('SELECT * FROM sessions WHERE session=(?)', [session]);
+        mainWindow.tabModel.clear();
+        mainWindow.pageStack.clear(); // Hopefully that does not fail :)
+        for (var i = 0; i < rs.rows.length; i++) {
+            if (i<rs.rows.item(0).sessionTabs) mainWindow.loadInNewTab(rs.rows.item(i).url)
+            //console.debug("Get Bookmarks from db:" + rs.rows.item(i).title, rs.rows.item(i).url)
+        }
+    })
 }

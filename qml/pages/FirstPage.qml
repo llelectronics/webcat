@@ -357,9 +357,11 @@ Page {
             {
                 urlLoading = false;
                 if (url == "about:bookmarks" && loadHP === true) pageStack.push(Qt.resolvedUrl("SelectUrl.qml"), { dataContainer: page, siteURL: webview.url, bookmarks: page.bookmarks, siteTitle: webview.title})
-                if (mainWindow.currentTabBg != "") mainWindow.tabModel.setProperty(mainWindow.tabModel.getIndexFromId(mainWindow.currentTabBg), "title", webview.title);
-                else mainWindow.tabModel.setProperty(mainWindow.tabModel.getIndexFromId(mainWindow.currentTab), "title", webview.title);
+                mainWindow.tabModel.setProperty(mainWindow.tabModel.getIndexFromId(pageId), "title", webview.title);
                 //console.debug(tabModel.get(0).title);
+                // Update url for tabModel
+                //console.debug("[FirstPage.qml] pageId: " + pageId);
+                if (pageId != "" || pageId != undefined) mainWindow.tabModel.updateUrl(pageId,url)
             }
         }
         onNavigationRequested: {
@@ -1184,7 +1186,7 @@ Page {
             Button {
                 text: "Open in New Tab"
                 width: widestBtn.width
-                onClicked: { mainWindow.openNewTab("page"+salt(), fixUrl(contextUrl.text), true); contextMenu.visible = false }
+                onClicked: { mainWindow.openNewTab("page"+salt(), fixUrl(contextUrl.text), true); contextMenu.visible = false;}
             }
             Button {
                 id: widestBtn

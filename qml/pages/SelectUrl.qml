@@ -152,6 +152,11 @@ Page
 //                    onClicked: mainWindow.openNewWindow("http://about:blank");
 //                }
                 MenuItem {
+                    text: qsTr("Load Last Session")
+                    onClicked: mainWindow.loadSession("lastSession");
+                }
+
+                MenuItem {
                     text: qsTr("New Tab")
                     onClicked: mainWindow.openNewTab("page"+mainWindow.salt(), "about:blank", false);
                 }
@@ -213,7 +218,8 @@ Page
                         }
                         onReleased: {
                             if (tabCloseMsg.opacity == 1.0 && mouse.y < ymouse - 50) {
-                                mainWindow.closeTab(index, tabModel.get(tabListView.currentIndex).pageid)
+                                //console.debug("[SelectUrl.qml] Removing Tab with index: " + index + " and currentIndex: " + tabListView.currentIndex);
+                                mainWindow.closeTab(index, tabModel.get(index).pageid)
                             }
                             tabCloseMsg.opacity = 0
                         }
