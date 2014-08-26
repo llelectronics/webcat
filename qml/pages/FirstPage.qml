@@ -37,7 +37,7 @@ import "helper/yt.js" as YT
 
 Page {
     id: page
-    allowedOrientations: Orientation.All
+    allowedOrientations: mainWindow.orient
 
     // minimize toolbar when switching to landscape
     onOrientationChanged: {
@@ -928,8 +928,8 @@ Page {
                 visible: page.allowedOrientations !== Orientation.All
             }
             onClicked: {
-                if (page.allowedOrientations === Orientation.All) page.allowedOrientations = page.orientation
-                else page.allowedOrientations = Orientation.All
+                if (page.allowedOrientations === Orientation.All) { page.allowedOrientations = page.orientation; mainWindow.orient = page.orientation }
+                else { page.allowedOrientations = Orientation.All; mainWindow.orient = Orientation.All; }
             }
         }
 
