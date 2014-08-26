@@ -68,7 +68,10 @@ Page
                         anchors.verticalCenter: parent.verticalCenter
                         anchors.left: parent.left
                         anchors.leftMargin: Theme.paddingMedium
+                        anchors.right: parent.right
+                        anchors.rightMargin: Theme.paddingMedium
                         color: contentItem.down || menuOpen ? Theme.highlightColor : Theme.primaryColor
+                        truncationMode: TruncationMode.Fade
                     }
                     onClicked: {
                         siteURL = url;
