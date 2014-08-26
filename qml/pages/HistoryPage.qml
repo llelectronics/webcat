@@ -3,8 +3,8 @@ import Sailfish.Silica 1.0
 import "helper/db.js" as DB
 
 Page {
-    anchors.fill: parent
-    allowedOrientations: Orientation.All
+    id: page
+    allowedOrientations: mainWindow.orient
 
     RemorsePopup { id: remorse }
 
@@ -14,8 +14,7 @@ Page {
 
     SilicaListView {
         id: repeater1
-        width: parent.width
-        height: parent.height
+        anchors.fill: page
         model: mainWindow.historyModel
         quickScroll: true
         header: PageHeader {

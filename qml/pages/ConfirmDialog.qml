@@ -12,6 +12,7 @@ import Sailfish.Silica 1.0
 
 Dialog {
     id: dialog
+    allowedOrientations: mainWindow.firstPage.allowedOrientations
     property alias acceptText: header.acceptText
     property alias label: lbl.text
     default property alias defaultContent: promptContent.children

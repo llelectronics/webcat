@@ -5,7 +5,7 @@ Page
 {
     id: urlPage
     //anchors.fill: parent
-    allowedOrientations: Orientation.All
+    allowedOrientations: mainWindow.orient
     showNavigationIndicator: true
     forwardNavigation: false
 

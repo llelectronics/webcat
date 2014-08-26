@@ -139,6 +139,7 @@ function getSettings() {
             else if (rs.rows.item(i).setting == "userAgentName") mainWindow.userAgentName = rs.rows.item(i).value
             else if (rs.rows.item(i).setting == "searchEngine") mainWindow.searchEngine = rs.rows.item(i).value
             else if (rs.rows.item(i).setting == "searchEngineName") mainWindow.searchEngineName = rs.rows.item(i).value
+            else if (rs.rows.item(i).setting == "orientation") mainWindow.orient = rs.rows.item(i).value
         }
     })
 }

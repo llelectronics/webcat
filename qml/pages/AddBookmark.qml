@@ -4,7 +4,7 @@ import Sailfish.Silica 1.0
 Dialog {
     id: addBookmarkPage
 
-    allowedOrientations: Orientation.All
+    allowedOrientations: mainWindow.orient
 
     acceptDestinationAction: PageStackAction.Pop
 

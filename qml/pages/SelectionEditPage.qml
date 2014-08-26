@@ -3,7 +3,7 @@ import Sailfish.Silica 1.0
 
 Dialog {
 
-    allowedOrientations: Orientation.All
+    allowedOrientations: mainWindow.orient
 
     //property string editText
     property alias editText: editTxt.text

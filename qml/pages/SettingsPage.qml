@@ -5,7 +5,7 @@ import "helper/db.js" as DB
 Dialog {
     id: settingsPage
 
-    allowedOrientations: Orientation.All
+    allowedOrientations: mainWindow.orient
 
     acceptDestinationAction: PageStackAction.Pop
 
@@ -35,6 +35,7 @@ Dialog {
         offlineWebApplicationCacheSwitch.checked = true;
         searchEngine.text = "http://www.google.com/search?q=%s"
         searchEngineCombo.value = "Google"
+        orientationCombo.value = "Orientation.All"
     }
 
     function saveSettings() {
@@ -51,6 +52,9 @@ Dialog {
         DB.addSetting("userAgentName", userAgentCombo.value);
         DB.addSetting("searchEngine", searchEngine.text);
         DB.addSetting("searchEngineName", searchEngineCombo.value)
+        if (orientationCombo.value == "Orientation.All") DB.addSetting("orientation", Orientation.All)
+        else if (orientationCombo.value == "Orientation.Landscape") DB.addSetting("orientation", Orientation.Landscape)
+        else if (orientationCombo.value == "Orientation.Portrait") DB.addSetting("orientation", Orientation.Portrait)
         DB.getSettings();
     }
 
@@ -241,6 +245,23 @@ Dialog {
                 }
             }
 
+            ComboBox {
+                id: orientationCombo
+                anchors.horizontalCenter: parent.horizontalCenter
+                label: qsTr("Default Orientation")
+                currentIndex: {
+                    console.debug("[SettingsPage.qml] mainWindow.allowedOrientations:" + mainWindow.allowedOrientations)
+                    if (mainWindow.orient == Orientation.all) return 0
+                    else if (mainWindow.orient == Orientation.Landscape) return 1
+                    else if (mainWindow.orient == Orientation.Portrait) return 2
+                }
+                menu: ContextMenu {
+                    MenuItem { text: "Orientation.All" }
+                    MenuItem { text: "Orientation.Landscape" }
+                    MenuItem { text: "Orientation.Portrait" }
+                }
+            }
+
             SectionHeader {
                 text: qsTr("General")
             }
@@ -261,7 +282,6 @@ Dialog {
             Row {
                 id: customSearchEngine
                 visible: searchEngineCombo.value === qsTr("Custom")
-                // TODO: Make a ValueButton out of it and add a List with predefined search engines
                 //anchors.horizontalCenter: parent.horizontalCenter
                 //spacing: 10
 //                Label {

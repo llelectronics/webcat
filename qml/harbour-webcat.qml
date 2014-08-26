@@ -39,6 +39,8 @@ ApplicationWindow
 {
     id: mainWindow
 
+    allowedOrientations: Orientation.All
+
     // default settings
     property string siteURL: "about:bookmarks" //"http://talk.maemo.org"
     property string homepage: "about:bookmarks"
@@ -53,6 +55,7 @@ ApplicationWindow
     property string userAgentName: "Default Jolla Webkit"
     property string searchEngine: "http://www.google.com/search?q=%s"
     property string searchEngineName: "Google"
+    property int orient: Orientation.All
 
 
     property bool urlLoading: false

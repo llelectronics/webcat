@@ -17,6 +17,8 @@ Dialog {
     property alias username: username.text
     property alias password: password.text
 
+    allowedOrientations: mainWindow.firstPage.allowedOrientations
+
     canAccept: username.text.length > 0
 
     SilicaFlickable {

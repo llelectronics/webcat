@@ -2,7 +2,7 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 Page {
     id: downloadManager
-    allowedOrientations: Orientation.All
+    allowedOrientations: mainWindow.orient
     property string downloadUrl
     //property alias downloadUrl: urlField.text
 

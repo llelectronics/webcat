@@ -348,7 +348,6 @@ Page {
                         popup.visible = true
                     }
                     else if ((/handled by the media engine/).test(errorText)) {
-                        //TODO: Enable Downloadmanager here
                         mediaLink = true;
                     }
                 }
@@ -633,8 +632,6 @@ Page {
             property int mx
             property bool searchButton: false
             onPressAndHold: {
-                //if (toolbar.state == "expanded") toolbar.state = "minimized"
-                //TODO show extraToolbar
                 if (extraToolbar.opacity == 0) {
                     extraToolbar.visible = true
                     extraToolbar.opacity = 1
