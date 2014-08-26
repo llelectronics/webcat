@@ -46,7 +46,7 @@ function addBookmark(title,url,agent) {
     var db = getDatabase();
     var res = "";
     db.transaction(function(tx) {
-        // Remove and readd if url already in history
+        // Remove and readd if url already in bookmarks
         removeBookmark(url);
         console.debug("Adding to bookmarks db:" + title + " " + url);
 
@@ -215,6 +215,18 @@ function searchHistory(searchTerm) {
         }
     }
     );
+}
+
+// This function is used to retrieve history from database
+function getHistory() {
+    var db = getDatabase();
+    var respath="";
+    db.transaction(function(tx) {
+        var rs = tx.executeSql('SELECT * FROM history ORDER BY history.uid DESC;');
+        for (var i = 0; i < rs.rows.length; i++) {
+             historyModel.append({"url" : rs.rows.item(i).url});
+        }
+    })
 }
 
 function clearTable(table) {

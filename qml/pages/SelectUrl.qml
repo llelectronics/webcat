@@ -157,9 +157,13 @@ Page
 //                    text: qsTr("New Window")
 //                    onClicked: mainWindow.openNewWindow("http://about:blank");
 //                }
+//                MenuItem {
+//                    text: qsTr("Load Last Session")
+//                    onClicked: mainWindow.loadSession("lastSession");
+//                }
                 MenuItem {
-                    text: qsTr("Load Last Session")
-                    onClicked: mainWindow.loadSession("lastSession");
+                    text: qsTr("History")
+                    onClicked: pageStack.push(Qt.resolvedUrl("HistoryPage.qml"));
                 }
 
                 MenuItem {

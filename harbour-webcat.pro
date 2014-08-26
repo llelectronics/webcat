@@ -50,7 +50,8 @@ OTHER_FILES += qml/harbour-webcat.qml \
     qml/pages/SelectionHandle.qml \
     qml/pages/img/multi_selection_handle.png \
     qml/pages/SelectionEditPage.qml \
-    qml/pages/helper/readability.js
+    qml/pages/helper/readability.js \
+    qml/pages/HistoryPage.qml
 
 RESOURCES += \
     qrc.qrc
