@@ -84,6 +84,7 @@ Dialog {
         id: flick
         anchors.fill: parent
         contentHeight: col.height + head.height
+        quickScroll: true
 
         DialogHeader {
             id: head
@@ -92,33 +93,41 @@ Dialog {
 
         PullDownMenu {
             MenuItem {
-                text: qsTr("Add default bookmarks")
-                onClicked: mainWindow.addDefaultBookmarks();
+                text: qsTr("About ")+appname
+                onClicked: pageStack.push(Qt.resolvedUrl("AboutPage.qml"));
             }
             MenuItem {
-                text: qsTr("Clear Cache")
-                onClicked: clearCache();
+                text: qsTr("Download Manager")
+                onClicked: pageStack.push(Qt.resolvedUrl("DownloadManager.qml"));
             }
-            MenuItem {
-                text: qsTr("Clear Cookies")
-                onClicked: clearCookies();
-            }
-            MenuItem {
-                text: qsTr("Clear History")
-                onClicked: clearHistory();
-            }
+//            MenuItem {
+//                text: qsTr("Add default bookmarks")
+//                onClicked: mainWindow.addDefaultBookmarks();
+//            }
+//            MenuItem {
+//                text: qsTr("Clear Cache")
+//                onClicked: clearCache();
+//            }
+//            MenuItem {
+//                text: qsTr("Clear Cookies")
+//                onClicked: clearCookies();
+//            }
+//            MenuItem {
+//                text: qsTr("Clear History")
+//                onClicked: clearHistory();
+//            }
             MenuItem {
                 text: qsTr("Load Defaults")
                 onClicked: loadDefaults();
             }
         }
 
-        PushUpMenu {
-            MenuItem {
-                text: qsTr("Goto top")
-                onClicked: flick.scrollToTop();
-            }
-        }
+//        PushUpMenu {
+//            MenuItem {
+//                text: qsTr("Return to top")
+//                onClicked: flick.scrollToTop();
+//            }
+//        }
 
         Column {
             id: col
@@ -286,6 +295,18 @@ Dialog {
                 text: qsTr("Private Browsing")
                 checked: mainWindow.privateBrowsing
             }
+            BackgroundItem {
+                id: loadDefaulfBookmarksButton
+                Label {
+                    text: qsTr("Add Default Bookmarks")
+                    anchors.verticalCenter: parent.verticalCenter
+                    anchors.left: parent.left
+                    anchors.leftMargin: Theme.paddingLarge
+                    color: loadDefaulfBookmarksButton.highlighted ? Theme.highlightColor : Theme.primaryColor
+                }
+                anchors.horizontalCenter: parent.horizontalCenter
+                onClicked: mainWindow.addDefaultBookmarks()
+            }
             SectionHeader {
                 text: "Advanced"
             }
@@ -314,6 +335,58 @@ Dialog {
                 anchors.horizontalCenter: parent.horizontalCenter
                 text: "Offline Web Application Cache"
                 checked: mainWindow.offlineWebApplicationCache
+            }
+            SectionHeader {
+                text: "Privacy"
+            }
+            BackgroundItem {
+                id: clearCacheButton
+                width: parent.width
+                Label {
+                    text: "Clear Cache"
+                    anchors.verticalCenter: parent.verticalCenter
+                    anchors.left: parent.left
+                    anchors.leftMargin: Theme.paddingLarge
+                    color: clearCacheButton.highlighted  ? Theme.highlightColor : Theme.primaryColor
+                }
+                anchors.horizontalCenter: parent.horizontalCenter
+                onClicked: clearCache();
+            }
+            BackgroundItem {
+                id: clearCookiesButton
+                Label {
+                    text: qsTr("Clear Cookies")
+                    anchors.verticalCenter: parent.verticalCenter
+                    anchors.left: parent.left
+                    anchors.leftMargin: Theme.paddingLarge
+                    color: clearCookiesButton.highlighted ? Theme.highlightColor : Theme.primaryColor
+                }
+                anchors.horizontalCenter: parent.horizontalCenter
+                onClicked: clearCookies();
+            }
+            BackgroundItem {
+                id: clearHistoryButton
+                Label {
+                    text: qsTr("Clear History")
+                    anchors.verticalCenter: parent.verticalCenter
+                    anchors.left: parent.left
+                    anchors.leftMargin: Theme.paddingLarge
+                    color: clearHistoryButton.highlighted ? Theme.highlightColor : Theme.primaryColor
+                }
+                anchors.horizontalCenter: parent.horizontalCenter
+                onClicked: clearHistory();
+            }
+            BackgroundItem {
+                id: startPrivateBrowserButton
+                Label {
+                    text: qsTr("Start Private Window")
+                    anchors.verticalCenter: parent.verticalCenter
+                    anchors.left: parent.left
+                    anchors.leftMargin: Theme.paddingLarge
+                    color: startPrivateBrowserButton.highlighted ? Theme.highlightColor : Theme.primaryColor
+                }
+                anchors.horizontalCenter: parent.horizontalCenter
+                onClicked: mainWindow.openPrivateNewWindow("http://about:blank");
             }
 
         }

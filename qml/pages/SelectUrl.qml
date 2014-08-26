@@ -33,6 +33,7 @@ Page
             width: parent.width
             height: urlPage.height - (tabListView.height + Theme.paddingLarge)  //- entryURL.height - 2*65 //- bottomBar.height
             model: modelUrls
+            quickScroll: true
             header: PageHeader {
                 id: topPanel
                 title: qsTr("Bookmarks")
@@ -65,6 +66,8 @@ Page
                     Label {
                         text: title
                         anchors.verticalCenter: parent.verticalCenter
+                        anchors.left: parent.left
+                        anchors.leftMargin: Theme.paddingMedium
                         color: contentItem.down || menuOpen ? Theme.highlightColor : Theme.primaryColor
                     }
                     onClicked: {
@@ -127,18 +130,18 @@ Page
                 }
             }
             PullDownMenu {
-                MenuItem {
-                    text: qsTr("About ")+appname
-                    onClicked: pageStack.push(Qt.resolvedUrl("AboutPage.qml"));
-                }
+//                MenuItem {
+//                    text: qsTr("About ")+appname
+//                    onClicked: pageStack.push(Qt.resolvedUrl("AboutPage.qml"));
+//                }
                 MenuItem {
                     text: qsTr("Settings")
                     onClicked: pageStack.push(Qt.resolvedUrl("SettingsPage.qml"));
                 }
-                MenuItem {
-                    text: qsTr("Download Manager")
-                    onClicked: pageStack.push(Qt.resolvedUrl("DownloadManager.qml"));
-                }
+//                MenuItem {
+//                    text: qsTr("Download Manager")
+//                    onClicked: pageStack.push(Qt.resolvedUrl("DownloadManager.qml"));
+//                }
                 MenuItem {
                     text: qsTr("Add Bookmark")
                     onClicked: pageStack.push(Qt.resolvedUrl("AddBookmark.qml"), { bookmarks: urlPage.bookmarks });
