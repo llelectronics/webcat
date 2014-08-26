@@ -229,6 +229,20 @@ function getHistory() {
     })
 }
 
+// This function is used to remove a bookmark from database
+function removeHistory(url) {
+    var db = getDatabase();
+    var respath="";
+    db.transaction(function(tx) {
+        var rs = tx.executeSql('DELETE FROM history WHERE url=(?);', [url]);
+//        if (rs.rowsAffected > 0) {
+//            console.debug("Url found and removed");
+//        } else {
+//            console.debug("Url not found");
+//        }
+    })
+}
+
 function clearTable(table) {
     var db = getDatabase();
     var res = "";

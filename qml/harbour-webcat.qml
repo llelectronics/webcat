@@ -311,6 +311,12 @@ ApplicationWindow
             }
             return false;
         }
+        function removeHistory(siteUrl) {
+            for (var i=0; i<count; i++) {
+                if (get(i).url === siteUrl) remove(i);
+            }
+            DB.removeHistory(siteUrl);
+        }
 
     }
 

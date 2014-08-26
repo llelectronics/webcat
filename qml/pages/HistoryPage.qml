@@ -38,8 +38,7 @@ Page {
             function remove() {
                 var removal = removalComponent.createObject(myListItem)
                 ListView.remove.connect(removal.deleteAnimation.start)
-                // TODO: remove from history
-                //removal.execute(contentItem, "Deleting " + title, function() { bookmarks.removeBookmark(url); } )
+                removal.execute(contentItem, "Deleting " + url, function() { mainWindow.historyModel.removeHistory(url); } )
             }
 
             BackgroundItem {
