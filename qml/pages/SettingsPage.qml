@@ -244,18 +244,12 @@ Dialog {
             SectionHeader {
                 text: qsTr("General")
             }
-            Row {
-                anchors.horizontalCenter: parent.horizontalCenter
-                spacing: 25
-                Label {
-                    text: qsTr("Homepage: ")
-                }
-                TextField {
-                    id: hp
-                    text: mainWindow.homepage  // FIX: on new Window loading siteURL != homepage set in settings so add a new var homepage in mainWindow
-                    inputMethodHints: Qt.ImhUrlCharactersOnly
-                    onFocusChanged: if (focus == true) selectAll();
-                }
+            TextField {
+                id: hp
+                text: mainWindow.homepage  // FIX: on new Window loading siteURL != homepage set in settings so add a new var homepage in mainWindow
+                inputMethodHints: Qt.ImhUrlCharactersOnly
+                label: qsTr("Homepage")
+                onFocusChanged: if (focus == true) selectAll();
             }
             ValueButton {
                 anchors.horizontalCenter: parent.horizontalCenter
@@ -268,18 +262,19 @@ Dialog {
                 id: customSearchEngine
                 visible: searchEngineCombo.value === qsTr("Custom")
                 // TODO: Make a ValueButton out of it and add a List with predefined search engines
-                anchors.horizontalCenter: parent.horizontalCenter
-                spacing: 10
-                Label {
-                    id: searchlbl
-                    text: qsTr("Engine Url: ")
-                }
+                //anchors.horizontalCenter: parent.horizontalCenter
+                //spacing: 10
+//                Label {
+//                    id: searchlbl
+//                    text: qsTr("Engine Url: ")
+//                }
                 TextField {
                     id: searchEngine
                     text: searchEngineUri
                     inputMethodHints: Qt.ImhUrlCharactersOnly
-                    placeholderText: "%s for searchterm"
-                    width: hp.width
+                    placeholderText: "Engine URL use %s for searchterm"
+                    label: "Engine URL use %s for searchterm"
+                    width: col.width
                     onFocusChanged: if (focus == true) selectAll();
                 }
             }

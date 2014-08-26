@@ -63,6 +63,7 @@ Dialog {
             anchors.horizontalCenter: parent.horizontalCenter
             width: parent.width - 20
             placeholderText: "Title of the bookmark"
+            label: "Title of the bookmark"
             focus: true
         }
         TextField {
@@ -70,6 +71,7 @@ Dialog {
             width: parent.width - 20
             anchors.horizontalCenter: parent.horizontalCenter
             placeholderText: "URL of bookmark"
+            label: "URL of bookmark"
             inputMethodHints: Qt.ImhUrlCharactersOnly
             visible: editBookmark ? false : true
         }
