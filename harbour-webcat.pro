@@ -51,7 +51,9 @@ OTHER_FILES += qml/harbour-webcat.qml \
     qml/pages/img/multi_selection_handle.png \
     qml/pages/SelectionEditPage.qml \
     qml/pages/helper/readability.js \
-    qml/pages/HistoryPage.qml
+    qml/pages/HistoryPage.qml \
+    translations/harbour-webcat.ts \
+    translations/harbour-webcat-de.ts
 
 RESOURCES += \
     qrc.qrc
@@ -61,6 +63,12 @@ HEADERS += \
     src/DownloadManager.hpp
 
 QT += network
+
+# to disable building translations every time, comment out the
+# following CONFIG line
+CONFIG += sailfishapp_i18n
+
+TRANSLATIONS += translations/harbour-webcat-de.ts
 
 # Hmm... not allowed for now I guess
 #PKGCONFIG += nemotransferengine-qt5
