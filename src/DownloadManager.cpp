@@ -47,6 +47,7 @@
 #include <QtNetwork/QNetworkReply>
 #include <QtNetwork/QNetworkRequest>
 #include <QDir>
+#include <QTextCodec>
 
 DownloadManager::DownloadManager(QObject *parent)
     : QObject(parent), m_currentDownload(0), m_downloadedCount(0), m_totalCount(0), m_progressTotal(0), m_progressValue(0)
@@ -56,6 +57,7 @@ DownloadManager::DownloadManager(QObject *parent)
 //                                                   "/org/nemo/transferengine",
 //                                                   QDBusConnection::sessionBus(),
 //                                                   this);
+    QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8"));
 }
 
 QString DownloadManager::errorMessage() const
@@ -90,7 +92,7 @@ QString DownloadManager::progressMessage() const
 
 void DownloadManager::downloadUrl(const QString &url)
 {
-    append(QUrl(url));
+    append(QUrl::fromEncoded(url.toLocal8Bit()));
 }
 
 void DownloadManager::append(const QUrl &url)

@@ -28,6 +28,7 @@ function initialize() {
                         tx.executeSql('INSERT INTO bookmarks VALUES (?,?,?);', ["Review Jolla", "http://reviewjolla.blogspot.se/", defaultAgent]);
                     }
                     tx.executeSql('CREATE TABLE IF NOT EXISTS settings(setting TEXT, value TEXT)');
+                    //tx.executeSql('CREATE UNIQUE INDEX idx_settings ON settings(setting)');
 
                     tx.executeSql('CREATE TABLE IF NOT EXISTS history(uid INTEGER UNIQUE, url TEXT)');
                     // Limit history entries to 100
