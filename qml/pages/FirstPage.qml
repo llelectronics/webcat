@@ -60,7 +60,8 @@ Page {
     property QtObject _ngfEffect
     property alias suggestionView: suggestionView
     property bool imageLongPressAvailability;
-    property bool mediaYt;
+    property bool mediaYt: false
+    property bool mediaYtEmbeded : false
     property bool mediaLink;
     property string ytStreamUrl;
     property bool ytUrlLoading;
@@ -186,6 +187,42 @@ Page {
         overridePageStackNavigation: true
         header: PageHeader {height: 0}
 
+        function checkYoutubeURL(yurl) {
+            if (YT.checkYoutube(yurl.toString()) && mediaYtEmbeded == false) {
+                mediaYt = true;
+                ytUrlLoading = true
+                mediaLink = true;
+                mediaDownloadRec.mediaUrl = yurl
+                mediaDownloadRec.visible = true
+            }
+            else {
+                mediaYt = false;
+                mediaLink = false;
+                ytUrlLoading = false
+                mediaDownloadRec.mediaUrl = ""
+                mediaDownloadRec.visible = false
+            }
+        }
+
+        function checkYoutubeEmbeded(yurl) {
+            if (YT.checkYoutube(yurl.toString())) {
+                mediaYtEmbeded = true;
+                mediaYt = true;
+                ytUrlLoading = true
+                mediaLink = true;
+                mediaDownloadRec.mediaUrl = yurl
+                mediaDownloadRec.visible = true
+            }
+            else {
+                mediaYtEmbeded = false;
+                mediaYt = false;
+                mediaLink = false;
+                ytUrlLoading = false
+                mediaDownloadRec.mediaUrl = ""
+                mediaDownloadRec.visible = false
+            }
+        }
+
         onUrlChanged: {
             // There seems to be a bug where back and forward navigation is not shown even if webview.canGoBack or ~Forward
             backIcon.visible = true
@@ -198,18 +235,8 @@ Page {
                 // Audio or Video link clicked. Download should start now
                 console.debug("Video or Audio Link clicked... download should start now")
             }
-//            if (YT.checkYoutube(url.toString())) {
-//                mediaYt = true;
-//                ytUrlLoading = true
-//                mediaLink = true;
-//                mediaDownloadRec.visible = true
-//            }
-//            else {
-//                mediaYt = false;
-//                mediaLink = false;
-//                ytUrlLoading = false
-//                mediaDownloadRec.visible = false
-//            }
+
+            mediaYtEmbeded = false;
 
             // Add to url history
             DB.addHistory(url);
@@ -322,6 +349,12 @@ Page {
                     popup.visible = true;
                 }
             }
+            case 'iframe': {
+                if (data.isrc != undefined && data.isrc != "") {
+                    //console.debug("[FirstPage.qml] Got iframe with isrc: " + data.isrc);
+                    checkYoutubeEmbeded(data.isrc);
+                }
+            }
             }
         }
 
@@ -362,18 +395,8 @@ Page {
                 //console.debug("[FirstPage.qml] pageId: " + pageId);
                 if (pageId != "" || pageId != undefined) mainWindow.tabModel.updateUrl(pageId,url)
 
-                if (YT.checkYoutube(url.toString())) {
-                    mediaYt = true;
-                    ytUrlLoading = true
-                    mediaLink = true;
-                    mediaDownloadRec.visible = true
-                }
-                else {
-                    mediaYt = false;
-                    mediaLink = false;
-                    ytUrlLoading = false
-                    mediaDownloadRec.visible = false
-                }
+                // Youtube detect here but only if embeded media wasn't detected
+                if (mediaYtEmbeded == false) checkYoutubeURL(url);
             }
         }
         onNavigationRequested: {
@@ -1009,6 +1032,15 @@ Page {
     // On Media Loaded show download button
     Rectangle {
         id: mediaDownloadRec
+        property string mediaUrl
+
+        onMediaUrlChanged: {
+            if (visible && mediaYt) {
+                //console.debug("[FirstPage.qml] MediaUrl: " + mediaUrl)
+                YT.getYoutubeDirectStream(mediaUrl.toString())
+            }
+        }
+
         gradient: Gradient {
             GradientStop { position: 0.0; color: "#262626" }
             GradientStop { position: 0.85; color: "#1F1F1F"}
@@ -1021,11 +1053,7 @@ Page {
         width: parent.width
         height: 72
         visible: false
-        onVisibleChanged: {
-            if (visible && mediaYt) {
-                YT.getYoutubeDirectStream(url.toString())
-            }
-        }
+
         ProgressCircle {
             id: progressCircleYt
             z: 2

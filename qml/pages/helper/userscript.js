@@ -117,6 +117,10 @@ for (var i=0; i<frames.length; i++) {
             node = node.parentNode;
         }
     }), true);
+    var isrc = frames[i].getAttribute('src');
+    var data = new Object({'type':'iframe'});
+    data.isrc = isrc;
+    navigator.qt.postMessage(JSON.stringify(data));
 }
 
 // virtual keyboard hook

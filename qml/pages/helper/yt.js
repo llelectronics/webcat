@@ -15,7 +15,7 @@ function checkYoutube(url) {
 
 function getYtID(url) {
     var youtube_id;
-    if (url.match('embed')) { youtube_id = url.split(/embed\//)[1].split('"')[0]; }
+    if (url.match('embed')) { youtube_id = url.split(/embed\//)[1].split(/[?&\"]/)[0]; }
     else if (url.match(/ytapi.com/)) { youtube_id = url.split(/vid=/)[1].split(/[?&]/)[0]; }
     else { youtube_id = url.split(/v\/|v=|youtu\.be\//)[1].split(/[?&]/)[0]; }
     console.debug("Youtube ID: " + youtube_id);
@@ -64,6 +64,8 @@ function getYoutubeDirectStream(url) {
         mainWindow.firstPage.ytUrlLoading = false
         mainWindow.firstPage.mediaYt = false
         mainWindow.firstPage.mediaLink = false
+        mainWindow.firstPage.mediaDownloadRec.visble = false
+        mainWindow.firstPage.mediaDownloadRec.mediaUrl = ""
         return;
     }
    getYoutubeStream(vid);
