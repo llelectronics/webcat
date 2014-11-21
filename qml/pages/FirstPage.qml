@@ -198,18 +198,18 @@ Page {
                 // Audio or Video link clicked. Download should start now
                 console.debug("Video or Audio Link clicked... download should start now")
             }
-            if (YT.checkYoutube(url.toString())) {
-                mediaYt = true;
-                ytUrlLoading = true
-                mediaLink = true;
-                mediaDownloadRec.visible = true
-            }
-            else {
-                mediaYt = false;
-                mediaLink = false;
-                ytUrlLoading = false
-                mediaDownloadRec.visible = false
-            }
+//            if (YT.checkYoutube(url.toString())) {
+//                mediaYt = true;
+//                ytUrlLoading = true
+//                mediaLink = true;
+//                mediaDownloadRec.visible = true
+//            }
+//            else {
+//                mediaYt = false;
+//                mediaLink = false;
+//                ytUrlLoading = false
+//                mediaDownloadRec.visible = false
+//            }
 
             // Add to url history
             DB.addHistory(url);
@@ -361,6 +361,19 @@ Page {
                 // Update url for tabModel
                 //console.debug("[FirstPage.qml] pageId: " + pageId);
                 if (pageId != "" || pageId != undefined) mainWindow.tabModel.updateUrl(pageId,url)
+
+                if (YT.checkYoutube(url.toString())) {
+                    mediaYt = true;
+                    ytUrlLoading = true
+                    mediaLink = true;
+                    mediaDownloadRec.visible = true
+                }
+                else {
+                    mediaYt = false;
+                    mediaLink = false;
+                    ytUrlLoading = false
+                    mediaDownloadRec.visible = false
+                }
             }
         }
         onNavigationRequested: {
