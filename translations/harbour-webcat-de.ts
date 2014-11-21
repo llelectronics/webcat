@@ -138,6 +138,30 @@
         <source>Enter searchterm</source>
         <translation>Suchbegriff eingeben</translation>
     </message>
+    <message>
+        <source>Open in New Window</source>
+        <translation>In neuem Fenster öffnen</translation>
+    </message>
+    <message>
+        <source>Open in New Tab</source>
+        <translation>In neuem Reiter öffnen</translation>
+    </message>
+    <message>
+        <source>Open in Private New Window</source>
+        <translation>In neuem privaten Fenster öffnen</translation>
+    </message>
+    <message>
+        <source>Copy Link</source>
+        <translation>Link kopieren</translation>
+    </message>
+    <message>
+        <source>Save Image</source>
+        <translation>Bild speichern</translation>
+    </message>
+    <message>
+        <source>Save Link</source>
+        <translation>Link speichern</translation>
+    </message>
 </context>
 <context>
     <name>HistoryPage</name>
@@ -211,6 +235,10 @@
     <message>
         <source>Swipe up to close tab</source>
         <translation>Nach oben wischen zum Schließen von Reiter</translation>
+    </message>
+    <message>
+        <source>Loading..</source>
+        <translation>Lade..</translation>
     </message>
 </context>
 <context>
@@ -305,6 +333,30 @@
     <message>
         <source>Start Private Window</source>
         <translation>Privates Fenster starten</translation>
+    </message>
+    <message>
+        <source>Load Images</source>
+        <translation>Bilder laden</translation>
+    </message>
+    <message>
+        <source>Advanced</source>
+        <translation>Erweitert</translation>
+    </message>
+    <message>
+        <source>DNS Prefetch</source>
+        <translation>DNS Vorausladen</translation>
+    </message>
+    <message>
+        <source>Offline Web Application Cache</source>
+        <translation>Offline Webanwendungs Zwischenspeicher</translation>
+    </message>
+    <message>
+        <source>Privacy</source>
+        <translation>Privatssphäre</translation>
+    </message>
+    <message>
+        <source>Clear Cache</source>
+        <translation>Zwischenspeicher leeren</translation>
     </message>
 </context>
 </TS>

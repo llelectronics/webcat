@@ -138,6 +138,30 @@
         <source>Enter searchterm</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Open in New Window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open in New Tab</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open in Private New Window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy Link</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save Image</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save Link</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>HistoryPage</name>
@@ -210,6 +234,10 @@
     </message>
     <message>
         <source>Swipe up to close tab</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Loading..</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -304,6 +332,30 @@
     </message>
     <message>
         <source>Start Private Window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Load Images</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Advanced</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>DNS Prefetch</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Offline Web Application Cache</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Privacy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear Cache</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

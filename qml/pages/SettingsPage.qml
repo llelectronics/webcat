@@ -301,7 +301,7 @@ Dialog {
             TextSwitch {
                 id: loadImagesSwitch
                 anchors.horizontalCenter: parent.horizontalCenter
-                text: "Load Images"
+                text: qsTr("Load Images")
                 checked: mainWindow.loadImages
             }
             TextSwitch {
@@ -323,7 +323,7 @@ Dialog {
                 onClicked: mainWindow.addDefaultBookmarks()
             }
             SectionHeader {
-                text: "Advanced"
+                text: qsTr("Advanced")
             }
             ValueButton {
                 anchors.horizontalCenter: parent.horizontalCenter
@@ -342,23 +342,23 @@ Dialog {
             TextSwitch {
                 id: dnsPrefetchSwitch
                 anchors.horizontalCenter: parent.horizontalCenter
-                text: "DNS Prefetch"
+                text: qsTr("DNS Prefetch")
                 checked: mainWindow.dnsPrefetch
             }
             TextSwitch {
                 id: offlineWebApplicationCacheSwitch
                 anchors.horizontalCenter: parent.horizontalCenter
-                text: "Offline Web Application Cache"
+                text: qsTr("Offline Web Application Cache")
                 checked: mainWindow.offlineWebApplicationCache
             }
             SectionHeader {
-                text: "Privacy"
+                text: qsTr("Privacy")
             }
             BackgroundItem {
                 id: clearCacheButton
                 width: parent.width
                 Label {
-                    text: "Clear Cache"
+                    text: qsTr("Clear Cache")
                     anchors.verticalCenter: parent.verticalCenter
                     anchors.left: parent.left
                     anchors.leftMargin: Theme.paddingLarge

@@ -1177,32 +1177,32 @@ Page {
             //            }
             Button {
                 width: widestBtn.width
-                text: "Open in New Window"
+                text: qsTr("Open in New Window")
                 onClicked: { mainWindow.openNewWindow(fixUrl(contextUrl.text)); contextMenu.visible = false }
             }
             Button {
-                text: "Open in New Tab"
+                text: qsTr("Open in New Tab")
                 width: widestBtn.width
                 onClicked: { mainWindow.openNewTab("page"+salt(), fixUrl(contextUrl.text), true); contextMenu.visible = false;}
             }
             Button {
                 id: widestBtn
-                text: "Open in Private New Window"
+                text: qsTr("Open in Private New Window")
                 onClicked: { mainWindow.openPrivateNewWindow(fixUrl(contextUrl.text)); contextMenu.visible = false }
             }
             Button {
-                text: "Copy Link"
+                text: qsTr("Copy Link")
                 width: widestBtn.width
                 onClicked: { contextUrl.selectAll(); contextUrl.copy(); contextMenu.visible = false }
             }
             Button {
-                text: "Save Image"
+                text: qsTr("Save Image")
                 width: widestBtn.width
                 visible: imageLongPressAvailability
                 onClicked: { pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": contextUrl.text}); contextMenu.visible = false }
             }
             Button {
-                text: "Save Link"
+                text: qsTr("Save Link")
                 width: widestBtn.width
                 onClicked: { pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": fixUrl(contextUrl.text)}); contextMenu.visible = false }
             }

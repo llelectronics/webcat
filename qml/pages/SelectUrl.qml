@@ -203,7 +203,7 @@ Page
                     Text {
                         text: {
                             if (model.title !== "") return model.title
-                            else return "Loading..";
+                            else return qsTr("Loading..");
                         }
                         width: parent.width - 2
                         color: Theme.primaryColor;
