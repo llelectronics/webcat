@@ -234,7 +234,7 @@
     </message>
     <message>
         <source>Swipe up to close tab</source>
-        <translation>Nach oben wischen zum Schließen von Reiter</translation>
+        <translation>Nach oben wischen schließt Reiter</translation>
     </message>
     <message>
         <source>Loading..</source>

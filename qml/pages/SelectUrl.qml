@@ -384,42 +384,12 @@ Page
         Label {
             id: tabCloseMsgTxt
             opacity: parent.opacity
-            font.pixelSize: Theme.fontSizeLarge
+            //font.pixelSize: Theme.fontSizeLarge // Too large for some translations. Stick to the default
             font.bold: true
-            //anchors.bottom: parent.bottom
-            //anchors.bottomMargin: tabListBg.height * 2
+            truncationMode: TruncationMode.Fade
             anchors.horizontalCenter: parent.horizontalCenter
             text: qsTr("Swipe up to close tab")
 
         }
     }
-
-    //    Row {
-    //        id: bottomBar
-    //        width: parent.width
-    //        height: 65
-    //        anchors {
-    ////            left: parent.left; leftMargin: Theme.paddingMedium
-    ////            right: parent.right; rightMargin: Theme.paddingMedium
-    //            bottom: parent.bottom; bottomMargin: Theme.paddingMedium
-    //            //verticalCenter: parent.verticalCenter
-    //        }
-    //        // 5 icons, 4 spaces between
-    //        //spacing: (width - (favIcon.width * 5)) / 4
-
-    //        IconButton {
-    //            id: favIcon
-    //            property bool favorited: bookmarks.count > 0 && bookmarks.contains(siteURL)
-    //            icon.source: favorited ? "image://theme/icon-m-favorite-selected" : "image://theme/icon-m-favorite"
-    //            onClicked: {
-    //                if (favorited) {
-    //                    console.debug("Remove Bookmark");
-    //                    bookmarks.removeBookmark(siteURL)
-    //                } else {
-    //                    console.debug("Add Bookmark " + siteURL + " " + siteTitle);
-    //                    bookmarks.addBookmark(siteURL, siteTitle)
-    //                }
-    //            }
-    //        }
-    //    }
 }
