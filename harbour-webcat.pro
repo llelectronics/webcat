@@ -53,7 +53,8 @@ OTHER_FILES += qml/harbour-webcat.qml \
     qml/pages/helper/readability.js \
     qml/pages/HistoryPage.qml \
     translations/harbour-webcat.ts \
-    translations/harbour-webcat-de.ts
+    translations/harbour-webcat-de.ts \
+    translations/harbour-webcat-zh_CN.ts
 
 RESOURCES += \
     qrc.qrc
