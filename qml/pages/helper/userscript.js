@@ -107,6 +107,7 @@ function checkNode(e, node) {
     }
 }
 
+//Set click handler and autodetect media files
 
 for (var i=0; i<frames.length; i++) {
     if(typeof(frames[i].contentWindow.document)!=="undefined")
@@ -121,6 +122,27 @@ for (var i=0; i<frames.length; i++) {
     var data = new Object({'type':'iframe'});
     data.isrc = isrc;
     navigator.qt.postMessage(JSON.stringify(data));
+}
+var delement = document.documentElement.getElementsByTagName('video');
+
+for (var i=0; i<delement.length; i++) {
+    if (delement[i].hasChildNodes()) {
+        console.debug("Has children");
+        var children = delement[i].childNodes;
+        for (var j = 0; j < children.length; j++) {
+            if (children[j].tagName === 'SOURCE') {
+                var data = new Object({'type': 'video'})
+                if (children[j].hasAttribute('src')) data.video = getImgFullUri(children[j].getAttribute('src'));
+                navigator.qt.postMessage( JSON.stringify(data) );
+                break;
+            }
+        }
+    }
+    else if (delement[i].hasAttribute('src')) {
+        var data = new Object({'type': 'video'})
+        data.video = getImgFullUri(delement[j].getAttribute('src'));
+        navigator.qt.postMessage( JSON.stringify(data) );
+    }
 }
 
 // virtual keyboard hook
@@ -195,6 +217,15 @@ function longPressed(x, y, element) {
         data.img = getImgFullUri(element.getAttribute('src'));
     } else if (element.parentNode.tagName === 'IMG') {
         data.img = getImgFullUri(element.parentNode.getAttribute('src'));
+    } else if (element.tagName === 'VIDEO') {
+        data.video = element.hasChildNodes();
+        var children = element.childNodes;
+        for (var i = 0; i < children.length; i++) {
+            if (children[i].tagName === 'SOURCE') {
+                data.video = getImgFullUri(children[i].getAttribute('src'));
+                break;
+            }
+        }
     }
 
 /*

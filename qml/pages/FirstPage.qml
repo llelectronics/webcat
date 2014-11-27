@@ -214,12 +214,14 @@ Page {
                 mediaDownloadRec.visible = true
             }
             else {
-                mediaYtEmbeded = false;
-                mediaYt = false;
-                mediaLink = false;
-                ytUrlLoading = false
-                mediaDownloadRec.mediaUrl = ""
-                mediaDownloadRec.visible = false
+                if (!mediaYt && mediaDownloadRec.mediaUrl != yurl) {
+                    mediaYtEmbeded = false;
+                    mediaYt = false;
+                    mediaLink = false;
+                    ytUrlLoading = false
+                    mediaDownloadRec.mediaUrl = ""
+                    mediaDownloadRec.visible = false
+                }
             }
         }
 
@@ -321,6 +323,12 @@ Page {
                     imageLongPressAvailability = true;
                     showContextMenu(data.img);
                 }
+                else if (data.video) {
+                    console.debug("HTML5 Video Tag found with src:" + data.video)
+                    mediaLink = true;
+                    mediaDownloadRec.mediaUrl = data.video
+                    mediaDownloadRec.visible = true
+                }
                 else if (data.href && data.href != "CANT FIND LINK") {
                     imageLongPressAvailability = false;
                     showContextMenu(data.href);
@@ -352,7 +360,20 @@ Page {
             case 'iframe': {
                 if (data.isrc != undefined && data.isrc != "") {
                     //console.debug("[FirstPage.qml] Got iframe with isrc: " + data.isrc);
+                    if (data.isrc.slice(0, 2) === '//') {
+                        data.isrc = "http:" + data.isrc
+                    }
                     checkYoutubeEmbeded(data.isrc);
+                }
+            }
+            case 'video': {
+                if (data.video) {
+                    console.debug("HTML5 Video Tag found with src:" + data.video)
+                    mediaYt = true;
+                    mediaYtEmbeded = true; // Somehow I screwed up the variable names. MediaYtEmbeded needs to be set so that it isn't hidding the mediabar
+                    mediaLink = true;
+                    mediaDownloadRec.mediaUrl = data.video
+                    mediaDownloadRec.visible = true
                 }
             }
             }
@@ -1073,6 +1094,7 @@ Page {
             icon.source: "image://theme/icon-m-device-download"
             onClicked:  {
                 if (mediaYt) pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": ytStreamUrl});
+                else if (mediaDownloadRec.mediaUrl != "") pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": mediaDownloadRec.mediaUrl});
                 else pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": url});
             }
             visible: ! progressCircleYt.visible
@@ -1083,7 +1105,9 @@ Page {
         IconButton {
             icon.source: "image://theme/icon-m-play"
             onClicked:  {
-                if (mainWindow.vPlayerExists && mediaYt) mainWindow.openWithvPlayer(ytStreamUrl); //mainWindow.openWithvPlayer(url); // perhaps make this configurable
+                if (mainWindow.vPlayerExists && mediaYt) mainWindow.openWithvPlayer(ytStreamUrl);
+                else if (mainWindow.vPlayerExists && mediaDownloadRec.mediaUrl != "") mainWindow.openWithvPlayer(mediaDownloadRec.mediaUrl);
+                else if (mediaDownloadRec.mediaUrl != "") Qt.openUrlExternally(mediaDownloadRec.mediaUrl);
                 else Qt.openUrlExternally(url);
             }
             visible: ! progressCircleYt.visible
