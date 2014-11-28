@@ -1,4 +1,5 @@
 var ytDirectStreamUrl;
+var ytfailCount;
 
 function checkYoutube(url) {
     // Yeah I hate RegEx. Thx user2200660 for this nice youtube regex ;)
@@ -33,7 +34,7 @@ function getYoutubeVid(url) {
 function getYoutubeTitle(url) {
     var youtube_id;
     youtube_id = getYtID(url);
-    var xhr = new XMLHttpRequest();ytStreamUrl
+    var xhr = new XMLHttpRequest();
     xhr.open("GET","http://gdata.youtube.com/feeds/api/videos/" + youtube_id + "?v=2&alt=jsonc",true);
     xhr.onreadystatechange = function() {
         if (xhr.readyState === 4) {
@@ -55,6 +56,7 @@ function getYoutubeTitle(url) {
 }
 
 function getYoutubeDirectStream(url) {
+    ytfailCount = 0;
     try {
         var vid = getYoutubeVid(url);
     }
@@ -68,7 +70,6 @@ function getYoutubeDirectStream(url) {
         mainWindow.firstPage.mediaDownloadRec.mediaUrl = ""
         return;
     }
-   getYoutubeStream(vid);
 }
 
 // This would be a proper way to get the youtube video stream url
@@ -91,6 +92,7 @@ function getYoutubeStream(youtube_id) {
                     console.debug("[yt.js]: " + e)
                 }
                 if (paramPair[0] === "url_encoded_fmt_stream_map") {
+                    console.debug("[yt.js] Streams found")
                     streams = decodeURIComponent(paramPair[1]);
                     break;
                 }
@@ -101,92 +103,104 @@ function getYoutubeStream(youtube_id) {
                 var msg = "YouTube videoInfo parsing: url_encoded_fmt_stream_map not found";
                 console.debug(msg);
                 // Last chance if we don't get the direct video stream url parse the youtube url directly to external player
-                mainWindow.firstPage.ytUrlLoading = false
-                mainWindow.firstPage.ytStreamUrl = getYoutubeVid(mainWindow.firstPage.url)
-                return;
+                //mainWindow.firstPage.ytUrlLoading = false
+                //mainWindow.firstPage.ytStreamUrl = getYoutubeVid(mainWindow.firstPage.url)
+                //return;
             }
-            var streamsSplit = streams.split("&");
+            try {
+                var streamsSplit = streams.split("&");
+            } catch(e) {
+//                console.debug("[yt.js]: " + e)
+            }
 
             // some lines contain two value pairs separated by comma
-            var newSplit = [];
-            for (var i = 0; i < streamsSplit.length; i++) {
-                var secondSplit = streamsSplit[i].split(",");
-                newSplit.push.apply(newSplit, secondSplit);
-            }
-            streamsSplit = newSplit;
+            try {
+                var newSplit = [];
+                for (var i = 0; i < streamsSplit.length; i++) {
+                    var secondSplit = streamsSplit[i].split(",");
+                    newSplit.push.apply(newSplit, secondSplit);
+                }
+                streamsSplit = newSplit;
 
-            var url, sig, itag;
-            var found = false;
-            var resolutionFormat;
-            for (var i = 0; i < streamsSplit.length; i++) {
-                var paramPair = streamsSplit[i].split("=");
-                if (paramPair[0] === "url") {
-                    url = decodeURIComponent(paramPair[1]);
-                } else if (paramPair[0] === "sig") {
-                    sig = paramPair[1]; // do not decode, as we would have to encode it later (although decoding/encoding has currently no effect for the signature)
-                } else if (paramPair[0] === "itag") {
-                    itag = paramPair[1];
-                }
-                //***********************************************//
-                //     List of video formats as of 2012.12.10    //
-                // fmt=17   144p        vq=?           ?    vorbis   //
-                // fmt=36   240p        vq=small/tiny  ?    vorbis   //
-                // fmt=5    240p        vq=small/tiny  flv  mp3      //
-                // fmt=18   360p        vq=medium      mp4  aac      //
-                // fmt=34   360p        vq=medium      flv  aac      //
-                // fmt=43   360p        vq=medium      vp8  vorbis   //
-                // fmt=35   480p        vq=large       flv  aac      //
-                // fmt=44   480p        vq=large       vp8  vorbis   //
-                // fmt=22   720p        vq=hd720       mp4  aac      //
-                // fmt=45   720p        vq=hd720       vp8  vorbis   //
-                // fmt=37  1080p        vq=hd1080      mp4  aac      //
-                // fmt=46  1080p        vq=hd1080      vp8  vorbis   //
-                // fmt=38  1536p        vq=highres     mp4  aac      //
-                //***********************************************//
 
-                // Try to get 720p HD video stream first
-                if ((i + 1) % 6 === 0 && itag === "22") { // 6 parameters per video; itag 18 is "MP4 360p", see http://userscripts.org/scripts/review/25105
-                    found = true;
-                    resolutionFormat = "MP4 720p"
-                    url += "&signature=" + sig;
-                    break;
-                }
-                // If above fails try to get 480p video stream
-                else if ((i + 1) % 6 === 0 && itag === "35") { // 6 parameters per video; itag 18 is "MP4 360p", see http://userscripts.org/scripts/review/25105
-                    found = true;
-                    resolutionFormat = "FLV 480p"
-                    url += "&signature=" + sig;
-                    break;
-                }
-                // If above fails try to get 360p video stream
-                else if ((i + 1) % 6 === 0 && itag === "18") { // 6 parameters per video; itag 18 is "MP4 360p", see http://userscripts.org/scripts/review/25105
-                    found = true;
-                    resolutionFormat = "MP4 360p"
-                    url += "&signature=" + sig;
-                    break;
-                }
-                // If above fails try to get 240p video stream
-                else if ((i + 1) % 6 === 0 && itag === "5") { // 6 parameters per video; itag 18 is "MP4 360p", see http://userscripts.org/scripts/review/25105
-                    found = true;
-                    resolutionFormat = "FLV 240p"
-                    url += "&signature=" + sig;
-                    break;
-                }
-            }
+                var url, sig, itag;
+                var found = false;
+                var resolutionFormat;
+                for (var i = 0; i < streamsSplit.length; i++) {
+                    var paramPair = streamsSplit[i].split("=");
+                    if (paramPair[0] === "url") {
+                        url = decodeURIComponent(paramPair[1]);
+                    } else if (paramPair[0] === "sig") {
+                        sig = paramPair[1]; // do not decode, as we would have to encode it later (although decoding/encoding has currently no effect for the signature)
+                    } else if (paramPair[0] === "itag") {
+                        itag = paramPair[1];
+                    }
+                    //***********************************************//
+                    //     List of video formats as of 2012.12.10    //
+                    // fmt=17   144p        vq=?           ?    vorbis   //
+                    // fmt=36   240p        vq=small/tiny  ?    vorbis   //
+                    // fmt=5    240p        vq=small/tiny  flv  mp3      //
+                    // fmt=18   360p        vq=medium      mp4  aac      //
+                    // fmt=34   360p        vq=medium      flv  aac      //
+                    // fmt=43   360p        vq=medium      vp8  vorbis   //
+                    // fmt=35   480p        vq=large       flv  aac      //
+                    // fmt=44   480p        vq=large       vp8  vorbis   //
+                    // fmt=22   720p        vq=hd720       mp4  aac      //
+                    // fmt=45   720p        vq=hd720       vp8  vorbis   //
+                    // fmt=37  1080p        vq=hd1080      mp4  aac      //
+                    // fmt=46  1080p        vq=hd1080      vp8  vorbis   //
+                    // fmt=38  1536p        vq=highres     mp4  aac      //
+                    //***********************************************//
 
-            if (found) {
-                console.debug("[yt.js]: Video in format " + resolutionFormat + " found with direct URL: " + url);
-                mainWindow.firstPage.mediaYt = true // just to make sure
-                mainWindow.firstPage.ytStreamUrl = url
-                mainWindow.firstPage.ytUrlLoading = false
-                return url;
+                    // Try to get 720p HD video stream first
+                    if ((i + 1) % 6 === 0 && itag === "22") { // 6 parameters per video; itag 18 is "MP4 360p", see http://userscripts.org/scripts/review/25105
+                        found = true;
+                        resolutionFormat = "MP4 720p"
+                        url += "&signature=" + sig;
+                        break;
+                    }
+                    // If above fails try to get 480p video stream
+                    else if ((i + 1) % 6 === 0 && itag === "35") { // 6 parameters per video; itag 18 is "MP4 360p", see http://userscripts.org/scripts/review/25105
+                        found = true;
+                        resolutionFormat = "FLV 480p"
+                        url += "&signature=" + sig;
+                        break;
+                    }
+                    // If above fails try to get 360p video stream
+                    else if ((i + 1) % 6 === 0 && itag === "18") { // 6 parameters per video; itag 18 is "MP4 360p", see http://userscripts.org/scripts/review/25105
+                        found = true;
+                        resolutionFormat = "MP4 360p"
+                        url += "&signature=" + sig;
+                        break;
+                    }
+                    // If above fails try to get 240p video stream
+                    else if ((i + 1) % 6 === 0 && itag === "5") { // 6 parameters per video; itag 18 is "MP4 360p", see http://userscripts.org/scripts/review/25105
+                        found = true;
+                        resolutionFormat = "FLV 240p"
+                        url += "&signature=" + sig;
+                        break;
+                    }
+                }
 
-            } else {
-                var msg = "Couldn't find video either in MP4 720p, FLV 480p, MP4 360p and FLV 240p";
-                console.debug(msg);
-                mainWindow.firstPage.ytUrlLoading = false
-                mainWindow.firstPage.mediaYt = false
-                return;
+                if (found) {
+//                    console.debug("[yt.js]: Video in format " + resolutionFormat + " found with direct URL: " + url);
+                    mainWindow.firstPage.mediaYt = true // just to make sure
+                    mainWindow.firstPage.ytStreamUrl = url
+                    mainWindow.firstPage.ytUrlLoading = false
+                    return url;
+
+                } else {
+                    var msg = "Couldn't find video either in MP4 720p, FLV 480p, MP4 360p and FLV 240p";
+//                    console.debug(msg);
+                    mainWindow.firstPage.ytUrlLoading = false
+                    mainWindow.firstPage.mediaYt = false
+                    return;
+                }
+            } catch(e) {
+//                console.debug("[yt.js]: " + e)
+//                console.debug("[yt.js] ytfailCount: " +ytfailCount);
+                ytfailCount++;
+                getYoutubeStream(youtube_id);
             }
 
         }
@@ -195,8 +209,30 @@ function getYoutubeStream(youtube_id) {
 
     }
 
+    if (ytfailCount == 0) {
     doc.open("GET", "http://www.youtube.com/get_video_info?video_id=" + youtube_id);
     doc.send();
+    }
+    else if (ytfailCount == 1) {
+        doc.abort()
+        doc.open("GET", "http://www.youtube.com/get_video_info?video_id=" + youtube_id + "&el=embedded");
+        doc.send();
+    }
+    else if (ytfailCount == 2) {
+        doc.abort()
+        doc.open("GET", "http://www.youtube.com/get_video_info?video_id=" + youtube_id + "&el=detailpage");
+        doc.send();
+    }
+    else if (ytfailCount == 3) {
+        doc.abort()
+        doc.open("GET", "http://www.youtube.com/get_video_info?video_id=" + youtube_id + "&el=vevo");
+        doc.send();
+    }
+    else {
+//        console.debug("[yt.js] ytfailCount:" + ytfailCount);
+//        console.debug("Could not find video stream.")
+        ytfailCount = 0
+    }
 }
 
 // Damn it RegExp again :P
