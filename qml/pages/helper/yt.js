@@ -110,7 +110,8 @@ function getYoutubeStream(youtube_id) {
             try {
                 var streamsSplit = streams.split("&");
             } catch(e) {
-//                console.debug("[yt.js]: " + e)
+                  msg = "[yt.js]: " + e
+//                console.debug(msg)
             }
 
             // some lines contain two value pairs separated by comma
