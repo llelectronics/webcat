@@ -195,13 +195,13 @@ Page {
                 mediaDownloadRec.mediaUrl = yurl
                 mediaDownloadRec.visible = true
             }
-            else {
-                mediaYt = false;
-                mediaLink = false;
-                ytUrlLoading = false
-                mediaDownloadRec.mediaUrl = ""
-                mediaDownloadRec.visible = false
-            }
+//            else {
+//                mediaYt = false;
+//                mediaLink = false;
+//                ytUrlLoading = false
+//                mediaDownloadRec.mediaUrl = ""
+//                mediaDownloadRec.visible = false
+//            }
         }
 
         function checkYoutubeEmbeded(yurl) {
@@ -213,16 +213,16 @@ Page {
                 mediaDownloadRec.mediaUrl = yurl
                 mediaDownloadRec.visible = true
             }
-            else {
-                if (!mediaYt && mediaDownloadRec.mediaUrl != yurl) {
-                    mediaYtEmbeded = false;
-                    mediaYt = false;
-                    mediaLink = false;
-                    ytUrlLoading = false
-                    mediaDownloadRec.mediaUrl = ""
-                    mediaDownloadRec.visible = false
-                }
-            }
+//            else {
+//                if (!mediaYt && mediaDownloadRec.mediaUrl != yurl) {
+//                    mediaYtEmbeded = false;
+//                    mediaYt = false;
+//                    mediaLink = false;
+//                    ytUrlLoading = false
+//                    mediaDownloadRec.mediaUrl = ""
+//                    mediaDownloadRec.visible = false
+//                }
+//            }
         }
 
         onUrlChanged: {
@@ -238,7 +238,12 @@ Page {
                 console.debug("Video or Audio Link clicked... download should start now")
             }
 
+            // reset everything on url change
             mediaYtEmbeded = false;
+            mediaYt = false;
+            mediaLink = false;
+            // Youtube detect here but only if embeded media wasn't detected
+            if (mediaYtEmbeded == false) checkYoutubeURL(url);
 
             // Add to url history
             DB.addHistory(url);
@@ -416,8 +421,13 @@ Page {
                 //console.debug("[FirstPage.qml] pageId: " + pageId);
                 if (pageId != "" || pageId != undefined) mainWindow.tabModel.updateUrl(pageId,url)
 
-                // Youtube detect here but only if embeded media wasn't detected
-                if (mediaYtEmbeded == false) checkYoutubeURL(url);
+                // Hide mediabar if no media was detected
+                console.debug("Loading changed")
+                if (!mediaYt && !mediaYtEmbeded && !mediaLink) {
+                    ytUrlLoading = false
+                    mediaDownloadRec.mediaUrl = ""
+                    mediaDownloadRec.visible = false
+                }
             }
         }
         onNavigationRequested: {
