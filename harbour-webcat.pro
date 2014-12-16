@@ -54,7 +54,10 @@ OTHER_FILES += qml/harbour-webcat.qml \
     qml/pages/HistoryPage.qml \
     translations/harbour-webcat.ts \
     translations/harbour-webcat-de.ts \
-    translations/harbour-webcat-zh_CN.ts
+    translations/harbour-webcat-zh_CN.ts \
+    translations/harbour-webcat-nl_NL.ts \
+    translations/harbour-webcat-it.ts \
+    translations/harbour-webcat-cs.ts
 
 RESOURCES += \
     qrc.qrc
@@ -69,7 +72,11 @@ QT += network
 # following CONFIG line
 CONFIG += sailfishapp_i18n
 
-TRANSLATIONS += translations/harbour-webcat-de.ts
+TRANSLATIONS += translations/harbour-webcat-de.ts \
+        translations/harbour-webcat-zh_CN.ts \
+        translations/harbour-webcat-cs.ts \
+        translations/harbour-webcat-it.ts \
+        translations/harbour-webcat-nl_NL.ts
 
 # Hmm... not allowed for now I guess
 #PKGCONFIG += nemotransferengine-qt5
