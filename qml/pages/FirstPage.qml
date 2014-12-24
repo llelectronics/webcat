@@ -301,8 +301,8 @@ Page {
 
         experimental.onDownloadRequested: {
             // Call downloadmanager here with the url
-            console.debug("Download requested: " + url);
-            pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": url});
+            console.debug("Download requested: " + downloadItem.url);
+            pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": downloadItem.url});
         }
 
         experimental.onMessageReceived: {

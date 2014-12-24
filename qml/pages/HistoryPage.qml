@@ -24,7 +24,7 @@ Page {
         VerticalScrollDecorator {}
 
         function clearHistory() {
-            remorse.execute(qsTr("Clear History"), function() { DB.clearTable("history"); } )
+            remorse.execute(qsTr("Clear History"), function() { DB.clearTable("history"); mainWindow.historyModel.clear() } )
         }
 
         delegate: ListItem {
