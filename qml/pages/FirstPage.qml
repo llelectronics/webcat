@@ -179,6 +179,7 @@ Page {
     SilicaWebView {
         id: webview
         url: siteURL
+        objectName: "SWebView"
 
         width: page.width
         height: page.height - 20 // minimized toolbar size. We don't want to set the toolbar.height here otherwise it would make webview resizing which is painfully slow
@@ -258,6 +259,12 @@ Page {
         experimental.preferences.autoLoadImages: mainWindow.loadImages
         experimental.preferences.offlineWebApplicationCacheEnabled: mainWindow.offlineWebApplicationCache
         experimental.preferences.privateBrowsingEnabled: mainWindow.privateBrowsing
+
+        // Some speed improvement things that might work or not
+//        layer.enabled: true
+//        layer.format: ShaderEffectSource.RGBA
+//        layer.mipmap: true
+//        layer.textureSize: page.width + "x" + page.height
 
 
         // SEEMs not to work anymore (at least G+ changed its site)

@@ -14,7 +14,7 @@ Name:       harbour-webcat
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    A simple webbrowser with tab support
 Version:    0.9.9
-Release:    1
+Release:    2
 Group:      Qt/Qt
 License:    LICENSE
 URL:        http://example.org/

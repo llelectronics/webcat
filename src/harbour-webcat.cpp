@@ -51,7 +51,6 @@ int main(int argc, char *argv[])
 
     QString file;
 
-
     // Sometimes I get the feeling I don't know what I do. But it works and the only limitation so far is that '--private' needs to be the first argument
     if (QString(argv[1]) == "--private") {
         // Load private mode here
