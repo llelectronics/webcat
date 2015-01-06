@@ -68,6 +68,8 @@ Page {
     property bool readerMode: false
     property bool nightMode: false
     property bool searchMode: false
+    property int toolbarheight: Screen.height / 13
+    property int extratoolbarheight: Screen.height / 10
 
     Component.onCompleted: {
         _ngfEffect = Qt.createQmlObject("import org.nemomobile.ngf 1.0; NonGraphicalFeedback { event: 'pulldown_lock' }",
@@ -131,8 +133,8 @@ Page {
         anchors.topMargin: 16
         anchors.horizontalCenter: parent.horizontalCenter
         visible: urlLoading
-        width: 32
-        height: 32
+        height: Screen.height / 30
+        width: height
         Timer {
             interval: 32
             repeat: true
@@ -560,7 +562,7 @@ Page {
             GradientStop { position: 0.0; color: "#262626" }
             GradientStop { position: 0.85; color: "#1F1F1F"}
         }
-        height: 72
+        height: toolbarheight
         anchors.bottom: page.bottom
         Rectangle { // grey seperation between page and toolbar
             id: toolbarSep
@@ -578,7 +580,7 @@ Page {
                 name: "expanded"
                 PropertyChanges {
                     target: toolbar
-                    height: 72
+                    height: toolbarheight
                 }
                 PropertyChanges {
                     target: urlTitle
@@ -619,7 +621,7 @@ Page {
                 name: "minimized"
                 PropertyChanges {
                     target: toolbar
-                    height: 22
+                    height: Math.floor(toolbarheight / 3)
                 }
                 PropertyChanges {
                     target: urlTitle
@@ -700,6 +702,11 @@ Page {
             icon.source: "image://theme/icon-m-tabs"
             anchors.left: toolbar.left
             anchors.leftMargin: Theme.paddingSmall
+            height: toolbarheight / 1.5
+            width: height
+            icon.height: toolbar.height
+            icon.width: icon.height
+            anchors.verticalCenter: toolbar.verticalCenter
             onClicked: {
                     pageStack.push(Qt.resolvedUrl("SelectUrl.qml"), { dataContainer: page, siteURL: webview.url, bookmarks: page.bookmarks, siteTitle: webview.title})
             }
@@ -742,8 +749,8 @@ Page {
 
             Label {
                 text: tabModel.count
-                x: (parent.width - contentWidth) / 2 - 5
-                y: (parent.height - contentHeight) / 2 - 5
+                x: (parent.width - contentWidth) / 2 - (contentWidth / 2)
+                y: (parent.height - contentHeight) / 2 - (contentHeight / 4)
                 font.pixelSize: Theme.fontSizeExtraSmall
                 font.bold: true
                 color: gotoButton.down ? Theme.highlightColor : Theme.highlightDimmerColor
@@ -754,6 +761,8 @@ Page {
         IconButton {
             id:backIcon
             icon.source: "image://theme/icon-m-back"
+            height: toolbarheight / 1.5
+            width: height
             enabled: webview.canGoBack
             visible: webview.canGoBack
             anchors.left: gotoButton.right
@@ -762,11 +771,16 @@ Page {
                 webview.goBack();
                 forIcon.visible = true;
             }
+            anchors.verticalCenter: toolbar.verticalCenter
+            icon.height: toolbar.height
+            icon.width: icon.height
         }
 
         IconButton {
             id: forIcon
             icon.source: "image://theme/icon-m-forward"
+            height: toolbarheight / 1.5
+            width: height
             enabled: webview.canGoForward
             visible: webview.canGoForward
             anchors.left: backIcon.visible ? backIcon.right : gotoButton.right
@@ -774,6 +788,9 @@ Page {
             onClicked: {
                 webview.goForward();
             }
+            anchors.verticalCenter: toolbar.verticalCenter
+            icon.height: toolbar.height
+            icon.width: icon.height
         }
 
         // Url textbox here
@@ -844,6 +861,11 @@ Page {
             anchors.right: parent.right
             anchors.rightMargin: Theme.paddingSmall
             visible:false
+            height: toolbarheight / 1.5
+            width: height
+            anchors.verticalCenter: toolbar.verticalCenter
+            icon.height: toolbar.height
+            icon.width: icon.height
         }
 
 
@@ -856,6 +878,11 @@ Page {
             }
             anchors.right: parent.right
             anchors.rightMargin: Theme.paddingSmall
+            height: toolbarheight / 1.5
+            width: height
+            anchors.verticalCenter: toolbar.verticalCenter
+            icon.height: toolbar.height
+            icon.width: icon.height
             onClicked: {
                 if (readerMode) {
                     if (!nightMode)
@@ -885,7 +912,7 @@ Page {
             GradientStop { position: 0.0; color: "#262626" }
             GradientStop { position: 0.85; color: "#1F1F1F"}
         }
-        height: 96
+        height: extratoolbarheight
         z: 90
         opacity: 0
         visible: false
@@ -909,7 +936,7 @@ Page {
             anchors.topMargin: 3
             anchors.horizontalCenter: parent.horizontalCenter
             font.bold: true
-            font.pixelSize: parent.height - (minimizeButton.height + 10)
+            font.pixelSize: parent.height - (minimizeButton.height + Theme.paddingLarge)
             text: {
                 if (minimizeButton.highlighted) { _ngfEffect.play(); return qsTr("Minimize") }
                 else if (newTabButton.highlighted) { _ngfEffect.play(); return qsTr("New Tab") }
@@ -930,11 +957,11 @@ Page {
             anchors.left: extraToolbar.left
             anchors.leftMargin: Theme.paddingSmall
             anchors.bottom: parent.bottom
-            anchors.bottomMargin: 2
-            icon.height: 48
-            icon.width: 48
-            width: 64
-            height: 64
+            anchors.bottomMargin: actionLbl.height / 2
+            icon.height: height
+            icon.width: icon.height
+            height: toolbarheight / 1.5
+            width: height
             onClicked: if (toolbar.state == "expanded") toolbar.state = "minimized"
         }
 
@@ -944,11 +971,11 @@ Page {
             anchors.left: minimizeButton.right
             anchors.leftMargin: Theme.paddingMedium
             anchors.bottom: parent.bottom
-            anchors.bottomMargin: 2
-            icon.height: 48
-            icon.width: 48
-            width: 64
-            height: 64
+            anchors.bottomMargin: actionLbl.height / 2
+            icon.height: height
+            icon.width: icon.height
+            height: toolbarheight / 1.5
+            width: height
             onClicked: mainWindow.loadInNewTab("about:bookmarks");
         }
 
@@ -958,11 +985,11 @@ Page {
             anchors.left: newTabButton.right
             anchors.leftMargin: Theme.paddingMedium
             anchors.bottom: parent.bottom
-            anchors.bottomMargin: 2
-            icon.height: 64
-            icon.width: 64
-            width: 64
-            height: 64
+            anchors.bottomMargin: actionLbl.height / 2
+            icon.height: height
+            icon.width: icon.height
+            height: toolbarheight / 1.5
+            width: height
             Image {
                 anchors.fill: parent
                 source: "image://theme/icon-m-add"
@@ -977,11 +1004,11 @@ Page {
             anchors.left: newWindowButton.right
             anchors.leftMargin: Theme.paddingMedium
             anchors.bottom: parent.bottom
-            anchors.bottomMargin: 2
-            icon.height: 64
-            icon.width: 64
-            width: 64
-            height: 64
+            anchors.bottomMargin: actionLbl.height / 2
+            icon.height: extraToolbar.height - (extraToolbar.height / 3)
+            icon.width: icon.height
+            height: toolbarheight / 1.5
+            width: height
             onClicked: webview.reload();
         }
 
@@ -991,11 +1018,11 @@ Page {
             anchors.left: reloadThisButton.right
             anchors.leftMargin: Theme.paddingMedium
             anchors.bottom: parent.bottom
-            anchors.bottomMargin: 2
-            icon.height: 64
-            icon.width: 64
-            width: 64
-            height: 64
+            anchors.bottomMargin: actionLbl.height / 2
+            icon.height: extraToolbar.height - (extraToolbar.height / 3)
+            icon.width: icon.height
+            height: toolbarheight / 1.5
+            width: height
             Image {
                 source: "image://theme/icon-m-reset"
                 anchors.fill: parent
@@ -1013,11 +1040,11 @@ Page {
             anchors.left: orientationLockButton.right
             anchors.leftMargin: Theme.paddingMedium
             anchors.bottom: parent.bottom
-            anchors.bottomMargin: 2
-            icon.height: 64
-            icon.width: 64
-            width: 64
-            height: 64
+            anchors.bottomMargin: actionLbl.height / 2
+            icon.height: extraToolbar.height - (extraToolbar.height / 3)
+            icon.width: icon.height
+            height: toolbarheight / 1.5
+            width: height
             onClicked: {
                 toggleReaderMode()
                 readerModeButton.highlighted = false
@@ -1030,11 +1057,11 @@ Page {
             anchors.left: readerModeButton.right
             anchors.leftMargin: Theme.paddingMedium
             anchors.bottom: parent.bottom
-            anchors.bottomMargin: 2
-            icon.height: 64
-            icon.width: 64
-            width: 64
-            height: 64
+            anchors.bottomMargin: actionLbl.height / 2
+            icon.height: extraToolbar.height - (extraToolbar.height / 3)
+            icon.width: icon.height
+            height: toolbarheight / 1.5
+            width: height
             onClicked: {
                 searchMode = !searchMode
                 searchModeButton.highlighted = false
@@ -1054,7 +1081,7 @@ Page {
         }
         anchors.bottom: toolbar.top
         width: parent.width
-        height: 48
+        height: toolbarheight / 1.5
         visible: webview.loading
         IconButton {
             id: cancelButton
@@ -1063,7 +1090,9 @@ Page {
             anchors.right: parent.right
             anchors.rightMargin: Theme.paddingSmall
             anchors.verticalCenter: parent.verticalCenter
-
+            height: toolbarheight / 1.5
+            width: height
+            icon.anchors.fill: cancelButton
         }
     }
 
@@ -1089,7 +1118,7 @@ Page {
         }
         //anchors.bottomMargin: Theme.paddingSmall // This looks ugly
         width: parent.width
-        height: 72
+        height: toolbarheight
         visible: false
 
         ProgressCircle {
@@ -1097,8 +1126,8 @@ Page {
             z: 2
             anchors.centerIn: parent
             visible: ytUrlLoading
-            width: 32
-            height: 32
+            height: toolbarheight / 2.25
+            width: height
             Timer {
                 interval: 32
                 repeat: true
@@ -1118,6 +1147,10 @@ Page {
             anchors.right: parent.right
             anchors.rightMargin: Theme.paddingSmall
             anchors.verticalCenter: parent.verticalCenter
+            height: toolbarheight / 1.5
+            width: height
+            icon.height: height
+            icon.width: width
         }
         IconButton {
             icon.source: "image://theme/icon-m-play"
@@ -1131,6 +1164,10 @@ Page {
             anchors.left: parent.left
             anchors.leftMargin: Theme.paddingSmall
             anchors.verticalCenter: parent.verticalCenter
+            height: toolbarheight / 1.5
+            width: height
+            icon.height: height
+            icon.width: width
         }
 
 
@@ -1149,7 +1186,7 @@ Page {
         }
         //anchors.bottomMargin: Theme.paddingSmall // This looks ugly
         width: parent.width
-        height: 72
+        height: toolbarheight
         visible: searchMode
 
         function search() {
@@ -1170,6 +1207,10 @@ Page {
             anchors.right: parent.right
             anchors.rightMargin: Theme.paddingSmall
             anchors.verticalCenter: parent.verticalCenter
+            height: toolbarheight / 1.5
+            width: height
+            icon.height: height
+            icon.width: width
         }
 
         TextField {
@@ -1211,6 +1252,10 @@ Page {
             anchors.left: parent.left
             anchors.leftMargin: Theme.paddingSmall
             anchors.verticalCenter: parent.verticalCenter
+            height: toolbarheight / 1.5
+            width: height
+            icon.height: height
+            icon.width: width
         }
 
 

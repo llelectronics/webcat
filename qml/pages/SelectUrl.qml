@@ -197,8 +197,8 @@ Page
                 spacing: 10
                 Rectangle {
                     id: tabBg
-                    width: 150
-                    height: 72
+                    width: Screen.width / 3
+                    height: dataContainer.toolbarheight
                     color: "transparent"
                     Text {
                         text: {
@@ -206,6 +206,7 @@ Page
                             else return qsTr("Loading..");
                         }
                         width: parent.width - 2
+                        font.pixelSize: tabBg.height / 2.15
                         color: Theme.primaryColor;
                         anchors.centerIn: parent
                         elide: Text.ElideRight
@@ -240,19 +241,19 @@ Page
 
         Rectangle {
             id: tabListBg
-            height: 72
+            height: dataContainer.toolbarheight
             width: parent.width
             gradient: normalBg
 
         SilicaListView {
             id: tabListView
             width: parent.width
-            height: 72
+            height: dataContainer.toolbarheight
 
             // new tab button
             header: Rectangle {
-                width: 80
-                height: 72
+                width: newTabImg.width + Theme.paddingLarge
+                height: dataContainer.toolbarheight
                 gradient: Gradient {
                     GradientStop { position: 0.0; color: "#262626" }
                     GradientStop { position: 0.85; color: "#1F1F1F"}
@@ -264,8 +265,9 @@ Page
 //                    anchors.centerIn: parent
 //                }
                 Image {
-                    width:48
-                    height: 48
+                    id: newTabImg
+                    height: dataContainer.toolbarheight / 1.5
+                    width: height
                     anchors.centerIn: parent
                     source : "image://theme/icon-cover-new" // This image is 96x96 and does not have a big border so make it smaller
                 }
@@ -305,8 +307,8 @@ Page
             // close tab button
             footer: Rectangle {
                 visible: tabModel.count > 1
-                width: 80
-                height: 72
+                width: closeTabImg.width + Theme.paddingLarge
+                height: dataContainer.toolbarheight
                 gradient: Gradient {
                     GradientStop { position: 0.0; color: "#262626" }
                     GradientStop { position: 0.85; color: "#1F1F1F"}
@@ -318,8 +320,9 @@ Page
 //                    anchors.centerIn: parent
 //                }
                 Image {
-                    width:64
-                    height: 64
+                    id: closeTabImg
+                    height: dataContainer.toolbarheight / 1.125
+                    width: height
                     anchors.centerIn: parent
                     source : "image://theme/icon-m-close" // This image is 64x64 and does have a big border so leave it as is
                 }
@@ -339,7 +342,7 @@ Page
             highlight:
 
                 Rectangle {
-                width: parent.width; height: 72
+                width: parent.width; height: dataContainer.toolbarheight
                 gradient: Gradient {
                     GradientStop { position: 0.0; color: Theme.highlightColor }
                     GradientStop { position: 0.10; color: "#262626" }
