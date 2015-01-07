@@ -1,11 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.0" language="es">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="es" version="2.0">
 <context>
     <name>AboutPage</name>
     <message>
         <source>A simple webbrowser based on webkit.</source>
-        <translation>Un navegador simple basado en webkit</translation>
+        <translation>Un navegador de Internet sencillo basado en webkit</translation>
     </message>
 </context>
 <context>
@@ -61,7 +59,7 @@
     </message>
     <message>
         <source>Download Manager</source>
-        <translation>Administrador de deescargas</translation>
+        <translation>Administrador de descargas</translation>
     </message>
     <message>
         <source>Enter URL to download</source>
@@ -89,7 +87,7 @@
     </message>
     <message>
         <source>Download Status</source>
-        <translation>Descargar estado</translation>
+        <translation>Estado de la descarga</translation>
     </message>
     <message>
         <source>Download Errors</source>
