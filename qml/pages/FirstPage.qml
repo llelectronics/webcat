@@ -784,7 +784,7 @@ Page {
             enabled: webview.canGoForward
             visible: webview.canGoForward
             anchors.left: backIcon.visible ? backIcon.right : gotoButton.right
-            anchors.leftMargin: Theme.paddingSmall
+            anchors.leftMargin: Theme.paddingLarge
             onClicked: {
                 webview.goForward();
             }
@@ -1363,4 +1363,28 @@ Page {
         id: hiddenTxtBox
         visible: false
     }
+
+    CoverActionList {
+            enabled: page.status === PageStatus.Active && webview.contentItem
+            iconBackground: true
+
+            CoverAction {
+                iconSource: "image://theme/icon-cover-new"
+                onTriggered: {
+                    mainWindow.activate()
+                    mainWindow.loadInNewTab("about:bookmarks")
+                }
+            }
+
+            CoverAction {
+                iconSource: webview.loading ? "image://theme/icon-cover-cancel" : "image://theme/icon-cover-refresh"
+                onTriggered: {
+                    if (webview.loading) {
+                        webview.stop()
+                    } else {
+                        webview.reload()
+                    }
+                }
+            }
+        }
 }
