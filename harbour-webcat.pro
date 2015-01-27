@@ -78,7 +78,8 @@ TRANSLATIONS += translations/harbour-webcat-de.ts \
         translations/harbour-webcat-it.ts \
         translations/harbour-webcat-nl_NL.ts \
         translations/harbour-webcat-es.ts \
-        translations/harbour-webcat-ru.ts
+        translations/harbour-webcat-ru.ts \
+        translations/harbour-webcat-fr.ts
 
 # Hmm... not allowed for now I guess
 #PKGCONFIG += nemotransferengine-qt5
