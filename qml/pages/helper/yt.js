@@ -188,6 +188,7 @@ function getYoutubeStream(youtube_id) {
                     mainWindow.firstPage.mediaYt = true // just to make sure
                     mainWindow.firstPage.ytStreamUrl = url
                     mainWindow.firstPage.ytUrlLoading = false
+                    mainWindow.firstPage.mediaDownloadRec.visble = true
                     return url;
 
                 } else {

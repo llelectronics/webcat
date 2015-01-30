@@ -196,7 +196,7 @@ Page {
                 ytUrlLoading = true
                 mediaLink = true;
                 mediaDownloadRec.mediaUrl = yurl
-                mediaDownloadRec.visible = true
+                //mediaDownloadRec.visible = true
             }
 //            else {
 //                mediaYt = false;
@@ -214,7 +214,7 @@ Page {
                 ytUrlLoading = true
                 mediaLink = true;
                 mediaDownloadRec.mediaUrl = yurl
-                mediaDownloadRec.visible = true
+                //mediaDownloadRec.visible = true
             }
 //            else {
 //                if (!mediaYt && mediaDownloadRec.mediaUrl != yurl) {
@@ -242,6 +242,7 @@ Page {
             }
 
             // reset everything on url change
+            mediaDownloadRec.mediaUrl = ""
             mediaYtEmbeded = false;
             mediaYt = false;
             mediaLink = false;
@@ -843,11 +844,13 @@ Page {
 
             Keys.onEnterPressed: {
                 urlText.focus = false;  // Close keyboard
+                if (page.suggestionView.visible) page.suggestionView.visible = false;
                 webview.url = fixUrl(urlText.text);
             }
 
             Keys.onReturnPressed: {
                 urlText.focus = false;
+                if (page.suggestionView.visible) page.suggestionView.visible = false;
                 webview.url = fixUrl(urlText.text);
             }
 
@@ -1102,7 +1105,7 @@ Page {
         property string mediaUrl
 
         onMediaUrlChanged: {
-            if (visible && mediaYt) {
+            if (mediaYt) {
                 //console.debug("[FirstPage.qml] MediaUrl: " + mediaUrl)
                 YT.getYoutubeDirectStream(mediaUrl.toString())
             }
@@ -1133,6 +1136,16 @@ Page {
                 repeat: true
                 onTriggered: progressCircleYt.value = (progressCircleYt.value + 0.005) % 1.0
                 running: ytUrlLoading
+            }
+        }
+
+        MouseArea {
+            anchors.fill: parent
+            onClicked: {
+                if (progressCircleYt.visible) {
+                    ytUrlLoading = false;
+                    YT.getYoutubeDirectStream(webview.url);
+                }
             }
         }
 
@@ -1357,7 +1370,7 @@ Page {
             else return parent.height / 2
         }
         visible: false
-        onSelected: { webview.url = url ; visible = false }
+        onSelected: { urlText.focus = false; suggestionView.visible = false ; webview.url = url }
     }
     TextArea {
         id: hiddenTxtBox
