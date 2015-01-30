@@ -77,6 +77,7 @@ Page {
     }
 
     onMediaLinkChanged: {
+        console.debug("[firstPage.qml] MediaLink change (Change visibility of mediaDownloadRec)")
         mediaDownloadRec.visible = !mediaDownloadRec.visible
     }
 
@@ -246,8 +247,12 @@ Page {
             mediaYtEmbeded = false;
             mediaYt = false;
             mediaLink = false;
-            // Youtube detect here but only if embeded media wasn't detected
-            if (mediaYtEmbeded == false) checkYoutubeURL(url);
+
+            // Some sites like youtube (with a iPhone or Android 2.2 userAgent) change url without loadChanged triggered
+            // make sure to detect that and check for YoutubeURL
+            if (!loading) {
+                if (mediaYtEmbeded == false) checkYoutubeURL(url);
+            }
 
             // Add to url history
             DB.addHistory(url);
@@ -398,6 +403,7 @@ Page {
         {
             if (loadRequest.status == WebView.LoadStartedStatus)
             {
+                console.debug("[firstPage.qml] Load Started")
                 urlLoading = true;
                 contextMenu.visible = false;
                 mediaLink = false;
@@ -431,8 +437,10 @@ Page {
                 //console.debug("[FirstPage.qml] pageId: " + pageId);
                 if (pageId != "" || pageId != undefined) mainWindow.tabModel.updateUrl(pageId,url)
 
+                // Youtube detect here but only if embeded media wasn't detected
+                if (mediaYtEmbeded == false) checkYoutubeURL(url);
+
                 // Hide mediabar if no media was detected
-                console.debug("Loading changed")
                 if (!mediaYt && !mediaYtEmbeded && !mediaLink) {
                     ytUrlLoading = false
                     mediaDownloadRec.mediaUrl = ""

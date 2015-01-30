@@ -184,7 +184,7 @@ function getYoutubeStream(youtube_id) {
                 }
 
                 if (found) {
-//                    console.debug("[yt.js]: Video in format " + resolutionFormat + " found with direct URL: " + url);
+                    console.debug("[yt.js]: Video in format " + resolutionFormat + " found with direct URL: " + url);
                     mainWindow.firstPage.mediaYt = true // just to make sure
                     mainWindow.firstPage.ytStreamUrl = url
                     mainWindow.firstPage.ytUrlLoading = false
