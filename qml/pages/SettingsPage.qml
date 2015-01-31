@@ -25,9 +25,9 @@ Dialog {
 
     function loadDefaults() {
         hp.text = "about:bookmarks";
-        minimumFontCombo.currentIndex = 34 - 16;
-        defaultFontCombo.currentIndex = 34 - 20;
-        defaultFixedFontCombo.currentIndex = 34 - 18;
+        minimumFontCombo.currentIndex = 34 - 11;
+        defaultFontCombo.currentIndex = 34 - 16;
+        defaultFixedFontCombo.currentIndex = 34 - 12;
         loadImagesSwitch.checked = true;
         privateBrowsingSwitch.checked = false;
         dnsPrefetchSwitch.checked = true;

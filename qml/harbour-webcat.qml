@@ -45,9 +45,9 @@ ApplicationWindow
     property string siteURL: "about:bookmarks" //"http://talk.maemo.org"
     property string homepage: "about:bookmarks"
     property string userAgent: "Mozilla/5.0 (Maemo; Linux; Jolla; Sailfish; Mobile) AppleWebKit/534.13 (KHTML, like Gecko) NokiaBrowser/8.5.0 Mobile Safari/534.13"
-    property int defaultFontSize: 20
-    property int defaultFixedFontSize: 18
-    property int minimumFontSize: 16 // We need readable fonts on g+, youtube and so on. This might hurt tmo though
+    property int defaultFontSize: 16
+    property int defaultFixedFontSize: 12
+    property int minimumFontSize: 11
     property bool loadImages: true
     property bool dnsPrefetch: true
     property bool privateBrowsing: false
@@ -80,7 +80,6 @@ ApplicationWindow
     property string yt240p;
 
     property QtObject firstPage
-
 
     signal clearCookies()
     signal clearCache()
