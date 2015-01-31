@@ -75,7 +75,9 @@ Page {
     }
 
     onMediaLinkChanged: {
-        mediaDownloadRec.visible = !mediaDownloadRec.visible
+        //console.debug("[firstPage.qml] MediaLink change (Change visibility of mediaDownloadRec): " + mediaLink)
+        if (mediaLink == true) mediaDownloadRec.visible = true
+        else mediaDownloadRec.visible = false
     }
 
     function loadUrl(requestUrl) {
@@ -193,16 +195,8 @@ Page {
                 mediaYt = true;
                 ytUrlLoading = true
                 mediaLink = true;
-                mediaDownloadRec.mediaUrl = yurl
-                mediaDownloadRec.visible = true
+                mediaDownloadRec.mediaUrl = yurl.toString()
             }
-//            else {
-//                mediaYt = false;
-//                mediaLink = false;
-//                ytUrlLoading = false
-//                mediaDownloadRec.mediaUrl = ""
-//                mediaDownloadRec.visible = false
-//            }
         }
 
         function checkYoutubeEmbeded(yurl) {
@@ -211,19 +205,8 @@ Page {
                 mediaYt = true;
                 ytUrlLoading = true
                 mediaLink = true;
-                mediaDownloadRec.mediaUrl = yurl
-                mediaDownloadRec.visible = true
+                mediaDownloadRec.mediaUrl = yurl.toString()
             }
-//            else {
-//                if (!mediaYt && mediaDownloadRec.mediaUrl != yurl) {
-//                    mediaYtEmbeded = false;
-//                    mediaYt = false;
-//                    mediaLink = false;
-//                    ytUrlLoading = false
-//                    mediaDownloadRec.mediaUrl = ""
-//                    mediaDownloadRec.visible = false
-//                }
-//            }
         }
 
         onUrlChanged: {
@@ -243,6 +226,11 @@ Page {
             mediaYtEmbeded = false;
             mediaYt = false;
             mediaLink = false;
+            // dont't forget to purge detected yt stream urls
+            mainWindow.yt720p = "";
+            mainWindow.yt480p = "";
+            mainWindow.yt360p = "";
+            mainWindow.yt240p = "";
             // Youtube detect here but only if embeded media wasn't detected
             if (mediaYtEmbeded == false) checkYoutubeURL(url);
 
@@ -308,7 +296,7 @@ Page {
 
         experimental.onDownloadRequested: {
             // Call downloadmanager here with the url
-            console.debug("Download requested: " + downloadItem.url);
+            //console.debug("Download requested: " + downloadItem.url);
             pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": downloadItem.url});
         }
 
@@ -336,7 +324,7 @@ Page {
                     showContextMenu(data.img);
                 }
                 else if (data.video) {
-                    console.debug("HTML5 Video Tag found with src:" + data.video)
+                    //console.debug("HTML5 Video Tag found with src:" + data.video)
                     mediaLink = true;
                     mediaDownloadRec.mediaUrl = data.video
                     mediaDownloadRec.visible = true
@@ -380,9 +368,7 @@ Page {
             }
             case 'video': {
                 if (data.video) {
-                    console.debug("HTML5 Video Tag found with src:" + data.video)
-                    mediaYt = true;
-                    mediaYtEmbeded = true; // Somehow I screwed up the variable names. MediaYtEmbeded needs to be set so that it isn't hidding the mediabar
+                    //console.debug("HTML5 Video Tag found with src:" + data.video)
                     mediaLink = true;
                     mediaDownloadRec.mediaUrl = data.video
                     mediaDownloadRec.visible = true
@@ -397,7 +383,6 @@ Page {
             {
                 urlLoading = true;
                 contextMenu.visible = false;
-                mediaLink = false;
                 readerMode = false;
                 searchMode = false;
                 nightMode = false;
@@ -427,14 +412,6 @@ Page {
                 // Update url for tabModel
                 //console.debug("[FirstPage.qml] pageId: " + pageId);
                 if (pageId != "" || pageId != undefined) mainWindow.tabModel.updateUrl(pageId,url)
-
-                // Hide mediabar if no media was detected
-                console.debug("Loading changed")
-                if (!mediaYt && !mediaYtEmbeded && !mediaLink) {
-                    ytUrlLoading = false
-                    mediaDownloadRec.mediaUrl = ""
-                    mediaDownloadRec.visible = false
-                }
             }
         }
         onNavigationRequested: {
@@ -1073,9 +1050,9 @@ Page {
         property string mediaUrl
 
         onMediaUrlChanged: {
-            if (visible && mediaYt) {
-                //console.debug("[FirstPage.qml] MediaUrl: " + mediaUrl)
-                YT.getYoutubeDirectStream(mediaUrl.toString())
+            if (mediaYt && mediaUrl != "") {
+                //console.debug("[FirstPage.qml] Youtube Media URL: " + mediaUrl)
+                YT.getYoutubeDirectStream(mediaUrl.toString());
             }
         }
 
@@ -1110,7 +1087,12 @@ Page {
         IconButton {
             icon.source: "image://theme/icon-m-device-download"
             onClicked:  {
-                if (mediaYt) pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": ytStreamUrl});
+                if (mediaYt || mediaYtEmbeded) {
+                    if (mainWindow.yt720p != "") pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": mainWindow.yt720p});
+                    else if (mainWindow.yt480p != "") pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": mainWindow.yt480p});
+                    else if (mainWindow.yt360p != "") pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": mainWindow.yt360p});
+                    else if (mainWindow.yt240p != "") pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": mainWindow.yt240p});
+                }
                 else if (mediaDownloadRec.mediaUrl != "") pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": mediaDownloadRec.mediaUrl});
                 else pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": url});
             }
@@ -1118,11 +1100,21 @@ Page {
             anchors.right: parent.right
             anchors.rightMargin: Theme.paddingSmall
             anchors.verticalCenter: parent.verticalCenter
+            onPressAndHold: {
+                if (mediaYt || mediaYtEmbeded) pageStack.push(Qt.resolvedUrl("ytQualityChooser.qml"), {"url720p":mainWindow.yt720p, "url480p":mainWindow.yt480p, "url360p": mainWindow.yt360p, "url240p":mainWindow.yt240p, "download": true});
+            }
         }
         IconButton {
             icon.source: "image://theme/icon-m-play"
             onClicked:  {
-                if (mainWindow.vPlayerExists && mediaYt) mainWindow.openWithvPlayer(ytStreamUrl);
+                mainWindow.infoBanner.showText(qsTr("Opening..."))
+                if (mainWindow.vPlayerExists && (mediaYt || mediaYtEmbeded)) {
+                    // Always try to play highest quality first // TODO: Allow setting a default
+                    if (mainWindow.yt720p != "") mainWindow.openWithvPlayer(mainWindow.yt720p);
+                    else if (mainWindow.yt480p != "") mainWindow.openWithvPlayer(mainWindow.yt480p);
+                    else if (mainWindow.yt360p != "") mainWindow.openWithvPlayer(mainWindow.yt360p);
+                    else if (mainWindow.yt240p != "") mainWindow.openWithvPlayer(mainWindow.yt240p);
+                }
                 else if (mainWindow.vPlayerExists && mediaDownloadRec.mediaUrl != "") mainWindow.openWithvPlayer(mediaDownloadRec.mediaUrl);
                 else if (mediaDownloadRec.mediaUrl != "") Qt.openUrlExternally(mediaDownloadRec.mediaUrl);
                 else Qt.openUrlExternally(url);
@@ -1131,6 +1123,9 @@ Page {
             anchors.left: parent.left
             anchors.leftMargin: Theme.paddingSmall
             anchors.verticalCenter: parent.verticalCenter
+            onPressAndHold: {
+                if (mediaYt || mediaYtEmbeded) pageStack.push(Qt.resolvedUrl("ytQualityChooser.qml"), {"url720p":mainWindow.yt720p, "url480p":mainWindow.yt480p, "url360p": mainWindow.yt360p, "url240p":mainWindow.yt240p});
+            }
         }
 
 

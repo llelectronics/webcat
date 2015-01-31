@@ -162,6 +162,10 @@
         <source>Save Link</source>
         <translation>Salva collegamento</translation>
     </message>
+    <message>
+        <source>Opening...</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>HistoryPage</name>
@@ -357,6 +361,21 @@
     <message>
         <source>Clear Cache</source>
         <translation>Cancella cache</translation>
+    </message>
+</context>
+<context>
+    <name>ytQualityChooser</name>
+    <message>
+        <source>Opening...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation type="unfinished">Scarica</translation>
+    </message>
+    <message>
+        <source>Play</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

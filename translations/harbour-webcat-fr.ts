@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="fr" version="2.0">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.0" language="fr">
 <context>
     <name>AboutPage</name>
     <message>
@@ -159,6 +161,10 @@
     <message>
         <source>Save Link</source>
         <translation>Enregistrer le lien</translation>
+    </message>
+    <message>
+        <source>Opening...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -355,6 +361,21 @@
     <message>
         <source>Clear Cache</source>
         <translation>Effacer le cache</translation>
+    </message>
+</context>
+<context>
+    <name>ytQualityChooser</name>
+    <message>
+        <source>Opening...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation type="unfinished">Télécharger</translation>
+    </message>
+    <message>
+        <source>Play</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>
