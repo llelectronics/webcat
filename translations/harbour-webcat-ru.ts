@@ -162,6 +162,10 @@
         <source>Save Link</source>
         <translation>Сохранить ссылку</translation>
     </message>
+    <message>
+        <source>Opening...</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>HistoryPage</name>

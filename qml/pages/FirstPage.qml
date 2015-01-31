@@ -1181,6 +1181,7 @@ Page {
         IconButton {
             icon.source: "image://theme/icon-m-play"
             onClicked:  {
+                mainWindow.infoBanner.showText(qsTr("Opening..."))
                 if (mainWindow.vPlayerExists && (mediaYt || mediaYtEmbeded)) {
                     // Always try to play highest quality first // TODO: Allow setting a default
                     if (mainWindow.yt720p != "") mainWindow.openWithvPlayer(mainWindow.yt720p);
