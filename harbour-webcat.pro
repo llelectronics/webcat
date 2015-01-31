@@ -57,7 +57,9 @@ OTHER_FILES += qml/harbour-webcat.qml \
     translations/harbour-webcat-zh_CN.ts \
     translations/harbour-webcat-nl_NL.ts \
     translations/harbour-webcat-it.ts \
-    translations/harbour-webcat-cs.ts
+    translations/harbour-webcat-cs.ts \
+    qml/pages/ytQualityChooser.qml \
+    qml/pages/InfoBanner.qml
 
 RESOURCES += \
     qrc.qrc

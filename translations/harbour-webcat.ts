@@ -359,4 +359,11 @@
         <translation type="unfinished"></translation>
     </message>
 </context>
+<context>
+    <name>ytQualityChooser</name>
+    <message>
+        <source>Opening...</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
 </TS>

@@ -154,32 +154,36 @@ function getYoutubeStream(youtube_id) {
                     //***********************************************//
 
                     // Try to get 720p HD video stream first
-                    if ((i + 1) % 6 === 0 && itag === "22") { // 6 parameters per video; itag 18 is "MP4 360p", see http://userscripts.org/scripts/review/25105
-                        found = true;
+                    if ((i + 1) % 6 === 0 && itag === "22") { // 6 parameters per video; itag 18 is "MP4 360p", see http://userscripts.org/scripts/review/25105               
                         resolutionFormat = "MP4 720p"
+                        mainWindow.yt720p = url += "&signature=" + sig;
                         url += "&signature=" + sig;
-                        break;
+                        found = true;
+                        //break;
                     }
                     // If above fails try to get 480p video stream
                     else if ((i + 1) % 6 === 0 && itag === "35") { // 6 parameters per video; itag 18 is "MP4 360p", see http://userscripts.org/scripts/review/25105
-                        found = true;
                         resolutionFormat = "FLV 480p"
-                        url += "&signature=" + sig;
-                        break;
+                        mainWindow.yt480p = url += "&signature=" + sig;
+                        if (found == false) url += "&signature=" + sig;
+                        found = true;
+                        //break;
                     }
                     // If above fails try to get 360p video stream
                     else if ((i + 1) % 6 === 0 && itag === "18") { // 6 parameters per video; itag 18 is "MP4 360p", see http://userscripts.org/scripts/review/25105
-                        found = true;
                         resolutionFormat = "MP4 360p"
-                        url += "&signature=" + sig;
-                        break;
+                        mainWindow.yt360p = url += "&signature=" + sig;
+                        if (found == false) url += "&signature=" + sig;
+                        found = true;
+                        //break;
                     }
                     // If above fails try to get 240p video stream
                     else if ((i + 1) % 6 === 0 && itag === "5") { // 6 parameters per video; itag 18 is "MP4 360p", see http://userscripts.org/scripts/review/25105
-                        found = true;
                         resolutionFormat = "FLV 240p"
-                        url += "&signature=" + sig;
-                        break;
+                        mainWindow.yt240p = url += "&signature=" + sig;
+                        if (found == false) url += "&signature=" + sig;
+                        found = true;
+                        //break;
                     }
                 }
 

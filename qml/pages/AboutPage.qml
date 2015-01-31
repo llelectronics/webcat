@@ -58,8 +58,8 @@ Page {
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignHCenter
             }
-
             Repeater{
+                anchors.horizontalCenter: parent.horizontalCenter
                 model: credits
                 Label  {
                     anchors.horizontalCenter: parent.horizontalCenter

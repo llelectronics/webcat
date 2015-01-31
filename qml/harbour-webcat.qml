@@ -59,7 +59,7 @@ ApplicationWindow
 
 
     property bool urlLoading: false
-    property string version: "0.9"
+    property string version: "1.0 devel"
     property string appname: "Webcat Browser"
     property string appicon: "qrc:/harbour-webcat.png"
     property string errorText: ""
@@ -72,6 +72,12 @@ ApplicationWindow
     property int currentTabIndex: 1
     property alias historyModel: historyModel
     property bool vPlayerExists
+    property alias infoBanner: infoBanner
+
+    property string yt720p;
+    property string yt480p;
+    property string yt360p;
+    property string yt240p;
 
     property QtObject firstPage
 
@@ -347,6 +353,10 @@ ApplicationWindow
         onClosing: {
             saveSession("lastSession")
         }
+    }
+    InfoBanner {
+        id: infoBanner
+        z:1
     }
 }
 
