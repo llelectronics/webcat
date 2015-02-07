@@ -1,33 +1,5 @@
 var frames = document.documentElement.getElementsByTagName('iframe');
 
-if (!window.location.origin)
-   window.location.origin = window.location.protocol+"//"+window.location.host;
-
-// I hate blacklisting. Hopefully this is the only url that needs that
-if (window.location.origin == "http://www.tagesschau.de") {
-
-    window.onload = function() {
-        // Glorious hack to fix wrong device Pixel Ratio reported by Webview (I hope Jolla will fix this soon)
-        if (screen.width <= 540) document.querySelector("meta[name=viewport]").setAttribute('content', 'width=device-width/1.5, initial-scale='+(1.5));
-        else if (screen.width > 540 && screen.width <= 768) document.querySelector("meta[name=viewport]").setAttribute('content', 'width=device-width/2.0, initial-scale='+(2.0));
-        else if (screen.width > 768) document.querySelector("meta[name=viewport]").setAttribute('content', 'width=device-width/3.0, initial-scale='+(3.0));
-        // Not sure if this will work on all resolutions
-        // Jolla devicePixelRatio: 1.5
-        // Nexus 4 devicePixelRatio: 2.0
-        // Nexus 5 devicePixelRatio: 3.0
-    }
-}
-else {
-    // Glorious hack to fix wrong device Pixel Ratio reported by Webview (I hope Jolla will fix this soon)
-    if (screen.width <= 540) document.querySelector("meta[name=viewport]").setAttribute('content', 'width=device-width/1.5, initial-scale='+(1.5));
-    else if (screen.width > 540 && screen.width <= 768) document.querySelector("meta[name=viewport]").setAttribute('content', 'width=device-width/2.0, initial-scale='+(2.0));
-    else if (screen.width > 768) document.querySelector("meta[name=viewport]").setAttribute('content', 'width=device-width/3.0, initial-scale='+(3.0));
-    // Not sure if this will work on all resolutions
-    // Jolla devicePixelRatio: 1.5
-    // Nexus 4 devicePixelRatio: 2.0
-    // Nexus 5 devicePixelRatio: 3.0
-}
-
 function getImgFullUri(uri) {
     if ((uri.slice(0, 7) === 'http://') ||
         (uri.slice(0, 8) === 'https://') ||
@@ -58,28 +30,28 @@ function elementContainedInBox(element, box) {
             (box.top <= rect.top) && (box.bottom >= rect.bottom));
 }
 
-//function getSelectedData(element) {
-//    var node = element;
-//    var data = new Object;
+function getSelectedData(element) {
+    var node = element;
+    var data = new Object;
 
-//    var nodeName = node.nodeName.toLowerCase();
-//    if (nodeName === 'img') {
-//        data.img = getImgFullUri(node.getAttribute('src'));
-//    } else if (nodeName === 'a') {
-//        data.href = node.href;
-//        data.title = node.title;
-//    }
+    var nodeName = node.nodeName.toLowerCase();
+    if (nodeName === 'img') {
+        data.img = getImgFullUri(node.getAttribute('src'));
+    } else if (nodeName === 'a') {
+        data.href = node.href;
+        data.title = node.title;
+    }
 
-//    // If the parent tag is a hyperlink, we want it too.
-//    var parent = node.parentNode;
-//    if ((nodeName !== 'a') && parent && (parent.nodeName.toLowerCase() === 'a')) {
-//        data.href = parent.href;
-//        data.title = parent.title;
-//        node = parent;
-//    }
+    // If the parent tag is a hyperlink, we want it too.
+    var parent = node.parentNode;
+    if ((nodeName !== 'a') && parent && (parent.nodeName.toLowerCase() === 'a')) {
+        data.href = parent.href;
+        data.title = parent.title;
+        node = parent;
+    }
 
-//    return data;
-//}
+    return data;
+}
 
 function adjustSelection(selection) {
     // FIXME: allow selecting two consecutive blocks, instead of
