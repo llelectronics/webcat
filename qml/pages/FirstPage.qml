@@ -263,8 +263,12 @@ Page {
         experimental.preferences.fullScreenEnabled: true
         experimental.preferences.developerExtrasEnabled: true
 
-        // This userScript makes longpress detection and other things working
-        experimental.userScripts: [Qt.resolvedUrl("helper/userscript.js")]
+
+        experimental.userScripts: [
+            Qt.resolvedUrl("helper/devicePixelRatioHack.js"),
+            // This userScript makes longpress detection and other things working
+            Qt.resolvedUrl("helper/userscript.js")
+        ]
         experimental.preferences.navigatorQtObjectEnabled: true
 
         experimental.certificateVerificationDialog: Item {
