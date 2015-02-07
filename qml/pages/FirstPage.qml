@@ -770,7 +770,7 @@ Page {
             enabled: webview.canGoBack
             visible: webview.canGoBack
             anchors.left: gotoButton.right
-            anchors.leftMargin: Theme.paddingSmall
+            anchors.leftMargin: Theme.paddingMedium
             onClicked: {
                 webview.goBack();
                 forIcon.visible = true;
@@ -788,7 +788,7 @@ Page {
             enabled: webview.canGoForward
             visible: webview.canGoForward
             anchors.left: backIcon.visible ? backIcon.right : gotoButton.right
-            anchors.leftMargin: Theme.paddingLarge
+            anchors.leftMargin: (1.5 * Theme.paddingLarge)
             onClicked: {
                 webview.goForward();
             }
@@ -812,6 +812,8 @@ Page {
                 else return gotoButton.right
             }
             anchors.leftMargin: Theme.paddingVerySmall
+            anchors.right: bookmarkButton.left
+            anchors.rightMargin: Theme.paddingVerySmall
             width: { //180 // minimum
                 if (backIcon.visible === false && forIcon.visible === false) return parent.width - gotoButton.width - bookmarkButton.width
                 else if (backIcon.visible === true && forIcon.visible === false) return parent.width - gotoButton.width - bookmarkButton.width - backIcon.width
@@ -1149,6 +1151,7 @@ Page {
             onClicked: {
                 if (progressCircleYt.visible) {
                     ytUrlLoading = false;
+                    mediaDownloadRec.visible = false;
                     YT.getYoutubeDirectStream(webview.url);
                 }
             }
@@ -1170,7 +1173,7 @@ Page {
             anchors.right: parent.right
             anchors.rightMargin: Theme.paddingSmall
             anchors.verticalCenter: parent.verticalCenter
-            height: toolbarheight / 1.5
+            height: toolbarheight / 1.2   // TODO: 1.5 looks to small. But that depends on the image. Maybe later sailfish OS versions will change something here
             width: height
             icon.height: height
             icon.width: width
@@ -1197,7 +1200,7 @@ Page {
             anchors.left: parent.left
             anchors.leftMargin: Theme.paddingSmall
             anchors.verticalCenter: parent.verticalCenter
-            height: toolbarheight / 1.5
+            height: toolbarheight / 1.2
             width: height
             icon.height: height
             icon.width: width
