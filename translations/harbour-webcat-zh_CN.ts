@@ -260,7 +260,7 @@
     </message>
     <message>
         <source>Clear Cookies and restart</source>
-        <translation>清除Cookie并重启程序</translation>
+        <translation type="obsolete">清除Cookie并重启程序</translation>
     </message>
     <message>
         <source>Clear History</source>

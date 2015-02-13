@@ -259,10 +259,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Clear Cookies and restart</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Clear History</source>
         <translation type="unfinished"></translation>
     </message>

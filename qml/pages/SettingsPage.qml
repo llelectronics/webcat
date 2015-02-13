@@ -69,7 +69,7 @@ Dialog {
     }
 
     function clearCookies() {
-        remorse.execute(qsTr("Clear Cookies and restart"), function() { mainWindow.clearCookies(); } )
+        remorse.execute(qsTr("Clear Cookies"), function() { mainWindow.clearCookies(); } )
     }
 
     function clearHistory() {

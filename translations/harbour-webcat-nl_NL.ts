@@ -260,7 +260,7 @@
     </message>
     <message>
         <source>Clear Cookies and restart</source>
-        <translation>Cookies wissen en herstarten</translation>
+        <translation type="obsolete">Cookies wissen en herstarten</translation>
     </message>
     <message>
         <source>Clear History</source>

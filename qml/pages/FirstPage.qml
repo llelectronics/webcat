@@ -70,6 +70,7 @@ Page {
     property bool searchMode: false
     property int toolbarheight: Screen.height / 13
     property int extratoolbarheight: Screen.height / 10
+    property alias webview: webview
 
     Component.onCompleted: {
         _ngfEffect = Qt.createQmlObject("import org.nemomobile.ngf 1.0; NonGraphicalFeedback { event: 'pulldown_lock' }",

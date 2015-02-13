@@ -81,7 +81,7 @@ ApplicationWindow
 
     property QtObject firstPage
 
-    signal clearCookies()
+    //signal clearCookies()
     signal clearCache()
     signal openNewWindow(string hrefUrl)
     signal openPrivateNewWindow(string hrefUrl)
@@ -97,6 +97,10 @@ ApplicationWindow
                 mainWindow.firstPage = fPage
             }
         }
+    }
+
+    function clearCookies() {
+        firstPage.webview.experimental.deleteAllCookies();
     }
 
     function saveSession(sessionName) {

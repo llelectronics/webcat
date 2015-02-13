@@ -260,7 +260,7 @@
     </message>
     <message>
         <source>Clear Cookies and restart</source>
-        <translation>Neteja les galetes i reinicia</translation>
+        <translation type="obsolete">Neteja les galetes i reinicia</translation>
     </message>
     <message>
         <source>Clear History</source>
