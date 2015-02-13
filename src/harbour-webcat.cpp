@@ -87,7 +87,7 @@ int main(int argc, char *argv[])
     }
 
     //app->setOrganizationName("Webcat");
-    app->setApplicationVersion("0.9");
+    app->setApplicationVersion("1.0.2");
     QQuickView *view = SailfishApp::createView();
 
     view->setSource(SailfishApp::pathTo("qml/harbour-webcat.qml"));
@@ -103,8 +103,6 @@ int main(int argc, char *argv[])
     QMetaObject::invokeMethod(object, "loadInitialTab");
 
     MyClass myClass(view);
-    QObject::connect(object, SIGNAL(clearCookies()),
-                     &myClass, SLOT(clearCookies()));
     QObject::connect(object, SIGNAL(clearCache()),
                      &myClass, SLOT(clearCache()));
     QObject::connect(object, SIGNAL(openNewWindow(QString)),
