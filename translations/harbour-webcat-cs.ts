@@ -100,67 +100,67 @@
     <name>FirstPage</name>
     <message>
         <source>Enter an url</source>
-        <translation>Zadejte odkaz</translation>
+        <translation type="unfinished">Zadejte odkaz</translation>
     </message>
     <message>
         <source>Minimize</source>
-        <translation>Minimalizovat</translation>
+        <translation type="unfinished">Minimalizovat</translation>
     </message>
     <message>
         <source>New Tab</source>
-        <translation>Nový panel</translation>
+        <translation type="unfinished">Nový panel</translation>
     </message>
     <message>
         <source>New Window</source>
-        <translation>Nové okno</translation>
+        <translation type="unfinished">Nové okno</translation>
     </message>
     <message>
         <source>Reload</source>
-        <translation>Obnovit</translation>
+        <translation type="unfinished">Obnovit</translation>
     </message>
     <message>
         <source>Lock Orientation</source>
-        <translation>Zamknout otáčení</translation>
+        <translation type="unfinished">Zamknout otáčení</translation>
     </message>
     <message>
         <source>Reader Mode</source>
-        <translation>Mód čtení</translation>
+        <translation type="unfinished">Mód čtení</translation>
     </message>
     <message>
         <source>Search</source>
-        <translation>Hledat</translation>
+        <translation type="unfinished">Hledat</translation>
     </message>
     <message>
         <source>Close menu</source>
-        <translation>Zavřít menu</translation>
+        <translation type="unfinished">Zavřít menu</translation>
     </message>
     <message>
         <source>Enter searchterm</source>
-        <translation>Zadejte text hledání</translation>
+        <translation type="unfinished">Zadejte text hledání</translation>
     </message>
     <message>
         <source>Open in New Window</source>
-        <translation>Otevřít v novém okně</translation>
+        <translation type="unfinished">Otevřít v novém okně</translation>
     </message>
     <message>
         <source>Open in New Tab</source>
-        <translation>Otevřít v novém panelu</translation>
+        <translation type="unfinished">Otevřít v novém panelu</translation>
     </message>
     <message>
         <source>Open in Private New Window</source>
-        <translation>Otevřít v novém soukromém okně</translation>
+        <translation type="unfinished">Otevřít v novém soukromém okně</translation>
     </message>
     <message>
         <source>Copy Link</source>
-        <translation>Kopírovat odkaz</translation>
+        <translation type="unfinished">Kopírovat odkaz</translation>
     </message>
     <message>
         <source>Save Image</source>
-        <translation>Uložit obrázek</translation>
+        <translation type="unfinished">Uložit obrázek</translation>
     </message>
     <message>
         <source>Save Link</source>
-        <translation>Uložit odkaz</translation>
+        <translation type="unfinished">Uložit odkaz</translation>
     </message>
     <message>
         <source>Opening...</source>

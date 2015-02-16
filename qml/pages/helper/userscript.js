@@ -113,44 +113,6 @@ window.open = function (url, windowName, windowFeatures) {
     navigator.qt.postMessage( JSON.stringify(link) );
 }
 
-//Set click handler and autodetect media files
-
-for (var i=0; i<frames.length; i++) {
-    if(typeof(frames[i].contentWindow.document)!=="undefined")
-    frames[i].contentWindow.document.addEventListener('click', (function(e) {
-        var node = e.target;
-        while(node) {
-            checkNode(e, node);
-            node = node.parentNode;
-        }
-    }), true);
-    var isrc = frames[i].getAttribute('src');
-    var data = new Object({'type':'iframe'});
-    data.isrc = isrc;
-    navigator.qt.postMessage(JSON.stringify(data));
-}
-var delement = document.documentElement.getElementsByTagName('video');
-
-for (var i=0; i<delement.length; i++) {
-    if (delement[i].hasChildNodes()) {
-        console.debug("Has children");
-        var children = delement[i].childNodes;
-        for (var j = 0; j < children.length; j++) {
-            if (children[j].tagName === 'SOURCE') {
-                var data = new Object({'type': 'video'})
-                if (children[j].hasAttribute('src')) data.video = getImgFullUri(children[j].getAttribute('src'));
-                navigator.qt.postMessage( JSON.stringify(data) );
-                break;
-            }
-        }
-    }
-    else if (delement[i].hasAttribute('src')) {
-        var data = new Object({'type': 'video'})
-        data.video = getImgFullUri(delement[j].getAttribute('src'));
-        navigator.qt.postMessage( JSON.stringify(data) );
-    }
-}
-
 // virtual keyboard hook
 window.document.addEventListener('click', (function(e) {
     if (e.srcElement.tagName === ('INPUT'||'TEXTAREA')) {

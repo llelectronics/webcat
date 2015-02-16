@@ -100,67 +100,67 @@
     <name>FirstPage</name>
     <message>
         <source>Enter an url</source>
-        <translation>Ввести url-адрес</translation>
+        <translation type="unfinished">Ввести url-адрес</translation>
     </message>
     <message>
         <source>Minimize</source>
-        <translation>Уменьшить</translation>
+        <translation type="unfinished">Уменьшить</translation>
     </message>
     <message>
         <source>New Tab</source>
-        <translation>Новая вкладка</translation>
+        <translation type="unfinished">Новая вкладка</translation>
     </message>
     <message>
         <source>New Window</source>
-        <translation>Новое окно</translation>
+        <translation type="unfinished">Новое окно</translation>
     </message>
     <message>
         <source>Reload</source>
-        <translation>Обновить</translation>
+        <translation type="unfinished">Обновить</translation>
     </message>
     <message>
         <source>Lock Orientation</source>
-        <translation>Блокировка поворота экрана</translation>
+        <translation type="unfinished">Блокировка поворота экрана</translation>
     </message>
     <message>
         <source>Reader Mode</source>
-        <translation>Режим чтения</translation>
+        <translation type="unfinished">Режим чтения</translation>
     </message>
     <message>
         <source>Search</source>
-        <translation>Поиск</translation>
+        <translation type="unfinished">Поиск</translation>
     </message>
     <message>
         <source>Close menu</source>
-        <translation>Закрыть меню</translation>
+        <translation type="unfinished">Закрыть меню</translation>
     </message>
     <message>
         <source>Enter searchterm</source>
-        <translation>Ввести текст для поиска</translation>
+        <translation type="unfinished">Ввести текст для поиска</translation>
     </message>
     <message>
         <source>Open in New Window</source>
-        <translation>Открыть новое окно</translation>
+        <translation type="unfinished">Открыть новое окно</translation>
     </message>
     <message>
         <source>Open in New Tab</source>
-        <translation>Открыть новую вкладку</translation>
+        <translation type="unfinished">Открыть новую вкладку</translation>
     </message>
     <message>
         <source>Open in Private New Window</source>
-        <translation>Открыть в новом приватном окне</translation>
+        <translation type="unfinished">Открыть в новом приватном окне</translation>
     </message>
     <message>
         <source>Copy Link</source>
-        <translation>Копировать ссылку</translation>
+        <translation type="unfinished">Копировать ссылку</translation>
     </message>
     <message>
         <source>Save Image</source>
-        <translation>Сохранить изображение</translation>
+        <translation type="unfinished">Сохранить изображение</translation>
     </message>
     <message>
         <source>Save Link</source>
-        <translation>Сохранить ссылку</translation>
+        <translation type="unfinished">Сохранить ссылку</translation>
     </message>
     <message>
         <source>Opening...</source>

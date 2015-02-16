@@ -100,67 +100,67 @@
     <name>FirstPage</name>
     <message>
         <source>Enter an url</source>
-        <translation>Voer een url in</translation>
+        <translation type="unfinished">Voer een url in</translation>
     </message>
     <message>
         <source>Minimize</source>
-        <translation>Minimaliseer</translation>
+        <translation type="unfinished">Minimaliseer</translation>
     </message>
     <message>
         <source>New Tab</source>
-        <translation>Nieuw tabblad</translation>
+        <translation type="unfinished">Nieuw tabblad</translation>
     </message>
     <message>
         <source>New Window</source>
-        <translation>Nieuw scherm</translation>
+        <translation type="unfinished">Nieuw scherm</translation>
     </message>
     <message>
         <source>Reload</source>
-        <translation>Herladen</translation>
+        <translation type="unfinished">Herladen</translation>
     </message>
     <message>
         <source>Lock Orientation</source>
-        <translation>Lock oriëntatie</translation>
+        <translation type="unfinished">Lock oriëntatie</translation>
     </message>
     <message>
         <source>Reader Mode</source>
-        <translation>Lezer modus</translation>
+        <translation type="unfinished">Lezer modus</translation>
     </message>
     <message>
         <source>Search</source>
-        <translation>Zoeken</translation>
+        <translation type="unfinished">Zoeken</translation>
     </message>
     <message>
         <source>Close menu</source>
-        <translation>Sluit menu</translation>
+        <translation type="unfinished">Sluit menu</translation>
     </message>
     <message>
         <source>Enter searchterm</source>
-        <translation>Voer zoekterm in</translation>
+        <translation type="unfinished">Voer zoekterm in</translation>
     </message>
     <message>
         <source>Open in New Window</source>
-        <translation>Open in nieuw scherm</translation>
+        <translation type="unfinished">Open in nieuw scherm</translation>
     </message>
     <message>
         <source>Open in New Tab</source>
-        <translation>Open in nieuw tabblad</translation>
+        <translation type="unfinished">Open in nieuw tabblad</translation>
     </message>
     <message>
         <source>Open in Private New Window</source>
-        <translation>Open in nieuw privé scherm</translation>
+        <translation type="unfinished">Open in nieuw privé scherm</translation>
     </message>
     <message>
         <source>Copy Link</source>
-        <translation>Kopieer link</translation>
+        <translation type="unfinished">Kopieer link</translation>
     </message>
     <message>
         <source>Save Image</source>
-        <translation>Afbeelding opslaan</translation>
+        <translation type="unfinished">Afbeelding opslaan</translation>
     </message>
     <message>
         <source>Save Link</source>
-        <translation>Link opslaan</translation>
+        <translation type="unfinished">Link opslaan</translation>
     </message>
     <message>
         <source>Opening...</source>

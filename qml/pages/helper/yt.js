@@ -1,3 +1,5 @@
+.pragma library
+
 var ytDirectStreamUrl;
 var ytfailCount;
 
@@ -23,15 +25,15 @@ function getYtID(url) {
     return youtube_id;
 }
 
-function getYoutubeVid(url) {
+function getYoutubeVid(url,firstPage) {
     var youtube_id;
     youtube_id = getYtID(url);
-    var ytUrl = getYoutubeStream(youtube_id);
+    var ytUrl = getYoutubeStream(youtube_id,firstPage);
     //if (ytUrl !== "") return ytUrl;  // XMLHttpRequest does not know synchronus in QML so I need to restructe everything if I directly want to use Youtubes server
     return("http://ytapi.com/?vid=" + youtube_id + "&format=direct");
 }
 
-function getYoutubeTitle(url) {
+function getYoutubeTitle(url,firstPage) {
     var youtube_id;
     youtube_id = getYtID(url);
     var xhr = new XMLHttpRequest();
@@ -41,12 +43,7 @@ function getYoutubeTitle(url) {
             if (xhr.status === 200) {
                 var jsonObject = eval('(' + xhr.responseText + ')');
                 console.log("Youtube Title: " + jsonObject.data.title);
-                firstPage.streamTitle = jsonObject.data.title;
-//                for ( var index in jsonObject.data )
-//                {
-//                    console.log("Youtube Title: " + jsonObject.data.title);
-//                    firstPage.streamTitle = jsonObject.data.title;
-//                }
+                firstPage.mediaTitle = jsonObject.data.title;
             } else {
                 console.log("responseText", xhr.responseText);
             }
@@ -55,25 +52,32 @@ function getYoutubeTitle(url) {
     xhr.send();
 }
 
-function getYoutubeDirectStream(url) {
+function getYoutubeDirectStream(url,firstPage) {
     ytfailCount = 0;
     try {
-        var vid = getYoutubeVid(url);
+        var vid = getYoutubeVid(url,firstPage);
     }
     catch(e) {
         console.debug("[yt.js]: " + e)
         console.debug("Assuming it is probably not a youtube video link")
-        mainWindow.firstPage.ytUrlLoading = false
-        mainWindow.firstPage.mediaYt = false
-        mainWindow.firstPage.mediaLink = false
-        mainWindow.firstPage.mediaDownloadRec.visble = false
-        mainWindow.firstPage.mediaDownloadRec.mediaUrl = ""
+        firstPage.ytUrlLoading = false
+        firstPage.mediaYt = false
+        firstPage.mediaLink = false
+        firstPage.mediaDownloadRec.visble = false
+        firstPage.mediaDownloadRec.mediaUrl = ""
+        return;
+    }
+    try {
+        getYoutubeTitle(url,firstPage)
+    }
+    catch (e) {
+        console.debug("[yt.js] Youtube Stream Title not found: " + e)
         return;
     }
 }
 
 // This would be a proper way to get the youtube video stream url
-function getYoutubeStream(youtube_id) {
+function getYoutubeStream(youtube_id, firstPage) {
 
     var doc = new XMLHttpRequest();
 
@@ -103,8 +107,8 @@ function getYoutubeStream(youtube_id) {
                 var msg = "YouTube videoInfo parsing: url_encoded_fmt_stream_map not found";
                 console.debug(msg);
                 // Last chance if we don't get the direct video stream url parse the youtube url directly to external player
-                //mainWindow.firstPage.ytUrlLoading = false
-                //mainWindow.firstPage.ytStreamUrl = getYoutubeVid(mainWindow.firstPage.url)
+                //firstPage.ytUrlLoading = false
+                //firstPage.ytStreamUrl = getYoutubeVid(firstPage.url)
                 //return;
             }
             try {
@@ -156,7 +160,7 @@ function getYoutubeStream(youtube_id) {
                     // Try to get 720p HD video stream first
                     if ((i + 1) % 6 === 0 && itag === "22") { // 6 parameters per video; itag 18 is "MP4 360p", see http://userscripts.org/scripts/review/25105               
                         resolutionFormat = "MP4 720p"
-                        mainWindow.yt720p = url += "&signature=" + sig;
+                        firstPage.yt720p = url += "&signature=" + sig;
                         url += "&signature=" + sig;
                         found = true;
                         //break;
@@ -164,7 +168,7 @@ function getYoutubeStream(youtube_id) {
                     // If above fails try to get 480p video stream
                     else if ((i + 1) % 6 === 0 && itag === "35") { // 6 parameters per video; itag 18 is "MP4 360p", see http://userscripts.org/scripts/review/25105
                         resolutionFormat = "FLV 480p"
-                        mainWindow.yt480p = url += "&signature=" + sig;
+                        firstPage.yt480p = url += "&signature=" + sig;
                         if (found == false) url += "&signature=" + sig;
                         found = true;
                         //break;
@@ -172,7 +176,7 @@ function getYoutubeStream(youtube_id) {
                     // If above fails try to get 360p video stream
                     else if ((i + 1) % 6 === 0 && itag === "18") { // 6 parameters per video; itag 18 is "MP4 360p", see http://userscripts.org/scripts/review/25105
                         resolutionFormat = "MP4 360p"
-                        mainWindow.yt360p = url += "&signature=" + sig;
+                        firstPage.yt360p = url += "&signature=" + sig;
                         if (found == false) url += "&signature=" + sig;
                         found = true;
                         //break;
@@ -180,7 +184,7 @@ function getYoutubeStream(youtube_id) {
                     // If above fails try to get 240p video stream
                     else if ((i + 1) % 6 === 0 && itag === "5") { // 6 parameters per video; itag 18 is "MP4 360p", see http://userscripts.org/scripts/review/25105
                         resolutionFormat = "FLV 240p"
-                        mainWindow.yt240p = url += "&signature=" + sig;
+                        firstPage.yt240p = url += "&signature=" + sig;
                         if (found == false) url += "&signature=" + sig;
                         found = true;
                         //break;
@@ -189,22 +193,22 @@ function getYoutubeStream(youtube_id) {
 
                 if (found) {
                     console.debug("[yt.js]: Video in format " + resolutionFormat + " found with direct URL: " + url);
-                    mainWindow.firstPage.mediaYt = true // just to make sure
-                    mainWindow.firstPage.ytStreamUrl = url
-                    mainWindow.firstPage.ytUrlLoading = false
-                    mainWindow.firstPage.mediaDownloadRec.visble = true
+                    firstPage.ytStreamUrl = url
+                    firstPage.ytUrlLoading = false
+                    firstPage.mediaDownloadRec.visible = true
                     return url;
 
                 } else {
                     var msg = "Couldn't find video either in MP4 720p, FLV 480p, MP4 360p and FLV 240p";
-//                    console.debug(msg);
-                    mainWindow.firstPage.ytUrlLoading = false
-                    mainWindow.firstPage.mediaYt = false
+                    console.debug(msg);
+                    firstPage.ytUrlLoading = false
+                    firstPage.mediaYt = false
+                    firstPage.mediaDownloadRec.visible = false
                     return;
                 }
             } catch(e) {
-//                console.debug("[yt.js]: " + e)
-//                console.debug("[yt.js] ytfailCount: " +ytfailCount);
+                console.debug("[yt.js]: " + e)
+                console.debug("[yt.js] ytfailCount: " +ytfailCount);
                 ytfailCount++;
                 getYoutubeStream(youtube_id);
             }

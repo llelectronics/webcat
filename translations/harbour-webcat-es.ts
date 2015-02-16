@@ -100,67 +100,67 @@
     <name>FirstPage</name>
     <message>
         <source>Enter an url</source>
-        <translation>Introducir una url</translation>
+        <translation type="unfinished">Introducir una url</translation>
     </message>
     <message>
         <source>Minimize</source>
-        <translation>Minimizar</translation>
+        <translation type="unfinished">Minimizar</translation>
     </message>
     <message>
         <source>New Tab</source>
-        <translation>Nueva pestaña</translation>
+        <translation type="unfinished">Nueva pestaña</translation>
     </message>
     <message>
         <source>New Window</source>
-        <translation>Nueva ventana</translation>
+        <translation type="unfinished">Nueva ventana</translation>
     </message>
     <message>
         <source>Reload</source>
-        <translation>Volver a cargar</translation>
+        <translation type="unfinished">Volver a cargar</translation>
     </message>
     <message>
         <source>Lock Orientation</source>
-        <translation>Bloquear orientación</translation>
+        <translation type="unfinished">Bloquear orientación</translation>
     </message>
     <message>
         <source>Reader Mode</source>
-        <translation>Modo lectura</translation>
+        <translation type="unfinished">Modo lectura</translation>
     </message>
     <message>
         <source>Search</source>
-        <translation>Buscar</translation>
+        <translation type="unfinished">Buscar</translation>
     </message>
     <message>
         <source>Close menu</source>
-        <translation>Cerrar menú</translation>
+        <translation type="unfinished">Cerrar menú</translation>
     </message>
     <message>
         <source>Enter searchterm</source>
-        <translation>Introducir término de la búsqueda</translation>
+        <translation type="unfinished">Introducir término de la búsqueda</translation>
     </message>
     <message>
         <source>Open in New Window</source>
-        <translation>Abrir en nueva ventana</translation>
+        <translation type="unfinished">Abrir en nueva ventana</translation>
     </message>
     <message>
         <source>Open in New Tab</source>
-        <translation>Abrir en nueva pestaña</translation>
+        <translation type="unfinished">Abrir en nueva pestaña</translation>
     </message>
     <message>
         <source>Open in Private New Window</source>
-        <translation>Abrir en nueva ventana privada</translation>
+        <translation type="unfinished">Abrir en nueva ventana privada</translation>
     </message>
     <message>
         <source>Copy Link</source>
-        <translation>Copiar enlace</translation>
+        <translation type="unfinished">Copiar enlace</translation>
     </message>
     <message>
         <source>Save Image</source>
-        <translation>Guardar imagen</translation>
+        <translation type="unfinished">Guardar imagen</translation>
     </message>
     <message>
         <source>Save Link</source>
-        <translation>Guardar enlace</translation>
+        <translation type="unfinished">Guardar enlace</translation>
     </message>
     <message>
         <source>Opening...</source>

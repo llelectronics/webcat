@@ -100,67 +100,67 @@
     <name>FirstPage</name>
     <message>
         <source>Enter an url</source>
-        <translation>输入URL</translation>
+        <translation type="unfinished">输入URL</translation>
     </message>
     <message>
         <source>Minimize</source>
-        <translation>最小化</translation>
+        <translation type="unfinished">最小化</translation>
     </message>
     <message>
         <source>New Tab</source>
-        <translation>新标签页</translation>
+        <translation type="unfinished">新标签页</translation>
     </message>
     <message>
         <source>New Window</source>
-        <translation>新窗口</translation>
+        <translation type="unfinished">新窗口</translation>
     </message>
     <message>
         <source>Reload</source>
-        <translation>重新加载</translation>
+        <translation type="unfinished">重新加载</translation>
     </message>
     <message>
         <source>Lock Orientation</source>
-        <translation>锁定屏幕方向</translation>
+        <translation type="unfinished">锁定屏幕方向</translation>
     </message>
     <message>
         <source>Reader Mode</source>
-        <translation>阅读模式</translation>
+        <translation type="unfinished">阅读模式</translation>
     </message>
     <message>
         <source>Search</source>
-        <translation>搜索</translation>
+        <translation type="unfinished">搜索</translation>
     </message>
     <message>
         <source>Close menu</source>
-        <translation>关闭菜单</translation>
+        <translation type="unfinished">关闭菜单</translation>
     </message>
     <message>
         <source>Enter searchterm</source>
-        <translation>输入搜索关键词</translation>
+        <translation type="unfinished">输入搜索关键词</translation>
     </message>
     <message>
         <source>Open in New Window</source>
-        <translation>在新窗口中打开</translation>
+        <translation type="unfinished">在新窗口中打开</translation>
     </message>
     <message>
         <source>Open in New Tab</source>
-        <translation>在新标签页中打开</translation>
+        <translation type="unfinished">在新标签页中打开</translation>
     </message>
     <message>
         <source>Open in Private New Window</source>
-        <translation>在新隐私窗口中打开</translation>
+        <translation type="unfinished">在新隐私窗口中打开</translation>
     </message>
     <message>
         <source>Copy Link</source>
-        <translation>复制链接</translation>
+        <translation type="unfinished">复制链接</translation>
     </message>
     <message>
         <source>Save Image</source>
-        <translation>保存图像</translation>
+        <translation type="unfinished">保存图像</translation>
     </message>
     <message>
         <source>Save Link</source>
-        <translation>保存链接</translation>
+        <translation type="unfinished">保存链接</translation>
     </message>
     <message>
         <source>Opening...</source>

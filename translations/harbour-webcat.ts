@@ -135,6 +135,10 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Opening...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Enter searchterm</source>
         <translation type="unfinished"></translation>
     </message>
@@ -160,10 +164,6 @@
     </message>
     <message>
         <source>Save Link</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Opening...</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

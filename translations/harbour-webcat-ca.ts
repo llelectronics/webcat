@@ -100,67 +100,67 @@
     <name>FirstPage</name>
     <message>
         <source>Enter an url</source>
-        <translation>URL</translation>
+        <translation type="unfinished">URL</translation>
     </message>
     <message>
         <source>Minimize</source>
-        <translation>Minimitza</translation>
+        <translation type="unfinished">Minimitza</translation>
     </message>
     <message>
         <source>New Tab</source>
-        <translation>Nova pestanya</translation>
+        <translation type="unfinished">Nova pestanya</translation>
     </message>
     <message>
         <source>New Window</source>
-        <translation>Nova finestra</translation>
+        <translation type="unfinished">Nova finestra</translation>
     </message>
     <message>
         <source>Reload</source>
-        <translation>Torna a carregar</translation>
+        <translation type="unfinished">Torna a carregar</translation>
     </message>
     <message>
         <source>Lock Orientation</source>
-        <translation>Fixa l&apos;orientació</translation>
+        <translation type="unfinished">Fixa l&apos;orientació</translation>
     </message>
     <message>
         <source>Reader Mode</source>
-        <translation>Mode de lectura</translation>
+        <translation type="unfinished">Mode de lectura</translation>
     </message>
     <message>
         <source>Search</source>
-        <translation>Cerca</translation>
+        <translation type="unfinished">Cerca</translation>
     </message>
     <message>
         <source>Close menu</source>
-        <translation>Tanca el menú</translation>
+        <translation type="unfinished">Tanca el menú</translation>
     </message>
     <message>
         <source>Enter searchterm</source>
-        <translation>Paràmetre de cerca</translation>
+        <translation type="unfinished">Paràmetre de cerca</translation>
     </message>
     <message>
         <source>Open in New Window</source>
-        <translation>Obre en una finestra nova</translation>
+        <translation type="unfinished">Obre en una finestra nova</translation>
     </message>
     <message>
         <source>Open in New Tab</source>
-        <translation>Obre en una pestanya nova</translation>
+        <translation type="unfinished">Obre en una pestanya nova</translation>
     </message>
     <message>
         <source>Open in Private New Window</source>
-        <translation>Obre en una finestra privada nova</translation>
+        <translation type="unfinished">Obre en una finestra privada nova</translation>
     </message>
     <message>
         <source>Copy Link</source>
-        <translation>Copia l&apos;enllaç</translation>
+        <translation type="unfinished">Copia l&apos;enllaç</translation>
     </message>
     <message>
         <source>Save Image</source>
-        <translation>Desa la imatge</translation>
+        <translation type="unfinished">Desa la imatge</translation>
     </message>
     <message>
         <source>Save Link</source>
-        <translation>Desa l&apos;enllaç</translation>
+        <translation type="unfinished">Desa l&apos;enllaç</translation>
     </message>
     <message>
         <source>Opening...</source>
