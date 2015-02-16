@@ -61,7 +61,7 @@ function getYoutubeDirectStream(url,firstPage) {
         firstPage.ytUrlLoading = false
         firstPage.mediaYt = false
         firstPage.mediaLink = false
-        firstPage.mediaDownloadRec.visble = false
+        firstPage.mediaDownloadRec.visible = false
         firstPage.mediaDownloadRec.mediaUrl = ""
         return;
     }

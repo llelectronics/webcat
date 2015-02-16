@@ -814,11 +814,13 @@ Page {
 
             Keys.onEnterPressed: {
                 urlText.focus = false;  // Close keyboard
+                if (page.suggestionView.visible) page.suggestionView.visible = false;
                 webview.url = fixUrl(urlText.text);
             }
 
             Keys.onReturnPressed: {
                 urlText.focus = false;
+                if (page.suggestionView.visible) page.suggestionView.visible = false;
                 webview.url = fixUrl(urlText.text);
             }
 
@@ -1095,6 +1097,17 @@ Page {
             }
         }
 
+        MouseArea {
+            anchors.fill: parent
+            onClicked: {
+                if (progressCircleYt.visible) {
+                    ytUrlLoading = false;
+                    mediaDownloadRec.visible = false;
+                    YT.getYoutubeDirectStream(webview.url.toString(),page);
+                }
+            }
+        }
+
         Label {
             id: mediaDownloadRecTitle
             anchors.centerIn: parent
@@ -1330,7 +1343,7 @@ Page {
             else return parent.height / 2
         }
         visible: false
-        onSelected: { webview.url = url ; visible = false }
+        onSelected: { urlText.focus = false; suggestionView.visible = false ; webview.url = url }
     }
     TextArea {
         id: hiddenTxtBox
