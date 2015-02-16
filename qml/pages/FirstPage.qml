@@ -74,6 +74,7 @@ Page {
     property string yt240p;
     property string mediaTitle
     property alias mediaDownloadRec: mediaDownloadRec
+    property alias webview: webview
 
     Component.onCompleted: {
         _ngfEffect = Qt.createQmlObject("import org.nemomobile.ngf 1.0; NonGraphicalFeedback { event: 'pulldown_lock' }",
@@ -229,6 +230,7 @@ Page {
             }
 
             // reset everything on url change
+            mediaDownloadRec.mediaUrl = "";
             mediaYtEmbeded = false;
             mediaYt = false;
             mediaLink = false;
