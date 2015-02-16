@@ -30,28 +30,28 @@ function elementContainedInBox(element, box) {
             (box.top <= rect.top) && (box.bottom >= rect.bottom));
 }
 
-//function getSelectedData(element) {
-//    var node = element;
-//    var data = new Object;
+function getSelectedData(element) {
+    var node = element;
+    var data = new Object;
 
-//    var nodeName = node.nodeName.toLowerCase();
-//    if (nodeName === 'img') {
-//        data.img = getImgFullUri(node.getAttribute('src'));
-//    } else if (nodeName === 'a') {
-//        data.href = node.href;
-//        data.title = node.title;
-//    }
+    var nodeName = node.nodeName.toLowerCase();
+    if (nodeName === 'img') {
+        data.img = getImgFullUri(node.getAttribute('src'));
+    } else if (nodeName === 'a') {
+        data.href = node.href;
+        data.title = node.title;
+    }
 
-//    // If the parent tag is a hyperlink, we want it too.
-//    var parent = node.parentNode;
-//    if ((nodeName !== 'a') && parent && (parent.nodeName.toLowerCase() === 'a')) {
-//        data.href = parent.href;
-//        data.title = parent.title;
-//        node = parent;
-//    }
+    // If the parent tag is a hyperlink, we want it too.
+    var parent = node.parentNode;
+    if ((nodeName !== 'a') && parent && (parent.nodeName.toLowerCase() === 'a')) {
+        data.href = parent.href;
+        data.title = parent.title;
+        node = parent;
+    }
 
-//    return data;
-//}
+    return data;
+}
 
 function adjustSelection(selection) {
     // FIXME: allow selecting two consecutive blocks, instead of
@@ -107,42 +107,10 @@ function checkNode(e, node) {
     }
 }
 
-//Set click handler and autodetect media files
-
-for (var i=0; i<frames.length; i++) {
-    if(typeof(frames[i].contentWindow.document)!=="undefined")
-    frames[i].contentWindow.document.addEventListener('click', (function(e) {
-        var node = e.target;
-        while(node) {
-            checkNode(e, node);
-            node = node.parentNode;
-        }
-    }), true);
-    var isrc = frames[i].getAttribute('src');
-    var data = new Object({'type':'iframe'});
-    data.isrc = isrc;
-    navigator.qt.postMessage(JSON.stringify(data));
-}
-var delement = document.documentElement.getElementsByTagName('video');
-
-for (var i=0; i<delement.length; i++) {
-    if (delement[i].hasChildNodes()) {
-        console.debug("Has children");
-        var children = delement[i].childNodes;
-        for (var j = 0; j < children.length; j++) {
-            if (children[j].tagName === 'SOURCE') {
-                var data = new Object({'type': 'video'})
-                if (children[j].hasAttribute('src')) data.video = getImgFullUri(children[j].getAttribute('src'));
-                navigator.qt.postMessage( JSON.stringify(data) );
-                break;
-            }
-        }
-    }
-    else if (delement[i].hasAttribute('src')) {
-        var data = new Object({'type': 'video'})
-        data.video = getImgFullUri(delement[j].getAttribute('src'));
-        navigator.qt.postMessage( JSON.stringify(data) );
-    }
+// Catch window open events as normal links
+window.open = function (url, windowName, windowFeatures) {
+    var link = new Object({'type':'link', 'target':'_blank', 'href':url});
+    navigator.qt.postMessage( JSON.stringify(link) );
 }
 
 // virtual keyboard hook

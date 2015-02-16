@@ -60,7 +60,8 @@ OTHER_FILES += qml/harbour-webcat.qml \
     translations/harbour-webcat-cs.ts \
     qml/pages/InfoBanner.qml \
     qml/pages/ytQualityChooser.qml \
-    qml/pages/helper/devicePixelRatioHack.js
+    qml/pages/helper/devicePixelRatioHack.js \
+    qml/pages/helper/mediaDetect.js
 
 RESOURCES += \
     qrc.qrc

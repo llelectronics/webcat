@@ -273,6 +273,7 @@ Page {
 
         experimental.userScripts: [
             Qt.resolvedUrl("helper/devicePixelRatioHack.js"),
+            Qt.resolvedUrl("helper/mediaDetect.js"),
             // This userScript makes longpress detection and other things working
             Qt.resolvedUrl("helper/userscript.js")
         ]
@@ -371,9 +372,6 @@ Page {
             case 'iframe': {
                 if (data.isrc != undefined && data.isrc != "") {
                     //console.debug("[FirstPage.qml] Got iframe with isrc: " + data.isrc);
-                    if (data.isrc.slice(0, 2) === '//') {
-                        data.isrc = "http:" + data.isrc
-                    }
                     checkYoutubeEmbeded(data.isrc);
                 }
             }
