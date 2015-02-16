@@ -77,7 +77,7 @@
     </message>
     <message>
         <source>Active Downloads: </source>
-        <translation>Activar descargas:</translation>
+        <translation>Descargas activas:</translation>
     </message>
     <message>
         <source>Status</source>
@@ -272,7 +272,7 @@
     </message>
     <message>
         <source>About </source>
-        <translation>Acerca de</translation>
+        <translation>Acerca de </translation>
     </message>
     <message>
         <source>Download Manager</source>
@@ -366,15 +366,15 @@
 <context>
     <name>ytQualityChooser</name>
     <message>
-        <source>Opening...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Download</source>
         <translation type="unfinished">Descargar</translation>
     </message>
     <message>
         <source>Play</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Opening...</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

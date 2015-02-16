@@ -75,11 +75,6 @@ ApplicationWindow
 
     property alias infoBanner: infoBanner
 
-    property string yt720p;
-    property string yt480p;
-    property string yt360p;
-    property string yt240p;
-
     property QtObject firstPage
 
 

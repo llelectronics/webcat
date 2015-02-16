@@ -68,6 +68,12 @@ Page {
     property bool readerMode: false
     property bool nightMode: false
     property bool searchMode: false
+    property string yt720p;
+    property string yt480p;
+    property string yt360p;
+    property string yt240p;
+    property string mediaTitle
+    property alias mediaDownloadRec: mediaDownloadRec
 
     Component.onCompleted: {
         _ngfEffect = Qt.createQmlObject("import org.nemomobile.ngf 1.0; NonGraphicalFeedback { event: 'pulldown_lock' }",
@@ -226,11 +232,12 @@ Page {
             mediaYtEmbeded = false;
             mediaYt = false;
             mediaLink = false;
+            page.mediaTitle = "";
             // dont't forget to purge detected yt stream urls
-            mainWindow.yt720p = "";
-            mainWindow.yt480p = "";
-            mainWindow.yt360p = "";
-            mainWindow.yt240p = "";
+            yt720p = "";
+            yt480p = "";
+            yt360p = "";
+            yt240p = "";
             // Youtube detect here but only if embeded media wasn't detected
             if (mediaYtEmbeded == false) checkYoutubeURL(url);
 
@@ -1056,7 +1063,7 @@ Page {
         onMediaUrlChanged: {
             if (mediaYt && mediaUrl != "") {
                 //console.debug("[FirstPage.qml] Youtube Media URL: " + mediaUrl)
-                YT.getYoutubeDirectStream(mediaUrl.toString());
+                YT.getYoutubeDirectStream(mediaUrl.toString(),page);
             }
         }
 
@@ -1088,14 +1095,25 @@ Page {
             }
         }
 
+        Label {
+            id: mediaDownloadRecTitle
+            anchors.centerIn: parent
+            anchors.margins: Theme.paddingLarge
+            visible: !progressCircleYt.visible
+            width: parent.width - (mediaDownloadBtn.width + mediaPlayBtn.width) - Theme.paddingLarge
+            truncationMode: TruncationMode.Fade
+            text: page.mediaTitle
+        }
+
         IconButton {
+            id: mediaDownloadBtn
             icon.source: "image://theme/icon-m-device-download"
             onClicked:  {
                 if (mediaYt || mediaYtEmbeded) {
-                    if (mainWindow.yt720p != "") pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": mainWindow.yt720p});
-                    else if (mainWindow.yt480p != "") pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": mainWindow.yt480p});
-                    else if (mainWindow.yt360p != "") pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": mainWindow.yt360p});
-                    else if (mainWindow.yt240p != "") pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": mainWindow.yt240p});
+                    if (yt720p != "") pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": yt720p});
+                    else if (yt480p != "") pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": yt480p});
+                    else if (yt360p != "") pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": yt360p});
+                    else if (yt240p != "") pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": yt240p});
                 }
                 else if (mediaDownloadRec.mediaUrl != "") pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": mediaDownloadRec.mediaUrl});
                 else pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": url});
@@ -1105,19 +1123,20 @@ Page {
             anchors.rightMargin: Theme.paddingSmall
             anchors.verticalCenter: parent.verticalCenter
             onPressAndHold: {
-                if (mediaYt || mediaYtEmbeded) pageStack.push(Qt.resolvedUrl("ytQualityChooser.qml"), {"url720p":mainWindow.yt720p, "url480p":mainWindow.yt480p, "url360p": mainWindow.yt360p, "url240p":mainWindow.yt240p, "download": true});
+                if (mediaYt || mediaYtEmbeded) pageStack.push(Qt.resolvedUrl("ytQualityChooser.qml"), {"url720p":yt720p, "url480p":yt480p, "url360p": yt360p, "url240p":yt240p, "download": true});
             }
         }
         IconButton {
+            id: mediaPlayBtn
             icon.source: "image://theme/icon-m-play"
             onClicked:  {
                 mainWindow.infoBanner.showText(qsTr("Opening..."))
                 if (mainWindow.vPlayerExists && (mediaYt || mediaYtEmbeded)) {
                     // Always try to play highest quality first // TODO: Allow setting a default
-                    if (mainWindow.yt720p != "") mainWindow.openWithvPlayer(mainWindow.yt720p);
-                    else if (mainWindow.yt480p != "") mainWindow.openWithvPlayer(mainWindow.yt480p);
-                    else if (mainWindow.yt360p != "") mainWindow.openWithvPlayer(mainWindow.yt360p);
-                    else if (mainWindow.yt240p != "") mainWindow.openWithvPlayer(mainWindow.yt240p);
+                    if (yt720p != "") mainWindow.openWithvPlayer(yt720p);
+                    else if (yt480p != "") mainWindow.openWithvPlayer(yt480p);
+                    else if (yt360p != "") mainWindow.openWithvPlayer(yt360p);
+                    else if (yt240p != "") mainWindow.openWithvPlayer(yt240p);
                 }
                 else if (mainWindow.vPlayerExists && mediaDownloadRec.mediaUrl != "") mainWindow.openWithvPlayer(mediaDownloadRec.mediaUrl);
                 else if (mediaDownloadRec.mediaUrl != "") Qt.openUrlExternally(mediaDownloadRec.mediaUrl);
@@ -1128,7 +1147,7 @@ Page {
             anchors.leftMargin: Theme.paddingSmall
             anchors.verticalCenter: parent.verticalCenter
             onPressAndHold: {
-                if (mediaYt || mediaYtEmbeded) pageStack.push(Qt.resolvedUrl("ytQualityChooser.qml"), {"url720p":mainWindow.yt720p, "url480p":mainWindow.yt480p, "url360p": mainWindow.yt360p, "url240p":mainWindow.yt240p});
+                if (mediaYt || mediaYtEmbeded) pageStack.push(Qt.resolvedUrl("ytQualityChooser.qml"), {"url720p":yt720p, "url480p":yt480p, "url360p": yt360p, "url240p":yt240p});
             }
         }
 
