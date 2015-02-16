@@ -1,5 +1,3 @@
-.pragma library
-
 var ytDirectStreamUrl;
 var ytfailCount;
 

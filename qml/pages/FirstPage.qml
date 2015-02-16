@@ -1158,7 +1158,7 @@ Page {
             anchors.centerIn: parent
             anchors.margins: Theme.paddingLarge
             visible: !progressCircleYt.visible
-            width: parent.width - (mediaDownloadBtn.width + mediaPlayBtn.width) - Theme.paddingMedium
+            width: parent.width - (mediaDownloadBtn.width + mediaPlayBtn.width) - Theme.paddingLarge
             truncationMode: TruncationMode.Fade
             text: page.mediaTitle
         }

@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="es" version="2.0">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.0" language="es">
 <context>
     <name>AboutPage</name>
     <message>
@@ -160,6 +162,10 @@
         <source>Save Link</source>
         <translation>Guardar enlace</translation>
     </message>
+    <message>
+        <source>Opening...</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>HistoryPage</name>
@@ -254,7 +260,7 @@
     </message>
     <message>
         <source>Clear Cookies and restart</source>
-        <translation>Limpiar cookies y reiniciar</translation>
+        <translation type="obsolete">Limpiar cookies y reiniciar</translation>
     </message>
     <message>
         <source>Clear History</source>
@@ -355,6 +361,13 @@
     <message>
         <source>Clear Cache</source>
         <translation>Limpiar caché</translation>
+    </message>
+</context>
+<context>
+    <name>ytQualityChooser</name>
+    <message>
+        <source>Opening...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>
