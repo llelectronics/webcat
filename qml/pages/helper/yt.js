@@ -14,7 +14,7 @@ function checkYoutube(url) {
     }
 } 
 
-function getYtID(url,firstPage) {
+function getYtID(url) {
     var youtube_id;
     if (url.match('embed')) { youtube_id = url.split(/embed\//)[1].split(/[?&\"]/)[0]; }
     else if (url.match(/ytapi.com/)) { youtube_id = url.split(/vid=/)[1].split(/[?&]/)[0]; }
@@ -26,7 +26,7 @@ function getYtID(url,firstPage) {
 function getYoutubeVid(url,firstPage) {
     var youtube_id;
     youtube_id = getYtID(url);
-    var ytUrl = getYoutubeStream(youtube_id, firstPage);
+    var ytUrl = getYoutubeStream(youtube_id,firstPage);
     //if (ytUrl !== "") return ytUrl;  // XMLHttpRequest does not know synchronus in QML so I need to restructe everything if I directly want to use Youtubes server
     return("http://ytapi.com/?vid=" + youtube_id + "&format=direct");
 }
