@@ -238,8 +238,8 @@ Page {
             yt480p = "";
             yt360p = "";
             yt240p = "";
-            // Youtube detect here but only if embeded media wasn't detected
-            if (mediaYtEmbeded == false) checkYoutubeURL(url);
+
+            checkYoutubeURL(url);
 
             // Add to url history
             DB.addHistory(url);

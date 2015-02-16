@@ -75,7 +75,7 @@ function getYoutubeDirectStream(url,firstPage) {
 }
 
 // This would be a proper way to get the youtube video stream url
-function getYoutubeStream(youtube_id,firstPage) {
+function getYoutubeStream(youtube_id, firstPage) {
 
     var doc = new XMLHttpRequest();
 
@@ -204,7 +204,7 @@ function getYoutubeStream(youtube_id,firstPage) {
 //                console.debug("[yt.js]: " + e)
 //                console.debug("[yt.js] ytfailCount: " +ytfailCount);
                 ytfailCount++;
-                getYoutubeStream(youtube_id,firstPage);
+                getYoutubeStream(youtube_id, firstPage);
             }
 
         }
