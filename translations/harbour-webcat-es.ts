@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.0" language="es">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="es" version="2.0">
 <context>
     <name>AboutPage</name>
     <message>
@@ -77,7 +75,7 @@
     </message>
     <message>
         <source>Active Downloads: </source>
-        <translation>Activar descargas:</translation>
+        <translation>Descargas activas:</translation>
     </message>
     <message>
         <source>Status</source>
@@ -100,71 +98,67 @@
     <name>FirstPage</name>
     <message>
         <source>Enter an url</source>
-        <translation type="unfinished">Introducir una url</translation>
+        <translation>Introducir una url</translation>
     </message>
     <message>
         <source>Minimize</source>
-        <translation type="unfinished">Minimizar</translation>
+        <translation>Minimizar</translation>
     </message>
     <message>
         <source>New Tab</source>
-        <translation type="unfinished">Nueva pestaña</translation>
+        <translation>Nueva pestaña</translation>
     </message>
     <message>
         <source>New Window</source>
-        <translation type="unfinished">Nueva ventana</translation>
+        <translation>Nueva ventana</translation>
     </message>
     <message>
         <source>Reload</source>
-        <translation type="unfinished">Volver a cargar</translation>
+        <translation>Volver a cargar</translation>
     </message>
     <message>
         <source>Lock Orientation</source>
-        <translation type="unfinished">Bloquear orientación</translation>
+        <translation>Bloquear orientación</translation>
     </message>
     <message>
         <source>Reader Mode</source>
-        <translation type="unfinished">Modo lectura</translation>
+        <translation>Modo lectura</translation>
     </message>
     <message>
         <source>Search</source>
-        <translation type="unfinished">Buscar</translation>
+        <translation>Buscar</translation>
     </message>
     <message>
         <source>Close menu</source>
-        <translation type="unfinished">Cerrar menú</translation>
+        <translation>Cerrar menú</translation>
     </message>
     <message>
         <source>Enter searchterm</source>
-        <translation type="unfinished">Introducir término de la búsqueda</translation>
+        <translation>Introducir término de la búsqueda</translation>
     </message>
     <message>
         <source>Open in New Window</source>
-        <translation type="unfinished">Abrir en nueva ventana</translation>
+        <translation>Abrir en nueva ventana</translation>
     </message>
     <message>
         <source>Open in New Tab</source>
-        <translation type="unfinished">Abrir en nueva pestaña</translation>
+        <translation>Abrir en nueva pestaña</translation>
     </message>
     <message>
         <source>Open in Private New Window</source>
-        <translation type="unfinished">Abrir en nueva ventana privada</translation>
+        <translation>Abrir en nueva ventana privada</translation>
     </message>
     <message>
         <source>Copy Link</source>
-        <translation type="unfinished">Copiar enlace</translation>
+        <translation>Copiar enlace</translation>
     </message>
     <message>
         <source>Save Image</source>
-        <translation type="unfinished">Guardar imagen</translation>
+        <translation>Guardar imagen</translation>
     </message>
     <message>
         <source>Save Link</source>
-        <translation type="unfinished">Guardar enlace</translation>
-    </message>
-    <message>
-        <source>Opening...</source>
-        <translation type="unfinished"></translation>
+        <translation>Guardar enlace</translation>
     </message>
 </context>
 <context>
@@ -260,7 +254,7 @@
     </message>
     <message>
         <source>Clear Cookies and restart</source>
-        <translation type="obsolete">Limpiar cookies y reiniciar</translation>
+        <translation>Limpiar cookies y reiniciar</translation>
     </message>
     <message>
         <source>Clear History</source>
@@ -272,7 +266,7 @@
     </message>
     <message>
         <source>About </source>
-        <translation>Acerca de</translation>
+        <translation>Acerca de </translation>
     </message>
     <message>
         <source>Download Manager</source>
@@ -361,13 +355,6 @@
     <message>
         <source>Clear Cache</source>
         <translation>Limpiar caché</translation>
-    </message>
-</context>
-<context>
-    <name>ytQualityChooser</name>
-    <message>
-        <source>Opening...</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>
