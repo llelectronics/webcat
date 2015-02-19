@@ -193,8 +193,10 @@ Page {
         objectName: "SWebView"
 
         width: page.width
-        height: page.height - 20 // minimized toolbar size. We don't want to set the toolbar.height here otherwise it would make webview resizing which is painfully slow
-
+        height: { //page.height - 20 // minimized toolbar size. We don't want to set the toolbar.height here otherwise it would make webview resizing which is painfully slow
+            if (mediaDownloadRec.visible) page.height - 20 - mediaDownloadRec.height
+            else page.height - 20
+        }
         // We don't want pageStackNavigation to interfere
         overridePageStackNavigation: true
         header: PageHeader {height: 0}
@@ -761,11 +763,10 @@ Page {
 
             Label {
                 text: tabModel.count
-                x: (parent.width - contentWidth) / 2 - (contentWidth / 2)
-                y: (parent.height - contentHeight) / 2 - (contentHeight / 4)
+                anchors.centerIn: parent
                 font.pixelSize: Theme.fontSizeExtraSmall
                 font.bold: true
-                color: gotoButton.down ? Theme.highlightColor : Theme.highlightDimmerColor
+                color: gotoButton.down ? Theme.highlightColor : Theme.primaryColor
                 horizontalAlignment: Text.AlignHCenter
             }
         }
