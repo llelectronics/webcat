@@ -4,7 +4,7 @@ ListModel {
     id: userAgentModel
     ListElement {
         title: "Default Jolla Webkit"
-        agent: "Mozilla/5.0 (Maemo; Linux; Jolla; Sailfish; Mobile) AppleWebKit/534.13 (KHTML, like Gecko) NokiaBrowser/8.5.0 Mobile Safari/534.13"
+        agent: "Mozilla/5.0 (Maemo; Linux; U; Jolla; Sailfish; like Android) AppleWebKit/538.1 (KHTML, like Gecko) Mobile Safari/538.1 (compatible)"
     }
     ListElement {
         title: "Jolla Sailfish Browser"
@@ -55,7 +55,7 @@ ListModel {
         agent: "DoCoMo/2.0 SH901iC(c100;TB;W24H12)"
     }
     ListElement {
-        title: "Firefox 25.0 Desktop Version"
-        agent: "Mozilla/5.0 (X11; U; Linux i686; rv:25.0) Gecko/20100101 Firefox/25.0"
+        title: "Firefox 35.0 Desktop Version"
+        agent: "Mozilla/5.0 (X11; Linux i686; rv:35.0) Gecko/20100101 Firefox/35.0"
     }
 }

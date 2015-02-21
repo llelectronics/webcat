@@ -44,7 +44,8 @@ ApplicationWindow
     // default settings
     property string siteURL: "about:bookmarks" //"http://talk.maemo.org"
     property string homepage: "about:bookmarks"
-    property string userAgent: "Mozilla/5.0 (Maemo; Linux; Jolla; Sailfish; Mobile) AppleWebKit/534.13 (KHTML, like Gecko) NokiaBrowser/8.5.0 Mobile Safari/534.13"
+    property string userAgent: "Mozilla/5.0 (Maemo; Linux; U; Jolla; Sailfish; like Android) AppleWebKit/538.1 (KHTML, like Gecko) Mobile Safari/538.1 (compatible)"
+
     property int defaultFontSize: 16
     property int defaultFixedFontSize: 12
     property int minimumFontSize: 11
