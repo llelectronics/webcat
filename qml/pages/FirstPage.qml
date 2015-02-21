@@ -247,10 +247,6 @@ Page {
                 console.debug("Remote link clicked. Open with external viewer")
                 Qt.openUrlExternally(url);
             }
-            if (JSMIME.getMimesByPath(url.toString()).toString().match("^audio") || JSMIME.getMimesByPath(url.toString()).toString().match("^video")) {
-                // Audio or Video link clicked. Download should start now
-                console.debug("Video or Audio Link clicked... download should start now")
-            }
 
             // reset everything on url change
             mediaDownloadRec.mediaUrl = "";
@@ -337,8 +333,21 @@ Page {
        }
 
         experimental.onDownloadRequested: {
-            // Call downloadmanager here with the url
             //console.debug("Download requested: " + downloadItem.url);
+            var mime = JSMIME.getMimesByUrl(downloadItem.url.toString());
+            //console.debug("[firstPage] Download requested detected mimetype: " + mime);
+            var mimeinfo = mime.toString().split("/");
+
+            if(mimeinfo[0] === "video")
+            {
+                mainWindow.infoBanner.showText(qsTr("Opening..."))
+                if (mainWindow.vPlayerExists) {
+                    mainWindow.openWithvPlayer(downloadItem.url);
+                }
+                else Qt.openUrlExternally(url);
+                return;
+            }
+            // Call downloadmanager here with the url
             pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": downloadItem.url});
         }
 

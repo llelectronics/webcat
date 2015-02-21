@@ -604,6 +604,7 @@ function getMimesByExt(ext)
 function getMimesByPath(path)
 {
     var ext = path.substring(path.lastIndexOf(".") + 1);
+    console.debug("[jsmime.js] detected extension: " + ext);
     return getMimesByExt(ext);
 }
 
@@ -614,5 +615,15 @@ function pathIsMime(path, mime)
         if(mime == mimes[i])
             return true;
     return false;
+}
+
+function getMimesByUrl(url)
+{
+    var regex = "[_\\d\\w\\-\\. ]+\\.[_\\d\\w\\-\\. ]+";
+    var fileName = url.substring(url.lastIndexOf("/"));
+//    console.debug("[jsmime.js] fileName: " + fileName);
+//    console.debug("[jsmime.js] matchedRegex: " + fileName.match(regex));
+    return getMimesByPath(fileName.match(regex).toString());
+
 }
 
