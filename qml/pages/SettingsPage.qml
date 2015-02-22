@@ -77,7 +77,7 @@ Dialog {
     }
 
     function clearBookmarks() {
-        remorse.execute(qsTr("Clear History"), function() { DB.clearTable("bookmarks"); mainWindow.modelUrls.clear() } )
+        remorse.execute(qsTr("Clear Bookmarks"), function() { DB.clearTable("bookmarks"); mainWindow.bookmarkModel.clear() } )
     }
 
 

@@ -358,6 +358,10 @@
         <source>Clear Cache</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Clear Bookmarks</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ytQualityChooser</name>

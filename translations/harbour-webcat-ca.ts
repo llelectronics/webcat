@@ -362,6 +362,10 @@
         <source>Clear Cache</source>
         <translation>Neteja la memòria cau</translation>
     </message>
+    <message>
+        <source>Clear Bookmarks</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ytQualityChooser</name>

@@ -72,6 +72,7 @@ ApplicationWindow
     property alias tabModel: tabModel
     property int currentTabIndex: 1
     property alias historyModel: historyModel
+    property alias bookmarkModel: modelUrls
     property bool vPlayerExists
     property alias infoBanner: infoBanner
 
