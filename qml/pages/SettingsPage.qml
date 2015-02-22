@@ -76,6 +76,10 @@ Dialog {
         remorse.execute(qsTr("Clear History"), function() { DB.clearTable("history"); mainWindow.historyModel.clear() } )
     }
 
+    function clearBookmarks() {
+        remorse.execute(qsTr("Clear History"), function() { DB.clearTable("bookmarks"); mainWindow.modelUrls.clear() } )
+    }
+
 
     onAccepted: saveSettings();
 
@@ -390,6 +394,18 @@ Dialog {
                 }
                 anchors.horizontalCenter: parent.horizontalCenter
                 onClicked: clearHistory();
+            }
+            BackgroundItem {
+                id: clearBookmarksButton
+                Label {
+                    text: qsTr("Clear Bookmarks")
+                    anchors.verticalCenter: parent.verticalCenter
+                    anchors.left: parent.left
+                    anchors.leftMargin: Theme.paddingLarge
+                    color: clearBookmarksButton.highlighted ? Theme.highlightColor : Theme.primaryColor
+                }
+                anchors.horizontalCenter: parent.horizontalCenter
+                onClicked: clearBookmarks();
             }
             BackgroundItem {
                 id: startPrivateBrowserButton
