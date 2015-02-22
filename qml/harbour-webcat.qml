@@ -222,7 +222,6 @@ ApplicationWindow
 
     }
 
-    // Example Data
     ListModel{
         id: modelUrls
 
@@ -259,39 +258,6 @@ ApplicationWindow
             append({"title":siteTitle, "url":siteUrl, "agent":agent});
             DB.addBookmark(siteTitle,siteUrl,agent);
         }
-
-
-    // No more default bookmarks as on users request
-//        ListElement {
-//            title: "Jolla Together"
-//            url: "http://together.jolla.com/"
-//            agent: "Mozilla/5.0 (Maemo; Linux; Jolla; Sailfish; Mobile) AppleWebKit/534.13 (KHTML, like Gecko) NokiaBrowser/8.5.0 Mobile Safari/534.13"
-//        }
-//        ListElement {
-//            title: "Maemo forum"
-//            url: "http://talk.maemo.org/"
-//            agent: "Mozilla/5.0 (Maemo; Linux; Jolla; Sailfish; Mobile) AppleWebKit/534.13 (KHTML, like Gecko) NokiaBrowser/8.5.0 Mobile Safari/534.13"
-//        }
-//        ListElement {
-//            title: "Jolla users"
-//            url: "http://jollausers.com/"
-//            agent: "Mozilla/5.0 (Maemo; Linux; Jolla; Sailfish; Mobile) AppleWebKit/534.13 (KHTML, like Gecko) NokiaBrowser/8.5.0 Mobile Safari/534.13"
-//        }
-//        ListElement {
-//            title: "Jolla users forum"
-//            url: "http://forum.jollausers.com/"
-//            agent: "Mozilla/5.0 (Maemo; Linux; Jolla; Sailfish; Mobile) AppleWebKit/534.13 (KHTML, like Gecko) NokiaBrowser/8.5.0 Mobile Safari/534.13"
-//        }
-//        ListElement {
-//            title: "Jolla Tides"
-//            url: "http://jollatides.com/"
-//            agent: "Mozilla/5.0 (Maemo; Linux; Jolla; Sailfish; Mobile) AppleWebKit/534.13 (KHTML, like Gecko) NokiaBrowser/8.5.0 Mobile Safari/534.13"
-//        }
-//        ListElement {
-//            title: "Review Jolla"
-//            url: "http://reviewjolla.blogspot.se/"
-//            agent: "Mozilla/5.0 (Maemo; Linux; Jolla; Sailfish; Mobile) AppleWebKit/534.13 (KHTML, like Gecko) NokiaBrowser/8.5.0 Mobile Safari/534.13"
-//        }
     }
 
     UserAgents {

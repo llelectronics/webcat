@@ -207,15 +207,7 @@ Page {
                 ytUrlLoading = true
                 mediaLink = true;
                 mediaDownloadRec.mediaUrl = yurl.toString()
-                //mediaDownloadRec.visible = true
             }
-//            else {
-//                mediaYt = false;
-//                mediaLink = false;
-//                ytUrlLoading = false
-//                mediaDownloadRec.mediaUrl = ""
-//                mediaDownloadRec.visible = false
-//            }
         }
 
         function checkYoutubeEmbeded(yurl) {
@@ -225,18 +217,7 @@ Page {
                 ytUrlLoading = true
                 mediaLink = true;
                 mediaDownloadRec.mediaUrl = yurl.toString()
-                //mediaDownloadRec.visible = true
             }
-//            else {
-//                if (!mediaYt && mediaDownloadRec.mediaUrl != yurl) {
-//                    mediaYtEmbeded = false;
-//                    mediaYt = false;
-//                    mediaLink = false;
-//                    ytUrlLoading = false
-//                    mediaDownloadRec.mediaUrl = ""
-//                    mediaDownloadRec.visible = false
-//                }
-//            }
         }
 
         onUrlChanged: {
@@ -260,12 +241,6 @@ Page {
             yt360p = "";
             yt240p = "";
 
-
-            // Some sites like youtube (with a iPhone or Android 2.2 userAgent) change url without loadChanged triggered
-            // make sure to detect that and check for YoutubeURL
-//            if (!loading) {
-//                if (mediaYtEmbeded == false) checkYoutubeURL(url);
-//            }
             checkYoutubeURL(url);
 
             // Add to url history
@@ -288,14 +263,10 @@ Page {
 //        layer.mipmap: true
 //        layer.textureSize: page.width + "x" + page.height
 
-
-        // SEEMs not to work anymore (at least G+ changed its site)
-        // Scale the websites like g+ and others a little bit for better reading
-        //experimental.deviceWidth: page.width / 1.25
-        //experimental.deviceHeight: page.height
         experimental.itemSelector: PopOver {}
         experimental.preferences.fullScreenEnabled: true
         experimental.preferences.developerExtrasEnabled: true
+        experimental.userStyleSheet: Qt.resolvedUrl("helper/adblock.css")
 
         experimental.userScripts: [
             Qt.resolvedUrl("helper/devicePixelRatioHack.js"),

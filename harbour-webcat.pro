@@ -61,7 +61,8 @@ OTHER_FILES += qml/harbour-webcat.qml \
     qml/pages/ytQualityChooser.qml \
     qml/pages/InfoBanner.qml \
     qml/pages/helper/devicePixelRatioHack.js \
-    qml/pages/helper/mediaDetect.js
+    qml/pages/helper/mediaDetect.js \
+    qml/pages/helper/adblock.css
 
 RESOURCES += \
     qrc.qrc

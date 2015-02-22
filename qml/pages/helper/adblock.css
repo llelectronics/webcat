@@ -1,0 +1,4 @@
+script + ins, div[id^='dotnAd'], div[id^='meetic'], div[id^='eadv'], div[id^='ad_'], div[class*='adv'], div[class$='fblikebox'], div#cboxOverlay + div#colorbox, div#cboxOverlay, iframe[id^='google_ads_'], iframe[id^='ad_'], .adsbygoogle, section[class^="banner"], div[class*='ad_container'], iframe[isrc*='googlesyndication.com']
+{
+  display: none !important;
+}

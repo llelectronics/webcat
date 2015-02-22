@@ -217,6 +217,8 @@ Page
                         onPressAndHold: {
                             if (tabModel.count > 1) {
                                 ymouse = mouse.y
+                                tabCloseMsg.text = qsTr("Swipe up to close tab")
+                                tabCloseMsg.icon = "image://theme/icon-m-close"
                                 tabCloseMsg.opacity = 1.0
                             }
                         }
@@ -282,14 +284,17 @@ Page
                     onPressAndHold: {
                             ymouse = mouse.y
                             tabCloseMsg.text = qsTr("Swipe up to open new window")
+                            tabCloseMsg.icon = "image://theme/icon-m-tab"
                             tabCloseMsg.opacity = 1.0
                     }
                     onPositionChanged: {
                         if (tabCloseMsg.opacity == 1.0 && mouse.y < ymouse - 50 && mouse.y > ymouse - 120) {
                             tabCloseMsg.text = qsTr("Swipe up to open new window")
+                            tabCloseMsg.icon = "image://theme/icon-m-tab"
                         }
                         else if (tabCloseMsg.opacity == 1.0 && mouse.y < ymouse - 120) {
                             tabCloseMsg.text = qsTr("Swipe up to open private window")
+                            tabCloseMsg.icon = "image://theme/icon-cover-people"
                         }
                     }
                     onReleased: {
@@ -371,18 +376,29 @@ Page
         id: tabCloseMsg
         gradient: Gradient {
             GradientStop { position: 0.0; color: "transparent" }
+            GradientStop { position: 0.25; color: "#262626" }
             GradientStop { position: 0.5; color: "#262626" }
-            GradientStop { position: 0.50; color: "#262626" }
+            GradientStop { position: 0.75; color: "#262626" }
             GradientStop { position: 0.95; color: "transparent"}
         }
         opacity: 0
         width: parent.width
-        height: Theme.fontSizeLarge + Theme.paddingLarge
+        height: Theme.fontSizeLarge + Theme.paddingLarge + Theme.iconSizeLarge
         anchors.bottom: parent.bottom
         anchors.bottomMargin: tabListBg.height * 2
         property alias text: tabCloseMsgTxt.text
+        property alias icon: tabCloseIcon.source
         Behavior on opacity {
             NumberAnimation { target: tabCloseMsg; property: "opacity"; duration: 200; easing.type: Easing.InOutQuad }
+        }
+        Image {
+            id: tabCloseIcon
+            source: "image://theme/icon-m-close"
+            width: Theme.iconSizeLarge
+            height: width
+            anchors.bottom: tabCloseMsgTxt.top
+            anchors.bottomMargin: Theme.paddingMedium
+            anchors.horizontalCenter: parent.horizontalCenter
         }
         Label {
             id: tabCloseMsgTxt
@@ -391,6 +407,7 @@ Page
             font.bold: true
             truncationMode: TruncationMode.Fade
             anchors.horizontalCenter: parent.horizontalCenter
+            anchors.verticalCenter: parent.verticalCenter
             text: qsTr("Swipe up to close tab")
 
         }
