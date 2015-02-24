@@ -108,34 +108,11 @@ Dialog {
                 text: qsTr("Download Manager")
                 onClicked: pageStack.push(Qt.resolvedUrl("DownloadManager.qml"));
             }
-//            MenuItem {
-//                text: qsTr("Add default bookmarks")
-//                onClicked: mainWindow.addDefaultBookmarks();
-//            }
-//            MenuItem {
-//                text: qsTr("Clear Cache")
-//                onClicked: clearCache();
-//            }
-//            MenuItem {
-//                text: qsTr("Clear Cookies")
-//                onClicked: clearCookies();
-//            }
-//            MenuItem {
-//                text: qsTr("Clear History")
-//                onClicked: clearHistory();
-//            }
             MenuItem {
                 text: qsTr("Load Defaults")
                 onClicked: loadDefaults();
             }
         }
-
-//        PushUpMenu {
-//            MenuItem {
-//                text: qsTr("Return to top")
-//                onClicked: flick.scrollToTop();
-//            }
-//        }
 
         Column {
             id: col

@@ -9,6 +9,7 @@ Rectangle {
     property alias contentHeight: listview.contentHeight
 
     signal selected(url url)
+    signal selectedMedia(string mediaTitle, string yt720p, string yt480p, string yt360p, string yt240p)
 
     radius: 5
     //color: "white"
@@ -57,11 +58,17 @@ Rectangle {
                     }
                     elide: Text.ElideRight
                     color: "white"
-                    text: url
+                    text: {
+                        if (mediaTitle) return mediaTitle
+                        else return url
+                    }
                 }
             }
 
-            onClicked: suggestions.selected(url)
+            onClicked: {
+                if (mediaTitle) suggestions.selectedMedia(mediaTitle,yt720p,yt480p,yt360p,yt240p)
+                else suggestions.selected(url)
+            }
 
         }
     }

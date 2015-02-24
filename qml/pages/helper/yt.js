@@ -23,15 +23,15 @@ function getYtID(url) {
     return youtube_id;
 }
 
-function getYoutubeVid(url,firstPage) {
+function getYoutubeVid(url,firstPage,listId) {
     var youtube_id;
     youtube_id = getYtID(url);
-    var ytUrl = getYoutubeStream(youtube_id,firstPage);
+    var ytUrl = getYoutubeStream(youtube_id,firstPage,listId);
     //if (ytUrl !== "") return ytUrl;  // XMLHttpRequest does not know synchronus in QML so I need to restructe everything if I directly want to use Youtubes server
     return("http://ytapi.com/?vid=" + youtube_id + "&format=direct");
 }
 
-function getYoutubeTitle(url,firstPage) {
+function getYoutubeTitle(url,firstPage,listId) {
     var youtube_id;
     youtube_id = getYtID(url);
     var xhr = new XMLHttpRequest();
@@ -41,7 +41,7 @@ function getYoutubeTitle(url,firstPage) {
             if (xhr.status === 200) {
                 var jsonObject = eval('(' + xhr.responseText + ')');
                 console.log("Youtube Title: " + jsonObject.data.title);
-                firstPage.mediaTitle = jsonObject.data.title;
+                firstPage.mediaList.set(listId,{"mediaTitle": jsonObject.data.title});
             } else {
                 console.log("responseText", xhr.responseText);
             }
@@ -50,10 +50,10 @@ function getYoutubeTitle(url,firstPage) {
     xhr.send();
 }
 
-function getYoutubeDirectStream(url,firstPage) {
+function getYoutubeDirectStream(url,firstPage,listId) {
     ytfailCount = 0;
     try {
-        var vid = getYoutubeVid(url,firstPage);
+        var vid = getYoutubeVid(url,firstPage,listId);
     }
     catch(e) {
         console.debug("[yt.js]: " + e)
@@ -66,7 +66,7 @@ function getYoutubeDirectStream(url,firstPage) {
         return;
     }
     try {
-        getYoutubeTitle(url,firstPage)
+        getYoutubeTitle(url,firstPage,listId)
     }
     catch (e) {
         console.debug("[yt.js] Youtube Stream Title not found: " + e)
@@ -75,7 +75,7 @@ function getYoutubeDirectStream(url,firstPage) {
 }
 
 // This would be a proper way to get the youtube video stream url
-function getYoutubeStream(youtube_id, firstPage) {
+function getYoutubeStream(youtube_id, firstPage, listId) {
 
     var doc = new XMLHttpRequest();
 
@@ -158,7 +158,7 @@ function getYoutubeStream(youtube_id, firstPage) {
                     // Try to get 720p HD video stream first
                     if ((i + 1) % 6 === 0 && itag === "22") { // 6 parameters per video; itag 18 is "MP4 360p", see http://userscripts.org/scripts/review/25105               
                         resolutionFormat = "MP4 720p"
-                        firstPage.yt720p = url += "&signature=" + sig;
+                        firstPage.mediaList.set(listId,{"yt720p": url += "&signature=" + sig});
                         url += "&signature=" + sig;
                         found = true;
                         //break;
@@ -166,7 +166,7 @@ function getYoutubeStream(youtube_id, firstPage) {
                     // If above fails try to get 480p video stream
                     else if ((i + 1) % 6 === 0 && itag === "35") { // 6 parameters per video; itag 18 is "MP4 360p", see http://userscripts.org/scripts/review/25105
                         resolutionFormat = "FLV 480p"
-                        firstPage.yt480p = url += "&signature=" + sig;
+                        firstPage.mediaList.set(listId,{"yt480p": url += "&signature=" + sig});
                         if (found == false) url += "&signature=" + sig;
                         found = true;
                         //break;
@@ -174,7 +174,7 @@ function getYoutubeStream(youtube_id, firstPage) {
                     // If above fails try to get 360p video stream
                     else if ((i + 1) % 6 === 0 && itag === "18") { // 6 parameters per video; itag 18 is "MP4 360p", see http://userscripts.org/scripts/review/25105
                         resolutionFormat = "MP4 360p"
-                        firstPage.yt360p = url += "&signature=" + sig;
+                        firstPage.mediaList.set(listId,{"yt360p": url += "&signature=" + sig});
                         if (found == false) url += "&signature=" + sig;
                         found = true;
                         //break;
@@ -182,7 +182,7 @@ function getYoutubeStream(youtube_id, firstPage) {
                     // If above fails try to get 240p video stream
                     else if ((i + 1) % 6 === 0 && itag === "5") { // 6 parameters per video; itag 18 is "MP4 360p", see http://userscripts.org/scripts/review/25105
                         resolutionFormat = "FLV 240p"
-                        firstPage.yt240p = url += "&signature=" + sig;
+                        firstPage.mediaList.set(listId,{"yt240p": url += "&signature=" + sig});
                         if (found == false) url += "&signature=" + sig;
                         found = true;
                         //break;
@@ -208,7 +208,7 @@ function getYoutubeStream(youtube_id, firstPage) {
                 console.debug("[yt.js]: " + e)
                 console.debug("[yt.js] ytfailCount: " +ytfailCount);
                 ytfailCount++;
-                getYoutubeStream(youtube_id, firstPage);
+                getYoutubeStream(youtube_id, firstPage,listId);
             }
 
         }

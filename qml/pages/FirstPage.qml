@@ -72,11 +72,13 @@ Page {
     property int extratoolbarheight: Screen.height / 10
     property alias webview: webview
     property alias mediaDownloadRec: mediaDownloadRec
-    property string yt720p;
-    property string yt480p;
-    property string yt360p;
-    property string yt240p;
+    property string yt720p: mediaList.count > 0 ? mediaList.get(0).yt720p : "";
+    property string yt480p: mediaList.count > 0 ? mediaList.get(0).yt480p : "";
+    property string yt360p: mediaList.count > 0 ? mediaList.get(0).yt360p : "";
+    property string yt240p: mediaList.count > 0 ? mediaList.get(0).yt240p : "";
     property string mediaTitle;
+    property int counter;
+    property alias mediaList: mediaList
 
     Component.onCompleted: {
         _ngfEffect = Qt.createQmlObject("import org.nemomobile.ngf 1.0; NonGraphicalFeedback { event: 'pulldown_lock' }",
@@ -135,23 +137,6 @@ Page {
         readerMode = !readerMode;
     }
 
-    ProgressCircle {
-        id: progressCircle
-        z: 2
-        anchors.top: parent.top
-        anchors.topMargin: 16
-        anchors.horizontalCenter: parent.horizontalCenter
-        visible: urlLoading
-        height: Screen.height / 30
-        width: height
-        Timer {
-            interval: 32
-            repeat: true
-            onTriggered: progressCircle.value = (progressCircle.value + 0.005) % 1.0
-            running: urlLoading
-        }
-    }
-
     Item{
         id: popup
         anchors.centerIn: parent
@@ -184,6 +169,20 @@ Page {
             anchors.fill: parent
             onClicked: popup.visible = false
         }
+    }
+
+    ListModel {
+        id: mediaList
+
+        // Example data
+//        ListElement {
+//            mediaTitle: "foobar"
+//            url: "http://youtube.com/watch?v=2314frwdrf3"
+//            yt720p: "http://r8---sn-4g57knde.googlevideo.com/videoplayback?ip=85.212.83.237&fexp=905657%2C907263%2C924623%2C927622%2C936110%2C9406406%2C9406558%2C941440%2C943917%2C947225%2C947240%2C948124%2C952302%2C952605%2C952612%2C952901%2C955301%2C957201%2C958603%2C959701&initcwndbps=2706250&sver=3&nh=IgpwcjAyLmZyYTA1KgkxMjcuMC4wLjE&source=youtube&sparams=dur%2Cid%2Cinitcwndbps%2Cip%2Cipbits%2Citag%2Cmm%2Cms%2Cmv%2Cnh%2Cpl%2Csource%2Cupn%2Cexpire&mv=m&ms=au&mt=1424780611&mm=31&ipbits=0&dur=293.747&id=o-AHf8c-JE9WXGPYnTeqHw-"
+//            yt480p: ""
+//            yt360p: ""
+//            yt240p: ""
+//        }
     }
 
 
@@ -235,11 +234,9 @@ Page {
             mediaYt = false;
             mediaLink = false;
             page.mediaTitle = "";
-            // dont't forget to purge detected yt stream urls
-            yt720p = "";
-            yt480p = "";
-            yt360p = "";
-            yt240p = "";
+            // For mediaList
+            counter = -1;
+            mediaList.clear();
 
             checkYoutubeURL(url);
 
@@ -602,7 +599,7 @@ Page {
                 }
                 PropertyChanges {
                     target: refreshButton
-                    visible: false
+                    visible: true
                     enabled: true
                 }
                 PropertyChanges {
@@ -749,6 +746,20 @@ Page {
                 color: gotoButton.down ? Theme.highlightColor : Theme.primaryColor
                 horizontalAlignment: Text.AlignHCenter
             }
+            ProgressCircle {
+                id: progressCircle
+                z: 2
+                anchors.centerIn: parent
+                visible: urlLoading && toolbar.state == "expanded"
+                height: gotoButton.height - Theme.paddingMedium
+                width: height
+                Timer {
+                    interval: 32
+                    repeat: true
+                    onTriggered: progressCircle.value = (progressCircle.value + 0.005) % 1.0
+                    running: urlLoading
+                }
+            }
         }
 
         IconButton {
@@ -790,39 +801,41 @@ Page {
         TextField{
             id: urlText
             visible: true
-            text: url
+            text: focus ? fullUrl : simplifyUrl(url.toString())
             inputMethodHints: Qt.ImhUrlCharactersOnly
             placeholderText: qsTr("Enter an url")
             font.pixelSize: Theme.fontSizeMedium
             y: parent.height / 2 - height / 4
+            background: null
+            color: Theme.primaryColor
+            property string fullUrl: webview.url
             anchors.left: {
                 if (forIcon.visible) return forIcon.right
                 else if (backIcon.visible) return backIcon.right
                 else return gotoButton.right
             }
             anchors.leftMargin: Theme.paddingVerySmall
-            anchors.right: bookmarkButton.left
+            anchors.right: refreshButton.left
             anchors.rightMargin: Theme.paddingVerySmall
             width: { //180 // minimum
-                if (backIcon.visible === false && forIcon.visible === false) return parent.width - gotoButton.width - bookmarkButton.width
-                else if (backIcon.visible === true && forIcon.visible === false) return parent.width - gotoButton.width - bookmarkButton.width - backIcon.width
-                else if (backIcon.visible === false && forIcon.visible === true) return parent.width - gotoButton.width - bookmarkButton.width - forIcon.width
-                else if (backIcon.visible === true && forIcon.visible === true) return parent.width - gotoButton.width - bookmarkButton.width - backIcon.width - backIcon.width
+                if (backIcon.visible === false && forIcon.visible === false) return parent.width - gotoButton.width - refreshButton.width - bookmarkButton.width
+                else if (backIcon.visible === true && forIcon.visible === false) return parent.width - gotoButton.width - refreshButton.width - bookmarkButton.width - backIcon.width
+                else if (backIcon.visible === false && forIcon.visible === true) return parent.width - gotoButton.width - refreshButton.width - bookmarkButton.width - forIcon.width
+                else if (backIcon.visible === true && forIcon.visible === true) return parent.width - gotoButton.width - refreshButton.width - bookmarkButton.width - backIcon.width - backIcon.width
             }
             onFocusChanged: {
                 if (focus) {
                     backIcon.visible = false
                     forIcon.visible = false
                     bookmarkButton.visible = false
-                    refreshButton.visible = true
                     gotoButton.searchButton = true
                     selectAll();
+                    suggestionView.visible = false
                 }
                 else {
                     backIcon.visible = webview.canGoBack
                     forIcon.visible = webview.canGoForward
                     bookmarkButton.visible = true
-                    refreshButton.visible = false
                     gotoButton.searchButton = false
                 }
             }
@@ -837,15 +850,32 @@ Page {
             }
 
             Keys.onEnterPressed: {
-                urlText.focus = false;  // Close keyboard
                 if (page.suggestionView.visible) page.suggestionView.visible = false;
                 webview.url = fixUrl(urlText.text);
+                urlText.focus = false;  // Close keyboard
             }
 
             Keys.onReturnPressed: {
-                urlText.focus = false;
                 if (page.suggestionView.visible) page.suggestionView.visible = false;
                 webview.url = fixUrl(urlText.text);
+                urlText.focus = false;
+            }
+            function simplifyUrl(url) {
+                if(url.match(/http:\/\//))
+                {
+                    color = Theme.primaryColor
+                    url = url.substring(7);
+                }
+                if(url.match(/https:\/\//))
+                {
+                    color = "lightgreen" // Indicator for https
+                    url = url.substring(8);
+                }
+                if(url.match(/^www\./))
+                {
+                    url = url.substring(4);
+                }
+                return url;
             }
 
         }
@@ -855,9 +885,9 @@ Page {
             id: refreshButton
             icon.source: webview.loading ? "image://theme/icon-m-reset" : "image://theme/icon-m-refresh"
             onClicked: webview.loading ? webview.stop() : webview.reload()
-            anchors.right: parent.right
-            anchors.rightMargin: Theme.paddingSmall
-            visible:false
+            anchors.right: urlText.focus ? parent.right : bookmarkButton.left
+            anchors.rightMargin: Theme.paddingMedium
+            visible:true
             height: toolbarheight / 1.5
             width: height
             anchors.verticalCenter: toolbar.verticalCenter
@@ -898,6 +928,18 @@ Page {
                 }
             }
         }
+    }
+
+    Rectangle {
+        id: loadingRec
+        anchors.bottom: toolbar.top
+        height: toolbarheight / 13.37  // :P
+        color: Theme.highlightColor
+        property int minimumValue: 0
+        property int maximumValue: 100
+        property int value: webview.loadProgress
+        width: (value / (maximumValue - minimumValue)) * parent.width
+        visible: value == 100 ? false : true
     }
 
     // Extra Toolbar
@@ -1068,31 +1110,6 @@ Page {
 
     }
 
-
-    // On Loading show cancel loading button
-    Rectangle {
-        id: loadingRec
-        gradient: Gradient {
-            GradientStop { position: 0.0; color: "transparent" }
-            GradientStop { position: 0.65; color: Theme.highlightBackgroundColor}
-        }
-        anchors.bottom: toolbar.top
-        width: parent.width
-        height: toolbarheight / 1.5
-        visible: webview.loading
-        IconButton {
-            id: cancelButton
-            icon.source: "image://theme/icon-m-close"
-            onClicked:  webview.stop()
-            anchors.right: parent.right
-            anchors.rightMargin: Theme.paddingSmall
-            anchors.verticalCenter: parent.verticalCenter
-            height: toolbarheight / 1.5
-            width: height
-            icon.anchors.fill: cancelButton
-        }
-    }
-
     // On Media Loaded show download button
     Rectangle {
         id: mediaDownloadRec
@@ -1102,7 +1119,9 @@ Page {
             //webview.checkYoutubeURL(mediaUrl);
             if (mediaYt && mediaUrl != "") {
                 //console.debug("[FirstPage.qml] Youtube Media URL: " + mediaUrl)
-                YT.getYoutubeDirectStream(mediaUrl.toString(),page);
+                counter = counter + 1
+                mediaList.insert(counter, {"mediaTitle": mediaUrl, "url": mediaUrl});
+                YT.getYoutubeDirectStream(mediaUrl.toString(),page, counter);
             }
             //console.debug("[firstPage.qml] MediaUrl changed to:" + mediaUrl)
         }
@@ -1141,7 +1160,7 @@ Page {
             visible: !progressCircleYt.visible
             width: parent.width - (mediaDownloadBtn.width + mediaPlayBtn.width) - Theme.paddingLarge
             truncationMode: TruncationMode.Fade
-            text: page.mediaTitle
+            text: mediaList.count > 0 ? mediaList.get(0).mediaTitle : ""
         }
 
         MouseArea {
@@ -1151,6 +1170,21 @@ Page {
                     ytUrlLoading = false;
                     mediaDownloadRec.visible = false;
                     YT.getYoutubeDirectStream(webview.url,page);
+                }
+            }
+        }
+
+        MouseArea {
+            anchors.fill: parent
+            onClicked: {
+                if (mediaList.count > 1) {
+                    console.debug("[FirstPage.qml]: Chooser clicked because mediaList.count = " + mediaList.count);
+//                    console.debug("[FirstPage.qml] mediaList.get(0).yt360p:" + mediaList.get(0).yt360p);
+//                    console.debug("[FirstPage.qml] mediaList.get(1).yt360p:" + mediaList.get(1).yt360p);
+//                    console.debug("[FirstPage.qml] mediaList.get(2).yt360p:" + mediaList.get(2).yt360p);
+                    suggestionView.model = mediaList
+                    suggestionView.anchors.bottom = mediaDownloadRec.top
+                    suggestionView.visible = true
                 }
             }
         }
@@ -1177,6 +1211,8 @@ Page {
             icon.height: height
             icon.width: width
             onPressAndHold: {
+                console.debug("[FirstPage.qml] mediaList.count: " + mediaList.count);
+                console.debug("[FirstPage.qml] mediaList.get(0).mediaTitle: " + mediaList.get(0).mediaTitle);
                 if (mediaYt || mediaYtEmbeded) pageStack.push(Qt.resolvedUrl("ytQualityChooser.qml"), {"url720p":yt720p, "url480p":yt480p, "url360p": yt360p, "url240p":yt240p, "download": true});
             }
         }
@@ -1393,11 +1429,24 @@ Page {
         height: //parent.height / 2
         {
             var max = parent.height / 2
-            if (80 * mainWindow.historyModel.count <= max) return 80 * mainWindow.historyModel.count
-            else return parent.height / 2
+            if (model == mainWindow.historyModel) {
+                if (80 * mainWindow.historyModel.count <= max) return 80 * mainWindow.historyModel.count
+            }
+            else if (model == mediaList) {
+                if (80 * mediaList.count <= max) return 80 * mediaList.count
+            }
+            else return max
         }
         visible: false
         onSelected: { urlText.focus = false; suggestionView.visible = false ; webview.url = url }
+        onSelectedMedia: {
+            suggestionView.visible = false;
+            mediaDownloadRecTitle.text = mediaTitle;
+            page.yt720p = yt720p;
+            page.yt480p = yt480p;
+            page.yt360p = yt360p;
+            page.yt240p = yt240p;
+        }
     }
     TextArea {
         id: hiddenTxtBox
