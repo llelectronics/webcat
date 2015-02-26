@@ -31,7 +31,6 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 import QtWebKit 3.0
-import "helper/jsmime.js" as JSMIME
 import "helper/db.js" as DB
 import "helper/yt.js" as YT
 
@@ -311,7 +310,7 @@ Page {
 
         experimental.onDownloadRequested: {
             //console.debug("Download requested: " + downloadItem.url);
-            var mime = JSMIME.getMimesByUrl(downloadItem.url.toString());
+            var mime = _fm.getMime(downloadItem.url.toString());
             //console.debug("[firstPage] Download requested detected mimetype: " + mime);
             var mimeinfo = mime.toString().split("/");
 

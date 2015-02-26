@@ -371,6 +371,13 @@
     </message>
 </context>
 <context>
+    <name>VideoPlayer</name>
+    <message>
+        <source>Download</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ytQualityChooser</name>
     <message>
         <source>Opening...</source>

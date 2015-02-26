@@ -7,6 +7,9 @@
 #include <QDebug>
 #include <QDir>
 #include <QFileInfo>
+#include <QMimeDatabase>
+#include <QMimeType>
+#include <QUrl>
 
 class FM : public QObject
 {   Q_OBJECT
@@ -30,6 +33,13 @@ class FM : public QObject
         bool isFile(const QString &url)
         {
             return QFileInfo(url).isFile();
+        }
+        QString getMime(const QString &url)
+        {
+            QMimeDatabase db;
+            QUrl path(url);
+            QMimeType mime = db.mimeTypeForUrl(path);
+            return mime.name();
         }
 };
 

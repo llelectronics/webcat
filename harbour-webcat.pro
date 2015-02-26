@@ -65,7 +65,9 @@ OTHER_FILES += qml/harbour-webcat.qml \
     qml/pages/helper/devicePixelRatioHack.js \
     qml/pages/helper/mediaDetect.js \
     qml/pages/helper/adblock.css \
-    qml/pages/OpenDialog.qml
+    qml/pages/OpenDialog.qml \
+    qml/pages/VideoPlayer.qml \
+    qml/pages/helper/VideoPoster.qml
 
 RESOURCES += \
     qrc.qrc

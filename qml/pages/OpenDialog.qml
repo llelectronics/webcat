@@ -21,6 +21,23 @@ Page {
 
     function openFile(path) {
         if (_fm.isFile(path)) {
+
+            var mime = _fm.getMime(path);
+            console.debug("[OpenDialog] Detected mimetype: " + mime);
+            var mimeinfo = mime.toString().split("/");
+
+            if(mimeinfo[0] === "video")
+            {
+                mainWindow.infoBanner.showText(qsTr("Opening..."))
+//                if (mainWindow.vPlayerExists) {
+//                    mainWindow.openWithvPlayer(path);
+//                }
+//                else Qt.openUrlExternally(url);
+                // For local media it seems save to use the internal video player
+                pageStack.push(Qt.resolvedUrl("VideoPlayer.qml"), {dataContainer: dataContainer, streamUrl: path});
+                return;
+            }
+
             var tmppath = findBaseName(path);
             var fpath = tmppath.substring(tmppath.lastIndexOf('.') + 1);
             if (fpath.indexOf('html') == 0 && dataContainer) {  // TODO: Check if this works for image files aswell

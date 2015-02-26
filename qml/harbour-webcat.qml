@@ -96,6 +96,11 @@ ApplicationWindow
         }
     }
 
+    // Deactivated as long as gstreamer is so crashy. I don't want the browser to be unusable just because gstreamer crashed again
+//    function openWithvPlayer(url) {
+//        pageStack.push(Qt.resolvedUrl("pages/VideoPlayer.qml"), {dataContainer: firstPage, streamUrl: url});
+//    }
+
     function clearCookies() {
         firstPage.webview.experimental.deleteAllCookies();
     }
