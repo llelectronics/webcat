@@ -28,7 +28,7 @@ Page {
 
             if(mimeinfo[0] === "video")
             {
-                mainWindow.infoBanner.showText(qsTr("Opening..."))
+//                mainWindow.infoBanner.showText(qsTr("Opening..."))
 //                if (mainWindow.vPlayerExists) {
 //                    mainWindow.openWithvPlayer(path);
 //                }
@@ -37,10 +37,7 @@ Page {
                 pageStack.push(Qt.resolvedUrl("VideoPlayer.qml"), {dataContainer: dataContainer, streamUrl: path});
                 return;
             }
-
-            var tmppath = findBaseName(path);
-            var fpath = tmppath.substring(tmppath.lastIndexOf('.') + 1);
-            if (fpath.indexOf('html') == 0 && dataContainer) {  // TODO: Check if this works for image files aswell
+            else if ((mimeinfo[1] === "html" || mimeinfo[0] === "image")  && dataContainer) {  // TODO: Check if this works for image files aswell
                 dataContainer.url = path; // WTF this seems to work :P
                 pageStack.pop();
             } else {
