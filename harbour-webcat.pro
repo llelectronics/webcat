@@ -12,7 +12,9 @@ CONFIG += sailfishapp
 
 SOURCES += src/harbour-webcat.cpp \
     src/myclass.cpp \
-    src/DownloadManager.cpp
+    src/DownloadManager.cpp \
+    src/folderlistmodel/qquickfolderlistmodel.cpp \
+    src/folderlistmodel/fileinfothread.cpp
 
 OTHER_FILES += qml/harbour-webcat.qml \
     qml/cover/CoverPage.qml \
@@ -62,14 +64,19 @@ OTHER_FILES += qml/harbour-webcat.qml \
     qml/pages/InfoBanner.qml \
     qml/pages/helper/devicePixelRatioHack.js \
     qml/pages/helper/mediaDetect.js \
-    qml/pages/helper/adblock.css
+    qml/pages/helper/adblock.css \
+    qml/pages/OpenDialog.qml
 
 RESOURCES += \
     qrc.qrc
 
 HEADERS += \
     src/myclass.h \
-    src/DownloadManager.hpp
+    src/DownloadManager.hpp \
+    src/folderlistmodel/qquickfolderlistmodel.h \
+    src/folderlistmodel/fileproperty_p.h \
+    src/folderlistmodel/fileinfothread_p.h \
+    src/fmhelper.hpp
 
 QT += network
 

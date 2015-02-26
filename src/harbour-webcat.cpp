@@ -35,6 +35,8 @@
 #include <sailfishapp.h>
 #include "myclass.h"
 #include "DownloadManager.hpp"
+#include "fmhelper.hpp"
+#include "folderlistmodel/qquickfolderlistmodel.h"
 
 int main(int argc, char *argv[])
 {
@@ -48,6 +50,8 @@ int main(int argc, char *argv[])
     // To display the view, call "show()" (will show fullscreen on device).
 
     QGuiApplication *app = SailfishApp::application(argc, argv);
+
+    qmlRegisterType<QQuickFolderListModel>("harbour.webcat.FolderListModel", 1, 0, "FolderListModel");
 
     QString file;
 
@@ -124,6 +128,9 @@ int main(int argc, char *argv[])
     }
 
     view->engine()->rootContext()->setContextProperty("_manager", &manager);
+
+    FM *fileAction = new FM();
+    view->engine()->rootContext()->setContextProperty("_fm", fileAction);
 
     view->show();
 

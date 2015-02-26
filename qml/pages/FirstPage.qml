@@ -408,14 +408,19 @@ Page {
                 urlLoading = false;
                 errorText = "Load failed\n"+loadRequest.errorString
                 // Don't show error on rtsp, rtmp or mms links as they are opened externally
-                if (! (/^rtsp:/).test(url) || (/^rtmp:/).test(url) || (/^mms:/).test(url)) {
+                if (! ((/^rtsp:/).test(url.toString()) || (/^rtmp:/).test(url.toString()) || (/^mms:/).test(url.toString()) )) {
                     console.debug("Load failed rtsp,rtmp or mms not detected and no valid http or https");
-                    if (! (/handled by the media engine/).test(errorText)) {
+                    console.debug("[FirstPage.qml] Error text:" + errorText + " test(errorText): " + (/Path is a directory/).test(errorText));
+                    if (! ((/handled by the media engine/).test(errorText) || (/Path is a directory/).test(errorText))) {
                         console.debug("Load failed audio or video file not detected and no valid http or https");
                         popup.visible = true
                     }
                     else if ((/handled by the media engine/).test(errorText)) {
                         mediaLink = true;
+                        mediaDownloadRec.mediaUrl = url
+                    }
+                    else if ((/Path is a directory/).test(errorText)) {
+                        pageStack.push(Qt.resolvedUrl("OpenDialog.qml"), {dataContainer: webview, path: url});
                     }
                 }
             }
@@ -423,6 +428,9 @@ Page {
             {
                 urlLoading = false;
                 if (url == "about:bookmarks" && loadHP === true) pageStack.push(Qt.resolvedUrl("SelectUrl.qml"), { dataContainer: page, siteURL: webview.url, bookmarks: page.bookmarks, siteTitle: webview.title})
+                else if (url == "about:") pageStack.push(Qt.resolvedUrl("AboutPage.qml"));
+                else if (url == "about:config") pageStack.push(Qt.resolvedUrl("SettingsPage.qml"));
+                else if (url == "about:file") pageStack.push(Qt.resolvedUrl("OpenDialog.qml"));
                 mainWindow.tabModel.setProperty(mainWindow.tabModel.getIndexFromId(pageId), "title", webview.title);
                 //console.debug(tabModel.get(0).title);
                 // Update url for tabModel
@@ -435,13 +443,13 @@ Page {
             var schemaRE = /^\w+:/;
             if (schemaRE.test(request.url)) {
                 request.action = WebView.AcceptRequest;
-            } else {
-                if (!(/^rtsp:/).test(request.url) || !(/^rtmp:/).test(request.url) || !(/^mms:/).test(request.url)) {
+            } /*else {
+                if (! ((/^rtsp:/).test(request.url.toString()) || (/^rtmp:/).test(request.url.toString()) || (/^mms:/).test(request.url.toString()) || (/^file:/).test(request.url.toString()))) {
                     request.action = WebView.IgnoreRequest;
-                    popup.visible = true
+                    //popup.visible = true
                     // delegate request.url here
                 }
-            }
+            }*/
         }
 
         Selection {
@@ -829,8 +837,9 @@ Page {
                     forIcon.visible = false
                     bookmarkButton.visible = false
                     gotoButton.searchButton = true
-                    selectAll();
                     suggestionView.visible = false
+                    selectAll();
+
                 }
                 else {
                     backIcon.visible = webview.canGoBack
