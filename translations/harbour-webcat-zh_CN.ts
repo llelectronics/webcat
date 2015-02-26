@@ -187,6 +187,13 @@
     </message>
 </context>
 <context>
+    <name>OpenDialog</name>
+    <message>
+        <source>Opening...</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>SelectUrl</name>
     <message>
         <source>Bookmarks</source>

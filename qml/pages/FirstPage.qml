@@ -260,6 +260,15 @@ Page {
 //        layer.mipmap: true
 //        layer.textureSize: page.width + "x" + page.height
 
+        experimental.filePicker: Item {
+            Component.onCompleted: {
+                var openDialog = pageStack.push(Qt.resolvedUrl("OpenDialog.qml"),
+                                            {"dataContainer":  webview, "selectMode": true})
+                openDialog.fileOpen.connect(function(file) {
+                    model.accept(file);
+                })
+            }
+       }
         experimental.itemSelector: PopOver {}
         experimental.preferences.fullScreenEnabled: true
         experimental.preferences.developerExtrasEnabled: true
@@ -809,7 +818,7 @@ Page {
         TextField{
             id: urlText
             visible: true
-            text: focus ? fullUrl : simplifyUrl(url.toString())
+            text: simplifyUrl(url.toString())
             inputMethodHints: Qt.ImhUrlCharactersOnly
             placeholderText: qsTr("Enter an url")
             font.pixelSize: Theme.fontSizeMedium
@@ -837,9 +846,9 @@ Page {
                     forIcon.visible = false
                     bookmarkButton.visible = false
                     gotoButton.searchButton = true
+                    text = fullUrl
                     suggestionView.visible = false
-                    selectAll();
-
+                    selectAll()
                 }
                 else {
                     backIcon.visible = webview.canGoBack

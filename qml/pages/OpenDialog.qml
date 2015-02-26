@@ -155,7 +155,10 @@ Page {
                     else fileModel.folder = filePath
                 } else {
                     if (!selectMode) openFile(filePath)
-                    // TODO: implement selectMode for file selector
+                    else {
+                        fileOpen(filePath);
+                        pageStack.pop();
+                    }
                 }
             }
         }
