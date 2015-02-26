@@ -6,8 +6,9 @@ Page {
     id: page
     allowedOrientations: Orientation.All
 
-    property bool multiSelect: false
+    property bool multiSelect: onlyFolders ? true : false
     property bool selectMode: false
+    property bool onlyFolders: false
     property string path
 
     property QtObject dataContainer
@@ -104,6 +105,12 @@ Page {
             id: delegate
             width: parent.width
             height: fileIcon.height + (Theme.paddingMedium * 2)
+            visible : {
+                if (onlyFolders && fileIsDir) return true
+                else if (onlyFolders) return false
+                else return true
+            }
+
             Image
             {
                 id: fileIcon
@@ -135,11 +142,16 @@ Page {
                 width: parent.width - fileIcon.width - (Theme.paddingLarge + Theme.paddingSmall + Theme.paddingLarge)
                 truncationMode: TruncationMode.Fade
             }
-            Switch
-            {
+            Switch {
                 id: mSelect
-                visible: !fileIsDir && multiSelect
+                visible: fileIsDir && multiSelect && onlyFolders
                 anchors.right: parent.right
+                checked: false
+                onClicked: {
+                    checked = !checked
+                    fileOpen(filePath);
+                    pageStack.pop();
+                }
             }
 
             onClicked: {
