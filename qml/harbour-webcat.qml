@@ -74,6 +74,7 @@ ApplicationWindow
     property alias historyModel: historyModel
     property alias bookmarkModel: modelUrls
     property bool vPlayerExists
+    property bool vPlayerExternal
     property alias infoBanner: infoBanner
 
     property QtObject firstPage
@@ -82,7 +83,7 @@ ApplicationWindow
     signal clearCache()
     signal openNewWindow(string hrefUrl)
     signal openPrivateNewWindow(string hrefUrl)
-    //signal openWithvPlayer(string url)
+    signal openWithvPlayerExternal(string url)
 
     Component {
         id: tabView
@@ -98,7 +99,8 @@ ApplicationWindow
 
     // Deactivated as long as gstreamer is so crashy. I don't want the browser to be unusable just because gstreamer crashed again
     function openWithvPlayer(url,title) {
-        pageStack.push(Qt.resolvedUrl("pages/VideoPlayer.qml"), {dataContainer: firstPage, streamUrl: url, streamTitle: title});
+        if (!vPlayerExternal) pageStack.push(Qt.resolvedUrl("pages/VideoPlayer.qml"), {dataContainer: firstPage, streamUrl: url, streamTitle: title});
+        else openWithvPlayerExternal(url);
     }
 
     function clearCookies() {

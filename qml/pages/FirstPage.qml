@@ -316,11 +316,10 @@ Page {
 
             if(mimeinfo[0] === "video")
             {
-                mainWindow.infoBanner.showText(qsTr("Opening..."))
-                if (mainWindow.vPlayerExists) {
-                    mainWindow.openWithvPlayer(downloadItem.url,"");
+                mainWindow.openWithvPlayer(downloadItem.url,"");
+                if (mainWindow.vPlayerExternal) {
+                    mainWindow.infoBanner.showText(qsTr("Opening..."))
                 }
-                else Qt.openUrlExternally(url);
                 return;
             }
             // Call downloadmanager here with the url
@@ -372,7 +371,6 @@ Page {
                     selection.copy();
                 }
             }
-
 
             case 'input': {
                 // Seems not to work reliably as only input hide on keyboard hide is received
@@ -1237,16 +1235,15 @@ Page {
             id: mediaPlayBtn
             icon.source: "image://theme/icon-m-play"
             onClicked:  {
-                mainWindow.infoBanner.showText(qsTr("Opening..."))
-                if (mainWindow.vPlayerExists && (mediaYt || mediaYtEmbeded)) {
+                if (mainWindow.vPlayerExternal) mainWindow.infoBanner.showText(qsTr("Opening..."));
+                if (mediaYt || mediaYtEmbeded) {
                     // Always try to play highest quality first // TODO: Allow setting a default
                     if (yt720p != "") mainWindow.openWithvPlayer(yt720p,mediaDownloadRecTitle.text);
                     else if (yt480p != "") mainWindow.openWithvPlayer(yt480p,mediaDownloadRecTitle.text);
                     else if (yt360p != "") mainWindow.openWithvPlayer(yt360p,mediaDownloadRecTitle.text);
                     else if (yt240p != "") mainWindow.openWithvPlayer(yt240p,mediaDownloadRecTitle.text);
                 }
-                else if (mainWindow.vPlayerExists && mediaDownloadRec.mediaUrl != "") mainWindow.openWithvPlayer(mediaDownloadRec.mediaUrl,"");
-                else if (mediaDownloadRec.mediaUrl != "") Qt.openUrlExternally(mediaDownloadRec.mediaUrl);
+                else if (mediaDownloadRec.mediaUrl != "") mainWindow.openWithvPlayer(mediaDownloadRec.mediaUrl,"");
                 else Qt.openUrlExternally(url);
             }
             visible: ! progressCircleYt.visible

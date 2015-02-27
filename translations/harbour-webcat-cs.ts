@@ -373,6 +373,10 @@
         <source>Clear Bookmarks</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Use external video player</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>VideoPlayer</name>

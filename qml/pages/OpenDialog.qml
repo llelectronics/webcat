@@ -28,13 +28,10 @@ Page {
 
             if(mimeinfo[0] === "video")
             {
-//                mainWindow.infoBanner.showText(qsTr("Opening..."))
-//                if (mainWindow.vPlayerExists) {
-//                    mainWindow.openWithvPlayer(path);
-//                }
-//                else Qt.openUrlExternally(url);
-                // For local media it seems save to use the internal video player
-                pageStack.push(Qt.resolvedUrl("VideoPlayer.qml"), {dataContainer: dataContainer, streamUrl: path});
+                mainWindow.openWithvPlayer(path,"");
+                if (mainWindow.vPlayerExternal) {
+                    mainWindow.infoBanner.showText(qsTr("Opening..."))
+                }
                 return;
             }
             else if ((mimeinfo[1] === "html" || mimeinfo[0] === "image")  && dataContainer) {  // TODO: Check if this works for image files aswell

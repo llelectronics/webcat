@@ -114,8 +114,8 @@ int main(int argc, char *argv[])
                      &myClass, SLOT(openNewWindow(QString)));
     QObject::connect(object, SIGNAL(openPrivateNewWindow(QString)),
                      &myClass, SLOT(openPrivateNewWindow(QString)));
-//    QObject::connect(object, SIGNAL(openWithvPlayer(QString)),
-//                     &myClass, SLOT(openWithvPlayer(QString)));
+    QObject::connect(object, SIGNAL(openWithvPlayerExternal(QString)),
+                     &myClass, SLOT(openWithvPlayer(QString)));
 
     // Create download manager object
     DownloadManager manager;

@@ -36,6 +36,7 @@ Dialog {
         searchEngine.text = "http://www.google.com/search?q=%s"
         searchEngineCombo.value = "Google"
         orientationCombo.value = "Orientation.All"
+        vPlayerExternalSwitch.checked = false;
     }
 
     function saveSettings() {
@@ -55,6 +56,7 @@ Dialog {
         if (orientationCombo.value == "Orientation.All") DB.addSetting("orientation", Orientation.All)
         else if (orientationCombo.value == "Orientation.Landscape") DB.addSetting("orientation", Orientation.Landscape)
         else if (orientationCombo.value == "Orientation.Portrait") DB.addSetting("orientation", Orientation.Portrait)
+        DB.addSetting("vPlayerExternal", vPlayerExternalSwitch.checked.toString());
         DB.getSettings();
     }
 
@@ -331,6 +333,13 @@ Dialog {
                 anchors.horizontalCenter: parent.horizontalCenter
                 text: qsTr("Offline Web Application Cache")
                 checked: mainWindow.offlineWebApplicationCache
+            }
+            TextSwitch {
+                id: vPlayerExternalSwitch
+                anchors.horizontalCenter: parent.horizontalCenter
+                text: qsTr("Use external video player")
+                checked: mainWindow.vPlayerExternal
+                visible: (checked || mainWindow.vPlayerExists) ? true : false
             }
             SectionHeader {
                 text: qsTr("Privacy")

@@ -60,9 +60,8 @@ Page {
             onClicked: {
                 if (download) pageStack.replace(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": url});
                 else {
-                    mainWindow.infoBanner.showText(qsTr("Opening..."))
-                    if (mainWindow.vPlayerExists) mainWindow.openWithvPlayer(url);
-                    else Qt.openUrlExternally(url);
+                    mainWindow.openWithvPlayer(url,"");
+                    if (mainWindow.vPlayerExternal) mainWindow.infoBanner.showText(qsTr("Opening..."));
                 }
             }
         }
