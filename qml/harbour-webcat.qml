@@ -82,7 +82,7 @@ ApplicationWindow
     signal clearCache()
     signal openNewWindow(string hrefUrl)
     signal openPrivateNewWindow(string hrefUrl)
-    signal openWithvPlayer(string url)
+    //signal openWithvPlayer(string url)
 
     Component {
         id: tabView
@@ -97,9 +97,9 @@ ApplicationWindow
     }
 
     // Deactivated as long as gstreamer is so crashy. I don't want the browser to be unusable just because gstreamer crashed again
-//    function openWithvPlayer(url) {
-//        pageStack.push(Qt.resolvedUrl("pages/VideoPlayer.qml"), {dataContainer: firstPage, streamUrl: url});
-//    }
+    function openWithvPlayer(url,title) {
+        pageStack.push(Qt.resolvedUrl("pages/VideoPlayer.qml"), {dataContainer: firstPage, streamUrl: url, streamTitle: title});
+    }
 
     function clearCookies() {
         firstPage.webview.experimental.deleteAllCookies();

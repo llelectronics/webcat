@@ -36,6 +36,7 @@
 #include "myclass.h"
 #include "DownloadManager.hpp"
 #include "fmhelper.hpp"
+#include "videohelper.hpp"
 #include "folderlistmodel/qquickfolderlistmodel.h"
 
 int main(int argc, char *argv[])
@@ -113,8 +114,8 @@ int main(int argc, char *argv[])
                      &myClass, SLOT(openNewWindow(QString)));
     QObject::connect(object, SIGNAL(openPrivateNewWindow(QString)),
                      &myClass, SLOT(openPrivateNewWindow(QString)));
-    QObject::connect(object, SIGNAL(openWithvPlayer(QString)),
-                     &myClass, SLOT(openWithvPlayer(QString)));
+//    QObject::connect(object, SIGNAL(openWithvPlayer(QString)),
+//                     &myClass, SLOT(openWithvPlayer(QString)));
 
     // Create download manager object
     DownloadManager manager;
@@ -131,6 +132,9 @@ int main(int argc, char *argv[])
 
     FM *fileAction = new FM();
     view->engine()->rootContext()->setContextProperty("_fm", fileAction);
+
+    videoHelper *vHelper = new videoHelper();
+    view->engine()->rootContext()->setContextProperty("_videoHelper", vHelper);
 
     view->show();
 

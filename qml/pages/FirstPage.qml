@@ -318,7 +318,7 @@ Page {
             {
                 mainWindow.infoBanner.showText(qsTr("Opening..."))
                 if (mainWindow.vPlayerExists) {
-                    mainWindow.openWithvPlayer(downloadItem.url);
+                    mainWindow.openWithvPlayer(downloadItem.url,"");
                 }
                 else Qt.openUrlExternally(url);
                 return;
@@ -1240,12 +1240,12 @@ Page {
                 mainWindow.infoBanner.showText(qsTr("Opening..."))
                 if (mainWindow.vPlayerExists && (mediaYt || mediaYtEmbeded)) {
                     // Always try to play highest quality first // TODO: Allow setting a default
-                    if (yt720p != "") mainWindow.openWithvPlayer(yt720p);
-                    else if (yt480p != "") mainWindow.openWithvPlayer(yt480p);
-                    else if (yt360p != "") mainWindow.openWithvPlayer(yt360p);
-                    else if (yt240p != "") mainWindow.openWithvPlayer(yt240p);
+                    if (yt720p != "") mainWindow.openWithvPlayer(yt720p,mediaDownloadRecTitle.text);
+                    else if (yt480p != "") mainWindow.openWithvPlayer(yt480p,mediaDownloadRecTitle.text);
+                    else if (yt360p != "") mainWindow.openWithvPlayer(yt360p,mediaDownloadRecTitle.text);
+                    else if (yt240p != "") mainWindow.openWithvPlayer(yt240p,mediaDownloadRecTitle.text);
                 }
-                else if (mainWindow.vPlayerExists && mediaDownloadRec.mediaUrl != "") mainWindow.openWithvPlayer(mediaDownloadRec.mediaUrl);
+                else if (mainWindow.vPlayerExists && mediaDownloadRec.mediaUrl != "") mainWindow.openWithvPlayer(mediaDownloadRec.mediaUrl,"");
                 else if (mediaDownloadRec.mediaUrl != "") Qt.openUrlExternally(mediaDownloadRec.mediaUrl);
                 else Qt.openUrlExternally(url);
             }

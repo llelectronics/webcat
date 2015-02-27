@@ -52,11 +52,6 @@ Page {
     onStreamUrlChanged: {
         if (errorDetail.visible && errorTxt.visible) { errorDetail.visible = false; errorTxt.visible = false }
         videoPoster.showControls();
-        streamTitle = ""  // Reset Stream Title here
-        if (YT.checkYoutube(originalUrl) === true) {
-            //console.debug("[videoPlayer.qml] Loading Youtube Title from original URL")
-            YT.getYoutubeTitle(originalUrl);
-        }
         if (streamTitle == "") streamTitle = findBaseName(streamUrl)
     }
 
@@ -345,35 +340,16 @@ Page {
             id: video
             anchors.fill: parent
 
-            source: MediaPlayer {
-                id: mediaPlayer
-
-                onDurationChanged: {
-                    //console.debug("Duration(msec): " + duration);
-                    videoPoster.duration = (duration/1000);
-                    if (hasAudio === true && hasVideo === false) onlyMusic.opacity = 1.0
-                    else onlyMusic.opacity = 0.0;
-                }
-                onStatusChanged: {
-                    //errorTxt.visible = false     // DEBUG: Always show errors for now
-                    //errorDetail.visible = false
-                    //console.debug("[videoPlayer.qml]: mediaPlayer.status: " + mediaPlayer.status)
-                    if (mediaPlayer.status === MediaPlayer.Loading || mediaPlayer.status === MediaPlayer.Buffering || mediaPlayer.status === MediaPlayer.Stalled) progressCircle.visible = true;
-                    else if (mediaPlayer.status === MediaPlayer.EndOfMedia) videoPoster.showControls();
-                    else  { progressCircle.visible = false; }
-                    if (metaData.title) dPage.title = metaData.title
-                }
-                onError: {
-                    errorTxt.text = error;
-                    errorDetail.text = errorString;
-                    errorBox.visible = true;
-                }
-            }
+            source: mediaPlayer
 
             visible: mediaPlayer.status >= MediaPlayer.Loaded && mediaPlayer.status <= MediaPlayer.EndOfMedia
             width: parent.width
             height: parent.height
             anchors.centerIn: videoPlayerPage
+
+            ScreenBlank {
+                suspend: mediaPlayer.playbackState == MediaPlayer.PlayingState
+            }
 
         }
     ]
@@ -454,6 +430,31 @@ Page {
             color: Theme.highlightColor
             font.pixelSize: Theme.fontSizeHuge
             font.bold: true
+        }
+    }
+
+    MediaPlayer {
+        id: mediaPlayer
+
+        onDurationChanged: {
+            //console.debug("Duration(msec): " + duration);
+            videoPoster.duration = (duration/1000);
+            if (hasAudio === true && hasVideo === false) onlyMusic.opacity = 1.0
+            else onlyMusic.opacity = 0.0;
+        }
+        onStatusChanged: {
+            //errorTxt.visible = false     // DEBUG: Always show errors for now
+            //errorDetail.visible = false
+            //console.debug("[videoPlayer.qml]: mediaPlayer.status: " + mediaPlayer.status)
+            if (mediaPlayer.status === MediaPlayer.Loading || mediaPlayer.status === MediaPlayer.Buffering || mediaPlayer.status === MediaPlayer.Stalled) progressCircle.visible = true;
+            else if (mediaPlayer.status === MediaPlayer.EndOfMedia) videoPoster.showControls();
+            else  { progressCircle.visible = false; }
+            if (metaData.title) dPage.title = metaData.title
+        }
+        onError: {
+            errorTxt.text = error;
+            errorDetail.text = errorString;
+            errorBox.visible = true;
         }
     }
 

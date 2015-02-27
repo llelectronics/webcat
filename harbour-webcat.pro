@@ -67,7 +67,8 @@ OTHER_FILES += qml/harbour-webcat.qml \
     qml/pages/helper/adblock.css \
     qml/pages/OpenDialog.qml \
     qml/pages/VideoPlayer.qml \
-    qml/pages/helper/VideoPoster.qml
+    qml/pages/helper/VideoPoster.qml \
+    qml/pages/ScreenBlank.qml
 
 RESOURCES += \
     qrc.qrc
@@ -78,7 +79,8 @@ HEADERS += \
     src/folderlistmodel/qquickfolderlistmodel.h \
     src/folderlistmodel/fileproperty_p.h \
     src/folderlistmodel/fileinfothread_p.h \
-    src/fmhelper.hpp
+    src/fmhelper.hpp \
+    src/videohelper.hpp
 
 QT += network
 
@@ -98,4 +100,4 @@ TRANSLATIONS += translations/harbour-webcat-de.ts \
 
 # Hmm... not allowed for now I guess
 #PKGCONFIG += nemotransferengine-qt5
-
+QT += dbus
