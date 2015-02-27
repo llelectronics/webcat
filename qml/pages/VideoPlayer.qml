@@ -455,6 +455,8 @@ Page {
             errorTxt.text = error;
             errorDetail.text = errorString;
             errorBox.visible = true;
+            /* Avoid MediaPlayer undefined behavior */
+            stop();
         }
     }
 
