@@ -223,8 +223,7 @@ Page {
             backIcon.visible = true
             forIcon.visible = webview.canGoForward
             if ((/^rtsp:/).test(url) || (/^rtmp:/).test(url) || (/^mms:/).test(url)) {
-                console.debug("Remote link clicked. Open with external viewer")
-                Qt.openUrlExternally(url);
+                mainWindow.openWithvPlayer(url);
             }
 
             urlText.text = urlText.simplifyUrl(url)

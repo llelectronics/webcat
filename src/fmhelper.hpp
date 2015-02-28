@@ -38,7 +38,16 @@ class FM : public QObject
         {
             QMimeDatabase db;
             QUrl path(url);
-            QMimeType mime = db.mimeTypeForUrl(path);
+            QMimeType mime;
+
+            QRegExp regex(QRegExp("[_\\d\\w\\-\\. ]+\\.[_\\d\\w\\-\\. ]+"));
+            QString filename = url.split('/').last();
+            int idx = filename.indexOf(regex);
+
+            if(filename.isEmpty() || (idx == -1))
+                mime = db.mimeTypeForUrl(path);
+            else
+                mime = db.mimeTypeForFile(filename.mid(idx, regex.matchedLength()));
             return mime.name();
         }
 };
