@@ -227,6 +227,9 @@ Page {
                 Qt.openUrlExternally(url);
             }
 
+            urlText.text = urlText.simplifyUrl(url)
+            urlText.fullUrl = url
+
             // reset everything on url change
             mediaDownloadRec.mediaUrl = "";
             mediaYtEmbeded = false;
@@ -240,7 +243,7 @@ Page {
             checkYoutubeURL(url);
 
             // Add to url history
-            DB.addHistory(url);
+            DB.addHistory(url.toString());
         }
 
         // Settings loaded from mainWindow
@@ -815,14 +818,14 @@ Page {
         TextField{
             id: urlText
             visible: true
-            text: simplifyUrl(url.toString())
+            text: simplifyUrl(url)
             inputMethodHints: Qt.ImhUrlCharactersOnly
             placeholderText: qsTr("Enter an url")
             font.pixelSize: Theme.fontSizeMedium
             y: parent.height / 2 - height / 4
             background: null
             color: Theme.primaryColor
-            property string fullUrl: webview.url
+            property string fullUrl: url
             anchors.left: {
                 if (forIcon.visible) return forIcon.right
                 else if (backIcon.visible) return backIcon.right
@@ -845,13 +848,14 @@ Page {
                     gotoButton.searchButton = true
                     text = fullUrl
                     suggestionView.visible = false
-                    selectAll()
+                    selectAll();
                 }
                 else {
                     backIcon.visible = webview.canGoBack
                     forIcon.visible = webview.canGoForward
                     bookmarkButton.visible = true
                     gotoButton.searchButton = false
+                    text = simplifyUrl(url)
                 }
             }
             onTextChanged: {
@@ -876,6 +880,7 @@ Page {
                 urlText.focus = false;
             }
             function simplifyUrl(url) {
+                url = url.toString();
                 if(url.match(/http:\/\//))
                 {
                     color = Theme.primaryColor
@@ -1452,7 +1457,7 @@ Page {
             else return max
         }
         visible: false
-        onSelected: { urlText.focus = false; suggestionView.visible = false ; webview.url = url }
+        onSelected: { urlText.focus = false; suggestionView.visible = false ; webview.url = url; }
         onSelectedMedia: {
             suggestionView.visible = false;
             mediaDownloadRecTitle.text = mediaTitle;

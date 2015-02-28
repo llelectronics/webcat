@@ -288,7 +288,7 @@ ApplicationWindow
                 }
                 // check if url endswith '/' and return true if url-'/' = models url
                 else if (str.indexOf(suffix, str.length - suffix.length) !== -1) {
-                    if (get(i).url == str.substring(0, str.length-1)) return true;
+                    if (get(i).url === str.substring(0, str.length-1)) return true;
                 }
             }
             return false;

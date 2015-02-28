@@ -193,6 +193,7 @@ function searchHistory(searchTerm) {
         if (rs.rows.length > 0) {
             // Clear previous historySuggestions here
             mainWindow.historyModel.clear();
+            page.suggestionView.model = mainWindow.historyModel
             // And show history suggestions
             page.suggestionView.visible = true;
             hisFound = true;
@@ -201,8 +202,8 @@ function searchHistory(searchTerm) {
 
         for (var i = 0; i < rs.rows.length; i++) {
             // Add to historySuggestions here
-            if (! historyModel.contains(rs.rows.item(i).url.match(r)[0]) && rs.rows.item(i).url.match(r)[0].indexOf(searchTerm) != -1) mainWindow.historyModel.insert(0,{"url" : rs.rows.item(i).url.match(r)[0]});
-            mainWindow.historyModel.append({"url" : rs.rows.item(i).url});
+            if (! (historyModel.contains(rs.rows.item(i).url.match(r)[0]) && rs.rows.item(i).url.match(r)[0].indexOf(searchTerm) != -1)) mainWindow.historyModel.insert(0,{"url" : rs.rows.item(i).url.match(r)[0]});
+            if (! (historyModel.contains(rs.rows.item(i).url) ) ) mainWindow.historyModel.append({"url" : rs.rows.item(i).url});
             //console.debug(rs.rows.item(i).url);
         }
         if (rs1.rows.length > 0) {
@@ -212,8 +213,8 @@ function searchHistory(searchTerm) {
         else if (hisFound != true) page.suggestionView.visible = false;
         for (var i = 0; i < rs1.rows.length; i++) {
             // Add to historySuggestions here
-            if (! historyModel.contains(rs1.rows.item(i).url.match(r)[0]) && rs1.rows.item(i).url.match(r)[0].indexOf(searchTerm) != -1) mainWindow.historyModel.append(0, {"url" : rs1.rows.item(i).url.match(r)[0]});
-            if (! historyModel.contains(rs1.rows.item(i).url)) mainWindow.historyModel.append({"url" : rs1.rows.item(i).url});
+            if (! (historyModel.contains(rs1.rows.item(i).url.match(r)[0]) && rs1.rows.item(i).url.match(r)[0].indexOf(searchTerm) != -1)) mainWindow.historyModel.insert(0, {"url" : rs1.rows.item(i).url.match(r)[0]});
+            if (! (historyModel.contains(rs1.rows.item(i).url) ) ) mainWindow.historyModel.append({"url" : rs1.rows.item(i).url});
             //console.debug(rs.rows.item(i).url);
         }
     }
