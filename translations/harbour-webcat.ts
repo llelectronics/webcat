@@ -95,6 +95,18 @@
         <source>Download Errors</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Opening...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show Downloadfolder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear Downloads</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>FirstPage</name>
@@ -190,6 +202,14 @@
     <name>OpenDialog</name>
     <message>
         <source>Opening...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting </source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -95,6 +95,11 @@ void DownloadManager::downloadUrl(const QString &url)
     append(QUrl::fromEncoded(url.toLocal8Bit()));
 }
 
+void DownloadManager::setDownloadName(const QString &name)
+{
+    basename = QString(name.toUtf8());
+}
+
 void DownloadManager::append(const QUrl &url)
 {
     /**
@@ -118,29 +123,30 @@ QString DownloadManager::saveFileName(const QUrl &url)
     // First extract the path component from the URL ...
     const QString path = url.path();
 
-    // ... and then extract the file name.
+    // ... and then extract the file name if not already set
+    if (basename.isEmpty())
     QString basename = QFileInfo(path).fileName();
 
+    // Replace the file name with 'download' if the URL provides no file name.
     if (basename.isEmpty())
         basename = "download";
 
-    // Replace the file name with 'download' if the URL provides no file name.
-    basename =  QDir::homePath() + "/Downloads/" + basename; // locate in downloads directory of users home
+    QString savename =  QDir::homePath() + "/Downloads/" + basename; // locate in downloads directory of users home
 
     /**
      * Check if the file name exists already, if so, append an increasing number and test again.
      */
-    if (QFile::exists(basename)) {
+    if (QFile::exists(savename)) {
         // already exists, don't overwrite
         int i = 0;
-        basename += '.';
-        while (QFile::exists(basename + QString::number(i)))
+        savename += '.';
+        while (QFile::exists(savename + QString::number(i)))
             ++i;
 
-        basename += QString::number(i);
+        savename += QString::number(i);
     }
 
-    return basename;
+    return savename;
 }
 
 void DownloadManager::addErrorMessage(const QString &message)
@@ -169,6 +175,7 @@ void DownloadManager::startNextDownload()
 
     // ... and determine a local file name where the result can be stored.
     const QString filename = saveFileName(url);
+    m_savePath = filename;
 
     // Open the file with this file name for writing
     m_output.setFileName(filename);

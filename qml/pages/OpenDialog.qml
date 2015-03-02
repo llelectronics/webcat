@@ -36,7 +36,7 @@ Page {
             }
             else if ((mimeinfo[1] === "html" || mimeinfo[0] === "image")  && dataContainer) {  // TODO: Check if this works for image files aswell
                 dataContainer.url = path; // WTF this seems to work :P
-                pageStack.pop();
+                pageStack.pop(dataContainer.parent, PageStackAction.Animated);
             } else {
                 mainWindow.infoBanner.showText(qsTr("Opening..."));
                 Qt.openUrlExternally(path);
@@ -113,78 +113,121 @@ Page {
         }
 
         delegate: BackgroundItem {
-            id: delegate
+            id: bgdelegate
             width: parent.width
-            height: fileIcon.height + (Theme.paddingMedium * 2)
-            visible : {
-                if (onlyFolders && fileIsDir) return true
-                else if (onlyFolders) return false
-                else return true
+            height: menuOpen ? contextMenu.height + delegate.height : delegate.height
+            property Item contextMenu
+            property bool menuOpen: contextMenu != null && contextMenu.parent === bgdelegate
+
+            function remove() {
+                var removal = removalComponent.createObject(bgdelegate)
+                removal.execute(delegate,qsTr("Deleting ") + fileName, function() { _fm.remove(filePath); })
             }
 
-            Image
-            {
-                id: fileIcon
-                anchors.left: parent.left
-                anchors.leftMargin: Theme.paddingSmall
-                anchors.verticalCenter: parent.verticalCenter
-                source: fileIsDir ? "image://theme/icon-m-folder" : "image://theme/icon-m-document"
-            }
+            ListItem {
+                id: delegate
 
-            Label {
-                id: fileLabel
-                anchors.left: fileIcon.right
-                anchors.leftMargin: Theme.paddingLarge
-                anchors.top: fileInfo.visible ? parent.top : undefined
-                anchors.verticalCenter: !fileInfo.visible ? parent.verticalCenter : undefined
-                text: fileName + (fileIsDir ? "/" : "")
-                color: delegate.highlighted ? Theme.highlightColor : Theme.primaryColor
-                width: mSelect.visible ? parent.width - (fileIcon.width + Theme.paddingLarge + Theme.paddingSmall + mSelect.width) : parent.width - (fileIcon.width + Theme.paddingLarge + Theme.paddingSmall)
-                truncationMode: TruncationMode.Fade
-            }
-            Label {
-                id: fileInfo
-                visible: !fileIsDir
-                anchors.left: fileIcon.right
-                anchors.leftMargin: Theme.paddingLarge
-                anchors.top: fileLabel.bottom
-                text: humanSize(fileSize) + ", " + fileModified
-                color: Theme.secondaryColor
-                width: parent.width - fileIcon.width - (Theme.paddingLarge + Theme.paddingSmall + Theme.paddingLarge)
-                truncationMode: TruncationMode.Fade
-            }
-            Switch {
-                id: mSelect
-                visible: fileIsDir && multiSelect && onlyFolders
-                anchors.right: parent.right
-                checked: false
-                onClicked: {
-                    checked = !checked
-                    fileOpen(filePath);
-                    pageStack.pop();
+                showMenuOnPressAndHold: false
+                menu: myMenu
+                visible : {
+                    if (onlyFolders && fileIsDir) return true
+                    else if (onlyFolders) return false
+                    else return true
                 }
-            }
 
-            onClicked: {
-                if(multiSelect)
+                function showContextMenu() {
+                    if (!contextMenu)
+                        contextMenu = myMenu.createObject(view)
+                    contextMenu.show(bgdelegate)
+                }
+
+                Image
                 {
-                    mSelect.checked = !mSelect.checked
-                    return;
+                    id: fileIcon
+                    anchors.left: parent.left
+                    anchors.leftMargin: Theme.paddingSmall
+                    anchors.verticalCenter: parent.verticalCenter
+                    source: fileIsDir ? "image://theme/icon-m-folder" : "image://theme/icon-m-document"
                 }
 
-                if (fileIsDir) {
-                    if (fileName === "..") fileModel.folder = fileModel.parentFolder
-                    else if (fileName === ".") return
-                    else fileModel.folder = filePath
-                } else {
-                    if (!selectMode) openFile(filePath)
-                    else {
+                Label {
+                    id: fileLabel
+                    anchors.left: fileIcon.right
+                    anchors.leftMargin: Theme.paddingLarge
+                    anchors.top: fileInfo.visible ? parent.top : undefined
+                    anchors.verticalCenter: !fileInfo.visible ? parent.verticalCenter : undefined
+                    text: fileName + (fileIsDir ? "/" : "")
+                    color: delegate.highlighted ? Theme.highlightColor : Theme.primaryColor
+                    width: mSelect.visible ? parent.width - (fileIcon.width + Theme.paddingLarge + Theme.paddingSmall + mSelect.width) : parent.width - (fileIcon.width + Theme.paddingLarge + Theme.paddingSmall)
+                    truncationMode: TruncationMode.Fade
+                }
+                Label {
+                    id: fileInfo
+                    visible: !fileIsDir
+                    anchors.left: fileIcon.right
+                    anchors.leftMargin: Theme.paddingLarge
+                    anchors.top: fileLabel.bottom
+                    text: humanSize(fileSize) + ", " + fileModified
+                    color: Theme.secondaryColor
+                    width: parent.width - fileIcon.width - (Theme.paddingLarge + Theme.paddingSmall + Theme.paddingLarge)
+                    truncationMode: TruncationMode.Fade
+                }
+                Switch {
+                    id: mSelect
+                    visible: fileIsDir && multiSelect && onlyFolders
+                    anchors.right: parent.right
+                    checked: false
+                    onClicked: {
+                        checked = !checked
                         fileOpen(filePath);
                         pageStack.pop();
                     }
                 }
+
+                onClicked: {
+                    if(multiSelect)
+                    {
+                        mSelect.checked = !mSelect.checked
+                        return;
+                    }
+
+                    if (fileIsDir) {
+                        if (fileName === "..") fileModel.folder = fileModel.parentFolder
+                        else if (fileName === ".") return
+                        else fileModel.folder = filePath
+                    } else {
+                        if (!selectMode) openFile(filePath)
+                        else {
+                            fileOpen(filePath);
+                            pageStack.pop();
+                        }
+                    }
+                }
+                onPressAndHold: showContextMenu()
             }
+
+            Component {
+                id: removalComponent
+                RemorseItem {
+                    id: remorse
+                    onCanceled: destroy()
+                }
+            }
+
+            Component {
+                id: myMenu
+                ContextMenu {
+                    MenuItem {
+                        text: qsTr("Delete")
+                        onClicked: {
+                            bgdelegate.remove();
+                        }
+                    }
+                }
+            }
+
         }
         VerticalScrollDecorator { flickable: view }
     }
+
 }

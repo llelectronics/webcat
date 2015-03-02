@@ -325,7 +325,7 @@ Page {
                 return;
             }
             // Call downloadmanager here with the url
-            pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": downloadItem.url});
+            pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": downloadItem.url, "dataContainer": webview});
         }
 
         experimental.onMessageReceived: {
@@ -438,7 +438,7 @@ Page {
                 if (url == "about:bookmarks" && loadHP === true) pageStack.push(Qt.resolvedUrl("SelectUrl.qml"), { dataContainer: page, siteURL: webview.url, bookmarks: page.bookmarks, siteTitle: webview.title})
                 else if (url == "about:") pageStack.push(Qt.resolvedUrl("AboutPage.qml"));
                 else if (url == "about:config") pageStack.push(Qt.resolvedUrl("SettingsPage.qml"));
-                else if (url == "about:file") pageStack.push(Qt.resolvedUrl("OpenDialog.qml"));
+                else if (url == "about:file") pageStack.push(Qt.resolvedUrl("OpenDialog.qml"), { dataContainer: webview });
                 mainWindow.tabModel.setProperty(mainWindow.tabModel.getIndexFromId(pageId), "title", webview.title);
                 //console.debug(tabModel.get(0).title);
                 // Update url for tabModel
@@ -1213,13 +1213,13 @@ Page {
             icon.source: "image://theme/icon-m-device-download"
             onClicked:  {
                 if (mediaYt || mediaYtEmbeded) {
-                    if (yt720p != "") pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": yt720p});
-                    else if (yt480p != "") pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": yt480p});
-                    else if (yt360p != "") pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": yt360p});
-                    else if (yt240p != "") pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": yt240p});
+                    if (yt720p != "") pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": yt720p, "downloadName": mediaDownloadRecTitle.text, "dataContainer": webview});
+                    else if (yt480p != "") pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": yt480p, "downloadName": mediaDownloadRecTitle.text, "dataContainer": webview});
+                    else if (yt360p != "") pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": yt360p,"downloadName": mediaDownloadRecTitle.text, "dataContainer": webview});
+                    else if (yt240p != "") pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": yt240p,"downloadName": mediaDownloadRecTitle.text,"dataContainer": webview});
                 }
-                else if (mediaDownloadRec.mediaUrl != "") pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": mediaDownloadRec.mediaUrl});
-                else pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": url});
+                else if (mediaDownloadRec.mediaUrl != "") pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": mediaDownloadRec.mediaUrl, "dataContainer": webview});
+                else pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": url, "dataContainer": webview});
             }
             visible: ! progressCircleYt.visible
             anchors.right: parent.right
@@ -1420,12 +1420,12 @@ Page {
                 text: qsTr("Save Image")
                 width: widestBtn.width
                 visible: imageLongPressAvailability
-                onClicked: { pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": contextUrl.text}); contextMenu.visible = false }
+                onClicked: { pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": contextUrl.text, "dataContainer": webview}); contextMenu.visible = false }
             }
             Button {
                 text: qsTr("Save Link")
                 width: widestBtn.width
-                onClicked: { pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": fixUrl(contextUrl.text)}); contextMenu.visible = false }
+                onClicked: { pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": fixUrl(contextUrl.text), "dataContainer": webview}); contextMenu.visible = false }
             }
         }
     }
@@ -1449,9 +1449,11 @@ Page {
             var max = parent.height / 2
             if (model == mainWindow.historyModel) {
                 if (80 * mainWindow.historyModel.count <= max) return 80 * mainWindow.historyModel.count
+                else return max
             }
             else if (model == mediaList) {
                 if (80 * mediaList.count <= max) return 80 * mediaList.count
+                else return max
             }
             else return max
         }

@@ -202,7 +202,9 @@ function searchHistory(searchTerm) {
 
         for (var i = 0; i < rs.rows.length; i++) {
             // Add to historySuggestions here
-            if (! (historyModel.contains(rs.rows.item(i).url.match(r)[0]) && rs.rows.item(i).url.match(r)[0].indexOf(searchTerm) != -1)) mainWindow.historyModel.insert(0,{"url" : rs.rows.item(i).url.match(r)[0]});
+            try {
+                if (! (historyModel.contains(rs.rows.item(i).url.match(r)[0]) && rs.rows.item(i).url.match(r)[0].indexOf(searchTerm) != -1)) mainWindow.historyModel.insert(0,{"url" : rs.rows.item(i).url.match(r)[0]});
+            } catch(e) { continue }
             if (! (historyModel.contains(rs.rows.item(i).url) ) ) mainWindow.historyModel.append({"url" : rs.rows.item(i).url});
             //console.debug(rs.rows.item(i).url);
         }

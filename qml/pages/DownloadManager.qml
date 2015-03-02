@@ -4,10 +4,86 @@ Page {
     id: downloadManager
     allowedOrientations: mainWindow.orient
     property string downloadUrl
-    //property alias downloadUrl: urlField.text
+    property string downloadName
+    property string downLoc
+    property QtObject dataContainer
 
     Component.onCompleted: {
-        if (downloadUrl != "") _manager.downloadUrl(downloadUrl)
+        if (downloadUrl != "") {
+            download();
+        }
+    }
+
+    function download() {
+        if (downloadName != "") {
+            _manager.setDownloadName(downloadName);
+        }
+        downLoc = _manager.saveFileName(downloadUrl);
+        if (downloadName === "") downloadName = downLoc.substring(downLoc.lastIndexOf('/')+1)
+        _manager.downloadUrl(downloadUrl);
+        console.debug("[DownloadManager.qml] downloadName = " + downloadName);
+        downloadModel.model.append({"name": downloadName, "url": downloadUrl, "downLocation": downLoc.toString()})
+    }
+
+    VisualDataModel {
+        id: downloadModel
+        model: ListModel {
+            //        ListElement {
+            //            name: "foobar"
+            //            url: "http://download/foo.bar"
+            //            downLocation: "/home/nemo/Downloads/foo.bar"
+            //        }
+        }
+        delegate: BackgroundItem {
+            width: parent.width
+            contentHeight: dname.height + durl.height + Theme.paddingLarge
+            anchors.margins: Theme.paddingMedium
+            Label {
+                id: dname
+                text: name
+                anchors.top: parent.top
+                anchors.topMargin: Theme.paddingSmall
+                anchors.left: parent.left
+                anchors.leftMargin: Theme.paddingLarge
+                color: highlighted ? Theme.highlightColor : Theme.primaryColor
+                truncationMode: TruncationMode.Fade
+                width: parent.width - (Theme.paddingMedium)
+            }
+            Label {
+                id: durl
+                text: url
+                anchors.top: dname.bottom
+                anchors.topMargin: Theme.paddingSmall
+                anchors.left: parent.left
+                anchors.leftMargin: Theme.paddingLarge
+                color: Theme.secondaryColor
+                truncationMode: TruncationMode.Fade
+                width: parent.width - (Theme.paddingMedium)
+            }
+            anchors.horizontalCenter: parent.horizontalCenter
+            onClicked: {
+                if (_fm.isFile(downLocation)) {
+
+                    var mime = _fm.getMime(downLocation);
+                    var mimeinfo = mime.toString().split("/");
+
+                    if(mimeinfo[0] === "video")
+                    {
+                        mainWindow.openWithvPlayer(downLocation,"");
+                        if (mainWindow.vPlayerExternal) {
+                            mainWindow.infoBanner.showText(qsTr("Opening..."))
+                        }
+                        return;
+                    }  else if ((mimeinfo[1] === "html" || mimeinfo[0] === "image")  && dataContainer) {  // TODO: Check if this works for image files aswell
+                        dataContainer.url = downLocation; // WTF this seems to work :P
+                        pageStack.pop(dataContainer.parent, PageStackAction.Animated);
+                    } else {
+                        mainWindow.infoBanner.showText(qsTr("Opening..."));
+                        Qt.openUrlExternally(downLocation);
+                    }
+                }
+            }
+        }
     }
 
     Flickable {
@@ -22,13 +98,21 @@ Page {
                 text: qsTr("Add Download")
                 onClicked: pageStack.push(manualDownload);
             }
-//            MenuItem {
-//                text: qsTr("Show Details")
-//                onClicked: pageStack.push(details);
-//            }
+            MenuItem {
+                text: qsTr("Show Downloadfolder")
+                onClicked: {
+                    if (dataContainer) pageStack.push(Qt.resolvedUrl("OpenDialog.qml"), {"dataContainer": dataContainer, "path": _fm.getHome()+ "/Downloads"});
+                    else pageStack.push(Qt.resolvedUrl("OpenDialog.qml"), {"dataContainer": dataContainer, "path": _fm.getHome()+ "/Downloads"});
+                }
+            }
+            MenuItem {
+                text: qsTr("Clear Downloads")
+                onClicked: downloadModel.model.clear()
+                visible: downloadModel.count > 0
+            }
         }
 
-        Column{
+        Column {
             id: column1
             width: parent.width
             spacing: 15
@@ -77,21 +161,27 @@ Page {
                             text: qsTr("Download")
 
                             // Start download from url on click
-                            onClicked: { _manager.downloadUrl(urlField.text); downloadManager.downloadUrl = urlField.text ; pageStack.pop() }
+                            onClicked: { downloadManager.downloadUrl = urlField.text ; downloadManager.download(); pageStack.pop() }
                         }
                     }
                 }
             }
-            TextArea {
-                id: toDownload
-                anchors.topMargin: 65
-                text: downloadUrl
-                width: parent.width
-                height: parent.height / 2.5
-                anchors.horizontalCenter: parent.horizontalCenter
-                color: Theme.primaryColor
-                font.pixelSize: Theme.fontSizeMedium
-                readOnly: true
+//            TextArea {
+//                id: toDownload
+//                anchors.topMargin: 65
+//                text: downloadUrl
+//                width: parent.width
+//                height: parent.height / 2.5
+//                anchors.horizontalCenter: parent.horizontalCenter
+//                color: Theme.primaryColor
+//                font.pixelSize: Theme.fontSizeMedium
+//                readOnly: true
+//            }
+
+            ListView {
+               width: parent.width
+               height: parent.height / 3
+               model: downloadModel
             }
 
             ProgressBar {
@@ -99,6 +189,10 @@ Page {
                 maximumValue: _manager.progressTotal
                 value: _manager.progressValue
                 label: _manager.progressMessage
+                visible: {
+                    if (_manager.activeDownloads != 0) return true
+                    else false
+                }
             }
 
             Button {
@@ -108,7 +202,7 @@ Page {
                     else false
                 }
                 text: qsTr("Abort")
-                onClicked: { _manager.downloadAbort(); toDownload.text = "" }
+                onClicked: { _manager.downloadAbort(); }
                 anchors.horizontalCenter: parent.horizontalCenter
             }
 

@@ -99,7 +99,10 @@ public:
 public Q_SLOTS:
     // This method is called when the user starts a download by clicking the 'Download' button in the UI
     void downloadUrl(const QString &url);
+    void setDownloadName(const QString &name);
     void downloadAbort();
+    // This method determines a file name that can be used to save the given URL
+    QString saveFileName(const QUrl &url);
 
 Q_SIGNALS:
     // The change notification signals of the properties
@@ -126,9 +129,6 @@ private Q_SLOTS:
 private:
     // Enqueues a new download to the internal job queue
     void append(const QUrl &url);
-
-    // This method determines a file name that can be used to save the given URL
-    QString saveFileName(const QUrl &url);
 
     // A helper method to collect error messages
     void addErrorMessage(const QString &message);
@@ -166,11 +166,17 @@ private:
     // A textual representation of the current progress status
     QString m_progressMessage;
 
+    // A textual representation of the current save path
+    QString m_savePath;
+
     // The list of error messages
     QStringList m_errorMessage;
 
     // The list of status messages
     QStringList m_statusMessage;
+
+    // The actual path to where the file is stored
+    QString m_fileLocation;
 
     //  Not allowed yet I guess. Leave it here until it is allowed
     // Access to global dbus transferengine interface
