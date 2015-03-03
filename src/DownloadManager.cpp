@@ -261,7 +261,7 @@ void DownloadManager::downloadProgress(qint64 bytesReceived, qint64 bytesTotal)
 
 //! [2]
 void DownloadManager::downloadFinished()
-{
+{   
     // Reset the progress information when the download has finished
     m_progressTotal = 0;
     m_progressValue = 0;
@@ -273,9 +273,18 @@ void DownloadManager::downloadFinished()
     // Close the file where the data have been written
     m_output.close();
 
+
+
     // Add a status or error message
     if (m_currentDownload->error()) {
         addErrorMessage(QString("Failed: %1").arg(m_currentDownload->errorString()));
+    } else if (m_currentDownload->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt() == 302) {
+        m_output.remove();
+        QUrl redirecturl = m_currentDownload->attribute(QNetworkRequest::RedirectionTargetAttribute).toUrl();
+        if(redirecturl.isValid() && (redirecturl != m_currentDownload->url())) /* Avoid Fake/Redirect Loop */
+        {
+            downloadUrl(redirecturl.toString());
+        }
     } else {
         addStatusMessage("Succeeded.");
         ++m_downloadedCount;
