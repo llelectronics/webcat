@@ -22,18 +22,13 @@ Page {
         if (downloadName === "") downloadName = downLoc.substring(downLoc.lastIndexOf('/')+1)
         _manager.downloadUrl(downloadUrl);
         console.debug("[DownloadManager.qml] downloadName = " + downloadName);
-        downloadModel.model.append({"name": downloadName, "url": downloadUrl, "downLocation": downLoc.toString()})
+        downloadVisualModel.model.append({"name": downloadName, "url": downloadUrl, "downLocation": downLoc.toString()})
+        downloadList.scrollToBottom();
     }
 
     VisualDataModel {
-        id: downloadModel
-        model: ListModel {
-            //        ListElement {
-            //            name: "foobar"
-            //            url: "http://download/foo.bar"
-            //            downLocation: "/home/nemo/Downloads/foo.bar"
-            //        }
-        }
+        id: downloadVisualModel
+        model: mainWindow.downloadModel
         delegate: BackgroundItem {
             width: parent.width
             contentHeight: dname.height + durl.height + Theme.paddingLarge
@@ -107,8 +102,8 @@ Page {
             }
             MenuItem {
                 text: qsTr("Clear Downloads")
-                onClicked: downloadModel.model.clear()
-                visible: downloadModel.count > 0
+                onClicked: downloadVisualModel.model.clear()
+                visible: downloadVisualModel.count > 0
             }
         }
 
@@ -166,22 +161,23 @@ Page {
                     }
                 }
             }
-//            TextArea {
-//                id: toDownload
-//                anchors.topMargin: 65
-//                text: downloadUrl
-//                width: parent.width
-//                height: parent.height / 2.5
-//                anchors.horizontalCenter: parent.horizontalCenter
-//                color: Theme.primaryColor
-//                font.pixelSize: Theme.fontSizeMedium
-//                readOnly: true
-//            }
+            //            TextArea {
+            //                id: toDownload
+            //                anchors.topMargin: 65
+            //                text: downloadUrl
+            //                width: parent.width
+            //                height: parent.height / 2.5
+            //                anchors.horizontalCenter: parent.horizontalCenter
+            //                color: Theme.primaryColor
+            //                font.pixelSize: Theme.fontSizeMedium
+            //                readOnly: true
+            //            }
 
-            ListView {
-               width: parent.width
-               height: parent.height / 3
-               model: downloadModel
+            SilicaListView {
+                id: downloadList
+                width: parent.width
+                height: parent.height / 3
+                model: downloadVisualModel
             }
 
             ProgressBar {
@@ -249,70 +245,70 @@ Page {
                 }
             }
 
-        Component {
-            id: errorPage
-            Page {
-                PageHeader {
-                    id: pheader
-                    title: qsTr("Download Errors")
-                }
-                // A standard TextArea for the download status output
-                TextArea {
-                    width: parent.width
-                    height: parent.height - pheader.height
-                    anchors.top: pheader.bottom
-                    readOnly: true
+            Component {
+                id: errorPage
+                Page {
+                    PageHeader {
+                        id: pheader
+                        title: qsTr("Download Errors")
+                    }
+                    // A standard TextArea for the download status output
+                    TextArea {
+                        width: parent.width
+                        height: parent.height - pheader.height
+                        anchors.top: pheader.bottom
+                        readOnly: true
 
-                    text: _manager.errorMessage
+                        text: _manager.errorMessage
 
-                    color: Theme.primaryColor
+                        color: Theme.primaryColor
+                    }
                 }
             }
-        }
 
 
-// TODO: Maybe handy when there is a download list
-//            Component {
-//                id: details
-//                Page {
-//                    Column {
-//                        width: parent.width
-//                        spacing: 15
-//                        PageHeader {
-//                            title: qsTr("Download Details")
-//                        }
+            // TODO: Maybe handy when there is a download list
+            //            Component {
+            //                id: details
+            //                Page {
+            //                    Column {
+            //                        width: parent.width
+            //                        spacing: 15
+            //                        PageHeader {
+            //                            title: qsTr("Download Details")
+            //                        }
 
-//                        Label {
-//                            anchors.topMargin: 65
-//                            text: qsTr("Status:")
-//                            color: Theme.primaryColor
-//                        }
-//                        // A standard TextArea for the download status output
-//                        TextArea {
-//                            width: parent.width
-//                            height: 145
-//                            readOnly: true
+            //                        Label {
+            //                            anchors.topMargin: 65
+            //                            text: qsTr("Status:")
+            //                            color: Theme.primaryColor
+            //                        }
+            //                        // A standard TextArea for the download status output
+            //                        TextArea {
+            //                            width: parent.width
+            //                            height: 145
+            //                            readOnly: true
 
-//                            text: _manager.statusMessage
+            //                            text: _manager.statusMessage
 
-//                            color: Theme.primaryColor
-//                        }
-//                        Label {
-//                            text: qsTr ("Errors:")
-//                            color: Theme.primaryColor
-//                        }
-//                        // A standard TextArea for displaying error output
-//                        TextArea {
-//                            width: parent.width
-//                            height: 125
-//                            readOnly: true
+            //                            color: Theme.primaryColor
+            //                        }
+            //                        Label {
+            //                            text: qsTr ("Errors:")
+            //                            color: Theme.primaryColor
+            //                        }
+            //                        // A standard TextArea for displaying error output
+            //                        TextArea {
+            //                            width: parent.width
+            //                            height: 125
+            //                            readOnly: true
 
-//                            text: _manager.errorMessage
-//                            color: Theme.primaryColor
-//                        }
-//                    }
-//                }
-//            }
+            //                            text: _manager.errorMessage
+            //                            color: Theme.primaryColor
+            //                        }
+            //                    }
+            //                }
+            //            }
         }
     }
 }

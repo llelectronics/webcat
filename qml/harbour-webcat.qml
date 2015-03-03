@@ -73,6 +73,7 @@ ApplicationWindow
     property int currentTabIndex: 1
     property alias historyModel: historyModel
     property alias bookmarkModel: modelUrls
+    property alias downloadModel: downloadModel
     property bool vPlayerExists
     property bool vPlayerExternal
     property alias infoBanner: infoBanner
@@ -300,6 +301,17 @@ ApplicationWindow
             DB.removeHistory(siteUrl);
         }
 
+    }
+
+    ListModel {
+        id: downloadModel
+
+        // Example data
+        //        ListElement {
+        //            name: "foobar"
+        //            url: "http://download/foo.bar"
+        //            downLocation: "/home/nemo/Downloads/foo.bar"
+        //        }
     }
 
 
