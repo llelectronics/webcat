@@ -112,67 +112,67 @@
     <name>FirstPage</name>
     <message>
         <source>Enter an url</source>
-        <translation type="unfinished">Inserisci un url</translation>
+        <translation>Inserisci un url</translation>
     </message>
     <message>
         <source>Minimize</source>
-        <translation type="unfinished">Minimizza</translation>
+        <translation>Minimizza</translation>
     </message>
     <message>
         <source>New Tab</source>
-        <translation type="unfinished">Nuova scheda</translation>
+        <translation>Nuova scheda</translation>
     </message>
     <message>
         <source>New Window</source>
-        <translation type="unfinished">Nuova finestra</translation>
+        <translation>Nuova finestra</translation>
     </message>
     <message>
         <source>Reload</source>
-        <translation type="unfinished">Ricarica</translation>
+        <translation>Ricarica</translation>
     </message>
     <message>
         <source>Lock Orientation</source>
-        <translation type="unfinished">Blocca orientamento</translation>
+        <translation>Blocca orientamento</translation>
     </message>
     <message>
         <source>Reader Mode</source>
-        <translation type="unfinished">Modalità Reader</translation>
+        <translation>Modalità Reader</translation>
     </message>
     <message>
         <source>Search</source>
-        <translation type="unfinished">Cerca</translation>
+        <translation>Cerca</translation>
     </message>
     <message>
         <source>Close menu</source>
-        <translation type="unfinished">Chiudi menu</translation>
+        <translation>Chiudi menu</translation>
     </message>
     <message>
         <source>Enter searchterm</source>
-        <translation type="unfinished">Inserisci chiave di ricerca</translation>
+        <translation>Inserisci chiave di ricerca</translation>
     </message>
     <message>
         <source>Open in New Window</source>
-        <translation type="unfinished">Apri in una nuova finestra</translation>
+        <translation>Apri in una nuova finestra</translation>
     </message>
     <message>
         <source>Open in New Tab</source>
-        <translation type="unfinished">Apri in una nuova scheda</translation>
+        <translation>Apri in una nuova scheda</translation>
     </message>
     <message>
         <source>Open in Private New Window</source>
-        <translation type="unfinished">Apri in una nuova finestra anonima</translation>
+        <translation>Apri in una nuova finestra anonima</translation>
     </message>
     <message>
         <source>Copy Link</source>
-        <translation type="unfinished">Copia collegamento</translation>
+        <translation>Copia collegamento</translation>
     </message>
     <message>
         <source>Save Image</source>
-        <translation type="unfinished">Salva immagine</translation>
+        <translation>Salva immagine</translation>
     </message>
     <message>
         <source>Save Link</source>
-        <translation type="unfinished">Salva collegamento</translation>
+        <translation>Salva collegamento</translation>
     </message>
     <message>
         <source>Opening...</source>
@@ -206,7 +206,7 @@
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">Cancella</translation>
+        <translation>Cancella</translation>
     </message>
     <message>
         <source>Deleting </source>
@@ -402,7 +402,7 @@
     <name>VideoPlayer</name>
     <message>
         <source>Download</source>
-        <translation type="unfinished">Scarica</translation>
+        <translation>Scarica</translation>
     </message>
 </context>
 <context>

@@ -206,7 +206,7 @@
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">Borrar</translation>
+        <translation>Borrar</translation>
     </message>
     <message>
         <source>Deleting </source>
@@ -402,7 +402,7 @@
     <name>VideoPlayer</name>
     <message>
         <source>Download</source>
-        <translation type="unfinished">Descargar</translation>
+        <translation>Descargar</translation>
     </message>
 </context>
 <context>

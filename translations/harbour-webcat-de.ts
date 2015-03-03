@@ -97,86 +97,86 @@
     </message>
     <message>
         <source>Opening...</source>
-        <translation type="unfinished"></translation>
+        <translation>Öffne...</translation>
     </message>
     <message>
         <source>Show Downloadfolder</source>
-        <translation type="unfinished"></translation>
+        <translation>Downloadverzeichnis anzeigen</translation>
     </message>
     <message>
         <source>Clear Downloads</source>
-        <translation type="unfinished"></translation>
+        <translation>Downloads bereinigen</translation>
     </message>
 </context>
 <context>
     <name>FirstPage</name>
     <message>
         <source>Enter an url</source>
-        <translation type="unfinished">Webadresse eingeben</translation>
+        <translation>Webadresse eingeben</translation>
     </message>
     <message>
         <source>Minimize</source>
-        <translation type="unfinished">Minimieren</translation>
+        <translation>Minimieren</translation>
     </message>
     <message>
         <source>New Tab</source>
-        <translation type="unfinished">Neuer Reiter</translation>
+        <translation>Neuer Reiter</translation>
     </message>
     <message>
         <source>New Window</source>
-        <translation type="unfinished">Neues Fenster</translation>
+        <translation>Neues Fenster</translation>
     </message>
     <message>
         <source>Reload</source>
-        <translation type="unfinished">Neuladen</translation>
+        <translation>Neuladen</translation>
     </message>
     <message>
         <source>Lock Orientation</source>
-        <translation type="unfinished">Ausrichtung sperren</translation>
+        <translation>Ausrichtung sperren</translation>
     </message>
     <message>
         <source>Reader Mode</source>
-        <translation type="unfinished">Lese Modus</translation>
+        <translation>Lese Modus</translation>
     </message>
     <message>
         <source>Search</source>
-        <translation type="unfinished">Suche</translation>
+        <translation>Suche</translation>
     </message>
     <message>
         <source>Close menu</source>
-        <translation type="unfinished">Menü schließen</translation>
+        <translation>Menü schließen</translation>
     </message>
     <message>
         <source>Enter searchterm</source>
-        <translation type="unfinished">Suchbegriff eingeben</translation>
+        <translation>Suchbegriff eingeben</translation>
     </message>
     <message>
         <source>Open in New Window</source>
-        <translation type="unfinished">In neuem Fenster öffnen</translation>
+        <translation>In neuem Fenster öffnen</translation>
     </message>
     <message>
         <source>Open in New Tab</source>
-        <translation type="unfinished">In neuem Reiter öffnen</translation>
+        <translation>In neuem Reiter öffnen</translation>
     </message>
     <message>
         <source>Open in Private New Window</source>
-        <translation type="unfinished">In neuem privaten Fenster öffnen</translation>
+        <translation>In neuem privaten Fenster öffnen</translation>
     </message>
     <message>
         <source>Copy Link</source>
-        <translation type="unfinished">Link kopieren</translation>
+        <translation>Link kopieren</translation>
     </message>
     <message>
         <source>Save Image</source>
-        <translation type="unfinished">Bild speichern</translation>
+        <translation>Bild speichern</translation>
     </message>
     <message>
         <source>Save Link</source>
-        <translation type="unfinished">Link speichern</translation>
+        <translation>Link speichern</translation>
     </message>
     <message>
         <source>Opening...</source>
-        <translation type="unfinished"></translation>
+        <translation>Öffne...</translation>
     </message>
 </context>
 <context>
@@ -202,15 +202,15 @@
     <name>OpenDialog</name>
     <message>
         <source>Opening...</source>
-        <translation type="unfinished"></translation>
+        <translation>Öffne...</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">Löschen</translation>
+        <translation>Löschen</translation>
     </message>
     <message>
         <source>Deleting </source>
-        <translation type="unfinished"></translation>
+        <translation>Lösche </translation>
     </message>
 </context>
 <context>
@@ -391,25 +391,25 @@
     </message>
     <message>
         <source>Clear Bookmarks</source>
-        <translation type="unfinished"></translation>
+        <translation>Bookmarks löschen</translation>
     </message>
     <message>
         <source>Use external video player</source>
-        <translation type="unfinished"></translation>
+        <translation>Externen Video Player verwenden</translation>
     </message>
 </context>
 <context>
     <name>VideoPlayer</name>
     <message>
         <source>Download</source>
-        <translation type="unfinished">Herunterladen</translation>
+        <translation>Herunterladen</translation>
     </message>
 </context>
 <context>
     <name>ytQualityChooser</name>
     <message>
         <source>Opening...</source>
-        <translation type="unfinished"></translation>
+        <translation>Öffne...</translation>
     </message>
 </context>
 </TS>

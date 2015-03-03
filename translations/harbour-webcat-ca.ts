@@ -112,67 +112,67 @@
     <name>FirstPage</name>
     <message>
         <source>Enter an url</source>
-        <translation type="unfinished">URL</translation>
+        <translation>URL</translation>
     </message>
     <message>
         <source>Minimize</source>
-        <translation type="unfinished">Minimitza</translation>
+        <translation>Minimitza</translation>
     </message>
     <message>
         <source>New Tab</source>
-        <translation type="unfinished">Nova pestanya</translation>
+        <translation>Nova pestanya</translation>
     </message>
     <message>
         <source>New Window</source>
-        <translation type="unfinished">Nova finestra</translation>
+        <translation>Nova finestra</translation>
     </message>
     <message>
         <source>Reload</source>
-        <translation type="unfinished">Torna a carregar</translation>
+        <translation>Torna a carregar</translation>
     </message>
     <message>
         <source>Lock Orientation</source>
-        <translation type="unfinished">Fixa l&apos;orientació</translation>
+        <translation>Fixa l&apos;orientació</translation>
     </message>
     <message>
         <source>Reader Mode</source>
-        <translation type="unfinished">Mode de lectura</translation>
+        <translation>Mode de lectura</translation>
     </message>
     <message>
         <source>Search</source>
-        <translation type="unfinished">Cerca</translation>
+        <translation>Cerca</translation>
     </message>
     <message>
         <source>Close menu</source>
-        <translation type="unfinished">Tanca el menú</translation>
+        <translation>Tanca el menú</translation>
     </message>
     <message>
         <source>Enter searchterm</source>
-        <translation type="unfinished">Paràmetre de cerca</translation>
+        <translation>Paràmetre de cerca</translation>
     </message>
     <message>
         <source>Open in New Window</source>
-        <translation type="unfinished">Obre en una finestra nova</translation>
+        <translation>Obre en una finestra nova</translation>
     </message>
     <message>
         <source>Open in New Tab</source>
-        <translation type="unfinished">Obre en una pestanya nova</translation>
+        <translation>Obre en una pestanya nova</translation>
     </message>
     <message>
         <source>Open in Private New Window</source>
-        <translation type="unfinished">Obre en una finestra privada nova</translation>
+        <translation>Obre en una finestra privada nova</translation>
     </message>
     <message>
         <source>Copy Link</source>
-        <translation type="unfinished">Copia l&apos;enllaç</translation>
+        <translation>Copia l&apos;enllaç</translation>
     </message>
     <message>
         <source>Save Image</source>
-        <translation type="unfinished">Desa la imatge</translation>
+        <translation>Desa la imatge</translation>
     </message>
     <message>
         <source>Save Link</source>
-        <translation type="unfinished">Desa l&apos;enllaç</translation>
+        <translation>Desa l&apos;enllaç</translation>
     </message>
     <message>
         <source>Opening...</source>
@@ -206,7 +206,7 @@
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">Elimina</translation>
+        <translation>Elimina</translation>
     </message>
     <message>
         <source>Deleting </source>
@@ -402,7 +402,7 @@
     <name>VideoPlayer</name>
     <message>
         <source>Download</source>
-        <translation type="unfinished">Descarrega</translation>
+        <translation>Descarrega</translation>
     </message>
 </context>
 <context>

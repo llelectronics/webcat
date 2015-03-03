@@ -112,67 +112,67 @@
     <name>FirstPage</name>
     <message>
         <source>Enter an url</source>
-        <translation type="unfinished">Ввести url-адрес</translation>
+        <translation>Ввести url-адрес</translation>
     </message>
     <message>
         <source>Minimize</source>
-        <translation type="unfinished">Уменьшить</translation>
+        <translation>Уменьшить</translation>
     </message>
     <message>
         <source>New Tab</source>
-        <translation type="unfinished">Новая вкладка</translation>
+        <translation>Новая вкладка</translation>
     </message>
     <message>
         <source>New Window</source>
-        <translation type="unfinished">Новое окно</translation>
+        <translation>Новое окно</translation>
     </message>
     <message>
         <source>Reload</source>
-        <translation type="unfinished">Обновить</translation>
+        <translation>Обновить</translation>
     </message>
     <message>
         <source>Lock Orientation</source>
-        <translation type="unfinished">Блокировка поворота экрана</translation>
+        <translation>Блокировка поворота экрана</translation>
     </message>
     <message>
         <source>Reader Mode</source>
-        <translation type="unfinished">Режим чтения</translation>
+        <translation>Режим чтения</translation>
     </message>
     <message>
         <source>Search</source>
-        <translation type="unfinished">Поиск</translation>
+        <translation>Поиск</translation>
     </message>
     <message>
         <source>Close menu</source>
-        <translation type="unfinished">Закрыть меню</translation>
+        <translation>Закрыть меню</translation>
     </message>
     <message>
         <source>Enter searchterm</source>
-        <translation type="unfinished">Ввести текст для поиска</translation>
+        <translation>Ввести текст для поиска</translation>
     </message>
     <message>
         <source>Open in New Window</source>
-        <translation type="unfinished">Открыть новое окно</translation>
+        <translation>Открыть новое окно</translation>
     </message>
     <message>
         <source>Open in New Tab</source>
-        <translation type="unfinished">Открыть новую вкладку</translation>
+        <translation>Открыть новую вкладку</translation>
     </message>
     <message>
         <source>Open in Private New Window</source>
-        <translation type="unfinished">Открыть в новом приватном окне</translation>
+        <translation>Открыть в новом приватном окне</translation>
     </message>
     <message>
         <source>Copy Link</source>
-        <translation type="unfinished">Копировать ссылку</translation>
+        <translation>Копировать ссылку</translation>
     </message>
     <message>
         <source>Save Image</source>
-        <translation type="unfinished">Сохранить изображение</translation>
+        <translation>Сохранить изображение</translation>
     </message>
     <message>
         <source>Save Link</source>
-        <translation type="unfinished">Сохранить ссылку</translation>
+        <translation>Сохранить ссылку</translation>
     </message>
     <message>
         <source>Opening...</source>
@@ -206,7 +206,7 @@
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">Удалить</translation>
+        <translation>Удалить</translation>
     </message>
     <message>
         <source>Deleting </source>
@@ -402,7 +402,7 @@
     <name>VideoPlayer</name>
     <message>
         <source>Download</source>
-        <translation type="unfinished">Загрузить</translation>
+        <translation>Загрузить</translation>
     </message>
 </context>
 <context>
