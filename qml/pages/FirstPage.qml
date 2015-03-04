@@ -192,8 +192,8 @@ Page {
 
         width: page.width
         height: { //page.height - 20 // minimized toolbar size. We don't want to set the toolbar.height here otherwise it would make webview resizing which is painfully slow
-            if (mediaDownloadRec.visible) page.height - 20 - mediaDownloadRec.height
-            else page.height - 20
+            if (mediaDownloadRec.visible) page.height - (toolbarheight / 3) - mediaDownloadRec.height
+            else page.height - (toolbarheight /3)
         }
         // We don't want pageStackNavigation to interfere
         overridePageStackNavigation: true
@@ -534,6 +534,13 @@ Page {
             color: Theme.highlightColor // Otherwise we might end up with white decorator on white background
             width: Theme.paddingSmall // We want to see it properly
             flickable: webview
+        }
+        HorizontalScrollDecorator {  // Yeah necessary for larger images and other large sites or zoomed in sites
+            parent: page
+            color: Theme.highlightColor // Otherwise we might end up with white decorator on white background
+            height: Theme.paddingSmall // We want to see it properly
+            flickable: webview
+            anchors.bottom: toolbar.top
         }
         Keys.onPressed: {
             if (event.key == Qt.Key_T) webview.scrollToTop()
