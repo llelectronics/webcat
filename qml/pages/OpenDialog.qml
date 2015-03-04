@@ -154,8 +154,8 @@ Page {
                     id: fileLabel
                     anchors.left: fileIcon.right
                     anchors.leftMargin: Theme.paddingLarge
-                    anchors.top: fileInfo.visible ? parent.top : undefined
-                    anchors.verticalCenter: !fileInfo.visible ? parent.verticalCenter : undefined
+                    anchors.top: fileInfo.text != "" ? parent.top : undefined
+                    anchors.verticalCenter: fileInfo.text == "" ? parent.verticalCenter : undefined
                     text: fileName + (fileIsDir ? "/" : "")
                     color: delegate.highlighted ? Theme.highlightColor : Theme.primaryColor
                     width: mSelect.visible ? parent.width - (fileIcon.width + Theme.paddingLarge + Theme.paddingSmall + mSelect.width) : parent.width - (fileIcon.width + Theme.paddingLarge + Theme.paddingSmall)
