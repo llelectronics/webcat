@@ -49,7 +49,7 @@ Page {
     property string agent: userAgent
 
     property ListModel bookmarks
-    property ListModel tabModel
+
     property SilicaListView tabListView
     property bool loadHP
     property string pageId
@@ -762,7 +762,7 @@ Page {
             }
 
             Label {
-                text: tabModel.count
+                text: mainWindow.tabModel.count
                 anchors.centerIn: parent
                 font.pixelSize: Theme.fontSizeExtraSmall
                 font.bold: true

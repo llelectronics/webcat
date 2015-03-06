@@ -39,6 +39,12 @@
 #include "videohelper.hpp"
 #include "folderlistmodel/qquickfolderlistmodel.h"
 
+// Compile everything needed for faster startup and less memory usage
+#include <QQuickItem>
+#include <QQuickView>
+#include <QGuiApplication>
+#include <QQmlContext>
+
 int main(int argc, char *argv[])
 {
     // SailfishApp::main() will display "qml/template.qml", if you need more
@@ -92,7 +98,7 @@ int main(int argc, char *argv[])
     }
 
     //app->setOrganizationName("Webcat");
-    app->setApplicationVersion("1.0.2");
+    app->setApplicationVersion("2.0.0");
     QQuickView *view = SailfishApp::createView();
 
     view->setSource(SailfishApp::pathTo("qml/harbour-webcat.qml"));
