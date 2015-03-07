@@ -1452,13 +1452,13 @@ Page {
         width: parent.width - 60
         height: //parent.height / 2
         {
-            var max = parent.height / 2
+            var max = parent.height / 1.25
             if (model == mainWindow.historyModel) {
-                if (80 * mainWindow.historyModel.count <= max) return 80 * mainWindow.historyModel.count
+                if (contentHeight <= max) return contentHeight
                 else return max
             }
             else if (model == mediaList) {
-                if (80 * mediaList.count <= max) return 80 * mediaList.count
+                if (contentHeight <= max) return contentHeight
                 else return max
             }
             else return max
