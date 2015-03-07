@@ -184,7 +184,6 @@ Page {
 //        }
     }
 
-
     SilicaWebView {
         id: webview
         url: siteURL

@@ -25,7 +25,7 @@ public slots:
     // Poor mans approach as the default Cookie and Cache stuff works pretty good // TODO: Need to reconsider this for specific cookie denial/approval
     void privateMode();
 
-    void clearCookies();
+//    void clearCookies();
     void clearCache();
 
     void openNewWindow(const QString &url);

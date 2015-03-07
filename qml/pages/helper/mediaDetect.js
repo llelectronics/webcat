@@ -60,3 +60,15 @@ for (var i=0; i<frames.length; i++) {
     data.isrc = isrc;
     navigator.qt.postMessage(JSON.stringify(data));
 }
+
+// mobilegeeks.de uses this
+var frames = document.documentElement.getElementsByTagName('pagespeed_iframe');
+for (var i=0; i<frames.length; i++) {
+    var isrc = frames[i].getAttribute('src');
+    if (isrc.slice(0, 2) === '//') {
+        isrc = "http:" + isrc
+    }
+    var data = new Object({'type':'iframe'});
+    data.isrc = isrc;
+    navigator.qt.postMessage(JSON.stringify(data));
+}

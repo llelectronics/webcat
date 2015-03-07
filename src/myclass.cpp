@@ -5,10 +5,9 @@
 
 MyClass::MyClass(QQuickView *v)
 {
-    view = new QQuickView();
-    view = v;
-    engine = new QQmlEngine();
-    engine = view->engine();
+//    view = v;
+//    engine = new QQmlEngine();
+//    engine = view->engine();
     h = myHome->homePath();
 
     config_dir = QDir(QStandardPaths::writableLocation(QStandardPaths::ConfigLocation))
@@ -41,22 +40,22 @@ void MyClass::privateMode() {
     proc->startDetached("/usr/bin/harbour-webcat");
 }
 
-void MyClass::clearCookies() {
-    //privateMode();
-    QFile *cookieF = new QFile();
-    //qDebug() << data_dir + "/.QtWebKit/cookies.db";
-    cookieF->setFileName(data_dir + "/.QtWebKit/cookies.db");
-    cookieF->remove();
+//void MyClass::clearCookies() {
+//    //privateMode();
+//    QFile *cookieF = new QFile();
+//    //qDebug() << data_dir + "/.QtWebKit/cookies.db";
+//    cookieF->setFileName(data_dir + "/.QtWebKit/cookies.db");
+//    cookieF->remove();
 
-    // Clear LocalStorage
-    clear(data_dir + "/.QtWebKit/LocalStorage");
+//    // Clear LocalStorage
+//    clear(data_dir + "/.QtWebKit/LocalStorage");
 
-    // Reload webcat
-    QProcess *proc = new QProcess();
-    proc->startDetached("/usr/bin/harbour-webcat");
-    // Efficient way to crash the app which is intended here :P
-    view->close();
-}
+//    // Reload webcat
+//    QProcess *proc = new QProcess();
+//    proc->startDetached("/usr/bin/harbour-webcat");
+//    // Efficient way to crash the app which is intended here :P
+//    view->close();
+//}
 
 void MyClass::clear(QString dir) {
     QDir real_dir(dir);

@@ -56,6 +56,9 @@ int main(int argc, char *argv[])
     //
     // To display the view, call "show()" (will show fullscreen on device).
 
+    // Taken from sailfish-browser
+    setenv("USE_ASYNC", "1", 1);
+
     QGuiApplication *app = SailfishApp::application(argc, argv);
 
     qmlRegisterType<QQuickFolderListModel>("harbour.webcat.FolderListModel", 1, 0, "FolderListModel");
@@ -142,7 +145,7 @@ int main(int argc, char *argv[])
     videoHelper *vHelper = new videoHelper();
     view->engine()->rootContext()->setContextProperty("_videoHelper", vHelper);
 
-    view->show();
+    view->showFullScreen();
 
     return app->exec();
 }

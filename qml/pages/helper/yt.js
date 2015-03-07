@@ -6,7 +6,7 @@ function checkYoutube(url) {
     //if (url.match('/?.*(?:youtu.be\\/|v\\/|u/\\w/|embed\\/|watch\\?.*&?v=)')) {
     // Use more advanced regex to detect youtube video urls
     if (url.match(/https?:\/\/(?:[0-9A-Z-]+\.)?(?:youtu\.be\/|youtube\.com(?:\/embed\/|\/v\/|\/watch\?v=|\/ytscreeningroom\?v=|\/feeds\/api\/videos\/|\/user\S*[^\w\-\s]|\S*[^\w\-\s]))([\w\-]{11})[?=&+%\w-]*/ig) || url.match(/ytapi.com/)) {
-        console.debug("Youtube URL detected");
+        //console.debug("Youtube URL detected");
         return true;
     }
     else {
@@ -16,10 +16,9 @@ function checkYoutube(url) {
 
 function getYtID(url) {
     var youtube_id;
-    if (url.match('embed')) { youtube_id = url.split(/embed\//)[1].split(/[?&\"]/)[0]; }
-    else if (url.match(/ytapi.com/)) { youtube_id = url.split(/vid=/)[1].split(/[?&]/)[0]; }
-    else { youtube_id = url.split(/v\/|v=|youtu\.be\//)[1].split(/[?&]/)[0]; }
-    console.debug("Youtube ID: " + youtube_id);
+    var ytregex = new RegExp("[www|m]+\\.youtube\\.[^/]+.*/watch\\?v\\=([^&]+)");
+    youtube_id = ytregex.exec(url)[1];
+    //console.debug("Youtube ID: " + youtube_id);
     return youtube_id;
 }
 
@@ -56,8 +55,8 @@ function getYoutubeDirectStream(url,firstPage,listId) {
         var vid = getYoutubeVid(url,firstPage,listId);
     }
     catch(e) {
-        console.debug("[yt.js]: " + e)
-        console.debug("Assuming it is probably not a youtube video link")
+        //console.debug("[yt.js]: " + e)
+        //console.debug("Assuming it is probably not a youtube video link")
         firstPage.ytUrlLoading = false
         firstPage.mediaYt = false
         firstPage.mediaLink = false
@@ -69,7 +68,7 @@ function getYoutubeDirectStream(url,firstPage,listId) {
         getYoutubeTitle(url,firstPage,listId)
     }
     catch (e) {
-        console.debug("[yt.js] Youtube Stream Title not found: " + e)
+        //console.debug("[yt.js] Youtube Stream Title not found: " + e)
         return;
     }
 }
@@ -94,7 +93,7 @@ function getYoutubeStream(youtube_id, firstPage, listId) {
                     console.debug("[yt.js]: " + e)
                 }
                 if (paramPair[0] === "url_encoded_fmt_stream_map") {
-                    console.debug("[yt.js] Streams found")
+                    //console.debug("[yt.js] Streams found")
                     streams = decodeURIComponent(paramPair[1]);
                     break;
                 }
@@ -103,7 +102,7 @@ function getYoutubeStream(youtube_id, firstPage, listId) {
 
             if (!streams) {
                 var msg = "YouTube videoInfo parsing: url_encoded_fmt_stream_map not found";
-                console.debug(msg);
+                //console.debug(msg);
                 // Last chance if we don't get the direct video stream url parse the youtube url directly to external player
                 //firstPage.ytUrlLoading = false
                 //firstPage.ytStreamUrl = getYoutubeVid(firstPage.url)
@@ -190,7 +189,7 @@ function getYoutubeStream(youtube_id, firstPage, listId) {
                 }
 
                 if (found) {
-                    console.debug("[yt.js]: Video in format " + resolutionFormat + " found with direct URL: " + url);
+                    //console.debug("[yt.js]: Video in format " + resolutionFormat + " found with direct URL: " + url);
                     firstPage.ytStreamUrl = url
                     firstPage.ytUrlLoading = false
                     firstPage.mediaDownloadRec.visible = true
@@ -198,15 +197,15 @@ function getYoutubeStream(youtube_id, firstPage, listId) {
 
                 } else {
                     var msg = "Couldn't find video either in MP4 720p, FLV 480p, MP4 360p and FLV 240p";
-                    console.debug(msg);
+                    //console.debug(msg);
                     firstPage.ytUrlLoading = false
                     firstPage.mediaYt = false
                     firstPage.mediaDownloadRec.visible = false
                     return;
                 }
             } catch(e) {
-                console.debug("[yt.js]: " + e)
-                console.debug("[yt.js] ytfailCount: " +ytfailCount);
+                //console.debug("[yt.js]: " + e)
+                //console.debug("[yt.js] ytfailCount: " +ytfailCount);
                 ytfailCount++;
                 getYoutubeStream(youtube_id, firstPage,listId);
             }
