@@ -16,8 +16,11 @@ function checkYoutube(url) {
 
 function getYtID(url) {
     var youtube_id;
-    var ytregex = new RegExp("[www|m]+\\.youtube\\.[^/]+.*/watch\\?v\\=([^&]+)");
-    youtube_id = ytregex.exec(url)[1];
+    if (url.match('embed')) { youtube_id = url.split(/embed\//)[1].split(/[?&\"]/)[0]; }
+    else {
+        var ytregex = new RegExp("[www|m]+\\.youtube\\.[^/]+.*/watch\\?v\\=([^&]+)");
+        youtube_id = ytregex.exec(url)[1];
+    }
     //console.debug("Youtube ID: " + youtube_id);
     return youtube_id;
 }
