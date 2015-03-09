@@ -16,11 +16,8 @@ function checkYoutube(url) {
 
 function getYtID(url) {
     var youtube_id;
-    if (url.match('embed')) { youtube_id = url.split(/embed\//)[1].split(/[?&\"]/)[0]; }
-    else {
-        var ytregex = new RegExp("[www|m]+\\.youtube\\.[^/]+.*/watch\\?v\\=([^&]+)");
-        youtube_id = ytregex.exec(url)[1];
-    }
+    var ytregex = new RegExp(/^.*(?:(?:youtu\.be\/|v\/|vi\/|u\/\w\/|embed\/)|(?:(?:watch)?\?v(?:i)?=|\&v(?:i)?=))([^#\&\?]*).*/);
+    youtube_id = ytregex.exec(url)[1];
     //console.debug("Youtube ID: " + youtube_id);
     return youtube_id;
 }
