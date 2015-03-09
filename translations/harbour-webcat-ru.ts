@@ -97,15 +97,15 @@
     </message>
     <message>
         <source>Opening...</source>
-        <translation type="unfinished"></translation>
+        <translation>Открываю...</translation>
     </message>
     <message>
         <source>Show Downloadfolder</source>
-        <translation type="unfinished"></translation>
+        <translation>Показать папку загрузок</translation>
     </message>
     <message>
         <source>Clear Downloads</source>
-        <translation type="unfinished"></translation>
+        <translation>Очистить загрузки</translation>
     </message>
 </context>
 <context>
@@ -147,6 +147,10 @@
         <translation>Закрыть меню</translation>
     </message>
     <message>
+        <source>Opening...</source>
+        <translation>Открываю...</translation>
+    </message>
+    <message>
         <source>Enter searchterm</source>
         <translation>Ввести текст для поиска</translation>
     </message>
@@ -174,10 +178,6 @@
         <source>Save Link</source>
         <translation>Сохранить ссылку</translation>
     </message>
-    <message>
-        <source>Opening...</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>HistoryPage</name>
@@ -202,7 +202,7 @@
     <name>OpenDialog</name>
     <message>
         <source>Opening...</source>
-        <translation type="unfinished"></translation>
+        <translation>Открываю...</translation>
     </message>
     <message>
         <source>Delete</source>
@@ -210,7 +210,7 @@
     </message>
     <message>
         <source>Deleting </source>
-        <translation type="unfinished"></translation>
+        <translation>Удаляю</translation>
     </message>
 </context>
 <context>
@@ -284,10 +284,6 @@
     <message>
         <source>Clear cache</source>
         <translation>Очистить кэш</translation>
-    </message>
-    <message>
-        <source>Clear Cookies and restart</source>
-        <translation type="obsolete">Удалить cookies и перезагрузить</translation>
     </message>
     <message>
         <source>Clear History</source>
@@ -391,25 +387,25 @@
     </message>
     <message>
         <source>Clear Bookmarks</source>
-        <translation type="unfinished"></translation>
+        <translation>Очистить закладки</translation>
     </message>
     <message>
         <source>Use external video player</source>
-        <translation type="unfinished"></translation>
+        <translation>Использовать другой видеоплеер </translation>
     </message>
 </context>
 <context>
     <name>VideoPlayer</name>
     <message>
         <source>Download</source>
-        <translation>Загрузить</translation>
+        <translation>Скачать</translation>
     </message>
 </context>
 <context>
     <name>ytQualityChooser</name>
     <message>
         <source>Opening...</source>
-        <translation type="unfinished"></translation>
+        <translation>Открываю...</translation>
     </message>
 </context>
 </TS>

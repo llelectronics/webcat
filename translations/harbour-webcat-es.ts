@@ -97,15 +97,15 @@
     </message>
     <message>
         <source>Opening...</source>
-        <translation type="unfinished"></translation>
+        <translation>Abriendo...</translation>
     </message>
     <message>
         <source>Show Downloadfolder</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar carpeta de descargas</translation>
     </message>
     <message>
         <source>Clear Downloads</source>
-        <translation type="unfinished"></translation>
+        <translation>Limpiar descargas</translation>
     </message>
 </context>
 <context>
@@ -147,6 +147,10 @@
         <translation>Cerrar menú</translation>
     </message>
     <message>
+        <source>Opening...</source>
+        <translation>Abriendo...</translation>
+    </message>
+    <message>
         <source>Enter searchterm</source>
         <translation>Introducir término de la búsqueda</translation>
     </message>
@@ -174,10 +178,6 @@
         <source>Save Link</source>
         <translation>Guardar enlace</translation>
     </message>
-    <message>
-        <source>Opening...</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>HistoryPage</name>
@@ -202,7 +202,7 @@
     <name>OpenDialog</name>
     <message>
         <source>Opening...</source>
-        <translation type="unfinished"></translation>
+        <translation>Abriendo...</translation>
     </message>
     <message>
         <source>Delete</source>
@@ -210,7 +210,7 @@
     </message>
     <message>
         <source>Deleting </source>
-        <translation type="unfinished"></translation>
+        <translation>Borrando</translation>
     </message>
 </context>
 <context>
@@ -284,10 +284,6 @@
     <message>
         <source>Clear cache</source>
         <translation>Limpiar caché</translation>
-    </message>
-    <message>
-        <source>Clear Cookies and restart</source>
-        <translation type="obsolete">Limpiar cookies y reiniciar</translation>
     </message>
     <message>
         <source>Clear History</source>
@@ -391,11 +387,11 @@
     </message>
     <message>
         <source>Clear Bookmarks</source>
-        <translation type="unfinished"></translation>
+        <translation>Limpiar favoritos</translation>
     </message>
     <message>
         <source>Use external video player</source>
-        <translation type="unfinished"></translation>
+        <translation>Usar reproductor de vídeo externo</translation>
     </message>
 </context>
 <context>
@@ -409,7 +405,7 @@
     <name>ytQualityChooser</name>
     <message>
         <source>Opening...</source>
-        <translation type="unfinished"></translation>
+        <translation>Abriendo...</translation>
     </message>
 </context>
 </TS>

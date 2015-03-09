@@ -97,15 +97,15 @@
     </message>
     <message>
         <source>Opening...</source>
-        <translation type="unfinished"></translation>
+        <translation>Apertura...</translation>
     </message>
     <message>
         <source>Show Downloadfolder</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostra cartella dei download</translation>
     </message>
     <message>
         <source>Clear Downloads</source>
-        <translation type="unfinished"></translation>
+        <translation>Cancella download</translation>
     </message>
 </context>
 <context>
@@ -147,6 +147,10 @@
         <translation>Chiudi menu</translation>
     </message>
     <message>
+        <source>Opening...</source>
+        <translation>Apertura...</translation>
+    </message>
+    <message>
         <source>Enter searchterm</source>
         <translation>Inserisci chiave di ricerca</translation>
     </message>
@@ -174,10 +178,6 @@
         <source>Save Link</source>
         <translation>Salva collegamento</translation>
     </message>
-    <message>
-        <source>Opening...</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>HistoryPage</name>
@@ -202,15 +202,15 @@
     <name>OpenDialog</name>
     <message>
         <source>Opening...</source>
-        <translation type="unfinished"></translation>
+        <translation>Apertura...</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>Cancella</translation>
+        <translation>Elimina</translation>
     </message>
     <message>
         <source>Deleting </source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminazione</translation>
     </message>
 </context>
 <context>
@@ -284,10 +284,6 @@
     <message>
         <source>Clear cache</source>
         <translation>Cancella cache</translation>
-    </message>
-    <message>
-        <source>Clear Cookies and restart</source>
-        <translation type="obsolete">Cancella i cookie e riavvia</translation>
     </message>
     <message>
         <source>Clear History</source>
@@ -391,25 +387,25 @@
     </message>
     <message>
         <source>Clear Bookmarks</source>
-        <translation type="unfinished"></translation>
+        <translation>Cancella segnalibri</translation>
     </message>
     <message>
         <source>Use external video player</source>
-        <translation type="unfinished"></translation>
+        <translation>Usa video player esterno</translation>
     </message>
 </context>
 <context>
     <name>VideoPlayer</name>
     <message>
         <source>Download</source>
-        <translation>Scarica</translation>
+        <translation>Download</translation>
     </message>
 </context>
 <context>
     <name>ytQualityChooser</name>
     <message>
         <source>Opening...</source>
-        <translation type="unfinished"></translation>
+        <translation>Apertura...</translation>
     </message>
 </context>
 </TS>

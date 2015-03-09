@@ -31,7 +31,7 @@
     </message>
     <message>
         <source>Enter your user name</source>
-        <translation>Voer uw gebruikersnaam in</translation>
+        <translation>Voer je gebruikersnaam in</translation>
     </message>
     <message>
         <source>User name</source>
@@ -97,22 +97,22 @@
     </message>
     <message>
         <source>Opening...</source>
-        <translation type="unfinished"></translation>
+        <translation>Bezig met openen...</translation>
     </message>
     <message>
         <source>Show Downloadfolder</source>
-        <translation type="unfinished"></translation>
+        <translation>Downloadmap weergeven</translation>
     </message>
     <message>
         <source>Clear Downloads</source>
-        <translation type="unfinished"></translation>
+        <translation>Downloads wissen</translation>
     </message>
 </context>
 <context>
     <name>FirstPage</name>
     <message>
         <source>Enter an url</source>
-        <translation>Voer een url in</translation>
+        <translation>Voer een URL in</translation>
     </message>
     <message>
         <source>Minimize</source>
@@ -147,6 +147,10 @@
         <translation>Sluit menu</translation>
     </message>
     <message>
+        <source>Opening...</source>
+        <translation>Bezig met openen...</translation>
+    </message>
+    <message>
         <source>Enter searchterm</source>
         <translation>Voer zoekterm in</translation>
     </message>
@@ -174,10 +178,6 @@
         <source>Save Link</source>
         <translation>Link opslaan</translation>
     </message>
-    <message>
-        <source>Opening...</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>HistoryPage</name>
@@ -202,7 +202,7 @@
     <name>OpenDialog</name>
     <message>
         <source>Opening...</source>
-        <translation type="unfinished"></translation>
+        <translation>Bezig met openen...</translation>
     </message>
     <message>
         <source>Delete</source>
@@ -210,7 +210,7 @@
     </message>
     <message>
         <source>Deleting </source>
-        <translation type="unfinished"></translation>
+        <translation>Bezig met verwijderen</translation>
     </message>
 </context>
 <context>
@@ -229,7 +229,7 @@
     </message>
     <message>
         <source>Edit</source>
-        <translation>Bijwerken</translation>
+        <translation>Bewerken</translation>
     </message>
     <message>
         <source>Delete</source>
@@ -284,10 +284,6 @@
     <message>
         <source>Clear cache</source>
         <translation>Cache legen</translation>
-    </message>
-    <message>
-        <source>Clear Cookies and restart</source>
-        <translation type="obsolete">Cookies wissen en herstarten</translation>
     </message>
     <message>
         <source>Clear History</source>
@@ -391,25 +387,25 @@
     </message>
     <message>
         <source>Clear Bookmarks</source>
-        <translation type="unfinished"></translation>
+        <translation>Bladwijzers wissen</translation>
     </message>
     <message>
         <source>Use external video player</source>
-        <translation type="unfinished"></translation>
+        <translation>Externe videospeler gebruiken</translation>
     </message>
 </context>
 <context>
     <name>VideoPlayer</name>
     <message>
         <source>Download</source>
-        <translation>Download</translation>
+        <translation>Downloaden</translation>
     </message>
 </context>
 <context>
     <name>ytQualityChooser</name>
     <message>
         <source>Opening...</source>
-        <translation type="unfinished"></translation>
+        <translation>Bezig met openen...</translation>
     </message>
 </context>
 </TS>

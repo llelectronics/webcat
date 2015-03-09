@@ -12,11 +12,11 @@
     <name>AddBookmark</name>
     <message>
         <source>Edit Bookmark</source>
-        <translation>Editer le marque page</translation>
+        <translation>Editer les favoris</translation>
     </message>
     <message>
         <source>Add Bookmark</source>
-        <translation>Ajouter un marque page</translation>
+        <translation>Ajouter un favori</translation>
     </message>
 </context>
 <context>
@@ -97,15 +97,15 @@
     </message>
     <message>
         <source>Opening...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ouverture ...</translation>
     </message>
     <message>
         <source>Show Downloadfolder</source>
-        <translation type="unfinished"></translation>
+        <translation>Afficher le répertoire de teléchargement</translation>
     </message>
     <message>
         <source>Clear Downloads</source>
-        <translation type="unfinished"></translation>
+        <translation>Effacer les téléchargements</translation>
     </message>
 </context>
 <context>
@@ -147,6 +147,10 @@
         <translation>Fermer le menu</translation>
     </message>
     <message>
+        <source>Opening...</source>
+        <translation>Ouverture ...</translation>
+    </message>
+    <message>
         <source>Enter searchterm</source>
         <translation>Saisir le terme de recherche</translation>
     </message>
@@ -174,10 +178,6 @@
         <source>Save Link</source>
         <translation>Enregistrer le lien</translation>
     </message>
-    <message>
-        <source>Opening...</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>HistoryPage</name>
@@ -202,7 +202,7 @@
     <name>OpenDialog</name>
     <message>
         <source>Opening...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ouverture ...</translation>
     </message>
     <message>
         <source>Delete</source>
@@ -210,14 +210,14 @@
     </message>
     <message>
         <source>Deleting </source>
-        <translation type="unfinished"></translation>
+        <translation>Suppression</translation>
     </message>
 </context>
 <context>
     <name>SelectUrl</name>
     <message>
         <source>Bookmarks</source>
-        <translation>Signets</translation>
+        <translation>Favoris</translation>
     </message>
     <message>
         <source>Open in new Tab</source>
@@ -241,7 +241,7 @@
     </message>
     <message>
         <source>Add Bookmark</source>
-        <translation>Ajouter un signet</translation>
+        <translation>Ajouter un favori</translation>
     </message>
     <message>
         <source>History</source>
@@ -284,10 +284,6 @@
     <message>
         <source>Clear cache</source>
         <translation>Effacer le cache</translation>
-    </message>
-    <message>
-        <source>Clear Cookies and restart</source>
-        <translation type="obsolete">Effacer les cookies et redémarrer </translation>
     </message>
     <message>
         <source>Clear History</source>
@@ -351,7 +347,7 @@
     </message>
     <message>
         <source>Add Default Bookmarks</source>
-        <translation>Ajouter les signets par défaut</translation>
+        <translation>Ajouter les favoris par défaut</translation>
     </message>
     <message>
         <source>User Agent:</source>
@@ -391,11 +387,11 @@
     </message>
     <message>
         <source>Clear Bookmarks</source>
-        <translation type="unfinished"></translation>
+        <translation>Effacer les favoris</translation>
     </message>
     <message>
         <source>Use external video player</source>
-        <translation type="unfinished"></translation>
+        <translation>Utiliser un lecteur vidéo externe</translation>
     </message>
 </context>
 <context>
@@ -409,7 +405,7 @@
     <name>ytQualityChooser</name>
     <message>
         <source>Opening...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ouverture ...</translation>
     </message>
 </context>
 </TS>

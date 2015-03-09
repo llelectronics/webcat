@@ -97,15 +97,15 @@
     </message>
     <message>
         <source>Opening...</source>
-        <translation type="unfinished"></translation>
+        <translation>S&apos;està obrint...</translation>
     </message>
     <message>
         <source>Show Downloadfolder</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostra la carpeta de descàrregues</translation>
     </message>
     <message>
         <source>Clear Downloads</source>
-        <translation type="unfinished"></translation>
+        <translation>Neteja les descàrregues</translation>
     </message>
 </context>
 <context>
@@ -147,6 +147,10 @@
         <translation>Tanca el menú</translation>
     </message>
     <message>
+        <source>Opening...</source>
+        <translation>S&apos;està obrint...</translation>
+    </message>
+    <message>
         <source>Enter searchterm</source>
         <translation>Paràmetre de cerca</translation>
     </message>
@@ -174,10 +178,6 @@
         <source>Save Link</source>
         <translation>Desa l&apos;enllaç</translation>
     </message>
-    <message>
-        <source>Opening...</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>HistoryPage</name>
@@ -202,7 +202,7 @@
     <name>OpenDialog</name>
     <message>
         <source>Opening...</source>
-        <translation type="unfinished"></translation>
+        <translation>S&apos;està obrint...</translation>
     </message>
     <message>
         <source>Delete</source>
@@ -210,7 +210,7 @@
     </message>
     <message>
         <source>Deleting </source>
-        <translation type="unfinished"></translation>
+        <translation>S&apos;està eliminant</translation>
     </message>
 </context>
 <context>
@@ -284,10 +284,6 @@
     <message>
         <source>Clear cache</source>
         <translation>Neteja la memòria cau</translation>
-    </message>
-    <message>
-        <source>Clear Cookies and restart</source>
-        <translation type="obsolete">Neteja les galetes i reinicia</translation>
     </message>
     <message>
         <source>Clear History</source>
@@ -391,11 +387,11 @@
     </message>
     <message>
         <source>Clear Bookmarks</source>
-        <translation type="unfinished"></translation>
+        <translation>Neteja els marcadors</translation>
     </message>
     <message>
         <source>Use external video player</source>
-        <translation type="unfinished"></translation>
+        <translation>Utilitza un reproductor de vídeo extern</translation>
     </message>
 </context>
 <context>
@@ -409,7 +405,7 @@
     <name>ytQualityChooser</name>
     <message>
         <source>Opening...</source>
-        <translation type="unfinished"></translation>
+        <translation>S&apos;està obrint...</translation>
     </message>
 </context>
 </TS>
