@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1">
+<TS version="2.1" language="zh-Hans">
 <context>
     <name>AboutPage</name>
     <message>
@@ -97,15 +97,15 @@
     </message>
     <message>
         <source>Opening...</source>
-        <translation type="unfinished"></translation>
+        <translation>正在打开…</translation>
     </message>
     <message>
         <source>Show Downloadfolder</source>
-        <translation type="unfinished"></translation>
+        <translation>显示下载文件夹</translation>
     </message>
     <message>
         <source>Clear Downloads</source>
-        <translation type="unfinished"></translation>
+        <translation>清除下载</translation>
     </message>
 </context>
 <context>
@@ -147,6 +147,10 @@
         <translation>关闭菜单</translation>
     </message>
     <message>
+        <source>Opening...</source>
+        <translation>正在打开…</translation>
+    </message>
+    <message>
         <source>Enter searchterm</source>
         <translation>输入搜索关键词</translation>
     </message>
@@ -174,10 +178,6 @@
         <source>Save Link</source>
         <translation>保存链接</translation>
     </message>
-    <message>
-        <source>Opening...</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>HistoryPage</name>
@@ -202,7 +202,7 @@
     <name>OpenDialog</name>
     <message>
         <source>Opening...</source>
-        <translation type="unfinished"></translation>
+        <translation>正在打开…</translation>
     </message>
     <message>
         <source>Delete</source>
@@ -210,7 +210,7 @@
     </message>
     <message>
         <source>Deleting </source>
-        <translation type="unfinished"></translation>
+        <translation>正在删除</translation>
     </message>
 </context>
 <context>
@@ -286,10 +286,6 @@
         <translation>清除缓存</translation>
     </message>
     <message>
-        <source>Clear Cookies and restart</source>
-        <translation type="obsolete">清除Cookie并重启程序</translation>
-    </message>
-    <message>
         <source>Clear History</source>
         <translation>清除浏览历史</translation>
     </message>
@@ -331,7 +327,7 @@
     </message>
     <message>
         <source>General</source>
-        <translation>一般设置</translation>
+        <translation>常规设置</translation>
     </message>
     <message>
         <source>Homepage</source>
@@ -391,11 +387,11 @@
     </message>
     <message>
         <source>Clear Bookmarks</source>
-        <translation type="unfinished"></translation>
+        <translation>清除书签</translation>
     </message>
     <message>
         <source>Use external video player</source>
-        <translation type="unfinished"></translation>
+        <translation>使用外部视频播放器</translation>
     </message>
 </context>
 <context>
@@ -409,7 +405,7 @@
     <name>ytQualityChooser</name>
     <message>
         <source>Opening...</source>
-        <translation type="unfinished"></translation>
+        <translation>正在打开…</translation>
     </message>
 </context>
 </TS>
