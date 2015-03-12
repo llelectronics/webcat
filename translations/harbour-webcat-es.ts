@@ -5,7 +5,7 @@
     <name>AboutPage</name>
     <message>
         <source>A simple webbrowser based on webkit.</source>
-        <translation>Un navegador de Internet sencillo basado en webkit</translation>
+        <translation>Un navegador de Internet sencillo basado en webkit.</translation>
     </message>
 </context>
 <context>
