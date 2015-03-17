@@ -121,7 +121,21 @@ Page {
         // PullDownMenu and PushUpMenu must be declared in SilicaFlickable, SilicaListView or SilicaGridView
         PullDownMenu {
             id: pulley
-            opacity: downloadPulleyItem.visible ? 1.0 : 0.0
+//            MenuItem {  // TODO: This is a placeholder for not having an empty pulley
+//                id: backPulleyItem
+//                text: "<--"
+//                visible: true
+//                onClicked: {
+//                    pageStack.pop();
+//                }
+//            }
+            Label {
+                id: placeholder
+                text: "Video Player"
+                color: Theme.secondaryColor
+                anchors.horizontalCenter: parent.horizontalCenter
+            }
+
             MenuItem {
                 id: downloadPulleyItem
                 text: qsTr("Download")

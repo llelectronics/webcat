@@ -13,8 +13,8 @@ Name:       harbour-webcat
 %{!?qtc_make:%define qtc_make make}
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    A simple webbrowser with tab support
-Version:    1.9.9
-Release:    2
+Version:    2.0.0
+Release:    1
 Group:      Qt/Qt
 License:    LICENSE
 URL:        http://example.org/
