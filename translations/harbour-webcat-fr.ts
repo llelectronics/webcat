@@ -97,7 +97,7 @@
     </message>
     <message>
         <source>Opening...</source>
-        <translation type="unfinished">Ouverture ...</translation>
+        <translation>Ouverture ...</translation>
     </message>
     <message>
         <source>Show Downloadfolder</source>

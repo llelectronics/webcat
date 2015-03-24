@@ -310,7 +310,7 @@ ApplicationWindow
         //        ListElement {
         //            name: "foobar"
         //            url: "http://download/foo.bar"
-        //            downLocation: "/home/nemo/Downloads/foo.bar"
+        //            downLocation: "home/nemo/Downloads/foo.bar"
         //        }
     }
 
