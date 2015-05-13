@@ -39,7 +39,7 @@ ApplicationWindow
 {
     id: mainWindow
 
-    allowedOrientations: Orientation.All
+    allowedOrientations: defaultAllowedOrientations
 
     // default settings
     property string siteURL: "about:bookmarks" //"http://talk.maemo.org"

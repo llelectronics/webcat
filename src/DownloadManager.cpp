@@ -122,10 +122,11 @@ QString DownloadManager::saveFileName(const QUrl &url)
 {
     // First extract the path component from the URL ...
     const QString path = url.path();
+    qDebug() << "[DownloadManager.cpp] Downloadpath = " + path;
 
     // ... and then extract the file name if not already set
     if (basename.isEmpty())
-    QString basename = QFileInfo(path).fileName();
+        basename = QFileInfo(path).fileName();
 
     // Replace the file name with 'download' if the URL provides no file name.
     if (basename.isEmpty())
