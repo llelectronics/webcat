@@ -146,6 +146,7 @@ QString DownloadManager::saveFileName(const QUrl &url)
 
         savename += QString::number(i);
     }
+    basename = "";
 
     return savename;
 }
