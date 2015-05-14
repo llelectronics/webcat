@@ -23,7 +23,7 @@ Page {
         _manager.downloadUrl(downloadUrl);
         console.debug("[DownloadManager.qml] downloadName = " + downloadName);
         downloadVisualModel.model.append({"name": downloadName, "url": downloadUrl, "downLocation": downLoc.toString()})
-        downloadList.scrollToBottom();
+        downloadList.forceLayout();
     }
 
     VisualDataModel {
@@ -31,7 +31,7 @@ Page {
         model: mainWindow.downloadModel
         delegate: BackgroundItem {
             width: parent.width
-            contentHeight: dname.height + durl.height + Theme.paddingLarge
+            height: dname.height + durl.height + Theme.paddingLarge
             anchors.margins: Theme.paddingMedium
             Label {
                 id: dname
@@ -176,8 +176,9 @@ Page {
             SilicaListView {
                 id: downloadList
                 width: parent.width
-                height: parent.height / 3
+                height: parent.height / 2.5
                 model: downloadVisualModel
+                clip: true
             }
 
             ProgressBar {
