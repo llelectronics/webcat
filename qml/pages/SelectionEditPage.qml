@@ -9,10 +9,8 @@ Dialog {
     property alias editText: editTxt.text
 
     onAccepted: {
-        Clipboard.text = editTxt.text
-        editTxt.selectAll();
-        editTxt.copy();
-        editTxt.deselect();
+        if(!editTxt.selectedText.length || (!editTxt.selectionStart && (editTxt.selectionEnd == editTxt.text.length)))
+            Clipboard.text = editTxt.text
     }
 
     SilicaFlickable {
@@ -49,7 +47,6 @@ Dialog {
 //                anchors.topMargin: 72
                 background: null
                 height: flickable.height
-                text: editText
             }
         }
     }

@@ -328,7 +328,7 @@ Page {
         }
 
         experimental.onMessageReceived: {
-            console.log('onMessageReceived: ' + message.data );
+            //console.log('onMessageReceived: ' + message.data );
             var data = null
             try {
                 data = JSON.parse(message.data)
@@ -516,7 +516,7 @@ Page {
             }
 
             function copy() {
-                hiddenTxtBox.text = mimedata;
+                hiddenTxtBox.text = mimedata.toString();
                 //console.debug("Marked text: " + mimedata);
                 hiddenTxtBox.selectAll();
                 hiddenTxtBox.copy();
