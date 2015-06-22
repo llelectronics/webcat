@@ -126,10 +126,10 @@ window.document.addEventListener('focus', (function() {
         navigator.qt.postMessage(JSON.stringify(inputContext))
     }
 }), true);
-window.document.addEventListener('blur', (function() {
-    var inputContext = new Object({'type':'input', 'state':'hide'})
-    navigator.qt.postMessage(JSON.stringify(inputContext))
-}), true);
+//window.document.addEventListener('blur', (function() {
+//    var inputContext = new Object({'type':'input', 'state':'hide'})
+//    navigator.qt.postMessage(JSON.stringify(inputContext))
+//}), true);
 
 document.documentElement.addEventListener('click', (function(e) {
     var node = e.target;
@@ -138,6 +138,39 @@ document.documentElement.addEventListener('click', (function(e) {
         node = node.parentNode;
     }
 }), true);
+
+window.onload = function() {
+    var inputs = document.getElementsByTagName('INPUT');
+    var textareas = document.getElementsByTagName('TEXTAREA');
+
+    for(var i = 0; i < inputs.length; i++) {
+        var elem = inputs[i];
+
+        if(elem.type == 'text' || elem.type == 'password') {
+            elem.onfocus = function() {
+                var inputContext = new Object({'type':'input', 'state':'show'})
+                navigator.qt.postMessage(JSON.stringify(inputContext))
+            }
+            elem.onblur = function() {
+                var inputContext = new Object({'type':'input', 'state':'hide'})
+                navigator.qt.postMessage(JSON.stringify(inputContext))
+            }
+        }
+    }
+
+    for(var j = 0; j < textareas.length; j++) {
+        var telem = textareas[j];
+
+        telem.onfocus = function() {
+            var inputContext = new Object({'type':'input', 'state':'show'})
+            navigator.qt.postMessage(JSON.stringify(inputContext))
+        }
+        telem.onblur = function() {
+            var inputContext = new Object({'type':'input', 'state':'hide'})
+            navigator.qt.postMessage(JSON.stringify(inputContext))
+        }
+    }
+}
 
 navigator.qt.onmessage = function(ev) {
     //console.debug("[userscript.js] message received")

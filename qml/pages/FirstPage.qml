@@ -78,6 +78,7 @@ Page {
     property string mediaTitle;
     property int counter;
     property alias mediaList: mediaList
+    property bool inputFocus: false
 
     Component.onCompleted: {
         _ngfEffect = Qt.createQmlObject("import org.nemomobile.ngf 1.0; NonGraphicalFeedback { event: 'pulldown_lock' }",
@@ -242,6 +243,8 @@ Page {
 
             // Add to url history
             DB.addHistory(url.toString());
+
+            inputFocus = false;
         }
 
         // Settings loaded from mainWindow
@@ -375,6 +378,9 @@ Page {
 
             case 'input': {
                 // Seems not to work reliably as only input hide on keyboard hide is received
+                console.debug("[FirstPage.qml] INPUT Box data: " + data.state)
+                if (data.state == "show") inputFocus = true;
+                else inputFocus = false;
                 if (toolbar.state == "expanded" && data.state == "show" && ! urlText.focus == true) toolbar.state = "minimized"
             }
             case 'search': {
@@ -542,18 +548,20 @@ Page {
             anchors.bottom: toolbar.top
         }
         Keys.onPressed: {
-            if (event.key == Qt.Key_T) webview.scrollToTop()
-            else if (event.key == Qt.Key_B) webview.scrollToBottom()
-            else if (event.key == Qt.Key_K) gotoButton.clicked(undefined)
-            else if (event.key == Qt.Key_S) searchModeButton.clicked(undefined)
-            else if (event.key == Qt.Key_R) readerModeButton.clicked(undefined)
-            else if (event.key == Qt.Key_L) webview.reload()
-            else if (event.key == Qt.Key_U) { toolbar.state = "expanded" ; urlText.selectAll(); urlText.forceActiveFocus() }
-            else if (event.key == Qt.Key_W && event.modifiers == Qt.ShiftModifier) newWindowButton.clicked(undefined)
-            else if (event.key == Qt.Key_W) newTabButton.clicked(undefined)
-            else if (event.key == Qt.Key_P) webview.goBack()
-            else if (event.key == Qt.Key_N) webview.goForward()
-            else if (searchBar.visible == true && (event.key == Qt.Key_Enter || event.key == Qt.Key_Return)) searchIcon.clicked(undefined)
+            if (urlText.focus == false && inputFocus == false) {
+                if (event.key == Qt.Key_T) webview.scrollToTop()
+                else if (event.key == Qt.Key_B) webview.scrollToBottom()
+                else if (event.key == Qt.Key_K) gotoButton.clicked(undefined)
+                else if (event.key == Qt.Key_S) searchModeButton.clicked(undefined)
+                else if (event.key == Qt.Key_R) readerModeButton.clicked(undefined)
+                else if (event.key == Qt.Key_L) webview.reload()
+                else if (event.key == Qt.Key_U) { toolbar.state = "expanded" ; urlText.selectAll(); urlText.forceActiveFocus() }
+                else if (event.key == Qt.Key_W && event.modifiers == Qt.ShiftModifier) newWindowButton.clicked(undefined)
+                else if (event.key == Qt.Key_W) newTabButton.clicked(undefined)
+                else if (event.key == Qt.Key_P) webview.goBack()
+                else if (event.key == Qt.Key_N) webview.goForward()
+                else if (searchBar.visible == true && (event.key == Qt.Key_Enter || event.key == Qt.Key_Return)) searchIcon.clicked(undefined)
+            }
         }
 
 
