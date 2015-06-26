@@ -178,6 +178,10 @@
         <source>Opening...</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Share</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>HistoryPage</name>
@@ -395,6 +399,13 @@
     </message>
     <message>
         <source>Use external video player</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ShareContextMenu</name>
+    <message>
+        <source>Share</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

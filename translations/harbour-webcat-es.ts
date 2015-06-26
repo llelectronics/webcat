@@ -178,6 +178,10 @@
         <source>Save Link</source>
         <translation>Guardar enlace</translation>
     </message>
+    <message>
+        <source>Share</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>HistoryPage</name>
@@ -392,6 +396,13 @@
     <message>
         <source>Use external video player</source>
         <translation>Usar reproductor de vídeo externo</translation>
+    </message>
+</context>
+<context>
+    <name>ShareContextMenu</name>
+    <message>
+        <source>Share</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

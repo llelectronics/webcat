@@ -14,7 +14,10 @@ SOURCES += src/harbour-webcat.cpp \
     src/myclass.cpp \
     src/DownloadManager.cpp \
     src/folderlistmodel/qquickfolderlistmodel.cpp \
-    src/folderlistmodel/fileinfothread.cpp
+    src/folderlistmodel/fileinfothread.cpp \
+    src/transferengine/transferengine.cpp \
+    src/transferengine/transfermethodinfo.cpp \
+    src/transferengine/transfermethodmodel.cpp
 
 OTHER_FILES += qml/harbour-webcat.qml \
     qml/cover/CoverPage.qml \
@@ -68,7 +71,15 @@ OTHER_FILES += qml/harbour-webcat.qml \
     qml/pages/OpenDialog.qml \
     qml/pages/VideoPlayer.qml \
     qml/pages/helper/VideoPoster.qml \
-    qml/pages/ScreenBlank.qml
+    qml/pages/ScreenBlank.qml \
+    qml/pages/helper/ContextMenu.qml \
+    qml/pages/helper/browserComponents/ContextMenu.qml \
+    qml/pages/helper/videoPlayerComponents/FastGlow.qml \
+    qml/pages/helper/videoPlayerComponents/GaussianDirectionalBlur.qml \
+    qml/pages/helper/videoPlayerComponents/GaussianGlow.qml \
+    qml/pages/helper/videoPlayerComponents/SourceProxy.qml \
+    qml/pages/helper/videoPlayerComponents/VideoPoster.qml \
+    qml/pages/helper/browserComponents/ShareContextMenu.qml
 
 RESOURCES += \
     qrc.qrc
@@ -80,7 +91,10 @@ HEADERS += \
     src/folderlistmodel/fileproperty_p.h \
     src/folderlistmodel/fileinfothread_p.h \
     src/fmhelper.hpp \
-    src/videohelper.hpp
+    src/videohelper.hpp \
+    src/transferengine/transferengine.h \
+    src/transferengine/transfermethodinfo.h \
+    src/transferengine/transfermethodmodel.h
 
 QT += network
 

@@ -38,6 +38,8 @@
 #include "fmhelper.hpp"
 #include "videohelper.hpp"
 #include "folderlistmodel/qquickfolderlistmodel.h"
+#include "transferengine/transferengine.h"
+#include "transferengine/transfermethodmodel.h"
 
 // Compile everything needed for faster startup and less memory usage
 #include <QQuickItem>
@@ -62,6 +64,8 @@ int main(int argc, char *argv[])
     QGuiApplication *app = SailfishApp::application(argc, argv);
 
     qmlRegisterType<QQuickFolderListModel>("harbour.webcat.FolderListModel", 1, 0, "FolderListModel");
+    qmlRegisterType<TransferEngine>("harbour.webcat.DBus.TransferEngine", 1, 0, "TransferEngine");
+    qmlRegisterType<TransferMethodModel>("harbour.webcat.DBus.TransferEngine", 1, 0, "TransferMethodModel");
 
     QString file;
 

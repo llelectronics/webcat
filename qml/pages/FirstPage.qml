@@ -1,6 +1,6 @@
 /*
-  Copyright (C) 2013 Jolla Ltd.
-  Contact: Thomas Perl <thomas.perl@jollamobile.com>
+  Copyright (C) 2015 Leszek Lesner
+  Contact: Leszek Lesner <leszek.lesner@web.de>
   All rights reserved.
 
   You may use this file under the terms of BSD license as follows:
@@ -33,6 +33,7 @@ import Sailfish.Silica 1.0
 import QtWebKit 3.0
 import "helper/db.js" as DB
 import "helper/yt.js" as YT
+import "helper/browserComponents"
 
 Page {
     id: page
@@ -116,7 +117,8 @@ Page {
 
     function showContextMenu(hrefUrl) {
         contextMenu.visible = true;
-        contextUrl.text = hrefUrl;
+        contextMenu.contextLbl.text = hrefUrl;
+        contextMenu.height = contextMenu.contextLbl.height + contextMenu.contextButtons.height + Theme.paddingMedium
     }
 
     function toggleReaderMode() {
@@ -192,8 +194,8 @@ Page {
 
         width: page.width
         height: { //page.height - 20 // minimized toolbar size. We don't want to set the toolbar.height here otherwise it would make webview resizing which is painfully slow
-            if (mediaDownloadRec.visible) page.height - (toolbarheight / 3) - mediaDownloadRec.height
-            else page.height - (toolbarheight /3)
+            if (mediaDownloadRec.visible) mainWindow.height - (toolbarheight / 3) - mediaDownloadRec.height
+            else mainWindow.height - (toolbarheight /3)
         }
         // We don't want pageStackNavigation to interfere
         overridePageStackNavigation: true
@@ -532,8 +534,8 @@ Page {
         MouseArea {
             id: contextOverlay;
             anchors.fill: parent;
-            enabled: contextMenu.visible
-            onClicked: contextMenu.visible = false
+            enabled: contextMenu.visible || shareContextMenu.visible || contextMenu.height != 0 || shareContextMenu.height != 0
+            onClicked: { contextMenu.height = 0; shareContextMenu.height = 0 }
         }
         VerticalScrollDecorator {
             color: Theme.highlightColor // Otherwise we might end up with white decorator on white background
@@ -744,14 +746,15 @@ Page {
             onPositionChanged: {
                 if (extraToolbar.opacity == 1) {
                     //console.debug("X Position: " + mouse.x)
-                    if (mouse.x > newTabButton.x && mouse.x < newWindowButton.x) { minimizeButton.highlighted = false; newTabButton.highlighted = true; newWindowButton.highlighted = false; reloadThisButton.highlighted = false; orientationLockButton.highlighted = false; readerModeButton.highlighted = false; searchModeButton.highlighted = false; }
-                    else if (mouse.x < newTabButton.x) {minimizeButton.highlighted = true; newTabButton.highlighted = false; newWindowButton.highlighted = false; reloadThisButton.highlighted = false; orientationLockButton.highlighted = false; readerModeButton.highlighted = false; searchModeButton.highlighted = false; }
-                    else if (mouse.x > newWindowButton.x && mouse.x < reloadThisButton.x) { minimizeButton.highlighted = false; newTabButton.highlighted = false; newWindowButton.highlighted = true; reloadThisButton.highlighted = false; orientationLockButton.highlighted = false; readerModeButton.highlighted = false; searchModeButton.highlighted = false; }
-                    else if (mouse.x > reloadThisButton.x && mouse.x < orientationLockButton.x) { minimizeButton.highlighted = false; newTabButton.highlighted = false; newWindowButton.highlighted = false; reloadThisButton.highlighted = true; orientationLockButton.highlighted = false; readerModeButton.highlighted = false; searchModeButton.highlighted = false; }
-                    else if (mouse.x > orientationLockButton.x && mouse.x < orientationLockButton.x + orientationLockButton.width + Theme.paddingMedium) { minimizeButton.highlighted = false; newTabButton.highlighted = false; newWindowButton.highlighted = false; reloadThisButton.highlighted = false; orientationLockButton.highlighted = true; readerModeButton.highlighted = false; searchModeButton.highlighted = false; }
-                    else if (mouse.x > readerModeButton.x && mouse.x < readerModeButton.x + readerModeButton.width + Theme.paddingMedium) { minimizeButton.highlighted = false; newTabButton.highlighted = false; newWindowButton.highlighted = false; reloadThisButton.highlighted = false; orientationLockButton.highlighted = false; readerModeButton.highlighted = true; searchModeButton.highlighted = false; }
-                    else if (mouse.x > searchModeButton.x && mouse.x < searchModeButton.x + searchModeButton.width + Theme.paddingMedium) { minimizeButton.highlighted = false; newTabButton.highlighted = false; newWindowButton.highlighted = false; reloadThisButton.highlighted = false; orientationLockButton.highlighted = false; readerModeButton.highlighted = false; searchModeButton.highlighted = true; }
-                    else if (mouse.x > searchModeButton.x + searchModeButton.width + Theme.paddingMedium) { minimizeButton.highlighted = false; newTabButton.highlighted = false; newWindowButton.highlighted = false; reloadThisButton.highlighted = false; orientationLockButton.highlighted = false; readerModeButton.highlighted = false; searchModeButton.highlighted = false; }
+                    if (mouse.x > newTabButton.x && mouse.x < newWindowButton.x) { minimizeButton.highlighted = false; newTabButton.highlighted = true; newWindowButton.highlighted = false; reloadThisButton.highlighted = false; orientationLockButton.highlighted = false; readerModeButton.highlighted = false; searchModeButton.highlighted = false; shareButton.highlighted = false; }
+                    else if (mouse.x < newTabButton.x) {minimizeButton.highlighted = true; newTabButton.highlighted = false; newWindowButton.highlighted = false; reloadThisButton.highlighted = false; orientationLockButton.highlighted = false; readerModeButton.highlighted = false; searchModeButton.highlighted = false; shareButton.highlighted = false; }
+                    else if (mouse.x > newWindowButton.x && mouse.x < reloadThisButton.x) { minimizeButton.highlighted = false; newTabButton.highlighted = false; newWindowButton.highlighted = true; reloadThisButton.highlighted = false; orientationLockButton.highlighted = false; readerModeButton.highlighted = false; searchModeButton.highlighted = false; shareButton.highlighted = false; }
+                    else if (mouse.x > reloadThisButton.x && mouse.x < orientationLockButton.x) { minimizeButton.highlighted = false; newTabButton.highlighted = false; newWindowButton.highlighted = false; reloadThisButton.highlighted = true; orientationLockButton.highlighted = false; readerModeButton.highlighted = false; searchModeButton.highlighted = false; shareButton.highlighted = false; }
+                    else if (mouse.x > orientationLockButton.x && mouse.x < orientationLockButton.x + orientationLockButton.width + Theme.paddingMedium) { minimizeButton.highlighted = false; newTabButton.highlighted = false; newWindowButton.highlighted = false; reloadThisButton.highlighted = false; orientationLockButton.highlighted = true; readerModeButton.highlighted = false; searchModeButton.highlighted = false; shareButton.highlighted = false; }
+                    else if (mouse.x > readerModeButton.x && mouse.x < readerModeButton.x + readerModeButton.width + Theme.paddingMedium) { minimizeButton.highlighted = false; newTabButton.highlighted = false; newWindowButton.highlighted = false; reloadThisButton.highlighted = false; orientationLockButton.highlighted = false; readerModeButton.highlighted = true; searchModeButton.highlighted = false; shareButton.highlighted = false; }
+                    else if (mouse.x > searchModeButton.x && mouse.x < searchModeButton.x + searchModeButton.width + Theme.paddingMedium) { minimizeButton.highlighted = false; newTabButton.highlighted = false; newWindowButton.highlighted = false; reloadThisButton.highlighted = false; orientationLockButton.highlighted = false; readerModeButton.highlighted = false; searchModeButton.highlighted = true; shareButton.highlighted = false;}
+                    else if (mouse.x > shareButton.x && mouse.x < shareButton.x + shareButton.width + Theme.paddingMedium) { minimizeButton.highlighted = false; newTabButton.highlighted = false; newWindowButton.highlighted = false; reloadThisButton.highlighted = false; orientationLockButton.highlighted = false; readerModeButton.highlighted = false; searchModeButton.highlighted = false; shareButton.highlighted = true; }
+                    else if (mouse.x > shareButton.x + shareButton.width + Theme.paddingMedium) { minimizeButton.highlighted = false; newTabButton.highlighted = false; newWindowButton.highlighted = false; reloadThisButton.highlighted = false; orientationLockButton.highlighted = false; readerModeButton.highlighted = false; searchModeButton.highlighted = false; shareButton.highlighted = false; }
                 }
             }
 
@@ -763,6 +766,7 @@ Page {
                 else if (extraToolbar.opacity == 1 && orientationLockButton.highlighted == true) { orientationLockButton.clicked(undefined); }
                 else if (extraToolbar.opacity == 1 && readerModeButton.highlighted == true) { readerModeButton.clicked(undefined); }
                 else if (extraToolbar.opacity == 1 && searchModeButton.highlighted == true) { searchModeButton.clicked(undefined); }
+                else if (extraToolbar.opacity == 1 && shareButton.highlighted == true) { shareButton.clicked(undefined); }
                 else if (extraToolbar.opacity == 1) extraToolbar.opacity = 0; extraToolbar.visible = false;
                 extraToolbar.opacity = 0;
                 extraToolbar.visible = false;
@@ -975,6 +979,13 @@ Page {
         visible: value == 100 ? false : true
     }
 
+    ShareContextMenu {
+        id: shareContextMenu
+        anchors.bottom: toolbar.top
+        anchors.bottomMargin: -toolbarSep.height
+        width: parent.width;
+    }
+
     // Extra Toolbar
     Rectangle {
         id: extraToolbar
@@ -1017,6 +1028,7 @@ Page {
                 else if (orientationLockButton.highlighted) { _ngfEffect.play(); return qsTr("Lock Orientation") }
                 else if (readerModeButton.highlighted) { _ngfEffect.play(); return qsTr("Reader Mode") }
                 else if (searchModeButton.highlighted) { _ngfEffect.play(); return qsTr("Search") }
+                else if (shareButton.highlighted) { _ngfEffect.play(); return qsTr("Share") }
                 else if (extraToolbar.opacity == 1) { _ngfEffect.play(); return qsTr("Close menu") }
                 else return "Extra Toolbar"
             }
@@ -1138,6 +1150,25 @@ Page {
                 searchMode = !searchMode
                 searchModeButton.highlighted = false
                 searchText.forceActiveFocus();
+            }
+        }
+
+        IconButton {
+            id: shareButton
+            icon.source: "image://theme/icon-m-share"
+            anchors.left: searchModeButton.right
+            anchors.leftMargin: Theme.paddingMedium
+            anchors.bottom: parent.bottom
+            anchors.bottomMargin: actionLbl.height / 2
+            icon.height: extraToolbar.height - (extraToolbar.height / 3)
+            icon.width: icon.height
+            height: toolbarheight / 1.5
+            width: height
+            visible: mainWindow.transferEngine.count > 0
+            onClicked: {
+                // Open Share Context Menu
+                console.debug("Open Share context menu here")
+                shareContextMenu.share(webview.title, webview.url);
             }
         }
 
@@ -1370,33 +1401,14 @@ Page {
     }
 
     // Long press contextmenu for link
-    Rectangle {
+    ContextMenu {
         id: contextMenu
         visible: false
         anchors.bottom: toolbar.top
         anchors.bottomMargin: -toolbarSep.height
         width: parent.width;
-        height: {
-            if (visible == true) return contextUrl.height + contextButtons.height + Theme.paddingMedium
-            else return 0
-        }
-        Behavior on height {
-            NumberAnimation { target: contextMenu; property: "height"; duration: 350; easing.type: Easing.InOutQuad }
-        }
-        gradient: Gradient {
-            GradientStop { position: 0.0; color: "#262626" }
-            GradientStop { position: 0.85; color: "#1F1F1F"}
-        }
-        opacity: 0.98
-        TextField {
-            id: contextUrl
-            color: "white"
-            readOnly: true
-            anchors {
-                top: parent.top; left: parent.left; right: parent.right;
-                margins: 20; topMargin: 10
-            }
-        }
+
+        property alias contextButtons: contextButtons
 
         Column {
             id: contextButtons
@@ -1408,38 +1420,38 @@ Page {
             //            Button {
             //                text: "Open"
             //                width: widestBtn.width
-            //                onClicked: { webview.url = fixUrl(contextUrl.text); contextMenu.visible = false }
+            //                onClicked: { webview.url = fixUrl(contextLbl.text); contextMenu.visible = false }
             //            }
             Button {
                 width: widestBtn.width
                 text: qsTr("Open in New Window")
-                onClicked: { mainWindow.openNewWindow(fixUrl(contextUrl.text)); contextMenu.visible = false }
+                onClicked: { mainWindow.openNewWindow(fixUrl(contextLbl.text)); contextMenu.visible = false }
             }
             Button {
                 text: qsTr("Open in New Tab")
                 width: widestBtn.width
-                onClicked: { mainWindow.openNewTab("page"+salt(), fixUrl(contextUrl.text), true); contextMenu.visible = false;}
+                onClicked: { mainWindow.openNewTab("page"+salt(), fixUrl(contextLbl.text), true); contextMenu.visible = false;}
             }
             Button {
                 id: widestBtn
                 text: qsTr("Open in Private New Window")
-                onClicked: { mainWindow.openPrivateNewWindow(fixUrl(contextUrl.text)); contextMenu.visible = false }
+                onClicked: { mainWindow.openPrivateNewWindow(fixUrl(contextLbl.text)); contextMenu.visible = false }
             }
             Button {
                 text: qsTr("Copy Link")
                 width: widestBtn.width
-                onClicked: { contextUrl.selectAll(); contextUrl.copy(); contextMenu.visible = false }
+                onClicked: { contextLbl.selectAll(); contextLbl.copy(); contextMenu.visible = false }
             }
             Button {
                 text: qsTr("Save Image")
                 width: widestBtn.width
                 visible: imageLongPressAvailability
-                onClicked: { pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": contextUrl.text, "dataContainer": webview}); contextMenu.visible = false }
+                onClicked: { pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": contextLbl.text, "dataContainer": webview}); contextMenu.visible = false }
             }
             Button {
                 text: qsTr("Save Link")
                 width: widestBtn.width
-                onClicked: { pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": fixUrl(contextUrl.text), "dataContainer": webview}); contextMenu.visible = false }
+                onClicked: { pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": fixUrl(contextLbl.text), "dataContainer": webview}); contextMenu.visible = false }
             }
         }
     }

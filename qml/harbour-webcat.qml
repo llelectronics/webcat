@@ -34,6 +34,7 @@ import QtQuick.Window 2.1
 import "pages"
 import "pages/helper/db.js" as DB
 import "pages/helper/tabhelper.js" as Tab
+import harbour.webcat.DBus.TransferEngine 1.0
 
 ApplicationWindow
 {
@@ -79,6 +80,7 @@ ApplicationWindow
     property alias infoBanner: infoBanner
 
     property QtObject firstPage
+    property TransferEngine transferEngine: TransferEngine { }
 
     //signal clearCookies()
     signal clearCache()

@@ -178,6 +178,10 @@
         <source>Opening...</source>
         <translation>Öffne...</translation>
     </message>
+    <message>
+        <source>Share</source>
+        <translation>Teilen</translation>
+    </message>
 </context>
 <context>
     <name>HistoryPage</name>
@@ -396,6 +400,13 @@
     <message>
         <source>Use external video player</source>
         <translation>Externen Video Player verwenden</translation>
+    </message>
+</context>
+<context>
+    <name>ShareContextMenu</name>
+    <message>
+        <source>Share</source>
+        <translation>Teile</translation>
     </message>
 </context>
 <context>
