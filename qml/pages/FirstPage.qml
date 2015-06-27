@@ -1425,33 +1425,33 @@ Page {
             Button {
                 width: widestBtn.width
                 text: qsTr("Open in New Window")
-                onClicked: { mainWindow.openNewWindow(fixUrl(contextLbl.text)); contextMenu.visible = false }
+                onClicked: { mainWindow.openNewWindow(fixUrl(contextMenu.contextLbl.text)); contextMenu.visible = false }
             }
             Button {
                 text: qsTr("Open in New Tab")
                 width: widestBtn.width
-                onClicked: { mainWindow.openNewTab("page"+salt(), fixUrl(contextLbl.text), true); contextMenu.visible = false;}
+                onClicked: { mainWindow.openNewTab("page"+salt(), fixUrl(contextMenu.contextLbl.text), true); contextMenu.visible = false;}
             }
             Button {
                 id: widestBtn
                 text: qsTr("Open in Private New Window")
-                onClicked: { mainWindow.openPrivateNewWindow(fixUrl(contextLbl.text)); contextMenu.visible = false }
+                onClicked: { mainWindow.openPrivateNewWindow(fixUrl(contextMenu.contextLbl.text)); contextMenu.visible = false }
             }
             Button {
                 text: qsTr("Copy Link")
                 width: widestBtn.width
-                onClicked: { contextLbl.selectAll(); contextLbl.copy(); contextMenu.visible = false }
+                onClicked: { contextLbl.selectAll(); contextMenu.contextLbl.copy(); contextMenu.visible = false }
             }
             Button {
                 text: qsTr("Save Image")
                 width: widestBtn.width
                 visible: imageLongPressAvailability
-                onClicked: { pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": contextLbl.text, "dataContainer": webview}); contextMenu.visible = false }
+                onClicked: { pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": contextMenu.contextLbl.text, "dataContainer": webview}); contextMenu.visible = false }
             }
             Button {
                 text: qsTr("Save Link")
                 width: widestBtn.width
-                onClicked: { pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": fixUrl(contextLbl.text), "dataContainer": webview}); contextMenu.visible = false }
+                onClicked: { pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": fixUrl(contextMenu.contextLbl.text), "dataContainer": webview}); contextMenu.visible = false }
             }
         }
     }
