@@ -39,7 +39,7 @@
 ****************************************************************************/
 
 import QtQuick 2.0
-import "helper"
+import "helper/videoPlayerComponents"
 
 /*!
     \qmltype DropShadow
