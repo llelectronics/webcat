@@ -1440,7 +1440,7 @@ Page {
             Button {
                 text: qsTr("Copy Link")
                 width: widestBtn.width
-                onClicked: { contextLbl.selectAll(); contextMenu.contextLbl.copy(); contextMenu.visible = false }
+                onClicked: { contextMenu.contextLbl.selectAll(); contextMenu.contextLbl.copy(); contextMenu.visible = false }
             }
             Button {
                 text: qsTr("Save Image")
