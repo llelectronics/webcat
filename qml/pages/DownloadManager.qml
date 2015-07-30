@@ -121,6 +121,7 @@ Page {
                 id: manualDownload
                 Page {
 
+                    allowedOrientations: mainWindow.orient
                     Column {
                         width: parent.width
                         spacing: 15
