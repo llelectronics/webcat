@@ -115,13 +115,15 @@ window.open = function (url, windowName, windowFeatures) {
 
 // virtual keyboard hook
 window.document.addEventListener('click', (function(e) {
-    if (e.srcElement.tagName === ('INPUT'||'TEXTAREA')) {
+    if (e.srcElement.tagName === ('INPUT'||'TEXTAREA'||'FORM')) {
         var inputContext = new Object({'type':'input', 'state':'show'})
         navigator.qt.postMessage(JSON.stringify(inputContext))
     }
 }), true);
 window.document.addEventListener('focus', (function(e) {
-    if (e.srcElement.tagName === ('INPUT'||'TEXTAREA')) {
+    if (e.srcElement.tagName === ('INPUT'||'TEXTAREA'||'FORM') ||
+            document.activeElement && document.activeElement.tagName.toLowerCase() == 'input' &&
+            document.activeElement.type == 'text' || document.activeElement.tagName.toLowerCase() == 'textarea') {
         var inputContext = new Object({'type':'input', 'state':'show'})
         navigator.qt.postMessage(JSON.stringify(inputContext))
     }

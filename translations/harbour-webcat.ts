@@ -111,6 +111,10 @@
 <context>
     <name>FirstPage</name>
     <message>
+        <source>Opening...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Enter an url</source>
         <translation type="unfinished"></translation>
     </message>
@@ -143,11 +147,11 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Close menu</source>
+        <source>Share</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Opening...</source>
+        <source>Close menu</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -176,10 +180,6 @@
     </message>
     <message>
         <source>Save Link</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Share</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
