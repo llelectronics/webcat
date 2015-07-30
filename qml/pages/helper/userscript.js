@@ -120,7 +120,7 @@ window.document.addEventListener('click', (function(e) {
         navigator.qt.postMessage(JSON.stringify(inputContext))
     }
 }), true);
-window.document.addEventListener('focus', (function() {
+window.document.addEventListener('focus', (function(e) {
     if (e.srcElement.tagName === ('INPUT'||'TEXTAREA')) {
         var inputContext = new Object({'type':'input', 'state':'show'})
         navigator.qt.postMessage(JSON.stringify(inputContext))
