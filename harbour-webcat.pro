@@ -79,7 +79,8 @@ OTHER_FILES += qml/harbour-webcat.qml \
     qml/pages/helper/videoPlayerComponents/GaussianGlow.qml \
     qml/pages/helper/videoPlayerComponents/SourceProxy.qml \
     qml/pages/helper/videoPlayerComponents/VideoPoster.qml \
-    qml/pages/helper/browserComponents/ShareContextMenu.qml
+    qml/pages/helper/browserComponents/ShareContextMenu.qml \
+    qml/pages/helper/browserComponents/TabList.qml
 
 RESOURCES += \
     qrc.qrc

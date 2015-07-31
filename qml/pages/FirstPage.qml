@@ -342,7 +342,8 @@ Page {
                 return;
             }
             // Call downloadmanager here with the url
-            pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": downloadItem.url, "dataContainer": webview});
+
+            pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": downloadItem.url, "dataContainer": webview, "downloadName": downloadItem.suggestedFilename});
         }
 
         experimental.onMessageReceived: {
@@ -749,7 +750,7 @@ Page {
             property int mx
             property bool searchButton: false
             onPressAndHold: {
-                if (extraToolbar.opacity == 0) {
+                if (extraToolbar.opacity == 0 || extraToolbar.visible == false) {
                     extraToolbar.visible = true
                     extraToolbar.opacity = 1
                     minimizeButton.highlighted = true
@@ -757,7 +758,7 @@ Page {
                 }
             }
             onPositionChanged: {
-                if (extraToolbar.opacity == 1) {
+                if (extraToolbar.opacity == 1 && mouse.y > ((extratoolbarheight + toolbarheight) * -1)) {
                     //console.debug("X Position: " + mouse.x)
                     if (mouse.x > newTabButton.x && mouse.x < newWindowButton.x) { minimizeButton.highlighted = false; newTabButton.highlighted = true; newWindowButton.highlighted = false; reloadThisButton.highlighted = false; orientationLockButton.highlighted = false; readerModeButton.highlighted = false; searchModeButton.highlighted = false; shareButton.highlighted = false; }
                     else if (mouse.x < newTabButton.x) {minimizeButton.highlighted = true; newTabButton.highlighted = false; newWindowButton.highlighted = false; reloadThisButton.highlighted = false; orientationLockButton.highlighted = false; readerModeButton.highlighted = false; searchModeButton.highlighted = false; shareButton.highlighted = false; }
@@ -769,20 +770,21 @@ Page {
                     else if (mouse.x > shareButton.x && mouse.x < shareButton.x + shareButton.width + Theme.paddingMedium) { minimizeButton.highlighted = false; newTabButton.highlighted = false; newWindowButton.highlighted = false; reloadThisButton.highlighted = false; orientationLockButton.highlighted = false; readerModeButton.highlighted = false; searchModeButton.highlighted = false; shareButton.highlighted = true; }
                     else if (mouse.x > shareButton.x + shareButton.width + Theme.paddingMedium) { minimizeButton.highlighted = false; newTabButton.highlighted = false; newWindowButton.highlighted = false; reloadThisButton.highlighted = false; orientationLockButton.highlighted = false; readerModeButton.highlighted = false; searchModeButton.highlighted = false; shareButton.highlighted = false; }
                 }
+                if (mouse.y < ((extratoolbarheight + toolbarheight) * -1)) { minimizeButton.highlighted = false; newTabButton.highlighted = false; newWindowButton.highlighted = false; reloadThisButton.highlighted = false; orientationLockButton.highlighted = false; readerModeButton.highlighted = false; searchModeButton.highlighted = false; shareButton.highlighted = false; }
             }
 
             onReleased: {
-                if (extraToolbar.opacity == 1 && minimizeButton.highlighted == true) { minimizeButton.clicked(undefined);}
-                else if (extraToolbar.opacity == 1 && newTabButton.highlighted == true) { newTabButton.clicked(undefined); }
-                else if (extraToolbar.opacity == 1 && newWindowButton.highlighted == true) { newWindowButton.clicked(undefined);}
-                else if (extraToolbar.opacity == 1 && reloadThisButton.highlighted == true) { reloadThisButton.clicked(undefined);}
-                else if (extraToolbar.opacity == 1 && orientationLockButton.highlighted == true) { orientationLockButton.clicked(undefined); }
-                else if (extraToolbar.opacity == 1 && readerModeButton.highlighted == true) { readerModeButton.clicked(undefined); }
-                else if (extraToolbar.opacity == 1 && searchModeButton.highlighted == true) { searchModeButton.clicked(undefined); }
-                else if (extraToolbar.opacity == 1 && shareButton.highlighted == true) { shareButton.clicked(undefined); }
-                else if (extraToolbar.opacity == 1) extraToolbar.opacity = 0; extraToolbar.visible = false;
-                extraToolbar.opacity = 0;
-                extraToolbar.visible = false;
+                if (extraToolbar.opacity == 1 && minimizeButton.highlighted == true) { minimizeButton.clicked(undefined);extraToolbar.opacity = 0; extraToolbar.visible = false;}
+                else if (extraToolbar.opacity == 1 && newTabButton.highlighted == true) { newTabButton.clicked(undefined);extraToolbar.opacity = 0; extraToolbar.visible = false; }
+                else if (extraToolbar.opacity == 1 && newWindowButton.highlighted == true) { newWindowButton.clicked(undefined);extraToolbar.opacity = 0; extraToolbar.visible = false;}
+                else if (extraToolbar.opacity == 1 && reloadThisButton.highlighted == true) { reloadThisButton.clicked(undefined);extraToolbar.opacity = 0; extraToolbar.visible = false;}
+                else if (extraToolbar.opacity == 1 && orientationLockButton.highlighted == true) { orientationLockButton.clicked(undefined); extraToolbar.opacity = 0; extraToolbar.visible = false;}
+                else if (extraToolbar.opacity == 1 && readerModeButton.highlighted == true) { readerModeButton.clicked(undefined);extraToolbar.opacity = 0; extraToolbar.visible = false; }
+                else if (extraToolbar.opacity == 1 && searchModeButton.highlighted == true) { searchModeButton.clicked(undefined);extraToolbar.opacity = 0; extraToolbar.visible = false; }
+                else if (extraToolbar.opacity == 1 && shareButton.highlighted == true) { shareButton.clicked(undefined);extraToolbar.opacity = 0; extraToolbar.visible = false; }
+                else if (extraToolbar.opacity == 1 && mouse.y > ((extratoolbarheight + toolbarheight) * -1)) {extraToolbar.opacity = 0; extraToolbar.visible = false;}
+//                extraToolbar.opacity = 0;
+//                extraToolbar.visible = false;
             }
 
             Label {
@@ -1025,6 +1027,12 @@ Page {
             NumberAnimation { duration: 200; easing.type: Easing.InOutQuad }
         }
 
+        function hide() {
+            if (extraToolbar.opacity == 1 || extraToolbar.visible == true) {
+                extraToolbar.opacity = 0;
+                extraToolbar.visible = false;
+            }
+        }
 
         Label {
             id: actionLbl
@@ -1059,7 +1067,10 @@ Page {
             icon.width: icon.height
             height: toolbarheight / 1.5
             width: height
-            onClicked: if (toolbar.state == "expanded") toolbar.state = "minimized"
+            onClicked: {
+                if (toolbar.state == "expanded") toolbar.state = "minimized"
+                extraToolbar.hide();
+            }
         }
 
         IconButton {
@@ -1073,7 +1084,10 @@ Page {
             icon.width: icon.height
             height: toolbarheight / 1.5
             width: height
-            onClicked: mainWindow.loadInNewTab("about:bookmarks");
+            onClicked: {
+                mainWindow.loadInNewTab("about:bookmarks");
+                extraToolbar.hide();
+            }
         }
 
         IconButton {
@@ -1091,7 +1105,10 @@ Page {
                 anchors.fill: parent
                 source: "image://theme/icon-m-add"
             }
-            onClicked: mainWindow.openNewWindow("about:bookmarks");
+            onClicked: {
+                mainWindow.openNewWindow("about:bookmarks");
+                extraToolbar.hide();
+            }
         }
 
 
@@ -1106,7 +1123,10 @@ Page {
             icon.width: icon.height
             height: toolbarheight / 1.5
             width: height
-            onClicked: webview.reload();
+            onClicked: {
+                webview.reload();
+                extraToolbar.hide();
+            }
         }
 
         IconButton {
@@ -1145,6 +1165,7 @@ Page {
             onClicked: {
                 toggleReaderMode()
                 readerModeButton.highlighted = false
+                extraToolbar.hide();
             }
         }
 
@@ -1163,6 +1184,7 @@ Page {
                 searchMode = !searchMode
                 searchModeButton.highlighted = false
                 searchText.forceActiveFocus();
+                extraToolbar.hide();
             }
         }
 
@@ -1180,12 +1202,27 @@ Page {
             visible: mainWindow.transferEngine.count > 0
             onClicked: {
                 // Open Share Context Menu
-                console.debug("Open Share context menu here")
+                //console.debug("Open Share context menu here")
                 shareContextMenu.share(webview.title, webview.url);
+                extraToolbar.hide();
             }
         }
 
     }
+
+//    TabList {
+//        id: tabListOverlay
+//        visible: extraToolbar.visible
+//        anchors.top: parent.top
+//        height: parent.height + Theme.paddingLarge - extratoolbarheight - toolbarheight
+//        width: parent.width
+
+//        onHideTriggered: {
+//            console.debug("[FirstPage.qml] tabListOverlay hide triggered")
+//            extraToolbar.opacity = 0;
+//            extraToolbar.visible = false;
+//        }
+//    }
 
     // On Media Loaded show download button
     Rectangle {

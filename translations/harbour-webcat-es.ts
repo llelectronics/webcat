@@ -406,10 +406,33 @@
     </message>
 </context>
 <context>
+    <name>TabList</name>
+    <message>
+        <source>Loading..</source>
+        <translation type="unfinished">Cargando..</translation>
+    </message>
+    <message>
+        <source>New Tab</source>
+        <translation type="obsolete">Nueva pestaña</translation>
+    </message>
+    <message>
+        <source>Close Tab</source>
+        <translation type="unfinished">Cerrar pestaña</translation>
+    </message>
+    <message>
+        <source>Tabs</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>VideoPlayer</name>
     <message>
         <source>Download</source>
         <translation>Descargar</translation>
+    </message>
+    <message>
+        <source>New Tab</source>
+        <translation type="obsolete">Nueva pestaña</translation>
     </message>
 </context>
 <context>

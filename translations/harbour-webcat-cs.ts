@@ -410,10 +410,33 @@
     </message>
 </context>
 <context>
+    <name>TabList</name>
+    <message>
+        <source>Loading..</source>
+        <translation type="unfinished">Načítá se...</translation>
+    </message>
+    <message>
+        <source>New Tab</source>
+        <translation type="obsolete">Nový panel</translation>
+    </message>
+    <message>
+        <source>Close Tab</source>
+        <translation type="unfinished">Zavřít panel</translation>
+    </message>
+    <message>
+        <source>Tabs</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>VideoPlayer</name>
     <message>
         <source>Download</source>
         <translation>Stáhnout</translation>
+    </message>
+    <message>
+        <source>New Tab</source>
+        <translation type="obsolete">Nový panel</translation>
     </message>
 </context>
 <context>

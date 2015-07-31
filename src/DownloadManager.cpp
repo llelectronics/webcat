@@ -133,6 +133,7 @@ QString DownloadManager::saveFileName(const QUrl &url)
         basename = "download";
 
     QString savename =  QDir::homePath() + "/Downloads/" + basename; // locate in downloads directory of users home
+    qDebug() << "[DOwnloadManager.cpp] Savename: " + savename;
 
     /**
      * Check if the file name exists already, if so, append an increasing number and test again.
@@ -146,7 +147,6 @@ QString DownloadManager::saveFileName(const QUrl &url)
 
         savename += QString::number(i);
     }
-    basename = "";
 
     return savename;
 }
@@ -300,6 +300,8 @@ void DownloadManager::downloadFinished()
     m_currentDownload = 0;
     emit activeDownloadsChanged();
 
+    basename = "";
+
     // Trigger the execution of the next job
     startNextDownload();
 }
@@ -317,5 +319,6 @@ void DownloadManager::downloadReadyRead()
 void DownloadManager::downloadAbort()
 {
     m_currentDownload->abort();
+    basename = "";
 }
 //! [4]
