@@ -192,6 +192,8 @@ Page {
         url: siteURL
         objectName: "SWebView"
 
+        focus: true
+
         width: {
             if (page.orientation == Orientation.Portrait || page.orientation == Orientation.PortraitInverted)  {
                 mainWindow.width
@@ -396,7 +398,7 @@ Page {
                 // Seems not to work reliably as only input hide on keyboard hide is received
                 console.debug("[FirstPage.qml] INPUT Box data: " + data.state)
                 if (data.state == "show") inputFocus = true;
-                else inputFocus = false;
+                else if (data.state == "hide") inputFocus = false; // somehow sometimes an undefined is received so don't react on it
                 if (toolbar.state == "expanded" && data.state == "show" && ! urlText.focus == true) toolbar.state = "minimized"
             }
             case 'search': {
@@ -904,12 +906,14 @@ Page {
                 if (page.suggestionView.visible) page.suggestionView.visible = false;
                 webview.url = fixUrl(urlText.text);
                 urlText.focus = false;  // Close keyboard
+                webview.focus = true;
             }
 
             Keys.onReturnPressed: {
                 if (page.suggestionView.visible) page.suggestionView.visible = false;
                 webview.url = fixUrl(urlText.text);
                 urlText.focus = false;
+                webview.focus = true;
             }
             function simplifyUrl(url) {
                 url = url.toString();
@@ -1534,7 +1538,7 @@ Page {
             else return max
         }
         visible: false
-        onSelected: { urlText.focus = false; suggestionView.visible = false ; webview.url = url; }
+        onSelected: { urlText.focus = false; suggestionView.visible = false ; webview.url = url; webview.focus = true; }
         onSelectedMedia: {
             suggestionView.visible = false;
             mediaDownloadRecTitle.text = mediaTitle;

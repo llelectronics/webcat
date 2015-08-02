@@ -128,10 +128,12 @@ window.document.addEventListener('focus', (function(e) {
         navigator.qt.postMessage(JSON.stringify(inputContext))
     }
 }), true);
-//window.document.addEventListener('blur', (function() {
-//    var inputContext = new Object({'type':'input', 'state':'hide'})
-//    navigator.qt.postMessage(JSON.stringify(inputContext))
-//}), true);
+window.document.addEventListener('blur', (function(e) {
+    if (e.srcElement.tagName === ('INPUT'||'TEXTAREA'||'FORM')) {
+        var inputContext = new Object({'type':'input', 'state':'hide'})
+        navigator.qt.postMessage(JSON.stringify(inputContext))
+    }
+}), true);
 
 document.documentElement.addEventListener('click', (function(e) {
     var node = e.target;
@@ -141,7 +143,14 @@ document.documentElement.addEventListener('click', (function(e) {
     }
 }), true);
 
-window.onload = function() {
+window.onload = function(e) {
+
+    if (document.activeElement && document.activeElement.tagName.toLowerCase() == 'input' &&
+            document.activeElement.type == 'text' || document.activeElement.tagName.toLowerCase() == 'textarea') {
+        var inputContext = new Object({'type':'input', 'state':'show'})
+        navigator.qt.postMessage(JSON.stringify(inputContext))
+    }
+
     var inputs = document.getElementsByTagName('INPUT');
     var textareas = document.getElementsByTagName('TEXTAREA');
 
@@ -172,6 +181,11 @@ window.onload = function() {
             navigator.qt.postMessage(JSON.stringify(inputContext))
         }
     }
+}
+
+window.onunload = function(e) {
+    // Don't do anything simply be there
+    console.debug("I don't do anything but making window.onload work after back or forward navigation")
 }
 
 navigator.qt.onmessage = function(ev) {
