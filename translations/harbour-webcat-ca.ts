@@ -412,10 +412,6 @@
         <translation type="unfinished">S&apos;està carregant...</translation>
     </message>
     <message>
-        <source>New Tab</source>
-        <translation type="obsolete">Nova pestanya</translation>
-    </message>
-    <message>
         <source>Close Tab</source>
         <translation type="unfinished">Tanca la pestanya</translation>
     </message>
@@ -429,10 +425,6 @@
     <message>
         <source>Download</source>
         <translation>Descarrega</translation>
-    </message>
-    <message>
-        <source>New Tab</source>
-        <translation type="obsolete">Nova pestanya</translation>
     </message>
 </context>
 <context>

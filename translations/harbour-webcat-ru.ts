@@ -412,10 +412,6 @@
         <translation type="unfinished">Загрузка...</translation>
     </message>
     <message>
-        <source>New Tab</source>
-        <translation type="obsolete">Новая вкладка</translation>
-    </message>
-    <message>
         <source>Close Tab</source>
         <translation type="unfinished">Закрыть вкладку</translation>
     </message>
@@ -429,10 +425,6 @@
     <message>
         <source>Download</source>
         <translation>Скачать</translation>
-    </message>
-    <message>
-        <source>New Tab</source>
-        <translation type="obsolete">Новая вкладка</translation>
     </message>
 </context>
 <context>

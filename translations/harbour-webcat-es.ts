@@ -412,10 +412,6 @@
         <translation type="unfinished">Cargando..</translation>
     </message>
     <message>
-        <source>New Tab</source>
-        <translation type="obsolete">Nueva pestaña</translation>
-    </message>
-    <message>
         <source>Close Tab</source>
         <translation type="unfinished">Cerrar pestaña</translation>
     </message>
@@ -429,10 +425,6 @@
     <message>
         <source>Download</source>
         <translation>Descargar</translation>
-    </message>
-    <message>
-        <source>New Tab</source>
-        <translation type="obsolete">Nueva pestaña</translation>
     </message>
 </context>
 <context>

@@ -290,10 +290,6 @@
         <translation>Zwischenspeicher leeren</translation>
     </message>
     <message>
-        <source>Clear Cookies and restart</source>
-        <translation type="obsolete">Cookies leeren und neustarten</translation>
-    </message>
-    <message>
         <source>Clear History</source>
         <translation>Verlauf löschen</translation>
     </message>
@@ -416,10 +412,6 @@
         <translation type="unfinished">Lade..</translation>
     </message>
     <message>
-        <source>New Tab</source>
-        <translation type="obsolete">Neuer Reiter</translation>
-    </message>
-    <message>
         <source>Close Tab</source>
         <translation type="unfinished">Reiter schließen</translation>
     </message>
@@ -433,10 +425,6 @@
     <message>
         <source>Download</source>
         <translation>Herunterladen</translation>
-    </message>
-    <message>
-        <source>New Tab</source>
-        <translation type="obsolete">Neuer Reiter</translation>
     </message>
 </context>
 <context>

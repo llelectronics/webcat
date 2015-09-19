@@ -412,10 +412,6 @@
         <translation type="unfinished">Caricamento...</translation>
     </message>
     <message>
-        <source>New Tab</source>
-        <translation type="obsolete">Nuova scheda</translation>
-    </message>
-    <message>
         <source>Close Tab</source>
         <translation type="unfinished">Chiudi scheda</translation>
     </message>
@@ -429,10 +425,6 @@
     <message>
         <source>Download</source>
         <translation>Download</translation>
-    </message>
-    <message>
-        <source>New Tab</source>
-        <translation type="obsolete">Nuova scheda</translation>
     </message>
 </context>
 <context>

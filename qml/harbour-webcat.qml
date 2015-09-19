@@ -331,7 +331,9 @@ ApplicationWindow
     // Let time run to save session every minute
     // TODO: make configurable and somehow
     Timer {
-        interval: 60000; running: true; repeat: true
+        interval: 60000;
+        running: mainWindow.applicationActive ? true : false;
+        repeat: true
         onTriggered: saveSession("lastSession")
     }
     // What a hack to create a on Closing behavior

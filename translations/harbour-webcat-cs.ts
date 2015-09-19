@@ -290,10 +290,6 @@
         <translation>Vymazat mezipaměť</translation>
     </message>
     <message>
-        <source>Clear Cookies and restart</source>
-        <translation type="obsolete">Vymazat cookies a restartovat</translation>
-    </message>
-    <message>
         <source>Clear History</source>
         <translation>Vymazat historii</translation>
     </message>
@@ -416,10 +412,6 @@
         <translation type="unfinished">Načítá se...</translation>
     </message>
     <message>
-        <source>New Tab</source>
-        <translation type="obsolete">Nový panel</translation>
-    </message>
-    <message>
         <source>Close Tab</source>
         <translation type="unfinished">Zavřít panel</translation>
     </message>
@@ -433,10 +425,6 @@
     <message>
         <source>Download</source>
         <translation>Stáhnout</translation>
-    </message>
-    <message>
-        <source>New Tab</source>
-        <translation type="obsolete">Nový panel</translation>
     </message>
 </context>
 <context>
