@@ -21,7 +21,7 @@ Rectangle {
     id: infoBanner
 
     width: parent.width
-    height: infoText.height + 2 * Theme.paddingMedium
+    height: 0
 
     color: Theme.highlightBackgroundColor
     opacity: 0.0
@@ -33,6 +33,7 @@ Rectangle {
         infoText.text = text
         opacity = 0.9
         closeTimer.restart()
+        height = infoText.height + 2 * Theme.paddingMedium
     }
 
     Label {
@@ -47,11 +48,15 @@ Rectangle {
     }
 
     Behavior on opacity { FadeAnimation {} }
+    Behavior on height { NumberAnimation { duration: 250} }
 
     Timer {
         id: closeTimer
         interval: 3000
-        onTriggered: infoBanner.opacity = 0.0
+        onTriggered: {
+            infoBanner.opacity = 0.0
+            infoBanner.height = 0
+        }
     }
 
     MouseArea {

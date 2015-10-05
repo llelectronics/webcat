@@ -3,5 +3,5 @@ Type=Application
 X-Nemo-Application-Type=silica-qt5
 Name=Webcat
 Icon=harbour-webcat
-Exec=harbour-webcat
+Exec=harbour-webcat %U
 
