@@ -17,7 +17,9 @@ SOURCES += src/harbour-webcat.cpp \
     src/folderlistmodel/fileinfothread.cpp \
     src/transferengine/transferengine.cpp \
     src/transferengine/transfermethodinfo.cpp \
-    src/transferengine/transfermethodmodel.cpp
+    src/transferengine/transfermethodmodel.cpp \
+    src/dbus/webcatadaptor.cpp \
+    src/dbus/webcatinterface.cpp
 
 OTHER_FILES += qml/harbour-webcat.qml \
     qml/cover/CoverPage.qml \
@@ -80,7 +82,8 @@ OTHER_FILES += qml/harbour-webcat.qml \
     qml/pages/helper/videoPlayerComponents/SourceProxy.qml \
     qml/pages/helper/videoPlayerComponents/VideoPoster.qml \
     qml/pages/helper/browserComponents/ShareContextMenu.qml \
-    qml/pages/helper/browserComponents/TabList.qml
+    qml/pages/helper/browserComponents/TabList.qml \
+    org.harbour.webcat.service
 
 RESOURCES += \
     qrc.qrc
@@ -95,7 +98,14 @@ HEADERS += \
     src/videohelper.hpp \
     src/transferengine/transferengine.h \
     src/transferengine/transfermethodinfo.h \
-    src/transferengine/transfermethodmodel.h
+    src/transferengine/transfermethodmodel.h \
+    src/dbus/webcatadaptor.h \
+    src/dbus/webcatinterface.h
+
+#dbus.files = org.harbour.webcat.service
+#dbus.path = /usr/local/share/dbus-1/services
+
+#INSTALLS += dbus
 
 QT += network
 

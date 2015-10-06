@@ -35,6 +35,7 @@ import "pages"
 import "pages/helper/db.js" as DB
 import "pages/helper/tabhelper.js" as Tab
 import harbour.webcat.DBus.TransferEngine 1.0
+import harbour.webcat.DBus 1.0
 
 ApplicationWindow
 {
@@ -88,6 +89,8 @@ ApplicationWindow
     signal openPrivateNewWindow(string hrefUrl)
     signal openWithvPlayerExternal(string url)
 
+    property WebCatInterface webcatinterface: WebCatInterface { }
+
     Component {
         id: tabView
         FirstPage {
@@ -96,6 +99,15 @@ ApplicationWindow
 
             Component.onCompleted: {
                 mainWindow.firstPage = fPage
+            }
+        }
+    }
+    Connections
+    {
+        target: webcatinterface
+        onUrlRequested: {
+            for(var i = 0; i < args.length; i++) {
+                loadInNewTab(args[i]);
             }
         }
     }

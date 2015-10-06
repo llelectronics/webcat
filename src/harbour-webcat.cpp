@@ -40,12 +40,14 @@
 #include "folderlistmodel/qquickfolderlistmodel.h"
 #include "transferengine/transferengine.h"
 #include "transferengine/transfermethodmodel.h"
+#include "dbus/webcatinterface.h"
 
 // Compile everything needed for faster startup and less memory usage
 #include <QQuickItem>
 #include <QQuickView>
 #include <QGuiApplication>
 #include <QQmlContext>
+#include <QDBusConnection>
 
 int main(int argc, char *argv[])
 {
@@ -63,9 +65,22 @@ int main(int argc, char *argv[])
 
     QGuiApplication *app = SailfishApp::application(argc, argv);
 
+    QDBusConnection sessionbus = QDBusConnection::sessionBus();
+
+    if(sessionbus.interface()->isServiceRegistered(WebCatInterface::INTERFACE_NAME)) // Only a Single Instance is allowed
+    {
+        WebCatInterface::sendArgs(app->arguments().mid(1)); // Forward URLs to the running instance
+
+        if(app->hasPendingEvents())
+            app->processEvents();
+
+        return 0;
+    }
+
     qmlRegisterType<QQuickFolderListModel>("harbour.webcat.FolderListModel", 1, 0, "FolderListModel");
     qmlRegisterType<TransferEngine>("harbour.webcat.DBus.TransferEngine", 1, 0, "TransferEngine");
     qmlRegisterType<TransferMethodModel>("harbour.webcat.DBus.TransferEngine", 1, 0, "TransferMethodModel");
+    qmlRegisterType<WebCatInterface>("harbour.webcat.DBus", 1, 0, "WebCatInterface");
 
     QString file;
 
@@ -117,8 +132,9 @@ int main(int argc, char *argv[])
         qDebug() << "Loading url " + file;
         object->setProperty("siteURL", file);
         qDebug() << object->property("siteURL");
+        QMetaObject::invokeMethod(object, "loadInNewTab", Qt::DirectConnection, Q_ARG(QVariant, file));
     }
-    QMetaObject::invokeMethod(object, "loadInitialTab");
+    else QMetaObject::invokeMethod(object, "loadInitialTab");
 
     MyClass myClass(view);
     QObject::connect(object, SIGNAL(clearCache()),
