@@ -108,6 +108,7 @@ ApplicationWindow
         onUrlRequested: {
             for(var i = 0; i < args.length; i++) {
                 loadInNewTab(args[i]);
+                if (!mainWindow.applicationActive) mainWindow.activate();
             }
         }
     }
