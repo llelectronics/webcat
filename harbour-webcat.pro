@@ -83,7 +83,8 @@ OTHER_FILES += qml/harbour-webcat.qml \
     qml/pages/helper/videoPlayerComponents/VideoPoster.qml \
     qml/pages/helper/browserComponents/ShareContextMenu.qml \
     qml/pages/helper/browserComponents/TabList.qml \
-    org.harbour.webcat.service
+    org.harbour.webcat.service \
+    open-url-webcat.desktop
 
 RESOURCES += \
     qrc.qrc
@@ -102,10 +103,13 @@ HEADERS += \
     src/dbus/webcatadaptor.h \
     src/dbus/webcatinterface.h
 
-#dbus.files = org.harbour.webcat.service
-#dbus.path = /usr/local/share/dbus-1/services
+dbus.files = org.harbour.webcat.service
+dbus.path = /usr/share/harbour-webcat
 
-#INSTALLS += dbus
+opendesktopfile.files = open-url-webcat.desktop
+opendesktopfile.path = /usr/share/harbour-webcat
+
+INSTALLS += dbus opendesktopfile
 
 QT += network
 

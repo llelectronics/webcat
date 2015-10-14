@@ -189,7 +189,7 @@ Page {
 
     SilicaWebView {
         id: webview
-        url: siteURL
+        url: ""
         objectName: "SWebView"
 
         focus: true

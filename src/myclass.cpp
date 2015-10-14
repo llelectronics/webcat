@@ -102,3 +102,48 @@ void MyClass::openWithvPlayer(const QString &url) {
     proc->startDetached("/usr/bin/harbour-videoPlayer -p \"" + url + "\"");
 }
 
+bool MyClass::isFile(const QString &url)
+{
+    return QFileInfo(url).isFile();
+}
+
+bool MyClass::existsPath(const QString &url)
+{
+    return QDir(url).exists();
+}
+
+void MyClass::setMime(const QString &mimeType, const QString &desktopFile)
+{
+    // Workaround for SailfishOS which only works if defaults.list is available. Xdg-mime only produces mimeapps.list however
+    if (!isFile(h + "/.local/share/applications/defaults.list"))  {
+        QProcess linking;
+        linking.start("ln -sf " + h + "/.local/share/applications/mimeapps.list " + h + "/.local/share/applications/defaults.list");
+        linking.waitForFinished();
+    }
+    QProcess mimeProc;
+    mimeProc.start("xdg-mime default " + desktopFile + " " + mimeType);
+    mimeProc.waitForFinished();
+}
+
+void MyClass::setDefaultBrowser()
+{
+    QFile cpFile;
+    if (!isFile(h + "/.local/share/applications/open-url-webcat.desktop")) {
+        cpFile.copy("/usr/share/harbour-webcat/open-url-webcat.desktop", h + "/.local/share/applications/open-url-webcat.desktop");
+    }
+    if (!existsPath(h + "/.local/share/dbus-1/services")) {
+        QDir makePath;
+        makePath.mkpath(h + "/.local/share/dbus-1/services");
+    }
+    cpFile.copy("/usr/share/harbour-webcat/org.harbour.webcat.service", h+ "/.local/share/dbus-1/services/org.harbour.webcat.service");
+    setMime("text/html", "open-url-webcat.desktop");
+    setMime("x-maemo-urischeme/http", "open-url-webcat.desktop");
+    setMime("x-maemo-urischeme/https", "open-url-webcat.desktop");
+}
+
+void MyClass::resetDefaultBrowser()
+{
+    setMime("text/html", "open-url.desktop");
+    setMime("x-maemo-urischeme/http", "open-url.desktop");
+    setMime("x-maemo-urischeme/https", "open-url.desktop");
+}

@@ -88,6 +88,8 @@ ApplicationWindow
     signal openNewWindow(string hrefUrl)
     signal openPrivateNewWindow(string hrefUrl)
     signal openWithvPlayerExternal(string url)
+    signal setDefaultBrowser()
+    signal resetDefaultBrowser()
 
     property WebCatInterface webcatinterface: WebCatInterface { }
 

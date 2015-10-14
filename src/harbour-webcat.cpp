@@ -83,6 +83,7 @@ int main(int argc, char *argv[])
     qmlRegisterType<WebCatInterface>("harbour.webcat.DBus", 1, 0, "WebCatInterface");
 
     QString file;
+    bool noHomepage = false;
 
     // Sometimes I get the feeling I don't know what I do. But it works and the only limitation so far is that '--private' needs to be the first argument
     if (QString(argv[1]) == "--private") {
@@ -101,6 +102,9 @@ int main(int argc, char *argv[])
             else if (QString(argv[i]).startsWith("www.")) file = "http://" + QString(argv[i]);
             else file = QString(argv[i]);
         }
+    }
+    else if (QString(argv[1]) == "--no-homepage") {
+        noHomepage = true;
     }
     else {
         app->setApplicationName("harbour-webcat");   // Hopefully no location changes with libsailfishapp affecting config
@@ -128,11 +132,14 @@ int main(int argc, char *argv[])
     QObject *object = view->rootObject();
 
     //qDebug() << file.isEmpty();
-    if (!file.isEmpty()) {
+    if (!file.isEmpty() ) {
         qDebug() << "Loading url " + file;
         object->setProperty("siteURL", file);
         qDebug() << object->property("siteURL");
         QMetaObject::invokeMethod(object, "loadInNewTab", Qt::DirectConnection, Q_ARG(QVariant, file));
+    }
+    else if (noHomepage) {
+        qDebug() << "Calling with --no-homepage. This should only be done by dbus";
     }
     else QMetaObject::invokeMethod(object, "loadInitialTab");
 
@@ -145,6 +152,10 @@ int main(int argc, char *argv[])
                      &myClass, SLOT(openPrivateNewWindow(QString)));
     QObject::connect(object, SIGNAL(openWithvPlayerExternal(QString)),
                      &myClass, SLOT(openWithvPlayer(QString)));
+    QObject::connect(object, SIGNAL(setDefaultBrowser()),
+                     &myClass, SLOT(setDefaultBrowser()));
+    QObject::connect(object, SIGNAL(resetDefaultBrowser()),
+                     &myClass, SLOT(resetDefaultBrowser()));
 
     // Create download manager object
     DownloadManager manager;

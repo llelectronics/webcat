@@ -397,6 +397,18 @@
         <source>Use external video player</source>
         <translation>使用外部视频播放器</translation>
     </message>
+    <message>
+        <source>Set as default browser</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reset default browser</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Set Webcat as default browser</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ShareContextMenu</name>

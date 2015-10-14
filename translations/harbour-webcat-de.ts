@@ -397,6 +397,18 @@
         <source>Use external video player</source>
         <translation>Externen Video Player verwenden</translation>
     </message>
+    <message>
+        <source>Set as default browser</source>
+        <translation>Als Standardbrowser setzen</translation>
+    </message>
+    <message>
+        <source>Reset default browser</source>
+        <translation>Standardbrowser zurücksetzen</translation>
+    </message>
+    <message>
+        <source>Set Webcat as default browser</source>
+        <translation>Setze Webcat als Standardbrowser</translation>
+    </message>
 </context>
 <context>
     <name>ShareContextMenu</name>
@@ -409,11 +421,11 @@
     <name>TabList</name>
     <message>
         <source>Loading..</source>
-        <translation type="unfinished">Lade..</translation>
+        <translation>Lade..</translation>
     </message>
     <message>
         <source>Close Tab</source>
-        <translation type="unfinished">Reiter schließen</translation>
+        <translation">Reiter schließen</translation>
     </message>
     <message>
         <source>Tabs</source>
