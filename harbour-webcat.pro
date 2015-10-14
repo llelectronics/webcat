@@ -103,14 +103,6 @@ HEADERS += \
     src/dbus/webcatadaptor.h \
     src/dbus/webcatinterface.h
 
-dbus.files = org.harbour.webcat.service
-dbus.path = /usr/share/harbour-webcat
-
-opendesktopfile.files = open-url-webcat.desktop
-opendesktopfile.path = /usr/share/harbour-webcat
-
-INSTALLS += dbus opendesktopfile
-
 QT += network
 
 # to disable building translations every time, comment out the
@@ -130,3 +122,11 @@ TRANSLATIONS += translations/harbour-webcat-de.ts \
 # Hmm... not allowed for now I guess
 #PKGCONFIG += nemotransferengine-qt5
 QT += dbus
+
+dbus.files = org.harbour.webcat.service
+dbus.path = /usr/share/harbour-webcat
+
+opendesktopfile.files = open-url-webcat.desktop
+opendesktopfile.path = /usr/share/harbour-webcat
+
+INSTALLS += dbus opendesktopfile

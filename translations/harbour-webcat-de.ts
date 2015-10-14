@@ -425,7 +425,7 @@
     </message>
     <message>
         <source>Close Tab</source>
-        <translation">Reiter schließen</translation>
+        <translation>Reiter schließen</translation>
     </message>
     <message>
         <source>Tabs</source>
