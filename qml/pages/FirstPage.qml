@@ -107,7 +107,7 @@ Page {
         var valid = nonFixedUrl
         if (valid.indexOf(":")<0) {
             if (valid.indexOf(".")<0 || valid.indexOf(" ")>=0) {
-                return url = mainWindow.searchEngine.replace("%s",valid)
+                return url = mainWindow.searchEngine.replace("%s",encodeURIComponent(valid))
             } else {
                 return "http://"+valid;
             }
