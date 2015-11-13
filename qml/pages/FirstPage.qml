@@ -1341,10 +1341,19 @@ Page {
                 if (mainWindow.vPlayerExternal) mainWindow.infoBanner.showText(qsTr("Opening..."));
                 if (mediaYt || mediaYtEmbeded) {
                     // Always try to play highest quality first // TODO: Allow setting a default
-                    if (yt720p != "") mainWindow.openWithvPlayer(yt720p,mediaDownloadRecTitle.text);
-                    else if (yt480p != "") mainWindow.openWithvPlayer(yt480p,mediaDownloadRecTitle.text);
-                    else if (yt360p != "") mainWindow.openWithvPlayer(yt360p,mediaDownloadRecTitle.text);
-                    else if (yt240p != "") mainWindow.openWithvPlayer(yt240p,mediaDownloadRecTitle.text);
+                    if (! mainWindow.vPlayerExternal) {
+                        console.debug("Load videoPlayer in window...");
+                        if (yt720p != "") vPlayerLoader.setSource("VideoPlayerComponent.qml", {dataContainer: firstPage, streamUrl: yt720p, streamTitle: mediaDownloadRecTitle.text});
+                        else if (yt480p != "") vPlayerLoader.setSource("VideoPlayerComponent.qml", {dataContainer: firstPage, streamUrl: yt720p, streamTitle: mediaDownloadRecTitle.text});
+                        else if (yt360p != "") vPlayerLoader.setSource("VideoPlayerComponent.qml", {dataContainer: firstPage, streamUrl: yt720p, streamTitle: mediaDownloadRecTitle.text});
+                        else if (yt240p != "") vPlayerLoader.setSource("VideoPlayerComponent.qml", {dataContainer: firstPage, streamUrl: yt720p, streamTitle: mediaDownloadRecTitle.text});
+                    }
+                    else {
+                        if (yt720p != "") mainWindow.openWithvPlayer(yt720p,mediaDownloadRecTitle.text);
+                        else if (yt480p != "") mainWindow.openWithvPlayer(yt480p,mediaDownloadRecTitle.text);
+                        else if (yt360p != "") mainWindow.openWithvPlayer(yt360p,mediaDownloadRecTitle.text);
+                        else if (yt240p != "") mainWindow.openWithvPlayer(yt240p,mediaDownloadRecTitle.text);
+                    }
                 }
                 else if (mediaDownloadRec.mediaUrl != "") mainWindow.openWithvPlayer(mediaDownloadRec.mediaUrl,"");
                 else Qt.openUrlExternally(url);
@@ -1364,6 +1373,28 @@ Page {
         }
 
 
+    }
+
+    Loader {
+        id: vPlayerLoader
+        width: page.width
+        height: page.height - toolbar.height - mediaDownloadRec.height
+        //source: "VideoPlayer.qml"
+    }
+
+    Connections {
+        target: vPlayerLoader.item
+        onSwitchFullscreen: {
+            if (vPlayerLoader.item.fullscreen === true) vPlayerLoader.anchors.fill = page
+            else {
+                vPlayerLoader.anchors.fill = webview
+                vPlayerLoader.width = page.width
+                vPlayerLoader.height = page.height - toolbar.height - mediaDownloadRec.height
+            }
+        }
+        onClosePlayer: {
+            vPlayerLoader.setSource("");
+        }
     }
 
     // On Media Loaded show download button

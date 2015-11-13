@@ -349,32 +349,32 @@ Dialog {
                 checked: mainWindow.vPlayerExternal
                 visible: (checked || mainWindow.vPlayerExists) ? true : false
             }
-            BackgroundItem {
-                id: setDefaultButton
-                width: parent.width
-                Label {
-                    text: qsTr("Set as default browser")
-                    anchors.verticalCenter: parent.verticalCenter
-                    anchors.left: parent.left
-                    anchors.leftMargin: Theme.paddingLarge
-                    color: setDefaultButton.highlighted  ? Theme.highlightColor : Theme.primaryColor
-                }
-                anchors.horizontalCenter: parent.horizontalCenter
-                onClicked: setDefaultBrowser()
-            }
-            BackgroundItem {
-                id: resetDefaultButton
-                width: parent.width
-                Label {
-                    text: qsTr("Reset default browser")
-                    anchors.verticalCenter: parent.verticalCenter
-                    anchors.left: parent.left
-                    anchors.leftMargin: Theme.paddingLarge
-                    color: resetDefaultButton.highlighted  ? Theme.highlightColor : Theme.primaryColor
-                }
-                anchors.horizontalCenter: parent.horizontalCenter
-                onClicked: resetDefaultBrowser()
-            }
+//            BackgroundItem {
+//                id: setDefaultButton
+//                width: parent.width
+//                Label {
+//                    text: qsTr("Set as default browser")
+//                    anchors.verticalCenter: parent.verticalCenter
+//                    anchors.left: parent.left
+//                    anchors.leftMargin: Theme.paddingLarge
+//                    color: setDefaultButton.highlighted  ? Theme.highlightColor : Theme.primaryColor
+//                }
+//                anchors.horizontalCenter: parent.horizontalCenter
+//                onClicked: setDefaultBrowser()
+//            }
+//            BackgroundItem {
+//                id: resetDefaultButton
+//                width: parent.width
+//                Label {
+//                    text: qsTr("Reset default browser")
+//                    anchors.verticalCenter: parent.verticalCenter
+//                    anchors.left: parent.left
+//                    anchors.leftMargin: Theme.paddingLarge
+//                    color: resetDefaultButton.highlighted  ? Theme.highlightColor : Theme.primaryColor
+//                }
+//                anchors.horizontalCenter: parent.horizontalCenter
+//                onClicked: resetDefaultBrowser()
+//            }
             SectionHeader {
                 text: qsTr("Privacy")
             }

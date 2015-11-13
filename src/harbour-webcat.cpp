@@ -84,6 +84,8 @@ int main(int argc, char *argv[])
 
     QString file;
     bool noHomepage = false;
+    bool setDefault = false;
+    bool resetDefault = false;
 
     // Sometimes I get the feeling I don't know what I do. But it works and the only limitation so far is that '--private' needs to be the first argument
     if (QString(argv[1]) == "--private") {
@@ -105,6 +107,14 @@ int main(int argc, char *argv[])
     }
     else if (QString(argv[1]) == "--no-homepage") {
         noHomepage = true;
+    }
+    else if (QString(argv[1]) == "--set-default") {
+        printf("Setting Webcat as default browser...\n");
+        setDefault = true;
+    }
+    else if (QString(argv[1]) == "--reset-default") {
+        printf("Resetting to default browser...\n");
+        resetDefault = true;
     }
     else {
         app->setApplicationName("harbour-webcat");   // Hopefully no location changes with libsailfishapp affecting config
@@ -144,6 +154,15 @@ int main(int argc, char *argv[])
     else QMetaObject::invokeMethod(object, "loadInitialTab");
 
     MyClass myClass(view);
+    if (setDefault) {
+        myClass.setDefaultBrowser();
+        return 0;
+    }
+    else if (resetDefault) {
+        myClass.resetDefaultBrowser();
+        return 0;
+    }
+
     QObject::connect(object, SIGNAL(clearCache()),
                      &myClass, SLOT(clearCache()));
     QObject::connect(object, SIGNAL(openNewWindow(QString)),

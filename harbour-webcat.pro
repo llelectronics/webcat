@@ -130,3 +130,6 @@ opendesktopfile.files = open-url-webcat.desktop
 opendesktopfile.path = /usr/share/harbour-webcat
 
 INSTALLS += dbus opendesktopfile
+
+DISTFILES += \
+    qml/pages/VideoPlayerComponent.qml

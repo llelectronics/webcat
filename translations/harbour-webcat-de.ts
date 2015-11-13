@@ -398,10 +398,6 @@
         <translation>Externen Video Player verwenden</translation>
     </message>
     <message>
-        <source>Set as default browser</source>
-        <translation>Als Standardbrowser setzen</translation>
-    </message>
-    <message>
         <source>Reset default browser</source>
         <translation>Standardbrowser zurücksetzen</translation>
     </message>

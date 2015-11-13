@@ -398,10 +398,6 @@
         <translation>Utiliser un lecteur vidéo externe</translation>
     </message>
     <message>
-        <source>Set as default browser</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Reset default browser</source>
         <translation type="unfinished"></translation>
     </message>
