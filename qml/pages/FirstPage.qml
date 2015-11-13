@@ -1390,6 +1390,7 @@ Page {
                 vPlayerLoader.anchors.fill = webview
                 vPlayerLoader.width = page.width
                 vPlayerLoader.height = page.height - toolbar.height - mediaDownloadRec.height
+                if (toolbar.state == "expanded") toolbar.state = "minimized"
             }
         }
         onClosePlayer: {
