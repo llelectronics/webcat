@@ -65,7 +65,6 @@ OTHER_FILES += qml/harbour-webcat.qml \
     translations/harbour-webcat-nl_NL.ts \
     translations/harbour-webcat-it.ts \
     translations/harbour-webcat-cs.ts \
-    qml/pages/ytQualityChooser.qml \
     qml/pages/InfoBanner.qml \
     qml/pages/helper/devicePixelRatioHack.js \
     qml/pages/helper/mediaDetect.js \
@@ -132,4 +131,5 @@ opendesktopfile.path = /usr/share/harbour-webcat
 INSTALLS += dbus opendesktopfile
 
 DISTFILES += \
-    qml/pages/VideoPlayerComponent.qml
+    qml/pages/VideoPlayerComponent.qml \
+    qml/pages/helper/browserComponents/ytQualityChooserContextMenu.qml

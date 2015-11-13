@@ -72,6 +72,12 @@ Item {
         if (streamTitle == "") streamTitle = findBaseName(streamUrl)
     }
 
+    function videoPlay() {
+        // this seems not to work somehow
+        if (videoPoster.player.playbackState == MediaPlayer.PlayingState) videoPoster.player.stop();
+        videoPoster.player.play();
+    }
+
     Rectangle {
         id: headerBg
         width:urlHeader.width

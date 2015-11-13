@@ -442,4 +442,11 @@
         <translation>正在打开…</translation>
     </message>
 </context>
+<context>
+    <name>ytQualityChooserContextMenu</name>
+    <message>
+        <source>Opening...</source>
+        <translation type="unfinished">正在打开…</translation>
+    </message>
+</context>
 </TS>

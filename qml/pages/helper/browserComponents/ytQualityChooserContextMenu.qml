@@ -1,14 +1,25 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import "."
 
-Page {
+ContextMenu {
+    id: ytQualityChooserContextMenu
+    visible: false
+    property alias ytQualityList: qualListView
     property string url720p
     property string url480p
     property string url360p
     property string url240p
+    property string streamTitle;
     property bool download: false
+    height: 0
 
-    allowedOrientations: Orientation.All
+    signal playStream(string url)
+
+    function show() {
+        ytQualityChooserContextMenu.visible = true;
+        ytQualityChooserContextMenu.height = Theme.itemSizeSmall * Math.min(5, qualListView.count) + Theme.itemSizeMedium
+    }
 
     Component.onCompleted: {
 
@@ -34,18 +45,19 @@ Page {
 
     ListModel {
         id: qualList
-//        ListElement {
-//            name: "test"
-//            url: ""
-//        }
+        //        ListElement {
+        //            name: "test"
+        //            url: ""
+        //        }
     }
 
     SilicaListView {
         id: qualListView
         model: qualList
         anchors.fill: parent
-        header: PageHeader {
-            title: download ? "Download" : "Play"
+        header: Label {
+            anchors.centerIn: parent
+            text: download ? "Download" : "Play"
         }
         delegate: BackgroundItem {
             anchors.left: parent.left
@@ -58,13 +70,18 @@ Page {
                 color: highlighted ? Theme.highlightColor : Theme.primaryColor
             }
             onClicked: {
-                if (download) pageStack.replace(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": url});
+                if (download) pageStack.push(Qt.resolvedUrl("../../DownloadManager.qml"), {"downloadUrl": url, "downloadName": streamTitle});
                 else {
-                    mainWindow.openWithvPlayer(url,"");
-                    if (mainWindow.vPlayerExternal) mainWindow.infoBanner.showText(qsTr("Opening..."));
+                    if (mainWindow.vPlayerExternal) {
+                        mainWindow.infoBanner.showText(qsTr("Opening..."));
+                        mainWindow.openWithvPlayer(url,"");
+                        ytQualityChooserContextMenu.height = 0;
+                        ytQualityChooserContextMenu.visible = false;
+                    }
+                    else playStream(url);
                 }
             }
         }
     }
-}
 
+}

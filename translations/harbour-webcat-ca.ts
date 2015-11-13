@@ -442,4 +442,11 @@
         <translation>S&apos;està obrint...</translation>
     </message>
 </context>
+<context>
+    <name>ytQualityChooserContextMenu</name>
+    <message>
+        <source>Opening...</source>
+        <translation type="unfinished">S&apos;està obrint...</translation>
+    </message>
+</context>
 </TS>

@@ -313,44 +313,6 @@ Page {
             }
         }
     }
-    Drawer {
-        id: drawer
-        width: parent.width
-        height: parent.height
-        anchors.bottom: parent.bottom
-        dock: Dock.Bottom
-        foreground: flick
-        backgroundSize: {
-            if (videoPlayerPage.orientation === Orientation.Portrait) return parent.height / 8
-            else return parent.height / 6
-        }
-        background: Rectangle {
-            anchors.fill: parent
-            anchors.bottom: parent.bottom
-            color: Theme.secondaryHighlightColor
-            Button {
-                id: ytDownloadBtn
-                anchors.verticalCenter: parent.verticalCenter
-                anchors.left: parent.left
-                anchors.leftMargin: Theme.paddingMedium
-                text: "Download video"
-                visible: {
-                    if ((/^http:\/\/ytapi.com/).test(streamUrl)) return true
-                    else if (isYtUrl) return true
-                    else return false
-                }
-                // Alternatively use direct youtube url instead of ytapi for downloads (ytapi links not always download with download manager)
-                onClicked: {
-                    // Filter out all chars that might stop the download manager from downloading the file
-                    // Illegal chars: `~!@#$%^&*()-=+\|/?.>,<;:'"[{]}
-                    streamTitle = YT.getDownloadableTitleString(streamTitle)
-                    pageStack.push(Qt.resolvedUrl("ytQualityChooser.qml"), {"streamTitle": streamTitle, "url720p": url720p, "url480p": url480p, "url360p": url360p, "url240p": url240p, "ytDownload": true});
-                    drawer.open = !drawer.open
-                }
-            }
-        }
-
-    }
 
     children: [
 

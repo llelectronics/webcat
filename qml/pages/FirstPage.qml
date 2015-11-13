@@ -550,8 +550,12 @@ Page {
         MouseArea {
             id: contextOverlay;
             anchors.fill: parent;
-            enabled: contextMenu.visible || shareContextMenu.visible || contextMenu.height != 0 || shareContextMenu.height != 0
-            onClicked: { contextMenu.height = 0; shareContextMenu.height = 0 }
+            enabled: contextMenu.visible || shareContextMenu.visible || contextMenu.height != 0 || shareContextMenu.height != 0 || (ytQualChooser.status == Loader.Ready && ytQualChooser.visible)
+            onClicked: {
+                contextMenu.height = 0;
+                shareContextMenu.height = 0;
+                if (ytQualChooser.status == Loader.Ready) ytQualChooser.item.height = 0;
+            }
         }
         VerticalScrollDecorator {
             color: Theme.highlightColor // Otherwise we might end up with white decorator on white background
@@ -1329,9 +1333,10 @@ Page {
             icon.height: height
             icon.width: width
             onPressAndHold: {
-                console.debug("[FirstPage.qml] mediaList.count: " + mediaList.count);
-                console.debug("[FirstPage.qml] mediaList.get(0).mediaTitle: " + mediaList.get(0).mediaTitle);
-                if (mediaYt || mediaYtEmbeded) pageStack.push(Qt.resolvedUrl("ytQualityChooser.qml"), {"url720p":yt720p, "url480p":yt480p, "url360p": yt360p, "url240p":yt240p, "download": true});
+                //console.debug("[FirstPage.qml] mediaList.count: " + mediaList.count);
+                //console.debug("[FirstPage.qml] mediaList.get(0).mediaTitle: " + mediaList.get(0).mediaTitle);
+                if (mediaYt || mediaYtEmbeded) ytQualChooser.setSource("helper/browserComponents/ytQualityChooserContextMenu.qml", {"url720p":yt720p, "url480p":yt480p, "url360p": yt360p, "url240p":yt240p, "download": true, "streamTitle": mediaDownloadRecTitle.text})
+                ytQualChooser.item.show();
             }
         }
         IconButton {
@@ -1368,7 +1373,8 @@ Page {
             icon.width: width
             onPressAndHold: {
                 //console.debug("[firstPage.qml]: 720p:" + mainWindow.yt720p + " 480p:" + mainWindow.yt480p + " 360p:" + mainWindow.yt360p + " 240p:" + mainWindow.yt240p);
-                if (mediaYt || mediaYtEmbeded) pageStack.push(Qt.resolvedUrl("ytQualityChooser.qml"), {"url720p":yt720p, "url480p":yt480p, "url360p": yt360p, "url240p":yt240p});
+                if (mediaYt || mediaYtEmbeded) ytQualChooser.setSource("helper/browserComponents/ytQualityChooserContextMenu.qml", {"url720p":yt720p, "url480p":yt480p, "url360p": yt360p, "url240p":yt240p})
+                ytQualChooser.item.show();
             }
         }
 
@@ -1395,6 +1401,27 @@ Page {
         }
         onClosePlayer: {
             vPlayerLoader.setSource("");
+        }
+    }
+
+    Loader {
+        id: ytQualChooser
+        anchors.bottom: mediaDownloadRec.top
+        anchors.bottomMargin: -toolbarSep.height
+        width: parent.width;
+    }
+
+    Connections {
+        target: ytQualChooser.item
+        onPlayStream: {
+            if (vPlayerLoader.status == Loader.Ready) {
+                vPlayerLoader.item.streamUrl = url
+                vPlayerLoader.item.streamTitle = mediaDownloadRecTitle.text
+                vPlayerLoader.item.videoPlay()
+            }
+            else vPlayerLoader.setSource("VideoPlayerComponent.qml", {dataContainer: firstPage, streamUrl: url, streamTitle: mediaDownloadRecTitle.text})
+            ytQualChooser.item.height = 0
+            ytQualChooser.source = ""
         }
     }
 
