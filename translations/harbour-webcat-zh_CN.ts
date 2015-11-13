@@ -429,20 +429,6 @@
     </message>
 </context>
 <context>
-    <name>VideoPlayer</name>
-    <message>
-        <source>Download</source>
-        <translation>下载</translation>
-    </message>
-</context>
-<context>
-    <name>ytQualityChooser</name>
-    <message>
-        <source>Opening...</source>
-        <translation>正在打开…</translation>
-    </message>
-</context>
-<context>
     <name>ytQualityChooserContextMenu</name>
     <message>
         <source>Opening...</source>

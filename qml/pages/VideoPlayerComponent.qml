@@ -31,6 +31,7 @@ Item {
     property Page dPage
     property bool autoplay: true
     property bool fullscreen: false
+    property bool videoPage: false
 
     property alias showTimeAndTitle: showTimeAndTitle
     property alias pulley: pulley
@@ -80,8 +81,13 @@ Item {
 
     Rectangle {
         id: headerBg
-        width:urlHeader.width
-        height: urlHeader.height
+        width:parent.width
+        height: {
+            if (urlHeader.visible && videoPage == false) urlHeader.height * 2
+            else if (urlHeader.visible) urlHeader.height + Theme.paddingLarge
+            else if (titleHeader.visible && videoPage == false) titleHeader.height * 2
+            else if (titleHeader.visible) titleHeader.height + Theme.paddingLarge
+        }
         visible: {
             if (urlHeader.visible || titleHeader.visible) return true
             else return false
@@ -95,6 +101,11 @@ Item {
     Label {
         id: urlHeader
         text: findBaseName(streamUrl)
+        anchors.left: parent.left
+        anchors.top: parent.top
+        anchors.topMargin: (orientation == Orientation.LandscapeMask) ? Theme.paddingMedium : Theme.paddingLarge
+        anchors.leftMargin: Theme.paddingLarge
+        truncationMode: TruncationMode.Fade
         visible: {
             if (titleHeader.visible == false && pulley.visible && mainWindow.applicationActive && fullscreen === true) return true
             else return false
@@ -114,6 +125,11 @@ Item {
     Label {
         id: titleHeader
         text: streamTitle
+        anchors.left: parent.left
+        anchors.top: parent.top
+        anchors.topMargin: (orientation == Orientation.LandscapeMask) ? Theme.paddingMedium : Theme.paddingLarge
+        anchors.leftMargin: Theme.paddingLarge
+        truncationMode: TruncationMode.Fade
         visible: {
             if (streamTitle != "" && pulley.visible && mainWindow.applicationActive && fullscreen === true) return true
             else return false
@@ -284,32 +300,29 @@ Item {
                 }
             }
         }
+
+
+
         IconButton {
             id: fsIcon
             icon.source: "img/enter-fullscreen.png"
             onClicked: switchScreen()
-            anchors.right: parent.right
+            anchors.right: mediaItem.right
             anchors.rightMargin: Theme.paddingMedium
-            anchors.top: {
-                if (urlHeader.visible) urlHeader.bottom
-                else if(titleHeader.visible) titleHeader.bottom
-                else parent.top
-            }
-            anchors.topMargin: Theme.paddingLarge
+            y: headerBg.height
+            anchors.topMargin: Theme.paddingLarge * 2
+            visible: (videoPage == false)
             opacity: videoPoster.controls.opacity
         }
         IconButton {
             id: closeIcon
             icon.source: "img/close-icon.png"
             onClicked: closePlayer()
-            anchors.left: parent.left
+            anchors.left: mediaItem.left
             anchors.leftMargin: Theme.paddingMedium
-            anchors.top: {
-                if (urlHeader.visible) urlHeader.bottom
-                else if(titleHeader.visible) titleHeader.bottom
-                else parent.top
-            }
-            anchors.topMargin: Theme.paddingLarge
+            y: headerBg.height
+            visible: (videoPage == false)
+            anchors.topMargin: Theme.paddingLarge * 2
             opacity: videoPoster.controls.opacity
         }
     }

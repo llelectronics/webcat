@@ -429,20 +429,6 @@
     </message>
 </context>
 <context>
-    <name>VideoPlayer</name>
-    <message>
-        <source>Download</source>
-        <translation>Télécharger</translation>
-    </message>
-</context>
-<context>
-    <name>ytQualityChooser</name>
-    <message>
-        <source>Opening...</source>
-        <translation>Ouverture ...</translation>
-    </message>
-</context>
-<context>
     <name>ytQualityChooserContextMenu</name>
     <message>
         <source>Opening...</source>

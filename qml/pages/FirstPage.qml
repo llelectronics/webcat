@@ -1360,7 +1360,8 @@ Page {
                         else if (yt240p != "") mainWindow.openWithvPlayer(yt240p,mediaDownloadRecTitle.text);
                     }
                 }
-                else if (mediaDownloadRec.mediaUrl != "") mainWindow.openWithvPlayer(mediaDownloadRec.mediaUrl,"");
+                else if (mediaDownloadRec.mediaUrl != "" && mainWindow.vPlayerExternal) mainWindow.openWithvPlayer(mediaDownloadRec.mediaUrl,"");
+                else if (mediaDownloadRec.mediaUrl != "") vPlayerLoader.setSource("VideoPlayerComponent.qml", {dataContainer: firstPage, streamUrl: mediaDownloadRec.mediaUrl})
                 else Qt.openUrlExternally(url);
             }
             visible: ! progressCircleYt.visible
@@ -1613,7 +1614,7 @@ Page {
     }
 
     CoverActionList {
-            enabled: page.status === PageStatus.Active && webview.contentItem
+            enabled: page.status === PageStatus.Active && webview.contentItem && vPlayerLoader.status != Loader.Ready
             iconBackground: true
 
             CoverAction {
