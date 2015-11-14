@@ -67,16 +67,6 @@ int main(int argc, char *argv[])
 
     QDBusConnection sessionbus = QDBusConnection::sessionBus();
 
-    if(sessionbus.interface()->isServiceRegistered(WebCatInterface::INTERFACE_NAME)) // Only a Single Instance is allowed
-    {
-        WebCatInterface::sendArgs(app->arguments().mid(1)); // Forward URLs to the running instance
-
-        if(app->hasPendingEvents())
-            app->processEvents();
-
-        return 0;
-    }
-
     qmlRegisterType<QQuickFolderListModel>("harbour.webcat.FolderListModel", 1, 0, "FolderListModel");
     qmlRegisterType<TransferEngine>("harbour.webcat.DBus.TransferEngine", 1, 0, "TransferEngine");
     qmlRegisterType<TransferMethodModel>("harbour.webcat.DBus.TransferEngine", 1, 0, "TransferMethodModel");
@@ -118,6 +108,15 @@ int main(int argc, char *argv[])
     }
     else {
         app->setApplicationName("harbour-webcat");   // Hopefully no location changes with libsailfishapp affecting config
+        if(sessionbus.interface()->isServiceRegistered(WebCatInterface::INTERFACE_NAME)) // Only a Single Instance is allowed
+        {
+            WebCatInterface::sendArgs(app->arguments().mid(1)); // Forward URLs to the running instance
+
+            if(app->hasPendingEvents())
+                app->processEvents();
+
+            return 0;
+        }
         for(int i=1; i<argc; i++) {
             if (QString(argv[i]) == "about:bookmarks") file = "about:bookmarks";
             else if (!QString(argv[i]).startsWith("/") && !QString(argv[i]).startsWith("http://") && !QString(argv[i]).startsWith("rtsp://")
