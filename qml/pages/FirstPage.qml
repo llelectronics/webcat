@@ -81,6 +81,20 @@ Page {
     property alias mediaList: mediaList
     property bool inputFocus: false
 
+// DEBUG
+//    onYt720pChanged: {
+//        console.debug("Changed yt720p to:" + yt720p)
+//    }
+//    onYt480pChanged: {
+//        console.debug("Changed yt480p to:" + yt480p)
+//    }
+//    onYt360pChanged: {
+//        console.debug("Changed yt360p to:" + yt360p)
+//    }
+//    onYt240pChanged: {
+//        console.debug("Changed yt240p to:" + yt240p)
+//    }
+
     Component.onCompleted: {
         _ngfEffect = Qt.createQmlObject("import org.nemomobile.ngf 1.0; NonGraphicalFeedback { event: 'pulldown_lock' }",
                            minimizeButton, 'NonGraphicalFeedback');
@@ -240,7 +254,8 @@ Page {
             backIcon.visible = true
             forIcon.visible = webview.canGoForward
             if ((/^rtsp:/).test(url) || (/^rtmp:/).test(url) || (/^mms:/).test(url)) {
-                mainWindow.openWithvPlayer(url);
+                if (mainWindow.vPlayerExternal) mainWindow.openWithvPlayer(url);
+                else vPlayerLoader.setSource("VideoPlayerComponent.qml", {dataContainer: firstPage, streamUrl: url})
             }
 
             urlText.text = urlText.simplifyUrl(url)
@@ -337,10 +352,11 @@ Page {
 
             if(mimeinfo[0] === "video")
             {
-                mainWindow.openWithvPlayer(downloadItem.url,"");
                 if (mainWindow.vPlayerExternal) {
                     mainWindow.infoBanner.showText(qsTr("Opening..."))
+                    mainWindow.openWithvPlayer(downloadItem.url,"");
                 }
+                else vPlayerLoader.setSource("VideoPlayerComponent.qml", {dataContainer: firstPage, streamUrl: downloadItem.url })
                 return;
             }
             // Call downloadmanager here with the url
@@ -1272,7 +1288,9 @@ Page {
                 interval: 32
                 repeat: true
                 onTriggered: progressCircleYt.value = (progressCircleYt.value + 0.005) % 1.0
-                running: ytUrlLoading
+                running: {
+                    if ((ytUrlLoading && mediaUrl != "") || (ytUrlLoading && yt720p != "") || (ytUrlLoading && yt480p != "") || (ytUrlLoading && yt360p != "") || (ytUrlLoading && yt240p != "")) return true
+                }
             }
         }
         Label {
@@ -1416,11 +1434,9 @@ Page {
         target: ytQualChooser.item
         onPlayStream: {
             if (vPlayerLoader.status == Loader.Ready) {
-                vPlayerLoader.item.streamUrl = url
-                vPlayerLoader.item.streamTitle = mediaDownloadRecTitle.text
-                vPlayerLoader.item.videoPlay()
+                vPlayerLoader.setSource("");  // Changing the source only seems not to work for some obscure reason
             }
-            else vPlayerLoader.setSource("VideoPlayerComponent.qml", {dataContainer: firstPage, streamUrl: url, streamTitle: mediaDownloadRecTitle.text})
+            vPlayerLoader.setSource("VideoPlayerComponent.qml", {dataContainer: firstPage, streamUrl: url, streamTitle: mediaDownloadRecTitle.text})
             ytQualChooser.item.height = 0
             ytQualChooser.source = ""
         }
