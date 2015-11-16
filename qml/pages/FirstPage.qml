@@ -1252,6 +1252,7 @@ Page {
     Rectangle {
         id: mediaDownloadRec
         property string mediaUrl
+        z:90
 
         onMediaUrlChanged: {
             //webview.checkYoutubeURL(mediaUrl);
@@ -1279,7 +1280,7 @@ Page {
 
         ProgressCircle {
             id: progressCircleYt
-            z: 2
+            z: 90
             anchors.centerIn: parent
             visible: ytUrlLoading
             height: toolbarheight / 2.25
@@ -1405,6 +1406,7 @@ Page {
         width: page.width
         height: page.height - toolbar.height - mediaDownloadRec.height
         //source: "VideoPlayer.qml"
+        z:80
     }
 
     Connections {
@@ -1428,6 +1430,7 @@ Page {
         anchors.bottom: mediaDownloadRec.top
         anchors.bottomMargin: -toolbarSep.height
         width: parent.width;
+        z: 90
     }
 
     Connections {
@@ -1445,6 +1448,7 @@ Page {
     // On Media Loaded show download button
     Rectangle {
         id: searchBar
+        z:85
         gradient: Gradient {
             GradientStop { position: 0.0; color: "#262626" }
             GradientStop { position: 0.85; color: "#1F1F1F"}
@@ -1537,6 +1541,7 @@ Page {
         anchors.bottom: toolbar.top
         anchors.bottomMargin: -toolbarSep.height
         width: parent.width;
+        z:90
 
         property alias contextButtons: contextButtons
 
