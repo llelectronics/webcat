@@ -1412,16 +1412,22 @@ Page {
     Connections {
         target: vPlayerLoader.item
         onSwitchFullscreen: {
-            if (vPlayerLoader.item.fullscreen === true) vPlayerLoader.anchors.fill = page
+            if (vPlayerLoader.item.fullscreen === true) {
+                vPlayerLoader.anchors.fill = page
+                vPlayerLoader.z = 99 //Above everything else
+            }
             else {
                 vPlayerLoader.anchors.fill = webview
                 vPlayerLoader.width = page.width
                 vPlayerLoader.height = page.height - toolbar.height - mediaDownloadRec.height
                 if (toolbar.state == "expanded") toolbar.state = "minimized"
+                vPlayerLoader.z = 80
             }
         }
         onClosePlayer: {
-            vPlayerLoader.setSource("");
+            vPlayerLoader.anchors.fill = webview
+            vPlayerLoader.z = 80
+            vPlayerLoader.setSource(""); 
         }
     }
 
