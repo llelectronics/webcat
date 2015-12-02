@@ -76,6 +76,7 @@ int main(int argc, char *argv[])
     bool noHomepage = false;
     bool setDefault = false;
     bool resetDefault = false;
+    bool openNewWindow = false;
 
     // Sometimes I get the feeling I don't know what I do. But it works and the only limitation so far is that '--private' needs to be the first argument
     if (QString(argv[1]) == "--private") {
@@ -106,9 +107,26 @@ int main(int argc, char *argv[])
         printf("Resetting to default browser...\n");
         resetDefault = true;
     }
+    else if (QString(argv[1]) == "--new-window") {
+        openNewWindow = true;
+
+        for(int i=1; i<argc; i++) {
+            if (QString(argv[i]) == "about:bookmarks") file = "about:bookmarks";
+            else if (!QString(argv[i]).startsWith("/") && !QString(argv[i]).startsWith("http://") && !QString(argv[i]).startsWith("rtsp://")
+                     && !QString(argv[i]).startsWith("mms://") && !QString(argv[i]).startsWith("file://") && !QString(argv[i]).startsWith("https://") && !QString(argv[i]).startsWith("www.")) {
+                QString pwd("");
+                char * PWD;
+                PWD = getenv ("PWD");
+                pwd.append(PWD);
+                file = pwd + "/" + QString(argv[i]);
+            }
+            else if (QString(argv[i]).startsWith("www.")) file = "http://" + QString(argv[i]);
+            else file = QString(argv[i]);
+        }
+    }
     else {
         app->setApplicationName("harbour-webcat");   // Hopefully no location changes with libsailfishapp affecting config
-        if(sessionbus.interface()->isServiceRegistered(WebCatInterface::INTERFACE_NAME)) // Only a Single Instance is allowed
+        if(sessionbus.interface()->isServiceRegistered(WebCatInterface::INTERFACE_NAME) && openNewWindow == false) // Only a Single Instance is allowed
         {
             WebCatInterface::sendArgs(app->arguments().mid(1)); // Forward URLs to the running instance
 

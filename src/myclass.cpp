@@ -88,7 +88,7 @@ void MyClass::clearCache() {
 
 void MyClass::openNewWindow(const QString &url) {
     QProcess *proc = new QProcess();
-    proc->startDetached("/usr/bin/harbour-webcat", QStringList(url));
+    proc->startDetached("/usr/bin/harbour-webcat --new-window " + url);
 }
 
 void MyClass::openPrivateNewWindow(const QString &url) {
