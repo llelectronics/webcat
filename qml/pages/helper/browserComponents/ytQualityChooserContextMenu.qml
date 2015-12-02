@@ -29,7 +29,7 @@ ContextMenu {
         }
         if (url480p != "none" && url480p != undefined && url480p != "") {
             console.debug("Added 480p with " + url480p)
-            qualList.append({"name": "FLV 480p", "url":url480p})
+            qualList.append({"name": "MP4 480p", "url":url480p})
         }
         if (url360p != "none" && url360p != undefined && url360p != "") {
             console.debug("Added 360p with" + url360p)
@@ -37,7 +37,7 @@ ContextMenu {
         }
         if (url240p != "none" && url240p != undefined && url240p != "") {
             console.debug("Added 240p with" + url240p)
-            qualList.append({"name": "FLV 240p", "url":url240p})
+            qualList.append({"name": "3GPP 240p", "url":url240p})
         }
 
 
