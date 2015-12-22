@@ -185,7 +185,7 @@ window.onload = function(e) {
 
 window.onunload = function(e) {
     // Don't do anything simply be there
-    console.debug("I don't do anything but making window.onload work after back or forward navigation")
+    console.debug("I don't do anything but making window.onload work after back or forward navigation");
 }
 
 navigator.qt.onmessage = function(ev) {

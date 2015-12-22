@@ -253,10 +253,13 @@ Page {
             // There seems to be a bug where back and forward navigation is not shown even if webview.canGoBack or ~Forward
             backIcon.visible = true
             forIcon.visible = webview.canGoForward
-            if ((/^rtsp:/).test(url) || (/^rtmp:/).test(url) || (/^mms:/).test(url)) {
-                if (mainWindow.vPlayerExternal) mainWindow.openWithvPlayer(url);
-                else vPlayerLoader.setSource("VideoPlayerComponent.qml", {dataContainer: firstPage, streamUrl: url})
-            }
+//            if ((/^rtsp:/).test(url) || (/^rtmp:/).test(url) || (/^mms:/).test(url)) {
+//                if (mediaYt == true) {
+//                    mediaPlayBtn.clicked("");
+//                }
+//                else if (mainWindow.vPlayerExternal) mainWindow.openWithvPlayer(url);
+//                else vPlayerLoader.setSource("VideoPlayerComponent.qml", {dataContainer: firstPage, streamUrl: url})
+//            }
 
             urlText.text = urlText.simplifyUrl(url)
             urlText.fullUrl = url
@@ -488,7 +491,15 @@ Page {
         onNavigationRequested: {
             // detect URL scheme prefix, most likely an external link
             var schemaRE = /^\w+:/;
-            if (schemaRE.test(request.url)) {
+            if ((/^rtsp:/).test(request.url) || (/^rtmp:/).test(request.url) || (/^mms:/).test(request.url)) {
+                request.action = WebView.IgnoreRequest;
+                if (mediaYt == true) {  // Hack to detect if rstp link on youtube was requested
+                    mediaPlayBtn.clicked(""); // Don't load the crappy rtsp stream but the detected working H264 Stream
+                }
+                else if (mainWindow.vPlayerExternal) mainWindow.openWithvPlayer(request.url);
+                else vPlayerLoader.setSource("VideoPlayerComponent.qml", {dataContainer: firstPage, streamUrl: request.url})
+            }
+            else if (schemaRE.test(request.url)) {
                 request.action = WebView.AcceptRequest;
             } /*else {
                 if (! ((/^rtsp:/).test(request.url.toString()) || (/^rtmp:/).test(request.url.toString()) || (/^mms:/).test(request.url.toString()) || (/^file:/).test(request.url.toString()))) {
