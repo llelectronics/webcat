@@ -429,10 +429,45 @@
     </message>
 </context>
 <context>
+    <name>VideoPlayerComponent</name>
+    <message>
+        <source>Dismiss</source>
+        <translation>Ausblenden</translation>
+    </message>
+    <message>
+        <source>
+The audio and or video format is not supported.</source>
+        <translation>Das Audio und oder Video Format wird nicht unterstützt.</translation>
+    </message>
+    <message>
+        <source>
+The video cannot be played due to network issues.</source>
+        <translation>Das Video kann wegen Netzwerkproblemen nicht wiedergegeben werden.</translation>
+    </message>
+    <message>
+        <source>
+The video cannot be played because the media service could not be instantiated.</source>
+        <translation>Das Video kann nicht wiedergegeben werden, weil der Media Dienst nicht gestartet werden konnte.</translation>
+    </message>
+    <message>
+        <source>
+The video cannot be played due to insufficient permissions.</source>
+        <translation>Das Video kann wegen unzureichender Berechtigung nicht wiedergegeben werden.</translation>
+    </message>
+    <message>
+        <source>
+The video cannot be played due to a problem allocating resources.
+On Youtube Videos please make sure to be logged in. Some videos might be geoblocked or require you to be logged into youtube.</source>
+        <translation>
+Das Video kann wegen unzureichender Ressourcen nicht wiedergegeben werden.
+Bei Youtube Videos stellen Sie sicher angemeldet zu sein. Einige Videos könnten in ihrem Land geblockt sein oder erst nach Anmeldung bei Youtube angesehen werden.</translation>
+    </message>
+</context>
+<context>
     <name>ytQualityChooserContextMenu</name>
     <message>
         <source>Opening...</source>
-        <translation type="unfinished">Öffne...</translation>
+        <translation>Öffne...</translation>
     </message>
 </context>
 </TS>

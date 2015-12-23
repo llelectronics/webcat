@@ -429,6 +429,39 @@
     </message>
 </context>
 <context>
+    <name>VideoPlayerComponent</name>
+    <message>
+        <source>Dismiss</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>
+The audio and or video format is not supported.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>
+The video cannot be played due to network issues.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>
+The video cannot be played because the media service could not be instantiated.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>
+The video cannot be played due to insufficient permissions.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>
+The video cannot be played due to a problem allocating resources.
+On Youtube Videos please make sure to be logged in. Some videos might be geoblocked or require you to be logged into youtube.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ytQualityChooserContextMenu</name>
     <message>
         <source>Opening...</source>
