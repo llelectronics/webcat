@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="sv_SE">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="sv" version="2.1">
 <context>
     <name>AboutPage</name>
     <message>
@@ -111,6 +109,10 @@
 <context>
     <name>FirstPage</name>
     <message>
+        <source>Opening...</source>
+        <translation>Öppnar...</translation>
+    </message>
+    <message>
         <source>Enter an url</source>
         <translation>Ange en URL</translation>
     </message>
@@ -143,12 +145,12 @@
         <translation>Sök</translation>
     </message>
     <message>
-        <source>Close menu</source>
-        <translation>Stäng menyn</translation>
+        <source>Share</source>
+        <translation>Dela</translation>
     </message>
     <message>
-        <source>Opening...</source>
-        <translation>Öppnar...</translation>
+        <source>Close menu</source>
+        <translation>Stäng menyn</translation>
     </message>
     <message>
         <source>Enter searchterm</source>
@@ -393,16 +395,78 @@
         <source>Use external video player</source>
         <translation>Använd extern videospelare</translation>
     </message>
-</context>
-<context>
-    <name>VideoPlayer</name>
     <message>
-        <source>Download</source>
-        <translation>Ladda ner</translation>
+        <source>Reset default browser</source>
+        <translation>Återställ standardwebbläsare</translation>
+    </message>
+    <message>
+        <source>Set Webcat as default browser</source>
+        <translation>Ange Webcat som standardwebbläsare</translation>
     </message>
 </context>
 <context>
-    <name>ytQualityChooser</name>
+    <name>ShareContextMenu</name>
+    <message>
+        <source>Share</source>
+        <translation>Dela</translation>
+    </message>
+</context>
+<context>
+    <name>TabList</name>
+    <message>
+        <source>Loading..</source>
+        <translation>Läser in...</translation>
+    </message>
+    <message>
+        <source>Close Tab</source>
+        <translation>Stäng flik</translation>
+    </message>
+    <message>
+        <source>Tabs</source>
+        <translation>Flikar</translation>
+    </message>
+</context>
+<context>
+    <name>VideoPlayerComponent</name>
+    <message>
+        <source>Dismiss</source>
+        <translation>Avfärda</translation>
+    </message>
+    <message>
+        <source>
+The audio and or video format is not supported.</source>
+        <translation>
+Stöd saknas för ljud- och/eller filmformatet.</translation>
+    </message>
+    <message>
+        <source>
+The video cannot be played due to network issues.</source>
+        <translation>
+Filmen kan inte spelas upp på grund av nätverksproblem.</translation>
+    </message>
+    <message>
+        <source>
+The video cannot be played because the media service could not be instantiated.</source>
+        <translation>
+Filmen kan inte spelas upp på grund av att medietjänsten inte kunde instansieras.</translation>
+    </message>
+    <message>
+        <source>
+The video cannot be played due to insufficient permissions.</source>
+        <translation>
+Filmen kan inte spelas upp på grund av otillräcklig behörighet.</translation>
+    </message>
+    <message>
+        <source>
+The video cannot be played due to a problem allocating resources.
+On Youtube Videos please make sure to be logged in. Some videos might be geoblocked or require you to be logged into youtube.</source>
+        <translation>
+Filmen kan inte spelas upp på grund av problem att komma åt resurser.
+Se till att logga in på Youtube. Några filmer kan vara geografiskt blockerade eller kräver att du skall vara inloggad på Youtube.</translation>
+    </message>
+</context>
+<context>
+    <name>ytQualityChooserContextMenu</name>
     <message>
         <source>Opening...</source>
         <translation>Öppnar...</translation>

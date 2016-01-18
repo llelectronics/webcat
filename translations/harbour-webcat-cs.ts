@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="cs">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="cs" version="2.1">
 <context>
     <name>AboutPage</name>
     <message>
@@ -97,19 +95,23 @@
     </message>
     <message>
         <source>Opening...</source>
-        <translation type="unfinished"></translation>
+        <translation>Otevírání...</translation>
     </message>
     <message>
         <source>Show Downloadfolder</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukázat složku stahování</translation>
     </message>
     <message>
         <source>Clear Downloads</source>
-        <translation type="unfinished"></translation>
+        <translation>Vyčistit stažené</translation>
     </message>
 </context>
 <context>
     <name>FirstPage</name>
+    <message>
+        <source>Opening...</source>
+        <translation>Otevírání...</translation>
+    </message>
     <message>
         <source>Enter an url</source>
         <translation>Zadejte odkaz</translation>
@@ -143,6 +145,10 @@
         <translation>Hledat</translation>
     </message>
     <message>
+        <source>Share</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
         <source>Close menu</source>
         <translation>Zavřít menu</translation>
     </message>
@@ -174,14 +180,6 @@
         <source>Save Link</source>
         <translation>Uložit odkaz</translation>
     </message>
-    <message>
-        <source>Opening...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Share</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>HistoryPage</name>
@@ -206,7 +204,7 @@
     <name>OpenDialog</name>
     <message>
         <source>Opening...</source>
-        <translation type="unfinished"></translation>
+        <translation>Otevírání...</translation>
     </message>
     <message>
         <source>Delete</source>
@@ -214,38 +212,7 @@
     </message>
     <message>
         <source>Deleting </source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>ProxySettingsPage</name>
-    <message>
-        <source>Save</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Proxy Disabled</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>You need to restart Webcat</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Proxy Settings (Restart needed)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Host or Ip Address</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Port</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Please restart Webcat</source>
-        <translation type="unfinished"></translation>
+        <translation>Odstraňování</translation>
     </message>
 </context>
 <context>
@@ -422,85 +389,81 @@
     </message>
     <message>
         <source>Clear Bookmarks</source>
-        <translation type="unfinished"></translation>
+        <translation>Vyčistit záložky</translation>
     </message>
     <message>
         <source>Use external video player</source>
-        <translation type="unfinished"></translation>
+        <translation>Použít externí video přehrávač</translation>
     </message>
     <message>
         <source>Reset default browser</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Set Webcat as default browser</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Proxy Settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
     <name>ShareContextMenu</name>
     <message>
         <source>Share</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
     <name>TabList</name>
     <message>
         <source>Loading..</source>
-        <translation type="unfinished">Načítá se...</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Close Tab</source>
-        <translation type="unfinished">Zavřít panel</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Tabs</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
     <name>VideoPlayerComponent</name>
     <message>
         <source>Dismiss</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>
 The audio and or video format is not supported.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>
 The video cannot be played due to network issues.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>
 The video cannot be played because the media service could not be instantiated.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>
 The video cannot be played due to insufficient permissions.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>
 The video cannot be played due to a problem allocating resources.
 On Youtube Videos please make sure to be logged in. Some videos might be geoblocked or require you to be logged into youtube.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
     <name>ytQualityChooserContextMenu</name>
     <message>
         <source>Opening...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 </TS>

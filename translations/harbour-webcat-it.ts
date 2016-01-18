@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="it">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="it" version="2.1">
 <context>
     <name>AboutPage</name>
     <message>
@@ -111,6 +109,10 @@
 <context>
     <name>FirstPage</name>
     <message>
+        <source>Opening...</source>
+        <translation>Apertura...</translation>
+    </message>
+    <message>
         <source>Enter an url</source>
         <translation>Inserisci un url</translation>
     </message>
@@ -143,12 +145,12 @@
         <translation>Cerca</translation>
     </message>
     <message>
-        <source>Close menu</source>
-        <translation>Chiudi menu</translation>
+        <source>Share</source>
+        <translation>Condividi</translation>
     </message>
     <message>
-        <source>Opening...</source>
-        <translation>Apertura...</translation>
+        <source>Close menu</source>
+        <translation>Chiudi menu</translation>
     </message>
     <message>
         <source>Enter searchterm</source>
@@ -177,10 +179,6 @@
     <message>
         <source>Save Link</source>
         <translation>Salva collegamento</translation>
-    </message>
-    <message>
-        <source>Share</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -215,37 +213,6 @@
     <message>
         <source>Deleting </source>
         <translation>Eliminazione</translation>
-    </message>
-</context>
-<context>
-    <name>ProxySettingsPage</name>
-    <message>
-        <source>Save</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Proxy Disabled</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>You need to restart Webcat</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Proxy Settings (Restart needed)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Host or Ip Address</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Port</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Please restart Webcat</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -430,77 +397,79 @@
     </message>
     <message>
         <source>Reset default browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Resetta al browser predefinito</translation>
     </message>
     <message>
         <source>Set Webcat as default browser</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Proxy Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Imposta Webcat come browser predefinito</translation>
     </message>
 </context>
 <context>
     <name>ShareContextMenu</name>
     <message>
         <source>Share</source>
-        <translation type="unfinished"></translation>
+        <translation>Condividi</translation>
     </message>
 </context>
 <context>
     <name>TabList</name>
     <message>
         <source>Loading..</source>
-        <translation type="unfinished">Caricamento...</translation>
+        <translation>Caricamento...</translation>
     </message>
     <message>
         <source>Close Tab</source>
-        <translation type="unfinished">Chiudi scheda</translation>
+        <translation>Chiudi scheda</translation>
     </message>
     <message>
         <source>Tabs</source>
-        <translation type="unfinished"></translation>
+        <translation>Schede</translation>
     </message>
 </context>
 <context>
     <name>VideoPlayerComponent</name>
     <message>
         <source>Dismiss</source>
-        <translation type="unfinished"></translation>
+        <translation>Abbandona</translation>
     </message>
     <message>
         <source>
 The audio and or video format is not supported.</source>
-        <translation type="unfinished"></translation>
+        <translation>
+Il formato audio e/o video non è supportato.</translation>
     </message>
     <message>
         <source>
 The video cannot be played due to network issues.</source>
-        <translation type="unfinished"></translation>
+        <translation>
+Non è possibile riprodurre il video a causa di problemi di rete.</translation>
     </message>
     <message>
         <source>
 The video cannot be played because the media service could not be instantiated.</source>
-        <translation type="unfinished"></translation>
+        <translation>
+Non è possibile riprodurre il video perché il servizio media non può essere istanziato.</translation>
     </message>
     <message>
         <source>
 The video cannot be played due to insufficient permissions.</source>
-        <translation type="unfinished"></translation>
+        <translation>
+Non è possibile riprodurre il video a causa di permessi insufficienti.</translation>
     </message>
     <message>
         <source>
 The video cannot be played due to a problem allocating resources.
 On Youtube Videos please make sure to be logged in. Some videos might be geoblocked or require you to be logged into youtube.</source>
-        <translation type="unfinished"></translation>
+        <translation>
+Non è possibile riprodurre il video a causa di un problema nell&apos;allocazione delle risorse.
+Prego assicurarsi su Youtube Videos di essere autenticati. Alcuni video potrebbero essere geo-bloccati o richiedere che si sia autenticati su youtube.</translation>
     </message>
 </context>
 <context>
     <name>ytQualityChooserContextMenu</name>
     <message>
         <source>Opening...</source>
-        <translation type="unfinished">Apertura...</translation>
+        <translation>Apertura...</translation>
     </message>
 </context>
 </TS>

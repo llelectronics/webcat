@@ -1,469 +1,471 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="ca" version="2.1">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="fi" version="2.1">
 <context>
     <name>AboutPage</name>
     <message>
         <source>A simple webbrowser based on webkit.</source>
-        <translation>Un navegador web senzill basat en webkit.</translation>
+        <translation>Webkit ohjelmaan perustuva yksinkertainen webselain.</translation>
     </message>
 </context>
 <context>
     <name>AddBookmark</name>
     <message>
         <source>Edit Bookmark</source>
-        <translation>Edita el marcador</translation>
+        <translation>Muokkaa kirjanmerkkiä</translation>
     </message>
     <message>
         <source>Add Bookmark</source>
-        <translation>Afegeix marcador</translation>
+        <translation>Lisää kirjanmerkki</translation>
     </message>
 </context>
 <context>
     <name>AuthenticationDialog</name>
     <message>
         <source>Authenticate</source>
-        <translation>Autentica</translation>
+        <translation>Todenna</translation>
     </message>
     <message>
         <source>The server %1 requires authentication. The server says: %2</source>
-        <translation>Aquest servidor %1 requereix autenticació. El servidor diu: %2</translation>
+        <translation>Tämä palvelin %1 vaatii todennuksen. Palvelin ilmoittaa: %2</translation>
     </message>
     <message>
         <source>Enter your user name</source>
-        <translation>El vostre nom d&apos;usuari</translation>
+        <translation>Anna käyttäjätunnuksesi</translation>
     </message>
     <message>
         <source>User name</source>
-        <translation>Nom d&apos;usuari</translation>
+        <translation>Käyttäjätunnus</translation>
     </message>
     <message>
         <source>Enter password</source>
-        <translation>Contrasenya</translation>
+        <translation>Anna salasana</translation>
     </message>
     <message>
         <source>Password</source>
-        <translation>Contrasenya</translation>
+        <translation>Salasana</translation>
     </message>
 </context>
 <context>
     <name>ConfirmDialog</name>
     <message>
         <source>Accept ?</source>
-        <translation>Hi esteu d&apos;acord?</translation>
+        <translation>Hyväksy ?</translation>
     </message>
 </context>
 <context>
     <name>DownloadManager</name>
     <message>
         <source>Add Download</source>
-        <translation>Afegeix descàrrega</translation>
+        <translation>Lisää lataus</translation>
     </message>
     <message>
         <source>Download Manager</source>
-        <translation>Gestor de descàrregues</translation>
+        <translation>Latausten hallinta</translation>
     </message>
     <message>
         <source>Enter URL to download</source>
-        <translation>URL a descarregar</translation>
+        <translation>Anna url ladataksesi</translation>
     </message>
     <message>
         <source>Download</source>
-        <translation>Descarrega</translation>
+        <translation>Lataa</translation>
     </message>
     <message>
         <source>Abort</source>
-        <translation>Atura</translation>
+        <translation>Keskeytä</translation>
     </message>
     <message>
         <source>Active Downloads: </source>
-        <translation>Descàrregues actives</translation>
+        <translation>Käynnissä olevat lataukset:</translation>
     </message>
     <message>
         <source>Status</source>
-        <translation>Estat</translation>
+        <translation>Tila</translation>
     </message>
     <message>
         <source>Errors</source>
-        <translation>Errors</translation>
+        <translation>Virheet</translation>
     </message>
     <message>
         <source>Download Status</source>
-        <translation>Estat de les descàrregues</translation>
+        <translation>Latauksen tila</translation>
     </message>
     <message>
         <source>Download Errors</source>
-        <translation>Descarrega errors</translation>
+        <translation>Latausvirheet</translation>
     </message>
     <message>
         <source>Opening...</source>
-        <translation>S&apos;està obrint...</translation>
+        <translation>Avautuu...</translation>
     </message>
     <message>
         <source>Show Downloadfolder</source>
-        <translation>Mostra la carpeta de descàrregues</translation>
+        <translation>Näytä latauskansio</translation>
     </message>
     <message>
         <source>Clear Downloads</source>
-        <translation>Neteja les descàrregues</translation>
+        <translation>Tyhjennä latauslista</translation>
     </message>
 </context>
 <context>
     <name>FirstPage</name>
     <message>
         <source>Opening...</source>
-        <translation>S&apos;està obrint...</translation>
+        <translation>Avautuu...</translation>
     </message>
     <message>
         <source>Enter an url</source>
-        <translation>URL</translation>
+        <translation>Anna url</translation>
     </message>
     <message>
         <source>Minimize</source>
-        <translation>Minimitza</translation>
+        <translation>Pienennä</translation>
     </message>
     <message>
         <source>New Tab</source>
-        <translation>Nova pestanya</translation>
+        <translation>Uusi välilehti</translation>
     </message>
     <message>
         <source>New Window</source>
-        <translation>Nova finestra</translation>
+        <translation>Uusi ikkuna</translation>
     </message>
     <message>
         <source>Reload</source>
-        <translation>Torna a carregar</translation>
+        <translation>Lataa uudelleen</translation>
     </message>
     <message>
         <source>Lock Orientation</source>
-        <translation>Fixa l&apos;orientació</translation>
+        <translation>Lukitse suuntautuminen</translation>
     </message>
     <message>
         <source>Reader Mode</source>
-        <translation>Mode de lectura</translation>
+        <translation>Lukutila</translation>
     </message>
     <message>
         <source>Search</source>
-        <translation>Cerca</translation>
+        <translation>Etsi</translation>
     </message>
     <message>
         <source>Share</source>
-        <translation>Comparteix</translation>
+        <translation>Jaa</translation>
     </message>
     <message>
         <source>Close menu</source>
-        <translation>Tanca el menú</translation>
+        <translation>Sulje valikko</translation>
     </message>
     <message>
         <source>Enter searchterm</source>
-        <translation>Paràmetre de cerca</translation>
+        <translation>Anna hakusana</translation>
     </message>
     <message>
         <source>Open in New Window</source>
-        <translation>Obre en una finestra nova</translation>
+        <translation>Avaa uudessa ikkunassa</translation>
     </message>
     <message>
         <source>Open in New Tab</source>
-        <translation>Obre en una pestanya nova</translation>
+        <translation>Avaa uudessa välilehdessä</translation>
     </message>
     <message>
         <source>Open in Private New Window</source>
-        <translation>Obre en una finestra privada nova</translation>
+        <translation>Avaa uudessa yksityisikkunassa</translation>
     </message>
     <message>
         <source>Copy Link</source>
-        <translation>Copia l&apos;enllaç</translation>
+        <translation>Kopioi linkki</translation>
     </message>
     <message>
         <source>Save Image</source>
-        <translation>Desa la imatge</translation>
+        <translation>Tallenna kuva</translation>
     </message>
     <message>
         <source>Save Link</source>
-        <translation>Desa l&apos;enllaç</translation>
+        <translation>Tallenna linkki</translation>
     </message>
 </context>
 <context>
     <name>HistoryPage</name>
     <message>
         <source>History</source>
-        <translation>Historial</translation>
+        <translation>Historia</translation>
     </message>
     <message>
         <source>Clear History</source>
-        <translation>Neteja l&apos;historial</translation>
+        <translation>Poista historiatiedot</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>Elimina</translation>
+        <translation>Poista</translation>
     </message>
     <message>
         <source>Load Last Session</source>
-        <translation>Carrega l&apos;última sessió</translation>
+        <translation>Lataa edellinen istunto</translation>
     </message>
 </context>
 <context>
     <name>OpenDialog</name>
     <message>
         <source>Opening...</source>
-        <translation>S&apos;està obrint...</translation>
+        <translation>Avautuu...</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>Elimina</translation>
+        <translation>Poista</translation>
     </message>
     <message>
         <source>Deleting </source>
-        <translation>S&apos;està eliminant</translation>
+        <translation>Poistaa...</translation>
     </message>
 </context>
 <context>
     <name>SelectUrl</name>
     <message>
         <source>Bookmarks</source>
-        <translation>Marcadors</translation>
+        <translation>Kirjanmerkit</translation>
     </message>
     <message>
         <source>Open in new Tab</source>
-        <translation>Obre en una pestanya nova</translation>
+        <translation>Avaa uudessa välilehdessä</translation>
     </message>
     <message>
         <source>Open in new Window</source>
-        <translation>Obre en una finestra nova</translation>
+        <translation>Avaa uudessa ikkunassa</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Edita</translation>
+        <translation>Muokkaa</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>Elimina</translation>
+        <translation>Poista</translation>
     </message>
     <message>
         <source>Settings</source>
-        <translation>Configuració</translation>
+        <translation>Asetukset</translation>
     </message>
     <message>
         <source>Add Bookmark</source>
-        <translation>Afegeix marcador</translation>
+        <translation>Lisää kirjanmerkki</translation>
     </message>
     <message>
         <source>History</source>
-        <translation>Historial</translation>
+        <translation>Historia</translation>
     </message>
     <message>
         <source>New Tab</source>
-        <translation>Nova pestanya</translation>
+        <translation>Uusi välilehti</translation>
     </message>
     <message>
         <source>Close Tab</source>
-        <translation>Tanca la pestanya</translation>
+        <translation>Sulje välilehti</translation>
     </message>
     <message>
         <source>Swipe up to open new window</source>
-        <translation>Feu lliscar cap amunt per obrir una finestra nova</translation>
+        <translation>Pyyhkäise ylös avataksesi uuden ikkunan.</translation>
     </message>
     <message>
         <source>Swipe up to open private window</source>
-        <translation>Feu lliscar cap amunt per obrir una finestra privada</translation>
+        <translation>Pyyhkäise ylös avataksesi yksityisikkunan.</translation>
     </message>
     <message>
         <source>Swipe up to close tab</source>
-        <translation>Feu lliscar cap amunt per tancar la pestanya</translation>
+        <translation>Pyyhkäise ylös sulkeaksesi välilehden.</translation>
     </message>
     <message>
         <source>Loading..</source>
-        <translation>S&apos;està carregant...</translation>
+        <translation>Lataa...</translation>
     </message>
 </context>
 <context>
     <name>SelectionEditPage</name>
     <message>
         <source>Copy</source>
-        <translation>Copia</translation>
+        <translation>Kopioi</translation>
     </message>
 </context>
 <context>
     <name>SettingsPage</name>
     <message>
         <source>Clear cache</source>
-        <translation>Neteja la memòria cau</translation>
+        <translation>Tyhjennä välimuisti</translation>
     </message>
     <message>
         <source>Clear History</source>
-        <translation>Neteja l&apos;historial</translation>
+        <translation>Poista historiatiedot</translation>
     </message>
     <message>
         <source>Save Settings</source>
-        <translation>Desa la configuració</translation>
+        <translation>Tallenna asetukset</translation>
     </message>
     <message>
         <source>About </source>
-        <translation>Quant a</translation>
+        <translation>Tietoja</translation>
     </message>
     <message>
         <source>Download Manager</source>
-        <translation>Gestor de descàrregues</translation>
+        <translation>Latausten hallinta</translation>
     </message>
     <message>
         <source>Load Defaults</source>
-        <translation>Carrega els predefinits</translation>
+        <translation>Lataa oletusarvot</translation>
     </message>
     <message>
         <source>Appearance</source>
-        <translation>Aparença</translation>
+        <translation>Esiintyminen</translation>
     </message>
     <message>
         <source>Default Font Size</source>
-        <translation>Mida de lletra per defecte</translation>
+        <translation>Tekstin oletuskoko</translation>
     </message>
     <message>
         <source>Default Fixed Font Size</source>
-        <translation>Mida de lletra fixa per defecte</translation>
+        <translation>Tekstin muutettu oletuskoko</translation>
     </message>
     <message>
         <source>Minimum Font Size</source>
-        <translation>Mida de lletra mínima</translation>
+        <translation>Tekstin pienin koko</translation>
     </message>
     <message>
         <source>Default Orientation</source>
-        <translation>Orientació per defecte</translation>
+        <translation>Oletettu suuntautuminen</translation>
     </message>
     <message>
         <source>General</source>
-        <translation>General</translation>
+        <translation>Yleinen</translation>
     </message>
     <message>
         <source>Homepage</source>
-        <translation>Pàgina d&apos;inici</translation>
+        <translation>Kotisivu</translation>
     </message>
     <message>
         <source>Search Engine:</source>
-        <translation>Motor de cerca</translation>
+        <translation>Hakukone:</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Personalitza</translation>
+        <translation>Muokattu</translation>
     </message>
     <message>
         <source>Private Browsing</source>
-        <translation>Navegació privada</translation>
+        <translation>Yksityisselaus</translation>
     </message>
     <message>
         <source>Add Default Bookmarks</source>
-        <translation>Afegeix els marcadors per defecte</translation>
+        <translation>Lisää oletuskirjanmerkit</translation>
     </message>
     <message>
         <source>User Agent:</source>
-        <translation>Agent d&apos;usuari:</translation>
+        <translation>User Agent:</translation>
     </message>
     <message>
         <source>Clear Cookies</source>
-        <translation>Neteja les galetes</translation>
+        <translation>Poista evästeet</translation>
     </message>
     <message>
         <source>Start Private Window</source>
-        <translation>Obre una finestra privada</translation>
+        <translation>Käynnistä yksityisikkuna</translation>
     </message>
     <message>
         <source>Load Images</source>
-        <translation>Carrega les imatges</translation>
+        <translation>Lataa kuvat</translation>
     </message>
     <message>
         <source>Advanced</source>
-        <translation>Avançat</translation>
+        <translation>Edistynyt</translation>
     </message>
     <message>
         <source>DNS Prefetch</source>
-        <translation>Precaptura DNS</translation>
+        <translation>Nimipalvelimen haku etukäteen</translation>
     </message>
     <message>
         <source>Offline Web Application Cache</source>
-        <translation>Memòria cau d&apos;aplicacions web fora de línia</translation>
+        <translation>Websovelluksen offline -välimuisti</translation>
     </message>
     <message>
         <source>Privacy</source>
-        <translation>Privacitat</translation>
+        <translation>Yksityinen</translation>
     </message>
     <message>
         <source>Clear Cache</source>
-        <translation>Neteja la memòria cau</translation>
+        <translation>Tyhjennä välimuisti</translation>
     </message>
     <message>
         <source>Clear Bookmarks</source>
-        <translation>Neteja els marcadors</translation>
+        <translation>Poista kirjanmerkit</translation>
     </message>
     <message>
         <source>Use external video player</source>
-        <translation>Utilitza un reproductor de vídeo extern</translation>
+        <translation>Käytä ulkoista video-ohjelmaa</translation>
     </message>
     <message>
         <source>Reset default browser</source>
-        <translation>Restableix el navegador per defecte</translation>
+        <translation>Nollaa oletusselain -asetus</translation>
     </message>
     <message>
         <source>Set Webcat as default browser</source>
-        <translation>Estableix Webcat com a navegador per defecte</translation>
+        <translation>Aseta Webcat oletusselaimeksi</translation>
     </message>
 </context>
 <context>
     <name>ShareContextMenu</name>
     <message>
         <source>Share</source>
-        <translation>Comparteix</translation>
+        <translation>Jaa</translation>
     </message>
 </context>
 <context>
     <name>TabList</name>
     <message>
         <source>Loading..</source>
-        <translation>S&apos;està carregant...</translation>
+        <translation>Lataa...</translation>
     </message>
     <message>
         <source>Close Tab</source>
-        <translation>Tanca la pestanya</translation>
+        <translation>Sulje välilehti</translation>
     </message>
     <message>
         <source>Tabs</source>
-        <translation>Pestanyes</translation>
+        <translation>Välilehdet</translation>
     </message>
 </context>
 <context>
     <name>VideoPlayerComponent</name>
     <message>
         <source>Dismiss</source>
-        <translation type="unfinished"/>
+        <translation>Hylkää</translation>
     </message>
     <message>
         <source>
 The audio and or video format is not supported.</source>
-        <translation type="unfinished"/>
+        <translation>Tätä ääni- tai kuvaformaattia ei tueta.</translation>
     </message>
     <message>
         <source>
 The video cannot be played due to network issues.</source>
-        <translation type="unfinished"/>
+        <translation>Videota ei voi toistaa verkko-ongelmien vuoksi.</translation>
     </message>
     <message>
         <source>
 The video cannot be played because the media service could not be instantiated.</source>
-        <translation type="unfinished"/>
+        <translation>Videota ei voi toistaa koska mediapalvelimen instantiointi ei onnistunut</translation>
     </message>
     <message>
         <source>
 The video cannot be played due to insufficient permissions.</source>
-        <translation type="unfinished"/>
+        <translation>Videota ei voi toistaa riittämättömien käyttöoikeuksien takia.</translation>
     </message>
     <message>
         <source>
 The video cannot be played due to a problem allocating resources.
 On Youtube Videos please make sure to be logged in. Some videos might be geoblocked or require you to be logged into youtube.</source>
-        <translation type="unfinished"/>
+        <translation>
+Videota ei voi toistaa koska resurssien allokaatiossa ilmeni ongelmia.
+Youtube -videoiden osalta varmista että olet kirjautunut sisään. Jotkut videoista on rajattu maantieteellisesti tai vaativat sisäänkirjautumisen.</translation>
     </message>
 </context>
 <context>
     <name>ytQualityChooserContextMenu</name>
     <message>
         <source>Opening...</source>
-        <translation>S&apos;està obrint...</translation>
+        <translation>Avataan...</translation>
     </message>
 </context>
 </TS>

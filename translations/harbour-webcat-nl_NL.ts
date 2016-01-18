@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="nl_NL">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="nl_NL" version="2.1">
 <context>
     <name>AboutPage</name>
     <message>
@@ -50,7 +48,7 @@
     <name>ConfirmDialog</name>
     <message>
         <source>Accept ?</source>
-        <translation>Accepteren?</translation>
+        <translation>Aanvaarden?</translation>
     </message>
 </context>
 <context>
@@ -61,7 +59,7 @@
     </message>
     <message>
         <source>Download Manager</source>
-        <translation>Download manager</translation>
+        <translation>Downloadbeheerder</translation>
     </message>
     <message>
         <source>Enter URL to download</source>
@@ -89,11 +87,11 @@
     </message>
     <message>
         <source>Download Status</source>
-        <translation>Download status</translation>
+        <translation>Downloadstatus</translation>
     </message>
     <message>
         <source>Download Errors</source>
-        <translation>Download fouten</translation>
+        <translation>Downloadfouten</translation>
     </message>
     <message>
         <source>Opening...</source>
@@ -111,12 +109,16 @@
 <context>
     <name>FirstPage</name>
     <message>
+        <source>Opening...</source>
+        <translation>Bezig met openen...</translation>
+    </message>
+    <message>
         <source>Enter an url</source>
         <translation>Voer een URL in</translation>
     </message>
     <message>
         <source>Minimize</source>
-        <translation>Minimaliseer</translation>
+        <translation>Minimaliseren</translation>
     </message>
     <message>
         <source>New Tab</source>
@@ -132,23 +134,23 @@
     </message>
     <message>
         <source>Lock Orientation</source>
-        <translation>Lock oriëntatie</translation>
+        <translation>Lock-oriëntatie</translation>
     </message>
     <message>
         <source>Reader Mode</source>
-        <translation>Lezer modus</translation>
+        <translation>Lezermodus</translation>
     </message>
     <message>
         <source>Search</source>
         <translation>Zoeken</translation>
     </message>
     <message>
-        <source>Close menu</source>
-        <translation>Sluit menu</translation>
+        <source>Share</source>
+        <translation>Delen</translation>
     </message>
     <message>
-        <source>Opening...</source>
-        <translation>Bezig met openen...</translation>
+        <source>Close menu</source>
+        <translation>Menu sluiten</translation>
     </message>
     <message>
         <source>Enter searchterm</source>
@@ -156,19 +158,19 @@
     </message>
     <message>
         <source>Open in New Window</source>
-        <translation>Open in nieuw scherm</translation>
+        <translation>Openen in nieuw venster</translation>
     </message>
     <message>
         <source>Open in New Tab</source>
-        <translation>Open in nieuw tabblad</translation>
+        <translation>Openen in nieuw tabblad</translation>
     </message>
     <message>
         <source>Open in Private New Window</source>
-        <translation>Open in nieuw privé scherm</translation>
+        <translation>Openen in nieuw privévenster</translation>
     </message>
     <message>
         <source>Copy Link</source>
-        <translation>Kopieer link</translation>
+        <translation>Koppeling kopiëren</translation>
     </message>
     <message>
         <source>Save Image</source>
@@ -176,11 +178,7 @@
     </message>
     <message>
         <source>Save Link</source>
-        <translation>Link opslaan</translation>
-    </message>
-    <message>
-        <source>Share</source>
-        <translation type="unfinished"></translation>
+        <translation>Koppeling opslaan</translation>
     </message>
 </context>
 <context>
@@ -218,37 +216,6 @@
     </message>
 </context>
 <context>
-    <name>ProxySettingsPage</name>
-    <message>
-        <source>Save</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Proxy Disabled</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>You need to restart Webcat</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Proxy Settings (Restart needed)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Host or Ip Address</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Port</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Please restart Webcat</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>SelectUrl</name>
     <message>
         <source>Bookmarks</source>
@@ -256,11 +223,11 @@
     </message>
     <message>
         <source>Open in new Tab</source>
-        <translation>Open in nieuw tabblad</translation>
+        <translation>Openen in nieuw tabblad</translation>
     </message>
     <message>
         <source>Open in new Window</source>
-        <translation>Open in nieuw scherm</translation>
+        <translation>Openen in nieuw venster</translation>
     </message>
     <message>
         <source>Edit</source>
@@ -284,19 +251,19 @@
     </message>
     <message>
         <source>New Tab</source>
-        <translation>Nieuwe tab</translation>
+        <translation>Nieuw tabblad</translation>
     </message>
     <message>
         <source>Close Tab</source>
-        <translation>Sluit tab</translation>
+        <translation>Tabblad sluiten</translation>
     </message>
     <message>
         <source>Swipe up to open new window</source>
-        <translation>Veeg omhoog om nieuw scherm te openen</translation>
+        <translation>Veeg omhoog om nieuw venster te openen</translation>
     </message>
     <message>
         <source>Swipe up to open private window</source>
-        <translation>Veeg omhoog om privé scherm te openen</translation>
+        <translation>Veeg omhoog om privévenster te openen</translation>
     </message>
     <message>
         <source>Swipe up to close tab</source>
@@ -311,7 +278,7 @@
     <name>SelectionEditPage</name>
     <message>
         <source>Copy</source>
-        <translation>Kopieer</translation>
+        <translation>Kopiëren</translation>
     </message>
 </context>
 <context>
@@ -334,7 +301,7 @@
     </message>
     <message>
         <source>Download Manager</source>
-        <translation>Download manager</translation>
+        <translation>Downloadbeheerder</translation>
     </message>
     <message>
         <source>Load Defaults</source>
@@ -358,7 +325,7 @@
     </message>
     <message>
         <source>Default Orientation</source>
-        <translation>Standaard oriëntatie</translation>
+        <translation>Standaardoriëntatie</translation>
     </message>
     <message>
         <source>General</source>
@@ -366,7 +333,7 @@
     </message>
     <message>
         <source>Homepage</source>
-        <translation>Homepagina</translation>
+        <translation>Startpagina</translation>
     </message>
     <message>
         <source>Search Engine:</source>
@@ -374,7 +341,7 @@
     </message>
     <message>
         <source>Custom</source>
-        <translation>Aanpassen</translation>
+        <translation>Aangepast</translation>
     </message>
     <message>
         <source>Private Browsing</source>
@@ -382,11 +349,11 @@
     </message>
     <message>
         <source>Add Default Bookmarks</source>
-        <translation>Voeg standaard bladwijzers toe</translation>
+        <translation>Standaardbladwijzers toevoegen</translation>
     </message>
     <message>
         <source>User Agent:</source>
-        <translation>User agent:</translation>
+        <translation>Gebruikersagent:</translation>
     </message>
     <message>
         <source>Clear Cookies</source>
@@ -394,11 +361,11 @@
     </message>
     <message>
         <source>Start Private Window</source>
-        <translation>Start privé scherm</translation>
+        <translation>Start privévenster</translation>
     </message>
     <message>
         <source>Load Images</source>
-        <translation>Laad afbeeldingen</translation>
+        <translation>Afbeeldingen laden</translation>
     </message>
     <message>
         <source>Advanced</source>
@@ -430,77 +397,79 @@
     </message>
     <message>
         <source>Reset default browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Standaardbrowser opnieuw instellen</translation>
     </message>
     <message>
         <source>Set Webcat as default browser</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Proxy Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Stel Webcat in als standaardbrowser</translation>
     </message>
 </context>
 <context>
     <name>ShareContextMenu</name>
     <message>
         <source>Share</source>
-        <translation type="unfinished"></translation>
+        <translation>Delen</translation>
     </message>
 </context>
 <context>
     <name>TabList</name>
     <message>
         <source>Loading..</source>
-        <translation type="unfinished">Laden..</translation>
+        <translation>Laden..</translation>
     </message>
     <message>
         <source>Close Tab</source>
-        <translation type="unfinished">Sluit tab</translation>
+        <translation>Tabblad sluiten</translation>
     </message>
     <message>
         <source>Tabs</source>
-        <translation type="unfinished"></translation>
+        <translation>Tabbladen</translation>
     </message>
 </context>
 <context>
     <name>VideoPlayerComponent</name>
     <message>
         <source>Dismiss</source>
-        <translation type="unfinished"></translation>
+        <translation>Sluiten</translation>
     </message>
     <message>
         <source>
 The audio and or video format is not supported.</source>
-        <translation type="unfinished"></translation>
+        <translation>
+Het audio- en/of videoformaat wordt niet ondersteund.</translation>
     </message>
     <message>
         <source>
 The video cannot be played due to network issues.</source>
-        <translation type="unfinished"></translation>
+        <translation>
+De video kan niet worden afgespeeld wegens problemen met het netwerk.</translation>
     </message>
     <message>
         <source>
 The video cannot be played because the media service could not be instantiated.</source>
-        <translation type="unfinished"></translation>
+        <translation>
+De video kan niet worden afgespeeld omdat de mediadienst niet kon worden geïnstantieerd.</translation>
     </message>
     <message>
         <source>
 The video cannot be played due to insufficient permissions.</source>
-        <translation type="unfinished"></translation>
+        <translation>
+De video kan niet worden afgespeeld wegens onvoldoende machtigingen.</translation>
     </message>
     <message>
         <source>
 The video cannot be played due to a problem allocating resources.
 On Youtube Videos please make sure to be logged in. Some videos might be geoblocked or require you to be logged into youtube.</source>
-        <translation type="unfinished"></translation>
+        <translation>
+De video kan niet worden afgespeeld wegens een probleem bij het toewijzen van bronnen.
+Zorg er voor dat je ingelogd bent bij YouTube Videos. Sommige videos kunnen geblokkeerd zijn op geografische basis of vereisen dat je ingelogd bent bij YouTube.</translation>
     </message>
 </context>
 <context>
     <name>ytQualityChooserContextMenu</name>
     <message>
         <source>Opening...</source>
-        <translation type="unfinished">Bezig met openen...</translation>
+        <translation>Bezig met openen...</translation>
     </message>
 </context>
 </TS>
