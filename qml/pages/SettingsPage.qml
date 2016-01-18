@@ -326,7 +326,7 @@ Dialog {
             TextField {
                 id: agentString
                 anchors.horizontalCenter: parent.horizontalCenter
-                readOnly: true
+                readOnly: uAgentTitle !== qsTr("Custom") ? true : false
                 width: parent.width - 20
                 text: uAgent
             }

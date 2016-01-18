@@ -55,7 +55,11 @@ ListModel {
         agent: "DoCoMo/2.0 SH901iC(c100;TB;W24H12)"
     }
     ListElement {
-        title: "Firefox 35.0 Desktop Version"
-        agent: "Mozilla/5.0 (X11; Linux i686; rv:35.0) Gecko/20100101 Firefox/35.0"
+        title: "Firefox 43.0 Desktop Version"
+        agent: "Mozilla/5.0 (X11; Linux i686; rv:43.0) Gecko/20100101 Firefox/43.0"
+    }
+    ListElement {
+        title: "Custom"
+        agent: "Mozilla/5.0 (Maemo; Linux; U; Jolla; Sailfish; like Android) AppleWebKit/538.1 (KHTML, like Gecko) Mobile Safari/538.1 (compatible)"
     }
 }
