@@ -438,7 +438,7 @@
     </message>
     <message>
         <source>Proxy Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Proxy Einstellung</translation>
     </message>
 </context>
 <context>

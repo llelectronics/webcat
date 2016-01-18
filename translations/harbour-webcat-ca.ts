@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="ca" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="ca">
 <context>
     <name>AboutPage</name>
     <message>
@@ -216,6 +218,37 @@
     </message>
 </context>
 <context>
+    <name>ProxySettingsPage</name>
+    <message>
+        <source>Please restart Webcat</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Proxy Disabled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You need to restart Webcat</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Proxy Settings (Restart needed)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Host or Ip Address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Port</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>SelectUrl</name>
     <message>
         <source>Bookmarks</source>
@@ -403,6 +436,10 @@
         <source>Set Webcat as default browser</source>
         <translation>Estableix Webcat com a navegador per defecte</translation>
     </message>
+    <message>
+        <source>Proxy Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ShareContextMenu</name>
@@ -430,33 +467,33 @@
     <name>VideoPlayerComponent</name>
     <message>
         <source>Dismiss</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>
 The audio and or video format is not supported.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>
 The video cannot be played due to network issues.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>
 The video cannot be played because the media service could not be instantiated.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>
 The video cannot be played due to insufficient permissions.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>
 The video cannot be played due to a problem allocating resources.
 On Youtube Videos please make sure to be logged in. Some videos might be geoblocked or require you to be logged into youtube.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

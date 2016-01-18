@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="nl_NL" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="nl_NL">
 <context>
     <name>AboutPage</name>
     <message>
@@ -216,6 +218,37 @@
     </message>
 </context>
 <context>
+    <name>ProxySettingsPage</name>
+    <message>
+        <source>Please restart Webcat</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Proxy Disabled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You need to restart Webcat</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Proxy Settings (Restart needed)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Host or Ip Address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Port</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>SelectUrl</name>
     <message>
         <source>Bookmarks</source>
@@ -402,6 +435,10 @@
     <message>
         <source>Set Webcat as default browser</source>
         <translation>Stel Webcat in als standaardbrowser</translation>
+    </message>
+    <message>
+        <source>Proxy Settings</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
