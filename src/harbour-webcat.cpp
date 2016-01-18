@@ -41,6 +41,7 @@
 #include "transferengine/transferengine.h"
 #include "transferengine/transfermethodmodel.h"
 #include "dbus/webcatinterface.h"
+#include "proxymanager.h"
 
 // Compile everything needed for faster startup and less memory usage
 #include <QQuickItem>
@@ -71,6 +72,7 @@ int main(int argc, char *argv[])
     qmlRegisterType<TransferEngine>("harbour.webcat.DBus.TransferEngine", 1, 0, "TransferEngine");
     qmlRegisterType<TransferMethodModel>("harbour.webcat.DBus.TransferEngine", 1, 0, "TransferMethodModel");
     qmlRegisterType<WebCatInterface>("harbour.webcat.DBus", 1, 0, "WebCatInterface");
+    qmlRegisterType<ProxyManager>("harbour.webcat.Network", 1, 0, "ProxyManager");
 
     QString file;
     bool noHomepage = false;
@@ -78,10 +80,13 @@ int main(int argc, char *argv[])
     bool resetDefault = false;
     bool openNewWindow = false;
 
+    ProxyManager::loadAndSet();
+
     // Sometimes I get the feeling I don't know what I do. But it works and the only limitation so far is that '--private' needs to be the first argument
     if (QString(argv[1]) == "--private") {
         // Load private mode here
         app->setApplicationName("harbour-webcat_PRIVATE");
+        ProxyManager::unloadAndSet();
         for(int i=1; i<argc; i++) {
             if (QString(argv[i]) == "about:bookmarks") file = "about:bookmarks";
             else if (!QString(argv[i]).startsWith("/") && !QString(argv[i]).startsWith("http://") && !QString(argv[i]).startsWith("rtsp://")

@@ -349,6 +349,19 @@ Dialog {
                 checked: mainWindow.vPlayerExternal
                 visible: (checked || mainWindow.vPlayerExists) ? true : false
             }
+            BackgroundItem {
+                id: proxyButton
+                width: parent.width
+                Label {
+                    text: qsTr("Proxy Settings")
+                    anchors.verticalCenter: parent.verticalCenter
+                    anchors.left: parent.left
+                    anchors.leftMargin: Theme.paddingLarge
+                    color: proxyButton.highlighted  ? Theme.highlightColor : Theme.primaryColor
+                }
+                anchors.horizontalCenter: parent.horizontalCenter
+                onClicked: pageStack.replace(Qt.resolvedUrl("ProxySettingsPage.qml"));
+            }
 //            BackgroundItem {
 //                id: setDefaultButton
 //                width: parent.width

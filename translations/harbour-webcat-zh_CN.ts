@@ -218,6 +218,37 @@
     </message>
 </context>
 <context>
+    <name>ProxySettingsPage</name>
+    <message>
+        <source>Save</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Proxy Disabled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You need to restart Webcat</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Proxy Settings (Restart needed)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Host or Ip Address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Port</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please restart Webcat</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>SelectUrl</name>
     <message>
         <source>Bookmarks</source>
@@ -403,6 +434,10 @@
     </message>
     <message>
         <source>Set Webcat as default browser</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Proxy Settings</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

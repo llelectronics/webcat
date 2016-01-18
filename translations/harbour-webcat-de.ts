@@ -218,6 +218,37 @@
     </message>
 </context>
 <context>
+    <name>ProxySettingsPage</name>
+    <message>
+        <source>Save</source>
+        <translation>Speichern</translation>
+    </message>
+    <message>
+        <source>Proxy Disabled</source>
+        <translation>Proxy Deaktiviert</translation>
+    </message>
+    <message>
+        <source>You need to restart Webcat</source>
+        <translation>Webcat muss neugestartet werden</translation>
+    </message>
+    <message>
+        <source>Proxy Settings (Restart needed)</source>
+        <translation>Proxy Einstellungen (Neustart erforderlich)</translation>
+    </message>
+    <message>
+        <source>Host or Ip Address</source>
+        <translation>Host oder IP-Adresse</translation>
+    </message>
+    <message>
+        <source>Port</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please restart Webcat</source>
+        <translation>Bitte Webcat neustarten</translation>
+    </message>
+</context>
+<context>
     <name>SelectUrl</name>
     <message>
         <source>Bookmarks</source>
@@ -404,6 +435,10 @@
     <message>
         <source>Set Webcat as default browser</source>
         <translation>Setze Webcat als Standardbrowser</translation>
+    </message>
+    <message>
+        <source>Proxy Settings</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

@@ -19,7 +19,8 @@ SOURCES += src/harbour-webcat.cpp \
     src/transferengine/transfermethodinfo.cpp \
     src/transferengine/transfermethodmodel.cpp \
     src/dbus/webcatadaptor.cpp \
-    src/dbus/webcatinterface.cpp
+    src/dbus/webcatinterface.cpp \
+    src/proxymanager.cpp
 
 OTHER_FILES += qml/harbour-webcat.qml \
     qml/cover/CoverPage.qml \
@@ -100,7 +101,8 @@ HEADERS += \
     src/transferengine/transfermethodinfo.h \
     src/transferengine/transfermethodmodel.h \
     src/dbus/webcatadaptor.h \
-    src/dbus/webcatinterface.h
+    src/dbus/webcatinterface.h \
+    src/proxymanager.h
 
 QT += network
 
@@ -132,4 +134,5 @@ INSTALLS += dbus opendesktopfile
 
 DISTFILES += \
     qml/pages/VideoPlayerComponent.qml \
-    qml/pages/helper/browserComponents/ytQualityChooserContextMenu.qml
+    qml/pages/helper/browserComponents/ytQualityChooserContextMenu.qml \
+    qml/pages/ProxySettingsPage.qml
