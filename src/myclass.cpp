@@ -147,3 +147,35 @@ void MyClass::resetDefaultBrowser()
     setMime("x-maemo-urischeme/http", "open-url.desktop");
     setMime("x-maemo-urischeme/https", "open-url.desktop");
 }
+
+void MyClass::backupConfig()
+{
+    backupConfig("webcat_backup" + curDate.currentDateTime().toString("yyyy_MM_dd_hh_mm_ss") +".tar.gz");
+}
+
+void MyClass::backupConfig(QString backupName)
+{
+    if (existsPath(data_dir)) {
+        if (backupName.isEmpty())
+            backupName = "webcat_backup" + curDate.currentDateTime().toString("yyyy_MM_dd_hh_mm_ss") +".tar.gz";
+        compress.start("tar -zcvf " + h + "/" + backupName + " " + data_dir + "/");
+        connect(&compress, SIGNAL(finished(int)), this, SLOT(getCompressStatus(int)));
+    }
+    else {
+        errorMsg = "Webcat config dir not found"; // This should never happen
+        error(errorMsg);
+    }
+}
+
+void MyClass::getCompressStatus(int exitCode)
+{
+    if (exitCode == 0) {
+        backupComplete();
+    }
+    else {
+        QByteArray errorOut = compress.readAllStandardError();
+        qDebug() << "Called the C++ slot and got following error:" << errorOut.simplified();
+        errorMsg = errorOut.simplified();
+        error(errorMsg);
+    }
+}

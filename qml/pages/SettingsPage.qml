@@ -119,6 +119,10 @@ Dialog {
                 onClicked: pageStack.push(Qt.resolvedUrl("DownloadManager.qml"));
             }
             MenuItem {
+                text: qsTr("Backup Manager")
+                onClicked: pageStack.push(Qt.resolvedUrl("BackupPage.qml"));
+            }
+            MenuItem {
                 text: qsTr("Load Defaults")
                 onClicked: loadDefaults();
             }

@@ -135,4 +135,5 @@ INSTALLS += dbus opendesktopfile
 DISTFILES += \
     qml/pages/VideoPlayerComponent.qml \
     qml/pages/helper/browserComponents/ytQualityChooserContextMenu.qml \
-    qml/pages/ProxySettingsPage.qml
+    qml/pages/ProxySettingsPage.qml \
+    qml/pages/BackupPage.qml

@@ -47,6 +47,29 @@
     </message>
 </context>
 <context>
+    <name>BackupPage</name>
+    <message>
+        <source>Backups</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Create Backup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Backups are saved to home directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dismiss</source>
+        <translation type="unfinished">Ausblenden</translation>
+    </message>
+    <message>
+        <source>Backup saved successfully!</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ConfirmDialog</name>
     <message>
         <source>Accept ?</source>
@@ -439,6 +462,10 @@
     <message>
         <source>Proxy Settings</source>
         <translation>Proxy Einstellung</translation>
+    </message>
+    <message>
+        <source>Backup Manager</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

@@ -96,6 +96,9 @@ public:
     int progressValue() const;
     QString progressMessage() const;
 
+    // The network access manager that does all the network communication
+    QNetworkAccessManager m_manager;
+
 public Q_SLOTS:
     // This method is called when the user starts a download by clicking the 'Download' button in the UI
     void downloadUrl(const QString &url);
@@ -135,9 +138,6 @@ private:
 
     // A helper method to collect status messages
     void addStatusMessage(const QString &message);
-
-    // The network access manager that does all the network communication
-    QNetworkAccessManager m_manager;
 
     // The internal job queue
     QQueue<QUrl> m_downloadQueue;

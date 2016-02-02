@@ -11,6 +11,8 @@
 #include <QProcess>
 #include <QStandardPaths>
 #include <QCoreApplication>
+#include <QDateTime>
+#include <QByteArray>
 
 class MyClass : public QObject
 {
@@ -34,6 +36,12 @@ public slots:
     void openWithvPlayer(const QString &url);
     void resetDefaultBrowser();
     void setDefaultBrowser();
+    void backupConfig();
+    void backupConfig(QString backupName);
+
+signals:
+    void backupComplete();
+    void error(QString message);
 
 private:
     QDir *myHome;
@@ -41,10 +49,16 @@ private:
     QString config_dir;
     QString data_dir;
     QString cache_dir;
+    QString errorMsg;
+    QDateTime curDate;
+    QProcess compress;
     void clear(QString dir);
     bool isFile(const QString &url);
     bool existsPath(const QString &url);
     void setMime(const QString &mimeType, const QString &desktopFile);
+
+private slots:
+    void getCompressStatus(int exitCode);
 };
 
 #endif // MYCLASS_H

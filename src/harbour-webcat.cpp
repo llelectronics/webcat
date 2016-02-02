@@ -209,6 +209,7 @@ int main(int argc, char *argv[])
         object->setProperty("vPlayerExists", false);
     }
 
+    view->engine()->rootContext()->setContextProperty("_myClass", &myClass);
     view->engine()->rootContext()->setContextProperty("_manager", &manager);
 
     FM *fileAction = new FM();
