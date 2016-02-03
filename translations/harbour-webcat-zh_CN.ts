@@ -68,6 +68,31 @@
         <source>Backup saved successfully!</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>The Backup includes all cookies, bookmarks, history and settings for Webcat.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Restore Backup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Backups overwrite current configurations</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Backup restored! Please restart Webcat</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Restoring overwrites all cookies, bookmarks, history and settings for Webcat from the backup file.
+Please restart for changes to take effect.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Restoring Backup</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ConfirmDialog</name>
@@ -223,6 +248,26 @@
     <message>
         <source>Load Last Session</source>
         <translation>载入上个会话</translation>
+    </message>
+</context>
+<context>
+    <name>MyClass</name>
+    <message>
+        <source>Webcat config dir not found</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File not found.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No valid Backup file. Did not find harbour-webcat Folder.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Could not verify Backup file.
+</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

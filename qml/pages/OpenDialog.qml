@@ -10,6 +10,7 @@ Page {
     property bool selectMode: false
     property bool onlyFolders: false
     property string path
+    property variant filter: [ "*" ]
 
     property QtObject dataContainer
 
@@ -50,6 +51,7 @@ Page {
         showDirsFirst: true
         showDotAndDotDot: true
         showOnlyReadable: true
+        nameFilters: filter
     }
 
     function humanSize(bytes) {

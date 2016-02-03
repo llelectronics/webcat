@@ -38,9 +38,11 @@ public slots:
     void setDefaultBrowser();
     void backupConfig();
     void backupConfig(QString backupName);
+    void checkBackup(QString backupFile);
 
 signals:
     void backupComplete();
+    void restoreComplete();
     void error(QString message);
 
 private:
@@ -50,15 +52,22 @@ private:
     QString data_dir;
     QString cache_dir;
     QString errorMsg;
+    QString curBackupFile;
     QDateTime curDate;
     QProcess compress;
+    QProcess checkProcess;
+    QProcess decompress;
     void clear(QString dir);
+    bool validBackupFile;
     bool isFile(const QString &url);
     bool existsPath(const QString &url);
     void setMime(const QString &mimeType, const QString &desktopFile);
+    void restoreBackup();
 
 private slots:
     void getCompressStatus(int exitCode);
+    void getDecompressStatus(int exitCode);
+    void getCheckStatus(int exitCode);
 };
 
 #endif // MYCLASS_H

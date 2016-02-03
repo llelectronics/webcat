@@ -11,26 +11,82 @@ Page {
         Column {
             id: content
             anchors { left: parent.left; right: parent.right }
+            spacing: Theme.paddingLarge
 
             PageHeader {
                 title: qsTr("Backups")
             }
+            Column {
+                anchors { left: parent.left; right: parent.right }
+                SectionHeader {
+                    text: qsTr("Backups are saved to home directory")
+                }
 
-            Button {
-                id: createBackupButton
-                text: qsTr("Create Backup")
-                anchors.horizontalCenter: parent.horizontalCenter
-                onClicked: {
-                    busy.running = true;
-                    _myClass.backupConfig();
+                Button {
+                    id: createBackupButton
+                    text: qsTr("Create Backup")
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    onClicked: {
+                        busy.running = true;
+                        _myClass.backupConfig();
+                    }
+                }
+
+                Label {
+                    anchors.left: parent.left
+                    anchors.leftMargin: Theme.paddingMedium
+                    anchors.right: parent.right
+                    anchors.rightMargin: Theme.paddingMedium
+                    width: parent.width - (2 * Theme.paddingMedium)
+                    wrapMode: Text.Wrap
+                    height: text.length ? (implicitHeight + Theme.paddingMedium) : 0
+                    font.pixelSize: Theme.fontSizeExtraSmall
+                    color: Theme.secondaryColor
+                    text: qsTr("The Backup includes all cookies, bookmarks, history and settings for Webcat.")
+                }
+            }
+            Column {
+                anchors { left: parent.left; right: parent.right }
+                SectionHeader {
+                    text: qsTr("Backups overwrite current configurations")
+                }
+
+                Button {
+                    id: restoreBackupButton
+                    text: qsTr("Restore Backup")
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    onClicked: {
+                        var openDialog = pageStack.push(Qt.resolvedUrl("OpenDialog.qml"),
+                                                        {"dataContainer":  backupPage, "selectMode": true, "filter" : [ "*.tar.gz", "*.gz" ]})
+                        openDialog.fileOpen.connect(function(file) {
+                            remorse.execute(qsTr("Restoring Backup"), function() {
+                                busy.running = true;
+                                _myClass.checkBackup(file);
+                            } )
+                        })
+                    }
+                }
+                Label {
+                    anchors.left: parent.left
+                    anchors.leftMargin: Theme.paddingMedium
+                    anchors.right: parent.right
+                    anchors.rightMargin: Theme.paddingMedium
+                    width: parent.width - (2 * Theme.paddingMedium)
+                    wrapMode: Text.Wrap
+                    height: text.length ? (implicitHeight + Theme.paddingMedium) : 0
+                    font.pixelSize: Theme.fontSizeExtraSmall
+                    color: Theme.secondaryColor
+                    text: qsTr("Restoring overwrites all cookies, bookmarks, history and settings for Webcat from the backup file.
+Please restart for changes to take effect.")
                 }
             }
 
-            SectionHeader {
-                text: qsTr("Backups are saved to home directory")
-            }
         } // Column
     } // Flickable
+
+    RemorsePopup {
+        id: remorse
+    }
 
     Rectangle {
         color: "black"
@@ -50,6 +106,14 @@ Page {
         running: false
         visible: running
     }
+    MouseArea {
+        z: 99
+        id: blockInput
+        anchors.fill: parent
+        visible: busy.running
+        enabled: busy.running
+    }
+
     TextArea {
         id: errTxt
         anchors.top: parent.top
@@ -77,6 +141,10 @@ Page {
         onBackupComplete: {
             busy.running = false
             mainWindow.infoBanner.showText(qsTr("Backup saved successfully!"))
+        }
+        onRestoreComplete: {
+            busy.running = false
+            mainWindow.infoBanner.showText(qsTr("Backup restored! Please restart Webcat"))
         }
         onError: {
             busy.running = false

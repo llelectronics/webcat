@@ -158,11 +158,11 @@ void MyClass::backupConfig(QString backupName)
     if (existsPath(data_dir)) {
         if (backupName.isEmpty())
             backupName = "webcat_backup" + curDate.currentDateTime().toString("yyyy_MM_dd_hh_mm_ss") +".tar.gz";
-        compress.start("tar -zcvf " + h + "/" + backupName + " " + data_dir + "/");
+        compress.start("tar -zcf " + h + "/" + backupName + " " + data_dir + "/");
         connect(&compress, SIGNAL(finished(int)), this, SLOT(getCompressStatus(int)));
     }
     else {
-        errorMsg = "Webcat config dir not found"; // This should never happen
+        errorMsg = tr("Webcat config dir not found"); // This should never happen
         error(errorMsg);
     }
 }
@@ -174,6 +174,72 @@ void MyClass::getCompressStatus(int exitCode)
     }
     else {
         QByteArray errorOut = compress.readAllStandardError();
+        qDebug() << "Called the C++ slot and got following error:" << errorOut.simplified();
+        errorMsg = errorOut.simplified();
+        error(errorMsg);
+    }
+}
+
+void MyClass::checkBackup(QString backupFile)
+{
+    //qDebug() << "[myclass.cpp] Called with backupFile:" + backupFile;
+    if (isFile(backupFile)) {
+        curBackupFile = backupFile;
+        checkProcess.start("bash", QStringList() << "-c" << "tar -tf \"" + backupFile + "\" | grep harbour-webcat -cim1");
+        connect(&checkProcess, SIGNAL(finished(int)), this, SLOT(getCheckStatus(int)));
+    }
+    else {
+        curBackupFile = "";
+        qDebug() << "[myclass.cpp] backupFile does not exist";
+        errorMsg = tr("File not found.");
+        error(errorMsg);
+    }
+}
+
+void MyClass::getCheckStatus(int exitCode)
+{
+    if (exitCode == 0){
+        QByteArray checkoutput = checkProcess.readAllStandardOutput();
+        qDebug() << "Got following checkProcess output:" << checkoutput.simplified();
+        if (checkoutput.simplified() == "1") {
+            validBackupFile = true;
+            // extract Backup
+            restoreBackup();
+        } else {
+            validBackupFile = false;
+            errorMsg = tr("No valid Backup file. Did not find harbour-webcat Folder.");
+            error(errorMsg);
+        }
+    } else {
+        QByteArray checkerror = checkProcess.readAllStandardError();
+        qDebug() << "[myclass.cpp] Got following checkProcess error:" << checkerror.simplified();
+        validBackupFile = false;
+        errorMsg = tr("Could not verify Backup file.\n") + checkerror.simplified();
+        error(errorMsg);
+    }
+}
+
+void MyClass::restoreBackup()
+{
+    if (validBackupFile) {
+        // TODO: Using -C / might be dangerous here as it might write other files aswell to users home directory
+        //       if backup file is manipulated. Evaluate if extracting to /tmp and only copying over harbour-webcat folder
+        //       makes more sense.
+        decompress.start("tar -xzf " + curBackupFile + " -C /");
+        connect(&decompress, SIGNAL(finished(int)), this, SLOT(getDecompressStatus(int)));
+    } else {
+        errorMsg = tr("No valid Backup file. Did not find harbour-webcat Folder.");
+        error(errorMsg);
+    }
+}
+
+void MyClass::getDecompressStatus(int exitCode)
+{
+    if (exitCode == 0) {
+        restoreComplete();
+    }
+    else {
+        QByteArray errorOut = decompress.readAllStandardError();
         qDebug() << "Called the C++ slot and got following error:" << errorOut.simplified();
         errorMsg = errorOut.simplified();
         error(errorMsg);

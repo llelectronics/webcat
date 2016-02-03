@@ -54,19 +54,45 @@
     </message>
     <message>
         <source>Create Backup</source>
-        <translation type="unfinished"></translation>
+        <translation>Backup erstellen</translation>
     </message>
     <message>
         <source>Backups are saved to home directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Backups werden im Heimverzeichnis gespeichert</translation>
     </message>
     <message>
         <source>Dismiss</source>
-        <translation type="unfinished">Ausblenden</translation>
+        <translation>Ausblenden</translation>
     </message>
     <message>
         <source>Backup saved successfully!</source>
-        <translation type="unfinished"></translation>
+        <translation>Backup erfolgreich gespeichert!</translation>
+    </message>
+    <message>
+        <source>The Backup includes all cookies, bookmarks, history and settings for Webcat.</source>
+        <translation>Das Backup beinhaltet alle Cookies, Lesezeichen, Verlauf und Einstellungen von Webcat.</translation>
+    </message>
+    <message>
+        <source>Restore Backup</source>
+        <translation>Backup wiederherstellen</translation>
+    </message>
+    <message>
+        <source>Backups overwrite current configurations</source>
+        <translation>Backups überschreiben aktuelle Einstellungen</translation>
+    </message>
+    <message>
+        <source>Backup restored! Please restart Webcat</source>
+        <translation>Backup wiederhergestellt! Bitte Webcat neustarten</translation>
+    </message>
+    <message>
+        <source>Restoring overwrites all cookies, bookmarks, history and settings for Webcat from the backup file.
+Please restart for changes to take effect.</source>
+        <translation>Die Wiederherstellung überschreibt alle aktuellen Cookies, Lesezeichen, Verlauf und Einstellungen von Webcat durch die in der Backupdatei.
+Bitte starten sie neu um die Änderungen zu übernehmen</translation>
+    </message>
+    <message>
+        <source>Restoring Backup</source>
+        <translation>Backup wiederherstellen</translation>
     </message>
 </context>
 <context>
@@ -223,6 +249,26 @@
     <message>
         <source>Load Last Session</source>
         <translation>Letzte Sitzung laden</translation>
+    </message>
+</context>
+<context>
+    <name>MyClass</name>
+    <message>
+        <source>Webcat config dir not found</source>
+        <translation>Webcat Einstellungsverzeichnis nicht gefunden</translation>
+    </message>
+    <message>
+        <source>File not found.</source>
+        <translation>Datei nicht gefunden.</translation>
+    </message>
+    <message>
+        <source>No valid Backup file. Did not find harbour-webcat Folder.</source>
+        <translation>Keine gültige Backupdatei gefunden. harbour-webcat Verzeichnis konnte nicht gefunden werden.</translation>
+    </message>
+    <message>
+        <source>Could not verify Backup file.
+</source>
+        <translation>Backupdatei konnte nicht verifiziert werden.</translation>
     </message>
 </context>
 <context>
@@ -487,7 +533,7 @@
     </message>
     <message>
         <source>Tabs</source>
-        <translation type="unfinished"></translation>
+        <translation>Reiter</translation>
     </message>
 </context>
 <context>
