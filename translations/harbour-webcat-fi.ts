@@ -45,6 +45,55 @@
     </message>
 </context>
 <context>
+    <name>BackupPage</name>
+    <message>
+        <source>Backups</source>
+        <translation>Varakopiot</translation>
+    </message>
+    <message>
+        <source>Create Backup</source>
+        <translation>Tee varakopio</translation>
+    </message>
+    <message>
+        <source>Backups are saved to home directory</source>
+        <translation>Varakopiot tallennetaan kotikansioon</translation>
+    </message>
+    <message>
+        <source>Dismiss</source>
+        <translation>Hylkää</translation>
+    </message>
+    <message>
+        <source>Backup saved successfully!</source>
+        <translation>Varakopion tallennus onnistui!</translation>
+    </message>
+    <message>
+        <source>The Backup includes all cookies, bookmarks, history and settings for Webcat.</source>
+        <translation>Varakopio sisältää kaikki cookiet, kirjanmerkit, selainhistorian sekä Webcatin asetukset</translation>
+    </message>
+    <message>
+        <source>Restore Backup</source>
+        <translation>Palauta varakopio</translation>
+    </message>
+    <message>
+        <source>Backups overwrite current configurations</source>
+        <translation>Varakopiot korvaavat nykyiset asetukset</translation>
+    </message>
+    <message>
+        <source>Backup restored! Please restart Webcat</source>
+        <translation>Varakopio palautettu! Käynnistä Webcat uudelleen</translation>
+    </message>
+    <message>
+        <source>Restoring overwrites all cookies, bookmarks, history and settings for Webcat from the backup file.
+Please restart for changes to take effect.</source>
+        <translation>Palautus korvaa kaikki cookiet, kirjanmerkit, selainhistorian sekä Webcatin asetukset varakopiossa olevilla.
+Käynnistä uudelleen että muutokset tulevat voimaan.</translation>
+    </message>
+    <message>
+        <source>Restoring Backup</source>
+        <translation>Palautetaan varakopiota</translation>
+    </message>
+</context>
+<context>
     <name>ConfirmDialog</name>
     <message>
         <source>Accept ?</source>
@@ -201,6 +250,27 @@
     </message>
 </context>
 <context>
+    <name>MyClass</name>
+    <message>
+        <source>Webcat config dir not found</source>
+        <translation>Webcatin asetushakemistoa ei löytynyt</translation>
+    </message>
+    <message>
+        <source>File not found.</source>
+        <translation>Tiedostoa ei löydy.</translation>
+    </message>
+    <message>
+        <source>No valid Backup file. Did not find harbour-webcat Folder.</source>
+        <translation>Ei kelvollistqa varakopiotiedostoa. Kansiota harbour-webcat ei löydy.</translation>
+    </message>
+    <message>
+        <source>Could not verify Backup file.
+</source>
+        <translation>Varakopiotiedoston varmentaminen epäonnistui.
+</translation>
+    </message>
+</context>
+<context>
     <name>OpenDialog</name>
     <message>
         <source>Opening...</source>
@@ -213,6 +283,37 @@
     <message>
         <source>Deleting </source>
         <translation>Poistaa...</translation>
+    </message>
+</context>
+<context>
+    <name>ProxySettingsPage</name>
+    <message>
+        <source>Save</source>
+        <translation>Tallenna</translation>
+    </message>
+    <message>
+        <source>Proxy Disabled</source>
+        <translation>Välityspalvelin pois käytöstä</translation>
+    </message>
+    <message>
+        <source>You need to restart Webcat</source>
+        <translation>Käynnistä Webcat uudelleen</translation>
+    </message>
+    <message>
+        <source>Proxy Settings (Restart needed)</source>
+        <translation>Välityspalvelimen asetukset (Uudelleenkäynnistys tarvitaan)</translation>
+    </message>
+    <message>
+        <source>Host or Ip Address</source>
+        <translation>Isäntäpalvelin tai IP-osoite</translation>
+    </message>
+    <message>
+        <source>Port</source>
+        <translation>Portti</translation>
+    </message>
+    <message>
+        <source>Please restart Webcat</source>
+        <translation>Käynnistä Webcat uudelleen</translation>
     </message>
 </context>
 <context>
@@ -402,6 +503,14 @@
     <message>
         <source>Set Webcat as default browser</source>
         <translation>Aseta Webcat oletusselaimeksi</translation>
+    </message>
+    <message>
+        <source>Proxy Settings</source>
+        <translation>Välityspalvelimen asetukset</translation>
+    </message>
+    <message>
+        <source>Backup Manager</source>
+        <translation>Varakopioiden hallinta</translation>
     </message>
 </context>
 <context>

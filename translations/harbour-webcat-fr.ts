@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="fr">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="fr" version="2.1">
 <context>
     <name>AboutPage</name>
     <message>
@@ -50,48 +48,49 @@
     <name>BackupPage</name>
     <message>
         <source>Backups</source>
-        <translation type="unfinished"></translation>
+        <translation>Sauvegardes</translation>
     </message>
     <message>
         <source>Create Backup</source>
-        <translation type="unfinished"></translation>
+        <translation>Créer une sauvegarde</translation>
     </message>
     <message>
         <source>Backups are saved to home directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Les sauvegardes sont enregistrées dans le répertoire home</translation>
     </message>
     <message>
         <source>Dismiss</source>
-        <translation type="unfinished">Rejeter</translation>
+        <translation>Rejeter</translation>
     </message>
     <message>
         <source>Backup saved successfully!</source>
-        <translation type="unfinished"></translation>
+        <translation>Sauvegarde enregistrée avec succès !</translation>
     </message>
     <message>
         <source>The Backup includes all cookies, bookmarks, history and settings for Webcat.</source>
-        <translation type="unfinished"></translation>
+        <translation>La sauvegarde inclut tous les cookies, les favoris, l&apos;historique et les paramètres de Webcat.</translation>
     </message>
     <message>
         <source>Restore Backup</source>
-        <translation type="unfinished"></translation>
+        <translation>Restaurer la sauvegarde</translation>
     </message>
     <message>
         <source>Backups overwrite current configurations</source>
-        <translation type="unfinished"></translation>
+        <translation>Les sauvegardes écrasent les configurations actuelles</translation>
     </message>
     <message>
         <source>Backup restored! Please restart Webcat</source>
-        <translation type="unfinished"></translation>
+        <translation>Sauvegarde restaurée ! Redémarrer Webcat SVP</translation>
     </message>
     <message>
         <source>Restoring overwrites all cookies, bookmarks, history and settings for Webcat from the backup file.
 Please restart for changes to take effect.</source>
-        <translation type="unfinished"></translation>
+        <translation>La restauration de la sauvegarde écrase tous les cookies, les favoris, l&apos;historique et les paramètres de Webcat à partir du fichier de sauvegarde.
+Veuillez redémarrer pour activer les modifications.</translation>
     </message>
     <message>
         <source>Restoring Backup</source>
-        <translation type="unfinished"></translation>
+        <translation>Sauvegarde en cours de restauration</translation>
     </message>
 </context>
 <context>
@@ -254,20 +253,21 @@ Please restart for changes to take effect.</source>
     <name>MyClass</name>
     <message>
         <source>Webcat config dir not found</source>
-        <translation type="unfinished"></translation>
+        <translation>Répertoire de configuration Webcat introuvable</translation>
     </message>
     <message>
         <source>File not found.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fichier introuvable.</translation>
     </message>
     <message>
         <source>No valid Backup file. Did not find harbour-webcat Folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fichier de sauvegarde non valide. Répertoire harbour-webcat introuvable.</translation>
     </message>
     <message>
         <source>Could not verify Backup file.
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Le fichier de sauvegarde n&apos;a pas pu être vérifié.
+</translation>
     </message>
 </context>
 <context>
@@ -288,32 +288,32 @@ Please restart for changes to take effect.</source>
 <context>
     <name>ProxySettingsPage</name>
     <message>
-        <source>Please restart Webcat</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Save</source>
-        <translation type="unfinished"></translation>
+        <translation>Enregistrer</translation>
     </message>
     <message>
         <source>Proxy Disabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Proxy désactivé</translation>
     </message>
     <message>
         <source>You need to restart Webcat</source>
-        <translation type="unfinished"></translation>
+        <translation>Il vous faut redémarrer Webcat</translation>
     </message>
     <message>
         <source>Proxy Settings (Restart needed)</source>
-        <translation type="unfinished"></translation>
+        <translation>Paramètres du Proxy (redémarrage nécessaire)</translation>
     </message>
     <message>
         <source>Host or Ip Address</source>
-        <translation type="unfinished"></translation>
+        <translation>Adresse Host ou IP</translation>
     </message>
     <message>
         <source>Port</source>
-        <translation type="unfinished"></translation>
+        <translation>Port</translation>
+    </message>
+    <message>
+        <source>Please restart Webcat</source>
+        <translation>Redémarrer Webcat s&apos;il vous plaît</translation>
     </message>
 </context>
 <context>
@@ -506,11 +506,11 @@ Please restart for changes to take effect.</source>
     </message>
     <message>
         <source>Proxy Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Paramètres du Proxy</translation>
     </message>
     <message>
         <source>Backup Manager</source>
-        <translation type="unfinished"></translation>
+        <translation>Gestionnaire de sauvegardes</translation>
     </message>
 </context>
 <context>

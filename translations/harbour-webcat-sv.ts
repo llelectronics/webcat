@@ -45,6 +45,55 @@
     </message>
 </context>
 <context>
+    <name>BackupPage</name>
+    <message>
+        <source>Backups</source>
+        <translation>Säkerhetskopior</translation>
+    </message>
+    <message>
+        <source>Create Backup</source>
+        <translation>Skapa säkerhetskopia</translation>
+    </message>
+    <message>
+        <source>Backups are saved to home directory</source>
+        <translation>Säkerhetskopior sparas i hemkatalogen</translation>
+    </message>
+    <message>
+        <source>Dismiss</source>
+        <translation>Avvisa</translation>
+    </message>
+    <message>
+        <source>Backup saved successfully!</source>
+        <translation>Säkerhetskopia sparad!</translation>
+    </message>
+    <message>
+        <source>The Backup includes all cookies, bookmarks, history and settings for Webcat.</source>
+        <translation>Säkerhetskopian inkluderar alla cookies, bokmärken, historik och inställningar för Webcat.</translation>
+    </message>
+    <message>
+        <source>Restore Backup</source>
+        <translation>Återställ från säkerhetskopia</translation>
+    </message>
+    <message>
+        <source>Backups overwrite current configurations</source>
+        <translation>Säkerhetskopior skriver över aktuella konfigurationer</translation>
+    </message>
+    <message>
+        <source>Backup restored! Please restart Webcat</source>
+        <translation>Säkerhetskopia återställd! Starta om Webcat.</translation>
+    </message>
+    <message>
+        <source>Restoring overwrites all cookies, bookmarks, history and settings for Webcat from the backup file.
+Please restart for changes to take effect.</source>
+        <translation>Återställning skriver över alla cookies, bokmärken, historik och inställningar för Webcat, från säkerhetskopian.
+Starta om Webcat för att ändringarna skall få effekt.</translation>
+    </message>
+    <message>
+        <source>Restoring Backup</source>
+        <translation>Återställer från säkerhetskopia</translation>
+    </message>
+</context>
+<context>
     <name>ConfirmDialog</name>
     <message>
         <source>Accept ?</source>
@@ -201,6 +250,27 @@
     </message>
 </context>
 <context>
+    <name>MyClass</name>
+    <message>
+        <source>Webcat config dir not found</source>
+        <translation>Webcats konfigurationsmapp kunde inte hittas</translation>
+    </message>
+    <message>
+        <source>File not found.</source>
+        <translation>Filen kunde inte hittas.</translation>
+    </message>
+    <message>
+        <source>No valid Backup file. Did not find harbour-webcat Folder.</source>
+        <translation>Ingen giltig säkerhetskopia. Mappen &apos;harbour-webcat&apos; kunde inte hittas.</translation>
+    </message>
+    <message>
+        <source>Could not verify Backup file.
+</source>
+        <translation>Kunde inte verifiera säkerhetskopian.
+</translation>
+    </message>
+</context>
+<context>
     <name>OpenDialog</name>
     <message>
         <source>Opening...</source>
@@ -213,6 +283,37 @@
     <message>
         <source>Deleting </source>
         <translation>Tar bort </translation>
+    </message>
+</context>
+<context>
+    <name>ProxySettingsPage</name>
+    <message>
+        <source>Save</source>
+        <translation>Spara</translation>
+    </message>
+    <message>
+        <source>Proxy Disabled</source>
+        <translation>Ingen proxy</translation>
+    </message>
+    <message>
+        <source>You need to restart Webcat</source>
+        <translation>Du måste starta om Webcat</translation>
+    </message>
+    <message>
+        <source>Proxy Settings (Restart needed)</source>
+        <translation>Proxyinställningar (Omstart krävs)</translation>
+    </message>
+    <message>
+        <source>Host or Ip Address</source>
+        <translation>Värd eller IP-adress</translation>
+    </message>
+    <message>
+        <source>Port</source>
+        <translation>Port</translation>
+    </message>
+    <message>
+        <source>Please restart Webcat</source>
+        <translation>Starta om Webcat</translation>
     </message>
 </context>
 <context>
@@ -402,6 +503,14 @@
     <message>
         <source>Set Webcat as default browser</source>
         <translation>Ange Webcat som standardwebbläsare</translation>
+    </message>
+    <message>
+        <source>Proxy Settings</source>
+        <translation>Proxyinställningar</translation>
+    </message>
+    <message>
+        <source>Backup Manager</source>
+        <translation>Säkerhetskopiering</translation>
     </message>
 </context>
 <context>

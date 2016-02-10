@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="es">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="es" version="2.1">
 <context>
     <name>AboutPage</name>
     <message>
@@ -12,11 +10,11 @@
     <name>AddBookmark</name>
     <message>
         <source>Edit Bookmark</source>
-        <translation>Editar marcador</translation>
+        <translation>Editar favorito</translation>
     </message>
     <message>
         <source>Add Bookmark</source>
-        <translation>Añadir marcador</translation>
+        <translation>Añadir a Favoritos</translation>
     </message>
 </context>
 <context>
@@ -50,48 +48,49 @@
     <name>BackupPage</name>
     <message>
         <source>Backups</source>
-        <translation type="unfinished"></translation>
+        <translation>Copias de seguridad</translation>
     </message>
     <message>
         <source>Create Backup</source>
-        <translation type="unfinished"></translation>
+        <translation>Crear copia de seguridad</translation>
     </message>
     <message>
         <source>Backups are saved to home directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Las copias de seguridad se han guardado en el directorio Home</translation>
     </message>
     <message>
         <source>Dismiss</source>
-        <translation type="unfinished">Descartar</translation>
+        <translation>Descartar</translation>
     </message>
     <message>
         <source>Backup saved successfully!</source>
-        <translation type="unfinished"></translation>
+        <translation>¡La copia de seguridad se ha guardado correctamente!</translation>
     </message>
     <message>
         <source>The Backup includes all cookies, bookmarks, history and settings for Webcat.</source>
-        <translation type="unfinished"></translation>
+        <translation>La copia de seguridad incluye las cookies, favoritos, historial y ajustes de Webcat.</translation>
     </message>
     <message>
         <source>Restore Backup</source>
-        <translation type="unfinished"></translation>
+        <translation>Restaurar copia de seguridad</translation>
     </message>
     <message>
         <source>Backups overwrite current configurations</source>
-        <translation type="unfinished"></translation>
+        <translation>La copia de seguridad reemplazará la configuración actual</translation>
     </message>
     <message>
         <source>Backup restored! Please restart Webcat</source>
-        <translation type="unfinished"></translation>
+        <translation>¡Copia de seguridad restaurada! Por favor, reinicia Webcat</translation>
     </message>
     <message>
         <source>Restoring overwrites all cookies, bookmarks, history and settings for Webcat from the backup file.
 Please restart for changes to take effect.</source>
-        <translation type="unfinished"></translation>
+        <translation>Al restaurar la copia de seguridad se reemplazarán las cookies, favoritos, historial y ajustes de Webcat.
+Por favor, reinicia para que los cambios tengan efecto.</translation>
     </message>
     <message>
         <source>Restoring Backup</source>
-        <translation type="unfinished"></translation>
+        <translation>Restaurando copia de seguridad</translation>
     </message>
 </context>
 <context>
@@ -254,20 +253,21 @@ Please restart for changes to take effect.</source>
     <name>MyClass</name>
     <message>
         <source>Webcat config dir not found</source>
-        <translation type="unfinished"></translation>
+        <translation>No se ha encontrado el directorio de configuración de Webcat</translation>
     </message>
     <message>
         <source>File not found.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fichero no encontrado.</translation>
     </message>
     <message>
         <source>No valid Backup file. Did not find harbour-webcat Folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>Copia de seguridad no válida. No se ha encotrado la carpeta harbour-webcat.</translation>
     </message>
     <message>
         <source>Could not verify Backup file.
 </source>
-        <translation type="unfinished"></translation>
+        <translation>No se ha podido verficar el archivo de la copia de seguridad.
+</translation>
     </message>
 </context>
 <context>
@@ -288,39 +288,39 @@ Please restart for changes to take effect.</source>
 <context>
     <name>ProxySettingsPage</name>
     <message>
-        <source>Please restart Webcat</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Save</source>
-        <translation type="unfinished"></translation>
+        <translation>Guardar</translation>
     </message>
     <message>
         <source>Proxy Disabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Proxy desactivado</translation>
     </message>
     <message>
         <source>You need to restart Webcat</source>
-        <translation type="unfinished"></translation>
+        <translation>Es necesario reiniciar Webcat</translation>
     </message>
     <message>
         <source>Proxy Settings (Restart needed)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ajustes del Proxy (es necesario reiniciar)</translation>
     </message>
     <message>
         <source>Host or Ip Address</source>
-        <translation type="unfinished"></translation>
+        <translation>Host o dirección IP</translation>
     </message>
     <message>
         <source>Port</source>
-        <translation type="unfinished"></translation>
+        <translation>Puerto</translation>
+    </message>
+    <message>
+        <source>Please restart Webcat</source>
+        <translation>Por favor, reinicia Webcat</translation>
     </message>
 </context>
 <context>
     <name>SelectUrl</name>
     <message>
         <source>Bookmarks</source>
-        <translation>Marcadores</translation>
+        <translation>Favoritos</translation>
     </message>
     <message>
         <source>Open in new Tab</source>
@@ -344,7 +344,7 @@ Please restart for changes to take effect.</source>
     </message>
     <message>
         <source>Add Bookmark</source>
-        <translation>Añadir marcador</translation>
+        <translation>Añadir a Favoritos</translation>
     </message>
     <message>
         <source>History</source>
@@ -406,7 +406,7 @@ Please restart for changes to take effect.</source>
     </message>
     <message>
         <source>Load Defaults</source>
-        <translation>Cargar por defecto</translation>
+        <translation>Restaurar valores por defecto</translation>
     </message>
     <message>
         <source>Appearance</source>
@@ -414,11 +414,11 @@ Please restart for changes to take effect.</source>
     </message>
     <message>
         <source>Default Font Size</source>
-        <translation>Tamaño de la fuente predeterminada</translation>
+        <translation>Tamaño de la fuente por defecto</translation>
     </message>
     <message>
         <source>Default Fixed Font Size</source>
-        <translation>Tamaño de la fuente fija predeterminada</translation>
+        <translation>Tamaño de la fuente fija por defecto</translation>
     </message>
     <message>
         <source>Minimum Font Size</source>
@@ -450,7 +450,7 @@ Please restart for changes to take effect.</source>
     </message>
     <message>
         <source>Add Default Bookmarks</source>
-        <translation>Añadir marcadores predeterminados</translation>
+        <translation>Añadir favoritos predeterminados</translation>
     </message>
     <message>
         <source>User Agent:</source>
@@ -490,7 +490,7 @@ Please restart for changes to take effect.</source>
     </message>
     <message>
         <source>Clear Bookmarks</source>
-        <translation>Limpiar favoritos</translation>
+        <translation>Limpiar Favoritos</translation>
     </message>
     <message>
         <source>Use external video player</source>
@@ -506,11 +506,11 @@ Please restart for changes to take effect.</source>
     </message>
     <message>
         <source>Proxy Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Ajustes del Proxy</translation>
     </message>
     <message>
         <source>Backup Manager</source>
-        <translation type="unfinished"></translation>
+        <translation>Gestor de copias de seguridad</translation>
     </message>
 </context>
 <context>
@@ -544,28 +544,33 @@ Please restart for changes to take effect.</source>
     <message>
         <source>
 The audio and or video format is not supported.</source>
-        <translation>Formato de audio y/o vídeo no soportado.</translation>
+        <translation>
+Formato de audio y/o vídeo no soportado.</translation>
     </message>
     <message>
         <source>
 The video cannot be played due to network issues.</source>
-        <translation>El vídeo no pudo reproducirse por problemas en la red.</translation>
+        <translation>
+El vídeo no pudo reproducirse por problemas en la red.</translation>
     </message>
     <message>
         <source>
 The video cannot be played because the media service could not be instantiated.</source>
-        <translation>El vídeo no pudo reproducirse porque el servicio de comunicación no pudo instanciarse.</translation>
+        <translation>
+El vídeo no pudo reproducirse porque el servicio de comunicación no pudo instanciarse.</translation>
     </message>
     <message>
         <source>
 The video cannot be played due to insufficient permissions.</source>
-        <translation>El vídeo no pudo reproducirse debido a permisos insuficientes.</translation>
+        <translation>
+El vídeo no pudo reproducirse debido a permisos insuficientes.</translation>
     </message>
     <message>
         <source>
 The video cannot be played due to a problem allocating resources.
 On Youtube Videos please make sure to be logged in. Some videos might be geoblocked or require you to be logged into youtube.</source>
-        <translation>El vídeo no pudo reproducirse debido a un problema de asignación de recursos.
+        <translation>
+El vídeo no pudo reproducirse debido a un problema de asignación de recursos.
 Por favor, asegúrate de haber iniciado sesión en YouTube. El acceso a algunos videos podrían tener restricciones en algunos países o requieren del inicio de sesión en YouTube.</translation>
     </message>
 </context>
