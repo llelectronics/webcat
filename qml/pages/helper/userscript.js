@@ -243,6 +243,9 @@ function longPressed(x, y, element) {
                 break;
             }
         }
+        if (element.tagName.getAttribute('src') != "") {
+            data.video = getImgFullUri(element.tagName.getAttribute('src'));
+        }
     }
 
 /*

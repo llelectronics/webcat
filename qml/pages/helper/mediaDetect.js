@@ -42,7 +42,7 @@ for (var i=0; i<delement.length; i++) {
     }
     else if (delement[i].hasAttribute('src')) {
         var data = new Object({'type': 'video'})
-        data.video = getImgFullUri(delement[j].getAttribute('src'));
+        data.video = getImgFullUri(delement[i].getAttribute('src'));
         navigator.qt.postMessage( JSON.stringify(data) );
     }
 }
@@ -71,4 +71,27 @@ for (var i=0; i<frames.length; i++) {
     var data = new Object({'type':'iframe'});
     data.isrc = isrc;
     navigator.qt.postMessage(JSON.stringify(data));
+}
+
+// facebook.com uses this and detecting html5 video only does somehow not work
+var delement = document.documentElement.getElementsByClassName('widePic');
+for (var i=0; i<delement.length; i++) {
+    if (delement[i].hasChildNodes()) {
+        console.debug("Has children");
+        var children = delement[i].childNodes;
+        for (var j = 0; j < children.length; j++) {
+            if (children[j].hasAttribute('data-store')) {
+                var data = new Object({'type': 'video'})
+                var jsonFacebook = children[j].getAttribute('data-store')
+                // data.video = src of that above json
+                var objJSON = eval("(function(){return " + jsonFacebook + ";})()");
+                if (objJSON.type == "video") {
+                    data.video = getImgFullUri(objJSON.src)
+                    navigator.qt.postMessage( JSON.stringify(data) );
+                    break;
+                } // if type == video
+
+            } // if data-store
+        } // for
+    } // if children
 }
