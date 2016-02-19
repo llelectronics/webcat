@@ -535,6 +535,10 @@ Bitte starten sie neu um die Änderungen zu übernehmen</translation>
         <source>Tabs</source>
         <translation>Reiter</translation>
     </message>
+    <message>
+        <source>New Tab</source>
+        <translation type="unfinished">Neuer Reiter</translation>
+    </message>
 </context>
 <context>
     <name>VideoPlayerComponent</name>

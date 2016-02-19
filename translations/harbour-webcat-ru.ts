@@ -534,6 +534,10 @@ Please restart for changes to take effect.</source>
         <source>Tabs</source>
         <translation>Вкладки</translation>
     </message>
+    <message>
+        <source>New Tab</source>
+        <translation type="unfinished">Новая вкладка</translation>
+    </message>
 </context>
 <context>
     <name>VideoPlayerComponent</name>

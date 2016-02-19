@@ -534,6 +534,10 @@ Please restart for changes to take effect.</source>
         <source>Tabs</source>
         <translation>Tabbladen</translation>
     </message>
+    <message>
+        <source>New Tab</source>
+        <translation type="unfinished">Nieuw tabblad</translation>
+    </message>
 </context>
 <context>
     <name>VideoPlayerComponent</name>

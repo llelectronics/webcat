@@ -536,6 +536,10 @@ Prego riavviare perché le modifiche abbiano effetto.</translation>
         <source>Tabs</source>
         <translation>Schede</translation>
     </message>
+    <message>
+        <source>New Tab</source>
+        <translation type="unfinished">Nuova scheda</translation>
+    </message>
 </context>
 <context>
     <name>VideoPlayerComponent</name>

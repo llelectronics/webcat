@@ -305,7 +305,29 @@ Item {
             }
         }
 
+        Rectangle {
+            anchors.centerIn: fsIcon
+            width: fsIcon.width + 2
+            height: fsIcon.height + 2
+            color: "black"
+            opacity: 0.4
+            radius: width / 2
+            border.color: "white"
+            border.width: 2
+            visible: videoPoster.controls.opacity
+        }
 
+        Rectangle {
+            anchors.centerIn: closeIcon
+            width: closeIcon.width + 2
+            height: closeIcon.height + 2
+            color: "black"
+            opacity: 0.4
+            radius: width / 2
+            border.color: "white"
+            border.width: 2
+            visible: videoPoster.controls.opacity
+        }
 
         IconButton {
             id: fsIcon
@@ -317,6 +339,10 @@ Item {
             anchors.topMargin: Theme.paddingLarge * 2
             visible: (videoPage == false)
             opacity: videoPoster.controls.opacity
+            width: height
+            height: Theme.iconSizeMedium
+            icon.width: width
+            icon.height: height
         }
         IconButton {
             id: closeIcon
@@ -328,6 +354,10 @@ Item {
             visible: (videoPage == false)
             anchors.topMargin: Theme.paddingLarge * 2
             opacity: videoPoster.controls.opacity
+            width: height
+            height: Theme.iconSizeMedium
+            icon.width: width
+            icon.height: height
         }
     }
 

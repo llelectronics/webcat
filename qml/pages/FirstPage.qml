@@ -777,21 +777,24 @@ Page {
             icon.height: toolbar.height
             icon.width: icon.height
             anchors.verticalCenter: toolbar.verticalCenter
+
             onClicked: {
+                    extraToolbar.hide()
                     pageStack.push(Qt.resolvedUrl("SelectUrl.qml"), { dataContainer: page, siteURL: webview.url, bookmarks: page.bookmarks, siteTitle: webview.title})
             }
             property int mx
             property bool searchButton: false
             onPressAndHold: {
                 if (extraToolbar.opacity == 0 || extraToolbar.visible == false) {
-                    extraToolbar.visible = true
-                    extraToolbar.opacity = 1
+                    extraToolbar.quickmenu = true
+                    extraToolbar.show()
+                    extraToolbar.height = extratoolbarheight
                     minimizeButton.highlighted = true
                     mx = mouse.x
                 }
             }
             onPositionChanged: {
-                if (extraToolbar.opacity == 1 && mouse.y > ((extratoolbarheight + toolbarheight) * -1)) {
+                if (extraToolbar.opacity == 1 && extraToolbar.quickmenu && mouse.y > ((extratoolbarheight + toolbarheight) * -1)) {
                     //console.debug("X Position: " + mouse.x)
                     if (mouse.x > newTabButton.x && mouse.x < newWindowButton.x) { minimizeButton.highlighted = false; newTabButton.highlighted = true; newWindowButton.highlighted = false; reloadThisButton.highlighted = false; orientationLockButton.highlighted = false; readerModeButton.highlighted = false; searchModeButton.highlighted = false; shareButton.highlighted = false; }
                     else if (mouse.x < newTabButton.x) {minimizeButton.highlighted = true; newTabButton.highlighted = false; newWindowButton.highlighted = false; reloadThisButton.highlighted = false; orientationLockButton.highlighted = false; readerModeButton.highlighted = false; searchModeButton.highlighted = false; shareButton.highlighted = false; }
@@ -807,20 +810,21 @@ Page {
             }
 
             onReleased: {
-                if (extraToolbar.opacity == 1 && minimizeButton.highlighted == true) { minimizeButton.clicked(undefined);extraToolbar.opacity = 0; extraToolbar.visible = false;}
-                else if (extraToolbar.opacity == 1 && newTabButton.highlighted == true) { newTabButton.clicked(undefined);extraToolbar.opacity = 0; extraToolbar.visible = false; }
-                else if (extraToolbar.opacity == 1 && newWindowButton.highlighted == true) { newWindowButton.clicked(undefined);extraToolbar.opacity = 0; extraToolbar.visible = false;}
-                else if (extraToolbar.opacity == 1 && reloadThisButton.highlighted == true) { reloadThisButton.clicked(undefined);extraToolbar.opacity = 0; extraToolbar.visible = false;}
-                else if (extraToolbar.opacity == 1 && orientationLockButton.highlighted == true) { orientationLockButton.clicked(undefined); extraToolbar.opacity = 0; extraToolbar.visible = false;}
-                else if (extraToolbar.opacity == 1 && readerModeButton.highlighted == true) { readerModeButton.clicked(undefined);extraToolbar.opacity = 0; extraToolbar.visible = false; }
-                else if (extraToolbar.opacity == 1 && searchModeButton.highlighted == true) { searchModeButton.clicked(undefined);extraToolbar.opacity = 0; extraToolbar.visible = false; }
-                else if (extraToolbar.opacity == 1 && shareButton.highlighted == true) { shareButton.clicked(undefined);extraToolbar.opacity = 0; extraToolbar.visible = false; }
-                else if (extraToolbar.opacity == 1 && mouse.y > ((extratoolbarheight + toolbarheight) * -1)) {extraToolbar.opacity = 0; extraToolbar.visible = false;}
+                if (extraToolbar.opacity == 1 && extraToolbar.quickmenu && minimizeButton.highlighted == true) minimizeButton.clicked(undefined)
+                else if (extraToolbar.opacity == 1 && extraToolbar.quickmenu && newTabButton.highlighted == true) newTabButton.clicked(undefined)
+                else if (extraToolbar.opacity == 1 && extraToolbar.quickmenu && newWindowButton.highlighted == true) newWindowButton.clicked(undefined)
+                else if (extraToolbar.opacity == 1 && extraToolbar.quickmenu && reloadThisButton.highlighted == true) reloadThisButton.clicked(undefined)
+                else if (extraToolbar.opacity == 1 && extraToolbar.quickmenu && orientationLockButton.highlighted == true) orientationLockButton.clicked(undefined)
+                else if (extraToolbar.opacity == 1 && extraToolbar.quickmenu && readerModeButton.highlighted == true) readerModeButton.clicked(undefined)
+                else if (extraToolbar.opacity == 1 && extraToolbar.quickmenu && searchModeButton.highlighted == true) searchModeButton.clicked(undefined)
+                else if (extraToolbar.opacity == 1 && extraToolbar.quickmenu && shareButton.highlighted == true) shareButton.clicked(undefined)
+                else if (extraToolbar.opacity == 1 && extraToolbar.quickmenu && mouse.y > ((extratoolbarheight + toolbarheight) * -1)) extraToolbar.hide()
 //                extraToolbar.opacity = 0;
 //                extraToolbar.visible = false;
             }
 
             Label {
+                id: tabNumberLbl
                 text: mainWindow.tabModel.count
                 anchors.centerIn: parent
                 font.pixelSize: Theme.fontSizeExtraSmall
@@ -970,8 +974,17 @@ Page {
 
         IconButton {
             id: refreshButton
-            icon.source: webview.loading ? "image://theme/icon-m-reset" : "image://theme/icon-m-refresh"
-            onClicked: webview.loading ? webview.stop() : webview.reload()
+            icon.source: webview.loading ? "image://theme/icon-m-reset" : "image://theme/icon-m-menu"
+            onClicked: {
+                if (webview.loading) webview.stop()
+                else if (extraToolbar.opacity == 0 || extraToolbar.visible == false) {
+                    extraToolbar.quickmenu = false
+                    extraToolbar.show()
+                }
+                else if (extraToolbar.opacity == 1 || extraToolbar.visible == true) {
+                    extraToolbar.hide()
+                }
+            }
             anchors.right: urlText.focus ? parent.right : bookmarkButton.left
             anchors.rightMargin: Theme.paddingMedium
             visible:true
@@ -1040,15 +1053,16 @@ Page {
     Rectangle {
         id: extraToolbar
         width: page.width
+        property bool quickmenu
         //color: Theme.highlightBackgroundColor // As alternative perhaps maybe someday
         gradient: Gradient {
-            GradientStop { position: 0.0; color: "#262626" }
-            GradientStop { position: 0.85; color: "#1F1F1F"}
+            GradientStop { position: 0.0; color: "#353535" }
+            GradientStop { position: 0.85; color: "#262626"}
         }
-        height: extratoolbarheight
+        height: 0
         z: 90
         opacity: 0
-        visible: false
+        visible: true
         anchors.bottom: toolbar.top
         anchors.bottomMargin: -2
         Rectangle { // grey seperation between page and toolbar
@@ -1059,13 +1073,25 @@ Page {
             color: "grey"
         }
         Behavior on opacity {
-            NumberAnimation { duration: 200; easing.type: Easing.InOutQuad }
+            NumberAnimation { duration: 400; easing.type: Easing.InOutQuad }
+        }
+        Behavior on height {
+            NumberAnimation { duration: 300; easing.type: Easing.InOutQuad }
         }
 
         function hide() {
             if (extraToolbar.opacity == 1 || extraToolbar.visible == true) {
+                extraToolbar.height = 0
                 extraToolbar.opacity = 0;
-                extraToolbar.visible = false;
+                extraToolbar.enabled = false;
+            }
+        }
+
+        function show() {
+            if (extraToolbar.opacity == 0 || extraToolbar.visible == false) {
+                extraToolbar.height = extratoolbarheight
+                extraToolbar.opacity = 1;
+                extraToolbar.enabled = true;
             }
         }
 
@@ -1085,7 +1111,7 @@ Page {
                 else if (readerModeButton.highlighted) { _ngfEffect.play(); return qsTr("Reader Mode") }
                 else if (searchModeButton.highlighted) { _ngfEffect.play(); return qsTr("Search") }
                 else if (shareButton.highlighted) { _ngfEffect.play(); return qsTr("Share") }
-                else if (extraToolbar.opacity == 1) { _ngfEffect.play(); return qsTr("Close menu") }
+                else if (extraToolbar.opacity == 1 && extraToolbar.quickmenu) { _ngfEffect.play(); return qsTr("Close menu") }
                 else return "Extra Toolbar"
             }
         }
@@ -1254,8 +1280,7 @@ Page {
 
 //        onHideTriggered: {
 //            console.debug("[FirstPage.qml] tabListOverlay hide triggered")
-//            extraToolbar.opacity = 0;
-//            extraToolbar.visible = false;
+//            extraToolbar.hide()
 //        }
 //    }
 

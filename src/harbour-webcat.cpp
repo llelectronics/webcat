@@ -63,6 +63,7 @@ int main(int argc, char *argv[])
 
     // Taken from sailfish-browser
     setenv("USE_ASYNC", "1", 1);
+    QQuickWindow::setDefaultAlphaBuffer(true);
 
     QGuiApplication *app = SailfishApp::application(argc, argv);
 

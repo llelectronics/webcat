@@ -536,6 +536,10 @@ Veuillez redémarrer pour activer les modifications.</translation>
         <source>Tabs</source>
         <translation>Onglets</translation>
     </message>
+    <message>
+        <source>New Tab</source>
+        <translation type="unfinished">Nouvel onglet</translation>
+    </message>
 </context>
 <context>
     <name>VideoPlayerComponent</name>

@@ -6,6 +6,7 @@ Rectangle {
 
     visible: false
     color: "black"
+    opacity: 0.97
 
     signal hideTriggered();
 
@@ -54,6 +55,21 @@ Rectangle {
         //height: if (dataContainer) dataContainer.toolbarheight
         height: parent.height
 
+        PullDownMenu {
+            MenuItem {
+                text: qsTr("New Tab")
+                onClicked: {
+                    tabListRoot.hideTriggered();
+                    mainWindow.openNewTab("page"+mainWindow.salt(), "about:blank", false);
+                }
+            }
+            MenuItem {
+                text: qsTr("Close Tab")
+                visible: mainWindow.tabModel.count > 1
+                onClicked: mainWindow.closeTab(tabListView.currentIndex, mainWindow.tabModel.get(tabListView.currentIndex).pageid);
+            }
+        }
+
         // Tab Header
         header: Rectangle {
             width: parent.width
@@ -74,39 +90,39 @@ Rectangle {
         }
 
         // close tab button
-        footer: Rectangle {
-            visible: mainWindow.tabModel.count > 1
-            width: parent.width
-            height: mainWindow.firstPage.toolbarheight
-            gradient: Gradient {
-                GradientStop { position: 0.0; color: "#262626" }
-                GradientStop { position: 0.85; color: "#1F1F1F"}
-            }
-            Image {
-                id: closeTabImg
-                height: parent.height / 1.125
-                width: height
-                anchors.left: parent.left
-                source : "image://theme/icon-m-close" // This image is 64x64 and does have a big border so leave it as is
-            }
-            Text {
-                text: qsTr("Close Tab")
-                width: parent.width - 2
-                font.pixelSize: mainWindow.firstPage.toolbarheight / 2.15
-                color: Theme.primaryColor;
-                anchors.left: closeTabImg.right
-                anchors.leftMargin: Theme.paddingMedium
-                anchors.verticalCenter: parent.verticalCenter
-                elide: Text.ElideRight
-            }
-            MouseArea {
-                anchors.fill: parent;
-                onClicked: {
-                    //console.debug("Close Tab clicked")
-                    mainWindow.closeTab(tabListView.currentIndex, mainWindow.tabModel.get(tabListView.currentIndex).pageid);
-                }
-            }
-        }
+//        footer: Rectangle {
+//            visible: mainWindow.tabModel.count > 1
+//            width: parent.width
+//            height: mainWindow.firstPage.toolbarheight
+//            gradient: Gradient {
+//                GradientStop { position: 0.0; color: "#262626" }
+//                GradientStop { position: 0.85; color: "#1F1F1F"}
+//            }
+//            Image {
+//                id: closeTabImg
+//                height: parent.height / 1.125
+//                width: height
+//                anchors.left: parent.left
+//                source : "image://theme/icon-m-close" // This image is 64x64 and does have a big border so leave it as is
+//            }
+//            Text {
+//                text: qsTr("Close Tab")
+//                width: parent.width - 2
+//                font.pixelSize: mainWindow.firstPage.toolbarheight / 2.15
+//                color: Theme.primaryColor;
+//                anchors.left: closeTabImg.right
+//                anchors.leftMargin: Theme.paddingMedium
+//                anchors.verticalCenter: parent.verticalCenter
+//                elide: Text.ElideRight
+//            }
+//            MouseArea {
+//                anchors.fill: parent;
+//                onClicked: {
+//                    //console.debug("Close Tab clicked")
+//                    mainWindow.closeTab(tabListView.currentIndex, mainWindow.tabModel.get(tabListView.currentIndex).pageid);
+//                }
+//            }
+//        }
 
         orientation: ListView.Vertical
 

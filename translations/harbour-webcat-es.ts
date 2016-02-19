@@ -536,6 +536,10 @@ Por favor, reinicia para que los cambios tengan efecto.</translation>
         <source>Tabs</source>
         <translation>Pestañas</translation>
     </message>
+    <message>
+        <source>New Tab</source>
+        <translation type="unfinished">Nueva pestaña</translation>
+    </message>
 </context>
 <context>
     <name>VideoPlayerComponent</name>
