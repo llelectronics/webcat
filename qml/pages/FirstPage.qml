@@ -1222,6 +1222,7 @@ Page {
             onClicked: {
                 if (page.allowedOrientations === Orientation.All) { page.allowedOrientations = page.orientation; mainWindow.orient = page.orientation }
                 else { page.allowedOrientations = Orientation.All; mainWindow.orient = Orientation.All; }
+                extraToolbar.hide();
             }
         }
 
