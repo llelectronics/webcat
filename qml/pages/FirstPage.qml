@@ -1320,7 +1320,8 @@ Page {
             GradientStop { position: 0.85; color: "#1F1F1F"}
         }
         anchors.bottom: {
-            if (loadingRec.visible == true) return loadingRec.top
+            if (extraToolbar.enabled) return extraToolbar.top
+            else if (loadingRec.visible == true) return loadingRec.top
             else return toolbar.top
         }
         //anchors.bottomMargin: Theme.paddingSmall // This looks ugly
