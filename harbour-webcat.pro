@@ -136,4 +136,10 @@ DISTFILES += \
     qml/pages/VideoPlayerComponent.qml \
     qml/pages/helper/browserComponents/ytQualityChooserContextMenu.qml \
     qml/pages/ProxySettingsPage.qml \
-    qml/pages/BackupPage.qml
+    qml/pages/BackupPage.qml \
+    translations/harbour-webcat-ca.ts \
+    translations/harbour-webcat-es.ts \
+    translations/harbour-webcat-fi.ts \
+    translations/harbour-webcat-fr.ts \
+    translations/harbour-webcat-ru.ts \
+    translations/harbour-webcat-sv.ts

@@ -298,6 +298,15 @@ Page {
 //        layer.mipmap: true
 //        layer.textureSize: page.width + "x" + page.height
 
+        // Theoretically a nice function to replace the DevicePixelRatio hack but does not work as intended always
+//        property variant devicePixelRatio: 1.5
+//        experimental.customLayoutWidth: page.width / devicePixelRatio
+
+        // Helps rendering websites that are only optimized for desktop
+        experimental.preferredMinimumContentsWidth: 980
+        experimental.deviceHeight: page.height
+
+
         experimental.filePicker: Item {
             Component.onCompleted: {
                 var openDialog = pageStack.push(Qt.resolvedUrl("OpenDialog.qml"),

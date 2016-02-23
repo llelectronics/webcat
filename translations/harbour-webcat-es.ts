@@ -538,7 +538,7 @@ Por favor, reinicia para que los cambios tengan efecto.</translation>
     </message>
     <message>
         <source>New Tab</source>
-        <translation type="unfinished">Nueva pestaña</translation>
+        <translation>Nueva pestaña</translation>
     </message>
 </context>
 <context>

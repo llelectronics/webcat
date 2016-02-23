@@ -537,7 +537,7 @@ Bitte starten sie neu um die Änderungen zu übernehmen</translation>
     </message>
     <message>
         <source>New Tab</source>
-        <translation type="unfinished">Neuer Reiter</translation>
+        <translation>Neuer Reiter</translation>
     </message>
 </context>
 <context>

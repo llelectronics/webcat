@@ -536,7 +536,7 @@ Please restart for changes to take effect.</source>
     </message>
     <message>
         <source>New Tab</source>
-        <translation type="unfinished">Nova pestanya</translation>
+        <translation>Nova pestanya</translation>
     </message>
 </context>
 <context>

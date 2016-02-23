@@ -538,7 +538,7 @@ Veuillez redémarrer pour activer les modifications.</translation>
     </message>
     <message>
         <source>New Tab</source>
-        <translation type="unfinished">Nouvel onglet</translation>
+        <translation>Nouvel onglet</translation>
     </message>
 </context>
 <context>

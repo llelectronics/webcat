@@ -538,7 +538,7 @@ Prego riavviare perché le modifiche abbiano effetto.</translation>
     </message>
     <message>
         <source>New Tab</source>
-        <translation type="unfinished">Nuova scheda</translation>
+        <translation>Nuova scheda</translation>
     </message>
 </context>
 <context>
