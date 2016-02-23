@@ -983,9 +983,13 @@ Page {
 
         IconButton {
             id: refreshButton
-            icon.source: webview.loading ? "image://theme/icon-m-reset" : "image://theme/icon-m-menu"
+            icon.source: {
+                if (urlText.focus) "image://theme/icon-m-refresh"
+                else webview.loading ? "image://theme/icon-m-reset" : "image://theme/icon-m-menu"
+            }
             onClicked: {
                 if (webview.loading) webview.stop()
+                else if (icon.source == "image://theme/icon-m-refresh") webview.reload()
                 else if (extraToolbar.opacity == 0 || extraToolbar.visible == false) {
                     extraToolbar.quickmenu = false
                     extraToolbar.show()
