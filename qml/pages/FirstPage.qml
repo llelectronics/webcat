@@ -636,6 +636,7 @@ Page {
         id: toolbar
         width: page.width
         state: "expanded"
+        z: 91
         //color: Theme.highlightBackgroundColor // As alternative perhaps maybe someday
         gradient: Gradient {
             GradientStop { position: 0.0; color: "#262626" }
@@ -1073,7 +1074,7 @@ Page {
             GradientStop { position: 0.85; color: "#262626"}
         }
         height: 0
-        z: 90
+        z: 92
         opacity: 0
         visible: true
         anchors.bottom: toolbar.top
@@ -1143,6 +1144,7 @@ Page {
             width: height
             onClicked: {
                 if (toolbar.state == "expanded") toolbar.state = "minimized"
+                highlighted = false;
                 extraToolbar.hide();
             }
         }
@@ -1160,6 +1162,7 @@ Page {
             width: height
             onClicked: {
                 mainWindow.loadInNewTab("about:bookmarks");
+                highlighted = false;
                 extraToolbar.hide();
             }
         }
@@ -1181,6 +1184,7 @@ Page {
             }
             onClicked: {
                 mainWindow.openNewWindow("about:bookmarks");
+                highlighted = false;
                 extraToolbar.hide();
             }
         }
@@ -1199,6 +1203,7 @@ Page {
             width: height
             onClicked: {
                 webview.reload();
+                highlighted = false;
                 extraToolbar.hide();
             }
         }
@@ -1222,6 +1227,7 @@ Page {
             onClicked: {
                 if (page.allowedOrientations === Orientation.All) { page.allowedOrientations = page.orientation; mainWindow.orient = page.orientation }
                 else { page.allowedOrientations = Orientation.All; mainWindow.orient = Orientation.All; }
+                highlighted = false;
                 extraToolbar.hide();
             }
         }
@@ -1239,7 +1245,7 @@ Page {
             width: height
             onClicked: {
                 toggleReaderMode()
-                readerModeButton.highlighted = false
+                highlighted = false
                 extraToolbar.hide();
             }
         }
@@ -1257,7 +1263,7 @@ Page {
             width: height
             onClicked: {
                 searchMode = !searchMode
-                searchModeButton.highlighted = false
+                highlighted = false
                 searchText.forceActiveFocus();
                 extraToolbar.hide();
             }
@@ -1279,6 +1285,7 @@ Page {
                 // Open Share Context Menu
                 //console.debug("Open Share context menu here")
                 shareContextMenu.share(webview.title, webview.url);
+                highlighted = false;
                 extraToolbar.hide();
             }
         }
@@ -1321,7 +1328,7 @@ Page {
         }
         anchors.bottom: {
             if (extraToolbar.enabled) return extraToolbar.top
-            else if (loadingRec.visible == true) return loadingRec.top
+            //else if (loadingRec.visible == true) return loadingRec.top
             else return toolbar.top
         }
         //anchors.bottomMargin: Theme.paddingSmall // This looks ugly
