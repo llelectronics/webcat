@@ -57,7 +57,7 @@ Rectangle {
         //height: if (dataContainer) dataContainer.toolbarheight
         height: parent.height
 
-        onCurrentIndexChanged: _ngfEffect.play()
+        onCurrentIndexChanged: if (parent.visible) _ngfEffect.play()
 
 //        PullDownMenu {
 //            MenuItem {
