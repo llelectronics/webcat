@@ -529,16 +529,8 @@ Prego riavviare perché le modifiche abbiano effetto.</translation>
         <translation>Caricamento...</translation>
     </message>
     <message>
-        <source>Close Tab</source>
-        <translation>Chiudi scheda</translation>
-    </message>
-    <message>
         <source>Tabs</source>
         <translation>Schede</translation>
-    </message>
-    <message>
-        <source>New Tab</source>
-        <translation>Nuova scheda</translation>
     </message>
 </context>
 <context>

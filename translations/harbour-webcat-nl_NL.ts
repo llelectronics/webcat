@@ -527,16 +527,8 @@ Please restart for changes to take effect.</source>
         <translation>Laden..</translation>
     </message>
     <message>
-        <source>Close Tab</source>
-        <translation>Tabblad sluiten</translation>
-    </message>
-    <message>
         <source>Tabs</source>
         <translation>Tabbladen</translation>
-    </message>
-    <message>
-        <source>New Tab</source>
-        <translation>Nieuw tabblad</translation>
     </message>
 </context>
 <context>

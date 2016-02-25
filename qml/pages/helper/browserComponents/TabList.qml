@@ -8,6 +8,8 @@ Rectangle {
     color: "black"
     opacity: 0.97
 
+    property alias list: tabListView
+
     signal hideTriggered();
 
     onVisibleChanged: {
@@ -55,20 +57,22 @@ Rectangle {
         //height: if (dataContainer) dataContainer.toolbarheight
         height: parent.height
 
-        PullDownMenu {
-            MenuItem {
-                text: qsTr("New Tab")
-                onClicked: {
-                    tabListRoot.hideTriggered();
-                    mainWindow.openNewTab("page"+mainWindow.salt(), "about:blank", false);
-                }
-            }
-            MenuItem {
-                text: qsTr("Close Tab")
-                visible: mainWindow.tabModel.count > 1
-                onClicked: mainWindow.closeTab(tabListView.currentIndex, mainWindow.tabModel.get(tabListView.currentIndex).pageid);
-            }
-        }
+        onCurrentIndexChanged: _ngfEffect.play()
+
+//        PullDownMenu {
+//            MenuItem {
+//                text: qsTr("New Tab")
+//                onClicked: {
+//                    tabListRoot.hideTriggered();
+//                    mainWindow.openNewTab("page"+mainWindow.salt(), "about:blank", false);
+//                }
+//            }
+//            MenuItem {
+//                text: qsTr("Close Tab")
+//                visible: mainWindow.tabModel.count > 1
+//                onClicked: mainWindow.closeTab(tabListView.currentIndex, mainWindow.tabModel.get(tabListView.currentIndex).pageid);
+//            }
+//        }
 
         // Tab Header
         header: Rectangle {
@@ -129,7 +133,6 @@ Rectangle {
         model: mainWindow.tabModel
         delegate: tabDelegate
         highlight:
-
             Rectangle {
             width: parent.width; height: mainWindow.firstPage.toolbarheight
             gradient: Gradient {

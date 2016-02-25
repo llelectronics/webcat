@@ -527,15 +527,7 @@ Please restart for changes to take effect.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Close Tab</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Tabs</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>New Tab</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -529,16 +529,8 @@ Por favor, reinicia para que los cambios tengan efecto.</translation>
         <translation>Cargando..</translation>
     </message>
     <message>
-        <source>Close Tab</source>
-        <translation>Cerrar pestaña</translation>
-    </message>
-    <message>
         <source>Tabs</source>
         <translation>Pestañas</translation>
-    </message>
-    <message>
-        <source>New Tab</source>
-        <translation>Nueva pestaña</translation>
     </message>
 </context>
 <context>

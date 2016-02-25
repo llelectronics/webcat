@@ -529,16 +529,8 @@ Veuillez redémarrer pour activer les modifications.</translation>
         <translation>Chargement ...</translation>
     </message>
     <message>
-        <source>Close Tab</source>
-        <translation>Fermer l&apos;onglet</translation>
-    </message>
-    <message>
         <source>Tabs</source>
         <translation>Onglets</translation>
-    </message>
-    <message>
-        <source>New Tab</source>
-        <translation>Nouvel onglet</translation>
     </message>
 </context>
 <context>

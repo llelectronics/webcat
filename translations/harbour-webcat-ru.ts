@@ -527,16 +527,8 @@ Please restart for changes to take effect.</source>
         <translation>Загрузка...</translation>
     </message>
     <message>
-        <source>Close Tab</source>
-        <translation>Закрыть вкладку</translation>
-    </message>
-    <message>
         <source>Tabs</source>
         <translation>Вкладки</translation>
-    </message>
-    <message>
-        <source>New Tab</source>
-        <translation>Новая вкладка</translation>
     </message>
 </context>
 <context>

@@ -528,16 +528,8 @@ Bitte starten sie neu um die Änderungen zu übernehmen</translation>
         <translation>Lade..</translation>
     </message>
     <message>
-        <source>Close Tab</source>
-        <translation>Reiter schließen</translation>
-    </message>
-    <message>
         <source>Tabs</source>
         <translation>Reiter</translation>
-    </message>
-    <message>
-        <source>New Tab</source>
-        <translation>Neuer Reiter</translation>
     </message>
 </context>
 <context>

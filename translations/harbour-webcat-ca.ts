@@ -527,16 +527,8 @@ Please restart for changes to take effect.</source>
         <translation>S&apos;està carregant...</translation>
     </message>
     <message>
-        <source>Close Tab</source>
-        <translation>Tanca la pestanya</translation>
-    </message>
-    <message>
         <source>Tabs</source>
         <translation>Pestanyes</translation>
-    </message>
-    <message>
-        <source>New Tab</source>
-        <translation>Nova pestanya</translation>
     </message>
 </context>
 <context>

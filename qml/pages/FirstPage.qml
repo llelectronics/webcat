@@ -816,7 +816,37 @@ Page {
                     else if (mouse.x > shareButton.x && mouse.x < shareButton.x + shareButton.width + Theme.paddingMedium) { minimizeButton.highlighted = false; newTabButton.highlighted = false; newWindowButton.highlighted = false; reloadThisButton.highlighted = false; orientationLockButton.highlighted = false; readerModeButton.highlighted = false; searchModeButton.highlighted = false; shareButton.highlighted = true; }
                     else if (mouse.x > shareButton.x + shareButton.width + Theme.paddingMedium) { minimizeButton.highlighted = false; newTabButton.highlighted = false; newWindowButton.highlighted = false; reloadThisButton.highlighted = false; orientationLockButton.highlighted = false; readerModeButton.highlighted = false; searchModeButton.highlighted = false; shareButton.highlighted = false; }
                 }
-                if (mouse.y < ((extratoolbarheight + toolbarheight) * -1)) { minimizeButton.highlighted = false; newTabButton.highlighted = false; newWindowButton.highlighted = false; reloadThisButton.highlighted = false; orientationLockButton.highlighted = false; readerModeButton.highlighted = false; searchModeButton.highlighted = false; shareButton.highlighted = false; }
+                if (mouse.y < ((extratoolbarheight + toolbarheight) * -1)) {
+                    minimizeButton.highlighted = false;
+                    newTabButton.highlighted = false;
+                    newWindowButton.highlighted = false;
+                    reloadThisButton.highlighted = false;
+                    orientationLockButton.highlighted = false;
+                    readerModeButton.highlighted = false;
+                    searchModeButton.highlighted = false;
+                    shareButton.highlighted = false;
+                    tabListOverlay.curTab = mainWindow.tabModel.getIndexFromId(mainWindow.currentTab);
+                    tabListOverlay.tabCount = tabListOverlay.list.count;
+                    for (var i=1; i <= tabListOverlay.tabCount ; i++) {
+                           if (mouse.y < (toolbarheight + Theme.paddingSmall) * -(i+1) && mouse.y > (toolbarheight + Theme.paddingSmall) * -(i+2)) {
+                               tabListOverlay.list.currentIndex = tabListOverlay.curIndex = tabListOverlay.list.count - i
+                               break;
+                           }
+                    }
+
+//                    if (mouse.y < toolbarheight * -2 && mouse.y > toolbarheight * -3) {
+//                        tabListOverlay.list.currentIndex = tabListOverlay.list.count - 1
+//                        tabListOverlay.curIndex = tabListOverlay.list.count - 1
+//                    }
+//                    if (mouse.y < toolbarheight * -3 && mouse.y > toolbarheight * -4) {
+//                        tabListOverlay.list.currentIndex = tabListOverlay.list.count - 2
+//                        tabListOverlay.curIndex = tabListOverlay.list.count - 2
+//                    }
+//                    if (mouse.y < toolbarheight * -4 && mouse.y > toolbarheight * -5) {
+//                         tabListOverlay.list.currentIndex = tabListOverlay.list.count - 3
+//                         tabListOverlay.curIndex = tabListOverlay.list.count - 3
+//                    }
+                }
             }
 
             onReleased: {
@@ -829,8 +859,15 @@ Page {
                 else if (extraToolbar.opacity == 1 && extraToolbar.quickmenu && searchModeButton.highlighted == true) searchModeButton.clicked(undefined)
                 else if (extraToolbar.opacity == 1 && extraToolbar.quickmenu && shareButton.highlighted == true) shareButton.clicked(undefined)
                 else if (extraToolbar.opacity == 1 && extraToolbar.quickmenu && mouse.y > ((extratoolbarheight + toolbarheight) * -1)) extraToolbar.hide()
-//                extraToolbar.opacity = 0;
-//                extraToolbar.visible = false;
+                else if (extraToolbar.opacity == 1 && extraToolbar.quickmenu && mouse.y < ((extratoolbarheight + toolbarheight) * -1)) {
+                    // tabListOverlay.list click curent index item
+                    if (tabListOverlay.curTab == tabListOverlay.list.currentIndex) { tabListOverlay.hideTriggered(); }
+                    else {
+                        console.debug("[FirstPage.qml] tabListOverlay.curIndex = " + tabListOverlay.curIndex + " ; tabListOverlay.list.currentIndex = " + tabListOverlay.list.currentIndex);
+                        tabListOverlay.hideTriggered();
+                        mainWindow.switchToTab(mainWindow.tabModel.get(tabListOverlay.curIndex).pageid);
+                    }
+                } // last else if
             }
 
             Label {
@@ -1098,6 +1135,7 @@ Page {
                 extraToolbar.height = 0
                 extraToolbar.opacity = 0;
                 extraToolbar.enabled = false;
+                extraToolbar.quickmenu = false;
             }
         }
 
@@ -1292,18 +1330,21 @@ Page {
 
     }
 
-//    TabList {
-//        id: tabListOverlay
-//        visible: extraToolbar.visible
-//        anchors.top: parent.top
-//        height: parent.height + Theme.paddingLarge - extratoolbarheight - toolbarheight
-//        width: parent.width
+    TabList {
+        id: tabListOverlay
+        visible: extraToolbar.visible && extraToolbar.quickmenu
+        anchors.top: parent.top
+        height: parent.height + Theme.paddingLarge - extratoolbarheight - toolbarheight
+        width: parent.width
+        property variant curTab
+        property variant curIndex
+        property variant tabCount
 
-//        onHideTriggered: {
-//            console.debug("[FirstPage.qml] tabListOverlay hide triggered")
-//            extraToolbar.hide()
-//        }
-//    }
+        onHideTriggered: {
+            console.debug("[FirstPage.qml] tabListOverlay hide triggered")
+            extraToolbar.hide()
+        }
+    }
 
     // On Media Loaded show download button
     Rectangle {
