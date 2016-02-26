@@ -245,3 +245,15 @@ void MyClass::getDecompressStatus(int exitCode)
         error(errorMsg);
     }
 }
+
+void MyClass::copy2clipboard(QString text)
+{
+    if (text.isEmpty()) {
+        return;
+    }
+    else {
+        QClipboard *cb;
+        cb->clear();
+        cb->setText(text);
+    }
+}

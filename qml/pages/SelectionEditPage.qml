@@ -10,7 +10,8 @@ Dialog {
 
     onAccepted: {
         if(!editTxt.selectedText.length || (!editTxt.selectionStart && (editTxt.selectionEnd == editTxt.text.length)))
-            Clipboard.text = editTxt.text
+            // Avoid lipstick clipboard not updating bug
+            _myClass.copy2clipboard(editTxt.text);
     }
 
     SilicaFlickable {

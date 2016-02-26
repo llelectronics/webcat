@@ -13,6 +13,7 @@
 #include <QCoreApplication>
 #include <QDateTime>
 #include <QByteArray>
+#include <QClipboard>
 
 class MyClass : public QObject
 {
@@ -39,6 +40,7 @@ public slots:
     void backupConfig();
     void backupConfig(QString backupName);
     void checkBackup(QString backupFile);
+    void copy2clipboard(QString text);
 
 signals:
     void backupComplete();
