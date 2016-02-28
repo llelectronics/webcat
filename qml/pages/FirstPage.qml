@@ -1113,7 +1113,7 @@ Page {
         height: 0
         z: 92
         opacity: 0
-        visible: true
+        visible: false
         anchors.bottom: toolbar.top
         anchors.bottomMargin: -2
         Rectangle { // grey seperation between page and toolbar
@@ -1123,17 +1123,27 @@ Page {
             anchors.top: parent.top
             color: "grey"
         }
-        Behavior on opacity {
-            NumberAnimation { duration: 400; easing.type: Easing.InOutQuad }
+        SequentialAnimation {
+            id: showToolbar
+            ScriptAction { script : { extraToolbar.visible = true } }
+            ParallelAnimation {
+                NumberAnimation { target: extraToolbar; property: "opacity"; to: 1; duration: 400; easing.type: Easing.InOutQuad }
+                NumberAnimation { target: extraToolbar; property: "height"; to: extratoolbarheight; duration: 300; easing.type: Easing.InOutQuad }
+            }
         }
-        Behavior on height {
-            NumberAnimation { duration: 300; easing.type: Easing.InOutQuad }
+
+        SequentialAnimation {
+            id: hideToolbar
+            ParallelAnimation {
+                NumberAnimation { target: extraToolbar; property: "opacity"; to: 0; duration: 400; easing.type: Easing.InOutQuad }
+                NumberAnimation { target: extraToolbar; property: "height"; to: 0; duration: 300; easing.type: Easing.InOutQuad }
+            }
+            ScriptAction { script : { extraToolbar.visible = false } }
         }
 
         function hide() {
             if (extraToolbar.opacity == 1 || extraToolbar.visible == true) {
-                extraToolbar.height = 0
-                extraToolbar.opacity = 0;
+                hideToolbar.start();
                 extraToolbar.enabled = false;
                 extraToolbar.quickmenu = false;
             }
@@ -1141,8 +1151,7 @@ Page {
 
         function show() {
             if (extraToolbar.opacity == 0 || extraToolbar.visible == false) {
-                extraToolbar.height = extratoolbarheight
-                extraToolbar.opacity = 1;
+                showToolbar.start();
                 extraToolbar.enabled = true;
             }
         }
