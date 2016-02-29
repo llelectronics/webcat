@@ -304,8 +304,6 @@ Page {
 
         // Helps rendering websites that are only optimized for desktop
         experimental.preferredMinimumContentsWidth: 980
-        experimental.deviceHeight: page.height
-
 
         experimental.filePicker: Item {
             Component.onCompleted: {
