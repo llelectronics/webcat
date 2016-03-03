@@ -1339,7 +1339,7 @@ Page {
 
     TabList {
         id: tabListOverlay
-        visible: extraToolbar.visible && extraToolbar.quickmenu
+        visible: extraToolbar.visible && extraToolbar.quickmenu && mainWindow.tabModel.count > 1
         anchors.top: parent.top
         height: parent.height + Theme.paddingLarge - extratoolbarheight - toolbarheight
         width: parent.width
