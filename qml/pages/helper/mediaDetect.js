@@ -28,9 +28,9 @@ function getImgFullUri(uri) {
 
 document.createElement('video').constructor.prototype.canPlayType = function(type){
     if (type.indexOf("video/mp4") != -1 || type.indexOf("video/ogg") != -1 || type.indexOf("audio/mpeg") != -1 || type.indexOf("audio/ogg") != -1 || type.indexOf("audio/mp4") != -1 ||
-            type.indexOf("application/vnd.apple.mpegURL") != -1 || type.indexOf("application/x-mpegURL") != -1 || type.indexOf("audio/mpegurl") != -1)
+            type.indexOf("application/vnd.apple.mpegURL") != -1 || type.indexOf("application/x-mpegURL") != -1 || type.indexOf("audio/mpegurl") != -1) {
         return true;
-    else
+     } else
         return false;
 };
 
@@ -54,14 +54,40 @@ document.createElement('video').constructor.prototype.src = function(src){
     return src;
 };
 
+document.createElement('video').constructor.prototype.buffered = function(){
+    var TimeRangesObj = newObject;
+    TimeRangesObj.length = 0
+    TimeRangesObj.start = 0
+    TimeRangesObj.end = 0
+    return TimeRangesObj
+};
+
+document.createElement('video').constructor.prototype.mediaController = function(){
+    var MediaControllerObj = newObject;
+    MediaControllerObj.buffered = this.buffered()
+    MediaControllerObj.seekable = this.seekable()
+    MediaControllerObj.duration = 0
+    MediaControllerObj.play = this.play()
+    MediaControllerObj.pause = this.pause()
+    MediaControllerObj.defaultPlaybackRate = this.defaultPlaybackRate(1)
+    MediaControllerObj.playbackRate = this.playbackRate(1)
+    MediaControllerObj.volume = 1.0
+    MediaControllerObj.muted = false
+    return MediaControllerObj
+};
+
 document.createElement('video').constructor.prototype.currentSrc = function(){ return this.src; };
 document.createElement('video').constructor.prototype.pause = function(){ console.debug("Do nothing"); };
+document.createElement('video').constructor.prototype.paused = function(){ return false; };
 document.createElement('video').constructor.prototype.currentTime = function(){ return 0; };
 document.createElement('video').constructor.prototype.defaultPlaybackRate = function(rate){ return rate };
+document.createElement('video').constructor.prototype.playbackRate = function(rate){ return rate };
 document.createElement('video').constructor.prototype.readyState = function(){ return 4 }; // Always have enough data to start
 document.createElement('video').constructor.prototype.seeking = function(){ return false };
 document.createElement('video').constructor.prototype.autoplay = function(autoplay){ return autoplay };
 document.createElement('video').constructor.prototype.ended = function(){ return false };
+document.createElement('video').constructor.prototype.preload = function(){ return false };
+document.createElement('video').constructor.prototype.controls = function(){ return false };
 
 // ////////////////////////////
 
@@ -100,6 +126,30 @@ for (var i=0; i<frames.length; i++) {
     var data = new Object({'type':'iframe'});
     data.isrc = isrc;
     navigator.qt.postMessage(JSON.stringify(data));
+
+    // Detect html5 video tags hidding in iframes. This only works for iframes from the same server
+    var iframeDoc = (frames[i].contentWindow || frames[i].contentDocument);
+    if (iframeDoc.document) iframeDoc = iframeDoc.document;
+    var iframeVideoElement = iframeDoc.getElementsByTagName('video');
+    for (var k=0; i<iframeVideoElement.length; k++) {
+        if (iframeVideoElement[k].hasChildNodes()) {
+            console.debug("Has children");
+            var children = iframeVideoElement[k].childNodes;
+            for (var j = 0; j < children.length; j++) {
+                if (children[j].tagName === 'SOURCE') {
+                    var data = new Object({'type': 'video'})
+                    if (children[j].hasAttribute('src')) data.video = getImgFullUri(children[j].getAttribute('src'));
+                    navigator.qt.postMessage( JSON.stringify(data) );
+                    continue;
+                }
+            }
+        }
+        else if (iframeVideoElement[k].hasAttribute('src')) {
+            var data = new Object({'type': 'video'})
+            data.video = getImgFullUri(iframeVideoElement[k].getAttribute('src'));
+            navigator.qt.postMessage( JSON.stringify(data) );
+        }
+    }
 }
 
 // mobilegeeks.de uses this
