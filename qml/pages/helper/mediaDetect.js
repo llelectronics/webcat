@@ -24,6 +24,47 @@ function getImgFullUri(uri) {
 }
 // ////
 
+// Extended HTML5 Support
+
+document.createElement('video').constructor.prototype.canPlayType = function(type){
+    if (type.indexOf("video/mp4") != -1 || type.indexOf("video/ogg") != -1 || type.indexOf("audio/mpeg") != -1 || type.indexOf("audio/ogg") != -1 || type.indexOf("audio/mp4") != -1 ||
+            type.indexOf("application/vnd.apple.mpegURL") != -1 || type.indexOf("application/x-mpegURL") != -1 || type.indexOf("audio/mpegurl") != -1)
+        return true;
+    else
+        return false;
+};
+
+document.createElement('video').constructor.prototype.play = function(){
+    var data = new Object({'type': 'video'})
+    data.video = getImgFullUri(this.src);
+    data.play = true;
+    navigator.qt.postMessage( JSON.stringify(data) );
+};
+
+document.createElement('video').constructor.prototype.load = function(){
+    var data = new Object({'type': 'video'})
+    data.video = getImgFullUri(this.src);
+    navigator.qt.postMessage( JSON.stringify(data) );
+};
+
+document.createElement('video').constructor.prototype.src = function(src){
+    var data = new Object({'type': 'video'})
+    data.video = getImgFullUri(src);
+    navigator.qt.postMessage( JSON.stringify(data) );
+    return src;
+};
+
+document.createElement('video').constructor.prototype.currentSrc = function(){ return this.src; };
+document.createElement('video').constructor.prototype.pause = function(){ console.debug("Do nothing"); };
+document.createElement('video').constructor.prototype.currentTime = function(){ return 0; };
+document.createElement('video').constructor.prototype.defaultPlaybackRate = function(rate){ return rate };
+document.createElement('video').constructor.prototype.readyState = function(){ return 4 }; // Always have enough data to start
+document.createElement('video').constructor.prototype.seeking = function(){ return false };
+document.createElement('video').constructor.prototype.autoplay = function(autoplay){ return autoplay };
+document.createElement('video').constructor.prototype.ended = function(){ return false };
+
+// ////////////////////////////
+
 // Detect HTML5 Video
 var delement = document.documentElement.getElementsByTagName('video');
 
@@ -36,7 +77,7 @@ for (var i=0; i<delement.length; i++) {
                 var data = new Object({'type': 'video'})
                 if (children[j].hasAttribute('src')) data.video = getImgFullUri(children[j].getAttribute('src'));
                 navigator.qt.postMessage( JSON.stringify(data) );
-                break;
+                continue;
             }
         }
     }
@@ -80,7 +121,7 @@ for (var i=0; i<fbembeddedvideos.length; i++) {
     var videoobj = JSON.parse(fbembeddedvideos[i].getAttribute("data-store"));
 
     if(!videoobj.hasOwnProperty("videoID") || !videoobj.hasOwnProperty("src"))
-        break;
+        continue;
 
     var data = new Object({'type': 'video'})
     data.video = getImgFullUri(videoobj.src);

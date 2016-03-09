@@ -72,10 +72,10 @@ Page {
     property int extratoolbarheight: Screen.height / 10
     property alias webview: webview
     property alias mediaDownloadRec: mediaDownloadRec
-    property string yt720p: mediaList.count > 0 ? mediaList.get(0).yt720p : "";
-    property string yt480p: mediaList.count > 0 ? mediaList.get(0).yt480p : "";
-    property string yt360p: mediaList.count > 0 ? mediaList.get(0).yt360p : "";
-    property string yt240p: mediaList.count > 0 ? mediaList.get(0).yt240p : "";
+    property string yt720p: mediaList.count > 0 && mediaYt ? mediaList.get(0).yt720p : "";
+    property string yt480p: mediaList.count > 0 && mediaYt ? mediaList.get(0).yt480p : "";
+    property string yt360p: mediaList.count > 0 && mediaYt ? mediaList.get(0).yt360p : "";
+    property string yt240p: mediaList.count > 0 && mediaYt ? mediaList.get(0).yt240p : "";
     property string mediaTitle;
     property int counter;
     property alias mediaList: mediaList
@@ -444,6 +444,9 @@ Page {
                     mediaLink = true;
                     mediaDownloadRec.mediaUrl = data.video
                     mediaDownloadRec.visible = true
+                }
+                if (data.play && mediaDownloadRec.mediaUrl.length != 0) {
+                    mediaPlayBtn.clicked("");
                 }
             }
             }
@@ -1366,6 +1369,14 @@ Page {
                 counter = counter + 1
                 mediaList.insert(counter, {"mediaTitle": mediaUrl, "url": mediaUrl});
                 YT.getYoutubeDirectStream(mediaUrl.toString(),page, counter);
+            }
+            else if (mediaUrl != "") {
+                counter = counter + 1
+                var ext = mediaUrl.substr(mediaUrl.lastIndexOf('.') + 1);
+                if (ext.length != 0)
+                    mediaList.insert(counter, {"mediaTitle": mainWindow.findBaseName(mediaUrl) + " (" + ext+ ")", "url": mediaUrl});
+                else
+                    mediaList.insert(counter, {"mediaTitle": mainWindow.findBaseName(mediaUrl), "url": mediaUrl});
             }
             //console.debug("[firstPage.qml] MediaUrl changed to:" + mediaUrl)
         }

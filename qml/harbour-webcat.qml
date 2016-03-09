@@ -211,6 +211,12 @@ ApplicationWindow
         return salt
     }
 
+    function findBaseName(url) {
+        var fileName = url.substring(url.lastIndexOf('/') + 1);
+        var dot = fileName.lastIndexOf('.');
+        return dot == -1 ? fileName : fileName.substring(0, dot);
+    }
+
     ListModel {
         id: tabModel
 

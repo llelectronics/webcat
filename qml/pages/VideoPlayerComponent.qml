@@ -61,16 +61,12 @@ Item {
         }
     }
 
-    function findBaseName(url) {
-        var fileName = url.substring(url.lastIndexOf('/') + 1);
-        var dot = fileName.lastIndexOf('.');
-        return dot == -1 ? fileName : fileName.substring(0, dot);
-    }
+
 
     onStreamUrlChanged: {
         if (errorDetail.visible && errorTxt.visible) { errorDetail.visible = false; errorTxt.visible = false }
         videoPoster.showControls();
-        if (streamTitle == "") streamTitle = findBaseName(streamUrl)
+        if (streamTitle == "") streamTitle = mainWindow.findBaseName(streamUrl)
     }
 
     function videoPlay() {
@@ -100,7 +96,7 @@ Item {
 
     Label {
         id: urlHeader
-        text: findBaseName(streamUrl)
+        text: mainWindow.findBaseName(streamUrl)
         anchors.left: parent.left
         anchors.top: parent.top
         anchors.topMargin: (orientation == Orientation.LandscapeMask) ? Theme.paddingMedium : Theme.paddingLarge
