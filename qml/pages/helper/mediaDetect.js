@@ -74,24 +74,15 @@ for (var i=0; i<frames.length; i++) {
 }
 
 // facebook.com uses this and detecting html5 video only does somehow not work
-var delement = document.documentElement.getElementsByClassName('widePic');
-for (var i=0; i<delement.length; i++) {
-    if (delement[i].hasChildNodes()) {
-        console.debug("Has children");
-        var children = delement[i].childNodes;
-        for (var j = 0; j < children.length; j++) {
-            if (children[j].hasAttribute('data-store')) {
-                var data = new Object({'type': 'video'})
-                var jsonFacebook = children[j].getAttribute('data-store')
-                // data.video = src of that above json
-                var objJSON = eval("(function(){return " + jsonFacebook + ";})()");
-                if (objJSON.type == "video") {
-                    data.video = getImgFullUri(objJSON.src)
-                    navigator.qt.postMessage( JSON.stringify(data) );
-                    break;
-                } // if type == video
+// improved version by Dax89 (Thanks for that)
+var fbembeddedvideos = document.querySelectorAll("div[data-store^='{\"videoID']");
+for (var i=0; i<fbembeddedvideos.length; i++) {
+    var videoobj = JSON.parse(fbembeddedvideos[i].getAttribute("data-store"));
 
-            } // if data-store
-        } // for
-    } // if children
+    if(!videoobj.hasOwnProperty("videoID") || !videoobj.hasOwnProperty("src"))
+        break;
+
+    var data = new Object({'type': 'video'})
+    data.video = getImgFullUri(videoobj.src);
+    navigator.qt.postMessage( JSON.stringify(data) );
 }
