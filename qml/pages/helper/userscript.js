@@ -234,7 +234,7 @@ function longPressed(x, y, element) {
         data.img = getImgFullUri(element.getAttribute('src'));
     } else if (element.parentNode.tagName === 'IMG') {
         data.img = getImgFullUri(element.parentNode.getAttribute('src'));
-    } else if (element.tagName === 'VIDEO') {
+    } if (element.tagName === 'VIDEO') {
         data.video = element.hasChildNodes();
         var children = element.childNodes;
         for (var i = 0; i < children.length; i++) {

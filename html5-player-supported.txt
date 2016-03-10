@@ -1,0 +1,34 @@
+// - Not supported ones
+
+Accessible HTML5 Video Player
+Acorn Media Player
+bitdash Player
+-CodoPlayer
+-Flowplayer
+-html5media
+jMediaElement
+jMediaElement2
+-jPlayer
+JW Player (with error message)
+LeanBack Player
+mediaelement.js
+Mooplay
+-OIPlayer
+-OSMPlayer
+Playr
+Projekktor
+-Uppod.HTML5
+Video for Everybody
+VideoJS
+-Yendifplayer
+Vimeo Player
+Clipfish.de Player
+Heise.de HTML5 Player
+-MyVideo Player
+-Giga.de Embedded Iframe JW Player
+Channel 9 Video Player
+-Engadget Video Player
+Computerbase.de Video Player
+Zdnet.com Video Player
+
+63% working

@@ -36,80 +36,103 @@ document.createElement('video').constructor.prototype.canPlayType = function(typ
 
 document.createElement('video').constructor.prototype.play = function(){
     var data = new Object({'type': 'video'})
-    data.video = getImgFullUri(this.src);
-    data.play = true;
-    navigator.qt.postMessage( JSON.stringify(data) );
+    if (this.hasChildNodes()) {
+        var children = this.childNodes;
+        for (var j = 0; j < children.length; j++) {
+            if (children[j].tagName === 'SOURCE') {
+                if (children[j].hasAttribute('src')) data.video = getImgFullUri(children[j].getAttribute('src'));
+                data.play = true;
+                navigator.qt.postMessage( JSON.stringify(data) );
+                break;
+            }
+        }
+    } else {
+        data.video = getImgFullUri(this.src);
+        data.play = true;
+        navigator.qt.postMessage( JSON.stringify(data) );
+    }
 };
 
 document.createElement('video').constructor.prototype.load = function(){
     var data = new Object({'type': 'video'})
-    data.video = getImgFullUri(this.src);
-    navigator.qt.postMessage( JSON.stringify(data) );
+    if (this.hasChildNodes()) {
+        var children = this.childNodes;
+        for (var j = 0; j < children.length; j++) {
+            if (children[j].tagName === 'SOURCE') {
+                if (children[j].hasAttribute('src')) data.video = getImgFullUri(children[j].getAttribute('src'));
+                navigator.qt.postMessage( JSON.stringify(data) );
+                break;
+            }
+        }
+    } else {
+        data.video = getImgFullUri(this.src);
+        navigator.qt.postMessage( JSON.stringify(data) );
+    }
 };
 
-document.createElement('video').constructor.prototype.src = function(src){
-    var data = new Object({'type': 'video'})
-    data.video = getImgFullUri(src);
-    navigator.qt.postMessage( JSON.stringify(data) );
-    return getImgFullUri(src);
-};
+//document.createElement('video').constructor.prototype.src = function(src){
+//    var data = new Object({'type': 'video'})
+//    data.video = getImgFullUri(src);
+//    navigator.qt.postMessage( JSON.stringify(data) );
+//    return getImgFullUri(src);
+//};
 
-document.createElement('video').constructor.prototype.buffered = function(){
-    var TimeRangesObj = newObject;
-    TimeRangesObj.length = 1
-    TimeRangesObj.start = 0
-    TimeRangesObj.end = 0
-    return TimeRangesObj
-};
+//document.createElement('video').constructor.prototype.buffered = function(){
+//    var TimeRangesObj = newObject;
+//    TimeRangesObj.length = 1
+//    TimeRangesObj.start = 0
+//    TimeRangesObj.end = 0
+//    return TimeRangesObj
+//};
 
-document.createElement('video').constructor.prototype.seekable = function(){
-    var TimeRangesObj = newObject;
-    TimeRangesObj.length = 1
-    TimeRangesObj.start = 0
-    TimeRangesObj.end = 0
-    return TimeRangesObj
-};
+//document.createElement('video').constructor.prototype.seekable = function(){
+//    var TimeRangesObj = newObject;
+//    TimeRangesObj.length = 1
+//    TimeRangesObj.start = 0
+//    TimeRangesObj.end = 0
+//    return TimeRangesObj
+//};
 
-document.createElement('video').constructor.prototype.played = function(){
-    var TimeRangesObj = newObject;
-    TimeRangesObj.length = 1
-    TimeRangesObj.start = 0
-    TimeRangesObj.end = 0
-    return TimeRangesObj
-};
+//document.createElement('video').constructor.prototype.played = function(){
+//    var TimeRangesObj = newObject;
+//    TimeRangesObj.length = 1
+//    TimeRangesObj.start = 0
+//    TimeRangesObj.end = 0
+//    return TimeRangesObj
+//};
 
-document.createElement('video').constructor.prototype.mediaController = function(){
-    var MediaControllerObj = newObject;
-    MediaControllerObj.buffered = this.buffered()
-    MediaControllerObj.seekable = this.seekable()
-    MediaControllerObj.duration = "Inf"
-    MediaControllerObj.play = this.play()
-    MediaControllerObj.pause = this.pause()
-    MediaControllerObj.defaultPlaybackRate = this.defaultPlaybackRate
-    MediaControllerObj.playbackRate = this.playbackRate
-    MediaControllerObj.volume = 1.0
-    MediaControllerObj.muted = false
-    return MediaControllerObj
-};
+//document.createElement('video').constructor.prototype.mediaController = function(){
+//    var MediaControllerObj = newObject;
+//    MediaControllerObj.buffered = this.buffered()
+//    MediaControllerObj.seekable = this.seekable()
+//    MediaControllerObj.duration = "Inf"
+//    MediaControllerObj.play = this.play()
+//    MediaControllerObj.pause = this.pause()
+//    MediaControllerObj.defaultPlaybackRate = this.defaultPlaybackRate
+//    MediaControllerObj.playbackRate = this.playbackRate
+//    MediaControllerObj.volume = 1.0
+//    MediaControllerObj.muted = false
+//    return MediaControllerObj
+//};
 
-document.createElement('video').constructor.prototype.currentSrc = getImgFullUri(this.src)
-document.createElement('video').constructor.prototype.pause = function(){ console.debug("Do nothing"); };
-document.createElement('video').constructor.prototype.paused = false
-document.createElement('video').constructor.prototype.currentTime = 1;
-document.createElement('video').constructor.prototype.defaultPlaybackRate = 1.0
-document.createElement('video').constructor.prototype.playbackRate = 1.0
-document.createElement('video').constructor.prototype.volume = 1.0
-document.createElement('video').constructor.prototype.networkState = 2 // Always loading
-document.createElement('video').constructor.prototype.readyState = 4  // Always have enough data to start
-document.createElement('video').constructor.prototype.seeking = false
-document.createElement('video').constructor.prototype.autoplay = false
-document.createElement('video').constructor.prototype.ended = false
-document.createElement('video').constructor.prototype.preload = none
-document.createElement('video').constructor.prototype.controls = false
-document.createElement('video').constructor.prototype.loop = false
-document.createElement('video').constructor.prototype.muted = false
-document.createElement('video').constructor.prototype.duration = "Inf"
-document.createElement('video').constructor.prototype.startDate = new Date();
+//document.createElement('video').constructor.prototype.currentSrc = getImgFullUri(this.src)
+//document.createElement('video').constructor.prototype.pause = function(){ console.debug("Do nothing"); };
+//document.createElement('video').constructor.prototype.paused = false
+//document.createElement('video').constructor.prototype.currentTime = 1;
+//document.createElement('video').constructor.prototype.defaultPlaybackRate = 1.0
+//document.createElement('video').constructor.prototype.playbackRate = 1.0
+//document.createElement('video').constructor.prototype.volume = 1.0
+//document.createElement('video').constructor.prototype.networkState = 2 // Always loading
+//document.createElement('video').constructor.prototype.readyState = 4  // Always have enough data to start
+//document.createElement('video').constructor.prototype.seeking = false
+//document.createElement('video').constructor.prototype.autoplay = false
+//document.createElement('video').constructor.prototype.ended = false
+//document.createElement('video').constructor.prototype.preload = none
+//document.createElement('video').constructor.prototype.controls = false
+//document.createElement('video').constructor.prototype.loop = false
+//document.createElement('video').constructor.prototype.muted = false
+//document.createElement('video').constructor.prototype.duration = "Inf"
+//document.createElement('video').constructor.prototype.startDate = new Date();
 
 // ////////////////////////////
 
@@ -188,14 +211,66 @@ for (var i=0; i<frames.length; i++) {
 
 // facebook.com uses this and detecting html5 video only does somehow not work
 // improved version by Dax89 (Thanks for that)
-var fbembeddedvideos = document.querySelectorAll("div[data-store^='{\"videoID']");
-for (var i=0; i<fbembeddedvideos.length; i++) {
-    var videoobj = JSON.parse(fbembeddedvideos[i].getAttribute("data-store"));
+//var fbembeddedvideos = document.querySelectorAll("div[data-store^='{\"videoID']");
+//for (var i=0; i<fbembeddedvideos.length; i++) {
+//    var videoobj = JSON.parse(fbembeddedvideos[i].getAttribute("data-store"));
+
+//    if(!videoobj.hasOwnProperty("videoID") || !videoobj.hasOwnProperty("src"))
+//        continue;
+
+//    var data = new Object({'type': 'video'})
+//    data.video = getImgFullUri(videoobj.src);
+//    navigator.qt.postMessage( JSON.stringify(data) );
+//}
+
+// Facebook touch grabber (Thx to Dax89)
+function clickGrabFb(touchevent) {
+    var fbvideoelement = touchevent.target;
+
+    if((fbvideoelement.tagName === "DIV") && (fbvideoelement.hasAttribute("data-sigil")))
+        fbvideoelement = fbvideoelement.parentElement;
+
+    if((fbvideoelement.tagName === "I") && (fbvideoelement.hasAttribute("data-sigil")))
+        fbvideoelement = fbvideoelement.parentElement;
+
+    if((fbvideoelement.tagName !== "DIV") || !fbvideoelement.hasAttribute("data-store"))
+        return;
+
+    var videoobj = JSON.parse(fbvideoelement.getAttribute("data-store"));
 
     if(!videoobj.hasOwnProperty("videoID") || !videoobj.hasOwnProperty("src"))
-        continue;
+        return;
 
     var data = new Object({'type': 'video'})
     data.video = getImgFullUri(videoobj.src);
-    navigator.qt.postMessage( JSON.stringify(data) );
-}
+    data.play = true;
+    navigator.qt.postMessage(JSON.stringify(data));
+};
+
+//function clickGrabVideo(touchevent) {
+//    var videoelement = touchevent.target;
+//    if((videoelement.tagName === "VIDEO") && (videoelement.hasAttribute("src"))) {
+//        var data = new Object({'type': 'video'})
+//        data.video = getImgFullUri(videoelemtn.getAttribute('src'));
+//        data.play = true;
+//        navigator.qt.postMessage(JSON.stringify(data));
+//    }
+//    else if (videoelement.tagName === "VIDEO") {
+//        var children = videoelement.childNodes;
+//        for (var j = 0; j < children.length; j++) {
+//            if (children[j].tagName === 'SOURCE') {
+//                var data = new Object({'type': 'video'})
+//                if (children[j].hasAttribute('src')) data.video = getImgFullUri(children[j].getAttribute('src'));
+//                data.play = true
+//                navigator.qt.postMessage( JSON.stringify(data) );
+//                break;
+//            }
+//        }
+//    }
+
+//}
+
+if(document.location.hostname === "www.facebook.com" || document.location.hostname === "m.facebook.com")
+    document.addEventListener("touchend",  clickGrabFb, true);
+//else
+//    document.addEventListener("touchend", clickGrabVideo, true);
