@@ -59,6 +59,14 @@ ListModel {
         agent: "Mozilla/5.0 (X11; Linux i686; rv:43.0) Gecko/20100101 Firefox/43.0"
     }
     ListElement {
+        title: "Chrome 48 Desktop Version"
+        agent: "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36"
+    }
+    ListElement {
+        title: "Google Bot"
+        agent: "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
+    }
+    ListElement {
         title: "Custom"
         agent: "Mozilla/5.0 (Maemo; Linux; U; Jolla; Sailfish; like Android) AppleWebKit/538.1 (KHTML, like Gecko) Mobile Safari/538.1 (compatible)"
     }
