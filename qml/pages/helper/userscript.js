@@ -298,7 +298,11 @@ function longPressed(x, y, element) {
 }
 
 document.addEventListener('touchstart', (function(event) {
-    if (event.touches.length == 1) {
+    if (event.touches.length > 1) {
+        event.preventDefault();
+        return;
+    }
+    else if (event.touches.length == 1) {
         currentTouch = event.touches[0];
         hold = setTimeout(longPressed, 800, currentTouch.clientX, currentTouch.clientY, event.target);
     }
