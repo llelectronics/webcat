@@ -299,7 +299,11 @@ Page {
 //        layer.textureSize: page.width + "x" + page.height
 
         // Theoretically a nice function to replace the DevicePixelRatio hack but does not work as intended always
-//        property variant devicePixelRatio: 1.5
+//        property variant devicePixelRatio: {//1.5
+//            if (Screen.width <= 540) return 1.5;
+//            else if (Screen.width > 540 && Screen.width <= 768) return 2.0;
+//            else if (Screen.width > 768) return 3.0;
+//        }
 //        experimental.customLayoutWidth: page.width / devicePixelRatio
 
         // Helps rendering websites that are only optimized for desktop
