@@ -29,9 +29,9 @@ function getImgFullUri(uri) {
 document.createElement('video').constructor.prototype.canPlayType = function(type){
     if (type.indexOf("video/mp4") != -1 || type.indexOf("video/ogg") != -1 || type.indexOf("audio/mpeg") != -1 || type.indexOf("audio/ogg") != -1 || type.indexOf("audio/mp4") != -1 ||
             type.indexOf("application/vnd.apple.mpegURL") != -1 || type.indexOf("application/x-mpegURL") != -1 || type.indexOf("audio/mpegurl") != -1) {
-        return true;
+        return "probably";
      } else
-        return false;
+        return "";
 };
 
 document.createElement('video').constructor.prototype.play = function(){
@@ -51,12 +51,28 @@ document.createElement('video').constructor.prototype.src = function(src){
     var data = new Object({'type': 'video'})
     data.video = getImgFullUri(src);
     navigator.qt.postMessage( JSON.stringify(data) );
-    return src;
+    return getImgFullUri(src);
 };
 
 document.createElement('video').constructor.prototype.buffered = function(){
     var TimeRangesObj = newObject;
-    TimeRangesObj.length = 0
+    TimeRangesObj.length = 1
+    TimeRangesObj.start = 0
+    TimeRangesObj.end = 0
+    return TimeRangesObj
+};
+
+document.createElement('video').constructor.prototype.seekable = function(){
+    var TimeRangesObj = newObject;
+    TimeRangesObj.length = 1
+    TimeRangesObj.start = 0
+    TimeRangesObj.end = 0
+    return TimeRangesObj
+};
+
+document.createElement('video').constructor.prototype.played = function(){
+    var TimeRangesObj = newObject;
+    TimeRangesObj.length = 1
     TimeRangesObj.start = 0
     TimeRangesObj.end = 0
     return TimeRangesObj
@@ -66,28 +82,34 @@ document.createElement('video').constructor.prototype.mediaController = function
     var MediaControllerObj = newObject;
     MediaControllerObj.buffered = this.buffered()
     MediaControllerObj.seekable = this.seekable()
-    MediaControllerObj.duration = 0
+    MediaControllerObj.duration = "Inf"
     MediaControllerObj.play = this.play()
     MediaControllerObj.pause = this.pause()
-    MediaControllerObj.defaultPlaybackRate = this.defaultPlaybackRate(1)
-    MediaControllerObj.playbackRate = this.playbackRate(1)
+    MediaControllerObj.defaultPlaybackRate = this.defaultPlaybackRate
+    MediaControllerObj.playbackRate = this.playbackRate
     MediaControllerObj.volume = 1.0
     MediaControllerObj.muted = false
     return MediaControllerObj
 };
 
-document.createElement('video').constructor.prototype.currentSrc = function(){ return this.src; };
+document.createElement('video').constructor.prototype.currentSrc = getImgFullUri(this.src)
 document.createElement('video').constructor.prototype.pause = function(){ console.debug("Do nothing"); };
-document.createElement('video').constructor.prototype.paused = function(){ return false; };
-document.createElement('video').constructor.prototype.currentTime = function(){ return 0; };
-document.createElement('video').constructor.prototype.defaultPlaybackRate = function(rate){ return rate };
-document.createElement('video').constructor.prototype.playbackRate = function(rate){ return rate };
-document.createElement('video').constructor.prototype.readyState = function(){ return 4 }; // Always have enough data to start
-document.createElement('video').constructor.prototype.seeking = function(){ return false };
-document.createElement('video').constructor.prototype.autoplay = function(autoplay){ return autoplay };
-document.createElement('video').constructor.prototype.ended = function(){ return false };
-document.createElement('video').constructor.prototype.preload = function(){ return false };
-document.createElement('video').constructor.prototype.controls = function(){ return false };
+document.createElement('video').constructor.prototype.paused = false
+document.createElement('video').constructor.prototype.currentTime = 1;
+document.createElement('video').constructor.prototype.defaultPlaybackRate = 1.0
+document.createElement('video').constructor.prototype.playbackRate = 1.0
+document.createElement('video').constructor.prototype.volume = 1.0
+document.createElement('video').constructor.prototype.networkState = 2 // Always loading
+document.createElement('video').constructor.prototype.readyState = 4  // Always have enough data to start
+document.createElement('video').constructor.prototype.seeking = false
+document.createElement('video').constructor.prototype.autoplay = false
+document.createElement('video').constructor.prototype.ended = false
+document.createElement('video').constructor.prototype.preload = none
+document.createElement('video').constructor.prototype.controls = false
+document.createElement('video').constructor.prototype.loop = false
+document.createElement('video').constructor.prototype.muted = false
+document.createElement('video').constructor.prototype.duration = "Inf"
+document.createElement('video').constructor.prototype.startDate = new Date();
 
 // ////////////////////////////
 
