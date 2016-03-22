@@ -77,13 +77,13 @@ document.createElement('video').constructor.prototype.load = function(){
 //    return getImgFullUri(src);
 //};
 
-//document.createElement('video').constructor.prototype.buffered = function(){
-//    var TimeRangesObj = newObject;
-//    TimeRangesObj.length = 1
-//    TimeRangesObj.start = 0
-//    TimeRangesObj.end = 0
-//    return TimeRangesObj
-//};
+document.createElement('video').constructor.prototype.buffered = function(){
+    var TimeRangesObj = newObject;
+    TimeRangesObj.length = 1
+    TimeRangesObj.start = 0
+    TimeRangesObj.end = 0
+    return TimeRangesObj
+};
 
 //document.createElement('video').constructor.prototype.seekable = function(){
 //    var TimeRangesObj = newObject;
@@ -123,7 +123,7 @@ document.createElement('video').constructor.prototype.load = function(){
 //document.createElement('video').constructor.prototype.playbackRate = 1.0
 //document.createElement('video').constructor.prototype.volume = 1.0
 //document.createElement('video').constructor.prototype.networkState = 2 // Always loading
-//document.createElement('video').constructor.prototype.readyState = 4  // Always have enough data to start
+document.createElement('video').constructor.prototype.readyState = 4  // Always have enough data to start
 //document.createElement('video').constructor.prototype.seeking = false
 //document.createElement('video').constructor.prototype.autoplay = false
 //document.createElement('video').constructor.prototype.ended = false
