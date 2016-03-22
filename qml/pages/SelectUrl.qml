@@ -206,7 +206,7 @@ Page
                             else return qsTr("Loading..");
                         }
                         width: parent.width - 2
-                        font.pixelSize: tabBg.height / 2.15
+                        font.pixelSize: Theme.fontSizeMedium //tabBg.height / 2.15
                         color: Theme.primaryColor;
                         anchors.centerIn: parent
                         elide: Text.ElideRight

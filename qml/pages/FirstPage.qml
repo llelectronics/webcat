@@ -68,8 +68,8 @@ Page {
     property bool readerMode: false
     property bool nightMode: false
     property bool searchMode: false
-    property int toolbarheight: Screen.height / 13
-    property int extratoolbarheight: Screen.height / 10
+    property int toolbarheight: Theme.itemSizeSmall //Screen.height / 13
+    property int extratoolbarheight: Theme.itemSizeSmall + (Theme.itemSizeSmall / 4)//Screen.height / 10
     property alias webview: webview
     property alias mediaDownloadRec: mediaDownloadRec
     property string yt720p: mediaList.count > 0 && mediaYt ? mediaList.get(0).yt720p : "";
@@ -753,7 +753,7 @@ Page {
             anchors.left: toolbar.left
             anchors.leftMargin: Theme.paddingSmall
             font.bold: true
-            font.pixelSize: parent.height - 4
+            font.pixelSize: Theme.fontSizeTiny //parent.height - 4
             visible: false
         }
         MouseArea {
