@@ -1,7 +1,10 @@
 import QtQuick 2.0
+import Sailfish.Silica 1.0
 
 MouseArea {
+    id: rootArea
     property QtObject popoverModel: model
+    property var itemSelectorIndex: parent.itemSelectorIndex
     anchors.fill: parent
     onClicked: popoverModel.reject()
 
@@ -12,8 +15,8 @@ MouseArea {
         height: rect.height + (2 * rectShadow.radius);
 
         x: {
-            if (popoverModel.elementRect.x + width/2 > root.width) {
-                root.width - popoverModel.elementRect.x - 40
+            if (popoverModel.elementRect.x + width/2 > rootArea.width) {
+                rootArea.width - popoverModel.elementRect.x - 40
             } else if (popoverModel.elementRect.x - width/2 + popoverListView.contentItem.width/2 < 0) {
                 30
             } else {
@@ -22,7 +25,7 @@ MouseArea {
         }
 
         y: {
-            if (popoverModel.elementRect.y + popoverModel.elementRect.height + height < parent.height ) {
+            if (popoverModel.elementRect.y + popoverModel.elementRect.height + height < rootArea.height ) {
                 popoverDownCaret.visible = true
                 popoverUpCaret.visible = false
                 popoverModel.elementRect.y + popoverModel.elementRect.height
@@ -40,21 +43,21 @@ MouseArea {
             radius: 5
             anchors.centerIn: parent
             antialiasing: true;
-            color: "gray"
+            color: "black"
 
             Text {
                 id: popoverUpCaret
                 anchors { left: parent.horizontalCenter; margins: -10; top: parent.bottom; topMargin: -22; }
                 text: "\uF0D7"
                 color: "gray"
-                font { family: fontAwesome.name; pointSize: 50 }
+                font.pixelSize: Theme.fontSizeMedium
             }
             Text {
                 id: popoverDownCaret
                 anchors { left: parent.horizontalCenter; margins: -10; top: parent.top; topMargin: -32; }
                 text: "\uF0D8"
                 color: "gray"
-                font { family: fontAwesome.name; pointSize: 50 }
+                font.pixelSize: Theme.fontSizeMedium
             }
 
             ListView {
@@ -70,27 +73,33 @@ MouseArea {
                     Text {
                         anchors { left: parent.left; leftMargin: 10; right: parent.right; rightMargin: 10; }
                         text: model.text
-                        color: "white"
-                        font { pointSize: 16; weight: Font.Bold }
+                        color: model.selected ? Theme.highlightColor : "white"
+                        font { pixelSize: Theme.fontSizeSmall }
                         elide: Text.ElideRight
                     }
 
                     Text { // highlight
                         visible: model.selected ? true : false
-                        color: "lightgray"; text: "\uF00C";
+                        color: Theme.highlightColor; text: "\uF00C";
                         anchors.right : parent.right
-                        font { family: fontAwesome.name; pointSize: 20 }
+                        font.pixelSize: Theme.fontSizeMedium
+                        font.weight: Font.Bold
                     }
 
                     MouseArea {
                         anchors.fill: parent
                         enabled: model.enabled
-                        onClicked: { popoverModel.accept(model.index); }
+                        onClicked: { rootArea.parent.itemSelectorIndex = model.index ; popoverModel.accept(model.index); }
                     }
+                }
+                Component.onCompleted: {
+                    // console.debug("[PopOver.qml] Created ListView with index at:" + itemSelectorIndex)
+                    positionViewAtIndex(itemSelectorIndex, ListView.Beginning);
                 }
             }
         }
     }
+
     DropShadow {
         id: rectShadow;
         anchors.fill: source

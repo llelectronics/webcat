@@ -208,6 +208,8 @@ Page {
 
         focus: true
 
+        property variant itemSelectorIndex: -1
+
         width: {
             if (page.orientation == Orientation.Portrait || page.orientation == Orientation.PortraitInverted)  {
                 mainWindow.width
@@ -272,6 +274,7 @@ Page {
             page.mediaTitle = "";
             // For mediaList
             counter = -1;
+            itemSelectorIndex = -1;
             mediaList.clear();
 
             checkYoutubeURL(url);
