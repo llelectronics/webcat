@@ -328,6 +328,10 @@ Page {
 
         experimental.userScripts: [
             Qt.resolvedUrl("helper/devicePixelRatioHack.js"),
+            // Polyfills, Thx Dax89 for notifying me about those
+            Qt.resolvedUrl("helper/es6-collections.min.js"), // ES6 Harmony Collections: https://github.com/WebReflection/es6-collections
+            Qt.resolvedUrl("helper/canvg.min.js"),           // SVG Support: https://github.com/gabelerner/canvg
+            // Media Detection
             Qt.resolvedUrl("helper/mediaDetect.js"),
             // This userScript makes longpress detection and other things working
             Qt.resolvedUrl("helper/userscript.js")

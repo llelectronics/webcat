@@ -347,3 +347,5 @@ function findString(str) {
  }
  return;
 }
+
+canvg();

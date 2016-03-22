@@ -142,4 +142,6 @@ DISTFILES += \
     translations/harbour-webcat-fi.ts \
     translations/harbour-webcat-fr.ts \
     translations/harbour-webcat-ru.ts \
-    translations/harbour-webcat-sv.ts
+    translations/harbour-webcat-sv.ts \
+    qml/pages/helper/es6-collections.min.js \
+    qml/pages/helper/canvg.min.js
