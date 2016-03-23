@@ -47,14 +47,14 @@ MouseArea {
 
             Text {
                 id: popoverUpCaret
-                anchors { left: parent.horizontalCenter; margins: -Theme.paddingSmall; top: parent.bottom; topMargin: -Theme.paddingSmall*2; }
+                anchors { left: parent.horizontalCenter; margins: -Theme.paddingSmall; top: parent.bottom; }
                 text: "\uF0D7"
                 color: "gray"
                 font.pixelSize: Theme.fontSizeMedium
             }
             Text {
                 id: popoverDownCaret
-                anchors { left: parent.horizontalCenter; margins: -Theme.paddingSmall; top: parent.top; topMargin: -Theme.paddingSmall*2; }
+                anchors { left: parent.horizontalCenter; margins: -Theme.paddingSmall; top: parent.top; topMargin: -Theme.paddingSmall*5; }
                 text: "\uF0D8"
                 color: "gray"
                 font.pixelSize: Theme.fontSizeMedium
