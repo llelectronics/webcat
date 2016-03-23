@@ -16,11 +16,11 @@ MouseArea {
 
         x: {
             if (popoverModel.elementRect.x + width/2 > rootArea.width) {
-                rootArea.width - popoverModel.elementRect.x - 40
+                rootArea.width - popoverModel.elementRect.x - Theme.paddingMedium
             } else if (popoverModel.elementRect.x - width/2 + popoverListView.contentItem.width/2 < 0) {
                 30
             } else {
-                popoverModel.elementRect.x - width/2 + 50
+                popoverModel.elementRect.x - width/2 + Theme.paddingLarge
             }
         }
 
@@ -38,8 +38,8 @@ MouseArea {
 
         Rectangle {
             id: rect
-            width: 250
-            height: 300 //( popoverListView.contentItem.height < 300 ) ? popoverListView.contentItem.height + 40 : 300
+            width: rootArea.width / 2
+            height: rootArea.height / 2.5 //( popoverListView.contentItem.height < 300 ) ? popoverListView.contentItem.height + 40 : 300
             radius: 5
             anchors.centerIn: parent
             antialiasing: true;
@@ -47,14 +47,14 @@ MouseArea {
 
             Text {
                 id: popoverUpCaret
-                anchors { left: parent.horizontalCenter; margins: -10; top: parent.bottom; topMargin: -22; }
+                anchors { left: parent.horizontalCenter; margins: -Theme.paddingSmall; top: parent.bottom; topMargin: -Theme.paddingSmall*2; }
                 text: "\uF0D7"
                 color: "gray"
                 font.pixelSize: Theme.fontSizeMedium
             }
             Text {
                 id: popoverDownCaret
-                anchors { left: parent.horizontalCenter; margins: -10; top: parent.top; topMargin: -32; }
+                anchors { left: parent.horizontalCenter; margins: -Theme.paddingSmall; top: parent.top; topMargin: -Theme.paddingSmall*2; }
                 text: "\uF0D8"
                 color: "gray"
                 font.pixelSize: Theme.fontSizeMedium
@@ -62,33 +62,36 @@ MouseArea {
 
             ListView {
                 id: popoverListView
-                anchors { fill: parent; margins: 20; topMargin: 40; bottomMargin: 40 }
+                anchors { fill: parent; margins: Theme.paddingSmall ; topMargin: Theme.paddingMedium; bottomMargin: Theme.paddingMedium }
                 model: popoverModel.items
+                clip: true
 
                 delegate: Rectangle {
                     color: "transparent"
-                    height: 40
+                    height: Theme.itemSizeSmall
                     width: parent.width
+                    radius: 5
 
-                    Text {
-                        anchors { left: parent.left; leftMargin: 10; right: parent.right; rightMargin: 10; }
-                        text: model.text
-                        color: model.selected ? Theme.highlightColor : "white"
-                        font { pixelSize: Theme.fontSizeSmall }
-                        elide: Text.ElideRight
-                    }
-
-                    Text { // highlight
-                        visible: model.selected ? true : false
-                        color: Theme.highlightColor; text: "\uF00C";
-                        anchors.right : parent.right
-                        font.pixelSize: Theme.fontSizeMedium
-                        font.weight: Font.Bold
-                    }
-
-                    MouseArea {
+                    BackgroundItem {
                         anchors.fill: parent
                         enabled: model.enabled
+
+                        Text {
+                            anchors { left: parent.left; leftMargin: Theme.paddingSmall; right: parent.right; rightMargin: Theme.paddingSmall; verticalCenter: parent.verticalCenter }
+                            text: model.text
+                            color: model.selected ? Theme.highlightColor : "white"
+                            font { pixelSize: Theme.fontSizeSmall }
+                            elide: Text.ElideRight
+                        }
+
+                        Text { // highlight
+                            visible: model.selected ? true : false
+                            anchors.verticalCenter: parent.verticalCenter
+                            color: Theme.highlightColor; text: "\uF00C";
+                            anchors.right : parent.right
+                            font.pixelSize: Theme.fontSizeMedium
+                            font.weight: Font.Bold
+                        }
                         onClicked: { rootArea.parent.itemSelectorIndex = model.index ; popoverModel.accept(model.index); }
                     }
                 }
