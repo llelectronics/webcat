@@ -220,11 +220,15 @@ Page {
         height: { //page.height - 20 // minimized toolbar size. We don't want to set the toolbar.height here otherwise it would make webview resizing which is painfully slow
             if (page.orientation == Orientation.Portrait || page.orientation == Orientation.PortraitInverted)  {
                 //console.debug("Not in Landscape")
-                if (mediaDownloadRec.visible) mainWindow.height - (toolbarheight / 3) - mediaDownloadRec.height
+                if (inputFocus && mediaDownloadRec.visible) mainWindow.height - (toolbarheight / 3) - mediaDownloadRec.height - Qt.inputMethod.keyboardRectangle.height
+                else if (mediaDownloadRec.visible) mainWindow.height - (toolbarheight / 3) - mediaDownloadRec.height
+                else if (inputFocus) mainWindow.height - (toolbarheight /3) - Qt.inputMethod.keyboardRectangle.height
                 else mainWindow.height - (toolbarheight /3)
             } else {
                 //console.debug("In Landscape")
-                if (mediaDownloadRec.visible) mainWindow.width - (toolbarheight / 3) - mediaDownloadRec.height
+                if (inputFocus && mediaDownloadRec.visible) mainWindow.width - (toolbarheight / 3) - mediaDownloadRec.height - Qt.inputMethod.keyboardRectangle.height
+                else if (mediaDownloadRec.visible) mainWindow.width - (toolbarheight / 3) - mediaDownloadRec.height
+                else if (inputFocus) mainWindow.width - (toolbarheight /3) - Qt.inputMethod.keyboardRectangle.width
                 else mainWindow.width - (toolbarheight /3)
             }
         }
@@ -432,8 +436,7 @@ Page {
             }
 
             case 'input': {
-                // Seems not to work reliably as only input hide on keyboard hide is received
-                console.debug("[FirstPage.qml] INPUT Box data: " + data.state)
+                //console.debug("[FirstPage.qml] INPUT Box data: " + data.state)
                 if (data.state == "show") inputFocus = true;
                 else if (data.state == "hide") inputFocus = false; // somehow sometimes an undefined is received so don't react on it
                 if (toolbar.state == "expanded" && data.state == "show" && ! urlText.focus == true) toolbar.state = "minimized"
