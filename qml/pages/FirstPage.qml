@@ -226,7 +226,7 @@ Page {
                 else mainWindow.height - (toolbarheight /3)
             } else {
                 //console.debug("In Landscape")
-                if (inputFocus && mediaDownloadRec.visible) mainWindow.width - (toolbarheight / 3) - mediaDownloadRec.height - Qt.inputMethod.keyboardRectangle.height
+                if (inputFocus && mediaDownloadRec.visible) mainWindow.width - (toolbarheight / 3) - mediaDownloadRec.height - Qt.inputMethod.keyboardRectangle.width
                 else if (mediaDownloadRec.visible) mainWindow.width - (toolbarheight / 3) - mediaDownloadRec.height
                 else if (inputFocus) mainWindow.width - (toolbarheight /3) - Qt.inputMethod.keyboardRectangle.width
                 else mainWindow.width - (toolbarheight /3)
