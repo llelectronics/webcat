@@ -345,7 +345,7 @@ Page {
         experimental.certificateVerificationDialog: Item {
             Component.onCompleted: {
                 var dialog = pageStack.push(Qt.resolvedUrl("ConfirmDialog.qml"),
-                                            {"label":  "Accept certificate from " + url + " ?"})
+                                            {"label":  "Accept certificate from " + url + " ?", allowedOrientations: mainWindow.firstPage.allowedOrientations})
                 dialog.accepted.connect(function() {
                     model.accept();
                 })
@@ -359,7 +359,7 @@ Page {
         experimental.authenticationDialog: Item {
             Component.onCompleted: {
                 var dialog = pageStack.push(Qt.resolvedUrl("AuthenticationDialog.qml"),
-                                            {"hostname":  model.hostname, "realm": model.realm})
+                                            {"hostname":  model.hostname, "realm": model.realm, allowedOrientations: mainWindow.firstPage.allowedOrientations})
                 dialog.accepted.connect(function() {
                     model.accept(dialog.username, dialog.password)
                 })
