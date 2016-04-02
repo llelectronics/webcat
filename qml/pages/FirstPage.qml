@@ -211,25 +211,29 @@ Page {
         property variant itemSelectorIndex: -1
 
         width: {
-            if (page.orientation == Orientation.Portrait || page.orientation == Orientation.PortraitInverted)  {
-                mainWindow.width
-            } else {
-                mainWindow.height
+            if (!page.orientationTransitionRunning) {
+                if (page.orientation == Orientation.Portrait || page.orientation == Orientation.PortraitInverted)  {
+                    mainWindow.width
+                } else {
+                    mainWindow.height
+                }
             }
         }
         height: { //page.height - 20 // minimized toolbar size. We don't want to set the toolbar.height here otherwise it would make webview resizing which is painfully slow
-            if (page.orientation == Orientation.Portrait || page.orientation == Orientation.PortraitInverted)  {
-                //console.debug("Not in Landscape")
-                if (inputFocus && mediaDownloadRec.visible) mainWindow.height - (toolbarheight / 3) - mediaDownloadRec.height - Qt.inputMethod.keyboardRectangle.height
-                else if (mediaDownloadRec.visible) mainWindow.height - (toolbarheight / 3) - mediaDownloadRec.height
-                else if (inputFocus) mainWindow.height - (toolbarheight /3) - Qt.inputMethod.keyboardRectangle.height
-                else mainWindow.height - (toolbarheight /3)
-            } else {
-                //console.debug("In Landscape")
-                if (inputFocus && mediaDownloadRec.visible) mainWindow.width - (toolbarheight / 3) - mediaDownloadRec.height - Qt.inputMethod.keyboardRectangle.width
-                else if (mediaDownloadRec.visible) mainWindow.width - (toolbarheight / 3) - mediaDownloadRec.height
-                else if (inputFocus) mainWindow.width - (toolbarheight /3) - Qt.inputMethod.keyboardRectangle.width
-                else mainWindow.width - (toolbarheight /3)
+            if (!page.orientationTransitionRunning) {
+                if (page.orientation == Orientation.Portrait || page.orientation == Orientation.PortraitInverted)  {
+                    //console.debug("Not in Landscape")
+                    if (inputFocus && mediaDownloadRec.visible) mainWindow.height - (toolbarheight / 3) - mediaDownloadRec.height - Qt.inputMethod.keyboardRectangle.height
+                    else if (mediaDownloadRec.visible) mainWindow.height - (toolbarheight / 3) - mediaDownloadRec.height
+                    else if (inputFocus) mainWindow.height - (toolbarheight /3) - Qt.inputMethod.keyboardRectangle.height
+                    else mainWindow.height - (toolbarheight /3)
+                } else {
+                    //console.debug("In Landscape")
+                    if (inputFocus && mediaDownloadRec.visible) mainWindow.width - (toolbarheight / 3) - mediaDownloadRec.height - Qt.inputMethod.keyboardRectangle.width
+                    else if (mediaDownloadRec.visible) mainWindow.width - (toolbarheight / 3) - mediaDownloadRec.height
+                    else if (inputFocus) mainWindow.width - (toolbarheight /3) - Qt.inputMethod.keyboardRectangle.width
+                    else mainWindow.width - (toolbarheight /3)
+                }
             }
         }
         // We don't want pageStackNavigation to interfere
