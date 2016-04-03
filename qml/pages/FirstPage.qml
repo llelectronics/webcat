@@ -210,6 +210,8 @@ Page {
 
         property variant itemSelectorIndex: -1
 
+        smooth: false
+
         width: {
             if (!page.orientationTransitionRunning) {
                 if (page.orientation == Orientation.Portrait || page.orientation == Orientation.PortraitInverted)  {

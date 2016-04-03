@@ -91,7 +91,8 @@ function getYoutubeStream(youtube_id, firstPage, listId) {
                 try {
                     var paramPair = videoInfoSplit[i].split("=");
                 } catch(e) {
-                    console.debug("[yt.js]: " + e)
+                    //console.debug("[yt.js]: " + e)
+                    continue;
                 }
                 if (paramPair[0] === "url_encoded_fmt_stream_map") {
                     //console.debug("[yt.js] Streams found")
