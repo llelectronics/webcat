@@ -32,7 +32,6 @@ Item {
     property bool autoplay: true
     property bool fullscreen: false
     property bool videoPage: false
-    property bool isPlayClicked: false
 
     property alias showTimeAndTitle: showTimeAndTitle
     property alias pulley: pulley
@@ -253,7 +252,6 @@ Item {
 
             onPlayClicked: {
                 toggleControls();
-                isPlayClicked = true;
             }
 
             function toggleControls() {
@@ -291,7 +289,6 @@ Item {
                         if (controls.opacity === 0.0) toggleControls();
                         progressCircle.visible = false;
                         if (! mediaPlayer.seekable) mediaPlayer.stop();
-                        isPlayClicked = false;
                     }
                     else {
                         toggleControls();
@@ -508,11 +505,6 @@ On Youtube Videos please make sure to be logged in. Some videos might be geobloc
             errorBox.visible = true;
             /* Avoid MediaPlayer undefined behavior */
             stop();
-        }
-        onBufferProgressChanged: {
-            if (bufferProgress == 1.0 && isPlayClicked) {
-                play()
-            }
         }
     }
 
