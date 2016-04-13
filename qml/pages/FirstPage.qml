@@ -1591,7 +1591,7 @@ Page {
     // On Media Loaded show download button
     Rectangle {
         id: searchBar
-        z:85
+        z:searchMode && mediaDownloadRec.visible ? mediaDownloadRec.z + 1 : 85
         gradient: Gradient {
             GradientStop { position: 0.0; color: "#262626" }
             GradientStop { position: 0.85; color: "#1F1F1F"}
