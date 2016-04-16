@@ -394,7 +394,6 @@ Page {
 
             pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": downloadItem.url, "dataContainer": webview, "downloadName": downloadItem.suggestedFilename});
         }
-
         experimental.onMessageReceived: {
             //console.log('onMessageReceived: ' + message.data );
             var data = null
@@ -413,6 +412,9 @@ Page {
                 else if (data.target && data.target != "_parent") openNewTab('page-'+salt(), fixUrl(data.href), false);
                 break;
             }
+//            case 'error': {
+//                console.debug("[FirstPage.qml] Javascript error: " + data.msg + " in line: " + data.line + " on url:" + data.url + " with StackTrace: " + data.strace)
+//            }
             case 'longpress': {
                 if (data.img) {
                     imageLongPressAvailability = true;

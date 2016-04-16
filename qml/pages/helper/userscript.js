@@ -113,6 +113,11 @@ window.open = function (url, windowName, windowFeatures) {
     navigator.qt.postMessage( JSON.stringify(link) );
 }
 
+//window.onerror = function (errorMsg, url, lineNumber, column, errorObj) {
+//    var err = new Object({'type':'error', 'msg': errorMsg, 'url' : url, 'line': lineNumber, 'strace' : errorObj});
+//    navigator.qt.postMessage( JSON.stringify(err) );
+//}
+
 // virtual keyboard hook
 window.document.addEventListener('click', (function(e) {
     if (e.srcElement.tagName === ('INPUT'||'TEXTAREA'||'FORM')) {
