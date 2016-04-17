@@ -310,7 +310,7 @@ Item {
             radius: width / 2
             border.color: "white"
             border.width: 2
-            visible: videoPoster.controls.opacity
+            visible: videoPoster.controls.opacity && (videoPage == false)
         }
 
         Rectangle {
@@ -322,7 +322,7 @@ Item {
             radius: width / 2
             border.color: "white"
             border.width: 2
-            visible: videoPoster.controls.opacity
+            visible: videoPoster.controls.opacity && (videoPage == false)
         }
 
         IconButton {
@@ -505,6 +505,11 @@ On Youtube Videos please make sure to be logged in. Some videos might be geobloc
             errorBox.visible = true;
             /* Avoid MediaPlayer undefined behavior */
             stop();
+        }
+        onBufferProgressChanged: {
+            if (bufferProgress == 1.0) {
+                play()
+            } else pause()
         }
     }
 
