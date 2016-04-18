@@ -32,6 +32,7 @@ Item {
     property bool autoplay: true
     property bool fullscreen: false
     property bool videoPage: false
+    property bool isNewSource: false
 
     property alias showTimeAndTitle: showTimeAndTitle
     property alias pulley: pulley
@@ -67,6 +68,7 @@ Item {
         if (errorDetail.visible && errorTxt.visible) { errorDetail.visible = false; errorTxt.visible = false }
         videoPoster.showControls();
         if (streamTitle == "") streamTitle = mainWindow.findBaseName(streamUrl)
+        isNewSource = true
     }
 
     function videoPlay() {
@@ -507,9 +509,10 @@ On Youtube Videos please make sure to be logged in. Some videos might be geobloc
             stop();
         }
         onBufferProgressChanged: {
-            if (bufferProgress == 1.0) {
+            if (bufferProgress == 1.0 && isNewSource) {
+                isNewSource = false
                 play()
-            } else pause()
+            } else if(isNewSource) pause()
         }
     }
 
