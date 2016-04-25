@@ -17,10 +17,10 @@ MouseArea {
         x: {
             if (popoverModel.elementRect.x + width/2 > rootArea.width) {
                 rootArea.width - popoverModel.elementRect.x - Theme.paddingMedium
-            } else if (popoverModel.elementRect.x - width/2 + popoverListView.contentItem.width/2 < 0) {
+            } else if (popoverModel.elementRect.x - width + popoverListView.contentItem.width/2 < 0) {
                 30
             } else {
-                popoverModel.elementRect.x - width/2 + Theme.paddingLarge
+                popoverModel.elementRect.x - width + Theme.paddingLarge
             }
         }
 
