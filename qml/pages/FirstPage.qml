@@ -276,6 +276,11 @@ Page {
             urlText.text = urlText.simplifyUrl(url)
             urlText.fullUrl = url
 
+            if (url.indexOf("tagesschau.de") > -1) {
+                experimental.customLayoutWidth = experimental.preferredMinimumContentsWidth
+            }
+            else experimental.customLayoutWidth = page.width / devicePixelRatio
+
             // reset everything on url change
             mediaDownloadRec.mediaUrl = "";
             mediaYtEmbeded = false;
@@ -312,12 +317,12 @@ Page {
 //        layer.textureSize: page.width + "x" + page.height
 
         // Theoretically a nice function to replace the DevicePixelRatio hack but does not work as intended always
-//        property variant devicePixelRatio: {//1.5
-//            if (Screen.width <= 540) return 1.5;
-//            else if (Screen.width > 540 && Screen.width <= 768) return 2.0;
-//            else if (Screen.width > 768) return 3.0;
-//        }
-//        experimental.customLayoutWidth: page.width / devicePixelRatio
+        property variant devicePixelRatio: {//1.5
+            if (Screen.width <= 540) return 1.5;
+            else if (Screen.width > 540 && Screen.width <= 768) return 2.0;
+            else if (Screen.width > 768) return 3.0;
+        }
+        experimental.customLayoutWidth: page.width / devicePixelRatio
 
         // Helps rendering websites that are only optimized for desktop
         experimental.preferredMinimumContentsWidth: 980

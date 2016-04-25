@@ -2,7 +2,7 @@ if (!window.location.origin)
    window.location.origin = window.location.protocol+"//"+window.location.host;
 
 // I hate blacklisting. Hopefully this is the only url that needs that
-if (window.location.origin == "http://www.tagesschau.de") {
+if (window.location.origin == "http://www.tagesschau.de" || window.location.origin == "http://tagesschau.de") {
 
     window.onload = function() {
         // Glorious hack to fix wrong device Pixel Ratio reported by Webview (I hope Jolla will fix this soon)
