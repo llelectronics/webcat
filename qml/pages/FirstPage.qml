@@ -276,6 +276,11 @@ Page {
             urlText.text = urlText.simplifyUrl(url)
             urlText.fullUrl = url
 
+            if (url.indexOf("tagesschau.de") > -1) {
+                experimental.customLayoutWidth = experimental.preferredMinimumContentsWidth
+            }
+            else experimental.customLayoutWidth = page.width / devicePixelRatio
+
             // reset everything on url change
             mediaDownloadRec.mediaUrl = "";
             mediaYtEmbeded = false;
@@ -293,11 +298,6 @@ Page {
             DB.addHistory(url.toString());
 
             inputFocus = false;
-
-            if (url.indexOf("tagesschau.de") > -1) {
-                experimental.customLayoutWidth = experimental.preferredMinimumContentsWidth
-            }
-            else experimental.customLayoutWidth = page.width / devicePixelRatio
         }
 
         // Settings loaded from mainWindow
