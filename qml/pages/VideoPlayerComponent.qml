@@ -212,6 +212,7 @@ Item {
             height: parent.height / 2
             anchors.horizontalCenter: parent.horizontalCenter
             font.bold: false
+            readOnly: true
             onTextChanged: {
                 if (text !== "") visible = true;
             }

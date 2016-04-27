@@ -72,10 +72,10 @@ Page {
     property int extratoolbarheight: Theme.itemSizeSmall + (Theme.itemSizeSmall / 4)//Screen.height / 10
     property alias webview: webview
     property alias mediaDownloadRec: mediaDownloadRec
-    property string yt720p: mediaList.count > 0 && mediaYt ? mediaList.get(0).yt720p : "";
-    property string yt480p: mediaList.count > 0 && mediaYt ? mediaList.get(0).yt480p : "";
-    property string yt360p: mediaList.count > 0 && mediaYt ? mediaList.get(0).yt360p : "";
-    property string yt240p: mediaList.count > 0 && mediaYt ? mediaList.get(0).yt240p : "";
+    property string yt720p: mediaList.count > 0 && mediaYt && mediaList.get(0).yt720p ? mediaList.get(0).yt720p : ""
+    property string yt480p: mediaList.count > 0 && mediaYt && mediaList.get(0).yt480p ? mediaList.get(0).yt480p : ""
+    property string yt360p: mediaList.count > 0 && mediaYt && mediaList.get(0).yt360p ? mediaList.get(0).yt360p : ""
+    property string yt240p: mediaList.count > 0 && mediaYt && mediaList.get(0).yt240p ? mediaList.get(0).yt240p : ""
     property string mediaTitle;
     property int counter;
     property alias mediaList: mediaList
@@ -1429,7 +1429,10 @@ Page {
                 repeat: true
                 onTriggered: progressCircleYt.value = (progressCircleYt.value + 0.005) % 1.0
                 running: {
-                    if ((ytUrlLoading && mediaUrl != "") || (ytUrlLoading && yt720p != "") || (ytUrlLoading && yt480p != "") || (ytUrlLoading && yt360p != "") || (ytUrlLoading && yt240p != "")) return true
+                    if (ytUrlLoading) {
+                        if ((mediaDownloadRec.mediaUrl != "") || (yt720p != "") || (yt480p != "") || (yt360p != "") || (yt240p != "")) return true
+                    }
+                    else return false
                 }
             }
         }
@@ -1507,9 +1510,9 @@ Page {
                     if (! mainWindow.vPlayerExternal) {
                         console.debug("Load videoPlayer in window...");
                         if (yt720p != "") vPlayerLoader.setSource("VideoPlayerComponent.qml", {dataContainer: firstPage, streamUrl: yt720p, streamTitle: mediaDownloadRecTitle.text});
-                        else if (yt480p != "") vPlayerLoader.setSource("VideoPlayerComponent.qml", {dataContainer: firstPage, streamUrl: yt720p, streamTitle: mediaDownloadRecTitle.text});
-                        else if (yt360p != "") vPlayerLoader.setSource("VideoPlayerComponent.qml", {dataContainer: firstPage, streamUrl: yt720p, streamTitle: mediaDownloadRecTitle.text});
-                        else if (yt240p != "") vPlayerLoader.setSource("VideoPlayerComponent.qml", {dataContainer: firstPage, streamUrl: yt720p, streamTitle: mediaDownloadRecTitle.text});
+                        else if (yt480p != "") vPlayerLoader.setSource("VideoPlayerComponent.qml", {dataContainer: firstPage, streamUrl: yt480p, streamTitle: mediaDownloadRecTitle.text});
+                        else if (yt360p != "") vPlayerLoader.setSource("VideoPlayerComponent.qml", {dataContainer: firstPage, streamUrl: yt360p, streamTitle: mediaDownloadRecTitle.text});
+                        else if (yt240p != "") vPlayerLoader.setSource("VideoPlayerComponent.qml", {dataContainer: firstPage, streamUrl: yt240p, streamTitle: mediaDownloadRecTitle.text});
                     }
                     else {
                         if (yt720p != "") mainWindow.openWithvPlayer(yt720p,mediaDownloadRecTitle.text);
