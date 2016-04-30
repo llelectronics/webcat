@@ -132,7 +132,10 @@ Page {
     function showContextMenu(hrefUrl) {
         contextMenu.visible = true;
         contextMenu.contextLbl.text = hrefUrl;
-        contextMenu.height = contextMenu.contextLbl.height + contextMenu.contextButtons.height + Theme.paddingMedium
+        //contextMenu.height = contextMenu.contextLbl.height + contextMenu.contextButtons.height + Theme.paddingMedium
+        if (arguments.length == 2) {
+            contextMenu.imageLbl.text = arguments[1];
+        }
     }
 
     function toggleReaderMode() {
@@ -419,18 +422,25 @@ Page {
 //            }
             case 'longpress': {
                 if (data.img) {
+//                    console.debug("[FirstPage.qml] Contextmenu Image detected")
                     imageLongPressAvailability = true;
-                    showContextMenu(data.img);
+                    if (!data.href) showContextMenu("",data.img);
                 }
-                else if (data.video) {
+                if (data.video) {
                     //console.debug("HTML5 Video Tag found with src:" + data.video)
                     mediaLink = true;
                     mediaDownloadRec.mediaUrl = data.video
                     mediaDownloadRec.visible = true
                 }
-                else if (data.href && data.href != "CANT FIND LINK") {
-                    imageLongPressAvailability = false;
-                    showContextMenu(data.href);
+                if (data.href && data.href != "CANT FIND LINK") {
+                    if (!data.img)  {
+//                        console.debug("[FirstPage.qml] Contextmenu Link detected")
+                        imageLongPressAvailability = false;
+                        showContextMenu(data.href);
+                    } else if (data.img) {
+//                        console.debug("[FirstPage.qml] Contextmenu Link + Image detected")
+                        showContextMenu(data.href,data.img);
+                    }
                 }
                 if ('text' in data) {
                     selection.mimedata = data.text;
@@ -1697,9 +1707,13 @@ Page {
         Column {
             id: contextButtons
             anchors.bottom: parent.bottom
-            anchors.bottomMargin: 10
+            anchors.bottomMargin: Theme.paddingMedium
             anchors.horizontalCenter: parent.horizontalCenter
-            spacing: 8
+            spacing: Theme.paddingMedium
+            onHeightChanged: {
+                parent.height = contextMenu.contextLbl.height + height + Theme.paddingMedium
+            }
+
             // Not really necessary as you can just click on the link
             //            Button {
             //                text: "Open"
@@ -1710,32 +1724,43 @@ Page {
                 width: widestBtn.width
                 text: qsTr("Open in New Window")
                 onClicked: { mainWindow.openNewWindow(fixUrl(contextMenu.contextLbl.text)); contextMenu.visible = false }
+                visible: contextMenu.contextLbl.text != ""
             }
             Button {
                 text: qsTr("Open in New Tab")
                 width: widestBtn.width
                 onClicked: { mainWindow.openNewTab("page"+salt(), fixUrl(contextMenu.contextLbl.text), true); contextMenu.visible = false;}
+                visible: contextMenu.contextLbl.text != ""
             }
             Button {
                 id: widestBtn
                 text: qsTr("Open in Private New Window")
                 onClicked: { mainWindow.openPrivateNewWindow(fixUrl(contextMenu.contextLbl.text)); contextMenu.visible = false }
+                visible: contextMenu.contextLbl.text != ""
+            }
+            Button {
+                text: qsTr("Open Image in New Tab")
+                width: widestBtn.width
+                visible: (imageLongPressAvailability && contextMenu.imageLbl.text != "")
+                onClicked: { mainWindow.openNewTab("page"+salt(), fixUrl(contextMenu.imageLbl.text), true); contextMenu.visible = false;}
             }
             Button {
                 text: qsTr("Copy Link")
                 width: widestBtn.width
                 onClicked: { contextMenu.contextLbl.selectAll(); contextMenu.contextLbl.copy(); contextMenu.visible = false }
+                visible: contextMenu.contextLbl.text != ""
             }
             Button {
                 text: qsTr("Save Image")
                 width: widestBtn.width
                 visible: imageLongPressAvailability
-                onClicked: { pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": contextMenu.contextLbl.text, "dataContainer": webview}); contextMenu.visible = false }
+                onClicked: { pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": contextMenu.imageLbl.text, "dataContainer": webview}); contextMenu.visible = false }
             }
             Button {
                 text: qsTr("Save Link")
                 width: widestBtn.width
                 onClicked: { pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": fixUrl(contextMenu.contextLbl.text), "dataContainer": webview}); contextMenu.visible = false }
+                visible: contextMenu.contextLbl.text != ""
             }
         }
     }

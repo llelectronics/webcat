@@ -231,6 +231,10 @@ Veuillez redémarrer pour activer les modifications.</translation>
         <source>Save Link</source>
         <translation>Enregistrer le lien</translation>
     </message>
+    <message>
+        <source>Open Image in New Tab</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>HistoryPage</name>

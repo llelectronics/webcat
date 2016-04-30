@@ -235,7 +235,7 @@ function longPressed(x, y, element) {
         data.href = element.href //getAttribute('href'); // We always want the absolute link
     } else if (element.parentNode.tagName === 'A') {
         data.href = element.parentNode.href //getAttribute('href') // We always want the absolute link;
-    } else if (element.tagName === 'IMG') {
+    } if (element.tagName === 'IMG') {
         data.img = getImgFullUri(element.getAttribute('src'));
     } else if (element.parentNode.tagName === 'IMG') {
         data.img = getImgFullUri(element.parentNode.getAttribute('src'));

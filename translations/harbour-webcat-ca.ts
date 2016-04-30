@@ -230,6 +230,10 @@ Please restart for changes to take effect.</source>
         <source>Save Link</source>
         <translation>Desa l&apos;enllaç</translation>
     </message>
+    <message>
+        <source>Open Image in New Tab</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>HistoryPage</name>

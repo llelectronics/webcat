@@ -36,6 +36,7 @@ Rectangle {
     id: contextMenu
     width: parent.width
     property alias contextLbl: contextLabel
+    property alias imageLbl: imageLabel
 
     Behavior on height {
         NumberAnimation { target: contextMenu; property: "height"; duration: 350; easing.type: Easing.InOutQuad }
@@ -54,6 +55,16 @@ Rectangle {
         id: contextLabel
         color: "white"
         readOnly: true
+        anchors {
+            top: parent.top; left: parent.left; right: parent.right;
+            margins: 20; topMargin: 10; bottomMargin: 10;
+        }
+    }
+    TextField { // Allows copying for images
+        id: imageLabel
+        color: "white"
+        readOnly: true
+        visible: contextLabel.text == ""
         anchors {
             top: parent.top; left: parent.left; right: parent.right;
             margins: 20; topMargin: 10; bottomMargin: 10;

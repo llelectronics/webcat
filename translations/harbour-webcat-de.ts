@@ -231,6 +231,10 @@ Bitte starten sie neu um die Änderungen zu übernehmen</translation>
         <source>Share</source>
         <translation>Teilen</translation>
     </message>
+    <message>
+        <source>Open Image in New Tab</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>HistoryPage</name>

@@ -231,6 +231,10 @@ Prego riavviare perché le modifiche abbiano effetto.</translation>
         <source>Save Link</source>
         <translation>Salva collegamento</translation>
     </message>
+    <message>
+        <source>Open Image in New Tab</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>HistoryPage</name>
