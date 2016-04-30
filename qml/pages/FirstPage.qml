@@ -603,8 +603,7 @@ Page {
             function copy() {
                 hiddenTxtBox.text = mimedata.toString();
                 //console.debug("Marked text: " + mimedata);
-                hiddenTxtBox.selectAll();
-                hiddenTxtBox.copy();
+                _myClass.copy2clipboard(hiddenTxtBox.text)
             }
         }
 
