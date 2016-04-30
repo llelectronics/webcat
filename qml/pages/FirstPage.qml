@@ -293,6 +293,8 @@ Page {
             DB.addHistory(url.toString());
 
             inputFocus = false;
+            // Remove selection if still visible
+            if (selection.visible) selection.visible = false
         }
 
         // Settings loaded from mainWindow
