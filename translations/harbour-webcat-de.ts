@@ -233,7 +233,7 @@ Bitte starten sie neu um die Änderungen zu übernehmen</translation>
     </message>
     <message>
         <source>Open Image in New Tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Bild in neuem Reiter öffnen</translation>
     </message>
 </context>
 <context>
