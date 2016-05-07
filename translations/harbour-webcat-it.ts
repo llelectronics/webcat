@@ -380,6 +380,10 @@ Prego riavviare perché le modifiche abbiano effetto.</translation>
         <source>Loading..</source>
         <translation>Caricamento...</translation>
     </message>
+    <message>
+        <source>Split WebView</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SelectionEditPage</name>

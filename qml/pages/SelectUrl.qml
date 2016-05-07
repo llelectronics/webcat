@@ -146,6 +146,10 @@ Page
 //                    onClicked: pageStack.push(Qt.resolvedUrl("DownloadManager.qml"));
 //                }
                 MenuItem {
+                    text: qsTr("Split WebView")
+                    onClicked: pageStack.push(Qt.resolvedUrl("SplitWeb.qml"), {bookmarks: urlPage.bookmarks} );
+                }
+                MenuItem {
                     text: qsTr("Add Bookmark")
                     onClicked: pageStack.push(Qt.resolvedUrl("AddBookmark.qml"), { bookmarks: urlPage.bookmarks });
                 }

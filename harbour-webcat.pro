@@ -144,4 +144,5 @@ DISTFILES += \
     translations/harbour-webcat-ru.ts \
     translations/harbour-webcat-sv.ts \
     qml/pages/helper/es6-collections.min.js \
-    qml/pages/helper/canvg.min.js
+    qml/pages/helper/canvg.min.js \
+    qml/pages/SplitWeb.qml

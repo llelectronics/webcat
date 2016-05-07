@@ -380,6 +380,10 @@ Veuillez redémarrer pour activer les modifications.</translation>
         <source>Loading..</source>
         <translation>Chargement ...</translation>
     </message>
+    <message>
+        <source>Split WebView</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SelectionEditPage</name>

@@ -378,6 +378,10 @@ Please restart for changes to take effect.</source>
         <source>Loading..</source>
         <translation>加载中…</translation>
     </message>
+    <message>
+        <source>Split WebView</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SelectionEditPage</name>

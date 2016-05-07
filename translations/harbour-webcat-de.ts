@@ -379,6 +379,10 @@ Bitte starten sie neu um die Änderungen zu übernehmen</translation>
         <source>Loading..</source>
         <translation>Lade..</translation>
     </message>
+    <message>
+        <source>Split WebView</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SelectionEditPage</name>
