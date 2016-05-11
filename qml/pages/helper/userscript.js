@@ -37,7 +37,7 @@ function getSelectedData(element) {
     var nodeName = node.nodeName.toLowerCase();
     if (nodeName === 'img') {
         data.img = getImgFullUri(node.getAttribute('src'));
-    } else if (nodeName === 'a') {
+    } if (nodeName === 'a') {
         data.href = node.href;
         data.title = node.title;
     }
@@ -219,6 +219,22 @@ navigator.qt.onmessage = function(ev) {
     }
 }
 
+function findTag(element, tagN) {
+    var currelement = element
+
+    while(currelement) {
+        if(currelement.tagName === "BODY")
+            return null;
+
+        if(currelement.tagName === tagN)
+            break;
+
+        currelement = currelement.parentNode;
+    }
+
+    return currelement;
+}
+
 // FIXME: experiementing on tap and hold
 var hold;
 var longpressDetected = false;
@@ -231,17 +247,19 @@ function longPressed(x, y, element) {
     // FIXME: should travel nodes to find links
     var data = new Object({'type': 'longpress', 'pageX': x, 'pageY': y})
     data.href = 'CANT FIND LINK'
-    if (element.tagName === 'A') {
-        data.href = element.href //getAttribute('href'); // We always want the absolute link
-    } else if (element.parentNode.tagName === 'A') {
-        data.href = element.parentNode.href //getAttribute('href') // We always want the absolute link;
-    } if (element.tagName === 'IMG') {
-        data.img = getImgFullUri(element.getAttribute('src'));
-    } else if (element.parentNode.tagName === 'IMG') {
-        data.img = getImgFullUri(element.parentNode.getAttribute('src'));
-    } if (element.tagName === 'VIDEO') {
-        data.video = element.hasChildNodes();
-        var children = element.childNodes;
+    var anchors = findTag(element,"A");
+    var images = findTag(element,"IMG");
+    var videos = findTag(element,"VIDEO");
+    var audios = findTag(element,"AUDIO");
+    if (anchors) {
+        data.href = anchors.href //getAttribute('href'); // We always want the absolute link
+    }
+    if (images) {
+        data.img = getImgFullUri(images.getAttribute('src'));
+    }
+    if (videos) {
+        data.video = videos.hasChildNodes();
+        var children = videos.childNodes;
         for (var i = 0; i < children.length; i++) {
             if (children[i].tagName === 'SOURCE') {
                 data.video = getImgFullUri(children[i].getAttribute('src'));
@@ -249,26 +267,28 @@ function longPressed(x, y, element) {
             }
         }
         if (element.tagName.getAttribute('src') != "") {
-            data.video = getImgFullUri(element.tagName.getAttribute('src'));
+            data.video = getImgFullUri(videos.tagName.getAttribute('src'));
+        }
+    }
+    if (audios) {
+        data.video = audios.hasChildNodes();
+        var children = audios.childNodes;
+        for (var i = 0; i < children.length; i++) {
+            if (children[i].tagName === 'SOURCE') {
+                data.video = getImgFullUri(children[i].getAttribute('src'));
+                break;
+            }
+        }
+        if (element.tagName.getAttribute('src') != "") {
+            data.video = getImgFullUri(audios.tagName.getAttribute('src'));
         }
     }
 
-/*
-        var node = element.cloneNode(true);
-        while(node) {
-                if (node.tagName === 'A') { data.href = node.getAttribute('href'); }
-                node = node.parentNode;
-        }
-*/
-    if (element.hasChildNodes()) {
-        var children = element.childNodes;
-        for (var i = 0; i < children.length; i++) {
-            if(children[i].tagName === 'A')
-                data.href = children[i].href //getAttribute('href'); // We always want the absolute link
-            else if (children[i].tagName === 'IMG')
-                data.img = getImgFullUri(children[i].getAttribute('src'));
-        }
-    }
+    // Try to get image from CSS (Taken from WebPirate, Thx Dax89)
+    var style = window.getComputedStyle(element, null);
+
+    if(style.backgroundImage)
+        data.img = style.backgroundImage.slice(4, -1);
 
     var boundingRect = element.getBoundingClientRect();
     data.left = boundingRect.left;
@@ -290,14 +310,14 @@ function longPressed(x, y, element) {
     // FIXME: extract the text and images in the order they appear in the block,
     // so that this order is respected when the data is pushed to the clipboard.
     data.text = node.textContent;
-    var images = [];
-    var imgs = node.getElementsByTagName('img');
-    for (var i = 0; i < imgs.length; i++) {
-        images.push(getImgFullUri(imgs[i].getAttribute('src')));
-    }
-    if (images.length > 0) {
-        data.images = images;
-    }
+//    var images = [];
+//    var imgs = node.getElementsByTagName('img');
+//    for (var i = 0; i < imgs.length; i++) {
+//        images.push(getImgFullUri(imgs[i].getAttribute('src')));
+//    }
+//    if (images.length > 0) {
+//        data.images = images;
+//    }
 
     navigator.qt.postMessage( JSON.stringify(data) );
 }
