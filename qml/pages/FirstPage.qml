@@ -1701,6 +1701,10 @@ Page {
         anchors.bottomMargin: -toolbarSep.height
         width: parent.width;
         z:90
+        onVisibleChanged: {
+            if (visible == false) height = 0
+            else height = contextMenu.contextLbl.height + contextButtons.height + Theme.paddingMedium
+        }
 
         property alias contextButtons: contextButtons
 
@@ -1723,43 +1727,43 @@ Page {
             Button {
                 width: widestBtn.width
                 text: qsTr("Open in New Window")
-                onClicked: { mainWindow.openNewWindow(fixUrl(contextMenu.contextLbl.text)); contextMenu.visible = false }
+                onClicked: { mainWindow.openNewWindow(fixUrl(contextMenu.contextLbl.text)); contextMenu.visible = false; if (selection.visible) selection.visible = false }
                 visible: contextMenu.contextLbl.text != ""
             }
             Button {
                 text: qsTr("Open in New Tab")
                 width: widestBtn.width
-                onClicked: { mainWindow.openNewTab("page"+salt(), fixUrl(contextMenu.contextLbl.text), true); contextMenu.visible = false;}
+                onClicked: { mainWindow.openNewTab("page"+salt(), fixUrl(contextMenu.contextLbl.text), true); contextMenu.visible = false; if (selection.visible) selection.visible = false}
                 visible: contextMenu.contextLbl.text != ""
             }
             Button {
                 id: widestBtn
                 text: qsTr("Open in Private New Window")
-                onClicked: { mainWindow.openPrivateNewWindow(fixUrl(contextMenu.contextLbl.text)); contextMenu.visible = false }
+                onClicked: { mainWindow.openPrivateNewWindow(fixUrl(contextMenu.contextLbl.text)); contextMenu.visible = false; if (selection.visible) selection.visible = false }
                 visible: contextMenu.contextLbl.text != ""
             }
             Button {
                 text: qsTr("Open Image in New Tab")
                 width: widestBtn.width
                 visible: (imageLongPressAvailability && contextMenu.imageLbl.text != "")
-                onClicked: { mainWindow.openNewTab("page"+salt(), fixUrl(contextMenu.imageLbl.text), true); contextMenu.visible = false;}
+                onClicked: { mainWindow.openNewTab("page"+salt(), fixUrl(contextMenu.imageLbl.text), true); contextMenu.visible = false; if (selection.visible) selection.visible = false}
             }
             Button {
                 text: qsTr("Copy Link")
                 width: widestBtn.width
-                onClicked: { contextMenu.contextLbl.selectAll(); contextMenu.contextLbl.copy(); contextMenu.visible = false }
+                onClicked: { contextMenu.contextLbl.selectAll(); contextMenu.contextLbl.copy(); contextMenu.visible = false; if (selection.visible) selection.visible = false }
                 visible: contextMenu.contextLbl.text != ""
             }
             Button {
                 text: qsTr("Save Image")
                 width: widestBtn.width
                 visible: imageLongPressAvailability
-                onClicked: { pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": contextMenu.imageLbl.text, "dataContainer": webview}); contextMenu.visible = false }
+                onClicked: { pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": contextMenu.imageLbl.text, "dataContainer": webview}); contextMenu.visible = false; if (selection.visible) selection.visible = false }
             }
             Button {
                 text: qsTr("Save Link")
                 width: widestBtn.width
-                onClicked: { pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": fixUrl(contextMenu.contextLbl.text), "dataContainer": webview}); contextMenu.visible = false }
+                onClicked: { pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": fixUrl(contextMenu.contextLbl.text), "dataContainer": webview}); contextMenu.visible = false; if (selection.visible) selection.visible = false }
                 visible: contextMenu.contextLbl.text != ""
             }
         }
