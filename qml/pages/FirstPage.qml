@@ -214,6 +214,7 @@ Page {
         property variant itemSelectorIndex: -1
 
         smooth: false
+        maximumFlickVelocity: Theme.maximumFlickVelocity / 2
 
         width: {
             if (!page.orientationTransitionRunning) {
@@ -309,6 +310,7 @@ Page {
         experimental.preferences.autoLoadImages: mainWindow.loadImages
         experimental.preferences.offlineWebApplicationCacheEnabled: mainWindow.offlineWebApplicationCache
         experimental.preferences.privateBrowsingEnabled: mainWindow.privateBrowsing
+        // experimental.autoCorrect: true  // Nice if it would work like expected though having cursor constantly on the left instead of right. So not using for now
 
         // Some speed improvement things that might work or not
 //        layer.enabled: true
