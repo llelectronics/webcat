@@ -3,7 +3,7 @@ import Sailfish.Silica 1.0
 
 Page {
     id: splitPage
-    allowedOrientations: mainWindow.orient
+    allowedOrientations: Orientation.LandscapeMask
 
     property QtObject bookmarks
 
@@ -27,6 +27,13 @@ Page {
             toolbar.width: column1.width
         }
 
+    }
+    Rectangle {
+        id: splitter
+        height: parent.height
+        width: Theme.paddingSmall
+        color: "black"
+        anchors.horizontalCenter: parent.horizontalCenter
     }
     Item {
         id: column2
