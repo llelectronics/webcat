@@ -20,7 +20,7 @@ MouseArea {
             } else if (popoverModel.elementRect.x - width + popoverListView.contentItem.width/2 < 0) {
                 30
             } else {
-                popoverModel.elementRect.x - width + Theme.paddingLarge
+                rootArea.width / 2 - width / 2
             }
         }
 
