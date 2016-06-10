@@ -1,4 +1,4 @@
-script + ins, div[id^='dotnAd'], div[id^='meetic'], div[id^='eadv'], div[id^='ad_'], div[class*='adv'], div[class$='fblikebox'], div#cboxOverlay + div#colorbox, div#cboxOverlay, iframe[id^='google_ads_'], iframe[id^='ad_'], .adsbygoogle, section[class^="banner"], div[class*='ad_container'], iframe[isrc*='googlesyndication.com']
+script + ins, div[id^='dotnAd'], div[id^='meetic'], div[id^='eadv'], div[id^='ad_'], div[class*='adv'], div[class$='fblikebox'], div#cboxOverlay + div#colorbox, div#cboxOverlay, iframe[id^='google_ads_'], iframe[id^='ad_'], .adsbygoogle, section[class^="banner"], div[class*='ad_container'], iframe[isrc*='googlesyndication.com'], div[id='SQXvNKP'], div[class='pChdnXsir'], div[id^='adbanner'], div[id^='addclient'], div[id^='adgroup'], iframe[id^='adbanner'], div[id^='show_ad_'], div[id^='containerDivID_'], div[id^='web-ad'], div[id^='Web-Ads'], div[id^='web-advert'], iframe[id^='iframe_creativeIframe']
 {
   display: none !important;
 }
