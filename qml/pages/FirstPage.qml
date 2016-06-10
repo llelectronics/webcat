@@ -108,7 +108,9 @@ Page {
 
     function loadUrl(requestUrl) {
         var valid = requestUrl
-        if (valid.indexOf(":")<0) {
+        if (valid.charAt(0) === '?') {
+          url = mainWindow.searchEngine.replace("%s",encodeURIComponent(valid.slice(1)))
+        } else if (valid.indexOf(":")<0) {
             if (valid.indexOf(".")<0 || valid.indexOf(" ")>=0) {
                 url = mainWindow.searchEngine.replace("%s",valid)
             } else {
