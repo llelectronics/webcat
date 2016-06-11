@@ -1564,6 +1564,7 @@ Page {
         height: page.height - toolbar.height - mediaDownloadRec.height
         //source: "VideoPlayer.qml"
         z:80
+        onLoaded: if (webview.visible) webview.visible = false
     }
 
     Connections {
@@ -1585,6 +1586,7 @@ Page {
             vPlayerLoader.anchors.fill = webview
             vPlayerLoader.z = 80
             vPlayerLoader.setSource(""); 
+            if (!webview.visible) webview.visible = true
         }
     }
 
