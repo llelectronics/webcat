@@ -75,14 +75,15 @@ Dialog {
                 Label {
                     id: certInfoText
                     anchors {
-                        top: lbl.bottom
-                        topMargin: Theme.paddingLarge
+                        bottom: parent.bottom
+                        bottomMargin: Theme.paddingLarge
+                        left: parent.left
                         leftMargin: Theme.paddingMedium
+                        right: parent.right
                         rightMargin: Theme.paddingMedium
                     }
                     font.pixelSize: Theme.fontSizeSmall
                     wrapMode: Text.WordWrap
-                    width: parent.width
                     text: qsTr("Certificates are used to identify and make sure that the website you see is provided by the author you expect.
 Unknown certificates are either ones that are missing in the global configuration of your browser. Outdated ones or compromised ones.
 If you are unsure reject the certificate. That might lead to a non loading website though.")
