@@ -162,6 +162,14 @@ If you are unsure reject the certificate. That might lead to a non loading websi
         <source>Clear Downloads</source>
         <translation>Cancella download</translation>
     </message>
+    <message>
+        <source>Deleting </source>
+        <translation type="unfinished">Eliminazione</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>FirstPage</name>

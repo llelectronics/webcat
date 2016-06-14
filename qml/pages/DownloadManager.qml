@@ -30,9 +30,24 @@ Page {
         id: downloadVisualModel
         model: mainWindow.downloadModel
         delegate: BackgroundItem {
+            id: bgdelegate
             width: parent.width
-            height: dname.height + durl.height + Theme.paddingLarge
             anchors.margins: Theme.paddingMedium
+            height: menuOpen ? contextMenu.height + dname.height + durl.height + Theme.paddingLarge : dname.height + durl.height + Theme.paddingLarge
+            property Item contextMenu
+            property bool menuOpen: contextMenu != null && contextMenu.parent === bgdelegate
+
+            function remove() {
+                var removal = removalComponent.createObject(bgdelegate)
+                removal.execute(bgdelegate,qsTr("Deleting ") + dname.text, function() { _fm.remove(downLocation); mainWindow.downloadModel.remove(index) })
+            }
+
+            function showContextMenu() {
+                if (!contextMenu)
+                    contextMenu = myMenu.createObject(downloadVisualModel)
+                contextMenu.show(bgdelegate)
+            }
+
             Label {
                 id: dname
                 text: name
@@ -78,7 +93,29 @@ Page {
                     }
                 }
             }
-        }
+            onPressAndHold: showContextMenu()
+
+            Component {
+                id: removalComponent
+                RemorseItem {
+                    id: remorse
+                    onCanceled: destroy()
+                }
+            }
+
+            Component {
+                id: myMenu
+                ContextMenu {
+                    MenuItem {
+                        text: qsTr("Delete")
+                        onClicked: {
+                            bgdelegate.remove();
+                        }
+                    }
+                }
+            }
+        } // delegate
+
     }
 
     Flickable {

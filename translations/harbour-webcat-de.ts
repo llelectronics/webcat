@@ -164,6 +164,14 @@ Wenn Sie sich unsicher sind lehnen sie das Zertifikat ab. Dies führt unter Umst
         <source>Clear Downloads</source>
         <translation>Downloads bereinigen</translation>
     </message>
+    <message>
+        <source>Deleting </source>
+        <translation type="unfinished">Lösche </translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation type="unfinished">Löschen</translation>
+    </message>
 </context>
 <context>
     <name>FirstPage</name>

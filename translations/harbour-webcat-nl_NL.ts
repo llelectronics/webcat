@@ -161,6 +161,14 @@ If you are unsure reject the certificate. That might lead to a non loading websi
         <source>Clear Downloads</source>
         <translation>Downloads wissen</translation>
     </message>
+    <message>
+        <source>Deleting </source>
+        <translation type="unfinished">Bezig met verwijderen</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation type="unfinished">Verwijderen</translation>
+    </message>
 </context>
 <context>
     <name>FirstPage</name>

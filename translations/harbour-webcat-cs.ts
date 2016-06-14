@@ -161,6 +161,14 @@ If you are unsure reject the certificate. That might lead to a non loading websi
         <source>Clear Downloads</source>
         <translation>Vyčistit stažené</translation>
     </message>
+    <message>
+        <source>Deleting </source>
+        <translation type="unfinished">Odstraňování</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation type="unfinished">Odstranit</translation>
+    </message>
 </context>
 <context>
     <name>FirstPage</name>
