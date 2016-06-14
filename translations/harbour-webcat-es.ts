@@ -101,6 +101,12 @@ Por favor, reinicia para que los cambios tengan efecto.</translation>
         <source>Accept ?</source>
         <translation>¿Aceptar?</translation>
     </message>
+    <message>
+        <source>Certificates are used to identify and make sure that the website you see is provided by the author you expect.
+Unknown certificates are either ones that are missing in the global configuration of your browser. Outdated ones or compromised ones.
+If you are unsure reject the certificate. That might lead to a non loading website though.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DownloadManager</name>
@@ -233,6 +239,14 @@ Por favor, reinicia para que los cambios tengan efecto.</translation>
     </message>
     <message>
         <source>Open Image in New Tab</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unknown certificate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Accept certificate from </source>
         <translation type="unfinished"></translation>
     </message>
 </context>

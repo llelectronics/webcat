@@ -15,6 +15,7 @@ Dialog {
     allowedOrientations: mainWindow.firstPage.allowedOrientations
     property alias acceptText: header.acceptText
     property alias label: lbl.text
+    property alias title: title.text
     default property alias defaultContent: promptContent.children
 
     SilicaFlickable {
@@ -36,13 +37,22 @@ Dialog {
                 height: Math.max(childrenRect.height, dialog.height - header.height) - Theme.paddingLarge * 2
 
                 Label {
+                    id: title
+                    font.pixelSize: Theme.fontSizeLarge
+                    anchors {
+                        top: parent.top
+                        topMargin: Theme.paddingLarge
+                    }
+                }
+
+                Label {
                     id: lbl
                     property bool largeFont: true
 
                     x: Theme.paddingLarge
                     width: parent.width - (2 * Theme.paddingLarge)
                     anchors {
-                        top: parent.top
+                        top: title.bottom
                         topMargin: !largeFont ? Theme.paddingLarge : Theme.itemSizeSmall
                     }
                     font.pixelSize: largeFont ? Theme.fontSizeExtraLarge : Theme.fontSizeMedium
@@ -60,6 +70,22 @@ Dialog {
                             wrapMode = Text.Wrap
                         }
                     }
+                }
+
+                Label {
+                    id: certInfoText
+                    anchors {
+                        top: lbl.bottom
+                        topMargin: Theme.paddingLarge
+                        leftMargin: Theme.paddingMedium
+                        rightMargin: Theme.paddingMedium
+                    }
+                    font.pixelSize: Theme.fontSizeSmall
+                    wrapMode: Text.WordWrap
+                    width: parent.width
+                    text: qsTr("Certificates are used to identify and make sure that the website you see is provided by the author you expect.
+Unknown certificates are either ones that are missing in the global configuration of your browser. Outdated ones or compromised ones.
+If you are unsure reject the certificate. That might lead to a non loading website though.")
                 }
             }
         }

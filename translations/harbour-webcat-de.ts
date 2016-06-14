@@ -101,6 +101,14 @@ Bitte starten sie neu um die Änderungen zu übernehmen</translation>
         <source>Accept ?</source>
         <translation>Akzeptieren ?</translation>
     </message>
+    <message>
+        <source>Certificates are used to identify and make sure that the website you see is provided by the author you expect.
+Unknown certificates are either ones that are missing in the global configuration of your browser. Outdated ones or compromised ones.
+If you are unsure reject the certificate. That might lead to a non loading website though.</source>
+        <translation>Zertifikate werden zur Identifizierung und Sicherstellung genutzt, dass die Webseite die Sie sehen vom Original Autor stammt.
+Unbekannte Zertifikate fehlen entweder in der globalen Konfiguration des Browsers, sind veraltet oder kompromitiert.
+Wenn Sie sich unsicher sind lehnen sie das Zertifikat ab. Dies führt unter Umständen zu einer nicht ladenden Seite.</translation>
+    </message>
 </context>
 <context>
     <name>DownloadManager</name>
@@ -234,6 +242,14 @@ Bitte starten sie neu um die Änderungen zu übernehmen</translation>
     <message>
         <source>Open Image in New Tab</source>
         <translation>Bild in neuem Reiter öffnen</translation>
+    </message>
+    <message>
+        <source>Unknown certificate</source>
+        <translation>Unbekanntes Zertifikat</translation>
+    </message>
+    <message>
+        <source>Accept certificate from </source>
+        <translation>Akzeptiere Zertifikat von </translation>
     </message>
 </context>
 <context>

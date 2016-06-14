@@ -360,7 +360,7 @@ Page {
         experimental.certificateVerificationDialog: Item {
             Component.onCompleted: {
                 var dialog = pageStack.push(Qt.resolvedUrl("ConfirmDialog.qml"),
-                                            {"label":  "Accept certificate from " + url + " ?", allowedOrientations: mainWindow.firstPage.allowedOrientations})
+                                            {"title": qsTr("Unknown certificate"), "label":  qsTr("Accept certificate from ") + url + " ?", allowedOrientations: mainWindow.firstPage.allowedOrientations})
                 dialog.accepted.connect(function() {
                     model.accept();
                 })
