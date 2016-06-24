@@ -318,7 +318,9 @@ Page {
 //        layer.enabled: true
 //        layer.format: ShaderEffectSource.RGBA
 //        layer.mipmap: true
-//        layer.textureSize: page.width + "x" + page.height
+//        layer.smooth: true
+//        layer.sourceRect: webview.width + "x" + webview.height
+//        layer.textureSize: webview.width + "x" + webview.height
 
         // Theoretically a nice function to replace the DevicePixelRatio hack but does not work as intended always
 //        property variant devicePixelRatio: {//1.5

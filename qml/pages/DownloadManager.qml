@@ -1,5 +1,7 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import "helper/otherComponents"
+
 Page {
     id: downloadManager
     allowedOrientations: mainWindow.orient
@@ -211,12 +213,20 @@ Page {
             //                readOnly: true
             //            }
 
+            SectionHeader {
+                text: qsTr("Download list")
+            }
+
             SilicaListView {
                 id: downloadList
                 width: parent.width
                 height: parent.height / 2.5
                 model: downloadVisualModel
                 clip: true
+            }
+
+            SectionHeader {
+                text: qsTr("Current operation")
             }
 
             ProgressBar {
@@ -245,6 +255,10 @@ Page {
                 id: activeDownloadLabel
                 text: qsTr("Active Downloads: ") + (_manager.activeDownloads == 0 ? "none" : _manager.activeDownloads)
                 color: Theme.primaryColor
+            }
+
+            SectionHeader {
+                text: qsTr("Details")
             }
 
             ValueButton {

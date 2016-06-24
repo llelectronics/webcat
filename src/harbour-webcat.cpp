@@ -164,6 +164,7 @@ int main(int argc, char *argv[])
     //app->setOrganizationName("Webcat");
     app->setApplicationVersion("2.0.0");
     QQuickView *view = SailfishApp::createView();
+    view->setResizeMode(QQuickView::SizeRootObjectToView);
 
     view->setSource(SailfishApp::pathTo("qml/harbour-webcat.qml"));
 

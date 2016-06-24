@@ -170,6 +170,18 @@ If you are unsure reject the certificate. That might lead to a non loading websi
         <source>Delete</source>
         <translation type="unfinished">Borrar</translation>
     </message>
+    <message>
+        <source>Current operation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Details</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download list</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>FirstPage</name>
