@@ -49,6 +49,7 @@
 #include <QtCore/QStringList>
 #include <QtCore/QTime>
 #include <QtCore/QUrl>
+#include <QtCore/QPair>
 #include <QtNetwork/QNetworkAccessManager>
 //  Not allowed yet I guess. Leave it here until it is allowed
 //#include <transferengineinterface.h>
@@ -75,6 +76,12 @@ class DownloadManager : public QObject
     // Makes the number of currently running downloads available to the UI
     Q_PROPERTY(int activeDownloads READ activeDownloads NOTIFY activeDownloadsChanged)
 
+    // Makes the number of total downloads available to the UI
+    Q_PROPERTY(int totalDownloads READ totalDownloads NOTIFY totalDownloadsChanged)
+
+    // Makes the current basename available to the UI
+    Q_PROPERTY(QString curName READ curName NOTIFY curNameChanged)
+
     // Makes the total number of bytes of the current download available to the UI
     Q_PROPERTY(int progressTotal READ progressTotal NOTIFY progressTotalChanged)
 
@@ -92,9 +99,11 @@ public:
     QString statusMessage() const;
     QString basename;
     int activeDownloads() const;
+    int totalDownloads(){ return m_totalCount;}
     int progressTotal() const;
     int progressValue() const;
     QString progressMessage() const;
+    QString curName() { return basename;}
 
     // The network access manager that does all the network communication
     QNetworkAccessManager m_manager;
@@ -112,6 +121,8 @@ Q_SIGNALS:
     void errorMessageChanged();
     void statusMessageChanged();
     void activeDownloadsChanged();
+    void totalDownloadsChanged();
+    void curNameChanged();
     void progressTotalChanged();
     void progressValueChanged();
     void progressMessageChanged();
@@ -131,7 +142,7 @@ private Q_SLOTS:
 
 private:
     // Enqueues a new download to the internal job queue
-    void append(const QUrl &url);
+    void append(const QUrl &url, const QString &name);
 
     // A helper method to collect error messages
     void addErrorMessage(const QString &message);
@@ -140,7 +151,7 @@ private:
     void addStatusMessage(const QString &message);
 
     // The internal job queue
-    QQueue<QUrl> m_downloadQueue;
+    QQueue< QPair<QUrl, QString> > m_downloadQueue;
 
     // The currently running download job
     QNetworkReply *m_currentDownload;

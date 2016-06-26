@@ -92,7 +92,10 @@ QString DownloadManager::progressMessage() const
 
 void DownloadManager::downloadUrl(const QString &url)
 {
-    append(QUrl::fromEncoded(url.toLocal8Bit()));
+    if (basename != "")
+        append(QUrl::fromEncoded(url.toLocal8Bit()), basename);
+    else
+        append(QUrl::fromEncoded(url.toLocal8Bit()), "");
 }
 
 void DownloadManager::setDownloadName(const QString &name)
@@ -100,7 +103,7 @@ void DownloadManager::setDownloadName(const QString &name)
     basename = QString(name.toUtf8());
 }
 
-void DownloadManager::append(const QUrl &url)
+void DownloadManager::append(const QUrl &url, const QString &name)
 {
     /**
      * If there is no job in the queue at the moment or we do
@@ -111,11 +114,15 @@ void DownloadManager::append(const QUrl &url)
         QTimer::singleShot(0, this, SLOT(startNextDownload()));
 
     // Enqueue the new URL to the job queue
-    m_downloadQueue.enqueue(url);
+    QPair <QUrl, QString> downPair;
+    downPair.first = url;
+    downPair.second = name;
+    m_downloadQueue.enqueue(downPair);
     emit activeDownloadsChanged();
 
     // Increment the total number of jobs
     ++m_totalCount;
+    emit totalDownloadsChanged();
 }
 
 QString DownloadManager::saveFileName(const QUrl &url)
@@ -169,11 +176,17 @@ void DownloadManager::startNextDownload()
     // If the queue is empty just add a new status message
     if (m_downloadQueue.isEmpty()) {
         addStatusMessage(QString("%1/%2 files downloaded successfully").arg(m_downloadedCount).arg(m_totalCount));
+        basename = "";
+        emit curNameChanged();
+        emit activeDownloadsChanged();
         return;
     }
 
     // Otherwise dequeue the first job from the queue ...
-    const QUrl url = m_downloadQueue.dequeue();
+    const QPair<QUrl, QString> pair = m_downloadQueue.dequeue();
+    const QUrl url = pair.first;
+    basename = pair.second;
+    emit curNameChanged();
 
     // ... and determine a local file name where the result can be stored.
     const QString filename = saveFileName(url);
@@ -264,6 +277,7 @@ void DownloadManager::downloadProgress(qint64 bytesReceived, qint64 bytesTotal)
 //! [2]
 void DownloadManager::downloadFinished()
 {   
+
     // Reset the progress information when the download has finished
     m_progressTotal = 0;
     m_progressValue = 0;
@@ -298,7 +312,7 @@ void DownloadManager::downloadFinished()
      */
     m_currentDownload->deleteLater();
     m_currentDownload = 0;
-    emit activeDownloadsChanged();
+    if (m_downloadQueue.count() != 0) emit activeDownloadsChanged();
 
     basename = "";
 
@@ -319,6 +333,5 @@ void DownloadManager::downloadReadyRead()
 void DownloadManager::downloadAbort()
 {
     m_currentDownload->abort();
-    basename = "";
 }
 //! [4]

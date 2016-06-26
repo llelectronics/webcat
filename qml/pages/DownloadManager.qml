@@ -220,13 +220,25 @@ Page {
             SilicaListView {
                 id: downloadList
                 width: parent.width
-                height: parent.height / 2.5
+                height: parent.height / 2.75
                 model: downloadVisualModel
                 clip: true
             }
 
             SectionHeader {
                 text: qsTr("Current operation")
+            }
+
+            Label {
+                id: curDownloadLabel
+                text: _manager.curName
+                color: Theme.primaryColor
+                anchors.horizontalCenter: parent.horizontalCenter
+                font.pixelSize: Theme.fontSizeSmall
+                visible: {
+                    if (_manager.activeDownloads != 0) return true
+                    else false
+                }
             }
 
             ProgressBar {
@@ -253,8 +265,9 @@ Page {
 
             Label {
                 id: activeDownloadLabel
-                text: qsTr("Active Downloads: ") + (_manager.activeDownloads == 0 ? "none" : _manager.activeDownloads)
+                text: qsTr("Active Downloads: ") + (_manager.activeDownloads == 0 ? "none" : "1/" + _manager.totalDownloads)
                 color: Theme.primaryColor
+                font.pixelSize: _manager.activeDownloads == 0 ? Theme.fontSizeMedium : Theme.fontSizeSmall
             }
 
             SectionHeader {
