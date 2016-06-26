@@ -69,6 +69,7 @@ Page {
                 anchors.left: parent.left
                 anchors.leftMargin: Theme.paddingLarge
                 color: Theme.secondaryColor
+                font.pixelSize: Theme.fontSizeSmall
                 truncationMode: TruncationMode.Fade
                 width: parent.width - (Theme.paddingMedium)
             }
