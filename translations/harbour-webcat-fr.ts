@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="fr">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="fr" version="2.1">
 <context>
     <name>AboutPage</name>
     <message>
@@ -105,7 +103,8 @@ Veuillez redémarrer pour activer les modifications.</translation>
         <source>Certificates are used to identify and make sure that the website you see is provided by the author you expect.
 Unknown certificates are either ones that are missing in the global configuration of your browser. Outdated ones or compromised ones.
 If you are unsure reject the certificate. That might lead to a non loading website though.</source>
-        <translation type="unfinished"></translation>
+        <translation>Les certificats permettent d&apos;identifier un site web et de s&apos;assurer qu&apos;il est bien fourni par son auteur.
+Les certificats inconnus sont soit manquants dans la configuration de votre navigateur soit obsolètes ou encore compromis. Si vous n&apos;êtes pas sûr, rejeter le certificat. A noter que dans ce cas, la page ne se chargera pas.</translation>
     </message>
 </context>
 <context>
@@ -164,23 +163,23 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Deleting </source>
-        <translation type="unfinished">Suppression</translation>
+        <translation>Suppression</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">Supprimer</translation>
+        <translation>Supprimer</translation>
     </message>
     <message>
         <source>Current operation</source>
-        <translation type="unfinished"></translation>
+        <translation>Opération en cours</translation>
     </message>
     <message>
         <source>Details</source>
-        <translation type="unfinished"></translation>
+        <translation>Détails</translation>
     </message>
     <message>
         <source>Download list</source>
-        <translation type="unfinished"></translation>
+        <translation>Liste de téléchargements</translation>
     </message>
 </context>
 <context>
@@ -259,15 +258,15 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Open Image in New Tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Afficher l&apos;image dans un nouvel onglet</translation>
     </message>
     <message>
         <source>Unknown certificate</source>
-        <translation type="unfinished"></translation>
+        <translation>Certificat inconnu</translation>
     </message>
     <message>
         <source>Accept certificate from </source>
-        <translation type="unfinished"></translation>
+        <translation>Accepter le certificat de </translation>
     </message>
 </context>
 <context>
@@ -380,7 +379,7 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Settings</source>
-        <translation>Réglages</translation>
+        <translation>Paramètres</translation>
     </message>
     <message>
         <source>Add Bookmark</source>
@@ -416,7 +415,7 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Split WebView</source>
-        <translation type="unfinished"></translation>
+        <translation>Vue Web partagée</translation>
     </message>
 </context>
 <context>
@@ -438,7 +437,7 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Save Settings</source>
-        <translation>Enregistrer les réglages</translation>
+        <translation>Enregistrer les paramètres</translation>
     </message>
     <message>
         <source>About </source>

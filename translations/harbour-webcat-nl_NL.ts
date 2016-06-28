@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="nl_NL">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="nl_NL" version="2.1">
 <context>
     <name>AboutPage</name>
     <message>
@@ -50,15 +48,15 @@
     <name>BackupPage</name>
     <message>
         <source>Backups</source>
-        <translation type="unfinished"></translation>
+        <translation>Back-ups</translation>
     </message>
     <message>
         <source>Create Backup</source>
-        <translation type="unfinished"></translation>
+        <translation>Back-up maken</translation>
     </message>
     <message>
         <source>Backups are saved to home directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Back-ups worden opgeslagen in de persoonlijke map</translation>
     </message>
     <message>
         <source>Dismiss</source>
@@ -66,32 +64,33 @@
     </message>
     <message>
         <source>Backup saved successfully!</source>
-        <translation type="unfinished"></translation>
+        <translation>Back-up opslaan geslaagd!</translation>
     </message>
     <message>
         <source>The Backup includes all cookies, bookmarks, history and settings for Webcat.</source>
-        <translation type="unfinished"></translation>
+        <translation>De back-up bevat alle cookies, bladwijzers, geschiedenis en instellingen voor Webcat.</translation>
     </message>
     <message>
         <source>Restore Backup</source>
-        <translation type="unfinished"></translation>
+        <translation>Back-up herstellen</translation>
     </message>
     <message>
         <source>Backups overwrite current configurations</source>
-        <translation type="unfinished"></translation>
+        <translation>Back-ups overschrijven de huidige configuratie</translation>
     </message>
     <message>
         <source>Backup restored! Please restart Webcat</source>
-        <translation type="unfinished"></translation>
+        <translation>Back-up hersteld! Herstart Webcat</translation>
     </message>
     <message>
         <source>Restoring overwrites all cookies, bookmarks, history and settings for Webcat from the backup file.
 Please restart for changes to take effect.</source>
-        <translation type="unfinished"></translation>
+        <translation>Herstellen overschrijft alle cookies, bladwijzers, geschiedenis en instellingen voor Webcat met die van het back-upbestand.
+Herstart om de wijzingen door te voeren.</translation>
     </message>
     <message>
         <source>Restoring Backup</source>
-        <translation type="unfinished"></translation>
+        <translation>Herstellen van back-up</translation>
     </message>
 </context>
 <context>
@@ -104,7 +103,9 @@ Please restart for changes to take effect.</source>
         <source>Certificates are used to identify and make sure that the website you see is provided by the author you expect.
 Unknown certificates are either ones that are missing in the global configuration of your browser. Outdated ones or compromised ones.
 If you are unsure reject the certificate. That might lead to a non loading website though.</source>
-        <translation type="unfinished"></translation>
+        <translation>Certificaten worden gebruikt om de website die je bezoekt te identificeren en ervoor te zorgen dat ze aangeboden wordt door wie je verwacht.
+Onbekende certificaten zijn ofwel certificaten die ontbreken in de globale configuratie van je browser, verouderde of gecompromitteerde certificaten.
+Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden dat de website niet meer laadt.</translation>
     </message>
 </context>
 <context>
@@ -163,23 +164,23 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Deleting </source>
-        <translation type="unfinished">Bezig met verwijderen</translation>
+        <translation>Bezig met verwijderen</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">Verwijderen</translation>
+        <translation>Verwijderen</translation>
     </message>
     <message>
         <source>Current operation</source>
-        <translation type="unfinished"></translation>
+        <translation>Huidige bewerking</translation>
     </message>
     <message>
         <source>Details</source>
-        <translation type="unfinished"></translation>
+        <translation>Details</translation>
     </message>
     <message>
         <source>Download list</source>
-        <translation type="unfinished"></translation>
+        <translation>Downloadlijst</translation>
     </message>
 </context>
 <context>
@@ -258,15 +259,15 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Open Image in New Tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Afbeelding openen in nieuw tabblad</translation>
     </message>
     <message>
         <source>Unknown certificate</source>
-        <translation type="unfinished"></translation>
+        <translation>Onbekend certificaat</translation>
     </message>
     <message>
         <source>Accept certificate from </source>
-        <translation type="unfinished"></translation>
+        <translation>Certificaat aanvaarden van</translation>
     </message>
 </context>
 <context>
@@ -292,20 +293,21 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     <name>MyClass</name>
     <message>
         <source>Webcat config dir not found</source>
-        <translation type="unfinished"></translation>
+        <translation>Webcat-configuratiemap niet gevonden</translation>
     </message>
     <message>
         <source>File not found.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bestand niet gevonden.</translation>
     </message>
     <message>
         <source>No valid Backup file. Did not find harbour-webcat Folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ongeldig back-upbestand. Map harbour-webcat kon niet gevonden worden.</translation>
     </message>
     <message>
         <source>Could not verify Backup file.
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Back-upbestand kon niet geverifieerd worden.
+</translation>
     </message>
 </context>
 <context>
@@ -414,7 +416,7 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Split WebView</source>
-        <translation type="unfinished"></translation>
+        <translation>Gesplitste WebView</translation>
     </message>
 </context>
 <context>
@@ -552,7 +554,7 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Backup Manager</source>
-        <translation type="unfinished"></translation>
+        <translation>Back-upbeheerder</translation>
     </message>
 </context>
 <context>

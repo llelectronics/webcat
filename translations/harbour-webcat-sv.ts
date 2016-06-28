@@ -99,6 +99,14 @@ Starta om Webcat för att ändringarna skall få effekt.</translation>
         <source>Accept ?</source>
         <translation>Acceptera?</translation>
     </message>
+    <message>
+        <source>Certificates are used to identify and make sure that the website you see is provided by the author you expect.
+Unknown certificates are either ones that are missing in the global configuration of your browser. Outdated ones or compromised ones.
+If you are unsure reject the certificate. That might lead to a non loading website though.</source>
+        <translation>Certifikat används till att identifiera och säkerställa att webbsidan du ser, tillhandahålles av förväntad utgivare.
+Okända certifikat är sådana som saknas i den övergripande konfigurationen av din webbläsare. Utdaterade certifikat är komprometterade.
+Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att webbsidan inte läses in.</translation>
+    </message>
 </context>
 <context>
     <name>DownloadManager</name>
@@ -153,6 +161,26 @@ Starta om Webcat för att ändringarna skall få effekt.</translation>
     <message>
         <source>Clear Downloads</source>
         <translation>Rensa nedladdningar</translation>
+    </message>
+    <message>
+        <source>Deleting </source>
+        <translation>Tar bort</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Ta bort</translation>
+    </message>
+    <message>
+        <source>Current operation</source>
+        <translation>Aktuell åtgärd</translation>
+    </message>
+    <message>
+        <source>Details</source>
+        <translation>Detaljerat</translation>
+    </message>
+    <message>
+        <source>Download list</source>
+        <translation>Nedladdningslista</translation>
     </message>
 </context>
 <context>
@@ -228,6 +256,18 @@ Starta om Webcat för att ändringarna skall få effekt.</translation>
     <message>
         <source>Save Link</source>
         <translation>Spara länk</translation>
+    </message>
+    <message>
+        <source>Open Image in New Tab</source>
+        <translation>Öppna bild i ny flik</translation>
+    </message>
+    <message>
+        <source>Unknown certificate</source>
+        <translation>Okänt certifikat</translation>
+    </message>
+    <message>
+        <source>Accept certificate from </source>
+        <translation>Acceptera certifikat från</translation>
     </message>
 </context>
 <context>
@@ -373,6 +413,10 @@ Starta om Webcat för att ändringarna skall få effekt.</translation>
     <message>
         <source>Loading..</source>
         <translation>Läser in...</translation>
+    </message>
+    <message>
+        <source>Split WebView</source>
+        <translation>Delad webbvy</translation>
     </message>
 </context>
 <context>
@@ -525,10 +569,6 @@ Starta om Webcat för att ändringarna skall få effekt.</translation>
     <message>
         <source>Loading..</source>
         <translation>Läser in...</translation>
-    </message>
-    <message>
-        <source>Close Tab</source>
-        <translation>Stäng flik</translation>
     </message>
     <message>
         <source>Tabs</source>
