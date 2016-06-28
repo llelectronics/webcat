@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="ca">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="ca" version="2.1">
 <context>
     <name>AboutPage</name>
     <message>
@@ -50,48 +48,49 @@
     <name>BackupPage</name>
     <message>
         <source>Backups</source>
-        <translation type="unfinished"></translation>
+        <translation>Còpia de seguretat</translation>
     </message>
     <message>
         <source>Create Backup</source>
-        <translation type="unfinished"></translation>
+        <translation>Crea una còpia de seguretat</translation>
     </message>
     <message>
         <source>Backups are saved to home directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Les còpies es desen a la carpeta Inici</translation>
     </message>
     <message>
         <source>Dismiss</source>
-        <translation type="unfinished"></translation>
+        <translation>Descarta</translation>
     </message>
     <message>
         <source>Backup saved successfully!</source>
-        <translation type="unfinished"></translation>
+        <translation>La còpia s&apos;ha desat correctament</translation>
     </message>
     <message>
         <source>The Backup includes all cookies, bookmarks, history and settings for Webcat.</source>
-        <translation type="unfinished"></translation>
+        <translation>La còpia inclou totes les galetes, preferits, historial i configuracions de Webcat.</translation>
     </message>
     <message>
         <source>Restore Backup</source>
-        <translation type="unfinished"></translation>
+        <translation>Restableix una còpia de seguretat</translation>
     </message>
     <message>
         <source>Backups overwrite current configurations</source>
-        <translation type="unfinished"></translation>
+        <translation>Les còpies sobreescriuen les configuracions actuals</translation>
     </message>
     <message>
         <source>Backup restored! Please restart Webcat</source>
-        <translation type="unfinished"></translation>
+        <translation>S&apos;ha reestablert la còpia. Cal reiniciar Webcat.</translation>
     </message>
     <message>
         <source>Restoring overwrites all cookies, bookmarks, history and settings for Webcat from the backup file.
 Please restart for changes to take effect.</source>
-        <translation type="unfinished"></translation>
+        <translation>La recuperació d&apos;una còpia sobreescriu totes les galetes, preferits, historial i configuracions de Webcat amb les del fitxer de còpia.
+Cal reiniciar Webcat per aplicar els canvis.</translation>
     </message>
     <message>
         <source>Restoring Backup</source>
-        <translation type="unfinished"></translation>
+        <translation>S&apos;està restablint la còpia</translation>
     </message>
 </context>
 <context>
@@ -104,7 +103,9 @@ Please restart for changes to take effect.</source>
         <source>Certificates are used to identify and make sure that the website you see is provided by the author you expect.
 Unknown certificates are either ones that are missing in the global configuration of your browser. Outdated ones or compromised ones.
 If you are unsure reject the certificate. That might lead to a non loading website though.</source>
-        <translation type="unfinished"></translation>
+        <translation>Els certificats s&apos;utilitzen per identificar i assegurar que el web que veieu pertany a l&apos;autor esperat.
+Els certificats desconeguts són aquells que manquen a la configuració general del vostre navegador, o bé que estan caducats o amb conflictes de seguretat.
+En cas de dubte, refuseu el certificat malgrat que això pot provocar que no es carregui la pàgina.</translation>
     </message>
 </context>
 <context>
@@ -163,23 +164,23 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Deleting </source>
-        <translation type="unfinished">S&apos;està eliminant</translation>
+        <translation>S&apos;està eliminant</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">Elimina</translation>
+        <translation>Elimina</translation>
     </message>
     <message>
         <source>Current operation</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Details</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Download list</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -258,15 +259,15 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Open Image in New Tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Obre la imatge en una pestanya nova</translation>
     </message>
     <message>
         <source>Unknown certificate</source>
-        <translation type="unfinished"></translation>
+        <translation>Certificat desconegut</translation>
     </message>
     <message>
         <source>Accept certificate from </source>
-        <translation type="unfinished"></translation>
+        <translation>Accepta el certificat de</translation>
     </message>
 </context>
 <context>
@@ -292,20 +293,21 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     <name>MyClass</name>
     <message>
         <source>Webcat config dir not found</source>
-        <translation type="unfinished"></translation>
+        <translation>No s&apos;ha trobat el directori de configuració de Webcat</translation>
     </message>
     <message>
         <source>File not found.</source>
-        <translation type="unfinished"></translation>
+        <translation>No s&apos;ha trobat el fitxer</translation>
     </message>
     <message>
         <source>No valid Backup file. Did not find harbour-webcat Folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>El fitxer de la còpia no és vàlid. No s&apos;ha trobat la carpeta harbour-webcat.</translation>
     </message>
     <message>
         <source>Could not verify Backup file.
 </source>
-        <translation type="unfinished"></translation>
+        <translation>No s&apos;ha pogut verificar el fitxer de còpia.
+</translation>
     </message>
 </context>
 <context>
@@ -326,32 +328,32 @@ If you are unsure reject the certificate. That might lead to a non loading websi
 <context>
     <name>ProxySettingsPage</name>
     <message>
-        <source>Please restart Webcat</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Save</source>
-        <translation type="unfinished"></translation>
+        <translation>Desa</translation>
     </message>
     <message>
         <source>Proxy Disabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Proxy deshabilitat</translation>
     </message>
     <message>
         <source>You need to restart Webcat</source>
-        <translation type="unfinished"></translation>
+        <translation>Cal reiniciar Webcat</translation>
     </message>
     <message>
         <source>Proxy Settings (Restart needed)</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuració Proxy (requereix reiniciar)</translation>
     </message>
     <message>
         <source>Host or Ip Address</source>
-        <translation type="unfinished"></translation>
+        <translation>Host o adreça IP</translation>
     </message>
     <message>
         <source>Port</source>
-        <translation type="unfinished"></translation>
+        <translation>Port</translation>
+    </message>
+    <message>
+        <source>Please restart Webcat</source>
+        <translation>Cal reinicar Webcat</translation>
     </message>
 </context>
 <context>
@@ -414,7 +416,7 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Split WebView</source>
-        <translation type="unfinished"></translation>
+        <translation>Divideix  WebView</translation>
     </message>
 </context>
 <context>
@@ -548,11 +550,11 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Proxy Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuració Proxy</translation>
     </message>
     <message>
         <source>Backup Manager</source>
-        <translation type="unfinished"></translation>
+        <translation>Gestor de còpies de seguretat</translation>
     </message>
 </context>
 <context>
@@ -577,33 +579,39 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     <name>VideoPlayerComponent</name>
     <message>
         <source>Dismiss</source>
-        <translation type="unfinished"></translation>
+        <translation>Descarta</translation>
     </message>
     <message>
         <source>
 The audio and or video format is not supported.</source>
-        <translation type="unfinished"></translation>
+        <translation>
+El format d&apos;àudio o vídeo no està suportat.</translation>
     </message>
     <message>
         <source>
 The video cannot be played due to network issues.</source>
-        <translation type="unfinished"></translation>
+        <translation>
+El vídeo no es pot reproduir. Error de xarxa.</translation>
     </message>
     <message>
         <source>
 The video cannot be played because the media service could not be instantiated.</source>
-        <translation type="unfinished"></translation>
+        <translation>
+El vídeo no es pot reproduir perquè el servei de multimèdia no respon.</translation>
     </message>
     <message>
         <source>
 The video cannot be played due to insufficient permissions.</source>
-        <translation type="unfinished"></translation>
+        <translation>
+El vídeo no s&apos;ha pogut reproduir. Permisos insuficients.</translation>
     </message>
     <message>
         <source>
 The video cannot be played due to a problem allocating resources.
 On Youtube Videos please make sure to be logged in. Some videos might be geoblocked or require you to be logged into youtube.</source>
-        <translation type="unfinished"></translation>
+        <translation>
+El vídeo no es pot reproduir. Problemes d&apos;ubicació de recursos.
+Si esteu a Youtube, cal verificar que estigueu connectats al vostre compte. Alguns vídeos poden estar blocats geogràficament o requerir que estigueu connectats a un compte.</translation>
     </message>
 </context>
 <context>
