@@ -780,12 +780,23 @@ Page {
             }
         ]
 
+        Image {
+            id: webIcon
+            source: webview.icon != "" ? webview.icon : "image://theme/icon-lock-social";
+            height: toolbar.height - Theme.paddingSmall
+            width: height
+            anchors.left: toolbar.left
+            anchors.leftMargin: Theme.paddingSmall
+            anchors.verticalCenter: toolbar.verticalCenter
+            visible: toolbar.state == "minimized"
+        }
+
         Label {
             id: urlTitle
             text: webview.title + " - " + webview.url
             anchors.top: toolbar.top
             anchors.topMargin: 3
-            anchors.left: toolbar.left
+            anchors.left: webIcon.right
             anchors.leftMargin: Theme.paddingSmall
             font.bold: true
             font.pixelSize: Theme.fontSizeTiny //parent.height - 4
