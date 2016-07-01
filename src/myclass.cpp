@@ -257,3 +257,50 @@ void MyClass::copy2clipboard(QString text)
         cb->setText(text);
     }
 }
+void MyClass::remove(const QString &url)
+{    //qDebug() << "Called the C++ slot and request removal of:" << url;
+    QFile(url).remove();
+}
+
+void MyClass::createDesktopLauncher(QString favIcon, QString title, QString url)
+{
+    if (favIcon != "") {
+        // TODO Download favIcon
+    }
+    else favIcon = "icon-launcher-browser";
+    if (url == "") return;
+    else {
+        QUrl launcherUrl(url);
+        QString host = launcherUrl.host();
+        QString fname = launcherUrl.fileName();
+        if (title == "") title = host + "-" + fname;
+        QString launcherPath = h + "/.local/share/applications/"+ host + "-" + fname + ".desktop";
+        /* Search if file exists. If yes remove it */
+        if (isFile(launcherPath)) remove(launcherPath);
+
+        /* Try and open a file for output */
+        QString outputFilename = launcherPath;
+        QFile outputFile(outputFilename);
+        outputFile.open(QIODevice::WriteOnly);
+
+        /* Check it opened OK */
+        if(!outputFile.isOpen()){
+            qDebug() << "Error, unable to open" << outputFilename << "for output";
+            return;
+        }
+
+        /* Point a QTextStream object at the file */
+        QTextStream outStream(&outputFile);
+
+        /* Write the line to the file */
+        outStream << "[Desktop Entry]\n";
+        outStream << "Type=Application\n";
+        outStream << "Name=" + title + "\n";
+        outStream << "Icon=" + favIcon + "\n";
+        outStream << "Exec=harbour-webcat '" + url + "'\n";
+
+        /* Close the file */
+        outputFile.close();
+        return;
+    }
+}

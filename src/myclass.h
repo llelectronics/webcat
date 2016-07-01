@@ -41,6 +41,7 @@ public slots:
     void backupConfig(QString backupName);
     void checkBackup(QString backupFile);
     void copy2clipboard(QString text);
+    void createDesktopLauncher(QString favIcon, QString title, QString url);
 
 signals:
     void backupComplete();
@@ -65,6 +66,7 @@ private:
     bool existsPath(const QString &url);
     void setMime(const QString &mimeType, const QString &desktopFile);
     void restoreBackup();
+    void remove(const QString &url);
 
 private slots:
     void getCompressStatus(int exitCode);

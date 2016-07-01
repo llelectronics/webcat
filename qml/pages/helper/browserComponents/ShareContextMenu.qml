@@ -23,6 +23,7 @@ ContextMenu {
         shareContextMenu.height = Theme.itemSizeSmall * Math.min(5, listview.count) + Theme.itemSizeMedium
     }
 
+
     SilicaListView
     {
         id: listview

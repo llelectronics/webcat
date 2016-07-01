@@ -90,6 +90,7 @@ ApplicationWindow
     signal openWithvPlayerExternal(string url)
     signal setDefaultBrowser()
     signal resetDefaultBrowser()
+    signal createDesktopLauncher(string favIcon,string title, string url)
 
     property WebCatInterface webcatinterface: WebCatInterface { }
 
@@ -212,9 +213,15 @@ ApplicationWindow
     }
 
     function findBaseName(url) {
+        url = url.toString();
         var fileName = url.substring(url.lastIndexOf('/') + 1);
         var dot = fileName.lastIndexOf('.');
         return dot == -1 ? fileName : fileName.substring(0, dot);
+    }
+
+    function findHostname(url) {
+        var f = /:\/\/(.[^/]+)/;
+        return url.toString().match(f)[1];
     }
 
     ListModel {

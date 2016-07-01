@@ -789,6 +789,22 @@ Page {
             anchors.leftMargin: Theme.paddingSmall
             anchors.verticalCenter: toolbar.verticalCenter
             visible: toolbar.state == "minimized"
+            asynchronous: true
+            onSourceChanged: favIconSaver.requestPaint()
+        }
+        Canvas {
+            id: favIconSaver
+            visible: false
+            width: Theme.iconSizeLauncher
+            height: width
+            onImageLoaded: requestPaint();
+            onPaint: {
+                //console.debug("[FirstPage.qml] favIconSaver paint called")
+                var ctx = getContext("2d")
+                ctx.clearRect(0,0,width,height);
+                ctx.reset();
+                ctx.drawImage(webIcon,0,0,width,height)
+            }
         }
 
         Label {
@@ -1128,6 +1144,15 @@ Page {
                         bookmarks.addBookmark(webview.url.toString(), webview.title, userAgent)
                     }
                 }
+            }
+            onPressAndHold: {
+                favIconSaver.loadImage(webIcon.source)
+                //console.debug("[FirstPage.qml] favIconSaver image loaded: " + favIconSaver.isImageLoaded(webIcon.source));
+                var favIconPath = _fm.getHome() + "/.local/share/applications/" + mainWindow.findHostname(webview.url) + "-" + mainWindow.findBaseName(webview.url) + ".png"
+                var savingFav = favIconSaver.save(favIconPath);
+                //console.debug("[FirstPage.qml] Saving FavIcon: " + savingFav)
+                mainWindow.createDesktopLauncher(favIconPath ,webview.title,webview.url);
+                mainWindow.infoBanner.showText(qsTr("Created Desktop Launcher for " + webview.title));
             }
         }
     }

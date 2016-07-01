@@ -204,6 +204,8 @@ int main(int argc, char *argv[])
                      &myClass, SLOT(setDefaultBrowser()));
     QObject::connect(object, SIGNAL(resetDefaultBrowser()),
                      &myClass, SLOT(resetDefaultBrowser()));
+    QObject::connect(object, SIGNAL(createDesktopLauncher(QString,QString,QString)),
+                     &myClass, SLOT(createDesktopLauncher(QString,QString,QString)));
 
     // Create download manager object
     DownloadManager manager;
