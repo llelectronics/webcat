@@ -118,7 +118,10 @@ TRANSLATIONS += translations/harbour-webcat-de.ts \
         translations/harbour-webcat-es.ts \
         translations/harbour-webcat-ru.ts \
         translations/harbour-webcat-fr.ts \
-        translations/harbour-webcat-ca.ts
+        translations/harbour-webcat-ca.ts \
+        translations/harbour-webcat-fi.ts \
+        translations/harbour-webcat-sv.ts
+
 
 # Hmm... not allowed for now I guess
 #PKGCONFIG += nemotransferengine-qt5
@@ -139,11 +142,10 @@ DISTFILES += \
     qml/pages/BackupPage.qml \
     translations/harbour-webcat-ca.ts \
     translations/harbour-webcat-es.ts \
-    translations/harbour-webcat-fi.ts \
     translations/harbour-webcat-fr.ts \
     translations/harbour-webcat-ru.ts \
-    translations/harbour-webcat-sv.ts \
     qml/pages/helper/es6-collections.min.js \
     qml/pages/helper/canvg.min.js \
     qml/pages/SplitWeb.qml \
-    qml/pages/helper/otherComponents/SectionHeader.qml
+    qml/pages/helper/otherComponents/SectionHeader.qml \
+    translations/harbour-webcat-sv.ts

@@ -1030,6 +1030,7 @@ Page {
                     bookmarkButton.visible = false
                     gotoButton.searchButton = true
                     text = fullUrl
+                    color = Theme.primaryColor
                     suggestionView.visible = false
                     selectAll();
                 }

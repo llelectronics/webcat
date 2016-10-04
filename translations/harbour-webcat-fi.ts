@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="fi" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="fi">
 <context>
     <name>AboutPage</name>
     <message>
@@ -99,6 +101,12 @@ Käynnistä uudelleen että muutokset tulevat voimaan.</translation>
         <source>Accept ?</source>
         <translation>Hyväksy ?</translation>
     </message>
+    <message>
+        <source>Certificates are used to identify and make sure that the website you see is provided by the author you expect.
+Unknown certificates are either ones that are missing in the global configuration of your browser. Outdated ones or compromised ones.
+If you are unsure reject the certificate. That might lead to a non loading website though.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DownloadManager</name>
@@ -153,6 +161,26 @@ Käynnistä uudelleen että muutokset tulevat voimaan.</translation>
     <message>
         <source>Clear Downloads</source>
         <translation>Tyhjennä latauslista</translation>
+    </message>
+    <message>
+        <source>Deleting </source>
+        <translation type="unfinished">Poistaa...</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation type="unfinished">Poista</translation>
+    </message>
+    <message>
+        <source>Download list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Current operation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Details</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -228,6 +256,18 @@ Käynnistä uudelleen että muutokset tulevat voimaan.</translation>
     <message>
         <source>Save Link</source>
         <translation>Tallenna linkki</translation>
+    </message>
+    <message>
+        <source>Unknown certificate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Accept certificate from </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open Image in New Tab</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -373,6 +413,10 @@ Käynnistä uudelleen että muutokset tulevat voimaan.</translation>
     <message>
         <source>Loading..</source>
         <translation>Lataa...</translation>
+    </message>
+    <message>
+        <source>Split WebView</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -525,10 +569,6 @@ Käynnistä uudelleen että muutokset tulevat voimaan.</translation>
     <message>
         <source>Loading..</source>
         <translation>Lataa...</translation>
-    </message>
-    <message>
-        <source>Close Tab</source>
-        <translation>Sulje välilehti</translation>
     </message>
     <message>
         <source>Tabs</source>
