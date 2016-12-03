@@ -49,7 +49,7 @@ Page {
         id: fileModel
         folder: path ? path: _fm.getHome()
         showDirsFirst: true
-        showDotAndDotDot: true
+        showDotAndDotDot: false
         showOnlyReadable: true
         nameFilters: filter
     }
@@ -149,7 +149,17 @@ Page {
                     anchors.left: parent.left
                     anchors.leftMargin: Theme.paddingSmall
                     anchors.verticalCenter: parent.verticalCenter
-                    source: fileIsDir ? "image://theme/icon-m-folder" : "image://theme/icon-m-document"
+                    source: {
+                        if (fileIsDir) "image://theme/icon-m-folder"
+                        else if (_fm.getMime(filePath).indexOf("video") !== -1) "image://theme/icon-m-file-video"
+                        else if (_fm.getMime(filePath).indexOf("audio") !== -1) "image://theme/icon-m-file-audio"
+                        else if (_fm.getMime(filePath).indexOf("image") !== -1) "image://theme/icon-m-file-image"
+                        else if (_fm.getMime(filePath).indexOf("text") !== -1) "image://theme/icon-m-file-document"
+                        else if (_fm.getMime(filePath).indexOf("pdf") !== -1) "image://theme/icon-m-file-pdf"
+                        else if (_fm.getMime(filePath).indexOf("android") !== -1) "image://theme/icon-m-file-apk"
+                        else if (_fm.getMime(filePath).indexOf("rpm") !== -1) "image://theme/icon-m-file-rpm"
+                        else "image://theme/icon-m-document"
+                    }
                 }
 
                 Label {
@@ -158,18 +168,17 @@ Page {
                     anchors.leftMargin: Theme.paddingLarge
                     anchors.top: fileInfo.text != "" ? parent.top : undefined
                     anchors.verticalCenter: fileInfo.text == "" ? parent.verticalCenter : undefined
-                    text: fileName + (fileIsDir ? "/" : "")
+                    text: fileName //+ (fileIsDir ? "/" : "")
                     color: delegate.highlighted ? Theme.highlightColor : Theme.primaryColor
                     width: mSelect.visible ? parent.width - (fileIcon.width + Theme.paddingLarge + Theme.paddingSmall + mSelect.width) : parent.width - (fileIcon.width + Theme.paddingLarge + Theme.paddingSmall)
                     truncationMode: TruncationMode.Fade
                 }
                 Label {
                     id: fileInfo
-                    visible: !fileIsDir
                     anchors.left: fileIcon.right
                     anchors.leftMargin: Theme.paddingLarge
                     anchors.top: fileLabel.bottom
-                    text: humanSize(fileSize) + ", " + fileModified
+                    text: fileIsDir ? "directory" : humanSize(fileSize) + ", " + fileModified
                     color: Theme.secondaryColor
                     width: parent.width - fileIcon.width - (Theme.paddingLarge + Theme.paddingSmall + Theme.paddingLarge)
                     truncationMode: TruncationMode.Fade
@@ -194,14 +203,13 @@ Page {
                     }
 
                     if (fileIsDir) {
-                        if (fileName === "..") fileModel.folder = fileModel.parentFolder
-                        else if (fileName === ".") return
-                        else fileModel.folder = filePath
+                        var anotherFM = pageStack.push(Qt.resolvedUrl("OpenDialog.qml"), {"path": filePath, "dataContainer": dataContainer, "selectMode": selectMode, "multiSelect": multiSelect});
+                        anotherFM.fileOpen.connect(fileOpen)
                     } else {
                         if (!selectMode) openFile(filePath)
                         else {
                             fileOpen(filePath);
-                            pageStack.pop();
+                            pageStack.pop(dataContainer.parent);
                         }
                     }
                 }
