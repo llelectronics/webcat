@@ -73,7 +73,6 @@ Dialog {
             placeholderText: "URL of bookmark"
             label: "URL of bookmark"
             inputMethodHints: Qt.ImhUrlCharactersOnly
-            visible: editBookmark ? false : true
         }
         ValueButton {
             anchors.horizontalCenter: parent.horizontalCenter

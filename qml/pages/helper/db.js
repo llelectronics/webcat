@@ -43,13 +43,36 @@ function initialize() {
 
 // This function is used to write bookmarks into the database
 function addBookmark(title,url,agent) {
-    var date = new Date();
     var db = getDatabase();
     var res = "";
     db.transaction(function(tx) {
         // Remove and readd if url already in bookmarks
         removeBookmark(url);
-        console.debug("Adding to bookmarks db:" + title + " " + url);
+        //console.debug("Adding to bookmarks db:" + title + " " + url);
+
+        var rs = tx.executeSql('INSERT OR REPLACE INTO bookmarks VALUES (?,?,?);', [title,url,agent]);
+        if (rs.rowsAffected > 0) {
+            res = "OK";
+            console.log ("Saved to database");
+        } else {
+            res = "Error";
+            console.log ("Error saving to database");
+        }
+    }
+    );
+    // The function returns “OK” if it was successful, or “Error” if it wasn't
+    return res;
+}
+
+// This function is used to edit bookmarks in the database
+function editBookmark(oldtitle,title,url,agent) {
+    //console.debug("Editing Bookmark " + oldtitle + " with new title " + title + " and new url " + url)
+    var db = getDatabase();
+    var res = "";
+    db.transaction(function(tx) {
+        // Remove and readd if title already in bookmarks
+        removeBookmark("",oldtitle);
+        //console.debug("Adding to bookmarks db:" + title + " " + url);
 
         var rs = tx.executeSql('INSERT OR REPLACE INTO bookmarks VALUES (?,?,?);', [title,url,agent]);
         if (rs.rowsAffected > 0) {
@@ -66,17 +89,41 @@ function addBookmark(title,url,agent) {
 }
 
 // This function is used to remove a bookmark from database
-function removeBookmark(url) {
+function removeBookmark(url, title) {
+    //console.debug("Called removeBookmark with arguments " + url + " " + title)
     var db = getDatabase();
     var respath="";
-    db.transaction(function(tx) {
-        var rs = tx.executeSql('DELETE FROM bookmarks WHERE url=(?);', [url]);
-//        if (rs.rowsAffected > 0) {
-//            console.debug("Url found and removed");
-//        } else {
-//            console.debug("Url not found");
-//        }
-    })
+    if (url != undefined && url != "" && (title == undefined || title == "")) {
+        db.transaction(function(tx) {
+            var rs = tx.executeSql('DELETE FROM bookmarks WHERE url=(?);', [url]);
+            //        if (rs.rowsAffected > 0) {
+            //            console.debug("Url found and removed");
+            //        } else {
+            //            console.debug("Url not found");
+            //        }
+        })
+    }
+    else if (title != undefined && title != "") {
+        //console.debug("Remove oldtitle " + title)
+        db.transaction(function(tx) {
+            var rs = tx.executeSql('DELETE FROM bookmarks WHERE title=(?);', [title]);
+            //        if (rs.rowsAffected > 0) {
+            //            console.debug("Url found and removed");
+            //        } else {
+            //            console.debug("Url not found");
+            //        }
+        })
+    }
+    else {
+        db.transaction(function(tx) {
+            var rs = tx.executeSql('DELETE FROM bookmarks WHERE url=(?) AND title=(?);', [url,title]);
+            //        if (rs.rowsAffected > 0) {
+            //            console.debug("Url found and removed");
+            //        } else {
+            //            console.debug("Url not found");
+            //        }
+        })
+    }
 }
 
 // This function is used to retrieve bookmarks from database
@@ -272,7 +319,7 @@ function addSession(session,tab,url,sessionTabs) {
     var db = getDatabase();
     var res = "";
     db.transaction(function(tx) {
-        console.debug("Adding to sessions db:" + session + " " + url);
+        //console.debug("Adding to sessions db:" + session + " " + url);
 
         var rs = tx.executeSql('INSERT OR REPLACE INTO sessions VALUES (?,?,?,?);', [session,tab,url,sessionTabs]);
         if (rs.rowsAffected > 0) {

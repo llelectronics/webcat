@@ -284,7 +284,7 @@ ApplicationWindow
             for (var i=0; i<count; i++) {
                 if (get(i).title === oldTitle) set(i,{"title":siteTitle, "url":siteUrl, "agent": agent});
             }
-            DB.addBookmark(siteTitle,siteUrl,agent);
+            DB.editBookmark(oldTitle,siteTitle,siteUrl,agent);
         }
 
         function removeBookmark(siteUrl) {

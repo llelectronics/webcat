@@ -49,7 +49,7 @@ Page
                 function remove() {
                     var removal = removalComponent.createObject(myListItem)
                     ListView.remove.connect(removal.deleteAnimation.start)
-                    removal.execute(contentItem, "Deleting " + title, function() { bookmarks.removeBookmark(url); } )
+                    removal.execute(contentItem, "Deleting " + title, function() { bookmarks.removeBookmark(url,title); } )
                 }
                 function openNewTab() {
                     mainWindow.openNewTab("page"+mainWindow.salt(),url,true);
