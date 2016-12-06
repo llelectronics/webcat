@@ -90,6 +90,11 @@ QString DownloadManager::progressMessage() const
     return m_progressMessage;
 }
 
+bool DownloadManager::isPaused() const
+{
+    return m_isPaused;
+}
+
 void DownloadManager::downloadUrl(const QString &url)
 {
     if (basename != "")
@@ -171,6 +176,9 @@ void DownloadManager::pause()
     m_currentDownload->abort();
     m_output.write(m_currentDownload->readAll());
     m_currentDownload = 0;
+    m_isPaused = true;
+    emit isPausedChanged();
+    addStatusMessage("Paused download.");
 
 }
 
@@ -179,8 +187,11 @@ void DownloadManager::resume()
     qint64 m_downloadSizeAtPause = m_output.size();
     QByteArray rangeHeaderValue = "bytes=" + QByteArray::number(m_downloadSizeAtPause) + "-";
     m_currentRequest.setRawHeader("Range",rangeHeaderValue);
+    m_isPaused = false;
+    emit isPausedChanged();
 
     download(m_currentRequest);
+    addStatusMessage("Resumed download.");
 }
 
 void DownloadManager::addErrorMessage(const QString &message)
@@ -207,8 +218,12 @@ void DownloadManager::startNextDownload()
         return;
     }
 
-    // Otherwise dequeue the first job from the queue ...
-    const QPair<QUrl, QString> pair = m_downloadQueue.dequeue();
+    // Make sure paused is set to false
+    m_isPaused = false;
+    emit isPausedChanged();
+
+    // Otherwise head the first job from the queue ...
+    const QPair<QUrl, QString> pair = m_downloadQueue.head();
     const QUrl url = pair.first;
     basename = pair.second;
     emit curNameChanged();
@@ -299,31 +314,35 @@ void DownloadManager::downloadFinished()
     emit progressMessageChanged();
 
     // Close the file where the data have been written
-    m_output.close();
+    if (m_output.isOpen()) m_output.close();
 
+    m_downloadQueue.dequeue();
 
 
     // Add a status or error message
-    if (m_currentDownload->error()) {
-        addErrorMessage(QString("Failed: %1").arg(m_currentDownload->errorString()));
-    } else if (m_currentDownload->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt() == 302) {
-        m_output.remove();
-        QUrl redirecturl = m_currentDownload->attribute(QNetworkRequest::RedirectionTargetAttribute).toUrl();
-        if(redirecturl.isValid() && (redirecturl != m_currentDownload->url())) /* Avoid Fake/Redirect Loop */
-        {
-            downloadUrl(redirecturl.toString());
+    if (m_currentDownload != 0) {
+        if (m_currentDownload->error()) {
+            addErrorMessage(QString("Failed: %1").arg(m_currentDownload->errorString()));
+        } else if (m_currentDownload->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt() == 302) {
+            m_output.remove();
+            QUrl redirecturl = m_currentDownload->attribute(QNetworkRequest::RedirectionTargetAttribute).toUrl();
+            if(redirecturl.isValid() && (redirecturl != m_currentDownload->url())) /* Avoid Fake/Redirect Loop */
+            {
+                downloadUrl(redirecturl.toString());
+            }
+        } else {
+            addStatusMessage("Succeeded.");
+            ++m_downloadedCount;
         }
-    } else {
-        addStatusMessage("Succeeded.");
-        ++m_downloadedCount;
-    }
 
-    /**
+        /**
      * We can't call 'delete m_currentDownload' here, because this method might have been invoked directly as result of a signal
      * emission of the network reply object.
      */
-    m_currentDownload->deleteLater();
-    m_currentDownload = 0;
+
+        m_currentDownload->deleteLater();
+        m_currentDownload = 0;
+    }
     if (m_downloadQueue.count() != 0) emit activeDownloadsChanged();
 
     basename = "";
@@ -344,7 +363,8 @@ void DownloadManager::downloadReadyRead()
 //! [4]
 void DownloadManager::downloadAbort()
 {
-    m_currentDownload->abort();
+    if (!m_isPaused) m_currentDownload->abort();
+    else downloadFinished();
 }
 //! [4]
 

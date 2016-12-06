@@ -262,11 +262,10 @@ Page {
                 spacing: Theme.paddingLarge
                 Button {
                     id: pauseButton
-                    property bool paused: false
-                    text: paused ? qsTr("Resume") : qsTr("Pause")
+                    text: _manager.isPaused ? qsTr("Resume") : qsTr("Pause")
                     onClicked: {
-                        if (!paused) { _manager.pause(); paused = true }
-                        else { _manager.resume(); paused = false }
+                        if (!_manager.isPaused) _manager.pause();
+                        else _manager.resume();
                     }
                 }
 

@@ -80,6 +80,9 @@ class DownloadManager : public QObject
     // Makes the number of total downloads available to the UI
     Q_PROPERTY(int totalDownloads READ totalDownloads NOTIFY totalDownloadsChanged)
 
+    // Makes the number of total downloads available to the UI
+    Q_PROPERTY(bool isPaused READ isPaused NOTIFY isPausedChanged)
+
     // Makes the current basename available to the UI
     Q_PROPERTY(QString curName READ curName NOTIFY curNameChanged)
 
@@ -105,6 +108,7 @@ public:
     int progressValue() const;
     QString progressMessage() const;
     QString curName() { return basename;}
+    bool isPaused() const;
 
     // The network access manager that does all the network communication
     QNetworkAccessManager m_manager;
@@ -129,6 +133,7 @@ Q_SIGNALS:
     void progressTotalChanged();
     void progressValueChanged();
     void progressMessageChanged();
+    void isPausedChanged();
 
 private Q_SLOTS:
     // This method starts the next download from the internal job queue
@@ -197,6 +202,9 @@ private:
 
     // The current download Item requested for downloading
     QNetworkRequest m_currentRequest;
+
+    // The status if a download is paused or not
+    bool m_isPaused;
 
     //  Not allowed yet I guess. Leave it here until it is allowed
     // Access to global dbus transferengine interface
