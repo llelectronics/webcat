@@ -184,6 +184,14 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
         <source>Download list</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Resume</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pause</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>FirstPage</name>

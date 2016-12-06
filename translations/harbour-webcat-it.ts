@@ -184,6 +184,14 @@ Se non sei sicuro, rifiuta il certificato. Ma questo può impedire il caricament
         <source>Download list</source>
         <translation>Scaricamenti</translation>
     </message>
+    <message>
+        <source>Resume</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pause</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>FirstPage</name>

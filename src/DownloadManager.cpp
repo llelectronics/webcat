@@ -158,6 +158,31 @@ QString DownloadManager::saveFileName(const QUrl &url)
     return savename;
 }
 
+void DownloadManager::pause()
+{
+    if( m_currentDownload == 0 ) {
+        return;
+    }
+    disconnect(m_currentDownload, SIGNAL(downloadProgress(qint64, qint64)), this,
+            SLOT(downloadProgress(qint64, qint64)));
+    disconnect(m_currentDownload, SIGNAL(finished()), this, SLOT(downloadFinished()));
+    disconnect(m_currentDownload, SIGNAL(readyRead()), this, SLOT(downloadReadyRead()));
+
+    m_currentDownload->abort();
+    m_output.write(m_currentDownload->readAll());
+    m_currentDownload = 0;
+
+}
+
+void DownloadManager::resume()
+{
+    qint64 m_downloadSizeAtPause = m_output.size();
+    QByteArray rangeHeaderValue = "bytes=" + QByteArray::number(m_downloadSizeAtPause) + "-";
+    m_currentRequest.setRawHeader("Range",rangeHeaderValue);
+
+    download(m_currentRequest);
+}
+
 void DownloadManager::addErrorMessage(const QString &message)
 {
     m_errorMessage.append(message);
@@ -202,22 +227,9 @@ void DownloadManager::startNextDownload()
     }
 
     // Now create the network request for the URL ...
-    QNetworkRequest request(url);
+    m_currentRequest = QNetworkRequest(url);
 
-    // ... and start the download.
-    m_currentDownload = m_manager.get(request);
-
-    // Connect against the necessary signals to get informed about progress and status changes
-    connect(m_currentDownload, SIGNAL(downloadProgress(qint64, qint64)),
-            SLOT(downloadProgress(qint64, qint64)));
-    connect(m_currentDownload, SIGNAL(finished()), SLOT(downloadFinished()));
-    connect(m_currentDownload, SIGNAL(readyRead()), SLOT(downloadReadyRead()));
-
-    // Add a status message
-    addStatusMessage(QString("Downloading %1...").arg(url.toString()));
-
-    // Start the timer so that we can calculate the download speed later on
-    m_downloadTime.start();
+    download(m_currentRequest);
 
 //  Not allowed yet I guess. Leave it here until it is allowed
 //    QStringList callback;
@@ -335,3 +347,23 @@ void DownloadManager::downloadAbort()
     m_currentDownload->abort();
 }
 //! [4]
+
+//! [5]
+void DownloadManager::download(QNetworkRequest &request)
+{
+    // ... and start the download.
+    m_currentDownload = m_manager.get(request);
+
+    // Connect against the necessary signals to get informed about progress and status changes
+    connect(m_currentDownload, SIGNAL(downloadProgress(qint64, qint64)),this,
+            SLOT(downloadProgress(qint64, qint64)));
+    connect(m_currentDownload, SIGNAL(finished()), this, SLOT(downloadFinished()));
+    connect(m_currentDownload, SIGNAL(readyRead()), this, SLOT(downloadReadyRead()));
+
+    // Add a status message
+    addStatusMessage(QString("Downloading %1...").arg(request.url().toString()));
+
+    // Start the timer so that we can calculate the download speed later on
+    m_downloadTime.start();
+}
+//! [5]

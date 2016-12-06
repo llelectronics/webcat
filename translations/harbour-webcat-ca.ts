@@ -184,6 +184,14 @@ En cas de dubte, refuseu el certificat malgrat que això pot provocar que no es 
         <source>Download list</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Resume</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pause</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>FirstPage</name>

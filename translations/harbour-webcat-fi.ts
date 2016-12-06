@@ -182,6 +182,14 @@ If you are unsure reject the certificate. That might lead to a non loading websi
         <source>Details</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Resume</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pause</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>FirstPage</name>

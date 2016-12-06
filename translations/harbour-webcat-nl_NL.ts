@@ -184,6 +184,14 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
         <source>Download list</source>
         <translation>Downloadlijst</translation>
     </message>
+    <message>
+        <source>Resume</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pause</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>FirstPage</name>

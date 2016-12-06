@@ -51,6 +51,7 @@
 #include <QtCore/QUrl>
 #include <QtCore/QPair>
 #include <QtNetwork/QNetworkAccessManager>
+#include <QNetworkRequest>
 //  Not allowed yet I guess. Leave it here until it is allowed
 //#include <transferengineinterface.h>
 //#include <transfertypes.h>
@@ -115,6 +116,8 @@ public Q_SLOTS:
     void downloadAbort();
     // This method determines a file name that can be used to save the given URL
     QString saveFileName(const QUrl &url);
+    void pause();
+    void resume();
 
 Q_SIGNALS:
     // The change notification signals of the properties
@@ -139,6 +142,9 @@ private Q_SLOTS:
 
     // This method is called whenever the current download job received new data
     void downloadReadyRead();
+
+    // This method starts download from QNetworkRequest
+    void download(QNetworkRequest &request);
 
 private:
     // Enqueues a new download to the internal job queue
@@ -188,6 +194,9 @@ private:
 
     // The actual path to where the file is stored
     QString m_fileLocation;
+
+    // The current download Item requested for downloading
+    QNetworkRequest m_currentRequest;
 
     //  Not allowed yet I guess. Leave it here until it is allowed
     // Access to global dbus transferengine interface

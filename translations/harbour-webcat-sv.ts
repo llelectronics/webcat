@@ -184,6 +184,14 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
         <source>Download list</source>
         <translation>Nedladdningslista</translation>
     </message>
+    <message>
+        <source>Resume</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pause</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>FirstPage</name>

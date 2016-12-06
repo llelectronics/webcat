@@ -183,6 +183,14 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
         <source>Download list</source>
         <translation>Liste de téléchargements</translation>
     </message>
+    <message>
+        <source>Resume</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pause</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>FirstPage</name>
