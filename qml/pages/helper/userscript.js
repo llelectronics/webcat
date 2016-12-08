@@ -32,7 +32,7 @@ function elementContainedInBox(element, box) {
 
 function getSelectedData(element) {
     var node = element;
-    var data = new Object;
+    var data = new Object();
 
     var nodeName = node.nodeName.toLowerCase();
     if (nodeName === 'img') {
@@ -49,6 +49,10 @@ function getSelectedData(element) {
         data.title = parent.title;
         node = parent;
     }
+    if ((nodeName !== 'img') && parent && (parent.nodeName.toLowerCase() === 'img')) {
+        data.img = getImgFullUri(node.getAttribute('src'));
+        node = parent;
+    }
 
     return data;
 }
@@ -57,7 +61,7 @@ function adjustSelection(selection) {
     // FIXME: allow selecting two consecutive blocks, instead of
     // interpolating to the containing block.
 
-    var data = new Object;
+    var data = new Object();
 
     //console.debug("[userscript.js] Jumped into adjustSelection")
 
@@ -90,7 +94,7 @@ function adjustSelection(selection) {
         images.push(getImgFullUri(imgs[i].getAttribute('src')));
     }
     if (images.length > 0) {
-        data.images = images;
+        data.img = images;
     }
 
     return data
@@ -283,12 +287,6 @@ function longPressed(x, y, element) {
             data.video = getImgFullUri(audios.tagName.getAttribute('src'));
         }
     }
-
-    // Try to get image from CSS (Taken from WebPirate, Thx Dax89)
-    var style = window.getComputedStyle(element, null);
-
-    if(style.backgroundImage)
-        data.img = style.backgroundImage.slice(4, -1);
 
     var boundingRect = element.getBoundingClientRect();
     data.left = boundingRect.left;
