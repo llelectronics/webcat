@@ -74,7 +74,7 @@
     </message>
     <message>
         <source>Restore Backup</source>
-        <translation>Back-up herstellen</translation>
+        <translation>Back-up terugzetten</translation>
     </message>
     <message>
         <source>Backups overwrite current configurations</source>
@@ -82,7 +82,7 @@
     </message>
     <message>
         <source>Backup restored! Please restart Webcat</source>
-        <translation>Back-up hersteld! Herstart Webcat</translation>
+        <translation>Back-up teruggezet! Herstart Webcat</translation>
     </message>
     <message>
         <source>Restoring overwrites all cookies, bookmarks, history and settings for Webcat from the backup file.
@@ -92,7 +92,7 @@ Herstart om de wijzingen door te voeren.</translation>
     </message>
     <message>
         <source>Restoring Backup</source>
-        <translation>Herstellen van back-up</translation>
+        <translation>Terugzetten van back-up</translation>
     </message>
 </context>
 <context>
