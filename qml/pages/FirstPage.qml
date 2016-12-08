@@ -427,13 +427,22 @@ Page {
 //                console.debug("[FirstPage.qml] Javascript error: " + data.msg + " in line: " + data.line + " on url:" + data.url + " with StackTrace: " + data.strace)
 //            }
             case 'longpress': {
+                // DEBUG //
+//                if (data.nodeName) {
+//                    console.debug("Long pressed on node: " + data.nodeName)
+//                }
+//                if (data.html) {
+//                    console.debug("Nodes Outer HTML: " + data.html)
+//                }
+                // DEBUG END //
                 if (data.img) {
 //                    console.debug("[FirstPage.qml] Contextmenu Image detected")
                     imageLongPressAvailability = true;
-                    if (!data.href) showContextMenu("",data.img);
+                    if ((!data.href) || (data.href == "CANT FIND LINK")) showContextMenu("",data.img);
+                    else console.debug("Image found but data.href was set to: " + data.href + " so don't show contextMenu");
                 }
                 if (data.video) {
-                    //console.debug("HTML5 Video Tag found with src:" + data.video)
+//                    console.debug("HTML5 Video Tag found with src:" + data.video)
                     mediaLink = true;
                     mediaDownloadRec.mediaUrl = data.video
                     mediaDownloadRec.visible = true
