@@ -236,6 +236,7 @@ Page {
                 color: Theme.primaryColor
                 anchors.horizontalCenter: parent.horizontalCenter
                 font.pixelSize: Theme.fontSizeSmall
+                truncationMode: TruncationMode.Fade
                 visible: {
                     if (_manager.activeDownloads != 0) return true
                     else false
