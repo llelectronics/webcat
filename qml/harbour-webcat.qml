@@ -62,7 +62,7 @@ ApplicationWindow
 
 
     property bool urlLoading: false
-    property string version: "2.4"
+    property string version: "2.5"
     property string appname: "Webcat Browser"
     property string appicon: "qrc:/harbour-webcat.png"
     property string errorText: ""
