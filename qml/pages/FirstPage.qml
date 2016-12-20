@@ -195,6 +195,15 @@ Page {
     ListModel {
         id: mediaList
 
+        function contains(url) {
+            for (var i=0; i<count; i++) {
+                if (get(i).url == url)  { // type transformation is intended here
+                    return true;
+                }
+            }
+            return false;
+        }
+
         // Example data
 //        ListElement {
 //            mediaTitle: "foobar"
@@ -1454,7 +1463,7 @@ Page {
                 mediaList.insert(counter, {"mediaTitle": mediaUrl, "url": mediaUrl});
                 YT.getYoutubeDirectStream(mediaUrl.toString(),page, counter);
             }
-            else if (mediaUrl != "") {
+            else if (mediaUrl != "" && !mediaList.contains(mediaUrl)) {
                 counter = counter + 1
                 var ext = mediaUrl.substr(mediaUrl.lastIndexOf('.') + 1);
                 if (ext.length != 0)
@@ -1462,7 +1471,7 @@ Page {
                 else
                     mediaList.insert(counter, {"mediaTitle": mainWindow.findBaseName(mediaUrl), "url": mediaUrl});
             }
-            //console.debug("[firstPage.qml] MediaUrl changed to:" + mediaUrl)
+//            console.debug("[firstPage.qml] MediaUrl changed to:" + mediaUrl)
         }
 
         gradient: Gradient {
@@ -1858,6 +1867,7 @@ Page {
             page.yt480p = yt480p;
             page.yt360p = yt360p;
             page.yt240p = yt240p;
+            if (!mediaYt) mediaDownloadRec.mediaUrl = url;
         }
     }
     TextArea {
