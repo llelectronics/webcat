@@ -503,7 +503,7 @@ Page {
                     mediaDownloadRec.mediaUrl = data.video
                     mediaDownloadRec.visible = true
                 }
-                if (data.play && mediaDownloadRec.mediaUrl.length != 0) {
+                if (data.play && mediaDownloadRec.mediaUrl.length != 0 && mediaList.count == 1) {
                     mediaPlayBtn.clicked("");
                 }
             }
