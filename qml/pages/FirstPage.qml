@@ -1835,6 +1835,7 @@ Page {
         anchors.fill: parent;
         enabled: suggestionView.visible
         onClicked: suggestionView.visible = false
+        z: suggestionView.z - 1
     }
     Suggestions {
         id: suggestionView
@@ -1868,7 +1869,11 @@ Page {
             page.yt360p = yt360p;
             page.yt240p = yt240p;
             if (!mediaYt) mediaDownloadRec.mediaUrl = url;
+            // Need to destroy player here as it has probably the wrong URL
+            vPlayerLoader.setSource("");
+            if (!webview.visible) webview.visible = true
         }
+        z: vPlayerLoader.z + 1
     }
     TextArea {
         id: hiddenTxtBox
