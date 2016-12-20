@@ -1,26 +1,32 @@
 // Hmm... TODO: Need to get that out of here so it can be used from userscripts.js and mediaDetect.js
 function getImgFullUri(uri) {
-    if ((uri.slice(0, 7) === 'http://') ||
-            (uri.slice(0, 8) === 'https://') ||
-            (uri.slice(0, 7) === 'file://')) {
-        return uri;
-    } else if (uri.slice(0, 1) === '/') {
-        var docuri = document.documentURI;
-        var firstcolon = docuri.indexOf('://');
-        var protocol = 'http://';
-        if (firstcolon !== -1) {
-            protocol = docuri.slice(0, firstcolon + 3);
-        }
-        return protocol + document.domain + uri;
-    } else {
-        var base = document.baseURI;
-        var lastslash = base.lastIndexOf('/');
-        if (lastslash === -1) {
-            return base + '/' + uri;
-        } else {
-            return base.slice(0, lastslash + 1) + uri;
-        }
-    }
+//    if ((uri.slice(0, 7) === 'http://') ||
+//        (uri.slice(0, 8) === 'https://') ||
+//        (uri.slice(0, 7) === 'file://')) {
+//        return uri;
+//    } else if (uri.slice(0, 1) === '/') {
+//        var docuri = document.documentURI;
+//        var firstcolon = docuri.indexOf('://');
+//        var protocol = 'http://';
+//        if (firstcolon !== -1) {
+//            protocol = docuri.slice(0, firstcolon + 3);
+//        }
+//        return protocol + document.domain + uri;
+//    } else {
+//        var base = document.baseURI;
+//        var lastslash = base.lastIndexOf('/');
+//        if (lastslash === -1) {
+//            return base + '/' + uri;
+//        } else {
+//            return base.slice(0, lastslash + 1) + uri;
+//        }
+//    }
+    // Sometimes life can be made a lot easier
+    var a;
+    if (!a) a = document.createElement('a');
+    a.href = uri;
+
+    return a.href;
 }
 // ////
 
