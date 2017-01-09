@@ -401,14 +401,6 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
         <translation>Geschiedenis</translation>
     </message>
     <message>
-        <source>New Tab</source>
-        <translation>Nieuw tabblad</translation>
-    </message>
-    <message>
-        <source>Close Tab</source>
-        <translation>Tabblad sluiten</translation>
-    </message>
-    <message>
         <source>Swipe up to open new window</source>
         <translation>Veeg omhoog om nieuw venster te openen</translation>
     </message>
@@ -427,6 +419,10 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
     <message>
         <source>Split WebView</source>
         <translation>Gesplitste WebView</translation>
+    </message>
+    <message>
+        <source>Download Manager</source>
+        <translation>Downloadbeheerder</translation>
     </message>
 </context>
 <context>

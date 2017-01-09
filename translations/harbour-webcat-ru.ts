@@ -163,11 +163,11 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Deleting </source>
-        <translation type="unfinished">Удаляю</translation>
+        <translation>Удаляю</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">Удалить</translation>
+        <translation>Удалить</translation>
     </message>
     <message>
         <source>Current operation</source>
@@ -397,14 +397,6 @@ If you are unsure reject the certificate. That might lead to a non loading websi
         <translation>История</translation>
     </message>
     <message>
-        <source>New Tab</source>
-        <translation>Новая вкладка</translation>
-    </message>
-    <message>
-        <source>Close Tab</source>
-        <translation>Закрыть вкладку</translation>
-    </message>
-    <message>
         <source>Swipe up to open new window</source>
         <translation>Свайп вверх, что бы открыть новое окно</translation>
     </message>
@@ -423,6 +415,10 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     <message>
         <source>Split WebView</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download Manager</source>
+        <translation>Менеджер загрузки</translation>
     </message>
 </context>
 <context>

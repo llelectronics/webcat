@@ -397,14 +397,6 @@ If you are unsure reject the certificate. That might lead to a non loading websi
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>New Tab</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Close Tab</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Swipe up to open new window</source>
         <translation type="unfinished"></translation>
     </message>
@@ -422,6 +414,10 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Split WebView</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download Manager</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

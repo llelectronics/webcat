@@ -399,14 +399,6 @@ If you are unsure reject the certificate. That might lead to a non loading websi
         <translation>Historia</translation>
     </message>
     <message>
-        <source>New Tab</source>
-        <translation>Uusi välilehti</translation>
-    </message>
-    <message>
-        <source>Close Tab</source>
-        <translation>Sulje välilehti</translation>
-    </message>
-    <message>
         <source>Swipe up to open new window</source>
         <translation>Pyyhkäise ylös avataksesi uuden ikkunan.</translation>
     </message>
@@ -425,6 +417,10 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     <message>
         <source>Split WebView</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download Manager</source>
+        <translation type="unfinished">Latausten hallinta</translation>
     </message>
 </context>
 <context>

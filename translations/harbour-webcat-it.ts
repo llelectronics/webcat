@@ -401,14 +401,6 @@ Se non sei sicuro, rifiuta il certificato. Ma questo può impedire il caricament
         <translation>Cronologia</translation>
     </message>
     <message>
-        <source>New Tab</source>
-        <translation>Nuova scheda</translation>
-    </message>
-    <message>
-        <source>Close Tab</source>
-        <translation>Chiudi scheda</translation>
-    </message>
-    <message>
         <source>Swipe up to open new window</source>
         <translation>Scorri verso l&apos;alto per aprire una nuova finestra</translation>
     </message>
@@ -427,6 +419,10 @@ Se non sei sicuro, rifiuta il certificato. Ma questo può impedire il caricament
     <message>
         <source>Split WebView</source>
         <translation>Dividi Schermata Web</translation>
+    </message>
+    <message>
+        <source>Download Manager</source>
+        <translation>Gestore download</translation>
     </message>
 </context>
 <context>

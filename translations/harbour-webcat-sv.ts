@@ -401,14 +401,6 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
         <translation>Historik</translation>
     </message>
     <message>
-        <source>New Tab</source>
-        <translation>Ny flik</translation>
-    </message>
-    <message>
-        <source>Close Tab</source>
-        <translation>Stäng flik</translation>
-    </message>
-    <message>
         <source>Swipe up to open new window</source>
         <translation>Svep uppåt för att öppna nytt fönster</translation>
     </message>
@@ -427,6 +419,10 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
     <message>
         <source>Split WebView</source>
         <translation>Delad webbvy</translation>
+    </message>
+    <message>
+        <source>Download Manager</source>
+        <translation>Nedladdningshanterare</translation>
     </message>
 </context>
 <context>

@@ -400,14 +400,6 @@ Wenn Sie sich unsicher sind lehnen sie das Zertifikat ab. Dies führt unter Umst
         <translation>Verlauf</translation>
     </message>
     <message>
-        <source>New Tab</source>
-        <translation>Neuer Reiter</translation>
-    </message>
-    <message>
-        <source>Close Tab</source>
-        <translation>Reiter schließen</translation>
-    </message>
-    <message>
         <source>Swipe up to open new window</source>
         <translation>Nach oben wischen für neues Fenster</translation>
     </message>
@@ -426,6 +418,10 @@ Wenn Sie sich unsicher sind lehnen sie das Zertifikat ab. Dies führt unter Umst
     <message>
         <source>Split WebView</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download Manager</source>
+        <translation>Download Manager</translation>
     </message>
 </context>
 <context>

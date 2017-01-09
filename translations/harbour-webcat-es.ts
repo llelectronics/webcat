@@ -401,14 +401,6 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
         <translation>Historial</translation>
     </message>
     <message>
-        <source>New Tab</source>
-        <translation>Nueva pestaña</translation>
-    </message>
-    <message>
-        <source>Close Tab</source>
-        <translation>Cerrar pestaña</translation>
-    </message>
-    <message>
         <source>Swipe up to open new window</source>
         <translation>Deslizar hacia arriba para abrir nueva ventana</translation>
     </message>
@@ -427,6 +419,10 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     <message>
         <source>Split WebView</source>
         <translation>Visor Web dividido</translation>
+    </message>
+    <message>
+        <source>Download Manager</source>
+        <translation>Administrador de descargas</translation>
     </message>
 </context>
 <context>

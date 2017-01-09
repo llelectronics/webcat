@@ -163,11 +163,11 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Deleting </source>
-        <translation type="unfinished">Odstraňování</translation>
+        <translation>Odstraňování</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">Odstranit</translation>
+        <translation>Odstranit</translation>
     </message>
     <message>
         <source>Current operation</source>
@@ -397,14 +397,6 @@ If you are unsure reject the certificate. That might lead to a non loading websi
         <translation>Historie</translation>
     </message>
     <message>
-        <source>New Tab</source>
-        <translation>Nový panel</translation>
-    </message>
-    <message>
-        <source>Close Tab</source>
-        <translation>Zavřít panel</translation>
-    </message>
-    <message>
         <source>Swipe up to open new window</source>
         <translation>Švihnutím vzhůru otevřete nový panel</translation>
     </message>
@@ -423,6 +415,10 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     <message>
         <source>Split WebView</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download Manager</source>
+        <translation>Správce stahování</translation>
     </message>
 </context>
 <context>

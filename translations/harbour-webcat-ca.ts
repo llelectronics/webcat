@@ -401,14 +401,6 @@ En cas de dubte, refuseu el certificat malgrat que això pot provocar que no es 
         <translation>Historial</translation>
     </message>
     <message>
-        <source>New Tab</source>
-        <translation>Nova pestanya</translation>
-    </message>
-    <message>
-        <source>Close Tab</source>
-        <translation>Tanca la pestanya</translation>
-    </message>
-    <message>
         <source>Swipe up to open new window</source>
         <translation>Feu lliscar cap amunt per obrir una finestra nova</translation>
     </message>
@@ -427,6 +419,10 @@ En cas de dubte, refuseu el certificat malgrat que això pot provocar que no es 
     <message>
         <source>Split WebView</source>
         <translation>Divideix  WebView</translation>
+    </message>
+    <message>
+        <source>Download Manager</source>
+        <translation>Gestor de descàrregues</translation>
     </message>
 </context>
 <context>

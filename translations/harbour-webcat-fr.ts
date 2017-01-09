@@ -400,14 +400,6 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
         <translation>Historique</translation>
     </message>
     <message>
-        <source>New Tab</source>
-        <translation>Nouvel onglet</translation>
-    </message>
-    <message>
-        <source>Close Tab</source>
-        <translation>Fermer l&apos;onglet</translation>
-    </message>
-    <message>
         <source>Swipe up to open new window</source>
         <translation>Balayer vers le haut pour ouvrir une nouvelle fenêtre</translation>
     </message>
@@ -426,6 +418,10 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
     <message>
         <source>Split WebView</source>
         <translation>Vue Web partagée</translation>
+    </message>
+    <message>
+        <source>Download Manager</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
