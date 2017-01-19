@@ -421,7 +421,7 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
     </message>
     <message>
         <source>Download Manager</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Gérer le téléchargement</translation>
     </message>
 </context>
 <context>
@@ -448,10 +448,6 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
     <message>
         <source>About </source>
         <translation>A propos</translation>
-    </message>
-    <message>
-        <source>Download Manager</source>
-        <translation>Gestionnaire de téléchargements</translation>
     </message>
     <message>
         <source>Load Defaults</source>

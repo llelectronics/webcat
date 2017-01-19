@@ -451,10 +451,6 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
         <translation>Over</translation>
     </message>
     <message>
-        <source>Download Manager</source>
-        <translation>Downloadbeheerder</translation>
-    </message>
-    <message>
         <source>Load Defaults</source>
         <translation>Laad standaard waarden</translation>
     </message>

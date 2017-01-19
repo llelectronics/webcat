@@ -450,10 +450,6 @@ Wenn Sie sich unsicher sind lehnen sie das Zertifikat ab. Dies führt unter Umst
         <translation>Über </translation>
     </message>
     <message>
-        <source>Download Manager</source>
-        <translation>Download Manager</translation>
-    </message>
-    <message>
         <source>Load Defaults</source>
         <translation>Standardwerte laden</translation>
     </message>

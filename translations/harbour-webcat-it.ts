@@ -451,10 +451,6 @@ Se non sei sicuro, rifiuta il certificato. Ma questo può impedire il caricament
         <translation>Crediti</translation>
     </message>
     <message>
-        <source>Download Manager</source>
-        <translation>Gestore download</translation>
-    </message>
-    <message>
         <source>Load Defaults</source>
         <translation>Ripristina predefiniti</translation>
     </message>

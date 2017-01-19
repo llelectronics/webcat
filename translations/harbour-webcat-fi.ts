@@ -449,10 +449,6 @@ If you are unsure reject the certificate. That might lead to a non loading websi
         <translation>Tietoja</translation>
     </message>
     <message>
-        <source>Download Manager</source>
-        <translation>Latausten hallinta</translation>
-    </message>
-    <message>
         <source>Load Defaults</source>
         <translation>Lataa oletusarvot</translation>
     </message>

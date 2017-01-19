@@ -451,10 +451,6 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
         <translation>Acerca de </translation>
     </message>
     <message>
-        <source>Download Manager</source>
-        <translation>Administrador de descargas</translation>
-    </message>
-    <message>
         <source>Load Defaults</source>
         <translation>Restaurar valores por defecto</translation>
     </message>

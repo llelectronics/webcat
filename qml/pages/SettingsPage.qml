@@ -330,7 +330,10 @@ Dialog {
             TextField {
                 id: agentString
                 anchors.horizontalCenter: parent.horizontalCenter
-                readOnly: uAgentTitle !== qsTr("Custom") ? true : false
+                readOnly: {
+                    if ((uAgentTitle !== "Custom") || userAgentCombo.value.toString() !== "Custom") return true
+                    else return false
+                }
                 width: parent.width - 20
                 text: uAgent
             }

@@ -447,10 +447,6 @@ If you are unsure reject the certificate. That might lead to a non loading websi
         <translation>O aplikaci</translation>
     </message>
     <message>
-        <source>Download Manager</source>
-        <translation>Správce stahování</translation>
-    </message>
-    <message>
         <source>Load Defaults</source>
         <translation>Načíst výchozí</translation>
     </message>

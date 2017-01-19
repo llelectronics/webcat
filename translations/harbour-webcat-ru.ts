@@ -447,10 +447,6 @@ If you are unsure reject the certificate. That might lead to a non loading websi
         <translation>О приложении</translation>
     </message>
     <message>
-        <source>Download Manager</source>
-        <translation>Менеджер загрузки</translation>
-    </message>
-    <message>
         <source>Load Defaults</source>
         <translation>Загрузка значений по умолчанию</translation>
     </message>

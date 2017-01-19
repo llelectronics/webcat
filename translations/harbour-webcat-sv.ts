@@ -451,10 +451,6 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
         <translation>Om </translation>
     </message>
     <message>
-        <source>Download Manager</source>
-        <translation>Nedladdningshanterare</translation>
-    </message>
-    <message>
         <source>Load Defaults</source>
         <translation>Läs in standard</translation>
     </message>

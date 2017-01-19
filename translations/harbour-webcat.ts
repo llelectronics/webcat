@@ -447,10 +447,6 @@ If you are unsure reject the certificate. That might lead to a non loading websi
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Download Manager</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Load Defaults</source>
         <translation type="unfinished"></translation>
     </message>

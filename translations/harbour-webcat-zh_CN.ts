@@ -418,7 +418,7 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Download Manager</source>
-        <translation type="unfinished">下载管理器</translation>
+        <translation>下载管理器</translation>
     </message>
 </context>
 <context>
@@ -445,10 +445,6 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     <message>
         <source>About </source>
         <translation>关于 </translation>
-    </message>
-    <message>
-        <source>Download Manager</source>
-        <translation>下载管理器</translation>
     </message>
     <message>
         <source>Load Defaults</source>
