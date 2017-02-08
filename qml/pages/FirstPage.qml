@@ -204,6 +204,23 @@ Page {
             return false;
         }
 
+        // Bugfix for Qt 5.6 (Somehow the definitions at the top aren't updated on changed in the ListModel anymore)
+        // Ideally this should not interfere with prior releases
+        onDataChanged:  {
+            // Assume sets only come from youtube
+            yt720p = mediaList.count > 0 && mediaYt && mediaList.get(0).yt720p ? mediaList.get(0).yt720p : ""
+            yt480p = mediaList.count > 0 && mediaYt && mediaList.get(0).yt480p ? mediaList.get(0).yt480p : ""
+            yt360p = mediaList.count > 0 && mediaYt && mediaList.get(0).yt360p ? mediaList.get(0).yt360p : ""
+            yt240p = mediaList.count > 0 && mediaYt && mediaList.get(0).yt240p ? mediaList.get(0).yt240p : ""
+            mediaDownloadRecTitle.text = mediaList.count > 0 && mediaYt && mediaList.get(0).mediaTitle ? mediaList.get(0).mediaTitle : ""
+            //console.debug("MediaTitle = " + mediaList.get(0).mediaTitle)
+        }
+        onRowsInserted: {
+            mediaDownloadRecTitle.text = mediaList.get(0).mediaTitle
+            //console.debug("MediaTitle = " + mediaList.get(0).mediaTitle)
+        }
+
+
         // Example data
 //        ListElement {
 //            mediaTitle: "foobar"
@@ -1458,7 +1475,7 @@ Page {
         onMediaUrlChanged: {
             //webview.checkYoutubeURL(mediaUrl);
             if (mediaYt && mediaUrl != "") {
-                //console.debug("[FirstPage.qml] Youtube Media URL: " + mediaUrl)
+                //console.debug("[FirstPage.qml] Youtube Media URL: " + mediaUrl + " Counter = " + counter)
                 counter = counter + 1
                 mediaList.insert(counter, {"mediaTitle": mediaUrl, "url": mediaUrl});
                 YT.getYoutubeDirectStream(mediaUrl.toString(),page, counter);
