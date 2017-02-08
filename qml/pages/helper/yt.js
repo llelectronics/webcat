@@ -163,6 +163,7 @@ function getYoutubeStream(youtube_id, firstPage, listId) {
                         firstPage.mediaList.set(listId,{"yt720p": url += "&signature=" + sig});
                         url += "&signature=" + sig;
                         found = true;
+                        //console.debug("[yt.js] Found 720p video with listId: " + listId)
                         //break;
                     }
                     // If above fails try to get 480p video stream
@@ -171,6 +172,7 @@ function getYoutubeStream(youtube_id, firstPage, listId) {
                         firstPage.mediaList.set(listId,{"yt480p": url += "&signature=" + sig});
                         if (found == false) url += "&signature=" + sig;
                         found = true;
+                        //console.debug("[yt.js] Found 480p video")
                         //break;
                     }
                     // If above fails try to get 360p video stream
@@ -179,6 +181,7 @@ function getYoutubeStream(youtube_id, firstPage, listId) {
                         firstPage.mediaList.set(listId,{"yt360p": url += "&signature=" + sig});
                         if (found == false) url += "&signature=" + sig;
                         found = true;
+                        //console.debug("[yt.js] Found 360p video")
                         //break;
                     }
                     // If above fails try to get 240p video stream
@@ -187,6 +190,7 @@ function getYoutubeStream(youtube_id, firstPage, listId) {
                         firstPage.mediaList.set(listId,{"yt240p": url += "&signature=" + sig});
                         if (found == false) url += "&signature=" + sig;
                         found = true;
+                        //console.debug("[yt.js] Found 240p video")
                         //break;
                     }
                 }
