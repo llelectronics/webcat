@@ -334,6 +334,22 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
         <source>Deleting </source>
         <translation>Tar bort </translation>
     </message>
+    <message>
+        <source>Paste</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error pasting file </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cut</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation type="unfinished">Kopiera</translation>
+    </message>
 </context>
 <context>
     <name>ProxySettingsPage</name>

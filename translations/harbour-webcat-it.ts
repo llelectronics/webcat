@@ -334,6 +334,22 @@ Se non sei sicuro, rifiuta il certificato. Ma questo può impedire il caricament
         <source>Deleting </source>
         <translation>Eliminazione</translation>
     </message>
+    <message>
+        <source>Paste</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error pasting file </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cut</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation type="unfinished">Copia</translation>
+    </message>
 </context>
 <context>
     <name>ProxySettingsPage</name>

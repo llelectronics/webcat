@@ -330,6 +330,22 @@ If you are unsure reject the certificate. That might lead to a non loading websi
         <source>Deleting </source>
         <translation>正在删除</translation>
     </message>
+    <message>
+        <source>Paste</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error pasting file </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cut</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation type="unfinished">复制</translation>
+    </message>
 </context>
 <context>
     <name>ProxySettingsPage</name>

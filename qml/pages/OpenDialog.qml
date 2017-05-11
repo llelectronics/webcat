@@ -86,6 +86,12 @@ Page {
         return fileName;
     }
 
+    function findFullPath(url) {
+        url = url.toString();
+        var fullPath = url.substring(url.lastIndexOf('://') + 3);
+        return fullPath;
+    }
+
     SilicaListView {
         id: view
         model: fileModel
@@ -93,6 +99,7 @@ Page {
 
         header: PageHeader {
             title: findBaseName((fileModel.folder).toString())
+            description: findFullPath(fileModel.folder.toString())
         }
 
         PullDownMenu {
@@ -112,6 +119,30 @@ Page {
                 text: "Show SDCard"
                 onClicked: fileModel.folder = _fm.getRoot() + "/media/sdcard";
             }
+            MenuItem {
+                id: pasteMenuEntry
+                visible: { if (_fm.sourceUrl != "" && _fm.sourceUrl != undefined) return true;
+                    else return false
+                }
+                text: qsTr("Paste") + "(" + findBaseName(_fm.sourceUrl) + ")"
+                onClicked: {
+                    var err = false;
+                    if (_fm.moveMode) {
+                        console.debug("Moving " + _fm.sourceUrl + " to " + findFullPath(fileModel.folder)+ "/" + findBaseName(_fm.sourceUrl));
+                        if (!_fm.moveFile(_fm.sourceUrl,findFullPath(fileModel.folder) + "/" + findBaseName(_fm.sourceUrl))) err = true;
+                    }
+                    else {
+                        //console.debug("Copy " + _fm.sourceUrl + " to " + findFullPath(fileModel.folder)+ "/" + findBaseName(_fm.sourceUrl));
+                        if (!_fm.copyFile(_fm.sourceUrl,findFullPath(fileModel.folder) + "/" + findBaseName(_fm.sourceUrl))) err = true;
+                    }
+                    if (err) {
+                        var message = qsTr("Error pasting file ") + _fm.sourceUrl
+                        console.debug(message);
+                        infoBanner.showText(message)
+                    }
+                    else _fm.sourceUrl = "";
+                }
+            }
         }
 
         delegate: BackgroundItem {
@@ -124,6 +155,16 @@ Page {
             function remove() {
                 var removal = removalComponent.createObject(bgdelegate)
                 removal.execute(delegate,qsTr("Deleting ") + fileName, function() { _fm.remove(filePath); })
+            }
+
+            function copy() {
+                _fm.sourceUrl = filePath
+                //console.debug(_fm.sourceUrl)
+            }
+
+            function move() {
+                _fm.moveMode = true;
+                copy();
             }
 
             ListItem {
@@ -228,6 +269,18 @@ Page {
                 id: myMenu
                 ContextMenu {
                     MenuItem {
+                        text: qsTr("Cut")
+                        onClicked: {
+                            bgdelegate.move();
+                        }
+                    }
+                    MenuItem {
+                        text: qsTr("Copy")
+                        onClicked: {
+                            bgdelegate.copy();
+                        }
+                    }
+                    MenuItem {
                         text: qsTr("Delete")
                         onClicked: {
                             bgdelegate.remove();
@@ -238,6 +291,15 @@ Page {
 
         }
         VerticalScrollDecorator { flickable: view }
+    }
+    Connections {
+        target: _fm
+        onSourceUrlChanged: {
+            if (_fm.sourceUrl != "" && _fm.sourceUrl != undefined) {
+                pasteMenuEntry.visible = true;
+            }
+            else pasteMenuEntry.visible = false;
+        }
     }
 
 }

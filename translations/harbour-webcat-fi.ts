@@ -332,6 +332,22 @@ If you are unsure reject the certificate. That might lead to a non loading websi
         <source>Deleting </source>
         <translation>Poistaa...</translation>
     </message>
+    <message>
+        <source>Paste</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error pasting file </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cut</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation type="unfinished">Kopioi</translation>
+    </message>
 </context>
 <context>
     <name>ProxySettingsPage</name>

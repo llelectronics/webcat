@@ -333,6 +333,22 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
         <source>Deleting </source>
         <translation>Suppression</translation>
     </message>
+    <message>
+        <source>Paste</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error pasting file </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cut</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation type="unfinished">Copier</translation>
+    </message>
 </context>
 <context>
     <name>ProxySettingsPage</name>

@@ -334,6 +334,22 @@ En cas de dubte, refuseu el certificat malgrat que això pot provocar que no es 
         <source>Deleting </source>
         <translation>S&apos;està eliminant</translation>
     </message>
+    <message>
+        <source>Paste</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error pasting file </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cut</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation type="unfinished">Copia</translation>
+    </message>
 </context>
 <context>
     <name>ProxySettingsPage</name>

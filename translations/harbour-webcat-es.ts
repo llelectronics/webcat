@@ -334,6 +334,22 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
         <source>Deleting </source>
         <translation>Borrando</translation>
     </message>
+    <message>
+        <source>Paste</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error pasting file </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cut</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation type="unfinished">Copiar</translation>
+    </message>
 </context>
 <context>
     <name>ProxySettingsPage</name>
