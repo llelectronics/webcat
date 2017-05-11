@@ -104,19 +104,19 @@ Page {
 
         PullDownMenu {
             MenuItem {
-                text: "Show Filesystem Root"
+                text: qsTr("Show Filesystem Root")
                 onClicked: fileModel.folder = _fm.getRoot();
             }
             MenuItem {
-                text: "Show Home"
+                text: qsTr("Show Home")
                 onClicked: fileModel.folder = _fm.getHome();
             }
             MenuItem {
-                text: "Show Android SDCard"
+                text: qsTr("Show Android SDCard")
                 onClicked: fileModel.folder = _fm.getRoot() + "/data/sdcard";
             }
             MenuItem {
-                text: "Show SDCard"
+                text: qsTr("Show SDCard")
                 onClicked: fileModel.folder = _fm.getRoot() + "/media/sdcard";
             }
             MenuItem {
@@ -219,7 +219,7 @@ Page {
                     anchors.left: fileIcon.right
                     anchors.leftMargin: Theme.paddingLarge
                     anchors.top: fileLabel.bottom
-                    text: fileIsDir ? "directory" : humanSize(fileSize) + ", " + fileModified
+                    text: fileIsDir ? qsTr("directory") : humanSize(fileSize) + ", " + fileModified
                     color: Theme.secondaryColor
                     width: parent.width - fileIcon.width - (Theme.paddingLarge + Theme.paddingSmall + Theme.paddingLarge)
                     truncationMode: TruncationMode.Fade

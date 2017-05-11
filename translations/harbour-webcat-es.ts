@@ -350,6 +350,26 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
         <source>Copy</source>
         <translation type="unfinished">Copiar</translation>
     </message>
+    <message>
+        <source>Show Filesystem Root</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show Home</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show Android SDCard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show SDCard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>directory</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ProxySettingsPage</name>

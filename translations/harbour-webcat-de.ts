@@ -349,6 +349,26 @@ Wenn Sie sich unsicher sind lehnen sie das Zertifikat ab. Dies führt unter Umst
         <source>Copy</source>
         <translation>Kopieren</translation>
     </message>
+    <message>
+        <source>Show Filesystem Root</source>
+        <translation>Wurzelverzeichnis anzeigen</translation>
+    </message>
+    <message>
+        <source>Show Home</source>
+        <translation>Homeverzeichnis anzeigen</translation>
+    </message>
+    <message>
+        <source>Show Android SDCard</source>
+        <translation>Android SDCard anzeigen</translation>
+    </message>
+    <message>
+        <source>Show SDCard</source>
+        <translation>SDCard anzeigen</translation>
+    </message>
+    <message>
+        <source>directory</source>
+        <translation>Ordner</translation>
+    </message>
 </context>
 <context>
     <name>ProxySettingsPage</name>
