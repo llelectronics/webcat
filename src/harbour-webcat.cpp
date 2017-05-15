@@ -49,6 +49,7 @@
 #include <QGuiApplication>
 #include <QQmlContext>
 #include <QDBusConnection>
+#include <QtNetwork>
 
 int main(int argc, char *argv[])
 {

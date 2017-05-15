@@ -401,6 +401,22 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
         <source>Please restart Webcat</source>
         <translation>Starta om Webcat</translation>
     </message>
+    <message>
+        <source>Use Socks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Socket Secure (SOCKS) is an Internet protocol that exchanges network packets between a client and server through a proxy server.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use Tor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tor is free software for enabling anonymous communication. This will setup the proxy automatically to use tor. Tor service must be running on the system for this to work.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SelectUrl</name>

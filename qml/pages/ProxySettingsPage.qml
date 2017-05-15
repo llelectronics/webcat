@@ -58,6 +58,7 @@ Dialog
 
             Row
             {
+                id: row
                 width: parent.width
                 visible: !tsproxydisabled.checked
                 spacing: Theme.paddingSmall
@@ -80,6 +81,48 @@ Dialog
                     inputMethodHints: Qt.ImhDigitsOnly
                     text: ((proxymanager.port > 0) ? proxymanager.port.toString() : "")
                 }
+            }
+            TextSwitch
+            {
+                id: socksSwitch
+                text: qsTr("Use Socks")
+                description: qsTr("Socket Secure (SOCKS) is an Internet protocol that exchanges network packets between a client and server through a proxy server.")
+                checked: proxymanager.isSocks5
+                onClicked: proxymanager.isSocks5 = !proxymanager.isSocks5
+                visible: !tsproxydisabled.checked
+            }
+            TextSwitch
+            {
+                id: torSwitch
+                text: qsTr("Use Tor")
+                description: qsTr("Tor is free software for enabling anonymous communication. This will setup the proxy automatically to use tor. Tor service must be running on the system for this to work.")
+                checked: {
+                    if (tfhost.text == "127.0.0.1" && tfport.text == "9050" && socksSwitch.checked == true) {
+                        tfhost.readOnly = true
+                        tfport.readOnly = true
+                        socksSwitch.enabled = false
+                        return true
+                    } else return false
+                }
+                onClicked: {
+                    if (checked) {
+                        proxymanager.isSocks5 = true
+                        tfhost.text = "127.0.0.1"
+                        tfport.text = "9050"
+                        tfhost.readOnly = true
+                        tfport.readOnly = true
+                        socksSwitch.enabled = false
+                    }
+                    else {
+                        proxymanager.isSocks5 = false
+                        tfhost.text = ""
+                        tfport.text = ""
+                        tfhost.readOnly = false
+                        tfport.readOnly = false
+                        socksSwitch.enabled = true
+                    }
+                }
+                visible: !tsproxydisabled.checked
             }
         }
     }

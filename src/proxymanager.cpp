@@ -18,6 +18,11 @@ int ProxyManager::port() const
     return this->_port;
 }
 
+bool ProxyManager::isSocks5() const
+{
+    return this->_socks5;
+}
+
 void ProxyManager::setHost(const QString &host)
 {
     if(this->_host == host)
@@ -36,6 +41,12 @@ void ProxyManager::setPort(int port)
     emit portChanged();
 }
 
+void ProxyManager::setSocks5(bool socks5)
+{
+    this->_socks5 = socks5;
+    emit socks5Changed();
+}
+
 bool ProxyManager::load()
 {
     if(!QFile::exists(this->_proxyfile))
@@ -47,7 +58,14 @@ bool ProxyManager::load()
         return false;
 
     bool res = false;
-    QStringList settings = QString::fromUtf8(file.readAll()).simplified().split(":");
+    QStringList settings = QString::fromUtf8(file.readLine()).simplified().split(":");
+
+    // Search for socks5
+    const QString content = file.readAll();
+    if (content.contains("socks5")) {
+        _socks5 = true;
+        emit socks5Changed();
+    }
 
     if(settings.length() == 2)
     {
@@ -69,12 +87,15 @@ void ProxyManager::save()
     QFile file(this->_proxyfile);
     file.open(QFile::WriteOnly);
     file.write(QString("%1:%2").arg(this->_host, QString::number(this->_port)).simplified().toUtf8());
+    if (this->_socks5) file.write("\nsocks5");
     file.close();
 }
 
 void ProxyManager::set()
 {
-    QByteArray envvar = QString("http://%1:%2").arg(this->_host, QString::number(this->_port)).toUtf8();
+    QByteArray envvar;
+    if (!this->_socks5) envvar = QString("http://%1:%2").arg(this->_host, QString::number(this->_port)).toUtf8();
+    else envvar = QString("socks5://%1:%2").arg(this->_host, QString::number(this->_port)).toUtf8();
 
     qputenv("http_proxy", envvar);
     qputenv("https_proxy", envvar);
