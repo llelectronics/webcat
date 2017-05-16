@@ -114,11 +114,11 @@ Se non sei sicuro, rifiuta il certificato. Ma questo può impedire il caricament
     <name>DownloadManager</name>
     <message>
         <source>Add Download</source>
-        <translation>Aggiungi download</translation>
+        <translation>Aggiungi scaricamento</translation>
     </message>
     <message>
         <source>Download Manager</source>
-        <translation>Gestore download</translation>
+        <translation>Gestore Scaricamenti</translation>
     </message>
     <message>
         <source>Enter URL to download</source>
@@ -134,7 +134,7 @@ Se non sei sicuro, rifiuta il certificato. Ma questo può impedire il caricament
     </message>
     <message>
         <source>Active Downloads: </source>
-        <translation>Download attivi</translation>
+        <translation>Scaricamenti attivi:</translation>
     </message>
     <message>
         <source>Status</source>
@@ -146,7 +146,7 @@ Se non sei sicuro, rifiuta il certificato. Ma questo può impedire il caricament
     </message>
     <message>
         <source>Download Status</source>
-        <translation>Stato download</translation>
+        <translation>Stato Scaricamenti</translation>
     </message>
     <message>
         <source>Download Errors</source>
@@ -158,11 +158,11 @@ Se non sei sicuro, rifiuta il certificato. Ma questo può impedire il caricament
     </message>
     <message>
         <source>Show Downloadfolder</source>
-        <translation>Mostra cartella dei download</translation>
+        <translation>Mostra cartella degli scaricamenti</translation>
     </message>
     <message>
         <source>Clear Downloads</source>
-        <translation>Cancella download</translation>
+        <translation>Cancella scaricamento</translation>
     </message>
     <message>
         <source>Deleting </source>
@@ -336,39 +336,39 @@ Se non sei sicuro, rifiuta il certificato. Ma questo può impedire il caricament
     </message>
     <message>
         <source>Paste</source>
-        <translation type="unfinished"></translation>
+        <translation>Incolla</translation>
     </message>
     <message>
         <source>Error pasting file </source>
-        <translation type="unfinished"></translation>
+        <translation>Errore incollando il file</translation>
     </message>
     <message>
         <source>Cut</source>
-        <translation type="unfinished"></translation>
+        <translation>Taglia</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation type="unfinished">Copia</translation>
+        <translation>Copia</translation>
     </message>
     <message>
         <source>Show Filesystem Root</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostra la Radice del filesystem</translation>
     </message>
     <message>
         <source>Show Home</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostra la Home</translation>
     </message>
     <message>
         <source>Show Android SDCard</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostra la SDCard di Android</translation>
     </message>
     <message>
         <source>Show SDCard</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostra la SDCard</translation>
     </message>
     <message>
         <source>directory</source>
-        <translation type="unfinished"></translation>
+        <translation>cartella</translation>
     </message>
 </context>
 <context>
@@ -403,19 +403,19 @@ Se non sei sicuro, rifiuta il certificato. Ma questo può impedire il caricament
     </message>
     <message>
         <source>Use Socks</source>
-        <translation type="unfinished"></translation>
+        <translation>Usa Socks</translation>
     </message>
     <message>
         <source>Socket Secure (SOCKS) is an Internet protocol that exchanges network packets between a client and server through a proxy server.</source>
-        <translation type="unfinished"></translation>
+        <translation>Socket Secure (SOCKS) è un protocollo internet per lo scambio di pacchetti di rete tra client e server attraverso un server proxy.</translation>
     </message>
     <message>
         <source>Use Tor</source>
-        <translation type="unfinished"></translation>
+        <translation>Usa Tor</translation>
     </message>
     <message>
         <source>Tor is free software for enabling anonymous communication. This will setup the proxy automatically to use tor. Tor service must be running on the system for this to work.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor è un programma libero che permette comunicazioni anonime. Quest&apos;impostazione abiliterà automaticamente il proxy all&apos;uso di tor. Per funzionare è necessario che tor sia già in esecuzione sul sistema.</translation>
     </message>
 </context>
 <context>
@@ -474,7 +474,7 @@ Se non sei sicuro, rifiuta il certificato. Ma questo può impedire il caricament
     </message>
     <message>
         <source>Download Manager</source>
-        <translation>Gestore download</translation>
+        <translation>Gestore Scaricamenti</translation>
     </message>
 </context>
 <context>

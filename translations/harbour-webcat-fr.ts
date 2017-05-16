@@ -185,11 +185,11 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
     </message>
     <message>
         <source>Resume</source>
-        <translation type="unfinished"></translation>
+        <translation>Reprendre</translation>
     </message>
     <message>
         <source>Pause</source>
-        <translation type="unfinished"></translation>
+        <translation>Pause</translation>
     </message>
 </context>
 <context>
@@ -335,39 +335,39 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
     </message>
     <message>
         <source>Paste</source>
-        <translation type="unfinished"></translation>
+        <translation>Coller</translation>
     </message>
     <message>
         <source>Error pasting file </source>
-        <translation type="unfinished"></translation>
+        <translation>Erreur lors du collage du fichier</translation>
     </message>
     <message>
         <source>Cut</source>
-        <translation type="unfinished"></translation>
+        <translation>Couper</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation type="unfinished">Copier</translation>
+        <translation>Copier</translation>
     </message>
     <message>
         <source>Show Filesystem Root</source>
-        <translation type="unfinished"></translation>
+        <translation>Afficher les fichiers système Root</translation>
     </message>
     <message>
         <source>Show Home</source>
-        <translation type="unfinished"></translation>
+        <translation>Afficher l&apos;Accueil</translation>
     </message>
     <message>
         <source>Show Android SDCard</source>
-        <translation type="unfinished"></translation>
+        <translation>Afficher la carte SD Android</translation>
     </message>
     <message>
         <source>Show SDCard</source>
-        <translation type="unfinished"></translation>
+        <translation>Afficher la carte SD</translation>
     </message>
     <message>
         <source>directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Répertoire</translation>
     </message>
 </context>
 <context>
@@ -473,7 +473,7 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
     </message>
     <message>
         <source>Download Manager</source>
-        <translation type="unfinished">Gérer le téléchargement</translation>
+        <translation>Gestionnaire de téléchargement</translation>
     </message>
 </context>
 <context>

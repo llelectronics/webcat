@@ -186,11 +186,11 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
     </message>
     <message>
         <source>Resume</source>
-        <translation type="unfinished"></translation>
+        <translation>Hervatten</translation>
     </message>
     <message>
         <source>Pause</source>
-        <translation type="unfinished"></translation>
+        <translation>Pauzeren</translation>
     </message>
 </context>
 <context>
@@ -336,39 +336,39 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
     </message>
     <message>
         <source>Paste</source>
-        <translation type="unfinished"></translation>
+        <translation>Plakken</translation>
     </message>
     <message>
         <source>Error pasting file </source>
-        <translation type="unfinished"></translation>
+        <translation>Fout bij plakken van bestand</translation>
     </message>
     <message>
         <source>Cut</source>
-        <translation type="unfinished"></translation>
+        <translation>Knippen</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation type="unfinished">Kopiëren</translation>
+        <translation>Kopiëren</translation>
     </message>
     <message>
         <source>Show Filesystem Root</source>
-        <translation type="unfinished"></translation>
+        <translation>Toon root</translation>
     </message>
     <message>
         <source>Show Home</source>
-        <translation type="unfinished"></translation>
+        <translation>Toon persoonlijke map</translation>
     </message>
     <message>
         <source>Show Android SDCard</source>
-        <translation type="unfinished"></translation>
+        <translation>Toon Android-SD-kaart</translation>
     </message>
     <message>
         <source>Show SDCard</source>
-        <translation type="unfinished"></translation>
+        <translation>Toon SD-kaart</translation>
     </message>
     <message>
         <source>directory</source>
-        <translation type="unfinished"></translation>
+        <translation>map</translation>
     </message>
 </context>
 <context>
@@ -403,19 +403,19 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
     </message>
     <message>
         <source>Use Socks</source>
-        <translation type="unfinished"></translation>
+        <translation>Socks gebruiken</translation>
     </message>
     <message>
         <source>Socket Secure (SOCKS) is an Internet protocol that exchanges network packets between a client and server through a proxy server.</source>
-        <translation type="unfinished"></translation>
+        <translation>Socket Secure (SOCKS) is een internetprotocol dat netwerkpakketten uitwisselt tussen een cliënt en een server via een proxyserver.</translation>
     </message>
     <message>
         <source>Use Tor</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor gebruiken</translation>
     </message>
     <message>
         <source>Tor is free software for enabling anonymous communication. This will setup the proxy automatically to use tor. Tor service must be running on the system for this to work.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor is vrije software voor anonieme communicatie. Dit zal de proxy om Tor te gebruiken automatisch instellen. Tor moet op dit systeem draaien opdat dit kan werken.</translation>
     </message>
 </context>
 <context>

@@ -336,39 +336,39 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
     </message>
     <message>
         <source>Paste</source>
-        <translation type="unfinished"></translation>
+        <translation>Klistra in</translation>
     </message>
     <message>
         <source>Error pasting file </source>
-        <translation type="unfinished"></translation>
+        <translation>Kunde inte klistra in filen</translation>
     </message>
     <message>
         <source>Cut</source>
-        <translation type="unfinished"></translation>
+        <translation>Klipp ut</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation type="unfinished">Kopiera</translation>
+        <translation>Kopiera</translation>
     </message>
     <message>
         <source>Show Filesystem Root</source>
-        <translation type="unfinished"></translation>
+        <translation>Visa filsystemets rotmapp</translation>
     </message>
     <message>
         <source>Show Home</source>
-        <translation type="unfinished"></translation>
+        <translation>Vesa Hem</translation>
     </message>
     <message>
         <source>Show Android SDCard</source>
-        <translation type="unfinished"></translation>
+        <translation>Visa Android SD-kort</translation>
     </message>
     <message>
         <source>Show SDCard</source>
-        <translation type="unfinished"></translation>
+        <translation>Visa SD-kort</translation>
     </message>
     <message>
         <source>directory</source>
-        <translation type="unfinished"></translation>
+        <translation>mapp</translation>
     </message>
 </context>
 <context>
@@ -403,19 +403,19 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
     </message>
     <message>
         <source>Use Socks</source>
-        <translation type="unfinished"></translation>
+        <translation>Använd Socks</translation>
     </message>
     <message>
         <source>Socket Secure (SOCKS) is an Internet protocol that exchanges network packets between a client and server through a proxy server.</source>
-        <translation type="unfinished"></translation>
+        <translation>Socket Secure (SOCKS) är ett Internet-protokoll som utväxlar nätverkspaket mellan en klient och server, genom en proxyserver.</translation>
     </message>
     <message>
         <source>Use Tor</source>
-        <translation type="unfinished"></translation>
+        <translation>Använd TOR</translation>
     </message>
     <message>
         <source>Tor is free software for enabling anonymous communication. This will setup the proxy automatically to use tor. Tor service must be running on the system for this to work.</source>
-        <translation type="unfinished"></translation>
+        <translation>TOR är fri mjukvara för anonym kommunikation. Detta sätter automatiskt upp en proxy för att använda TOR. TOR-tjänsten måste vara aktiv i systemet för att detta skall fungera.</translation>
     </message>
 </context>
 <context>
@@ -474,7 +474,7 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
     </message>
     <message>
         <source>Download Manager</source>
-        <translation>Nedladdningshanterare</translation>
+        <translation>Nerladdningshanterare</translation>
     </message>
 </context>
 <context>
