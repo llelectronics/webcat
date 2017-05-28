@@ -64,15 +64,33 @@ Page
                 BackgroundItem {
                     id: contentItem
                     Label {
+                        id: btitle
                         text: title
                         anchors.verticalCenter: parent.verticalCenter
                         anchors.left: parent.left
                         anchors.leftMargin: Theme.paddingMedium
                         anchors.right: parent.right
                         anchors.rightMargin: Theme.paddingMedium
+                        anchors.top: parent.top
+                        anchors.topMargin: Theme.paddingMedium
                         color: contentItem.down || menuOpen ? Theme.highlightColor : Theme.primaryColor
                         truncationMode: TruncationMode.Fade
                     }
+                    Label {
+                        id: desc
+                        text: url
+                        font.pixelSize: Theme.fontSizeTiny
+                        color: Theme.secondaryColor
+                        anchors.top: btitle.bottom
+                        anchors.topMargin: -Theme.paddingMedium
+                        anchors.left: parent.left
+                        anchors.leftMargin: Theme.paddingMedium
+                        anchors.right: parent.right
+                        anchors.rightMargin: Theme.paddingMedium
+                        truncationMode: TruncationMode.Fade
+                        visible: contextMenu ? contextMenu.active : false
+                    }
+
                     onClicked: {
                         siteURL = url;
                         dataContainer.url = siteURL;
