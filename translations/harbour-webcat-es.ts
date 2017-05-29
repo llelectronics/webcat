@@ -174,23 +174,23 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>Current operation</source>
-        <translation type="unfinished"></translation>
+        <translation>Operación actual</translation>
     </message>
     <message>
         <source>Details</source>
-        <translation type="unfinished"></translation>
+        <translation>Detalles</translation>
     </message>
     <message>
         <source>Download list</source>
-        <translation type="unfinished"></translation>
+        <translation>Descargar lista</translation>
     </message>
     <message>
         <source>Resume</source>
-        <translation type="unfinished"></translation>
+        <translation>Resumir</translation>
     </message>
     <message>
         <source>Pause</source>
-        <translation type="unfinished"></translation>
+        <translation>Pausa</translation>
     </message>
 </context>
 <context>
@@ -336,39 +336,39 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>Paste</source>
-        <translation type="unfinished"></translation>
+        <translation>Pegar</translation>
     </message>
     <message>
-        <source>Error pasting file </source>
-        <translation type="unfinished"></translation>
+        <source>Error pasting file</source>
+        <translation>Error al pegar archivo</translation>
     </message>
     <message>
         <source>Cut</source>
-        <translation type="unfinished"></translation>
+        <translation>Cortar</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation type="unfinished">Copiar</translation>
+        <translation>Copiar</translation>
     </message>
     <message>
         <source>Show Filesystem Root</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar raíz del sistema de archivos</translation>
     </message>
     <message>
         <source>Show Home</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar escritorio</translation>
     </message>
     <message>
         <source>Show Android SDCard</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar tarjeta SD de Android</translation>
     </message>
     <message>
         <source>Show SDCard</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar tarjeta SD</translation>
     </message>
     <message>
         <source>directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Directorio</translation>
     </message>
 </context>
 <context>
@@ -391,7 +391,7 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>Host or Ip Address</source>
-        <translation>Host o dirección IP</translation>
+        <translation>Anfitrión o dirección IP</translation>
     </message>
     <message>
         <source>Port</source>
@@ -403,19 +403,19 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>Use Socks</source>
-        <translation type="unfinished"></translation>
+        <translation>Usar Socks</translation>
     </message>
     <message>
         <source>Socket Secure (SOCKS) is an Internet protocol that exchanges network packets between a client and server through a proxy server.</source>
-        <translation type="unfinished"></translation>
+        <translation>Socket Secure (SOCKS) un protocolo de Internet que intercambia paquetes de red entre cliente y servidor a través de un servidor proxy.</translation>
     </message>
     <message>
         <source>Use Tor</source>
-        <translation type="unfinished"></translation>
+        <translation>Usar tor</translation>
     </message>
     <message>
         <source>Tor is free software for enabling anonymous communication. This will setup the proxy automatically to use tor. Tor service must be running on the system for this to work.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor es software libre para permitir la comunicación anónima. Esto configurará el proxy automáticamente para usar tor. Tor debe estar ejecutándose en el sistema para que funcione.</translation>
     </message>
 </context>
 <context>
