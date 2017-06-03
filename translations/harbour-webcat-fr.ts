@@ -314,7 +314,7 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
     </message>
     <message>
         <source>Download Manager</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Gérer le téléchargement</translation>
     </message>
 </context>
 <context>
@@ -506,10 +506,6 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
         <translation>Vue Web partagée</translation>
     </message>
     <message>
-        <source>Download Manager</source>
-        <translation>Gestionnaire de téléchargement</translation>
-    </message>
-    <message>
         <source>Tabs</source>
         <translation>Onglets</translation>
     </message>
@@ -519,6 +515,14 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
     <message>
         <source>Copy</source>
         <translation>Copier</translation>
+    </message>
+    <message>
+        <source>Show HTML</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hide HTML</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

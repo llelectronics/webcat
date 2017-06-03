@@ -507,10 +507,6 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
         <translation>Gesplitste WebView</translation>
     </message>
     <message>
-        <source>Download Manager</source>
-        <translation>Downloadbeheerder</translation>
-    </message>
-    <message>
         <source>Tabs</source>
         <translation>Tabbladen</translation>
     </message>
@@ -520,6 +516,14 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
     <message>
         <source>Copy</source>
         <translation>Kopiëren</translation>
+    </message>
+    <message>
+        <source>Show HTML</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hide HTML</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

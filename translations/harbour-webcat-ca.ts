@@ -507,10 +507,6 @@ En cas de dubte, refuseu el certificat malgrat que això pot provocar que no es 
         <translation>Divideix  WebView</translation>
     </message>
     <message>
-        <source>Download Manager</source>
-        <translation>Gestor de descàrregues</translation>
-    </message>
-    <message>
         <source>Tabs</source>
         <translation>Pestanyes</translation>
     </message>
@@ -520,6 +516,14 @@ En cas de dubte, refuseu el certificat malgrat que això pot provocar que no es 
     <message>
         <source>Copy</source>
         <translation>Copia</translation>
+    </message>
+    <message>
+        <source>Show HTML</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hide HTML</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

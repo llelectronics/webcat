@@ -6,7 +6,9 @@ Dialog {
     allowedOrientations: mainWindow.orient
 
     //property string editText
-    property alias editText: editTxt.text
+    property var editText
+    property var htmlText
+    property bool showHtml: false
 
     onAccepted: {
         if(!editTxt.selectedText.length || (!editTxt.selectionStart && (editTxt.selectionEnd == editTxt.text.length)))
@@ -47,7 +49,22 @@ Dialog {
 //                anchors.top: parent.top
 //                anchors.topMargin: 72
                 background: null
-                height: flickable.height
+                height: flickable.height - toggleHtml.height - Theme.paddingMedium
+                text: editText
+            }
+            Button {
+                id: toggleHtml
+                width: parent.width - 2 * Theme.paddingLarge
+                height: Theme.itemSizeMedium
+                anchors.horizontalCenter: parent.horizontalCenter
+                text: {
+                    if (!showHtml) qsTr("Show HTML")
+                    else qsTr("Hide HTML")
+                }
+                onClicked: {
+                    if (!showHtml) { editTxt.text = htmlText; showHtml = true }
+                    else { editTxt.text = editText; showHtml = false }
+                }
             }
         }
     }

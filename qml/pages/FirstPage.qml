@@ -457,9 +457,12 @@ Page {
 //                if (data.nodeName) {
 //                    console.debug("Long pressed on node: " + data.nodeName)
 //                }
-//                if (data.html) {
-//                    console.debug("Nodes Outer HTML: " + data.html)
-//                }
+                if (data.html) {
+                    //console.debug("Nodes Outer HTML: " + data.html)
+                    hiddenHtmlBox.text = ""
+                    selection.htmldata = data.html
+                    hiddenHtmlBox.text = selection.htmldata.toString()
+                }
                 // DEBUG END //
                 if (data.img) {
 //                    console.debug("[FirstPage.qml] Contextmenu Image detected")
@@ -605,10 +608,12 @@ Page {
             visible: false
 
             property var mimedata: null
+            property var htmldata: null
 
             function createData() {
                 if (mimedata === null) {
                     hiddenTxtBox.text = ""
+                    hiddenHtmlBox.text = ""
                 }
             }
 
@@ -636,7 +641,7 @@ Page {
             }
 
             onTextClicked: {
-                pageStack.push(Qt.resolvedUrl("SelectionEditPage.qml"), { editText: hiddenTxtBox.text })
+                pageStack.push(Qt.resolvedUrl("SelectionEditPage.qml"), { editText: hiddenTxtBox.text, htmlText: hiddenHtmlBox.text })
                 actionTriggered();
             }
 
@@ -1897,6 +1902,10 @@ Page {
     }
     TextArea {
         id: hiddenTxtBox
+        visible: false
+    }
+    TextArea {
+        id: hiddenHtmlBox
         visible: false
     }
 

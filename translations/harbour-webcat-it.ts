@@ -507,10 +507,6 @@ Se non sei sicuro, rifiuta il certificato. Ma questo può impedire il caricament
         <translation>Dividi Schermata Web</translation>
     </message>
     <message>
-        <source>Download Manager</source>
-        <translation>Gestore Scaricamenti</translation>
-    </message>
-    <message>
         <source>Tabs</source>
         <translation>Schede</translation>
     </message>
@@ -520,6 +516,14 @@ Se non sei sicuro, rifiuta il certificato. Ma questo può impedire il caricament
     <message>
         <source>Copy</source>
         <translation>Copia</translation>
+    </message>
+    <message>
+        <source>Show HTML</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hide HTML</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

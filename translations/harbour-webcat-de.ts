@@ -506,10 +506,6 @@ Wenn Sie sich unsicher sind lehnen sie das Zertifikat ab. Dies führt unter Umst
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Download Manager</source>
-        <translation>Download Manager</translation>
-    </message>
-    <message>
         <source>Tabs</source>
         <translation>Reiter</translation>
     </message>
@@ -519,6 +515,14 @@ Wenn Sie sich unsicher sind lehnen sie das Zertifikat ab. Dies führt unter Umst
     <message>
         <source>Copy</source>
         <translation>Kopieren</translation>
+    </message>
+    <message>
+        <source>Show HTML</source>
+        <translation>HTML anzeigen</translation>
+    </message>
+    <message>
+        <source>Hide HTML</source>
+        <translation>HTML verstecken</translation>
     </message>
 </context>
 <context>

@@ -503,10 +503,6 @@ If you are unsure reject the certificate. That might lead to a non loading websi
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Download Manager</source>
-        <translation>下载管理器</translation>
-    </message>
-    <message>
         <source>Tabs</source>
         <translation type="unfinished"></translation>
     </message>
@@ -516,6 +512,14 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     <message>
         <source>Copy</source>
         <translation>复制</translation>
+    </message>
+    <message>
+        <source>Show HTML</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hide HTML</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

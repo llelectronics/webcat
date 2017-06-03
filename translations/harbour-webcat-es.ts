@@ -507,10 +507,6 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
         <translation>Visor Web dividido</translation>
     </message>
     <message>
-        <source>Download Manager</source>
-        <translation>Administrador de descargas</translation>
-    </message>
-    <message>
         <source>Tabs</source>
         <translation>Pestañas</translation>
     </message>
@@ -520,6 +516,14 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     <message>
         <source>Copy</source>
         <translation>Copiar</translation>
+    </message>
+    <message>
+        <source>Show HTML</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hide HTML</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

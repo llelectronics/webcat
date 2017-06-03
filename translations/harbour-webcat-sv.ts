@@ -315,7 +315,7 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
     </message>
     <message>
         <source>Download Manager</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nedladdningshanterare</translation>
     </message>
 </context>
 <context>
@@ -507,10 +507,6 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
         <translation>Delad webbvy</translation>
     </message>
     <message>
-        <source>Download Manager</source>
-        <translation>Nerladdningshanterare</translation>
-    </message>
-    <message>
         <source>Tabs</source>
         <translation>Flikar</translation>
     </message>
@@ -520,6 +516,14 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
     <message>
         <source>Copy</source>
         <translation>Kopiera</translation>
+    </message>
+    <message>
+        <source>Show HTML</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hide HTML</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
