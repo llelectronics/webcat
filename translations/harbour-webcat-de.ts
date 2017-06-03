@@ -300,6 +300,25 @@ Wenn Sie sich unsicher sind lehnen sie das Zertifikat ab. Dies führt unter Umst
     </message>
 </context>
 <context>
+    <name>MenuPopup</name>
+    <message>
+        <source>File Manager</source>
+        <translation>Dateimanager</translation>
+    </message>
+    <message>
+        <source>Backup Manager</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Video Player</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download Manager</source>
+        <translation type="unfinished">Download Manager</translation>
+    </message>
+</context>
+<context>
     <name>MyClass</name>
     <message>
         <source>Webcat config dir not found</source>
@@ -368,6 +387,21 @@ Wenn Sie sich unsicher sind lehnen sie das Zertifikat ab. Dies führt unter Umst
     <message>
         <source>directory</source>
         <translation>Ordner</translation>
+    </message>
+</context>
+<context>
+    <name>OpenURLPage</name>
+    <message>
+        <source>Load URL</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Type in URL here</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>URL to media file/stream</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -630,6 +664,17 @@ Wenn Sie sich unsicher sind lehnen sie das Zertifikat ab. Dies führt unter Umst
     <message>
         <source>Tabs</source>
         <translation>Reiter</translation>
+    </message>
+</context>
+<context>
+    <name>VideoPlayer</name>
+    <message>
+        <source>Open File</source>
+        <translation>Datei öffnen</translation>
+    </message>
+    <message>
+        <source>Open Stream</source>
+        <translation>Stream öffnen</translation>
     </message>
 </context>
 <context>

@@ -117,6 +117,21 @@ ApplicationWindow
         }
     }
 
+    function unicodeBlackDownPointingTriangle()
+    {
+        return "\u25bc"; // unicode for down pointing triangle symbol
+    }
+
+    function isUrl(url) {
+        var pattern = new RegExp(/^(([\w]+:)?\/\/)?(([\d\w]|%[a-fA-f\d]{2,2})+(:([\d\w]|%[a-fA-f\d]{2,2})+)?@)?([\d\w][-\d\w]{0,253}[\d\w]\.)+[\w]{2,4}(:[\d]+)?(\/([-+_~.\d\w]|%[a-fA-f\d]{2,2})*)*(\?(&?([-+_~.\d\w]|%[a-fA-f\d]{2,2})=?)*)?(#([-+_~.\d\w]|%[a-fA-f\d]{2,2})*)?$/);
+        if(!pattern.test(url)) {
+            //console.debug("Not a valid URL.");
+            return false;
+        } else {
+            return true;
+        }
+    }
+
     // Deactivated as long as gstreamer is so crashy. I don't want the browser to be unusable just because gstreamer crashed again
     function openWithvPlayer(url,title) {
         if (!vPlayerExternal) pageStack.push(Qt.resolvedUrl("pages/VideoPlayer.qml"), {dataContainer: firstPage, streamUrl: url, streamTitle: title});

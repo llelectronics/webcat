@@ -15,11 +15,26 @@ Page {
     property alias streamTitle: videoComponent.streamTitle
     property alias autoplay: videoComponent.autoplay
 
-
-    VideoPlayerComponent {
-        id: videoComponent
+    SilicaFlickable {
         anchors.fill: parent
-        videoPage: true
-        fullscreen: true
+        PullDownMenu {
+            MenuItem {
+                id: fOpen
+                text: qsTr("Open File")
+                onClicked: pageStack.replace(Qt.resolvedUrl("OpenDialog.qml"), { dataContainer: dataContainer })
+            }
+            MenuItem {
+                id: uOpen
+                text: qsTr("Open Stream")
+                onClicked: pageStack.push(Qt.resolvedUrl("helper/videoPlayerComponents/OpenURLPage.qml"), { dataContainer: videoPlayerPage })
+            }
+        }
+
+        VideoPlayerComponent {
+            id: videoComponent
+            anchors.fill: parent
+            videoPage: true
+            fullscreen: true
+        }
     }
 }

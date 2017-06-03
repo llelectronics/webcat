@@ -1,5 +1,6 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import "helper/otherComponents"
 
 Page
 {
@@ -286,12 +287,16 @@ Page
 
                 Label {
                     id: tabHeadLbl
-                    text: qsTr("Tabs")
+                    text: qsTr("Tabs") + mainWindow.unicodeBlackDownPointingTriangle()
                     anchors.right: parent.right
                     anchors.rightMargin: Theme.paddingMedium
                     font.pixelSize: Theme.fontSizeMedium
                     color: Theme.highlightColor
                     anchors.verticalCenter: parent.verticalCenter
+                }
+                MouseArea {
+                    anchors.fill: tabHeadLbl
+                    onClicked: menuPopup.show();
                 }
 
                 Image {
@@ -422,5 +427,12 @@ Page
             text: qsTr("Swipe up to close tab")
 
         }
+    }
+
+    MenuPopup {
+        id: menuPopup
+        anchors.fill: parent
+        menuTop: tabListBg.y - Theme.itemSizeMedium * 3.25  // 4 MenuItems for the moment
+        dataContainer: dataContainer
     }
 }

@@ -300,6 +300,25 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
 </context>
 <context>
+    <name>MenuPopup</name>
+    <message>
+        <source>File Manager</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Backup Manager</source>
+        <translation type="unfinished">Gestor de copias de seguridad</translation>
+    </message>
+    <message>
+        <source>Video Player</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download Manager</source>
+        <translation type="unfinished">Administrador de descargas</translation>
+    </message>
+</context>
+<context>
     <name>MyClass</name>
     <message>
         <source>Webcat config dir not found</source>
@@ -368,6 +387,21 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>Error pasting file </source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>OpenURLPage</name>
+    <message>
+        <source>Load URL</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Type in URL here</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>URL to media file/stream</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -631,6 +665,17 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     <message>
         <source>Tabs</source>
         <translation>Pestañas</translation>
+    </message>
+</context>
+<context>
+    <name>VideoPlayer</name>
+    <message>
+        <source>Open File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open Stream</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

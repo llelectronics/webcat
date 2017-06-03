@@ -300,6 +300,25 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
     </message>
 </context>
 <context>
+    <name>MenuPopup</name>
+    <message>
+        <source>File Manager</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Backup Manager</source>
+        <translation type="unfinished">Säkerhetskopiering</translation>
+    </message>
+    <message>
+        <source>Video Player</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download Manager</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>MyClass</name>
     <message>
         <source>Webcat config dir not found</source>
@@ -369,6 +388,21 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
     <message>
         <source>directory</source>
         <translation>mapp</translation>
+    </message>
+</context>
+<context>
+    <name>OpenURLPage</name>
+    <message>
+        <source>Load URL</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Type in URL here</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>URL to media file/stream</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -631,6 +665,17 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
     <message>
         <source>Tabs</source>
         <translation>Flikar</translation>
+    </message>
+</context>
+<context>
+    <name>VideoPlayer</name>
+    <message>
+        <source>Open File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open Stream</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

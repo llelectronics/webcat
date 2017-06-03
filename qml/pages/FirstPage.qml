@@ -566,6 +566,9 @@ Page {
                 else if (url == "about:") pageStack.push(Qt.resolvedUrl("AboutPage.qml"));
                 else if (url == "about:config") pageStack.push(Qt.resolvedUrl("SettingsPage.qml"));
                 else if (url == "about:file") pageStack.push(Qt.resolvedUrl("OpenDialog.qml"), { dataContainer: webview });
+                else if (url == "about:backup") pageStack.push(Qt.resolvedUrl("BackupPage.qml"));
+                else if (url == "about:download") pageStack.push(Qt.resolvedUrl("DownloadManager.qml"));
+                else if (url == "about:video") pageStack.push(Qt.resolvedUrl("VideoPlayer.qml"), { dataContainer: webview });
                 mainWindow.tabModel.setProperty(mainWindow.tabModel.getIndexFromId(pageId), "title", webview.title);
                 //console.debug(tabModel.get(0).title);
                 // Update url for tabModel

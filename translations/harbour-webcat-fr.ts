@@ -299,6 +299,25 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
     </message>
 </context>
 <context>
+    <name>MenuPopup</name>
+    <message>
+        <source>File Manager</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Backup Manager</source>
+        <translation type="unfinished">Gestionnaire de sauvegardes</translation>
+    </message>
+    <message>
+        <source>Video Player</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download Manager</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>MyClass</name>
     <message>
         <source>Webcat config dir not found</source>
@@ -368,6 +387,21 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
     <message>
         <source>directory</source>
         <translation>Répertoire</translation>
+    </message>
+</context>
+<context>
+    <name>OpenURLPage</name>
+    <message>
+        <source>Load URL</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Type in URL here</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>URL to media file/stream</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -630,6 +664,17 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
     <message>
         <source>Tabs</source>
         <translation>Onglets</translation>
+    </message>
+</context>
+<context>
+    <name>VideoPlayer</name>
+    <message>
+        <source>Open File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open Stream</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

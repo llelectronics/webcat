@@ -297,6 +297,25 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
 </context>
 <context>
+    <name>MenuPopup</name>
+    <message>
+        <source>File Manager</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Backup Manager</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Video Player</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download Manager</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>MyClass</name>
     <message>
         <source>Webcat config dir not found</source>
@@ -364,6 +383,21 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>OpenURLPage</name>
+    <message>
+        <source>Load URL</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Type in URL here</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>URL to media file/stream</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -626,6 +660,17 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Tabs</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>VideoPlayer</name>
+    <message>
+        <source>Open File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open Stream</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

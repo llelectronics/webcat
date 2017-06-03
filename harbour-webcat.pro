@@ -148,4 +148,6 @@ DISTFILES += \
     qml/pages/helper/canvg.min.js \
     qml/pages/SplitWeb.qml \
     qml/pages/helper/otherComponents/SectionHeader.qml \
-    translations/harbour-webcat-sv.ts
+    translations/harbour-webcat-sv.ts \
+    qml/pages/helper/otherComponents/MenuPopup.qml \
+    qml/pages/helper/videoPlayerComponents/OpenURLPage.qml

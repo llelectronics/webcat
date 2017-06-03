@@ -155,6 +155,7 @@ Item {
 
     Item {
         id: pulley
+
     }
 
     Image {
