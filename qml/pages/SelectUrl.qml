@@ -31,7 +31,7 @@ Page
         SilicaListView {
             id: repeater1
             width: parent.width
-            height: urlPage.height - (tabListView.height + Theme.paddingLarge)  //- entryURL.height - 2*65 //- bottomBar.height
+            height: urlPage.height - (tabListBg.height + Theme.paddingLarge)  //- entryURL.height - 2*65 //- bottomBar.height
             model: modelUrls
             quickScroll: true
             header: PageHeader {
@@ -215,48 +215,49 @@ Page
 
         Component {
             id: tabDelegate
-            Row {
-                spacing: 10
-                Rectangle {
-                    id: tabBg
-                    width: Screen.width / 3
-                    height: if (dataContainer) dataContainer.toolbarheight
-                    color: "transparent"
-                    Text {
-                        text: {
-                            if (model.title !== "") return model.title
-                            else return qsTr("Loading..");
-                        }
-                        width: parent.width - 2
-                        font.pixelSize: Theme.fontSizeMedium //tabBg.height / 2.15
-                        color: Theme.primaryColor;
-                        anchors.centerIn: parent
-                        elide: Text.ElideRight
+            Rectangle {
+                id: tabBg
+                width: parent.width - (2* Theme.paddingSmall)
+                height: Theme.itemSizeSmall //if (dataContainer) dataContainer.toolbarheight
+                color: "transparent"
+                Text {
+                    text: {
+                        if (model.title !== "") return model.title
+                        else return qsTr("Loading..");
                     }
-                    MouseArea {
-                        property int ymouse;
-                        anchors { top: parent.top; left: parent.left; bottom: parent.bottom; right: parent.right; rightMargin: 40}
-                        onPressAndHold: {
-                            if (tabModel.count > 1) {
-                                ymouse = mouse.y
-                                tabCloseMsg.text = qsTr("Swipe up to close tab")
-                                tabCloseMsg.icon = "image://theme/icon-m-close"
-                                tabCloseMsg.opacity = 1.0
-                            }
-                        }
-                        onClicked: {
-                            if (tabListView.currentIndex == index) { pageStack.pop() }
-                            else {
-                                tabListView.currentIndex = index;
-                                mainWindow.switchToTab(model.pageid);
-                            }
-                        }
-                        onReleased: {
-                            if (tabCloseMsg.opacity == 1.0 && mouse.y < ymouse - 50) {
-                                //console.debug("[SelectUrl.qml] Removing Tab with index: " + index + " and currentIndex: " + tabListView.currentIndex);
-                                mainWindow.closeTab(index, tabModel.get(index).pageid)
-                            }
-                            tabCloseMsg.opacity = 0
+                    width: parent.width - Theme.itemSizeMedium + Theme.paddingMedium
+                    font.pixelSize: Theme.fontSizeMedium //tabBg.height / 2.15
+                    color: Theme.primaryColor;
+                    anchors.left: parent.left
+                    anchors.leftMargin: Theme.paddingMedium
+                    anchors.verticalCenter: parent.verticalCenter
+                    elide: Text.ElideRight
+                }
+                Image {
+                    id: closeTabImg
+                    height: Theme.iconSizeMedium
+                    width: height
+                    anchors.right: parent.right
+                    anchors.rightMargin: Theme.paddingSmall
+                    anchors.verticalCenter: parent.verticalCenter
+                    source : "image://theme/icon-m-close" // This image is 64x64 and does have a big border so leave it as is
+                    visible: tabModel.count > 1
+                }
+                MouseArea {
+                    anchors.fill: closeTabImg;
+                    onClicked: {
+                        //console.debug("Close Tab clicked")
+                        mainWindow.closeTab(index, tabModel.get(index).pageid);
+                    }
+                }
+                MouseArea {
+                    property int ymouse;
+                    anchors { top: parent.top; left: parent.left; bottom: parent.bottom; right: parent.right; rightMargin: Theme.itemSizeMedium}
+                    onClicked: {
+                        if (tabListView.currentIndex == index) { pageStack.pop() }
+                        else {
+                            tabListView.currentIndex = index;
+                            mainWindow.switchToTab(model.pageid);
                         }
                     }
                 }
@@ -265,49 +266,58 @@ Page
 
         Rectangle {
             id: tabListBg
-            height: if (dataContainer) dataContainer.toolbarheight
+            height: {
+                if (Theme.itemSizeExtraSmall + (tabModel.count * Theme.itemSizeSmall) < urlPage.height / 2.25)
+                    Theme.itemSizeExtraSmall + (tabModel.count * Theme.itemSizeSmall) + Theme.paddingMedium
+                else
+                    urlPage.height / 2.25
+            }
             width: parent.width
             gradient: normalBg
 
-        SilicaListView {
-            id: tabListView
-            width: parent.width
-            height: if (dataContainer) dataContainer.toolbarheight
-
-            // new tab button
-            header: Rectangle {
-                width: newTabImg.width + Theme.paddingLarge
-                height: if (dataContainer) dataContainer.toolbarheight
+            Rectangle {
+                id: tabHead
+                width: parent.width //newTabImg.width + Theme.paddingLarge
+                height: Theme.itemSizeExtraSmall //if (dataContainer) dataContainer.toolbarheight
                 gradient: Gradient {
                     GradientStop { position: 0.0; color: "#262626" }
                     GradientStop { position: 0.85; color: "#1F1F1F"}
                 }
-//                Text {
-//                    text: "<b>+</b>"
-//                    color: "white"
-//                    font.pointSize: 25
-//                    anchors.centerIn: parent
-//                }
+
+                Label {
+                    id: tabHeadLbl
+                    text: qsTr("Tabs")
+                    anchors.right: parent.right
+                    anchors.rightMargin: Theme.paddingMedium
+                    font.pixelSize: Theme.fontSizeMedium
+                    color: Theme.highlightColor
+                    anchors.verticalCenter: parent.verticalCenter
+                }
+
                 Image {
                     id: newTabImg
-                    height: if (dataContainer) dataContainer.toolbarheight / 1.5
+                    height: Theme.iconSizeSmall
                     width: height
-                    anchors.centerIn: parent
+                    anchors.left: parent.left
+                    anchors.leftMargin: Theme.paddingMedium
+                    anchors.verticalCenter: parent.verticalCenter
                     source : "image://theme/icon-cover-new" // This image is 96x96 and does not have a big border so make it smaller
                 }
 
                 MouseArea {
                     property int ymouse;
-                    anchors.fill: parent
+                    height: parent.height
+                    width: newTabImg.width * 2
+                    anchors.centerIn: newTabImg
                     onClicked: {
                         //console.debug("New Tab clicked")
                         mainWindow.openNewTab("page-"+mainWindow.salt(), "about:blank", false);
                     }
                     onPressAndHold: {
-                            ymouse = mouse.y
-                            tabCloseMsg.text = qsTr("Swipe up to open new window")
-                            tabCloseMsg.icon = "image://theme/icon-m-tab"
-                            tabCloseMsg.opacity = 1.0
+                        ymouse = mouse.y
+                        tabCloseMsg.text = qsTr("Swipe up to open new window")
+                        tabCloseMsg.icon = "image://theme/icon-m-tab"
+                        tabCloseMsg.opacity = 1.0
                     }
                     onPositionChanged: {
                         if (tabCloseMsg.opacity == 1.0 && mouse.y < ymouse - 50 && mouse.y > ymouse - 120) {
@@ -329,51 +339,30 @@ Page
                         tabCloseMsg.opacity = 0
                     }
                 }
+
             }
 
-            // close tab button
-            footer: Rectangle {
-                visible: tabModel.count > 1
-                width: closeTabImg.width + Theme.paddingLarge
-                height: if (dataContainer) dataContainer.toolbarheight
-                gradient: Gradient {
-                    GradientStop { position: 0.0; color: "#262626" }
-                    GradientStop { position: 0.85; color: "#1F1F1F"}
-                }
-//                Text {
-//                    text: "<b>x</b>"
-//                    color: "white"
-//                    font.pointSize: 25
-//                    anchors.centerIn: parent
-//                }
-                Image {
-                    id: closeTabImg
-                    height: if (dataContainer) dataContainer.toolbarheight / 1.125
-                    width: height
-                    anchors.centerIn: parent
-                    source : "image://theme/icon-m-close" // This image is 64x64 and does have a big border so leave it as is
-                }
-                MouseArea {
-                    anchors.fill: parent;
-                    onClicked: {
-                        //console.debug("Close Tab clicked")
-                        mainWindow.closeTab(tabListView.currentIndex, tabModel.get(tabListView.currentIndex).pageid);
-                    }
-                }
-            }
+        SilicaListView {
+            id: tabListView
+            width: parent.width
+            height: parent.height - tabHead.height
+            clip: true
+            anchors.top: tabHead.bottom
+            anchors.topMargin: Theme.paddingSmall
 
-            orientation: ListView.Horizontal
+            //orientation: ListView.Horizontal
 
             model: tabModel
             delegate: tabDelegate
             highlight:
 
                 Rectangle {
-                width: parent.width; height: if (dataContainer) dataContainer.toolbarheight
+                width: urlPage.width; height: Theme.itemSizeSmall
                 gradient: Gradient {
                     GradientStop { position: 0.0; color: Theme.highlightColor }
                     GradientStop { position: 0.10; color: "#262626" }
-                    GradientStop { position: 0.85; color: "#1F1F1F"}
+                    GradientStop { position: 0.95; color: "#1F1F1F"}
+                    GradientStop { position: 0.98; color: Theme.highlightColor }
                 }
             }
             add: Transition {
@@ -387,7 +376,7 @@ Page
             highlightMoveDuration: 2
             highlightFollowsCurrentItem: true
         }
-        }
+        } // Rectangle BG
     }
     Component.onCompleted: {
         tabListView.currentIndex = tabModel.getIndexFromId(mainWindow.currentTab);
@@ -406,8 +395,8 @@ Page
         opacity: 0
         width: parent.width
         height: Theme.fontSizeLarge + Theme.paddingLarge + Theme.iconSizeLarge
-        anchors.bottom: parent.bottom
-        anchors.bottomMargin: tabListBg.height * 2
+        anchors.top: parent.top
+        anchors.topMargin: tabListBg.height + 2 * Theme.paddingLarge
         property alias text: tabCloseMsgTxt.text
         property alias icon: tabCloseIcon.source
         Behavior on opacity {

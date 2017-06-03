@@ -475,6 +475,10 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
         <source>Download Manager</source>
         <translation>Gestionnaire de téléchargement</translation>
     </message>
+    <message>
+        <source>Tabs</source>
+        <translation>Onglets</translation>
+    </message>
 </context>
 <context>
     <name>SelectionEditPage</name>

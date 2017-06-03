@@ -476,6 +476,10 @@ En cas de dubte, refuseu el certificat malgrat que això pot provocar que no es 
         <source>Download Manager</source>
         <translation>Gestor de descàrregues</translation>
     </message>
+    <message>
+        <source>Tabs</source>
+        <translation>Pestanyes</translation>
+    </message>
 </context>
 <context>
     <name>SelectionEditPage</name>

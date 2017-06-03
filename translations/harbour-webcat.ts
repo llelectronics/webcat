@@ -472,6 +472,10 @@ If you are unsure reject the certificate. That might lead to a non loading websi
         <source>Download Manager</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Tabs</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SelectionEditPage</name>

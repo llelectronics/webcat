@@ -339,10 +339,6 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
         <translation>Pegar</translation>
     </message>
     <message>
-        <source>Error pasting file</source>
-        <translation>Error al pegar archivo</translation>
-    </message>
-    <message>
         <source>Cut</source>
         <translation>Cortar</translation>
     </message>
@@ -369,6 +365,10 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     <message>
         <source>directory</source>
         <translation>Directorio</translation>
+    </message>
+    <message>
+        <source>Error pasting file </source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -475,6 +475,10 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     <message>
         <source>Download Manager</source>
         <translation>Administrador de descargas</translation>
+    </message>
+    <message>
+        <source>Tabs</source>
+        <translation>Pestañas</translation>
     </message>
 </context>
 <context>

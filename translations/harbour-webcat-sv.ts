@@ -476,6 +476,10 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
         <source>Download Manager</source>
         <translation>Nerladdningshanterare</translation>
     </message>
+    <message>
+        <source>Tabs</source>
+        <translation>Flikar</translation>
+    </message>
 </context>
 <context>
     <name>SelectionEditPage</name>

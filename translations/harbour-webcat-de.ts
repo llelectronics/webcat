@@ -475,6 +475,10 @@ Wenn Sie sich unsicher sind lehnen sie das Zertifikat ab. Dies führt unter Umst
         <source>Download Manager</source>
         <translation>Download Manager</translation>
     </message>
+    <message>
+        <source>Tabs</source>
+        <translation>Reiter</translation>
+    </message>
 </context>
 <context>
     <name>SelectionEditPage</name>

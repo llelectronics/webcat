@@ -476,6 +476,10 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
         <source>Download Manager</source>
         <translation>Downloadbeheerder</translation>
     </message>
+    <message>
+        <source>Tabs</source>
+        <translation>Tabbladen</translation>
+    </message>
 </context>
 <context>
     <name>SelectionEditPage</name>

@@ -476,6 +476,10 @@ Se non sei sicuro, rifiuta il certificato. Ma questo può impedire il caricament
         <source>Download Manager</source>
         <translation>Gestore Scaricamenti</translation>
     </message>
+    <message>
+        <source>Tabs</source>
+        <translation>Schede</translation>
+    </message>
 </context>
 <context>
     <name>SelectionEditPage</name>
