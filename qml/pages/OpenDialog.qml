@@ -113,11 +113,11 @@ Page {
             }
             MenuItem {
                 text: qsTr("Show Android SDCard")
-                onClicked: fileModel.folder = _fm.getRoot() + "/data/sdcard";
+                onClicked: fileModel.folder = _fm.getRoot() + "sdcard";
             }
             MenuItem {
                 text: qsTr("Show SDCard")
-                onClicked: fileModel.folder = _fm.getRoot() + "/media/sdcard";
+                onClicked: fileModel.folder = _fm.getRoot() + "media/sdcard";
             }
             MenuItem {
                 id: pasteMenuEntry
