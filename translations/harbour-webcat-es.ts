@@ -99,7 +99,7 @@ Por favor, reinicia para que los cambios tengan efecto.</translation>
     <name>ConfirmDialog</name>
     <message>
         <source>Accept ?</source>
-        <translation>¿Aceptar?</translation>
+        <translation>Aceptar?</translation>
     </message>
     <message>
         <source>Certificates are used to identify and make sure that the website you see is provided by the author you expect.
@@ -303,19 +303,19 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     <name>MenuPopup</name>
     <message>
         <source>File Manager</source>
-        <translation type="unfinished"></translation>
+        <translation>Gestor de archivos</translation>
     </message>
     <message>
         <source>Backup Manager</source>
-        <translation type="unfinished">Gestor de copias de seguridad</translation>
+        <translation>Gestor de copias de seguridad</translation>
     </message>
     <message>
         <source>Video Player</source>
-        <translation type="unfinished"></translation>
+        <translation>Reproductor de video</translation>
     </message>
     <message>
         <source>Download Manager</source>
-        <translation type="unfinished">Administrador de descargas</translation>
+        <translation>Gestor de descarga</translation>
     </message>
 </context>
 <context>
@@ -387,22 +387,22 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>Error pasting file </source>
-        <translation type="unfinished"></translation>
+        <translation>Error al pegar archivo</translation>
     </message>
 </context>
 <context>
     <name>OpenURLPage</name>
     <message>
         <source>Load URL</source>
-        <translation type="unfinished"></translation>
+        <translation>Cargar LUR</translation>
     </message>
     <message>
         <source>Type in URL here</source>
-        <translation type="unfinished"></translation>
+        <translation>Escribir LUR aquí</translation>
     </message>
     <message>
         <source>URL to media file/stream</source>
-        <translation type="unfinished"></translation>
+        <translation>LUR para media archivo/secuencia</translation>
     </message>
 </context>
 <context>
@@ -449,7 +449,7 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>Tor is free software for enabling anonymous communication. This will setup the proxy automatically to use tor. Tor service must be running on the system for this to work.</source>
-        <translation>Tor es software libre para permitir la comunicación anónima. Esto configurará el proxy automáticamente para usar tor. Tor debe estar ejecutándose en el sistema para que funcione.</translation>
+        <translation>Tor un software libre que permitir la comunicación anónima. Esto auto configurará el proxy  para usar tor. Tor debe ejecutárse en el sistema para que funcione.</translation>
     </message>
 </context>
 <context>
@@ -519,11 +519,11 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>Show HTML</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostar HTML</translation>
     </message>
     <message>
         <source>Hide HTML</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocultar HTML</translation>
     </message>
 </context>
 <context>
@@ -538,7 +538,7 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>Save Settings</source>
-        <translation>Guardar ajustes</translation>
+        <translation>Guardar</translation>
     </message>
     <message>
         <source>About </source>
@@ -574,7 +574,7 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>Homepage</source>
-        <translation>Página de inicio</translation>
+        <translation>Página inicial</translation>
     </message>
     <message>
         <source>Search Engine:</source>
@@ -675,11 +675,11 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     <name>VideoPlayer</name>
     <message>
         <source>Open File</source>
-        <translation type="unfinished"></translation>
+        <translation>Abrir archivo</translation>
     </message>
     <message>
         <source>Open Stream</source>
-        <translation type="unfinished"></translation>
+        <translation>Abrir secuencia</translation>
     </message>
 </context>
 <context>
