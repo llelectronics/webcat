@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="it">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="it" version="2.1">
 <context>
     <name>AboutPage</name>
     <message>
@@ -303,19 +301,19 @@ Se non sei sicuro, rifiuta il certificato. Ma questo può impedire il caricament
     <name>MenuPopup</name>
     <message>
         <source>File Manager</source>
-        <translation type="unfinished"></translation>
+        <translation>Gestione file</translation>
     </message>
     <message>
         <source>Backup Manager</source>
-        <translation type="unfinished">Gestore Backup</translation>
+        <translation>Gestione Backup</translation>
     </message>
     <message>
         <source>Video Player</source>
-        <translation type="unfinished"></translation>
+        <translation>Riproduttore Video</translation>
     </message>
     <message>
         <source>Download Manager</source>
-        <translation type="unfinished">Gestore Scaricamenti</translation>
+        <translation>Gestore Scaricamenti</translation>
     </message>
 </context>
 <context>
@@ -394,15 +392,15 @@ Se non sei sicuro, rifiuta il certificato. Ma questo può impedire il caricament
     <name>OpenURLPage</name>
     <message>
         <source>Load URL</source>
-        <translation type="unfinished"></translation>
+        <translation>Carica URL</translation>
     </message>
     <message>
         <source>Type in URL here</source>
-        <translation type="unfinished"></translation>
+        <translation>Digita qui la URL</translation>
     </message>
     <message>
         <source>URL to media file/stream</source>
-        <translation type="unfinished"></translation>
+        <translation>URL per file/flusso multimediale</translation>
     </message>
 </context>
 <context>
@@ -519,11 +517,11 @@ Se non sei sicuro, rifiuta il certificato. Ma questo può impedire il caricament
     </message>
     <message>
         <source>Show HTML</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostra HTML</translation>
     </message>
     <message>
         <source>Hide HTML</source>
-        <translation type="unfinished"></translation>
+        <translation>Nascondi HTML</translation>
     </message>
 </context>
 <context>
@@ -675,11 +673,11 @@ Se non sei sicuro, rifiuta il certificato. Ma questo può impedire il caricament
     <name>VideoPlayer</name>
     <message>
         <source>Open File</source>
-        <translation type="unfinished"></translation>
+        <translation>Apri File</translation>
     </message>
     <message>
         <source>Open Stream</source>
-        <translation type="unfinished"></translation>
+        <translation>Apri Flusso</translation>
     </message>
 </context>
 <context>

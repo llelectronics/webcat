@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="fr">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="fr" version="2.1">
 <context>
     <name>AboutPage</name>
     <message>
@@ -117,7 +115,7 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
     </message>
     <message>
         <source>Download Manager</source>
-        <translation>Gérer le téléchargement</translation>
+        <translation>Gestionnaire de téléchargement</translation>
     </message>
     <message>
         <source>Enter URL to download</source>
@@ -302,19 +300,19 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
     <name>MenuPopup</name>
     <message>
         <source>File Manager</source>
-        <translation type="unfinished"></translation>
+        <translation>Gestionnaire de fichiers</translation>
     </message>
     <message>
         <source>Backup Manager</source>
-        <translation type="unfinished">Gestionnaire de sauvegardes</translation>
+        <translation>Gestionnaire de sauvegarde</translation>
     </message>
     <message>
         <source>Video Player</source>
-        <translation type="unfinished"></translation>
+        <translation>Lecteur vidéo</translation>
     </message>
     <message>
         <source>Download Manager</source>
-        <translation type="unfinished">Gérer le téléchargement</translation>
+        <translation>Gestionnaire de téléchargements</translation>
     </message>
 </context>
 <context>
@@ -393,15 +391,15 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
     <name>OpenURLPage</name>
     <message>
         <source>Load URL</source>
-        <translation type="unfinished"></translation>
+        <translation>Charger l&apos;URL</translation>
     </message>
     <message>
         <source>Type in URL here</source>
-        <translation type="unfinished"></translation>
+        <translation>Saisir l&apos;URL ici</translation>
     </message>
     <message>
         <source>URL to media file/stream</source>
-        <translation type="unfinished"></translation>
+        <translation>URL vers fichier multimédia / flux</translation>
     </message>
 </context>
 <context>
@@ -436,19 +434,19 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
     </message>
     <message>
         <source>Use Socks</source>
-        <translation type="unfinished"></translation>
+        <translation>Utiliser Socks</translation>
     </message>
     <message>
         <source>Socket Secure (SOCKS) is an Internet protocol that exchanges network packets between a client and server through a proxy server.</source>
-        <translation type="unfinished"></translation>
+        <translation>Socket Secure (SOCKS) est un protocole Internet qui échange des paquets de données entre un client et un serveur via un proxy.</translation>
     </message>
     <message>
         <source>Use Tor</source>
-        <translation type="unfinished"></translation>
+        <translation>Utiliser Tor</translation>
     </message>
     <message>
         <source>Tor is free software for enabling anonymous communication. This will setup the proxy automatically to use tor. Tor service must be running on the system for this to work.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor est un logiciel libre permettant la communication anonyme. Ceci configurera automatiquement le proxy pour utiliser Tor. Le service Tor doit fonctionner sur le système pour fonctionner. </translation>
     </message>
 </context>
 <context>
@@ -518,11 +516,11 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
     </message>
     <message>
         <source>Show HTML</source>
-        <translation type="unfinished"></translation>
+        <translation>Afficher HTML</translation>
     </message>
     <message>
         <source>Hide HTML</source>
-        <translation type="unfinished"></translation>
+        <translation>Masquer HTML</translation>
     </message>
 </context>
 <context>
@@ -649,7 +647,7 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
     </message>
     <message>
         <source>Backup Manager</source>
-        <translation>Gestionnaire de sauvegardes</translation>
+        <translation>Gestionnaire de sauvegarde</translation>
     </message>
 </context>
 <context>
@@ -674,11 +672,11 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
     <name>VideoPlayer</name>
     <message>
         <source>Open File</source>
-        <translation type="unfinished"></translation>
+        <translation>Ouvrir le fichier</translation>
     </message>
     <message>
         <source>Open Stream</source>
-        <translation type="unfinished"></translation>
+        <translation>Ouvrir le flux</translation>
     </message>
 </context>
 <context>

@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="nl_NL">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="nl_NL" version="2.1">
 <context>
     <name>AboutPage</name>
     <message>
@@ -303,19 +301,19 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
     <name>MenuPopup</name>
     <message>
         <source>File Manager</source>
-        <translation type="unfinished"></translation>
+        <translation>Bestandsbeheerder</translation>
     </message>
     <message>
         <source>Backup Manager</source>
-        <translation type="unfinished">Back-upbeheerder</translation>
+        <translation>Back-upbeheerder</translation>
     </message>
     <message>
         <source>Video Player</source>
-        <translation type="unfinished"></translation>
+        <translation>Videospeler</translation>
     </message>
     <message>
         <source>Download Manager</source>
-        <translation type="unfinished">Downloadbeheerder</translation>
+        <translation>Downloadbeheerder</translation>
     </message>
 </context>
 <context>
@@ -394,15 +392,15 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
     <name>OpenURLPage</name>
     <message>
         <source>Load URL</source>
-        <translation type="unfinished"></translation>
+        <translation>URL laden</translation>
     </message>
     <message>
         <source>Type in URL here</source>
-        <translation type="unfinished"></translation>
+        <translation>Voer hier een URL in</translation>
     </message>
     <message>
         <source>URL to media file/stream</source>
-        <translation type="unfinished"></translation>
+        <translation>URL naar mediabestand/-stream</translation>
     </message>
 </context>
 <context>
@@ -519,11 +517,11 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
     </message>
     <message>
         <source>Show HTML</source>
-        <translation type="unfinished"></translation>
+        <translation>HTML weergeven</translation>
     </message>
     <message>
         <source>Hide HTML</source>
-        <translation type="unfinished"></translation>
+        <translation>HTML verbergen</translation>
     </message>
 </context>
 <context>
@@ -675,11 +673,11 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
     <name>VideoPlayer</name>
     <message>
         <source>Open File</source>
-        <translation type="unfinished"></translation>
+        <translation>Bestand openen</translation>
     </message>
     <message>
         <source>Open Stream</source>
-        <translation type="unfinished"></translation>
+        <translation>Stream openen</translation>
     </message>
 </context>
 <context>
