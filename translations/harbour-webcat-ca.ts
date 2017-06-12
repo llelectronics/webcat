@@ -720,6 +720,10 @@ On Youtube Videos please make sure to be logged in. Some videos might be geobloc
 El vídeo no es pot reproduir. Problemes d&apos;ubicació de recursos.
 Si esteu a Youtube, cal verificar que estigueu connectats al vostre compte. Alguns vídeos poden estar blocats geogràficament o requerir que estigueu connectats a un compte.</translation>
     </message>
+    <message>
+        <source>Pull down to load file or stream</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ytQualityChooserContextMenu</name>

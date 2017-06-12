@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="fr" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="fr">
 <context>
     <name>AboutPage</name>
     <message>
@@ -716,6 +718,10 @@ On Youtube Videos please make sure to be logged in. Some videos might be geobloc
         <translation>
 La vidéo ne peut pas être lue en raison d&apos;un problème d&apos;allocation des ressources.
 Assurez-vous d&apos;être connecté à Youtube videos. Certaines vidéos peuvent être géo-bloquées ou exigent d&apos;être connecté à Youtube.</translation>
+    </message>
+    <message>
+        <source>Pull down to load file or stream</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

@@ -714,6 +714,10 @@ On Youtube Videos please make sure to be logged in. Some videos might be geobloc
 Videota ei voi toistaa koska resurssien allokaatiossa ilmeni ongelmia.
 Youtube -videoiden osalta varmista että olet kirjautunut sisään. Jotkut videoista on rajattu maantieteellisesti tai vaativat sisäänkirjautumisen.</translation>
     </message>
+    <message>
+        <source>Pull down to load file or stream</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ytQualityChooserContextMenu</name>

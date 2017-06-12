@@ -710,6 +710,10 @@ The video cannot be played due to a problem allocating resources.
 On Youtube Videos please make sure to be logged in. Some videos might be geoblocked or require you to be logged into youtube.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Pull down to load file or stream</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ytQualityChooserContextMenu</name>

@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="nl_NL" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="nl_NL">
 <context>
     <name>AboutPage</name>
     <message>
@@ -717,6 +719,10 @@ On Youtube Videos please make sure to be logged in. Some videos might be geobloc
         <translation>
 De video kan niet worden afgespeeld wegens een probleem bij het toewijzen van bronnen.
 Zorg er voor dat je ingelogd bent bij YouTube Videos. Sommige videos kunnen geblokkeerd zijn op geografische basis of vereisen dat je ingelogd bent bij YouTube.</translation>
+    </message>
+    <message>
+        <source>Pull down to load file or stream</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

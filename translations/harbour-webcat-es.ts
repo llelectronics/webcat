@@ -720,6 +720,10 @@ On Youtube Videos please make sure to be logged in. Some videos might be geobloc
 El vídeo no pudo reproducirse debido a un problema de asignación de recursos.
 Por favor, asegúrate de haber iniciado sesión en YouTube. El acceso a algunos videos podrían tener restricciones en algunos países o requieren del inicio de sesión en YouTube.</translation>
     </message>
+    <message>
+        <source>Pull down to load file or stream</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ytQualityChooserContextMenu</name>

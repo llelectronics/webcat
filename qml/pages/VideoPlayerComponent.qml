@@ -69,6 +69,7 @@ Item {
         videoPoster.showControls();
         if (streamTitle == "") streamTitle = mainWindow.findBaseName(streamUrl)
         isNewSource = true
+        mediaItem.active = true
     }
 
     function videoPlay() {
@@ -180,6 +181,12 @@ Item {
         }
     }
 
+    ViewPlaceholder {
+        enabled: !mediaItem.active
+        text: qsTr("Pull down to load file or stream")
+        z: 99
+    }
+
     Column {
         id: errorBox
         anchors.top: parent.top
@@ -233,7 +240,7 @@ Item {
 
     Item {
         id: mediaItem
-        property bool active : true
+        property bool active : false
         visible: active && mainWindow.applicationActive
         anchors.fill: parent
 
@@ -367,6 +374,7 @@ Item {
         Rectangle {
             anchors.fill: parent
             color: "black"
+            visible: mediaItem.active
         },
 
         VideoOutput {

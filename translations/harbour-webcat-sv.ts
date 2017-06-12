@@ -720,6 +720,10 @@ On Youtube Videos please make sure to be logged in. Some videos might be geobloc
 Filmen kan inte spelas upp på grund av problem att komma åt resurser.
 Se till att logga in på Youtube. Några filmer kan vara geografiskt blockerade eller kräver att du skall vara inloggad på Youtube.</translation>
     </message>
+    <message>
+        <source>Pull down to load file or stream</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ytQualityChooserContextMenu</name>

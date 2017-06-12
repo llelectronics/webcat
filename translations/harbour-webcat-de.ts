@@ -715,6 +715,10 @@ On Youtube Videos please make sure to be logged in. Some videos might be geobloc
 Das Video kann wegen unzureichender Ressourcen nicht wiedergegeben werden.
 Bei Youtube Videos stellen Sie sicher angemeldet zu sein. Einige Videos könnten in ihrem Land geblockt sein oder erst nach Anmeldung bei Youtube angesehen werden.</translation>
     </message>
+    <message>
+        <source>Pull down to load file or stream</source>
+        <translation>Herunterziehen zum Laden von Datei oder Stream</translation>
+    </message>
 </context>
 <context>
     <name>ytQualityChooserContextMenu</name>

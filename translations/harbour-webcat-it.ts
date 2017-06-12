@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="it" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="it">
 <context>
     <name>AboutPage</name>
     <message>
@@ -717,6 +719,10 @@ On Youtube Videos please make sure to be logged in. Some videos might be geobloc
         <translation>
 Non è possibile riprodurre il video a causa di un problema nell&apos;allocazione delle risorse.
 Prego assicurarsi su Youtube Videos di essere autenticati. Alcuni video potrebbero essere geo-bloccati o richiedere che si sia autenticati su youtube.</translation>
+    </message>
+    <message>
+        <source>Pull down to load file or stream</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
