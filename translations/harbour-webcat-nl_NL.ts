@@ -57,10 +57,6 @@
         <translation>Back-up maken</translation>
     </message>
     <message>
-        <source>Backups are saved to home directory</source>
-        <translation>Back-ups worden opgeslagen in de persoonlijke map</translation>
-    </message>
-    <message>
         <source>Dismiss</source>
         <translation>Sluiten</translation>
     </message>
@@ -93,6 +89,10 @@ Herstart om de wijzingen door te voeren.</translation>
     <message>
         <source>Restoring Backup</source>
         <translation>Terugzetten van back-up</translation>
+    </message>
+    <message>
+        <source>Backups are saved to Documents directory</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

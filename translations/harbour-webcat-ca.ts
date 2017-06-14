@@ -57,10 +57,6 @@
         <translation>Crea una còpia de seguretat</translation>
     </message>
     <message>
-        <source>Backups are saved to home directory</source>
-        <translation>Les còpies es desen a la carpeta Inici</translation>
-    </message>
-    <message>
         <source>Dismiss</source>
         <translation>Descarta</translation>
     </message>
@@ -93,6 +89,10 @@ Cal reiniciar Webcat per aplicar els canvis.</translation>
     <message>
         <source>Restoring Backup</source>
         <translation>S&apos;està restablint la còpia</translation>
+    </message>
+    <message>
+        <source>Backups are saved to Documents directory</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

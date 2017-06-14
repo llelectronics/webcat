@@ -57,10 +57,6 @@
         <translation>Backup erstellen</translation>
     </message>
     <message>
-        <source>Backups are saved to home directory</source>
-        <translation>Backups werden im Heimverzeichnis gespeichert</translation>
-    </message>
-    <message>
         <source>Dismiss</source>
         <translation>Ausblenden</translation>
     </message>
@@ -93,6 +89,10 @@ Bitte starten sie neu um die Änderungen zu übernehmen</translation>
     <message>
         <source>Restoring Backup</source>
         <translation>Backup wiederherstellen</translation>
+    </message>
+    <message>
+        <source>Backups are saved to Documents directory</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

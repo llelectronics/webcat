@@ -57,10 +57,6 @@
         <translation>Skapa säkerhetskopia</translation>
     </message>
     <message>
-        <source>Backups are saved to home directory</source>
-        <translation>Säkerhetskopior sparas i hemkatalogen</translation>
-    </message>
-    <message>
         <source>Dismiss</source>
         <translation>Avvisa</translation>
     </message>
@@ -93,6 +89,10 @@ Starta om Webcat för att ändringarna skall få effekt.</translation>
     <message>
         <source>Restoring Backup</source>
         <translation>Återställer från säkerhetskopia</translation>
+    </message>
+    <message>
+        <source>Backups are saved to Documents directory</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

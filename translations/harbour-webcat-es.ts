@@ -57,10 +57,6 @@
         <translation>Crear copia de seguridad</translation>
     </message>
     <message>
-        <source>Backups are saved to home directory</source>
-        <translation>Las copias de seguridad se han guardado en el directorio Home</translation>
-    </message>
-    <message>
         <source>Dismiss</source>
         <translation>Descartar</translation>
     </message>
@@ -93,6 +89,10 @@ Por favor, reinicia para que los cambios tengan efecto.</translation>
     <message>
         <source>Restoring Backup</source>
         <translation>Restaurando copia de seguridad</translation>
+    </message>
+    <message>
+        <source>Backups are saved to Documents directory</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

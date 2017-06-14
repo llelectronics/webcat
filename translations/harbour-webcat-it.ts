@@ -57,10 +57,6 @@
         <translation>Crea Backup</translation>
     </message>
     <message>
-        <source>Backups are saved to home directory</source>
-        <translation>I backup sono salvati della directory home</translation>
-    </message>
-    <message>
         <source>Dismiss</source>
         <translation>Annulla</translation>
     </message>
@@ -93,6 +89,10 @@ Prego riavviare perché le modifiche abbiano effetto.</translation>
     <message>
         <source>Restoring Backup</source>
         <translation>Ripristino Backup</translation>
+    </message>
+    <message>
+        <source>Backups are saved to Documents directory</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

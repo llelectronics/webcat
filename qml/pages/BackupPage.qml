@@ -19,7 +19,7 @@ Page {
             Column {
                 anchors { left: parent.left; right: parent.right }
                 SectionHeader {
-                    text: qsTr("Backups are saved to home directory")
+                    text: qsTr("Backups are saved to Documents directory")
                 }
 
                 Button {

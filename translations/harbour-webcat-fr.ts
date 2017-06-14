@@ -57,10 +57,6 @@
         <translation>Créer une sauvegarde</translation>
     </message>
     <message>
-        <source>Backups are saved to home directory</source>
-        <translation>Les sauvegardes sont enregistrées dans le répertoire home</translation>
-    </message>
-    <message>
         <source>Dismiss</source>
         <translation>Rejeter</translation>
     </message>
@@ -93,6 +89,10 @@ Veuillez redémarrer pour activer les modifications.</translation>
     <message>
         <source>Restoring Backup</source>
         <translation>Sauvegarde en cours de restauration</translation>
+    </message>
+    <message>
+        <source>Backups are saved to Documents directory</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

@@ -57,10 +57,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Backups are saved to home directory</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Dismiss</source>
         <translation type="unfinished"></translation>
     </message>
@@ -91,6 +87,10 @@ Please restart for changes to take effect.</source>
     </message>
     <message>
         <source>Restoring Backup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Backups are saved to Documents directory</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

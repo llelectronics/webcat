@@ -57,10 +57,6 @@
         <translation>Tee varakopio</translation>
     </message>
     <message>
-        <source>Backups are saved to home directory</source>
-        <translation>Varakopiot tallennetaan kotikansioon</translation>
-    </message>
-    <message>
         <source>Dismiss</source>
         <translation>Hylkää</translation>
     </message>
@@ -93,6 +89,10 @@ Käynnistä uudelleen että muutokset tulevat voimaan.</translation>
     <message>
         <source>Restoring Backup</source>
         <translation>Palautetaan varakopiota</translation>
+    </message>
+    <message>
+        <source>Backups are saved to Documents directory</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
