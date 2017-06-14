@@ -87,10 +87,12 @@ function getYoutubeStream(youtube_id, firstPage, listId) {
 
             var videoInfoSplit = videoInfo.split("&");
             var streams;
+            var paramPair;
 
             for (var i = 0; i < videoInfo.length; i++) {
                 try {
-                    var paramPair = videoInfoSplit[i].split("=");
+                    paramPair = videoInfoSplit[i].split("=");
+                    console.debug(paramPair[0] + " = " +  paramPair[1]);
                 } catch(e) {
                     //console.debug("[yt.js]: " + e)
                     continue;
@@ -111,6 +113,7 @@ function getYoutubeStream(youtube_id, firstPage, listId) {
                 //firstPage.ytStreamUrl = getYoutubeVid(firstPage.url)
                 //return;
             }
+
             try {
                 var streamsSplit = streams.split("&");
             } catch(e) {
@@ -124,6 +127,7 @@ function getYoutubeStream(youtube_id, firstPage, listId) {
                 for (var i = 0; i < streamsSplit.length; i++) {
                     var secondSplit = streamsSplit[i].split(",");
                     newSplit.push.apply(newSplit, secondSplit);
+                    //console.debug(" --- STREAMSPLIT 2 --- : " + secondSplit[0] + " & " + secondSplit[1]);
                 }
                 streamsSplit = newSplit;
 
@@ -133,6 +137,7 @@ function getYoutubeStream(youtube_id, firstPage, listId) {
                 var resolutionFormat;
                 for (var i = 0; i < streamsSplit.length; i++) {
                     var paramPair = streamsSplit[i].split("=");
+                    //console.debug(" --- STREAMS PARAM PAIR --- : " + paramPair[0] + " = " + paramPair[1]);
                     if (paramPair[0] === "url") {
                         url = decodeURIComponent(paramPair[1]);
                     } else if (paramPair[0] === "sig") {
@@ -158,7 +163,7 @@ function getYoutubeStream(youtube_id, firstPage, listId) {
                     //***********************************************//
 
                     // Try to get 720p HD video stream first
-                    if ((i + 1) % 5 === 0 && itag === "22") { // 5 parameters per video; itag 22 is "MP4 720p", see http://userscripts.org/scripts/review/25105
+                    if ((i + 1) % 4 === 0 && itag === "22") { // 7 parameters per video; itag 22 is "MP4 720p", see http://userscripts.org/scripts/review/25105
                         resolutionFormat = "MP4 720p"
                         firstPage.mediaList.set(listId,{"yt720p": url += "&signature=" + sig});
                         url += "&signature=" + sig;
@@ -167,7 +172,7 @@ function getYoutubeStream(youtube_id, firstPage, listId) {
                         //break;
                     }
                     // If above fails try to get 480p video stream
-                    else if ((i + 1) % 12 === 0 && itag === "135") { // 12 parameters per video; itag 18 is "MP4 480p", see http://userscripts.org/scripts/review/25105
+                    else if ((i + 1) % 4 === 0 && itag === "35") { // 7 parameters per video; itag 35 is "FLV 480p", see http://userscripts.org/scripts/review/25105
                         resolutionFormat = "FLV 480p"
                         firstPage.mediaList.set(listId,{"yt480p": url += "&signature=" + sig});
                         if (found == false) url += "&signature=" + sig;
@@ -176,7 +181,7 @@ function getYoutubeStream(youtube_id, firstPage, listId) {
                         //break;
                     }
                     // If above fails try to get 360p video stream
-                    else if ((i + 1) % 5 === 0 && itag === "18") { // 6 parameters per video; itag 18 is "MP4 360p", see http://userscripts.org/scripts/review/25105
+                    else if ((i + 1) % 4 === 0 && itag === "18") { // 7 parameters per video; itag 18 is "MP4 360p", see http://userscripts.org/scripts/review/25105
                         resolutionFormat = "MP4 360p"
                         firstPage.mediaList.set(listId,{"yt360p": url += "&signature=" + sig});
                         if (found == false) url += "&signature=" + sig;
@@ -185,7 +190,7 @@ function getYoutubeStream(youtube_id, firstPage, listId) {
                         //break;
                     }
                     // If above fails try to get 240p video stream
-                    else if ((i + 1) % 5 === 0 && itag === "36") { // 6 parameters per video; itag 36 is "3GPP 240p", see http://userscripts.org/scripts/review/25105
+                    else if ((i + 1) % 4 === 0 && itag === "36") { // 7 parameters per video; itag 36 is "3GPP 240p", see http://userscripts.org/scripts/review/25105
                         resolutionFormat = "FLV 240p"
                         firstPage.mediaList.set(listId,{"yt240p": url += "&signature=" + sig});
                         if (found == false) url += "&signature=" + sig;
