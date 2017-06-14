@@ -54,6 +54,7 @@ private:
     QString config_dir;
     QString data_dir;
     QString cache_dir;
+    QString documents_dir;
     QString errorMsg;
     QString curBackupFile;
     QDateTime curDate;

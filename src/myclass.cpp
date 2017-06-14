@@ -17,6 +17,8 @@ MyClass::MyClass(QQuickView *v)
 
     cache_dir = QStandardPaths::writableLocation(QStandardPaths::CacheLocation);
 
+    documents_dir = QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation);
+
     //qDebug() << data_dir;
 }
 
@@ -158,7 +160,7 @@ void MyClass::backupConfig(QString backupName)
     if (existsPath(data_dir)) {
         if (backupName.isEmpty())
             backupName = "webcat_backup" + curDate.currentDateTime().toString("yyyy_MM_dd_hh_mm_ss") +".tar.gz";
-        compress.start("tar -zcf " + h + "/" + backupName + " " + data_dir + "/");
+        compress.start("tar -zcf " + documents_dir + "/" + backupName + " " + data_dir + "/");
         connect(&compress, SIGNAL(finished(int)), this, SLOT(getCompressStatus(int)));
     }
     else {
