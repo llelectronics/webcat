@@ -92,7 +92,7 @@ Por favor, reinicia para que los cambios tengan efecto.</translation>
     </message>
     <message>
         <source>Backups are saved to Documents directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Copias de respaldo estarán guardadas en folder Documentos</translation>
     </message>
 </context>
 <context>
