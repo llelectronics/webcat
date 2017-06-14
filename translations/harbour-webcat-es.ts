@@ -722,7 +722,7 @@ Por favor, asegúrate de haber iniciado sesión en YouTube. El acceso a algunos 
     </message>
     <message>
         <source>Pull down to load file or stream</source>
-        <translation type="unfinished"></translation>
+        <translation>Jalar hacia abajo para cargar un archivo o secuencia</translation>
     </message>
 </context>
 <context>
