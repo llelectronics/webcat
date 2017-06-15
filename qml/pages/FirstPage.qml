@@ -669,7 +669,7 @@ Page {
         MouseArea {
             id: contextOverlay;
             anchors.fill: parent;
-            enabled: contextMenu.visible || shareContextMenu.visible || contextMenu.height != 0 || shareContextMenu.height != 0 || (ytQualChooser.status == Loader.Ready && ytQualChooser.visible)
+            enabled: contextMenu.visible || shareContextMenu.visible || contextMenu.height != 0 || shareContextMenu.height != 0 || (ytQualChooser.status == Loader.Ready && ytQualChooser.item.height != 0)
             onClicked: {
                 contextMenu.height = 0;
                 shareContextMenu.height = 0;
