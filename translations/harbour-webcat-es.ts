@@ -12,11 +12,11 @@
     <name>AddBookmark</name>
     <message>
         <source>Edit Bookmark</source>
-        <translation>Editar favorito</translation>
+        <translation>Editar Marcadores</translation>
     </message>
     <message>
         <source>Add Bookmark</source>
-        <translation>Añadir a Favoritos</translation>
+        <translation>Añadir a Marcadores</translation>
     </message>
 </context>
 <context>
@@ -118,11 +118,11 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>Download Manager</source>
-        <translation>Administrador de descargas</translation>
+        <translation>Gestor de descarga</translation>
     </message>
     <message>
         <source>Enter URL to download</source>
-        <translation>Introducir URL para descargar</translation>
+        <translation>Introducir LUR para descargar</translation>
     </message>
     <message>
         <source>Download</source>
@@ -130,7 +130,7 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>Abort</source>
-        <translation>Cancelar</translation>
+        <translation>Abortar</translation>
     </message>
     <message>
         <source>Active Downloads: </source>
@@ -201,7 +201,7 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>Enter an url</source>
-        <translation>Introducir una url</translation>
+        <translation>Introducir una lur</translation>
     </message>
     <message>
         <source>Minimize</source>
@@ -277,7 +277,7 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>Accept certificate from </source>
-        <translation>Aceptar certificado de</translation>
+        <translation>Aceptar certificado desde</translation>
     </message>
 </context>
 <context>
@@ -371,7 +371,7 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>Show Home</source>
-        <translation>Mostrar escritorio</translation>
+        <translation>Mostrar inicio</translation>
     </message>
     <message>
         <source>Show Android SDCard</source>
@@ -417,11 +417,11 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>You need to restart Webcat</source>
-        <translation>Es necesario reiniciar Webcat</translation>
+        <translation>Es necesario reanudar Webcat</translation>
     </message>
     <message>
         <source>Proxy Settings (Restart needed)</source>
-        <translation>Ajustes del Proxy (es necesario reiniciar)</translation>
+        <translation>Ajustes de Proxy (es necesario reanudar)</translation>
     </message>
     <message>
         <source>Host or Ip Address</source>
@@ -433,7 +433,7 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>Please restart Webcat</source>
-        <translation>Por favor, reinicia Webcat</translation>
+        <translation>Por favor, reanudar Webcat</translation>
     </message>
     <message>
         <source>Use Socks</source>
@@ -480,7 +480,7 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>Add Bookmark</source>
-        <translation>Añadir a Favoritos</translation>
+        <translation>Añadir a marcadores</translation>
     </message>
     <message>
         <source>History</source>
@@ -590,7 +590,7 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>Add Default Bookmarks</source>
-        <translation>Añadir favoritos predeterminados</translation>
+        <translation>Añadir marcadores por defecto</translation>
     </message>
     <message>
         <source>User Agent:</source>
@@ -630,7 +630,7 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>Clear Bookmarks</source>
-        <translation>Limpiar Favoritos</translation>
+        <translation>Limpiar marcadores</translation>
     </message>
     <message>
         <source>Use external video player</source>
@@ -638,7 +638,7 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>Reset default browser</source>
-        <translation>Restablecer el navegador por defecto</translation>
+        <translation>Reiniciar el navegador por defecto</translation>
     </message>
     <message>
         <source>Set Webcat as default browser</source>
@@ -646,7 +646,7 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>Proxy Settings</source>
-        <translation>Ajustes del Proxy</translation>
+        <translation>Ajustes de Proxy</translation>
     </message>
     <message>
         <source>Backup Manager</source>
@@ -654,15 +654,15 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>New Tab | Stop/Refresh</source>
-        <translation type="unfinished"></translation>
+        <translation>Nueva pestaña | Para/Refrescar</translation>
     </message>
     <message>
         <source>Previous Tab | Next Tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Pestaña anterior</translation>
     </message>
     <message>
         <source>Default Cover Action Group</source>
-        <translation type="unfinished"></translation>
+        <translation>Acción de cubierta por defecto</translation>
     </message>
 </context>
 <context>
