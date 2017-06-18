@@ -116,10 +116,10 @@ Dialog {
                 text: qsTr("About ")+appname
                 onClicked: pageStack.push(Qt.resolvedUrl("AboutPage.qml"));
             }
-//            MenuItem {
-//                text: qsTr("Download Manager")
-//                onClicked: pageStack.push(Qt.resolvedUrl("DownloadManager.qml"));
-//            }
+            MenuItem {
+                text: qsTr("Cookie Manager")
+                onClicked: pageStack.push(Qt.resolvedUrl("CookiePage.qml"));
+            }
             MenuItem {
                 text: qsTr("Backup Manager")
                 onClicked: pageStack.push(Qt.resolvedUrl("BackupPage.qml"));

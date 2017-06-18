@@ -110,6 +110,25 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
     </message>
 </context>
 <context>
+    <name>CookiePage</name>
+    <message>
+        <source>Cookies</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear Cookies</source>
+        <translation type="unfinished">Effacer les cookies</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation type="unfinished">Supprimer</translation>
+    </message>
+    <message>
+        <source>Search..</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>DownloadManager</name>
     <message>
         <source>Add Download</source>
@@ -661,6 +680,10 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
     </message>
     <message>
         <source>Default Cover Action Group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cookie Manager</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

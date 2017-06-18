@@ -111,6 +111,25 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
     </message>
 </context>
 <context>
+    <name>CookiePage</name>
+    <message>
+        <source>Cookies</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear Cookies</source>
+        <translation type="unfinished">Cookies wissen</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation type="unfinished">Verwijderen</translation>
+    </message>
+    <message>
+        <source>Search..</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>DownloadManager</name>
     <message>
         <source>Add Download</source>
@@ -662,6 +681,10 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
     </message>
     <message>
         <source>Default Cover Action Group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cookie Manager</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

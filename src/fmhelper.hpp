@@ -10,6 +10,7 @@
 #include <QMimeDatabase>
 #include <QMimeType>
 #include <QUrl>
+#include <QStandardPaths>
 
 class FM : public QObject
 {   Q_OBJECT
@@ -28,6 +29,8 @@ class FM : public QObject
     public:
         QString sourceUrl() {return m_sourceUrl;}
         bool isMoveMode() {return m_moveMode;}
+        QString data_dir() { return QStandardPaths::writableLocation(QStandardPaths::DataLocation);}
+        QString documents_dir() { return QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation); }
     public slots:
         void remove(const QString &url)
         {    //qDebug() << "Called the C++ slot and request removal of:" << url;

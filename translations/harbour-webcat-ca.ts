@@ -111,6 +111,25 @@ En cas de dubte, refuseu el certificat malgrat que això pot provocar que no es 
     </message>
 </context>
 <context>
+    <name>CookiePage</name>
+    <message>
+        <source>Cookies</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear Cookies</source>
+        <translation type="unfinished">Neteja les galetes</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation type="unfinished">Elimina</translation>
+    </message>
+    <message>
+        <source>Search..</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>DownloadManager</name>
     <message>
         <source>Add Download</source>
@@ -662,6 +681,10 @@ En cas de dubte, refuseu el certificat malgrat que això pot provocar que no es 
     </message>
     <message>
         <source>Default Cover Action Group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cookie Manager</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

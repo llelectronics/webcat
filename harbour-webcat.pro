@@ -102,7 +102,8 @@ HEADERS += \
     src/transferengine/transfermethodmodel.h \
     src/dbus/webcatadaptor.h \
     src/dbus/webcatinterface.h \
-    src/proxymanager.h
+    src/proxymanager.h \
+    src/cookiemanager.hpp
 
 QT += network
 
@@ -133,6 +134,8 @@ dbus.path = /usr/share/harbour-webcat
 opendesktopfile.files = open-url-webcat.desktop
 opendesktopfile.path = /usr/share/harbour-webcat
 
+QT += sql
+
 INSTALLS += dbus opendesktopfile
 
 DISTFILES += \
@@ -150,4 +153,7 @@ DISTFILES += \
     qml/pages/helper/otherComponents/SectionHeader.qml \
     translations/harbour-webcat-sv.ts \
     qml/pages/helper/otherComponents/MenuPopup.qml \
-    qml/pages/helper/videoPlayerComponents/OpenURLPage.qml
+    qml/pages/helper/videoPlayerComponents/OpenURLPage.qml \
+    qml/pages/CookiePage.qml
+
+include(src/sortFilterProxyModel/SortFilterProxyModel.pri)

@@ -42,6 +42,7 @@
 #include "transferengine/transfermethodmodel.h"
 #include "dbus/webcatinterface.h"
 #include "proxymanager.h"
+#include "cookiemanager.hpp"
 
 // Compile everything needed for faster startup and less memory usage
 #include <QQuickItem>
@@ -231,6 +232,9 @@ int main(int argc, char *argv[])
 
     videoHelper *vHelper = new videoHelper();
     view->engine()->rootContext()->setContextProperty("_videoHelper", vHelper);
+
+    CookieManager *cookieManager = new CookieManager();
+    view->engine()->rootContext()->setContextProperty("_cookieManager", cookieManager);
 
     view->showFullScreen();
 

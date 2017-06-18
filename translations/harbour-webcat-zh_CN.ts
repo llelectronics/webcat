@@ -108,6 +108,25 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
 </context>
 <context>
+    <name>CookiePage</name>
+    <message>
+        <source>Cookies</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear Cookies</source>
+        <translation type="unfinished">清除Cookie</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation type="unfinished">删除</translation>
+    </message>
+    <message>
+        <source>Search..</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>DownloadManager</name>
     <message>
         <source>Add Download</source>
@@ -658,6 +677,10 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Default Cover Action Group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cookie Manager</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

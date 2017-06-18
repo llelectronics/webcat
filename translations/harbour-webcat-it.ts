@@ -111,6 +111,25 @@ Se non sei sicuro, rifiuta il certificato. Ma questo può impedire il caricament
     </message>
 </context>
 <context>
+    <name>CookiePage</name>
+    <message>
+        <source>Cookies</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear Cookies</source>
+        <translation type="unfinished">Elimina i cookie</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search..</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>DownloadManager</name>
     <message>
         <source>Add Download</source>
@@ -662,6 +681,10 @@ Se non sei sicuro, rifiuta il certificato. Ma questo può impedire il caricament
     </message>
     <message>
         <source>Default Cover Action Group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cookie Manager</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -111,6 +111,25 @@ Wenn Sie sich unsicher sind lehnen sie das Zertifikat ab. Dies führt unter Umst
     </message>
 </context>
 <context>
+    <name>CookiePage</name>
+    <message>
+        <source>Cookies</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear Cookies</source>
+        <translation>Cookies leeren</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Löschen</translation>
+    </message>
+    <message>
+        <source>Search..</source>
+        <translation>Suche..</translation>
+    </message>
+</context>
+<context>
     <name>DownloadManager</name>
     <message>
         <source>Add Download</source>
@@ -662,6 +681,10 @@ Wenn Sie sich unsicher sind lehnen sie das Zertifikat ab. Dies führt unter Umst
     <message>
         <source>Default Cover Action Group</source>
         <translation>Standard Cover Action Gruppe</translation>
+    </message>
+    <message>
+        <source>Cookie Manager</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
