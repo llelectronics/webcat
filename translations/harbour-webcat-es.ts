@@ -66,7 +66,7 @@
     </message>
     <message>
         <source>The Backup includes all cookies, bookmarks, history and settings for Webcat.</source>
-        <translation>La copia de seguridad incluye las cookies, favoritos, historial y ajustes de Webcat.</translation>
+        <translation>La copia de seguridad incluye las galletas, marcadores, historial y ajustes de Webcat.</translation>
     </message>
     <message>
         <source>Restore Backup</source>
@@ -78,12 +78,12 @@
     </message>
     <message>
         <source>Backup restored! Please restart Webcat</source>
-        <translation>¡Copia de seguridad restaurada! Por favor, reinicia Webcat</translation>
+        <translation>¡Copia de seguridad restaurada! Por favor, reanudar Webcat</translation>
     </message>
     <message>
         <source>Restoring overwrites all cookies, bookmarks, history and settings for Webcat from the backup file.
 Please restart for changes to take effect.</source>
-        <translation>Al restaurar la copia de seguridad se reemplazarán las cookies, favoritos, historial y ajustes de Webcat.
+        <translation>Al restaurar la copia de seguridad se reemplazarán las galletas, marcadores, historial y ajustes de Webcat.
 Por favor, reinicia para que los cambios tengan efecto.</translation>
     </message>
     <message>
@@ -114,19 +114,19 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     <name>CookiePage</name>
     <message>
         <source>Cookies</source>
-        <translation type="unfinished"></translation>
+        <translation>Galletas</translation>
     </message>
     <message>
         <source>Clear Cookies</source>
-        <translation type="unfinished">Limpiar cookies</translation>
+        <translation>Limpiar galletas</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">Borrar</translation>
+        <translation>Borrar</translation>
     </message>
     <message>
         <source>Search..</source>
-        <translation type="unfinished"></translation>
+        <translation>Buscar..</translation>
     </message>
 </context>
 <context>
@@ -165,7 +165,7 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>Download Status</source>
-        <translation>Estado de la descarga</translation>
+        <translation>Estado de descarga</translation>
     </message>
     <message>
         <source>Download Errors</source>
@@ -475,7 +475,7 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     <name>SelectUrl</name>
     <message>
         <source>Bookmarks</source>
-        <translation>Favoritos</translation>
+        <translation>Marcadores</translation>
     </message>
     <message>
         <source>Open in new Tab</source>
@@ -499,7 +499,7 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>Add Bookmark</source>
-        <translation>Añadir a marcadores</translation>
+        <translation>Añadir marcador</translation>
     </message>
     <message>
         <source>History</source>
@@ -565,7 +565,7 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>Load Defaults</source>
-        <translation>Restaurar valores por defecto</translation>
+        <translation>Cargar por defecto</translation>
     </message>
     <message>
         <source>Appearance</source>
@@ -617,7 +617,7 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>Clear Cookies</source>
-        <translation>Limpiar cookies</translation>
+        <translation>Limpiar galletas</translation>
     </message>
     <message>
         <source>Start Private Window</source>
@@ -685,7 +685,7 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>Cookie Manager</source>
-        <translation type="unfinished"></translation>
+        <translation>Gestor de galleta</translation>
     </message>
 </context>
 <context>
