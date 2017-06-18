@@ -57,6 +57,8 @@ Dialog {
         else if (orientationCombo.value == "Orientation.Landscape") DB.addSetting("orientation", Orientation.Landscape)
         else if (orientationCombo.value == "Orientation.Portrait") DB.addSetting("orientation", Orientation.Portrait)
         DB.addSetting("vPlayerExternal", vPlayerExternalSwitch.checked.toString());
+        if (actionGroupCombo.value == qsTr("New Tab | Stop/Refresh")) DB.addSetting("coverActionGroup", 0)
+        if (actionGroupCombo.value == qsTr("Previous Tab | Next Tab")) DB.addSetting("coverActionGroup", 1)
         DB.getSettings();
     }
 
@@ -368,6 +370,20 @@ Dialog {
                 }
                 anchors.horizontalCenter: parent.horizontalCenter
                 onClicked: pageStack.replace(Qt.resolvedUrl("ProxySettingsPage.qml"));
+            }
+            ComboBox {
+                id: actionGroupCombo
+                anchors.horizontalCenter: parent.horizontalCenter
+                label: qsTr("Default Cover Action Group")
+                currentIndex: {
+                    console.debug("[SettingsPage.qml] mainWindow.coverActiopnGroup:" + mainWindow.coverActionGroup)
+                    if (mainWindow.coverActionGroup == 0) return 0
+                    else if (mainWindow.coverActionGroup == 1) return 1
+                }
+                menu: ContextMenu {
+                    MenuItem { text: qsTr("New Tab | Stop/Refresh") }
+                    MenuItem { text: qsTr("Previous Tab | Next Tab") }
+                }
             }
 //            BackgroundItem {
 //                id: setDefaultButton

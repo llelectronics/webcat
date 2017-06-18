@@ -79,6 +79,7 @@ ApplicationWindow
     property bool vPlayerExists
     property bool vPlayerExternal
     property alias infoBanner: infoBanner
+    property int coverActionGroup: 0
 
     property var firstPage
     property TransferEngine transferEngine: TransferEngine { }
@@ -199,6 +200,7 @@ ApplicationWindow
         //console.log("switchToTab: "+ pageid + " , from: " + currentTab); //+ ' , at ' + tabListView.currentIndex);
         pageStack.replaceAbove(null, Tab.itemMap[pageid],{bookmarks: modelUrls, tabModel: tabModel, pageId: pageid}); // Nice 'null' trick for replaceAbove thanks to jpnurmi from irc for pointing that out
         currentTab = pageid;
+        currentTabIndex = tabModel.getIndexFromId(currentTab)
     }
 
     function closeTab(deleteIndex, pageid) {

@@ -92,7 +92,7 @@ Bitte starten sie neu um die Änderungen zu übernehmen</translation>
     </message>
     <message>
         <source>Backups are saved to Documents directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Backups werden im Documents Ordner gespeichert</translation>
     </message>
 </context>
 <context>
@@ -650,6 +650,18 @@ Wenn Sie sich unsicher sind lehnen sie das Zertifikat ab. Dies führt unter Umst
     <message>
         <source>Backup Manager</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New Tab | Stop/Refresh</source>
+        <translation>Neuer Reiter | Stop/Neuladen</translation>
+    </message>
+    <message>
+        <source>Previous Tab | Next Tab</source>
+        <translation>Vorheriger Reiter | Nächster Reiter</translation>
+    </message>
+    <message>
+        <source>Default Cover Action Group</source>
+        <translation>Standard Cover Action Gruppe</translation>
     </message>
 </context>
 <context>

@@ -652,6 +652,18 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
         <source>Backup Manager</source>
         <translation>Säkerhetskopiering</translation>
     </message>
+    <message>
+        <source>New Tab | Stop/Refresh</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Previous Tab | Next Tab</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default Cover Action Group</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ShareContextMenu</name>

@@ -650,6 +650,18 @@ If you are unsure reject the certificate. That might lead to a non loading websi
         <source>Backup Manager</source>
         <translation>Varakopioiden hallinta</translation>
     </message>
+    <message>
+        <source>New Tab | Stop/Refresh</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Previous Tab | Next Tab</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default Cover Action Group</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ShareContextMenu</name>

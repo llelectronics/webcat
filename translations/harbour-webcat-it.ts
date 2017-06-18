@@ -652,6 +652,18 @@ Se non sei sicuro, rifiuta il certificato. Ma questo può impedire il caricament
         <source>Backup Manager</source>
         <translation>Gestore Backup</translation>
     </message>
+    <message>
+        <source>New Tab | Stop/Refresh</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Previous Tab | Next Tab</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default Cover Action Group</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ShareContextMenu</name>

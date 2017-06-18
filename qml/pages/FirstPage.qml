@@ -1910,7 +1910,7 @@ Page {
     }
 
     CoverActionList {
-            enabled: page.status === PageStatus.Active && webview.contentItem && vPlayerLoader.status != Loader.Ready
+            enabled: page.status === PageStatus.Active && webview.contentItem && vPlayerLoader.status != Loader.Ready && mainWindow.coverActionGroup == 0
             iconBackground: true
 
             CoverAction {
@@ -1929,6 +1929,30 @@ Page {
                     } else {
                         webview.reload()
                     }
+                }
+            }
+        }
+    CoverActionList {
+            enabled: page.status === PageStatus.Active && webview.contentItem && vPlayerLoader.status != Loader.Ready && mainWindow.coverActionGroup == 1 && mainWindow.tabModel.count > 1
+            iconBackground: true
+
+            CoverAction {
+                iconSource: {
+                    if (! mainWindow.currentTabIndex < 1) "image://theme/icon-cover-previous"
+                    else ""
+                }
+                onTriggered: {
+                    if (! mainWindow.currentTabIndex < 1) mainWindow.switchToTab(mainWindow.tabModel.get(mainWindow.currentTabIndex-1).pageid)
+                }
+            }
+
+            CoverAction {
+                iconSource: {
+                    if (mainWindow.currentTabIndex < mainWindow.tabModel.count-1) "image://theme/icon-cover-next"
+                    else ""
+                }
+                onTriggered: {
+                    if (! mainWindow.currentTabIndex < mainWindow.tabModel.count) mainWindow.switchToTab(mainWindow.tabModel.get(mainWindow.currentTabIndex+1).pageid)
                 }
             }
         }

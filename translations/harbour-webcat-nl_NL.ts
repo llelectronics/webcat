@@ -652,6 +652,18 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
         <source>Backup Manager</source>
         <translation>Back-upbeheerder</translation>
     </message>
+    <message>
+        <source>New Tab | Stop/Refresh</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Previous Tab | Next Tab</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default Cover Action Group</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ShareContextMenu</name>

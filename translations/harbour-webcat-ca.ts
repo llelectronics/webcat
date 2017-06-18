@@ -652,6 +652,18 @@ En cas de dubte, refuseu el certificat malgrat que això pot provocar que no es 
         <source>Backup Manager</source>
         <translation>Gestor de còpies de seguretat</translation>
     </message>
+    <message>
+        <source>New Tab | Stop/Refresh</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Previous Tab | Next Tab</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default Cover Action Group</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ShareContextMenu</name>

@@ -652,6 +652,18 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
         <source>Backup Manager</source>
         <translation>Gestor de copias de seguridad</translation>
     </message>
+    <message>
+        <source>New Tab | Stop/Refresh</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Previous Tab | Next Tab</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default Cover Action Group</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ShareContextMenu</name>
