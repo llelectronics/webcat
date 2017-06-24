@@ -1,11 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="ru">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="ru" version="2.1">
 <context>
     <name>AboutPage</name>
     <message>
         <source>A simple webbrowser based on webkit.</source>
-        <translation>Простой веб-браузер на базе WebKit.</translation>
+        <translation>Простой веб-браузер на основе WebKit.</translation>
     </message>
 </context>
 <context>
@@ -50,48 +48,48 @@
     <name>BackupPage</name>
     <message>
         <source>Backups</source>
-        <translation type="unfinished"></translation>
+        <translation>Резервные копии</translation>
     </message>
     <message>
         <source>Create Backup</source>
-        <translation type="unfinished"></translation>
+        <translation>Создать резервную копию</translation>
     </message>
     <message>
         <source>Dismiss</source>
-        <translation type="unfinished"></translation>
+        <translation>Отменить </translation>
     </message>
     <message>
         <source>Backup saved successfully!</source>
-        <translation type="unfinished"></translation>
+        <translation>Бэкап успешно сохранен!</translation>
     </message>
     <message>
         <source>The Backup includes all cookies, bookmarks, history and settings for Webcat.</source>
-        <translation type="unfinished"></translation>
+        <translation>Бэкап включает все куки, закладки, историю и настройки браузера.</translation>
     </message>
     <message>
         <source>Restore Backup</source>
-        <translation type="unfinished"></translation>
+        <translation>Восстановить  резервную копию</translation>
     </message>
     <message>
         <source>Backups overwrite current configurations</source>
-        <translation type="unfinished"></translation>
+        <translation>Бэкап перезапишет текущую конфигурацию</translation>
     </message>
     <message>
         <source>Backup restored! Please restart Webcat</source>
-        <translation type="unfinished"></translation>
+        <translation>Резервная копия восстановлена! Пожалуйста, перезапустите браузер.</translation>
     </message>
     <message>
         <source>Restoring overwrites all cookies, bookmarks, history and settings for Webcat from the backup file.
 Please restart for changes to take effect.</source>
-        <translation type="unfinished"></translation>
+        <translation>Восстановление бэкапа перезапишет все куки, закладки, историю и настройки браузера. Необходим перезапуск.</translation>
     </message>
     <message>
         <source>Restoring Backup</source>
-        <translation type="unfinished"></translation>
+        <translation>Восстановление резервной копии</translation>
     </message>
     <message>
         <source>Backups are saved to Documents directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Резервные копии сохранены в папку Документы</translation>
     </message>
 </context>
 <context>
@@ -104,26 +102,28 @@ Please restart for changes to take effect.</source>
         <source>Certificates are used to identify and make sure that the website you see is provided by the author you expect.
 Unknown certificates are either ones that are missing in the global configuration of your browser. Outdated ones or compromised ones.
 If you are unsure reject the certificate. That might lead to a non loading website though.</source>
-        <translation type="unfinished"></translation>
+        <translation>Сертификаты используются для идентификации и уверенности в том, что открываемый веб-сайт предоставлен ожидаемым вами автором. 
+Неизвестные сертификаты - это сертификаты, отсутствующие в глобальной конфигурации вашего браузера. Устаревшие и скомпрометированные. 
+Если вы не уверены, удалите сертификат. Это также может привести к неработающему веб-сайту. </translation>
     </message>
 </context>
 <context>
     <name>CookiePage</name>
     <message>
         <source>Cookies</source>
-        <translation type="unfinished"></translation>
+        <translation>Cookies-файлы </translation>
     </message>
     <message>
         <source>Clear Cookies</source>
-        <translation type="unfinished">Очистить cookies-файлы</translation>
+        <translation>Очистить cookies-файлы </translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">Удалить</translation>
+        <translation>Удалить</translation>
     </message>
     <message>
         <source>Search..</source>
-        <translation type="unfinished"></translation>
+        <translation>Поиск...</translation>
     </message>
 </context>
 <context>
@@ -182,7 +182,7 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Deleting </source>
-        <translation>Удаляю</translation>
+        <translation>Удаление</translation>
     </message>
     <message>
         <source>Delete</source>
@@ -190,23 +190,23 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Current operation</source>
-        <translation type="unfinished"></translation>
+        <translation>Текущая операция</translation>
     </message>
     <message>
         <source>Details</source>
-        <translation type="unfinished"></translation>
+        <translation>Детали</translation>
     </message>
     <message>
         <source>Download list</source>
-        <translation type="unfinished"></translation>
+        <translation>Список загрузок</translation>
     </message>
     <message>
         <source>Resume</source>
-        <translation type="unfinished"></translation>
+        <translation>Продолжить</translation>
     </message>
     <message>
         <source>Pause</source>
-        <translation type="unfinished"></translation>
+        <translation>Пауза</translation>
     </message>
 </context>
 <context>
@@ -261,7 +261,7 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Open in New Window</source>
-        <translation>Открыть новое окно</translation>
+        <translation>Открыть в новом окне</translation>
     </message>
     <message>
         <source>Open in New Tab</source>
@@ -285,15 +285,15 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Open Image in New Tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Открыть картинку в новой вкладке</translation>
     </message>
     <message>
         <source>Unknown certificate</source>
-        <translation type="unfinished"></translation>
+        <translation>Неизвестный сертификат</translation>
     </message>
     <message>
         <source>Accept certificate from </source>
-        <translation type="unfinished"></translation>
+        <translation>Сертификат принят от</translation>
     </message>
 </context>
 <context>
@@ -319,39 +319,40 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     <name>MenuPopup</name>
     <message>
         <source>File Manager</source>
-        <translation type="unfinished"></translation>
+        <translation>Менеджер файлов</translation>
     </message>
     <message>
         <source>Backup Manager</source>
-        <translation type="unfinished"></translation>
+        <translation>Backup менеджер</translation>
     </message>
     <message>
         <source>Video Player</source>
-        <translation type="unfinished"></translation>
+        <translation>Видео плеер</translation>
     </message>
     <message>
         <source>Download Manager</source>
-        <translation type="unfinished">Менеджер загрузки</translation>
+        <translation>Менеджер загрузки</translation>
     </message>
 </context>
 <context>
     <name>MyClass</name>
     <message>
         <source>Webcat config dir not found</source>
-        <translation type="unfinished"></translation>
+        <translation>Директория конфигурации Webcat не найдена </translation>
     </message>
     <message>
         <source>File not found.</source>
-        <translation type="unfinished"></translation>
+        <translation>Файл не найдет</translation>
     </message>
     <message>
         <source>No valid Backup file. Did not find harbour-webcat Folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>Недействительный файл резервной копии. </translation>
     </message>
     <message>
         <source>Could not verify Backup file.
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Не удалось проверить файл резервной копии.
+</translation>
     </message>
 </context>
 <context>
@@ -370,101 +371,101 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Paste</source>
-        <translation type="unfinished"></translation>
+        <translation>Вставить</translation>
     </message>
     <message>
         <source>Error pasting file </source>
-        <translation type="unfinished"></translation>
+        <translation>Ошибка при копировании файла</translation>
     </message>
     <message>
         <source>Cut</source>
-        <translation type="unfinished"></translation>
+        <translation>Вырезать</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation type="unfinished">Копировать</translation>
+        <translation>Копировать</translation>
     </message>
     <message>
         <source>Show Filesystem Root</source>
-        <translation type="unfinished"></translation>
+        <translation>Показать Filesystem Root</translation>
     </message>
     <message>
         <source>Show Home</source>
-        <translation type="unfinished"></translation>
+        <translation>Показать дом</translation>
     </message>
     <message>
         <source>Show Android SDCard</source>
-        <translation type="unfinished"></translation>
+        <translation>Показать Android SDCard</translation>
     </message>
     <message>
         <source>Show SDCard</source>
-        <translation type="unfinished"></translation>
+        <translation>Показать SDCard</translation>
     </message>
     <message>
         <source>directory</source>
-        <translation type="unfinished"></translation>
+        <translation>директория</translation>
     </message>
 </context>
 <context>
     <name>OpenURLPage</name>
     <message>
         <source>Load URL</source>
-        <translation type="unfinished"></translation>
+        <translation>Загрузить URL</translation>
     </message>
     <message>
         <source>Type in URL here</source>
-        <translation type="unfinished"></translation>
+        <translation>Введите URL здесь</translation>
     </message>
     <message>
         <source>URL to media file/stream</source>
-        <translation type="unfinished"></translation>
+        <translation>URL to media file/stream</translation>
     </message>
 </context>
 <context>
     <name>ProxySettingsPage</name>
     <message>
-        <source>Please restart Webcat</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Save</source>
-        <translation type="unfinished"></translation>
+        <translation>Сохранить</translation>
     </message>
     <message>
         <source>Proxy Disabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Прокси отключён </translation>
     </message>
     <message>
         <source>You need to restart Webcat</source>
-        <translation type="unfinished"></translation>
+        <translation>Необходимо перезагрузить браузер</translation>
     </message>
     <message>
         <source>Proxy Settings (Restart needed)</source>
-        <translation type="unfinished"></translation>
+        <translation>Настройки прокси (требуется перезагрузка) </translation>
     </message>
     <message>
         <source>Host or Ip Address</source>
-        <translation type="unfinished"></translation>
+        <translation>Хост или Ip-адрес </translation>
     </message>
     <message>
         <source>Port</source>
-        <translation type="unfinished"></translation>
+        <translation>Порт</translation>
+    </message>
+    <message>
+        <source>Please restart Webcat</source>
+        <translation>Пожалуйста перезагрузите браузер</translation>
     </message>
     <message>
         <source>Use Socks</source>
-        <translation type="unfinished"></translation>
+        <translation>Использовать Socks</translation>
     </message>
     <message>
         <source>Socket Secure (SOCKS) is an Internet protocol that exchanges network packets between a client and server through a proxy server.</source>
-        <translation type="unfinished"></translation>
+        <translation>Socket Secure (SOCKS) - интернет-протокол сетевого обмена между клиентом и сервером через прокси-сервер.</translation>
     </message>
     <message>
         <source>Use Tor</source>
-        <translation type="unfinished"></translation>
+        <translation>Использовать Tor</translation>
     </message>
     <message>
         <source>Tor is free software for enabling anonymous communication. This will setup the proxy automatically to use tor. Tor service must be running on the system for this to work.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor является бесплатным программным обеспечением для анонимного общения. Эти настройки прокси будут автоматически использовать Tor. Сервис Tor  должен быть запущен.</translation>
     </message>
 </context>
 <context>
@@ -519,7 +520,7 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Split WebView</source>
-        <translation type="unfinished"></translation>
+        <translation> Split-View</translation>
     </message>
     <message>
         <source>Tabs</source>
@@ -534,11 +535,11 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Show HTML</source>
-        <translation type="unfinished"></translation>
+        <translation>Показать HTML</translation>
     </message>
     <message>
         <source>Hide HTML</source>
-        <translation type="unfinished"></translation>
+        <translation>Скрыть HTML</translation>
     </message>
 </context>
 <context>
@@ -561,7 +562,7 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Load Defaults</source>
-        <translation>Загрузка значений по умолчанию</translation>
+        <translation>Сбросить до первоначальных настроек</translation>
     </message>
     <message>
         <source>Appearance</source>
@@ -661,27 +662,27 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Proxy Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Настройки proxy </translation>
     </message>
     <message>
         <source>Backup Manager</source>
-        <translation type="unfinished"></translation>
+        <translation>Backup менеджер</translation>
     </message>
     <message>
         <source>New Tab | Stop/Refresh</source>
-        <translation type="unfinished"></translation>
+        <translation>Новая вкладка | Стоп/Обновить</translation>
     </message>
     <message>
         <source>Previous Tab | Next Tab</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Default Cover Action Group</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Cookie Manager</source>
-        <translation type="unfinished"></translation>
+        <translation>Cookie менеджер</translation>
     </message>
 </context>
 <context>
@@ -706,48 +707,55 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     <name>VideoPlayer</name>
     <message>
         <source>Open File</source>
-        <translation type="unfinished"></translation>
+        <translation>Открыть файл</translation>
     </message>
     <message>
         <source>Open Stream</source>
-        <translation type="unfinished"></translation>
+        <translation>Открыть Stream</translation>
     </message>
 </context>
 <context>
     <name>VideoPlayerComponent</name>
     <message>
         <source>Dismiss</source>
-        <translation type="unfinished"></translation>
+        <translation>Отменить </translation>
     </message>
     <message>
         <source>
 The audio and or video format is not supported.</source>
-        <translation type="unfinished"></translation>
+        <translation>
+Аудио и\или видео формат не поддерживается.</translation>
     </message>
     <message>
         <source>
 The video cannot be played due to network issues.</source>
-        <translation type="unfinished"></translation>
+        <translation>
+Видео не может быть воспроизведено из-за проблем с сетью.</translation>
     </message>
     <message>
         <source>
 The video cannot be played because the media service could not be instantiated.</source>
-        <translation type="unfinished"></translation>
+        <translation>
+Видео не может быть воспроизведено из-за отсутствия медиа-сервиса. </translation>
     </message>
     <message>
         <source>
 The video cannot be played due to insufficient permissions.</source>
-        <translation type="unfinished"></translation>
+        <translation>
+Видео не может быть воспроизведено из-за недостаточных разрешений.</translation>
     </message>
     <message>
         <source>
 The video cannot be played due to a problem allocating resources.
 On Youtube Videos please make sure to be logged in. Some videos might be geoblocked or require you to be logged into youtube.</source>
-        <translation type="unfinished"></translation>
+        <translation>
+Видео не может быть воспроизведено из-за проблем на стороне источника.
+
+Пожалуйста, убедитесь, что вы ввели логин\пароль. Некоторые сервисы могут быть заблокированы в Вашей стране или требуют, чтобы вы вошли в Youtube .</translation>
     </message>
     <message>
         <source>Pull down to load file or stream</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>

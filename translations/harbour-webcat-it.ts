@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="it">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="it" version="2.1">
 <context>
     <name>AboutPage</name>
     <message>
@@ -92,7 +90,7 @@ Prego riavviare perché le modifiche abbiano effetto.</translation>
     </message>
     <message>
         <source>Backups are saved to Documents directory</source>
-        <translation type="unfinished"></translation>
+        <translation>I backup vengono salvati nella cartella Documenti</translation>
     </message>
 </context>
 <context>
@@ -114,19 +112,19 @@ Se non sei sicuro, rifiuta il certificato. Ma questo può impedire il caricament
     <name>CookiePage</name>
     <message>
         <source>Cookies</source>
-        <translation type="unfinished"></translation>
+        <translation>Cookie</translation>
     </message>
     <message>
         <source>Clear Cookies</source>
-        <translation type="unfinished">Elimina i cookie</translation>
+        <translation>Elimina i cookie</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Elimina</translation>
     </message>
     <message>
         <source>Search..</source>
-        <translation type="unfinished"></translation>
+        <translation>Cerca...</translation>
     </message>
 </context>
 <context>
@@ -673,19 +671,19 @@ Se non sei sicuro, rifiuta il certificato. Ma questo può impedire il caricament
     </message>
     <message>
         <source>New Tab | Stop/Refresh</source>
-        <translation type="unfinished"></translation>
+        <translation>Nuova Scheda | Ferma/Aggiorna</translation>
     </message>
     <message>
         <source>Previous Tab | Next Tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Scheda Precedente | Scheda Successiva</translation>
     </message>
     <message>
         <source>Default Cover Action Group</source>
-        <translation type="unfinished"></translation>
+        <translation>Gruppo di azioni Cover predefinito</translation>
     </message>
     <message>
         <source>Cookie Manager</source>
-        <translation type="unfinished"></translation>
+        <translation>Gestione Cookie</translation>
     </message>
 </context>
 <context>
@@ -757,7 +755,7 @@ Prego assicurarsi su Youtube Videos di essere autenticati. Alcuni video potrebbe
     </message>
     <message>
         <source>Pull down to load file or stream</source>
-        <translation type="unfinished"></translation>
+        <translation>Scorri in basso per caricare un file o un flusso</translation>
     </message>
 </context>
 <context>

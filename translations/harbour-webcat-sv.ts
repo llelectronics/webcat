@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="sv">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="sv" version="2.1">
 <context>
     <name>AboutPage</name>
     <message>
@@ -92,7 +90,7 @@ Starta om Webcat för att ändringarna skall få effekt.</translation>
     </message>
     <message>
         <source>Backups are saved to Documents directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Säkerhetskopior sparas i dokumentmappen</translation>
     </message>
 </context>
 <context>
@@ -114,19 +112,19 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
     <name>CookiePage</name>
     <message>
         <source>Cookies</source>
-        <translation type="unfinished"></translation>
+        <translation>Cookies</translation>
     </message>
     <message>
         <source>Clear Cookies</source>
-        <translation type="unfinished">Rensa cookies</translation>
+        <translation>Rensa cookies</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">Ta bort</translation>
+        <translation>Ta bort</translation>
     </message>
     <message>
         <source>Search..</source>
-        <translation type="unfinished"></translation>
+        <translation>Sök...</translation>
     </message>
 </context>
 <context>
@@ -322,19 +320,19 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
     <name>MenuPopup</name>
     <message>
         <source>File Manager</source>
-        <translation type="unfinished"></translation>
+        <translation>Filhanterare</translation>
     </message>
     <message>
         <source>Backup Manager</source>
-        <translation type="unfinished">Säkerhetskopiering</translation>
+        <translation>Säkerhetskopiering</translation>
     </message>
     <message>
         <source>Video Player</source>
-        <translation type="unfinished"></translation>
+        <translation>Video-spelare</translation>
     </message>
     <message>
         <source>Download Manager</source>
-        <translation type="unfinished">Nedladdningshanterare</translation>
+        <translation>Nerladdningshanterare</translation>
     </message>
 </context>
 <context>
@@ -413,15 +411,15 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
     <name>OpenURLPage</name>
     <message>
         <source>Load URL</source>
-        <translation type="unfinished"></translation>
+        <translation>Läs in URL</translation>
     </message>
     <message>
         <source>Type in URL here</source>
-        <translation type="unfinished"></translation>
+        <translation>Skriv URL här</translation>
     </message>
     <message>
         <source>URL to media file/stream</source>
-        <translation type="unfinished"></translation>
+        <translation>URL till mediafil/-ström</translation>
     </message>
 </context>
 <context>
@@ -538,11 +536,11 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
     </message>
     <message>
         <source>Show HTML</source>
-        <translation type="unfinished"></translation>
+        <translation>Visa HTML</translation>
     </message>
     <message>
         <source>Hide HTML</source>
-        <translation type="unfinished"></translation>
+        <translation>Dölj HTML</translation>
     </message>
 </context>
 <context>
@@ -673,19 +671,19 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
     </message>
     <message>
         <source>New Tab | Stop/Refresh</source>
-        <translation type="unfinished"></translation>
+        <translation>Ny flik | Stopp/Uppdatera</translation>
     </message>
     <message>
         <source>Previous Tab | Next Tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Föregående flik | Nästa flik</translation>
     </message>
     <message>
         <source>Default Cover Action Group</source>
-        <translation type="unfinished"></translation>
+        <translation>Standard miniatyråtgärdsgrupp</translation>
     </message>
     <message>
         <source>Cookie Manager</source>
-        <translation type="unfinished"></translation>
+        <translation>Cookie-hanterare</translation>
     </message>
 </context>
 <context>
@@ -710,11 +708,11 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
     <name>VideoPlayer</name>
     <message>
         <source>Open File</source>
-        <translation type="unfinished"></translation>
+        <translation>Öppna fil</translation>
     </message>
     <message>
         <source>Open Stream</source>
-        <translation type="unfinished"></translation>
+        <translation>Öppna ström</translation>
     </message>
 </context>
 <context>
@@ -757,7 +755,7 @@ Se till att logga in på Youtube. Några filmer kan vara geografiskt blockerade 
     </message>
     <message>
         <source>Pull down to load file or stream</source>
-        <translation type="unfinished"></translation>
+        <translation>Dra neråt för att läsa in fil eller ström</translation>
     </message>
 </context>
 <context>

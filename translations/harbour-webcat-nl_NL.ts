@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="nl_NL">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="nl_NL" version="2.1">
 <context>
     <name>AboutPage</name>
     <message>
@@ -92,7 +90,7 @@ Herstart om de wijzingen door te voeren.</translation>
     </message>
     <message>
         <source>Backups are saved to Documents directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Back-ups worden opgeslagen in de map Documenten</translation>
     </message>
 </context>
 <context>
@@ -114,19 +112,19 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
     <name>CookiePage</name>
     <message>
         <source>Cookies</source>
-        <translation type="unfinished"></translation>
+        <translation>Cookies</translation>
     </message>
     <message>
         <source>Clear Cookies</source>
-        <translation type="unfinished">Cookies wissen</translation>
+        <translation>Cookies wissen</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">Verwijderen</translation>
+        <translation>Verwijderen</translation>
     </message>
     <message>
         <source>Search..</source>
-        <translation type="unfinished"></translation>
+        <translation>Zoeken...</translation>
     </message>
 </context>
 <context>
@@ -673,19 +671,19 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
     </message>
     <message>
         <source>New Tab | Stop/Refresh</source>
-        <translation type="unfinished"></translation>
+        <translation>Volgend tabblad ¦ Stoppen/herladen</translation>
     </message>
     <message>
         <source>Previous Tab | Next Tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Vorig tabblad ¦ Volgend tabblad</translation>
     </message>
     <message>
         <source>Default Cover Action Group</source>
-        <translation type="unfinished"></translation>
+        <translation>Standaardomslagactiegroep</translation>
     </message>
     <message>
         <source>Cookie Manager</source>
-        <translation type="unfinished"></translation>
+        <translation>Cookiebeheerder</translation>
     </message>
 </context>
 <context>
@@ -757,7 +755,7 @@ Zorg er voor dat je ingelogd bent bij YouTube Videos. Sommige videos kunnen gebl
     </message>
     <message>
         <source>Pull down to load file or stream</source>
-        <translation type="unfinished"></translation>
+        <translation>Trek omlaag om bestand of stream te laden</translation>
     </message>
 </context>
 <context>

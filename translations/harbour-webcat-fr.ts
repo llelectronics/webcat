@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="fr">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="fr" version="2.1">
 <context>
     <name>AboutPage</name>
     <message>
@@ -92,7 +90,7 @@ Veuillez redémarrer pour activer les modifications.</translation>
     </message>
     <message>
         <source>Backups are saved to Documents directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Les sauvegardes sont enregistrées sur le répertoire Documents</translation>
     </message>
 </context>
 <context>
@@ -113,19 +111,19 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
     <name>CookiePage</name>
     <message>
         <source>Cookies</source>
-        <translation type="unfinished"></translation>
+        <translation>Cookies</translation>
     </message>
     <message>
         <source>Clear Cookies</source>
-        <translation type="unfinished">Effacer les cookies</translation>
+        <translation>Supprimer les Cookies</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">Supprimer</translation>
+        <translation>Supprimer</translation>
     </message>
     <message>
         <source>Search..</source>
-        <translation type="unfinished"></translation>
+        <translation>Recherche ...</translation>
     </message>
 </context>
 <context>
@@ -672,19 +670,19 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
     </message>
     <message>
         <source>New Tab | Stop/Refresh</source>
-        <translation type="unfinished"></translation>
+        <translation>Nouvel onglet  | Stop/Rafraîchir</translation>
     </message>
     <message>
         <source>Previous Tab | Next Tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Onglet précédent  | Onglet suivant</translation>
     </message>
     <message>
         <source>Default Cover Action Group</source>
-        <translation type="unfinished"></translation>
+        <translation>Groupe d&apos;Action de Couverture par Défaut</translation>
     </message>
     <message>
         <source>Cookie Manager</source>
-        <translation type="unfinished"></translation>
+        <translation>Gestionnaire de Cookies</translation>
     </message>
 </context>
 <context>
@@ -756,7 +754,7 @@ Assurez-vous d&apos;être connecté à Youtube videos. Certaines vidéos peuvent
     </message>
     <message>
         <source>Pull down to load file or stream</source>
-        <translation type="unfinished"></translation>
+        <translation>Tirer vers le bas pour charger un fichier ou un flux</translation>
     </message>
 </context>
 <context>
