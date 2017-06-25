@@ -220,7 +220,7 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>Enter an url</source>
-        <translation>Introducir una lur</translation>
+        <translation>Introducir lur</translation>
     </message>
     <message>
         <source>Minimize</source>
@@ -757,7 +757,7 @@ Por favor, asegúrate de haber iniciado sesión en YouTube. El acceso a algunos 
     </message>
     <message>
         <source>Pull down to load file or stream</source>
-        <translation>Jalar hacia abajo para cargar un archivo o secuencia</translation>
+        <translation>Deslizar hacia abajo para las opciones</translation>
     </message>
 </context>
 <context>
