@@ -31,6 +31,8 @@ Page {
             {
                 mainWindow.openWithvPlayer(path,"");
                 if (mainWindow.vPlayerExternal) {
+                    mainWindow.infoBanner.parent = page
+                    mainWindow.infoBanner.anchors.top = page.top
                     mainWindow.infoBanner.showText(qsTr("Opening..."))
                 }
                 return;
@@ -39,6 +41,8 @@ Page {
                 dataContainer.url = path; // WTF this seems to work :P
                 pageStack.pop(dataContainer.parent, PageStackAction.Animated);
             } else {
+                mainWindow.infoBanner.parent = page
+                mainWindow.infoBanner.anchors.top = page.top
                 mainWindow.infoBanner.showText(qsTr("Opening..."));
                 Qt.openUrlExternally(path);
             }
@@ -138,6 +142,8 @@ Page {
                     if (err) {
                         var message = qsTr("Error pasting file ") + _fm.sourceUrl
                         console.debug(message);
+                        mainWindow.infoBanner.parent = page
+                        mainWindow.infoBanner.anchors.top = page.top
                         infoBanner.showText(message)
                     }
                     else _fm.sourceUrl = "";

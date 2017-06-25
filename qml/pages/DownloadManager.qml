@@ -84,6 +84,8 @@ Page {
                     {
                         mainWindow.openWithvPlayer(downLocation,"");
                         if (mainWindow.vPlayerExternal) {
+                            mainWindow.infoBanner.parent = downloadManager
+                            mainWindow.infoBanner.anchors.top = downloadManager.top
                             mainWindow.infoBanner.showText(qsTr("Opening..."))
                         }
                         return;
@@ -91,6 +93,8 @@ Page {
                         dataContainer.url = downLocation; // WTF this seems to work :P
                         pageStack.pop(dataContainer.parent, PageStackAction.Animated);
                     } else {
+                        mainWindow.infoBanner.parent = downloadManager
+                        mainWindow.infoBanner.anchors.top = downloadManager.top
                         mainWindow.infoBanner.showText(qsTr("Opening..."));
                         Qt.openUrlExternally(downLocation);
                     }

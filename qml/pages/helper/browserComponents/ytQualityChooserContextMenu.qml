@@ -73,6 +73,8 @@ ContextMenu {
                 if (download) pageStack.push(Qt.resolvedUrl("../../DownloadManager.qml"), {"downloadUrl": url, "downloadName": streamTitle});
                 else {
                     if (mainWindow.vPlayerExternal) {
+                        mainWindow.infoBanner.parent = mainWindow.firstPage
+                        mainWindow.infoBanner.anchors.top = mainWindow.firstPage.top
                         mainWindow.infoBanner.showText(qsTr("Opening..."));
                         mainWindow.openWithvPlayer(url,"");
                         ytQualityChooserContextMenu.height = 0;

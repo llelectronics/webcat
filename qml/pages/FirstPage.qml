@@ -421,6 +421,8 @@ Page {
             if(mimeinfo[0] === "video")
             {
                 if (mainWindow.vPlayerExternal) {
+                    mainWindow.infoBanner.parent = page
+                    mainWindow.infoBanner.anchors.top = page.top
                     mainWindow.infoBanner.showText(qsTr("Opening..."))
                     mainWindow.openWithvPlayer(downloadItem.url,"");
                 }
@@ -1194,6 +1196,8 @@ Page {
                 var favIconPath = _fm.getHome() + "/.local/share/applications/" + mainWindow.findHostname(webview.url) + "-" + mainWindow.findBaseName(webview.url) + ".png"
                 var savingFav = favIconSaver.save(favIconPath);
                 //console.debug("[FirstPage.qml] Saving FavIcon: " + savingFav)
+                mainWindow.infoBanner.parent = page
+                mainWindow.infoBanner.anchors.top = page.top
                 mainWindow.createDesktopLauncher(favIconPath ,webview.title,webview.url);
                 mainWindow.infoBanner.showText(qsTr("Created Desktop Launcher for " + webview.title));
             }
@@ -1600,7 +1604,11 @@ Page {
             id: mediaPlayBtn
             icon.source: "image://theme/icon-m-play"
             onClicked:  {
-                if (mainWindow.vPlayerExternal) mainWindow.infoBanner.showText(qsTr("Opening..."));
+                if (mainWindow.vPlayerExternal) {
+                    mainWindow.infoBanner.parent = page
+                    mainWindow.infoBanner.anchors.top = page.top
+                    mainWindow.infoBanner.showText(qsTr("Opening..."));
+                }
                 if (mediaYt || mediaYtEmbeded) {
                     // Always try to play highest quality first // TODO: Allow setting a default
                     if (! mainWindow.vPlayerExternal) {

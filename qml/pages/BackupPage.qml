@@ -7,6 +7,7 @@ Page {
 
     SilicaFlickable {
         anchors.fill: parent
+        contentHeight: content.height
 
         Column {
             id: content
@@ -140,10 +141,14 @@ Please restart for changes to take effect.")
         target: _myClass
         onBackupComplete: {
             busy.running = false
+            mainWindow.infoBanner.parent = backupPage
+            mainWindow.infoBanner.anchors.top = backupPage.top
             mainWindow.infoBanner.showText(qsTr("Backup saved successfully!"))
         }
         onRestoreComplete: {
             busy.running = false
+            mainWindow.infoBanner.parent = backupPage
+            mainWindow.infoBanner.anchors.top = backupPage.top
             mainWindow.infoBanner.showText(qsTr("Backup restored! Please restart Webcat"))
         }
         onError: {

@@ -4,6 +4,7 @@ import harbour.webcat.Network 1.0
 
 Dialog
 {
+    id: proxySettingsPage
     property bool proxyEnabled: (proxymanager.host.length > 0) && (proxymanager.port > 0)
 
     id: dlgproxysettings
@@ -12,6 +13,8 @@ Dialog
     canAccept: tsproxydisabled.checked || ((tfhost.text.length > 0) && (tfport.text.length > 0))
 
     onAccepted: {
+        mainWindow.infoBanner.parent = proxySettingsPage
+        mainWindow.infoBanner.anchors.top = proxySettingsPage.top
         mainWindow.infoBanner.showText(qsTr("Please restart Webcat"))
         if(tsproxydisabled.checked) {
             proxymanager.unset();
