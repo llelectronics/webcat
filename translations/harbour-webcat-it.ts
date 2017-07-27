@@ -472,6 +472,13 @@ Se non sei sicuro, rifiuta il certificato. Ma questo può impedire il caricament
     </message>
 </context>
 <context>
+    <name>SearchEngines</name>
+    <message>
+        <source>Custom</source>
+        <translation>Personalizzato</translation>
+    </message>
+</context>
+<context>
     <name>SelectUrl</name>
     <message>
         <source>Bookmarks</source>

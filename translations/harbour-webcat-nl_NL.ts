@@ -472,6 +472,13 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
     </message>
 </context>
 <context>
+    <name>SearchEngines</name>
+    <message>
+        <source>Custom</source>
+        <translation>Aangepast</translation>
+    </message>
+</context>
+<context>
     <name>SelectUrl</name>
     <message>
         <source>Bookmarks</source>

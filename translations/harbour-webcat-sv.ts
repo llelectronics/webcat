@@ -472,6 +472,13 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
     </message>
 </context>
 <context>
+    <name>SearchEngines</name>
+    <message>
+        <source>Custom</source>
+        <translation>Anpassat</translation>
+    </message>
+</context>
+<context>
     <name>SelectUrl</name>
     <message>
         <source>Bookmarks</source>

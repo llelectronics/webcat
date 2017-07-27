@@ -471,6 +471,13 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
 </context>
 <context>
+    <name>SearchEngines</name>
+    <message>
+        <source>Custom</source>
+        <translation>Пользовательский </translation>
+    </message>
+</context>
+<context>
     <name>SelectUrl</name>
     <message>
         <source>Bookmarks</source>

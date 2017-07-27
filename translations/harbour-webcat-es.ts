@@ -472,6 +472,13 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
 </context>
 <context>
+    <name>SearchEngines</name>
+    <message>
+        <source>Custom</source>
+        <translation>Personalizar</translation>
+    </message>
+</context>
+<context>
     <name>SelectUrl</name>
     <message>
         <source>Bookmarks</source>

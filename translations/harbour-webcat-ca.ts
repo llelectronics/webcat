@@ -472,6 +472,13 @@ En cas de dubte, refuseu el certificat malgrat que això pot provocar que no es 
     </message>
 </context>
 <context>
+    <name>SearchEngines</name>
+    <message>
+        <source>Custom</source>
+        <translation>Personalitza</translation>
+    </message>
+</context>
+<context>
     <name>SelectUrl</name>
     <message>
         <source>Bookmarks</source>

@@ -471,6 +471,13 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
     </message>
 </context>
 <context>
+    <name>SearchEngines</name>
+    <message>
+        <source>Custom</source>
+        <translation>Personnalisé</translation>
+    </message>
+</context>
+<context>
     <name>SelectUrl</name>
     <message>
         <source>Bookmarks</source>
