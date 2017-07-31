@@ -548,7 +548,7 @@ Page {
                 urlLoading = false;
                 errorText = "Load failed\n"+loadRequest.errorString
                 // Don't show error on rtsp, rtmp or mms links as they are opened externally
-                if (! ((/^rtsp:/).test(url.toString()) || (/^rtmp:/).test(url.toString()) || (/^mms:/).test(url.toString()) )) {
+                if (! ((/^rtsp:/).test(url.toString()) || (/^rtmp:/).test(url.toString()) || (/^mms:/).test(url.toString()) || (/^magnet:/).test(url.toString()) )) {
                     console.debug("Load failed rtsp,rtmp or mms not detected and no valid http or https");
                     console.debug("[FirstPage.qml] Error text:" + errorText + " test(errorText): " + (/Path is a directory/).test(errorText));
                     if (! ((/handled by the media engine/).test(errorText) || (/Path is a directory/).test(errorText))) {
@@ -591,6 +591,12 @@ Page {
                 }
                 else if (mainWindow.vPlayerExternal) mainWindow.openWithvPlayer(request.url);
                 else vPlayerLoader.setSource("VideoPlayerComponent.qml", {dataContainer: firstPage, streamUrl: request.url})
+            }
+            else if ((/^magnet:/).test(request.url)) {
+                mainWindow.infoBanner.parent = page
+                mainWindow.infoBanner.anchors.top = page.top
+                mainWindow.infoBanner.showText(qsTr("Opening..."));
+                Qt.openUrlExternally(request.url)
             }
             else if (schemaRE.test(request.url)) {
                 request.action = WebView.AcceptRequest;
