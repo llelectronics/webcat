@@ -298,6 +298,14 @@ Se non sei sicuro, rifiuta il certificato. Ma questo può impedire il caricament
         <source>Accept certificate from </source>
         <translation>Accetta certificato da </translation>
     </message>
+    <message>
+        <source>Webkit engine crashed! Restarting...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Webkit engine crashed too often!</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>HistoryPage</name>

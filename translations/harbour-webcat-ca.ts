@@ -298,6 +298,14 @@ En cas de dubte, refuseu el certificat malgrat que això pot provocar que no es 
         <source>Accept certificate from </source>
         <translation>Accepta el certificat de</translation>
     </message>
+    <message>
+        <source>Webkit engine crashed! Restarting...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Webkit engine crashed too often!</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>HistoryPage</name>

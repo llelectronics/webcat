@@ -297,6 +297,14 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
         <source>Accept certificate from </source>
         <translation>Accepter le certificat de </translation>
     </message>
+    <message>
+        <source>Webkit engine crashed! Restarting...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Webkit engine crashed too often!</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>HistoryPage</name>

@@ -298,6 +298,14 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
         <source>Accept certificate from </source>
         <translation>Acceptera certifikat från</translation>
     </message>
+    <message>
+        <source>Webkit engine crashed! Restarting...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Webkit engine crashed too often!</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>HistoryPage</name>

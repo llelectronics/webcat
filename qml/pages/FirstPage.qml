@@ -80,6 +80,7 @@ Page {
     property int counter;
     property alias mediaList: mediaList
     property bool inputFocus: false
+    property variant crashUrl: []
 
 // DEBUG
 //    onYt720pChanged: {
@@ -411,6 +412,26 @@ Page {
                 })
             }
        }
+
+        experimental.onProcessDidCrash: {
+            // Crash of Webkit
+            crashUrl[crashUrl.length] = url
+            console.debug("[CrashUrl.length]: " + crashUrl.length)
+            if (crashUrl.length == 3) {
+                if (crashUrl[0] == crashUrl[1] == crashUrl[2]) {
+                    mainWindow.infoBanner.parent = page
+                    mainWindow.infoBanner.anchors.top = page.top
+                    mainWindow.infoBanner.showText(qsTr("Webkit engine crashed too often!"))
+                    crashUrl = []
+                }
+            }
+            else {
+                mainWindow.infoBanner.parent = page
+                mainWindow.infoBanner.anchors.top = page.top
+                mainWindow.infoBanner.showText(qsTr("Webkit engine crashed! Restarting..."))
+                webview.reload();
+            }
+        }
 
         experimental.onDownloadRequested: {
             //console.debug("Download requested: " + downloadItem.url);

@@ -298,6 +298,14 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
         <source>Accept certificate from </source>
         <translation>Certificaat aanvaarden van</translation>
     </message>
+    <message>
+        <source>Webkit engine crashed! Restarting...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Webkit engine crashed too often!</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>HistoryPage</name>

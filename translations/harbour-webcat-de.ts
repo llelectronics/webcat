@@ -298,6 +298,14 @@ Wenn Sie sich unsicher sind lehnen sie das Zertifikat ab. Dies führt unter Umst
         <source>Accept certificate from </source>
         <translation>Akzeptiere Zertifikat von </translation>
     </message>
+    <message>
+        <source>Webkit engine crashed! Restarting...</source>
+        <translation>Webkit abgestürtzt! Neuladen...</translation>
+    </message>
+    <message>
+        <source>Webkit engine crashed too often!</source>
+        <translation>Webkit zu oft abgestürzt!</translation>
+    </message>
 </context>
 <context>
     <name>HistoryPage</name>

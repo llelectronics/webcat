@@ -297,6 +297,14 @@ If you are unsure reject the certificate. That might lead to a non loading websi
         <source>Accept certificate from </source>
         <translation>Сертификат принят от</translation>
     </message>
+    <message>
+        <source>Webkit engine crashed! Restarting...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Webkit engine crashed too often!</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>HistoryPage</name>
