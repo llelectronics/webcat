@@ -7,7 +7,6 @@ Dialog
     id: proxySettingsPage
     property bool proxyEnabled: (proxymanager.host.length > 0) && (proxymanager.port > 0)
 
-    id: dlgproxysettings
     allowedOrientations: defaultAllowedOrientations
     acceptDestinationAction: PageStackAction.Pop
     canAccept: tsproxydisabled.checked || ((tfhost.text.length > 0) && (tfport.text.length > 0))
@@ -51,7 +50,7 @@ Dialog
                 id: tsproxydisabled
                 text: qsTr("Proxy Disabled")
                 description: qsTr("You need to restart Webcat")
-                checked: !dlgproxysettings.proxyEnabled
+                checked: !proxySettingsPage.proxyEnabled
             }
 
             SectionHeader {

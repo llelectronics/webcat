@@ -67,7 +67,7 @@ ListModel {
         agent: "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
     }
     ListElement {
-        title: "Custom"
+        title: qsTr("Custom")
         agent: "Mozilla/5.0 (Maemo; Linux; U; Jolla; Sailfish; like Android) AppleWebKit/538.1 (KHTML, like Gecko) Mobile Safari/538.1 (compatible)"
     }
 }
