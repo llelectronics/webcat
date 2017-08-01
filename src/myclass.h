@@ -35,6 +35,7 @@ public slots:
     void openNewWindow(const QString &url);
     void openPrivateNewWindow(const QString &url);
     void openWithvPlayer(const QString &url);
+    void openExternally(const QString &url);
     void resetDefaultBrowser();
     void setDefaultBrowser();
     void backupConfig();

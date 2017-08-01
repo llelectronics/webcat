@@ -617,7 +617,7 @@ Page {
                 mainWindow.infoBanner.parent = page
                 mainWindow.infoBanner.anchors.top = page.top
                 mainWindow.infoBanner.showText(qsTr("Opening..."));
-                Qt.openUrlExternally(request.url)
+                mainWindow.openExternally(request.url)
             }
             else if (schemaRE.test(request.url)) {
                 request.action = WebView.AcceptRequest;

@@ -104,6 +104,12 @@ void MyClass::openWithvPlayer(const QString &url) {
     proc->startDetached("/usr/bin/harbour-videoPlayer -p \"" + url + "\"");
 }
 
+void MyClass::openExternally(const QString &url) {
+    qDebug() << "[myclass.cpp]: trying to start " + url;
+    QProcess *proc = new QProcess();
+    proc->startDetached("xdg-open \"" + url + "\"");
+}
+
 bool MyClass::isFile(const QString &url)
 {
     return QFileInfo(url).isFile();

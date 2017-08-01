@@ -89,6 +89,7 @@ ApplicationWindow
     signal openNewWindow(string hrefUrl)
     signal openPrivateNewWindow(string hrefUrl)
     signal openWithvPlayerExternal(string url)
+    signal openExternally(string url)
     signal setDefaultBrowser()
     signal resetDefaultBrowser()
     signal createDesktopLauncher(string favIcon,string title, string url)
