@@ -18,6 +18,18 @@
         <source>Add Bookmark</source>
         <translation>Lägg till bokmärke</translation>
     </message>
+    <message>
+        <source>Title of the bookmark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>URL of bookmark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>User Agent:</source>
+        <translation type="unfinished">User Agent:</translation>
+    </message>
 </context>
 <context>
     <name>AuthenticationDialog</name>
@@ -480,6 +492,13 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
     </message>
 </context>
 <context>
+    <name>SearchEngineDialog</name>
+    <message>
+        <source>Choose Search Engine</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>SearchEngines</name>
     <message>
         <source>Custom</source>
@@ -702,6 +721,10 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
         <source>Cookie Manager</source>
         <translation>Cookie-hanterare</translation>
     </message>
+    <message>
+        <source>Engine URL use %s for searchterm</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ShareContextMenu</name>
@@ -719,6 +742,13 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
     <message>
         <source>Tabs</source>
         <translation>Flikar</translation>
+    </message>
+</context>
+<context>
+    <name>UserAgentDialog</name>
+    <message>
+        <source>Choose User Agent</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

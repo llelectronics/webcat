@@ -18,6 +18,18 @@
         <source>Add Bookmark</source>
         <translation>Ajouter un favori</translation>
     </message>
+    <message>
+        <source>Title of the bookmark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>URL of bookmark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>User Agent:</source>
+        <translation type="unfinished">Agent utilisateur :</translation>
+    </message>
 </context>
 <context>
     <name>AuthenticationDialog</name>
@@ -479,6 +491,13 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
     </message>
 </context>
 <context>
+    <name>SearchEngineDialog</name>
+    <message>
+        <source>Choose Search Engine</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>SearchEngines</name>
     <message>
         <source>Custom</source>
@@ -701,6 +720,10 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
         <source>Cookie Manager</source>
         <translation>Gestionnaire de Cookies</translation>
     </message>
+    <message>
+        <source>Engine URL use %s for searchterm</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ShareContextMenu</name>
@@ -718,6 +741,13 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
     <message>
         <source>Tabs</source>
         <translation>Onglets</translation>
+    </message>
+</context>
+<context>
+    <name>UserAgentDialog</name>
+    <message>
+        <source>Choose User Agent</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

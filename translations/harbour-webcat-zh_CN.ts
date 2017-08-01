@@ -18,6 +18,18 @@
         <source>Add Bookmark</source>
         <translation>添加书签</translation>
     </message>
+    <message>
+        <source>Title of the bookmark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>URL of bookmark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>User Agent:</source>
+        <translation type="unfinished">用户代理：</translation>
+    </message>
 </context>
 <context>
     <name>AuthenticationDialog</name>
@@ -476,6 +488,13 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
 </context>
 <context>
+    <name>SearchEngineDialog</name>
+    <message>
+        <source>Choose Search Engine</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>SearchEngines</name>
     <message>
         <source>Custom</source>
@@ -698,6 +717,10 @@ If you are unsure reject the certificate. That might lead to a non loading websi
         <source>Cookie Manager</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Engine URL use %s for searchterm</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ShareContextMenu</name>
@@ -714,6 +737,13 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Tabs</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>UserAgentDialog</name>
+    <message>
+        <source>Choose User Agent</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

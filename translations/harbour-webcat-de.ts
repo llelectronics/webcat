@@ -18,6 +18,18 @@
         <source>Add Bookmark</source>
         <translation>Bookmark hinzufügen</translation>
     </message>
+    <message>
+        <source>Title of the bookmark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>URL of bookmark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>User Agent:</source>
+        <translation type="unfinished">Browserkennung:</translation>
+    </message>
 </context>
 <context>
     <name>AuthenticationDialog</name>
@@ -479,6 +491,13 @@ Wenn Sie sich unsicher sind lehnen sie das Zertifikat ab. Dies führt unter Umst
     </message>
 </context>
 <context>
+    <name>SearchEngineDialog</name>
+    <message>
+        <source>Choose Search Engine</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>SearchEngines</name>
     <message>
         <source>Custom</source>
@@ -701,6 +720,10 @@ Wenn Sie sich unsicher sind lehnen sie das Zertifikat ab. Dies führt unter Umst
         <source>Cookie Manager</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Engine URL use %s for searchterm</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ShareContextMenu</name>
@@ -718,6 +741,13 @@ Wenn Sie sich unsicher sind lehnen sie das Zertifikat ab. Dies führt unter Umst
     <message>
         <source>Tabs</source>
         <translation>Reiter</translation>
+    </message>
+</context>
+<context>
+    <name>UserAgentDialog</name>
+    <message>
+        <source>Choose User Agent</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

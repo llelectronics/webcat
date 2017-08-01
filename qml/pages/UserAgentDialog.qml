@@ -11,7 +11,7 @@ Page {
         anchors.fill: parent
         model: userAgentModel
         header: PageHeader {
-            title: "Choose User Agent"
+            title: qsTr("Choose User Agent")
         }
         delegate: ListItem {
             Label {

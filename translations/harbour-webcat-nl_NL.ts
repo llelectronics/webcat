@@ -18,6 +18,18 @@
         <source>Add Bookmark</source>
         <translation>Bladwijzer toevoegen</translation>
     </message>
+    <message>
+        <source>Title of the bookmark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>URL of bookmark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>User Agent:</source>
+        <translation type="unfinished">Gebruikersagent:</translation>
+    </message>
 </context>
 <context>
     <name>AuthenticationDialog</name>
@@ -480,6 +492,13 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
     </message>
 </context>
 <context>
+    <name>SearchEngineDialog</name>
+    <message>
+        <source>Choose Search Engine</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>SearchEngines</name>
     <message>
         <source>Custom</source>
@@ -702,6 +721,10 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
         <source>Cookie Manager</source>
         <translation>Cookiebeheerder</translation>
     </message>
+    <message>
+        <source>Engine URL use %s for searchterm</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ShareContextMenu</name>
@@ -719,6 +742,13 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
     <message>
         <source>Tabs</source>
         <translation>Tabbladen</translation>
+    </message>
+</context>
+<context>
+    <name>UserAgentDialog</name>
+    <message>
+        <source>Choose User Agent</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

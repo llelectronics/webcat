@@ -18,6 +18,18 @@
         <source>Add Bookmark</source>
         <translation>Afegeix marcador</translation>
     </message>
+    <message>
+        <source>Title of the bookmark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>URL of bookmark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>User Agent:</source>
+        <translation type="unfinished">Agent d&apos;usuari:</translation>
+    </message>
 </context>
 <context>
     <name>AuthenticationDialog</name>
@@ -480,6 +492,13 @@ En cas de dubte, refuseu el certificat malgrat que això pot provocar que no es 
     </message>
 </context>
 <context>
+    <name>SearchEngineDialog</name>
+    <message>
+        <source>Choose Search Engine</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>SearchEngines</name>
     <message>
         <source>Custom</source>
@@ -702,6 +721,10 @@ En cas de dubte, refuseu el certificat malgrat que això pot provocar que no es 
         <source>Cookie Manager</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Engine URL use %s for searchterm</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ShareContextMenu</name>
@@ -719,6 +742,13 @@ En cas de dubte, refuseu el certificat malgrat que això pot provocar que no es 
     <message>
         <source>Tabs</source>
         <translation>Pestanyes</translation>
+    </message>
+</context>
+<context>
+    <name>UserAgentDialog</name>
+    <message>
+        <source>Choose User Agent</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

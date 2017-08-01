@@ -18,6 +18,18 @@
         <source>Add Bookmark</source>
         <translation>Añadir a Marcadores</translation>
     </message>
+    <message>
+        <source>Title of the bookmark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>URL of bookmark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>User Agent:</source>
+        <translation type="unfinished">Agente de usuario:</translation>
+    </message>
 </context>
 <context>
     <name>AuthenticationDialog</name>
@@ -480,6 +492,13 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
 </context>
 <context>
+    <name>SearchEngineDialog</name>
+    <message>
+        <source>Choose Search Engine</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>SearchEngines</name>
     <message>
         <source>Custom</source>
@@ -702,6 +721,10 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
         <source>Cookie Manager</source>
         <translation>Gestor de galleta</translation>
     </message>
+    <message>
+        <source>Engine URL use %s for searchterm</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ShareContextMenu</name>
@@ -719,6 +742,13 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     <message>
         <source>Tabs</source>
         <translation>Pestañas</translation>
+    </message>
+</context>
+<context>
+    <name>UserAgentDialog</name>
+    <message>
+        <source>Choose User Agent</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

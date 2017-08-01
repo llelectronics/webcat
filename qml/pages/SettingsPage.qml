@@ -289,8 +289,8 @@ Dialog {
                     id: searchEngine
                     text: searchEngineUri
                     inputMethodHints: Qt.ImhUrlCharactersOnly
-                    placeholderText: "Engine URL use %s for searchterm"
-                    label: "Engine URL use %s for searchterm"
+                    placeholderText: qsTr("Engine URL use %s for searchterm")
+                    label: qsTr("Engine URL use %s for searchterm")
                     width: col.width
                     onFocusChanged: if (focus == true) selectAll();
                 }

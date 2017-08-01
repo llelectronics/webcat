@@ -11,7 +11,7 @@ Dialog {
         anchors.fill: parent
         model: searchEngineModel
         header: PageHeader {
-            title: "Choose Search Engine"
+            title: qsTr("Choose Search Engine")
         }
         delegate: ListItem {
             Label {

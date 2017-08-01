@@ -62,22 +62,22 @@ Dialog {
             id: bookmarkTitle
             anchors.horizontalCenter: parent.horizontalCenter
             width: parent.width - 20
-            placeholderText: "Title of the bookmark"
-            label: "Title of the bookmark"
+            placeholderText: qsTr("Title of the bookmark")
+            label: qsTr("Title of the bookmark")
             focus: true
         }
         TextField {
             id: bookmarkUrl
             width: parent.width - 20
             anchors.horizontalCenter: parent.horizontalCenter
-            placeholderText: "URL of bookmark"
-            label: "URL of bookmark"
+            placeholderText: qsTr("URL of bookmark")
+            label: qsTr("URL of bookmark")
             inputMethodHints: Qt.ImhUrlCharactersOnly
         }
         ValueButton {
             anchors.horizontalCenter: parent.horizontalCenter
             id: userAgentCombo
-            label: "User Agent:"
+            label: qsTr("User Agent:")
             value: uAgentTitle
             onClicked: pageStack.push(Qt.resolvedUrl("UserAgentDialog.qml"), {dataContainer: addBookmarkPage});
         }
