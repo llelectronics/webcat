@@ -20,15 +20,15 @@
     </message>
     <message>
         <source>Title of the bookmark</source>
-        <translation type="unfinished"></translation>
+        <translation>Lesezeichentitel</translation>
     </message>
     <message>
         <source>URL of bookmark</source>
-        <translation type="unfinished"></translation>
+        <translation>Lesezeichen URL</translation>
     </message>
     <message>
         <source>User Agent:</source>
-        <translation type="unfinished">Browserkennung:</translation>
+        <translation>Browserkennung:</translation>
     </message>
 </context>
 <context>
@@ -494,7 +494,7 @@ Wenn Sie sich unsicher sind lehnen sie das Zertifikat ab. Dies führt unter Umst
     <name>SearchEngineDialog</name>
     <message>
         <source>Choose Search Engine</source>
-        <translation type="unfinished"></translation>
+        <translation>Suchmaschine auswählen</translation>
     </message>
 </context>
 <context>
@@ -722,7 +722,7 @@ Wenn Sie sich unsicher sind lehnen sie das Zertifikat ab. Dies führt unter Umst
     </message>
     <message>
         <source>Engine URL use %s for searchterm</source>
-        <translation type="unfinished"></translation>
+        <translation>Suchmaschinen URL eingeben %s für Suchbegriff</translation>
     </message>
 </context>
 <context>
@@ -747,7 +747,7 @@ Wenn Sie sich unsicher sind lehnen sie das Zertifikat ab. Dies führt unter Umst
     <name>UserAgentDialog</name>
     <message>
         <source>Choose User Agent</source>
-        <translation type="unfinished"></translation>
+        <translation>User Agent auswählen</translation>
     </message>
 </context>
 <context>
