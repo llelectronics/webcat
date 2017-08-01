@@ -475,7 +475,7 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
         <translation>Por favor, reanudar Webcat</translation>
     </message>
     <message>
-https://openrepos.net/        <source>Use Socks</source>
+        <source>Use Socks</source>
         <translation>Usar Socks</translation>
     </message>
     <message>
@@ -604,7 +604,7 @@ https://openrepos.net/        <source>Use Socks</source>
     <message>
         <source>Appearance</source>
         <translation>Apariencia</translation>
-https://openrepos.net/    </message>
+   </message>
     <message>
         <source>Default Font Size</source>
         <translation>Tamaño de la fuente por defecto</translation>
