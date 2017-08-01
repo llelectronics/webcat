@@ -475,7 +475,7 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
         <translation>Por favor, reanudar Webcat</translation>
     </message>
     <message>
-        <source>Use Socks</source>
+https://openrepos.net/        <source>Use Socks</source>
         <translation>Usar Socks</translation>
     </message>
     <message>
@@ -604,7 +604,7 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     <message>
         <source>Appearance</source>
         <translation>Apariencia</translation>
-    </message>
+https://openrepos.net/    </message>
     <message>
         <source>Default Font Size</source>
         <translation>Tamaño de la fuente por defecto</translation>
@@ -635,7 +635,7 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>Custom</source>
-        <translation>Personalizar</translation>
+        <translation>Personalizado</translation>
     </message>
     <message>
         <source>Private Browsing</source>
@@ -755,7 +755,7 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     <name>UserAgents</name>
     <message>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>Personalizado</translation>
     </message>
 </context>
 <context>
