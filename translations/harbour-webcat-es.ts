@@ -16,7 +16,7 @@
     </message>
     <message>
         <source>Add Bookmark</source>
-        <translation>Añadir a Marcadores</translation>
+        <translation>Aceptar</translation>
     </message>
     <message>
         <source>Title of the bookmark</source>
@@ -43,7 +43,7 @@
     </message>
     <message>
         <source>Enter your user name</source>
-        <translation>Introduce tu nombre de usuario</translation>
+        <translation>Introducir nombre de usuario</translation>
     </message>
     <message>
         <source>User name</source>
@@ -232,7 +232,7 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>Enter an url</source>
-        <translation>Introducir lur</translation>
+        <translation>Escribir lur</translation>
     </message>
     <message>
         <source>Minimize</source>
@@ -312,11 +312,11 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>Webkit engine crashed! Restarting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Motor webkit estrellado! Reiniciando...</translation>
     </message>
     <message>
         <source>Webkit engine crashed too often!</source>
-        <translation type="unfinished"></translation>
+        <translation>Motor webkit estrellado demasiadas veces!</translation>
     </message>
 </context>
 <context>
@@ -365,7 +365,7 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>File not found.</source>
-        <translation>Fichero no encontrado.</translation>
+        <translation>Archivo no encontrado.</translation>
     </message>
     <message>
         <source>No valid Backup file. Did not find harbour-webcat Folder.</source>
