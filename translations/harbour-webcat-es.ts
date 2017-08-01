@@ -20,15 +20,15 @@
     </message>
     <message>
         <source>Title of the bookmark</source>
-        <translation type="unfinished"></translation>
+        <translation>Título del marcador</translation>
     </message>
     <message>
         <source>URL of bookmark</source>
-        <translation type="unfinished"></translation>
+        <translation>LUR del marcador</translation>
     </message>
     <message>
         <source>User Agent:</source>
-        <translation type="unfinished">Agente de usuario:</translation>
+        <translation>Agente de usuario:</translation>
     </message>
 </context>
 <context>
@@ -495,14 +495,14 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     <name>SearchEngineDialog</name>
     <message>
         <source>Choose Search Engine</source>
-        <translation type="unfinished"></translation>
+        <translation>Elegir motor de búsqueda</translation>
     </message>
 </context>
 <context>
     <name>SearchEngines</name>
     <message>
         <source>Custom</source>
-        <translation>Personalizar</translation>
+        <translation>Personalizado</translation>
     </message>
 </context>
 <context>
@@ -572,7 +572,7 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>Show HTML</source>
-        <translation>Mostar HTML</translation>
+        <translation>Mostrar HTML</translation>
     </message>
     <message>
         <source>Hide HTML</source>
@@ -591,7 +591,7 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>Save Settings</source>
-        <translation>Guardar</translation>
+        <translation>Aceptar</translation>
     </message>
     <message>
         <source>About </source>
@@ -723,7 +723,7 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>Engine URL use %s for searchterm</source>
-        <translation type="unfinished"></translation>
+        <translation>LUR utiliza %s para el término de búsqueda</translation>
     </message>
 </context>
 <context>
@@ -748,7 +748,7 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     <name>UserAgentDialog</name>
     <message>
         <source>Choose User Agent</source>
-        <translation type="unfinished"></translation>
+        <translation>Elegir agente de usuario</translation>
     </message>
 </context>
 <context>
