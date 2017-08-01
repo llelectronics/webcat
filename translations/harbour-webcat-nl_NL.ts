@@ -28,7 +28,7 @@
     </message>
     <message>
         <source>User Agent:</source>
-        <translation type="unfinished">Gebruikersagent:</translation>
+        <translation>Gebruikersagent:</translation>
     </message>
 </context>
 <context>
@@ -749,6 +749,13 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
     <message>
         <source>Choose User Agent</source>
         <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>UserAgents</name>
+    <message>
+        <source>Custom</source>
+        <translation>Aangepast</translation>
     </message>
 </context>
 <context>

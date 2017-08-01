@@ -28,7 +28,7 @@
     </message>
     <message>
         <source>User Agent:</source>
-        <translation type="unfinished">Agent d&apos;usuari:</translation>
+        <translation>Agent d&apos;usuari:</translation>
     </message>
 </context>
 <context>
@@ -130,11 +130,11 @@ En cas de dubte, refuseu el certificat malgrat que això pot provocar que no es 
     </message>
     <message>
         <source>Clear Cookies</source>
-        <translation type="unfinished">Neteja les galetes</translation>
+        <translation>Neteja les galetes</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">Elimina</translation>
+        <translation>Elimina</translation>
     </message>
     <message>
         <source>Search..</source>
@@ -346,7 +346,7 @@ En cas de dubte, refuseu el certificat malgrat que això pot provocar que no es 
     </message>
     <message>
         <source>Backup Manager</source>
-        <translation type="unfinished">Gestor de còpies de seguretat</translation>
+        <translation>Gestor de còpies de seguretat</translation>
     </message>
     <message>
         <source>Video Player</source>
@@ -354,7 +354,7 @@ En cas de dubte, refuseu el certificat malgrat que això pot provocar que no es 
     </message>
     <message>
         <source>Download Manager</source>
-        <translation type="unfinished">Gestor de descàrregues</translation>
+        <translation>Gestor de descàrregues</translation>
     </message>
 </context>
 <context>
@@ -406,7 +406,7 @@ En cas de dubte, refuseu el certificat malgrat que això pot provocar que no es 
     </message>
     <message>
         <source>Copy</source>
-        <translation type="unfinished">Copia</translation>
+        <translation>Copia</translation>
     </message>
     <message>
         <source>Show Filesystem Root</source>
@@ -749,6 +749,13 @@ En cas de dubte, refuseu el certificat malgrat que això pot provocar que no es 
     <message>
         <source>Choose User Agent</source>
         <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>UserAgents</name>
+    <message>
+        <source>Custom</source>
+        <translation>Personalitza</translation>
     </message>
 </context>
 <context>

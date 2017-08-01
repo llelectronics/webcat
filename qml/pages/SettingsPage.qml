@@ -50,9 +50,11 @@ Dialog {
         DB.addSetting("dnsPrefetch", dnsPrefetchSwitch.checked.toString());
         DB.addSetting("userAgent", agentString.text);
         DB.addSetting("offlineWebApplicationCache", offlineWebApplicationCacheSwitch.checked.toString());
-        DB.addSetting("userAgentName", userAgentCombo.value);
+        if (userAgentCombo.value == qsTr("Custom")) DB.addSetting("userAgentName", "Custom");
+        else DB.addSetting("userAgentName", userAgentCombo.value);
         DB.addSetting("searchEngine", searchEngine.text);
-        DB.addSetting("searchEngineName", searchEngineCombo.value)
+        if (searchEngineCombo.value == qsTr("Custom")) DB.addSetting("searchEngineName", "Custom")
+        else DB.addSetting("searchEngineName", searchEngineCombo.value)
         if (orientationCombo.value == "Orientation.All") DB.addSetting("orientation", Orientation.All)
         else if (orientationCombo.value == "Orientation.Landscape") DB.addSetting("orientation", Orientation.Landscape)
         else if (orientationCombo.value == "Orientation.Portrait") DB.addSetting("orientation", Orientation.Portrait)
@@ -273,7 +275,10 @@ Dialog {
                 anchors.horizontalCenter: parent.horizontalCenter
                 id: searchEngineCombo
                 label: qsTr("Search Engine:")
-                value: searchEngineTitle
+                value: {
+                    if (searchEngineTitle == "Custom") qsTr("Custom")
+                    else searchEngineTitle
+                }
                 onClicked: pageStack.push(Qt.resolvedUrl("SearchEngineDialog.qml"), {dataContainer: settingsPage});
             }
             Row {
@@ -326,15 +331,18 @@ Dialog {
                 anchors.horizontalCenter: parent.horizontalCenter
                 id: userAgentCombo
                 label: qsTr("User Agent:")
-                value: uAgentTitle
+                value: {
+                    if (uAgentTitle == "Custom") qsTr("Custom")
+                    else uAgentTitle
+                }
                 onClicked: pageStack.push(Qt.resolvedUrl("UserAgentDialog.qml"), {dataContainer: settingsPage});
             }
             TextField {
                 id: agentString
                 anchors.horizontalCenter: parent.horizontalCenter
                 readOnly: {
-                    if ((uAgentTitle !== "Custom") || userAgentCombo.value.toString() !== "Custom") return true
-                    else return false
+                    if (uAgentTitle == qsTr("Custom") || userAgentCombo.value.toString() == qsTr("Custom")) return false
+                    else return true
                 }
                 width: parent.width - 20
                 text: uAgent

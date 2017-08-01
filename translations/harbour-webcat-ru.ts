@@ -28,7 +28,7 @@
     </message>
     <message>
         <source>User Agent:</source>
-        <translation type="unfinished">Поисковый движок:</translation>
+        <translation>Поисковый движок:</translation>
     </message>
 </context>
 <context>
@@ -748,6 +748,13 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     <message>
         <source>Choose User Agent</source>
         <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>UserAgents</name>
+    <message>
+        <source>Custom</source>
+        <translation>Пользовательский </translation>
     </message>
 </context>
 <context>

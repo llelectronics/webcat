@@ -752,6 +752,13 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
 </context>
 <context>
+    <name>UserAgents</name>
+    <message>
+        <source>Custom</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>VideoPlayer</name>
     <message>
         <source>Open File</source>

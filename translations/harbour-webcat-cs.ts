@@ -28,7 +28,7 @@
     </message>
     <message>
         <source>User Agent:</source>
-        <translation type="unfinished">Identifikátor prohlížeče:</translation>
+        <translation>Identifikátor prohlížeče:</translation>
     </message>
 </context>
 <context>
@@ -127,11 +127,11 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Clear Cookies</source>
-        <translation type="unfinished">Vymazat cookies</translation>
+        <translation>Vymazat cookies</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">Odstranit</translation>
+        <translation>Odstranit</translation>
     </message>
     <message>
         <source>Search..</source>
@@ -351,7 +351,7 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Download Manager</source>
-        <translation type="unfinished">Správce stahování</translation>
+        <translation>Správce stahování</translation>
     </message>
 </context>
 <context>
@@ -402,7 +402,7 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Copy</source>
-        <translation type="unfinished">Kopírovat</translation>
+        <translation>Kopírovat</translation>
     </message>
     <message>
         <source>Show Filesystem Root</source>
@@ -733,7 +733,7 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     <name>TabList</name>
     <message>
         <source>Loading..</source>
-        <translation type="unfinished">Načítá se...</translation>
+        <translation>Načítá se...</translation>
     </message>
     <message>
         <source>Tabs</source>
@@ -745,6 +745,13 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     <message>
         <source>Choose User Agent</source>
         <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>UserAgents</name>
+    <message>
+        <source>Custom</source>
+        <translation>Vlastní</translation>
     </message>
 </context>
 <context>
@@ -799,7 +806,7 @@ On Youtube Videos please make sure to be logged in. Some videos might be geobloc
     <name>ytQualityChooserContextMenu</name>
     <message>
         <source>Opening...</source>
-        <translation type="unfinished">Otevírání...</translation>
+        <translation>Otevírání...</translation>
     </message>
 </context>
 </TS>

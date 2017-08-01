@@ -501,7 +501,7 @@ Wenn Sie sich unsicher sind lehnen sie das Zertifikat ab. Dies führt unter Umst
     <name>SearchEngines</name>
     <message>
         <source>Custom</source>
-        <translation>Manuell</translation>
+        <translation>Benutzerdefiniert</translation>
     </message>
 </context>
 <context>
@@ -634,7 +634,7 @@ Wenn Sie sich unsicher sind lehnen sie das Zertifikat ab. Dies führt unter Umst
     </message>
     <message>
         <source>Custom</source>
-        <translation>Manuell</translation>
+        <translation>Benutzerdefiniert</translation>
     </message>
     <message>
         <source>Private Browsing</source>
@@ -748,6 +748,13 @@ Wenn Sie sich unsicher sind lehnen sie das Zertifikat ab. Dies führt unter Umst
     <message>
         <source>Choose User Agent</source>
         <translation>User Agent auswählen</translation>
+    </message>
+</context>
+<context>
+    <name>UserAgents</name>
+    <message>
+        <source>Custom</source>
+        <translation>Benutzerdefiniert</translation>
     </message>
 </context>
 <context>

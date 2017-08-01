@@ -28,7 +28,7 @@
     </message>
     <message>
         <source>User Agent:</source>
-        <translation type="unfinished">用户代理：</translation>
+        <translation>用户代理：</translation>
     </message>
 </context>
 <context>
@@ -127,11 +127,11 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Clear Cookies</source>
-        <translation type="unfinished">清除Cookie</translation>
+        <translation>清除Cookie</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">删除</translation>
+        <translation>删除</translation>
     </message>
     <message>
         <source>Search..</source>
@@ -194,11 +194,11 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Deleting </source>
-        <translation type="unfinished">正在删除</translation>
+        <translation>正在删除</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">删除</translation>
+        <translation>删除</translation>
     </message>
     <message>
         <source>Current operation</source>
@@ -351,7 +351,7 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Download Manager</source>
-        <translation type="unfinished">下载管理器</translation>
+        <translation>下载管理器</translation>
     </message>
 </context>
 <context>
@@ -402,7 +402,7 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Copy</source>
-        <translation type="unfinished">复制</translation>
+        <translation>复制</translation>
     </message>
     <message>
         <source>Show Filesystem Root</source>
@@ -733,7 +733,7 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     <name>TabList</name>
     <message>
         <source>Loading..</source>
-        <translation type="unfinished">加载中…</translation>
+        <translation>加载中…</translation>
     </message>
     <message>
         <source>Tabs</source>
@@ -745,6 +745,13 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     <message>
         <source>Choose User Agent</source>
         <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>UserAgents</name>
+    <message>
+        <source>Custom</source>
+        <translation>自定义</translation>
     </message>
 </context>
 <context>
@@ -799,7 +806,7 @@ On Youtube Videos please make sure to be logged in. Some videos might be geobloc
     <name>ytQualityChooserContextMenu</name>
     <message>
         <source>Opening...</source>
-        <translation type="unfinished">正在打开…</translation>
+        <translation>正在打开…</translation>
     </message>
 </context>
 </TS>

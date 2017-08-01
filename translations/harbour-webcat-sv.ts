@@ -752,6 +752,13 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
     </message>
 </context>
 <context>
+    <name>UserAgents</name>
+    <message>
+        <source>Custom</source>
+        <translation>Anpassat</translation>
+    </message>
+</context>
+<context>
     <name>VideoPlayer</name>
     <message>
         <source>Open File</source>

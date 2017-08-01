@@ -28,7 +28,7 @@
     </message>
     <message>
         <source>User Agent:</source>
-        <translation type="unfinished">Agent utilisateur :</translation>
+        <translation>Agent utilisateur :</translation>
     </message>
 </context>
 <context>
@@ -748,6 +748,13 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
     <message>
         <source>Choose User Agent</source>
         <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>UserAgents</name>
+    <message>
+        <source>Custom</source>
+        <translation>Personnalisé</translation>
     </message>
 </context>
 <context>

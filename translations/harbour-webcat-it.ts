@@ -752,6 +752,13 @@ Se non sei sicuro, rifiuta il certificato. Ma questo può impedire il caricament
     </message>
 </context>
 <context>
+    <name>UserAgents</name>
+    <message>
+        <source>Custom</source>
+        <translation>Personalizzato</translation>
+    </message>
+</context>
+<context>
     <name>VideoPlayer</name>
     <message>
         <source>Open File</source>
