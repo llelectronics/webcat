@@ -21,6 +21,7 @@ Page {
                 anchors { left: parent.left; right: parent.right }
                 SectionHeader {
                     text: qsTr("Backups are saved to Documents directory")
+                    wrapMode: Text.Wrap
                 }
 
                 Button {
@@ -50,6 +51,7 @@ Page {
                 anchors { left: parent.left; right: parent.right }
                 SectionHeader {
                     text: qsTr("Backups overwrite current configurations")
+                    wrapMode: Text.Wrap
                 }
 
                 Button {
