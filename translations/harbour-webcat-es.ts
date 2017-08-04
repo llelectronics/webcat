@@ -604,7 +604,7 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     <message>
         <source>Appearance</source>
         <translation>Apariencia</translation>
-   </message>
+    </message>
     <message>
         <source>Default Font Size</source>
         <translation>Tamaño de la fuente por defecto</translation>

@@ -350,11 +350,11 @@ Page {
 //        layer.textureSize: webview.width + "x" + webview.height
 
         // Theoretically a nice function to replace the DevicePixelRatio hack but does not work as intended always
-//        property variant devicePixelRatio: {//1.5
-//            if (Screen.width <= 540) return 1.5;
-//            else if (Screen.width > 540 && Screen.width <= 768) return 2.0;
-//            else if (Screen.width > 768) return 3.0;
-//        }
+        property variant devicePixelRatio: {//1.5
+            if (Screen.width <= 540) return 1.5;
+            else if (Screen.width > 540 && Screen.width <= 768) return 2.0;
+            else if (Screen.width > 768) return 3.0;
+        }
 //        experimental.customLayoutWidth: page.width / devicePixelRatio
 
         // Helps rendering websites that are only optimized for desktop
@@ -619,8 +619,12 @@ Page {
                 mainWindow.infoBanner.showText(qsTr("Opening..."));
                 mainWindow.openExternally(request.url)
             }
+            else if ((/tagesschau.de/).test(request.url)) {
+                experimental.customLayoutWidth = page.width
+            }
             else if (schemaRE.test(request.url)) {
                 request.action = WebView.AcceptRequest;
+                experimental.customLayoutWidth = page.width / devicePixelRatio
             } /*else {
                 if (! ((/^rtsp:/).test(request.url.toString()) || (/^rtmp:/).test(request.url.toString()) || (/^mms:/).test(request.url.toString()) || (/^file:/).test(request.url.toString()))) {
                     request.action = WebView.IgnoreRequest;
