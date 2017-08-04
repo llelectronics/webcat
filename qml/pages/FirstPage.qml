@@ -355,7 +355,7 @@ Page {
             else if (Screen.width > 540 && Screen.width <= 768) return 2.0;
             else if (Screen.width > 768) return 3.0;
         }
-//        experimental.customLayoutWidth: page.width / devicePixelRatio
+        experimental.customLayoutWidth: page.width / devicePixelRatio
 
         // Helps rendering websites that are only optimized for desktop
         experimental.preferredMinimumContentsWidth: 980
