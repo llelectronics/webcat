@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="sv">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="sv" version="2.1">
 <context>
     <name>AboutPage</name>
     <message>
@@ -20,15 +18,15 @@
     </message>
     <message>
         <source>Title of the bookmark</source>
-        <translation type="unfinished"></translation>
+        <translation>Bokmärkestitel</translation>
     </message>
     <message>
         <source>URL of bookmark</source>
-        <translation type="unfinished"></translation>
+        <translation>Bokmärkets URL</translation>
     </message>
     <message>
         <source>User Agent:</source>
-        <translation type="unfinished">User Agent:</translation>
+        <translation>Användaragent:</translation>
     </message>
 </context>
 <context>
@@ -130,7 +128,7 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
     </message>
     <message>
         <source>Clear Cookies</source>
-        <translation>Rensa cookies</translation>
+        <translation>Ta bort cookies</translation>
     </message>
     <message>
         <source>Delete</source>
@@ -145,15 +143,15 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
     <name>DownloadManager</name>
     <message>
         <source>Add Download</source>
-        <translation>Lägg till nedladdning</translation>
+        <translation>Lägg till nerladdning</translation>
     </message>
     <message>
         <source>Download Manager</source>
-        <translation>Nedladdningshanterare</translation>
+        <translation>Nerladdningshanterare</translation>
     </message>
     <message>
         <source>Enter URL to download</source>
-        <translation>Ange URL för nedladdning</translation>
+        <translation>Ange URL för nerladdning</translation>
     </message>
     <message>
         <source>Download</source>
@@ -165,7 +163,7 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
     </message>
     <message>
         <source>Active Downloads: </source>
-        <translation>Aktiva nedladdningar: </translation>
+        <translation>Aktiva nerladdningar: </translation>
     </message>
     <message>
         <source>Status</source>
@@ -177,11 +175,11 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
     </message>
     <message>
         <source>Download Status</source>
-        <translation>Nedladdningsstatus</translation>
+        <translation>Nerladdningsstatus</translation>
     </message>
     <message>
         <source>Download Errors</source>
-        <translation>Nedladdningsfel</translation>
+        <translation>Nerladdningsfel</translation>
     </message>
     <message>
         <source>Opening...</source>
@@ -189,11 +187,11 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
     </message>
     <message>
         <source>Show Downloadfolder</source>
-        <translation>Visa nedladdningsmappen</translation>
+        <translation>Visa nerladdningsmappen</translation>
     </message>
     <message>
         <source>Clear Downloads</source>
-        <translation>Rensa nedladdningar</translation>
+        <translation>Ta bort nerladdningar</translation>
     </message>
     <message>
         <source>Deleting </source>
@@ -213,7 +211,7 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
     </message>
     <message>
         <source>Download list</source>
-        <translation>Nedladdningslista</translation>
+        <translation>Nerladdningslista</translation>
     </message>
     <message>
         <source>Resume</source>
@@ -312,11 +310,11 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
     </message>
     <message>
         <source>Webkit engine crashed! Restarting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Webkit-motorn kraschade! Startar om...</translation>
     </message>
     <message>
         <source>Webkit engine crashed too often!</source>
-        <translation type="unfinished"></translation>
+        <translation>Webkit-motorn kraschade för ofta!</translation>
     </message>
 </context>
 <context>
@@ -414,7 +412,7 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
     </message>
     <message>
         <source>Show Home</source>
-        <translation>Vesa Hem</translation>
+        <translation>Visa Hem</translation>
     </message>
     <message>
         <source>Show Android SDCard</source>
@@ -495,7 +493,7 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
     <name>SearchEngineDialog</name>
     <message>
         <source>Choose Search Engine</source>
-        <translation type="unfinished"></translation>
+        <translation>Välj sökmotor</translation>
     </message>
 </context>
 <context>
@@ -723,7 +721,7 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
     </message>
     <message>
         <source>Engine URL use %s for searchterm</source>
-        <translation type="unfinished"></translation>
+        <translation>Sökmotor-URL, använd %s för sökterm</translation>
     </message>
 </context>
 <context>
@@ -748,14 +746,14 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
     <name>UserAgentDialog</name>
     <message>
         <source>Choose User Agent</source>
-        <translation type="unfinished"></translation>
+        <translation>Välj användaragent</translation>
     </message>
 </context>
 <context>
     <name>UserAgents</name>
     <message>
         <source>Custom</source>
-        <translation>Anpassat</translation>
+        <translation>Anpassad</translation>
     </message>
 </context>
 <context>

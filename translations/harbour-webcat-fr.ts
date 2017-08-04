@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="fr">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="fr" version="2.1">
 <context>
     <name>AboutPage</name>
     <message>
@@ -20,15 +18,15 @@
     </message>
     <message>
         <source>Title of the bookmark</source>
-        <translation type="unfinished"></translation>
+        <translation>Nom du favori</translation>
     </message>
     <message>
         <source>URL of bookmark</source>
-        <translation type="unfinished"></translation>
+        <translation>URL du favori</translation>
     </message>
     <message>
         <source>User Agent:</source>
-        <translation>Agent utilisateur :</translation>
+        <translation>Agent utilisateur</translation>
     </message>
 </context>
 <context>
@@ -74,7 +72,7 @@
     </message>
     <message>
         <source>Backup saved successfully!</source>
-        <translation>Sauvegarde enregistrée avec succès !</translation>
+        <translation>Sauvegarde effectuée avec succès !</translation>
     </message>
     <message>
         <source>The Backup includes all cookies, bookmarks, history and settings for Webcat.</source>
@@ -311,11 +309,11 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
     </message>
     <message>
         <source>Webkit engine crashed! Restarting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Le moteur Webkit a planté ! Redémarrage ...</translation>
     </message>
     <message>
         <source>Webkit engine crashed too often!</source>
-        <translation type="unfinished"></translation>
+        <translation>Le moteur Webkit a planté trop souvent !</translation>
     </message>
 </context>
 <context>
@@ -494,14 +492,14 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
     <name>SearchEngineDialog</name>
     <message>
         <source>Choose Search Engine</source>
-        <translation type="unfinished"></translation>
+        <translation>Choisir le moteur de recherche</translation>
     </message>
 </context>
 <context>
     <name>SearchEngines</name>
     <message>
         <source>Custom</source>
-        <translation>Personnalisé</translation>
+        <translation>Custom</translation>
     </message>
 </context>
 <context>
@@ -722,7 +720,7 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
     </message>
     <message>
         <source>Engine URL use %s for searchterm</source>
-        <translation type="unfinished"></translation>
+        <translation>Le Moteur URL utilise %s comme terme de recherche</translation>
     </message>
 </context>
 <context>
@@ -747,7 +745,7 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
     <name>UserAgentDialog</name>
     <message>
         <source>Choose User Agent</source>
-        <translation type="unfinished"></translation>
+        <translation>Choisir l&apos;Agent Utilisateur</translation>
     </message>
 </context>
 <context>

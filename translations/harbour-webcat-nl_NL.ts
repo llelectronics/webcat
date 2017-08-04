@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="nl_NL">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="nl_NL" version="2.1">
 <context>
     <name>AboutPage</name>
     <message>
@@ -20,11 +18,11 @@
     </message>
     <message>
         <source>Title of the bookmark</source>
-        <translation type="unfinished"></translation>
+        <translation>Titel van bladwijzer</translation>
     </message>
     <message>
         <source>URL of bookmark</source>
-        <translation type="unfinished"></translation>
+        <translation>URL van bladwijzer</translation>
     </message>
     <message>
         <source>User Agent:</source>
@@ -82,7 +80,7 @@
     </message>
     <message>
         <source>Restore Backup</source>
-        <translation>Back-up terugzetten</translation>
+        <translation>Back-up herstellen</translation>
     </message>
     <message>
         <source>Backups overwrite current configurations</source>
@@ -90,7 +88,7 @@
     </message>
     <message>
         <source>Backup restored! Please restart Webcat</source>
-        <translation>Back-up teruggezet! Herstart Webcat</translation>
+        <translation>Back-up hersteld! Herstart Webcat</translation>
     </message>
     <message>
         <source>Restoring overwrites all cookies, bookmarks, history and settings for Webcat from the backup file.
@@ -100,7 +98,7 @@ Herstart om de wijzingen door te voeren.</translation>
     </message>
     <message>
         <source>Restoring Backup</source>
-        <translation>Terugzetten van back-up</translation>
+        <translation>Back-up wordt hersteld</translation>
     </message>
     <message>
         <source>Backups are saved to Documents directory</source>
@@ -312,11 +310,11 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
     </message>
     <message>
         <source>Webkit engine crashed! Restarting...</source>
-        <translation type="unfinished"></translation>
+        <translation>WebKit is gecrasht en wordt nu herstart...</translation>
     </message>
     <message>
         <source>Webkit engine crashed too often!</source>
-        <translation type="unfinished"></translation>
+        <translation>WebKit is te vaak gecrasht!</translation>
     </message>
 </context>
 <context>
@@ -495,7 +493,7 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
     <name>SearchEngineDialog</name>
     <message>
         <source>Choose Search Engine</source>
-        <translation type="unfinished"></translation>
+        <translation>Kies zoekmachine</translation>
     </message>
 </context>
 <context>
@@ -723,7 +721,7 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
     </message>
     <message>
         <source>Engine URL use %s for searchterm</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -748,7 +746,7 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
     <name>UserAgentDialog</name>
     <message>
         <source>Choose User Agent</source>
-        <translation type="unfinished"></translation>
+        <translation>Kies gebruikersagent</translation>
     </message>
 </context>
 <context>

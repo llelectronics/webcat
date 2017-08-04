@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="it">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="it" version="2.1">
 <context>
     <name>AboutPage</name>
     <message>
@@ -20,15 +18,15 @@
     </message>
     <message>
         <source>Title of the bookmark</source>
-        <translation type="unfinished"></translation>
+        <translation>Titolo del segnalibro</translation>
     </message>
     <message>
         <source>URL of bookmark</source>
-        <translation type="unfinished"></translation>
+        <translation>URL del segnalibro</translation>
     </message>
     <message>
         <source>User Agent:</source>
-        <translation type="unfinished">User Agent:</translation>
+        <translation>User Agent:</translation>
     </message>
 </context>
 <context>
@@ -312,11 +310,11 @@ Se non sei sicuro, rifiuta il certificato. Ma questo può impedire il caricament
     </message>
     <message>
         <source>Webkit engine crashed! Restarting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Il motore Webkit è andato in crash! Riavvio...</translation>
     </message>
     <message>
         <source>Webkit engine crashed too often!</source>
-        <translation type="unfinished"></translation>
+        <translation>Il motore Webkit è andato in crash troppo spesso!</translation>
     </message>
 </context>
 <context>
@@ -495,7 +493,7 @@ Se non sei sicuro, rifiuta il certificato. Ma questo può impedire il caricament
     <name>SearchEngineDialog</name>
     <message>
         <source>Choose Search Engine</source>
-        <translation type="unfinished"></translation>
+        <translation>Scegli Motore di Ricerca</translation>
     </message>
 </context>
 <context>
@@ -723,7 +721,7 @@ Se non sei sicuro, rifiuta il certificato. Ma questo può impedire il caricament
     </message>
     <message>
         <source>Engine URL use %s for searchterm</source>
-        <translation type="unfinished"></translation>
+        <translation>URL del Motore. %s vien sostituito dal termine di ricerca</translation>
     </message>
 </context>
 <context>
@@ -748,7 +746,7 @@ Se non sei sicuro, rifiuta il certificato. Ma questo può impedire il caricament
     <name>UserAgentDialog</name>
     <message>
         <source>Choose User Agent</source>
-        <translation type="unfinished"></translation>
+        <translation>Scegli User Agent</translation>
     </message>
 </context>
 <context>
