@@ -283,7 +283,7 @@ Page {
 
             Label {
                 id: activeDownloadLabel
-                text: qsTr("Active Downloads: ") + (_manager.activeDownloads == 0 ? "none" : "1/" + _manager.totalDownloads)
+                text: qsTr("Active Downloads: ") + (_manager.activeDownloads == 0 ? qsTr("none") : "1/" + _manager.totalDownloads)
                 color: Theme.primaryColor
                 font.pixelSize: _manager.activeDownloads == 0 ? Theme.fontSizeMedium : Theme.fontSizeSmall
             }

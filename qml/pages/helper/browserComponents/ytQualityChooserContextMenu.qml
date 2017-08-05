@@ -57,7 +57,7 @@ ContextMenu {
         anchors.fill: parent
         header: Label {
             anchors.centerIn: parent
-            text: download ? "Download" : "Play"
+            text: download ? qsTr("Download") : qsTr("Play")
         }
         delegate: BackgroundItem {
             anchors.left: parent.left

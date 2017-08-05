@@ -223,6 +223,10 @@ En cas de dubte, refuseu el certificat malgrat que això pot provocar que no es 
         <source>Pause</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>none</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>FirstPage</name>
@@ -817,6 +821,14 @@ Si esteu a Youtube, cal verificar que estigueu connectats al vostre compte. Algu
     <message>
         <source>Opening...</source>
         <translation>S&apos;està obrint...</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Descarrega</translation>
+    </message>
+    <message>
+        <source>Play</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

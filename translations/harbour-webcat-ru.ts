@@ -222,6 +222,10 @@ If you are unsure reject the certificate. That might lead to a non loading websi
         <source>Pause</source>
         <translation>Пауза</translation>
     </message>
+    <message>
+        <source>none</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>FirstPage</name>
@@ -817,6 +821,14 @@ On Youtube Videos please make sure to be logged in. Some videos might be geobloc
     <message>
         <source>Opening...</source>
         <translation>Открываю...</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Загрузить</translation>
+    </message>
+    <message>
+        <source>Play</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

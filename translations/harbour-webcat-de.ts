@@ -223,6 +223,10 @@ Wenn Sie sich unsicher sind lehnen sie das Zertifikat ab. Dies führt unter Umst
         <source>Pause</source>
         <translation>Pausieren</translation>
     </message>
+    <message>
+        <source>none</source>
+        <translation>keine</translation>
+    </message>
 </context>
 <context>
     <name>FirstPage</name>
@@ -812,6 +816,14 @@ Bei Youtube Videos stellen Sie sicher angemeldet zu sein. Einige Videos könnten
     <message>
         <source>Opening...</source>
         <translation>Öffne...</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Herunterladen</translation>
+    </message>
+    <message>
+        <source>Play</source>
+        <translation>Abspielen</translation>
     </message>
 </context>
 </TS>

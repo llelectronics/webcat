@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="fr" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="fr">
 <context>
     <name>AboutPage</name>
     <message>
@@ -219,6 +221,10 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
     <message>
         <source>Pause</source>
         <translation>Pause</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -814,6 +820,14 @@ Assurez-vous d&apos;être connecté à Youtube videos. Certaines vidéos peuvent
     <message>
         <source>Opening...</source>
         <translation>Ouverture ...</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Télécharger</translation>
+    </message>
+    <message>
+        <source>Play</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

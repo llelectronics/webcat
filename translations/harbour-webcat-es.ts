@@ -223,6 +223,10 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
         <source>Pause</source>
         <translation>Pausa</translation>
     </message>
+    <message>
+        <source>none</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>FirstPage</name>
@@ -817,6 +821,14 @@ Por favor, asegúrate de haber iniciado sesión en YouTube. El acceso a algunos 
     <message>
         <source>Opening...</source>
         <translation>Abriendo...</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Descargar</translation>
+    </message>
+    <message>
+        <source>Play</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>
