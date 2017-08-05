@@ -22,6 +22,8 @@ Page {
                 SectionHeader {
                     text: qsTr("Backups are saved to Documents directory")
                     wrapMode: Text.Wrap
+                    horizontalAlignment: Text.AlignLeft
+                    truncationMode: TruncationMode.None
                 }
 
                 Button {
@@ -52,6 +54,8 @@ Page {
                 SectionHeader {
                     text: qsTr("Backups overwrite current configurations")
                     wrapMode: Text.Wrap
+                    horizontalAlignment: Text.AlignLeft
+                    truncationMode: TruncationMode.None
                 }
 
                 Button {
