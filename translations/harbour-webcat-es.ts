@@ -5,7 +5,7 @@
     <name>AboutPage</name>
     <message>
         <source>A simple webbrowser based on webkit.</source>
-        <translation>Un navegador de Internet sencillo basado en webkit.</translation>
+        <translation>Un navegador de internet sencillo basado en webkit.</translation>
     </message>
 </context>
 <context>
@@ -47,15 +47,15 @@
     </message>
     <message>
         <source>User name</source>
-        <translation>Nombre usuario</translation>
+        <translation>Nombre de usuario</translation>
     </message>
     <message>
         <source>Enter password</source>
-        <translation>Introducir clave</translation>
+        <translation>Marcar contraseña</translation>
     </message>
     <message>
         <source>Password</source>
-        <translation>Clave</translation>
+        <translation>Contraseña</translation>
     </message>
 </context>
 <context>
@@ -78,7 +78,7 @@
     </message>
     <message>
         <source>The Backup includes all cookies, bookmarks, history and settings for Webcat.</source>
-        <translation>La copia de seguridad incluye las galletas, marcadores, historial y ajustes de Webcat.</translation>
+        <translation>La copia de seguridad incluye galletas, marcadores, historial y ajustes de Webcat.</translation>
     </message>
     <message>
         <source>Restore Backup</source>
@@ -145,7 +145,7 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     <name>DownloadManager</name>
     <message>
         <source>Add Download</source>
-        <translation>Añadir descarga</translation>
+        <translation>Agregar descarga</translation>
     </message>
     <message>
         <source>Download Manager</source>
@@ -177,7 +177,7 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>Download Status</source>
-        <translation>Estado de descarga</translation>
+        <translation>Estado de la descarga</translation>
     </message>
     <message>
         <source>Download Errors</source>
@@ -213,7 +213,7 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>Download list</source>
-        <translation>Descargar lista</translation>
+        <translation>Lista de descargas</translation>
     </message>
     <message>
         <source>Resume</source>
@@ -225,7 +225,7 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>none</source>
-        <translation type="unfinished"></translation>
+        <translation>ninguno</translation>
     </message>
 </context>
 <context>
@@ -236,7 +236,7 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>Enter an url</source>
-        <translation>Escribir lur</translation>
+        <translation>Buscar oh escribir lur</translation>
     </message>
     <message>
         <source>Minimize</source>
@@ -320,7 +320,7 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>Webkit engine crashed too often!</source>
-        <translation>Motor webkit estrellado demasiadas veces!</translation>
+        <translation>Motor webkit estrellado muchas veces!</translation>
     </message>
 </context>
 <context>
@@ -484,7 +484,7 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>Socket Secure (SOCKS) is an Internet protocol that exchanges network packets between a client and server through a proxy server.</source>
-        <translation>Socket Secure (SOCKS) un protocolo de Internet que intercambia paquetes de red entre cliente y servidor a través de un servidor proxy.</translation>
+        <translation>Socket Secure (SOCKS) un protocolo de internet que intercambia paquetes de red entre cliente y servidor a través de un servidor proxy.</translation>
     </message>
     <message>
         <source>Use Tor</source>
@@ -828,7 +828,7 @@ Por favor, asegúrate de haber iniciado sesión en YouTube. El acceso a algunos 
     </message>
     <message>
         <source>Play</source>
-        <translation type="unfinished"></translation>
+        <translation>Reproducir</translation>
     </message>
 </context>
 </TS>
