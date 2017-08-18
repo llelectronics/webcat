@@ -250,6 +250,7 @@ Page
                         //console.debug("Close Tab clicked")
                         mainWindow.closeTab(index, tabModel.get(index).pageid);
                     }
+                    enabled: closeTabImg.visible
                 }
                 MouseArea {
                     property int ymouse;
