@@ -1,30 +1,28 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="es">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="es" version="2.1">
 <context>
     <name>AboutPage</name>
     <message>
         <source>A simple webbrowser based on webkit.</source>
-        <translation>Un navegador de internet sencillo basado en webkit.</translation>
+        <translation>Un navegador de Internet sencillo basado en webkit.</translation>
     </message>
 </context>
 <context>
     <name>AddBookmark</name>
     <message>
         <source>Edit Bookmark</source>
-        <translation>Editar Marcadores</translation>
+        <translation>Editar favorito</translation>
     </message>
     <message>
         <source>Add Bookmark</source>
-        <translation>Aceptar</translation>
+        <translation>Añadir a Favoritos</translation>
     </message>
     <message>
         <source>Title of the bookmark</source>
-        <translation>Título del marcador</translation>
+        <translation>Titulo del favorito</translation>
     </message>
     <message>
         <source>URL of bookmark</source>
-        <translation>LUR del marcador</translation>
+        <translation>URL del favorito</translation>
     </message>
     <message>
         <source>User Agent:</source>
@@ -43,19 +41,19 @@
     </message>
     <message>
         <source>Enter your user name</source>
-        <translation>Introducir nombre de usuario</translation>
+        <translation>Introduce tu nombre de usuario</translation>
     </message>
     <message>
         <source>User name</source>
-        <translation>Nombre de usuario</translation>
+        <translation>Nombre usuario</translation>
     </message>
     <message>
         <source>Enter password</source>
-        <translation>Marcar contraseña</translation>
+        <translation>Introducir clave</translation>
     </message>
     <message>
         <source>Password</source>
-        <translation>Contraseña</translation>
+        <translation>Clave</translation>
     </message>
 </context>
 <context>
@@ -78,7 +76,7 @@
     </message>
     <message>
         <source>The Backup includes all cookies, bookmarks, history and settings for Webcat.</source>
-        <translation>La copia de seguridad incluye galletas, marcadores, historial y ajustes de Webcat.</translation>
+        <translation>La copia de seguridad incluye las cookies, favoritos, historial y ajustes de Webcat.</translation>
     </message>
     <message>
         <source>Restore Backup</source>
@@ -86,16 +84,16 @@
     </message>
     <message>
         <source>Backups overwrite current configurations</source>
-        <translation>La copia de seguridad reemplazará la configuración actual</translation>
+        <translation>Reemplazará la configuración actual</translation>
     </message>
     <message>
         <source>Backup restored! Please restart Webcat</source>
-        <translation>¡Copia de seguridad restaurada! Por favor, reanudar Webcat</translation>
+        <translation>¡Copia de seguridad restaurada! Por favor, reinicia Webcat</translation>
     </message>
     <message>
         <source>Restoring overwrites all cookies, bookmarks, history and settings for Webcat from the backup file.
 Please restart for changes to take effect.</source>
-        <translation>Al restaurar la copia de seguridad se reemplazarán las galletas, marcadores, historial y ajustes de Webcat.
+        <translation>Al restaurar la copia de seguridad se reemplazarán las cookies, favoritos, historial y ajustes de Webcat.
 Por favor, reinicia para que los cambios tengan efecto.</translation>
     </message>
     <message>
@@ -104,14 +102,14 @@ Por favor, reinicia para que los cambios tengan efecto.</translation>
     </message>
     <message>
         <source>Backups are saved to Documents directory</source>
-        <translation>Copias de respaldo estarán guardadas en folder Documentos</translation>
+        <translation>Se guardan en la carpeta Documents</translation>
     </message>
 </context>
 <context>
     <name>ConfirmDialog</name>
     <message>
         <source>Accept ?</source>
-        <translation>Aceptar?</translation>
+        <translation>¿Aceptar?</translation>
     </message>
     <message>
         <source>Certificates are used to identify and make sure that the website you see is provided by the author you expect.
@@ -126,11 +124,11 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     <name>CookiePage</name>
     <message>
         <source>Cookies</source>
-        <translation>Galletas</translation>
+        <translation>Cookies</translation>
     </message>
     <message>
         <source>Clear Cookies</source>
-        <translation>Limpiar galletas</translation>
+        <translation>Limpiar cookies</translation>
     </message>
     <message>
         <source>Delete</source>
@@ -145,15 +143,15 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     <name>DownloadManager</name>
     <message>
         <source>Add Download</source>
-        <translation>Agregar descarga</translation>
+        <translation>Añadir descarga</translation>
     </message>
     <message>
         <source>Download Manager</source>
-        <translation>Gestor de descarga</translation>
+        <translation>Gestor de descargas</translation>
     </message>
     <message>
         <source>Enter URL to download</source>
-        <translation>Introducir LUR para descargar</translation>
+        <translation>Introducir URL para descargar</translation>
     </message>
     <message>
         <source>Download</source>
@@ -161,7 +159,7 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>Abort</source>
-        <translation>Abortar</translation>
+        <translation>Cancelar</translation>
     </message>
     <message>
         <source>Active Downloads: </source>
@@ -217,11 +215,11 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>Resume</source>
-        <translation>Resumir</translation>
+        <translation>Continuar</translation>
     </message>
     <message>
         <source>Pause</source>
-        <translation>Pausa</translation>
+        <translation>Detener</translation>
     </message>
     <message>
         <source>none</source>
@@ -236,7 +234,7 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>Enter an url</source>
-        <translation>Buscar oh escribir lur</translation>
+        <translation>Introducir una url</translation>
     </message>
     <message>
         <source>Minimize</source>
@@ -312,15 +310,15 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>Accept certificate from </source>
-        <translation>Aceptar certificado desde</translation>
+        <translation>Aceptar certificado de</translation>
     </message>
     <message>
         <source>Webkit engine crashed! Restarting...</source>
-        <translation>Motor webkit estrellado! Reiniciando...</translation>
+        <translation>¡Se colgó el motor webkit! Reiniciando...</translation>
     </message>
     <message>
         <source>Webkit engine crashed too often!</source>
-        <translation>Motor webkit estrellado muchas veces!</translation>
+        <translation>¡El motor webkit se cuelga con demasiada frecuencia!</translation>
     </message>
 </context>
 <context>
@@ -346,7 +344,7 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     <name>MenuPopup</name>
     <message>
         <source>File Manager</source>
-        <translation>Gestor de archivos</translation>
+        <translation>Gestor de ficheros</translation>
     </message>
     <message>
         <source>Backup Manager</source>
@@ -354,11 +352,11 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>Video Player</source>
-        <translation>Reproductor de video</translation>
+        <translation>Reproductor de vídeo</translation>
     </message>
     <message>
         <source>Download Manager</source>
-        <translation>Gestor de descarga</translation>
+        <translation>Gestor de descargas</translation>
     </message>
 </context>
 <context>
@@ -369,7 +367,7 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>File not found.</source>
-        <translation>Archivo no encontrado.</translation>
+        <translation>Fichero no encontrado.</translation>
     </message>
     <message>
         <source>No valid Backup file. Did not find harbour-webcat Folder.</source>
@@ -401,6 +399,10 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
         <translation>Pegar</translation>
     </message>
     <message>
+        <source>Error pasting file </source>
+        <translation>Error al pegar fichero</translation>
+    </message>
+    <message>
         <source>Cut</source>
         <translation>Cortar</translation>
     </message>
@@ -410,42 +412,38 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>Show Filesystem Root</source>
-        <translation>Mostrar raíz del sistema de archivos</translation>
+        <translation>Mostrar sistema de archivos raíz</translation>
     </message>
     <message>
         <source>Show Home</source>
-        <translation>Mostrar inicio</translation>
+        <translation>Mostrar Home</translation>
     </message>
     <message>
         <source>Show Android SDCard</source>
-        <translation>Mostrar tarjeta SD de Android</translation>
+        <translation>Mostrar Tarjeta SD Android</translation>
     </message>
     <message>
         <source>Show SDCard</source>
-        <translation>Mostrar tarjeta SD</translation>
+        <translation>Mostrar Tarjeta SD</translation>
     </message>
     <message>
         <source>directory</source>
-        <translation>Directorio</translation>
-    </message>
-    <message>
-        <source>Error pasting file </source>
-        <translation>Error al pegar archivo</translation>
+        <translation>directorio</translation>
     </message>
 </context>
 <context>
     <name>OpenURLPage</name>
     <message>
         <source>Load URL</source>
-        <translation>Cargar LUR</translation>
+        <translation>Cargar URL</translation>
     </message>
     <message>
         <source>Type in URL here</source>
-        <translation>Escribir LUR aquí</translation>
+        <translation>Escribe aquí la URL</translation>
     </message>
     <message>
         <source>URL to media file/stream</source>
-        <translation>LUR para media archivo/secuencia</translation>
+        <translation>URL de fichero multimedia/transmisión</translation>
     </message>
 </context>
 <context>
@@ -460,15 +458,15 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>You need to restart Webcat</source>
-        <translation>Es necesario reanudar Webcat</translation>
+        <translation>Es necesario reiniciar Webcat</translation>
     </message>
     <message>
         <source>Proxy Settings (Restart needed)</source>
-        <translation>Ajustes de Proxy (es necesario reanudar)</translation>
+        <translation>Ajustes del Proxy (es necesario reiniciar)</translation>
     </message>
     <message>
         <source>Host or Ip Address</source>
-        <translation>Anfitrión o dirección IP</translation>
+        <translation>Host o dirección IP</translation>
     </message>
     <message>
         <source>Port</source>
@@ -476,7 +474,7 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>Please restart Webcat</source>
-        <translation>Por favor, reanudar Webcat</translation>
+        <translation>Por favor, reinicia Webcat</translation>
     </message>
     <message>
         <source>Use Socks</source>
@@ -484,7 +482,7 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>Socket Secure (SOCKS) is an Internet protocol that exchanges network packets between a client and server through a proxy server.</source>
-        <translation>Socket Secure (SOCKS) un protocolo de internet que intercambia paquetes de red entre cliente y servidor a través de un servidor proxy.</translation>
+        <translation>Socket Secure (SOCKS) es un protocolo de Internet que intercambia paquetes entre un cliente y un servidor a través de un servidor proxy.</translation>
     </message>
     <message>
         <source>Use Tor</source>
@@ -492,7 +490,7 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>Tor is free software for enabling anonymous communication. This will setup the proxy automatically to use tor. Tor service must be running on the system for this to work.</source>
-        <translation>Tor un software libre que permitir la comunicación anónima. Esto auto configurará el proxy  para usar tor. Tor debe ejecutárse en el sistema para que funcione.</translation>
+        <translation>Tor es un programa libre que permite la comunicación anónima. Esto establecerá el proxy automáticamente para  usar tor. El servicio Tor debe estar ejecutándose en el sistema para que esto funcione.</translation>
     </message>
 </context>
 <context>
@@ -513,7 +511,7 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     <name>SelectUrl</name>
     <message>
         <source>Bookmarks</source>
-        <translation>Marcadores</translation>
+        <translation>Favoritos</translation>
     </message>
     <message>
         <source>Open in new Tab</source>
@@ -537,7 +535,7 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>Add Bookmark</source>
-        <translation>Añadir marcador</translation>
+        <translation>Añadir a Favoritos</translation>
     </message>
     <message>
         <source>History</source>
@@ -595,7 +593,7 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>Save Settings</source>
-        <translation>Aceptar</translation>
+        <translation>Guardar ajustes</translation>
     </message>
     <message>
         <source>About </source>
@@ -603,7 +601,7 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>Load Defaults</source>
-        <translation>Cargar por defecto</translation>
+        <translation>Restaurar valores por defecto</translation>
     </message>
     <message>
         <source>Appearance</source>
@@ -615,7 +613,7 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>Default Fixed Font Size</source>
-        <translation>Tamaño de la fuente fija por defecto</translation>
+        <translation>Tamaño fijo de la fuente por defecto</translation>
     </message>
     <message>
         <source>Minimum Font Size</source>
@@ -631,7 +629,7 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>Homepage</source>
-        <translation>Página inicial</translation>
+        <translation>Página de inicio</translation>
     </message>
     <message>
         <source>Search Engine:</source>
@@ -639,7 +637,7 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>Custom</source>
-        <translation>Personalizado</translation>
+        <translation>Personalizar</translation>
     </message>
     <message>
         <source>Private Browsing</source>
@@ -647,7 +645,7 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>Add Default Bookmarks</source>
-        <translation>Añadir marcadores por defecto</translation>
+        <translation>Añadir favoritos predeterminados</translation>
     </message>
     <message>
         <source>User Agent:</source>
@@ -655,7 +653,7 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>Clear Cookies</source>
-        <translation>Limpiar galletas</translation>
+        <translation>Limpiar cookies</translation>
     </message>
     <message>
         <source>Start Private Window</source>
@@ -675,7 +673,7 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>Offline Web Application Cache</source>
-        <translation>Caché sin conexión de la aplicación Web</translation>
+        <translation>Caché de la aplicación sin conexión</translation>
     </message>
     <message>
         <source>Privacy</source>
@@ -687,7 +685,7 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>Clear Bookmarks</source>
-        <translation>Limpiar marcadores</translation>
+        <translation>Limpiar Favoritos</translation>
     </message>
     <message>
         <source>Use external video player</source>
@@ -695,7 +693,7 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>Reset default browser</source>
-        <translation>Reiniciar el navegador por defecto</translation>
+        <translation>Restablecer el navegador por defecto</translation>
     </message>
     <message>
         <source>Set Webcat as default browser</source>
@@ -703,7 +701,7 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>Proxy Settings</source>
-        <translation>Ajustes de Proxy</translation>
+        <translation>Ajustes del Proxy</translation>
     </message>
     <message>
         <source>Backup Manager</source>
@@ -711,23 +709,23 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>New Tab | Stop/Refresh</source>
-        <translation>Nueva pestaña | Para/Refrescar</translation>
+        <translation>Nueva pestaña | Detener/Actualizar</translation>
     </message>
     <message>
         <source>Previous Tab | Next Tab</source>
-        <translation>Pestaña anterior</translation>
+        <translation>Pestaña previa | Pestaña siguiente</translation>
     </message>
     <message>
         <source>Default Cover Action Group</source>
-        <translation>Acción de cubierta por defecto</translation>
+        <translation>Grupo de acciones en cubierta</translation>
     </message>
     <message>
         <source>Cookie Manager</source>
-        <translation>Gestor de galleta</translation>
+        <translation>Gestor de Cookies</translation>
     </message>
     <message>
         <source>Engine URL use %s for searchterm</source>
-        <translation>LUR utiliza %s para el término de búsqueda</translation>
+        <translation>El motor URL usa %s como término de búsqueda</translation>
     </message>
 </context>
 <context>
@@ -766,11 +764,11 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     <name>VideoPlayer</name>
     <message>
         <source>Open File</source>
-        <translation>Abrir archivo</translation>
+        <translation>Abrir fichero</translation>
     </message>
     <message>
         <source>Open Stream</source>
-        <translation>Abrir secuencia</translation>
+        <translation>Abrir transmisión</translation>
     </message>
 </context>
 <context>
@@ -813,7 +811,7 @@ Por favor, asegúrate de haber iniciado sesión en YouTube. El acceso a algunos 
     </message>
     <message>
         <source>Pull down to load file or stream</source>
-        <translation>Deslizar hacia abajo para las opciones</translation>
+        <translation>Desliza hacia abajo para cargar fichero o transmisión</translation>
     </message>
 </context>
 <context>
