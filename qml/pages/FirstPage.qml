@@ -563,6 +563,7 @@ Page {
                 readerMode = false;
                 searchMode = false;
                 nightMode = false;
+                webTitle.visible = false;
             }
             else if (loadRequest.status == WebView.LoadFailedStatus)
             {
@@ -600,6 +601,9 @@ Page {
                 // Update url for tabModel
                 //console.debug("[FirstPage.qml] pageId: " + pageId);
                 if (pageId != "" || pageId != undefined) mainWindow.tabModel.updateUrl(pageId,url)
+                if (title != "") {
+                    webTitle.visible = urlText.visible;
+                }
             }
         }
         onNavigationRequested: {
@@ -812,6 +816,11 @@ Page {
                     visible: true
                     enabled: true
                 }
+                PropertyChanges {
+                    target: webTitle
+                    visible: urlText.visible
+                    enabled: true
+                }
             },
             State {
                 name: "minimized"
@@ -850,6 +859,11 @@ Page {
                 }
                 PropertyChanges {
                     target: bookmarkButton
+                    visible: false
+                    enabled: false
+                }
+                PropertyChanges {
+                    target: webTitle
                     visible: false
                     enabled: false
                 }
@@ -893,12 +907,12 @@ Page {
             font.bold: true
             font.pixelSize: Theme.fontSizeTiny //parent.height - 4
             visible: false
+            truncationMode: TruncationMode.Fade
         }
         MouseArea {
             id: expandToolbar
-            enabled: toolbar.state == "minimized"
             anchors.fill: toolbar
-            onClicked: toolbar.state = "expanded"
+            onClicked: if (toolbar.state == "minimized") toolbar.state = "expanded"
             property int mx
             onPressed: {
                 // Gesture detecting here
@@ -1073,6 +1087,48 @@ Page {
             icon.width: icon.height
         }
 
+
+        Label {
+            id: webTitle
+            text: webview.title
+
+            anchors.top: toolbar.top
+            anchors.topMargin: Theme.paddingSmall
+            anchors.left: {
+                if (forIcon.visible) return forIcon.right
+                else if (backIcon.visible) return backIcon.right
+                else return gotoButton.right
+            }
+            anchors.leftMargin: Theme.paddingMedium
+            font.bold: true
+            font.pixelSize: height //parent.height - 4
+            visible: false
+            onVisibleChanged: {
+                if (visible) {
+                    urlText.anchors.topMargin = Theme.paddingSmall / 2
+                    height = Theme.fontSizeSmall / 1.337 + Theme.paddingSmall
+                }
+                else {
+                    urlText.anchors.topMargin = parent.height / 2 - urlText.height / 4
+                    height = 0
+                }
+            }
+
+            color: urlText.color
+            height: 0
+            Behavior on height {
+                    NumberAnimation { duration: 200 }
+            }
+            width: urlText.width
+            truncationMode: TruncationMode.Fade
+            MouseArea {
+                enabled: parent.visible
+                anchors.fill: parent
+                onClicked: {
+                    urlText.forceActiveFocus()
+                }
+            }
+        }
         // Url textbox here
         TextField{
             id: urlText
@@ -1080,8 +1136,16 @@ Page {
             text: simplifyUrl(url)
             inputMethodHints: Qt.ImhUrlCharactersOnly
             placeholderText: qsTr("Enter an url")
-            font.pixelSize: Theme.fontSizeMedium
-            y: parent.height / 2 - height / 4
+            font.pixelSize: {
+                if (webTitle.height != 0 && !focus) Theme.fontSizeTiny
+                else Theme.fontSizeMedium
+            }
+            //y: parent.height / 2 - height / 4
+            anchors.top: {
+                if (webTitle.height != 0 && webTitle.text != "") webTitle.bottom
+                else parent.top
+            }
+            anchors.topMargin: parent.height / 2 - height / 4
             background: null
             color: Theme.primaryColor
             property string fullUrl: url
@@ -1108,6 +1172,7 @@ Page {
                     text = fullUrl
                     color = Theme.primaryColor
                     suggestionView.visible = false
+                    webTitle.visible = false
                     selectAll();
                 }
                 else {
@@ -1116,6 +1181,9 @@ Page {
                     bookmarkButton.visible = true
                     gotoButton.searchButton = false
                     text = simplifyUrl(url)
+                    if (webTitle.text != "") {
+                        webTitle.visible = urlText.visible
+                    }
                 }
             }
             onTextChanged: {
