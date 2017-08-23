@@ -24,8 +24,14 @@ Page
 
     SilicaListView {
         id: repeater1
-        width: parent.width
-        height: urlPage.height - (tabListBg.height + Theme.paddingLarge)  //- entryURL.height - 2*65 //- bottomBar.height
+        width: {
+            if (urlPage.orientation == Orientation.Landscape || urlPage.orientation == Orientation.LandscapeInverted) urlPage.width / 2
+            else urlPage.width
+        }
+        height: {
+            if (urlPage.orientation == Orientation.Landscape || urlPage.orientation == Orientation.LandscapeInverted) urlPage.height
+            else urlPage.height - (tabListBg.height + Theme.paddingLarge)  //- entryURL.height - 2*65 //- bottomBar.height
+        }
         model: modelUrls
         quickScroll: true
         header: PageHeader {
@@ -266,14 +272,23 @@ Page
     Rectangle {
         id: tabListBg
         height: {
-            if (Theme.itemSizeExtraSmall + (tabModel.count * Theme.itemSizeSmall) < urlPage.height / 2.25)
-                Theme.itemSizeExtraSmall + (tabModel.count * Theme.itemSizeSmall) + Theme.paddingMedium
-            else
-                urlPage.height / 2.25
+            if (urlPage.orientation == Orientation.Landscape || urlPage.orientation == Orientation.LandscapeInverted) {
+                urlPage.height
+            }
+            else {
+                if (Theme.itemSizeExtraSmall + (tabModel.count * Theme.itemSizeSmall) < Screen.height / 2.25)
+                    Theme.itemSizeExtraSmall + (tabModel.count * Theme.itemSizeSmall) + Theme.paddingMedium
+                else
+                    urlPage.height / 2.25
+            }
         }
-        width: parent.width
+        width: {
+            if (urlPage.orientation == Orientation.Landscape || urlPage.orientation == Orientation.LandscapeInverted) parent.width / 2
+            else parent.width
+        }
         gradient: normalBg
-        anchors.bottom: urlPage.bottom
+        anchors.bottom: if (urlPage.orientation == Orientation.Portrait || urlPage.orientation == Orientation.PortraitInverted) urlPage.bottom
+        anchors.right: if (urlPage.orientation == Orientation.Landscape || urlPage.orientation == Orientation.LandscapeInverted) urlPage.right
 
         Rectangle {
             id: tabHead
@@ -282,6 +297,10 @@ Page
             gradient: Gradient {
                 GradientStop { position: 0.0; color: "#262626" }
                 GradientStop { position: 0.85; color: "#1F1F1F"}
+            }
+            anchors.top: {
+                if (urlPage.orientation == Orientation.Portrait || urlPage.orientation == Orientation.PortraitInverted) parent.top
+                else tabListView.bottom
             }
 
             Label {
@@ -351,10 +370,17 @@ Page
             width: parent.width
             height: parent.height - tabHead.height
             clip: true
-            anchors.top: tabHead.bottom
+            anchors.top: {
+                if (urlPage.orientation == Orientation.Portrait || urlPage.orientation == Orientation.PortraitInverted) tabHead.bottom
+                else parent.top
+            }
             anchors.topMargin: Theme.paddingSmall
 
             //orientation: ListView.Horizontal
+            verticalLayoutDirection: {
+                if (urlPage.orientation == Orientation.Landscape || urlPage.orientation == Orientation.LandscapeInverted) ListView.BottomToTop
+                else ListView.TopToBottom
+            }
 
             model: tabModel
             delegate: tabDelegate
@@ -431,7 +457,10 @@ Page
     MenuPopup {
         id: menuPopup
         anchors.fill: parent
-        menuTop: tabListBg.y - Theme.itemSizeMedium * 3.25  // 4 MenuItems for the moment
+        menuTop: {
+            if (urlPage.orientation == Orientation.Portrait || urlPage.orientation == Orientation.PortraitInverted) tabListBg.y - Theme.itemSizeMedium * 3.25  // 4 MenuItems for the moment
+            else tabHead.y - Theme.itemSizeMedium * 3.25
+        }
         dataContainer: dataContainer
     }
 }
