@@ -1082,7 +1082,7 @@ Page {
             enabled: webview.canGoForward
             visible: webview.canGoForward
             anchors.left: backIcon.visible ? backIcon.right : gotoButton.right
-            anchors.leftMargin: (1.5 * Theme.paddingLarge)
+            anchors.leftMargin: Theme.paddingMedium
             onClicked: {
                 webview.goForward();
             }
