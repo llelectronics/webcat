@@ -1479,7 +1479,7 @@ Page {
             width: height
             onClicked: {
                 if (enabled) {
-                    mainWindow.closeTab(mainWindow.tabModel.getIndexFromId(mainWindow.currentTab),mainWindow.tabModel.get(mainWindow.currentTabIndex).pageid)
+                    mainWindow.closeTab(mainWindow.tabModel.getIndexFromId(mainWindow.currentTab),pageId)
                 }
                 highlighted = false;
                 extraToolbar.hide();
