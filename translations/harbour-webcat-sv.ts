@@ -251,10 +251,6 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
         <translation>Nytt fönster</translation>
     </message>
     <message>
-        <source>Reload</source>
-        <translation>Uppdatera</translation>
-    </message>
-    <message>
         <source>Lock Orientation</source>
         <translation>Lås orienteringsläget</translation>
     </message>
@@ -321,6 +317,10 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
     <message>
         <source>Webkit engine crashed too often!</source>
         <translation>Webkit-motorn kraschade för ofta!</translation>
+    </message>
+    <message>
+        <source>Close Tab</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

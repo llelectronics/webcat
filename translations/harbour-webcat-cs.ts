@@ -248,10 +248,6 @@ If you are unsure reject the certificate. That might lead to a non loading websi
         <translation>Nové okno</translation>
     </message>
     <message>
-        <source>Reload</source>
-        <translation>Obnovit</translation>
-    </message>
-    <message>
         <source>Lock Orientation</source>
         <translation>Zamknout otáčení</translation>
     </message>
@@ -317,6 +313,10 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Webkit engine crashed too often!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close Tab</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

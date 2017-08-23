@@ -251,10 +251,6 @@ En cas de dubte, refuseu el certificat malgrat que això pot provocar que no es 
         <translation>Nova finestra</translation>
     </message>
     <message>
-        <source>Reload</source>
-        <translation>Torna a carregar</translation>
-    </message>
-    <message>
         <source>Lock Orientation</source>
         <translation>Fixa l&apos;orientació</translation>
     </message>
@@ -320,6 +316,10 @@ En cas de dubte, refuseu el certificat malgrat que això pot provocar que no es 
     </message>
     <message>
         <source>Webkit engine crashed too often!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close Tab</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

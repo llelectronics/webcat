@@ -250,10 +250,6 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
         <translation>Nouvelle fenêtre</translation>
     </message>
     <message>
-        <source>Reload</source>
-        <translation>Recharger</translation>
-    </message>
-    <message>
         <source>Lock Orientation</source>
         <translation>Bloquer l&apos;orientation</translation>
     </message>
@@ -320,6 +316,10 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
     <message>
         <source>Webkit engine crashed too often!</source>
         <translation>Le moteur Webkit a planté trop souvent !</translation>
+    </message>
+    <message>
+        <source>Close Tab</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

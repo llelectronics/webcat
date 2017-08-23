@@ -247,10 +247,6 @@ Wenn Sie sich unsicher sind lehnen sie das Zertifikat ab. Dies führt unter Umst
         <translation>Neues Fenster</translation>
     </message>
     <message>
-        <source>Reload</source>
-        <translation>Neuladen</translation>
-    </message>
-    <message>
         <source>Lock Orientation</source>
         <translation>Ausrichtung sperren</translation>
     </message>
@@ -321,6 +317,10 @@ Wenn Sie sich unsicher sind lehnen sie das Zertifikat ab. Dies führt unter Umst
     <message>
         <source>Webkit engine crashed too often!</source>
         <translation>Webkit zu oft abgestürzt!</translation>
+    </message>
+    <message>
+        <source>Close Tab</source>
+        <translation>Reiter schließen</translation>
     </message>
 </context>
 <context>

@@ -967,21 +967,21 @@ Page {
             onPositionChanged: {
                 if (extraToolbar.opacity == 1 && extraToolbar.quickmenu && mouse.y > ((extratoolbarheight + toolbarheight) * -1)) {
                     //console.debug("X Position: " + mouse.x)
-                    if (mouse.x > newTabButton.x && mouse.x < newWindowButton.x) { minimizeButton.highlighted = false; newTabButton.highlighted = true; newWindowButton.highlighted = false; reloadThisButton.highlighted = false; orientationLockButton.highlighted = false; readerModeButton.highlighted = false; searchModeButton.highlighted = false; shareButton.highlighted = false; }
-                    else if (mouse.x < newTabButton.x) {minimizeButton.highlighted = true; newTabButton.highlighted = false; newWindowButton.highlighted = false; reloadThisButton.highlighted = false; orientationLockButton.highlighted = false; readerModeButton.highlighted = false; searchModeButton.highlighted = false; shareButton.highlighted = false; }
-                    else if (mouse.x > newWindowButton.x && mouse.x < reloadThisButton.x) { minimizeButton.highlighted = false; newTabButton.highlighted = false; newWindowButton.highlighted = true; reloadThisButton.highlighted = false; orientationLockButton.highlighted = false; readerModeButton.highlighted = false; searchModeButton.highlighted = false; shareButton.highlighted = false; }
-                    else if (mouse.x > reloadThisButton.x && mouse.x < orientationLockButton.x) { minimizeButton.highlighted = false; newTabButton.highlighted = false; newWindowButton.highlighted = false; reloadThisButton.highlighted = true; orientationLockButton.highlighted = false; readerModeButton.highlighted = false; searchModeButton.highlighted = false; shareButton.highlighted = false; }
-                    else if (mouse.x > orientationLockButton.x && mouse.x < orientationLockButton.x + orientationLockButton.width + Theme.paddingMedium) { minimizeButton.highlighted = false; newTabButton.highlighted = false; newWindowButton.highlighted = false; reloadThisButton.highlighted = false; orientationLockButton.highlighted = true; readerModeButton.highlighted = false; searchModeButton.highlighted = false; shareButton.highlighted = false; }
-                    else if (mouse.x > readerModeButton.x && mouse.x < readerModeButton.x + readerModeButton.width + Theme.paddingMedium) { minimizeButton.highlighted = false; newTabButton.highlighted = false; newWindowButton.highlighted = false; reloadThisButton.highlighted = false; orientationLockButton.highlighted = false; readerModeButton.highlighted = true; searchModeButton.highlighted = false; shareButton.highlighted = false; }
-                    else if (mouse.x > searchModeButton.x && mouse.x < searchModeButton.x + searchModeButton.width + Theme.paddingMedium) { minimizeButton.highlighted = false; newTabButton.highlighted = false; newWindowButton.highlighted = false; reloadThisButton.highlighted = false; orientationLockButton.highlighted = false; readerModeButton.highlighted = false; searchModeButton.highlighted = true; shareButton.highlighted = false;}
-                    else if (mouse.x > shareButton.x && mouse.x < shareButton.x + shareButton.width + Theme.paddingMedium) { minimizeButton.highlighted = false; newTabButton.highlighted = false; newWindowButton.highlighted = false; reloadThisButton.highlighted = false; orientationLockButton.highlighted = false; readerModeButton.highlighted = false; searchModeButton.highlighted = false; shareButton.highlighted = true; }
-                    else if (mouse.x > shareButton.x + shareButton.width + Theme.paddingMedium) { minimizeButton.highlighted = false; newTabButton.highlighted = false; newWindowButton.highlighted = false; reloadThisButton.highlighted = false; orientationLockButton.highlighted = false; readerModeButton.highlighted = false; searchModeButton.highlighted = false; shareButton.highlighted = false; }
+                    if (mouse.x > newTabButton.x && mouse.x < newWindowButton.x) { minimizeButton.highlighted = false; newTabButton.highlighted = true; newWindowButton.highlighted = false; closeTabButton.highlighted = false; orientationLockButton.highlighted = false; readerModeButton.highlighted = false; searchModeButton.highlighted = false; shareButton.highlighted = false; }
+                    else if (mouse.x < newTabButton.x) {minimizeButton.highlighted = true; newTabButton.highlighted = false; newWindowButton.highlighted = false; closeTabButton.highlighted = false; orientationLockButton.highlighted = false; readerModeButton.highlighted = false; searchModeButton.highlighted = false; shareButton.highlighted = false; }
+                    else if (mouse.x > newWindowButton.x && mouse.x < closeTabButton.x) { minimizeButton.highlighted = false; newTabButton.highlighted = false; newWindowButton.highlighted = true; closeTabButton.highlighted = false; orientationLockButton.highlighted = false; readerModeButton.highlighted = false; searchModeButton.highlighted = false; shareButton.highlighted = false; }
+                    else if (mouse.x > closeTabButton.x && mouse.x < orientationLockButton.x) { minimizeButton.highlighted = false; newTabButton.highlighted = false; newWindowButton.highlighted = false; closeTabButton.highlighted = true; orientationLockButton.highlighted = false; readerModeButton.highlighted = false; searchModeButton.highlighted = false; shareButton.highlighted = false; }
+                    else if (mouse.x > orientationLockButton.x && mouse.x < orientationLockButton.x + orientationLockButton.width + Theme.paddingMedium) { minimizeButton.highlighted = false; newTabButton.highlighted = false; newWindowButton.highlighted = false; closeTabButton.highlighted = false; orientationLockButton.highlighted = true; readerModeButton.highlighted = false; searchModeButton.highlighted = false; shareButton.highlighted = false; }
+                    else if (mouse.x > readerModeButton.x && mouse.x < readerModeButton.x + readerModeButton.width + Theme.paddingMedium) { minimizeButton.highlighted = false; newTabButton.highlighted = false; newWindowButton.highlighted = false; closeTabButton.highlighted = false; orientationLockButton.highlighted = false; readerModeButton.highlighted = true; searchModeButton.highlighted = false; shareButton.highlighted = false; }
+                    else if (mouse.x > searchModeButton.x && mouse.x < searchModeButton.x + searchModeButton.width + Theme.paddingMedium) { minimizeButton.highlighted = false; newTabButton.highlighted = false; newWindowButton.highlighted = false; closeTabButton.highlighted = false; orientationLockButton.highlighted = false; readerModeButton.highlighted = false; searchModeButton.highlighted = true; shareButton.highlighted = false;}
+                    else if (mouse.x > shareButton.x && mouse.x < shareButton.x + shareButton.width + Theme.paddingMedium) { minimizeButton.highlighted = false; newTabButton.highlighted = false; newWindowButton.highlighted = false; closeTabButton.highlighted = false; orientationLockButton.highlighted = false; readerModeButton.highlighted = false; searchModeButton.highlighted = false; shareButton.highlighted = true; }
+                    else if (mouse.x > shareButton.x + shareButton.width + Theme.paddingMedium) { minimizeButton.highlighted = false; newTabButton.highlighted = false; newWindowButton.highlighted = false; closeTabButton.highlighted = false; orientationLockButton.highlighted = false; readerModeButton.highlighted = false; searchModeButton.highlighted = false; shareButton.highlighted = false; }
                 }
                 if (mouse.y < ((extratoolbarheight + toolbarheight) * -1)) {
                     minimizeButton.highlighted = false;
                     newTabButton.highlighted = false;
                     newWindowButton.highlighted = false;
-                    reloadThisButton.highlighted = false;
+                    closeTabButton.highlighted = false;
                     orientationLockButton.highlighted = false;
                     readerModeButton.highlighted = false;
                     searchModeButton.highlighted = false;
@@ -1014,7 +1014,7 @@ Page {
                 if (extraToolbar.opacity == 1 && extraToolbar.quickmenu && minimizeButton.highlighted == true) minimizeButton.clicked(undefined)
                 else if (extraToolbar.opacity == 1 && extraToolbar.quickmenu && newTabButton.highlighted == true) newTabButton.clicked(undefined)
                 else if (extraToolbar.opacity == 1 && extraToolbar.quickmenu && newWindowButton.highlighted == true) newWindowButton.clicked(undefined)
-                else if (extraToolbar.opacity == 1 && extraToolbar.quickmenu && reloadThisButton.highlighted == true) reloadThisButton.clicked(undefined)
+                else if (extraToolbar.opacity == 1 && extraToolbar.quickmenu && closeTabButton.highlighted == true) closeTabButton.clicked(undefined)
                 else if (extraToolbar.opacity == 1 && extraToolbar.quickmenu && orientationLockButton.highlighted == true) orientationLockButton.clicked(undefined)
                 else if (extraToolbar.opacity == 1 && extraToolbar.quickmenu && readerModeButton.highlighted == true) readerModeButton.clicked(undefined)
                 else if (extraToolbar.opacity == 1 && extraToolbar.quickmenu && searchModeButton.highlighted == true) searchModeButton.clicked(undefined)
@@ -1396,7 +1396,7 @@ Page {
                 if (minimizeButton.highlighted) { _ngfEffect.play(); return qsTr("Minimize") }
                 else if (newTabButton.highlighted) { _ngfEffect.play(); return qsTr("New Tab") }
                 else if (newWindowButton.highlighted) { _ngfEffect.play(); return qsTr("New Window") }
-                else if (reloadThisButton.highlighted) { _ngfEffect.play(); return qsTr("Reload") }
+                else if (closeTabButton.highlighted) { _ngfEffect.play(); return qsTr("Close Tab") }
                 else if (orientationLockButton.highlighted) { _ngfEffect.play(); return qsTr("Lock Orientation") }
                 else if (readerModeButton.highlighted) { _ngfEffect.play(); return qsTr("Reader Mode") }
                 else if (searchModeButton.highlighted) { _ngfEffect.play(); return qsTr("Search") }
@@ -1467,8 +1467,8 @@ Page {
 
 
         IconButton {
-            id: reloadThisButton
-            icon.source: "image://theme/icon-m-refresh"
+            id: closeTabButton
+            icon.source: "image://theme/icon-m-close"
             anchors.left: newWindowButton.right
             anchors.leftMargin: Theme.paddingMedium
             anchors.bottom: parent.bottom
@@ -1478,16 +1478,19 @@ Page {
             height: toolbarheight / 1.5
             width: height
             onClicked: {
-                webview.reload();
+                if (enabled) {
+                    mainWindow.closeTab(mainWindow.tabModel.getIndexFromId(mainWindow.currentTab),mainWindow.tabModel.get(mainWindow.currentTabIndex).pageid)
+                }
                 highlighted = false;
                 extraToolbar.hide();
             }
+            enabled: mainWindow.tabModel.count > 1
         }
 
         IconButton {
             id: orientationLockButton
             icon.source: "image://theme/icon-m-backup"
-            anchors.left: reloadThisButton.right
+            anchors.left: closeTabButton.right
             anchors.leftMargin: Theme.paddingMedium
             anchors.bottom: parent.bottom
             anchors.bottomMargin: actionLbl.height / 2

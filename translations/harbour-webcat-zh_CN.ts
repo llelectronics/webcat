@@ -244,10 +244,6 @@ If you are unsure reject the certificate. That might lead to a non loading websi
         <translation>新窗口</translation>
     </message>
     <message>
-        <source>Reload</source>
-        <translation>重新加载</translation>
-    </message>
-    <message>
         <source>Lock Orientation</source>
         <translation>锁定屏幕方向</translation>
     </message>
@@ -317,6 +313,10 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Webkit engine crashed too often!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close Tab</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

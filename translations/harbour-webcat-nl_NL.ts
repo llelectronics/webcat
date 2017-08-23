@@ -251,10 +251,6 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
         <translation>Nieuw scherm</translation>
     </message>
     <message>
-        <source>Reload</source>
-        <translation>Herladen</translation>
-    </message>
-    <message>
         <source>Lock Orientation</source>
         <translation>Lock-oriëntatie</translation>
     </message>
@@ -321,6 +317,10 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
     <message>
         <source>Webkit engine crashed too often!</source>
         <translation>WebKit is te vaak gecrasht!</translation>
+    </message>
+    <message>
+        <source>Close Tab</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

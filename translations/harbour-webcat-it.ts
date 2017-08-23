@@ -251,10 +251,6 @@ Se non sei sicuro, rifiuta il certificato. Ma questo può impedire il caricament
         <translation>Nuova finestra</translation>
     </message>
     <message>
-        <source>Reload</source>
-        <translation>Ricarica</translation>
-    </message>
-    <message>
         <source>Lock Orientation</source>
         <translation>Blocca orientamento</translation>
     </message>
@@ -321,6 +317,10 @@ Se non sei sicuro, rifiuta il certificato. Ma questo può impedire il caricament
     <message>
         <source>Webkit engine crashed too often!</source>
         <translation>Il motore Webkit è andato in crash troppo spesso!</translation>
+    </message>
+    <message>
+        <source>Close Tab</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

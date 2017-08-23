@@ -250,10 +250,6 @@ If you are unsure reject the certificate. That might lead to a non loading websi
         <translation>Новое окно</translation>
     </message>
     <message>
-        <source>Reload</source>
-        <translation>Обновить</translation>
-    </message>
-    <message>
         <source>Lock Orientation</source>
         <translation>Блокировка поворота экрана</translation>
     </message>
@@ -319,6 +315,10 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Webkit engine crashed too often!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close Tab</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
