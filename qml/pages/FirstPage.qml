@@ -143,8 +143,10 @@ Page {
 
     function toggleReaderMode() {
         if (readerMode) {
+            bookmarkButton.visible = false
             webview.reload();
         } else {
+            bookmarkButton.visible = true
             // FIXME: dirty hack to load js from local file
             var xhr = new XMLHttpRequest;
             xhr.open("GET", "./helper/readability.js");
@@ -157,6 +159,7 @@ Page {
             xhr.send();
         }
         readerMode = !readerMode;
+
     }
 
     Item{
@@ -564,6 +567,7 @@ Page {
                 searchMode = false;
                 nightMode = false;
                 webTitle.visible = false;
+                bookmarkButton.visible = false;
             }
             else if (loadRequest.status == WebView.LoadFailedStatus)
             {
@@ -813,7 +817,7 @@ Page {
                 }
                 PropertyChanges {
                     target: bookmarkButton
-                    visible: true
+                    visible: false
                     enabled: true
                 }
                 PropertyChanges {
@@ -1158,16 +1162,16 @@ Page {
             anchors.right: refreshButton.left
             anchors.rightMargin: Theme.paddingVerySmall
             width: { //180 // minimum
-                if (backIcon.visible === false && forIcon.visible === false) return parent.width - gotoButton.width - refreshButton.width - bookmarkButton.width
-                else if (backIcon.visible === true && forIcon.visible === false) return parent.width - gotoButton.width - refreshButton.width - bookmarkButton.width - backIcon.width
-                else if (backIcon.visible === false && forIcon.visible === true) return parent.width - gotoButton.width - refreshButton.width - bookmarkButton.width - forIcon.width
-                else if (backIcon.visible === true && forIcon.visible === true) return parent.width - gotoButton.width - refreshButton.width - bookmarkButton.width - backIcon.width - backIcon.width
+                if (backIcon.visible === false && forIcon.visible === false) return parent.width - gotoButton.width - refreshButton.width
+                else if (backIcon.visible === true && forIcon.visible === false) return parent.width - gotoButton.width - refreshButton.width - backIcon.width
+                else if (backIcon.visible === false && forIcon.visible === true) return parent.width - gotoButton.width - refreshButton.width - forIcon.width
+                else if (backIcon.visible === true && forIcon.visible === true) return parent.width - gotoButton.width - refreshButton.width - backIcon.width - backIcon.width
             }
             onFocusChanged: {
                 if (focus) {
                     backIcon.visible = false
                     forIcon.visible = false
-                    bookmarkButton.visible = false
+                    bookmarkButton.visible = true
                     gotoButton.searchButton = true
                     text = fullUrl
                     color = Theme.primaryColor
@@ -1178,7 +1182,7 @@ Page {
                 else {
                     backIcon.visible = webview.canGoBack
                     forIcon.visible = webview.canGoForward
-                    bookmarkButton.visible = true
+                    if (!readerMode) bookmarkButton.visible = false
                     gotoButton.searchButton = false
                     text = simplifyUrl(url)
                     if (webTitle.text != "") {
@@ -1247,7 +1251,10 @@ Page {
                     extraToolbar.hide()
                 }
             }
-            anchors.right: urlText.focus ? parent.right : bookmarkButton.left
+            anchors.right: {
+                if (urlText.focus || readerMode) bookmarkButton.left
+                else parent.right
+            }
             anchors.rightMargin: Theme.paddingMedium
             visible:true
             height: toolbarheight / 1.5
