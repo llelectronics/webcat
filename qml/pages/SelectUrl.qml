@@ -250,6 +250,10 @@ Page
                         //console.debug("Close Tab clicked")
                         mainWindow.closeTab(index, tabModel.get(index).pageid);
                     }
+                    onPressAndHold: {
+                        mainWindow.closeAllTabs();
+                    }
+
                     enabled: closeTabImg.visible
                 }
                 MouseArea {

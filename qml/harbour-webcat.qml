@@ -222,6 +222,16 @@ ApplicationWindow
         delete(Tab.itemMap[pageid]);
     }
 
+    function closeAllTabs() {
+        tabModel.clear();
+
+        var props = Object.getOwnPropertyNames(Tab);
+        for (var i = 0; i < props.length; i++) {
+          delete Tab[props[i]];
+        }
+        loadInNewTab("about:blank")
+    }
+
     function salt(){
         var salt = ""
         for( var i=0; i < 5; i++ ) {
