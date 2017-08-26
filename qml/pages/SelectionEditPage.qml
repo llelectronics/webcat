@@ -63,6 +63,8 @@ Dialog {
                 background: null
                 height: flickable.height - toggleHtml.height - Theme.paddingMedium
                 text: editText
+                focus: editInput ? true : false
+                cursorPosition: text.length
             }
             Button {
                 id: toggleHtml
