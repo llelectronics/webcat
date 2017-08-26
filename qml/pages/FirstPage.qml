@@ -516,15 +516,18 @@ Page {
                         showContextMenu(data.href,data.img);
                     }
                 }
-                if (data.input) {
-                    console.debug("Text Input field long pressed")
-                    inputSelected = true
-                    inputValue = data.input
-                    inputElem = data.id
-                }
                 if ('text' in data) {
                     selection.mimedata = data.text;
                     selection.show(data.left, data.top, data.width, data.height)
+                    if (data.input) {
+                        console.debug("Text Input field long pressed")
+                        inputSelected = true
+                        inputValue = data.input
+                        inputElem = data.id
+                    }
+                    else {
+                        inputSelected = false
+                    }
                 }
             }
             case 'selectionadjusted' : {
@@ -543,7 +546,7 @@ Page {
                 }
                 //console.debug("[FirstPage.qml] INPUT Box data: " + data.state)
                 if (data.state == "show") inputFocus = true;
-                else if (data.state == "hide") inputFocus = false; // somehow sometimes an undefined is received so don't react on it
+                else if (data.state == "hide") { inputFocus = false; inputSelected = false } // somehow sometimes an undefined is received so don't react on it
                 if (toolbar.state == "expanded" && data.state == "show" && ! urlText.focus == true) toolbar.state = "minimized"
             }
             case 'search': {
