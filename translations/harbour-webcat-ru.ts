@@ -581,6 +581,10 @@ If you are unsure reject the certificate. That might lead to a non loading websi
         <source>Hide HTML</source>
         <translation>Скрыть HTML</translation>
     </message>
+    <message>
+        <source>Accept</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SettingsPage</name>

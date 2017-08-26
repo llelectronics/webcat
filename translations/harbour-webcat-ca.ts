@@ -582,6 +582,10 @@ En cas de dubte, refuseu el certificat malgrat que això pot provocar que no es 
         <source>Hide HTML</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Accept</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SettingsPage</name>

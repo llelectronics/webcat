@@ -9,11 +9,23 @@ Dialog {
     property var editText
     property var htmlText
     property bool showHtml: false
+    property bool editInput: false
+
+    property QtObject dataContainer
 
     onAccepted: {
+        if (!editInput) {
         if(!editTxt.selectedText.length || (!editTxt.selectionStart && (editTxt.selectionEnd == editTxt.text.length)))
             // Avoid lipstick clipboard not updating bug
             _myClass.copy2clipboard(editTxt.text);
+        }
+        else {
+            var message = new Object
+            message.type = 'setInput'
+            message.elem = dataContainer.inputElem
+            message.text = editTxt.text
+            dataContainer.webview.experimental.postMessage(JSON.stringify(message))
+        }
     }
 
     SilicaFlickable {
@@ -27,7 +39,7 @@ Dialog {
 
             DialogHeader {
                 id: header
-                acceptText: qsTr("Copy")
+                acceptText: editInput ? qsTr("Accept") : qsTr("Copy")
             }
 
             //    Button {
@@ -56,6 +68,7 @@ Dialog {
                 id: toggleHtml
                 width: parent.width - 2 * Theme.paddingLarge
                 height: Theme.itemSizeMedium
+                visible: !editInput
                 anchors.horizontalCenter: parent.horizontalCenter
                 text: {
                     if (!showHtml) qsTr("Show HTML")

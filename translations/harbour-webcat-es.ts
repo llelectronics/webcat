@@ -582,6 +582,10 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
         <source>Hide HTML</source>
         <translation>Ocultar HTML</translation>
     </message>
+    <message>
+        <source>Accept</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SettingsPage</name>

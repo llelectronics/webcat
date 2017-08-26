@@ -227,6 +227,12 @@ navigator.qt.onmessage = function(ev) {
     else if (data.type === "search") {
         findString(data.searchTerm)
     }
+    else if (data.type === "setInput") {
+        setInputText(data.elem, data.text);
+    }
+    else if (data.type === "getInput") {
+        getInputText(data.elem);
+    }
 }
 
 function findTag(element, tagN) {
@@ -261,6 +267,9 @@ function longPressed(x, y, element) {
     var images = findTag(element,"IMG");
     var videos = findTag(element,"VIDEO");
     var audios = findTag(element,"AUDIO");
+    var input = findTag(element,"INPUT");
+    var form = findTag(element, "FORM");
+    var textarea = findTag(element, "TEXTAREA");
     if (anchors) {
         data.href = anchors.href //getAttribute('href'); // We always want the absolute link
     }
@@ -313,6 +322,13 @@ function longPressed(x, y, element) {
     data.nodeName = node.nodeName.toLowerCase();
     // FIXME: extract the text and images in the order they appear in the block,
     // so that this order is respected when the data is pushed to the clipboard.
+    if (data.nodeName == "input" || data.nodeName == "form" || data.nodeName == "textarea") {
+        fakeKeyUpEvent(node);
+        if (node.value != "") data.input = node.value
+        else data.input = " "
+        data.id = node.id
+    }
+
     data.text = node.textContent;
 //    var images = [];
 //    var imgs = node.getElementsByTagName('img');
@@ -375,6 +391,24 @@ function findString(str) {
      //alert ("String '"+str+"' not found!")
  }
  return;
+}
+
+function fakeKeyUpEvent(target) {
+    var event = document.createEvent("KeyboardEvent");
+    event.initKeyboardEvent('keyup', true, false, window, '', 0, false, false, false, false, false);
+    target.dispatchEvent(event);
+}
+
+function getInputText(id) {
+    var inElemValue = document.getElementById(id).value;
+    var data = new Object({'type': 'input', 'input': inElemValue});
+    navigator.qt.postMessage( JSON.stringify(data) );
+}
+
+function setInputText(id, text) {
+    var inElem = document.getElementById(id);
+    inElem.value = text;
+    fakeKeyUpEvent(inElem);
 }
 
 canvg();

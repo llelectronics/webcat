@@ -581,6 +581,10 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
         <source>Hide HTML</source>
         <translation>Masquer HTML</translation>
     </message>
+    <message>
+        <source>Accept</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SettingsPage</name>

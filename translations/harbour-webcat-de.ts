@@ -581,6 +581,10 @@ Wenn Sie sich unsicher sind lehnen sie das Zertifikat ab. Dies führt unter Umst
         <source>Hide HTML</source>
         <translation>HTML verstecken</translation>
     </message>
+    <message>
+        <source>Accept</source>
+        <translation>Akzeptieren</translation>
+    </message>
 </context>
 <context>
     <name>SettingsPage</name>

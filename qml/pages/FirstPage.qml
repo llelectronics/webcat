@@ -63,6 +63,9 @@ Page {
     property bool mediaYt: false
     property bool mediaYtEmbeded : false
     property bool mediaLink;
+    property bool inputSelected: false
+    property string inputValue;
+    property var inputElem;
     property string ytStreamUrl;
     property bool ytUrlLoading;
     property bool readerMode: false
@@ -329,6 +332,7 @@ Page {
             DB.addHistory(url.toString());
 
             inputFocus = false;
+            inputSelected = false;
             // Remove selection if still visible
             if (selection.visible) selection.visible = false
         }
@@ -458,7 +462,7 @@ Page {
             pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": downloadItem.url, "dataContainer": webview, "downloadName": downloadItem.suggestedFilename});
         }
         experimental.onMessageReceived: {
-            //console.log('onMessageReceived: ' + message.data );
+            console.log('onMessageReceived: ' + message.data );
             var data = null
             try {
                 data = JSON.parse(message.data)
@@ -512,6 +516,12 @@ Page {
                         showContextMenu(data.href,data.img);
                     }
                 }
+                if (data.input) {
+                    console.debug("Text Input field long pressed")
+                    inputSelected = true
+                    inputValue = data.input
+                    inputElem = data.id
+                }
                 if ('text' in data) {
                     selection.mimedata = data.text;
                     selection.show(data.left, data.top, data.width, data.height)
@@ -526,6 +536,11 @@ Page {
             }
 
             case 'input': {
+                if (data.input && inputSelected && data.input !=  " ") {
+                    //console.debug("data.input is set so I guess its time to start the selectioneditpage. Data.Input = " + data.input )
+                    inputValue = data.input
+                    pageStack.push(Qt.resolvedUrl("SelectionEditPage.qml"), { editText: inputValue.toString(), editInput: true, dataContainer: page })
+                }
                 //console.debug("[FirstPage.qml] INPUT Box data: " + data.state)
                 if (data.state == "show") inputFocus = true;
                 else if (data.state == "hide") inputFocus = false; // somehow sometimes an undefined is received so don't react on it
@@ -682,7 +697,13 @@ Page {
             }
 
             onTextClicked: {
-                pageStack.push(Qt.resolvedUrl("SelectionEditPage.qml"), { editText: hiddenTxtBox.text, htmlText: hiddenHtmlBox.text })
+                if (!inputSelected) pageStack.push(Qt.resolvedUrl("SelectionEditPage.qml"), { editText: hiddenTxtBox.text, htmlText: hiddenHtmlBox.text })
+                else {
+                    var message = new Object
+                    message.type = 'getInput'
+                    message.elem = inputElem
+                    webview.experimental.postMessage(JSON.stringify(message))
+                }
                 actionTriggered();
             }
 

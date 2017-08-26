@@ -582,6 +582,10 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
         <source>Hide HTML</source>
         <translation>Dölj HTML</translation>
     </message>
+    <message>
+        <source>Accept</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SettingsPage</name>
