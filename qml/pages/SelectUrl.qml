@@ -368,7 +368,7 @@ Page
         SilicaListView {
             id: tabListView
             width: parent.width
-            height: parent.height - tabHead.height
+            height: parent.height - tabHead.height - Theme.paddingMedium
             clip: true
             anchors.top: {
                 if (urlPage.orientation == Orientation.Portrait || urlPage.orientation == Orientation.PortraitInverted) tabHead.bottom
