@@ -1,9 +1,10 @@
 var frames = document.documentElement.getElementsByTagName('iframe');
 
 // Attempt to fix news.google.com not scrolling
-//var hs = document.getElementsByTagName('style');
+//var hs = document.getElementsByTagName('header');
 //for (var i=0, max = hs.length; i < max; i++) {
-//    //hs[i].parentNode.removeChild(hs[i]);
+//    if (hs[i].role == "banner")
+//        hs[i].parentNode.removeChild(hs[i]);
 //    //hs[i].setAttribute('style',"-webkit-overflow-scrolling: auto; overflow: scroll");
 //    hs[i].parentNode.style.webkitOverflowScrolling = "auto";
 //    hs[i].parentNode.style.overflow = "scroll";

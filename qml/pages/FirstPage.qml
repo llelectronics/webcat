@@ -363,6 +363,7 @@ Page {
             else if (Screen.width > 768) return 3.0;
         }
         experimental.customLayoutWidth: page.width / devicePixelRatio
+        experimental.overview: true
 
         // Helps rendering websites that are only optimized for desktop
         experimental.preferredMinimumContentsWidth: 980
@@ -379,13 +380,13 @@ Page {
         experimental.itemSelector: PopOver {}
         experimental.preferences.fullScreenEnabled: true
         experimental.preferences.developerExtrasEnabled: true
-        experimental.userStyleSheet: Qt.resolvedUrl("helper/adblock.css")
+        experimental.userStyleSheets: Qt.resolvedUrl("helper/adblock.css")
 
         experimental.userScripts: [
             Qt.resolvedUrl("helper/devicePixelRatioHack.js"),
             // Polyfills, Thx Dax89 for notifying me about those
-            Qt.resolvedUrl("helper/es6-collections.min.js"), // ES6 Harmony Collections: https://github.com/WebReflection/es6-collections
-            Qt.resolvedUrl("helper/canvg.min.js"),           // SVG Support: https://github.com/gabelerner/canvg
+            //Qt.resolvedUrl("helper/es6-collections.min.js"), // ES6 Harmony Collections: https://github.com/WebReflection/es6-collections
+            //Qt.resolvedUrl("helper/canvg.min.js"),           // SVG Support: https://github.com/gabelerner/canvg
             // Media Detection
             Qt.resolvedUrl("helper/mediaDetect.js"),
             // This userScript makes longpress detection and other things working
