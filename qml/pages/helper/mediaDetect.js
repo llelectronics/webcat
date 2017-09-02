@@ -32,49 +32,68 @@ function getImgFullUri(uri) {
 
 // Extended HTML5 Support
 
-document.createElement('video').constructor.prototype.canPlayType = function(type){
-    if (type.indexOf("video/mp4") != -1 || type.indexOf("video/ogg") != -1 || type.indexOf("audio/mpeg") != -1 || type.indexOf("audio/ogg") != -1 || type.indexOf("audio/mp4") != -1 ||
-            type.indexOf("application/vnd.apple.mpegURL") != -1 || type.indexOf("application/x-mpegURL") != -1 || type.indexOf("audio/mpegurl") != -1) {
-        return "probably";
-     } else
-        return "";
-};
+//document.createElement('video').constructor.prototype.canPlayType = function(type){
+//    if (type.indexOf("video/mp4") != -1 || type.indexOf("video/ogg") != -1 || type.indexOf("audio/mpeg") != -1 || type.indexOf("audio/ogg") != -1 || type.indexOf("audio/mp4") != -1 ||
+//            type.indexOf("application/vnd.apple.mpegURL") != -1 || type.indexOf("application/x-mpegURL") != -1 || type.indexOf("audio/mpegurl") != -1) {
+//        return "probably";
+//     } else
+//        return "";
+//};
 
-document.createElement('video').constructor.prototype.play = function(){
-    var data = new Object({'type': 'video'})
-    if (this.hasChildNodes()) {
-        var children = this.childNodes;
-        for (var j = 0; j < children.length; j++) {
-            if (children[j].tagName === 'SOURCE') {
-                if (children[j].hasAttribute('src')) data.video = getImgFullUri(children[j].getAttribute('src'));
-                data.play = true;
-                navigator.qt.postMessage( JSON.stringify(data) );
-                break;
-            }
-        }
-    } else {
-        data.video = getImgFullUri(this.src);
-        data.play = true;
-        navigator.qt.postMessage( JSON.stringify(data) );
-    }
-};
+//document.createElement('video').constructor.prototype.play = function(){
+//    var data = new Object({'type': 'video'})
+//    if (this.hasChildNodes()) {
+//        var children = this.childNodes;
+//        for (var j = 0; j < children.length; j++) {
+//            if (children[j].tagName === 'SOURCE') {
+//                if (children[j].hasAttribute('src')) data.video = getImgFullUri(children[j].getAttribute('src'));
+//                data.play = true;
+//                navigator.qt.postMessage( JSON.stringify(data) );
+//                break;
+//            }
+//        }
+//    } else {
+//        data.video = getImgFullUri(this.src);
+//        data.play = true;
+//        navigator.qt.postMessage( JSON.stringify(data) );
+//    }
+//};
 
-document.createElement('video').constructor.prototype.load = function(){
-    var data = new Object({'type': 'video'})
-    if (this.hasChildNodes()) {
-        var children = this.childNodes;
-        for (var j = 0; j < children.length; j++) {
-            if (children[j].tagName === 'SOURCE') {
-                if (children[j].hasAttribute('src')) data.video = getImgFullUri(children[j].getAttribute('src'));
-                navigator.qt.postMessage( JSON.stringify(data) );
-                break;
-            }
-        }
-    } else {
-        data.video = getImgFullUri(this.src);
-        navigator.qt.postMessage( JSON.stringify(data) );
-    }
-};
+//document.createElement('audio').constructor.prototype.play = function(){
+//    var data = new Object({'type': 'video'})
+//    if (this.hasChildNodes()) {
+//        var children = this.childNodes;
+//        for (var j = 0; j < children.length; j++) {
+//            if (children[j].tagName === 'SOURCE') {
+//                if (children[j].hasAttribute('src')) data.video = getImgFullUri(children[j].getAttribute('src'));
+//                data.play = true;
+//                navigator.qt.postMessage( JSON.stringify(data) );
+//                break;
+//            }
+//        }
+//    } else {
+//        data.video = getImgFullUri(this.src);
+//        data.play = true;
+//        navigator.qt.postMessage( JSON.stringify(data) );
+//    }
+//};
+
+//document.createElement('video').constructor.prototype.load = function(){
+//    var data = new Object({'type': 'video'})
+//    if (this.hasChildNodes()) {
+//        var children = this.childNodes;
+//        for (var j = 0; j < children.length; j++) {
+//            if (children[j].tagName === 'SOURCE') {
+//                if (children[j].hasAttribute('src')) data.video = getImgFullUri(children[j].getAttribute('src'));
+//                navigator.qt.postMessage( JSON.stringify(data) );
+//                break;
+//            }
+//        }
+//    } else {
+//        data.video = getImgFullUri(this.src);
+//        navigator.qt.postMessage( JSON.stringify(data) );
+//    }
+//};
 
 //document.createElement('video').constructor.prototype.src = function(src){
 //    var data = new Object({'type': 'video'})
@@ -83,13 +102,13 @@ document.createElement('video').constructor.prototype.load = function(){
 //    return getImgFullUri(src);
 //};
 
-document.createElement('video').constructor.prototype.buffered = function(){
-    var TimeRangesObj = newObject;
-    TimeRangesObj.length = 1
-    TimeRangesObj.start = 0
-    TimeRangesObj.end = 0
-    return TimeRangesObj
-};
+//document.createElement('video').constructor.prototype.buffered = function(){
+//    var TimeRangesObj = newObject;
+//    TimeRangesObj.length = 1
+//    TimeRangesObj.start = 0
+//    TimeRangesObj.end = 0
+//    return TimeRangesObj
+//};
 
 //document.createElement('video').constructor.prototype.seekable = function(){
 //    var TimeRangesObj = newObject;
@@ -128,8 +147,9 @@ document.createElement('video').constructor.prototype.buffered = function(){
 //document.createElement('video').constructor.prototype.defaultPlaybackRate = 1.0
 //document.createElement('video').constructor.prototype.playbackRate = 1.0
 //document.createElement('video').constructor.prototype.volume = 1.0
+//document.createElement('audio').constructor.prototype.volume = 1.0
 //document.createElement('video').constructor.prototype.networkState = 2 // Always loading
-document.createElement('video').constructor.prototype.readyState = 4  // Always have enough data to start
+//document.createElement('video').constructor.prototype.readyState = 4  // Always have enough data to start
 //document.createElement('video').constructor.prototype.seeking = false
 //document.createElement('video').constructor.prototype.autoplay = false
 //document.createElement('video').constructor.prototype.ended = false
@@ -162,6 +182,36 @@ for (var i=0; i<delement.length; i++) {
         var data = new Object({'type': 'video'})
         data.video = getImgFullUri(delement[i].getAttribute('src'));
         navigator.qt.postMessage( JSON.stringify(data) );
+    }
+    if (delement[i].hasAttribute('muted')) {
+        delement[i].muted=false;
+    }
+}
+// ////
+
+// Detect HTML5 Audio
+var aelement = document.documentElement.getElementsByTagName('audio');
+
+for (var i=0; i<aelement.length; i++) {
+    if (aelement[i].hasChildNodes()) {
+        console.debug("Has children");
+        var children = aelement[i].childNodes;
+        for (var j = 0; j < children.length; j++) {
+            if (children[j].tagName === 'SOURCE') {
+                var data = new Object({'type': 'video'})
+                if (children[j].hasAttribute('src')) data.video = getImgFullUri(children[j].getAttribute('src'));
+                navigator.qt.postMessage( JSON.stringify(data) );
+                continue;
+            }
+        }
+    }
+    else if (aelement[i].hasAttribute('src')) {
+        var data = new Object({'type': 'video'})
+        data.video = getImgFullUri(aelement[i].getAttribute('src'));
+        navigator.qt.postMessage( JSON.stringify(data) );
+    }
+    if (aelement[i].hasAttribute('muted')) {
+        aelement[i].muted=false;
     }
 }
 // ////

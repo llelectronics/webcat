@@ -1623,16 +1623,16 @@ Page {
             if (mediaYt && mediaUrl != "") {
                 //console.debug("[FirstPage.qml] Youtube Media URL: " + mediaUrl + " Counter = " + counter)
                 counter = counter + 1
-                mediaList.insert(counter, {"mediaTitle": mediaUrl, "url": mediaUrl});
+                mediaList.insert(counter, {"mediaTitle": mediaUrl, "url": mediaUrl, "ytMedia":true});
                 YT.getYoutubeDirectStream(mediaUrl.toString(),page, counter);
             }
             else if (mediaUrl != "" && !mediaList.contains(mediaUrl)) {
                 counter = counter + 1
                 var ext = mediaUrl.substr(mediaUrl.lastIndexOf('.') + 1);
                 if (ext.length != 0)
-                    mediaList.insert(counter, {"mediaTitle": mainWindow.findBaseName(mediaUrl) + " (" + ext+ ")", "url": mediaUrl});
+                    mediaList.insert(counter, {"mediaTitle": mainWindow.findBaseName(mediaUrl) + " (" + ext+ ")", "url": mediaUrl, "ytMedia": false});
                 else
-                    mediaList.insert(counter, {"mediaTitle": mainWindow.findBaseName(mediaUrl), "url": mediaUrl});
+                    mediaList.insert(counter, {"mediaTitle": mainWindow.findBaseName(mediaUrl), "url": mediaUrl, "ytMedia": false});
             }
 //            console.debug("[firstPage.qml] MediaUrl changed to:" + mediaUrl)
         }
@@ -1751,12 +1751,14 @@ Page {
                         else if (yt480p != "") vPlayerLoader.setSource("VideoPlayerComponent.qml", {dataContainer: firstPage, streamUrl: yt480p, streamTitle: mediaDownloadRecTitle.text});
                         else if (yt360p != "") vPlayerLoader.setSource("VideoPlayerComponent.qml", {dataContainer: firstPage, streamUrl: yt360p, streamTitle: mediaDownloadRecTitle.text});
                         else if (yt240p != "") vPlayerLoader.setSource("VideoPlayerComponent.qml", {dataContainer: firstPage, streamUrl: yt240p, streamTitle: mediaDownloadRecTitle.text});
+                        else if (mediaDownloadRec.mediaUrl != "") vPlayerLoader.setSource("VideoPlayerComponent.qml", {dataContainer: firstPage, streamUrl: mediaDownloadRec.mediaUrl, streamTitle: mediaDownloadRecTitle.text});
                     }
                     else {
                         if (yt720p != "") mainWindow.openWithvPlayer(yt720p,mediaDownloadRecTitle.text);
                         else if (yt480p != "") mainWindow.openWithvPlayer(yt480p,mediaDownloadRecTitle.text);
                         else if (yt360p != "") mainWindow.openWithvPlayer(yt360p,mediaDownloadRecTitle.text);
                         else if (yt240p != "") mainWindow.openWithvPlayer(yt240p,mediaDownloadRecTitle.text);
+                        else if (mediaDownloadRec.mediaUrl != "") mainWindow.openWithvPlayer(mediaDownloadRec.mediaUrl,mediaDownloadRecTitle.text);
                     }
                 }
                 else if (mediaDownloadRec.mediaUrl != "" && mainWindow.vPlayerExternal) mainWindow.openWithvPlayer(mediaDownloadRec.mediaUrl,"");
@@ -2035,7 +2037,8 @@ Page {
             page.yt480p = yt480p;
             page.yt360p = yt360p;
             page.yt240p = yt240p;
-            if (!mediaYt) mediaDownloadRec.mediaUrl = url;
+            page.mediaYt = ytMedia;
+            if (!ytMedia) mediaDownloadRec.mediaUrl = url;
             // Need to destroy player here as it has probably the wrong URL
             vPlayerLoader.setSource("");
             if (!webview.visible) webview.visible = true
