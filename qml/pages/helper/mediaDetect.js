@@ -168,11 +168,11 @@ var delement = document.documentElement.getElementsByTagName('video');
 for (var i=0; i<delement.length; i++) {
     var _vonplaying = delement[i].onplaying;
     delement[i].onplaying = function () {
+        _vonplaying();
         // We need to unmute all with multiple elements
         for (var j=0; j<delement.length; j++) {
             delement[j].muted = false;
         }
-        _vonplaying();
     };
     if (delement[i].hasChildNodes()) {
         console.debug("Has children");
