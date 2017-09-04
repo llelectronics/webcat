@@ -162,6 +162,21 @@ function getImgFullUri(uri) {
 
 // ////////////////////////////
 
+
+// Detect and remove broken a href link on youtube mobile
+
+var ytplayelem = document.getElementsByClassName('_mcqb');  // They use this classname for now (04.09.2017)
+while(ytplayelem.length > 0){
+    ytplayelem[0].parentNode.removeChild(ytplayelem[0]);
+}
+
+document.body.addEventListener('DOMSubtreeModified', function(event) {
+    const elements = document.getElementsByClassName('_mcqb');
+    while (elements.length > 0) elements[0].remove();
+});
+
+// ///////////////////////////
+
 // Detect HTML5 Video
 var delement = document.documentElement.getElementsByTagName('video');
 
