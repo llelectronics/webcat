@@ -166,6 +166,14 @@ function getImgFullUri(uri) {
 var delement = document.documentElement.getElementsByTagName('video');
 
 for (var i=0; i<delement.length; i++) {
+    var _vonplaying = delement[i].onplaying;
+    delement[i].onplaying = function () {
+        // We need to unmute all with multiple elements
+        for (var j=0; j<delement.length; j++) {
+            delement[j].muted = false;
+        }
+        _vonplaying();
+    };
     if (delement[i].hasChildNodes()) {
         console.debug("Has children");
         var children = delement[i].childNodes;
@@ -193,6 +201,14 @@ for (var i=0; i<delement.length; i++) {
 var aelement = document.documentElement.getElementsByTagName('audio');
 
 for (var i=0; i<aelement.length; i++) {
+    var _onplaying = aelement[i].onplaying;
+    aelement[i].onplaying = function () {
+        // We need to unmute all with multiple elements
+        for (var j=0; j<aelement.length; j++) {
+            aelement[j].muted = false;
+        }
+        _onplaying();
+    };
     if (aelement[i].hasChildNodes()) {
         console.debug("Has children");
         var children = aelement[i].childNodes;
@@ -232,7 +248,15 @@ for (var i=0; i<frames.length; i++) {
     var iframeDoc = (frames[i].contentWindow || frames[i].contentDocument);
     if (iframeDoc.document) iframeDoc = iframeDoc.document;
     var iframeVideoElement = iframeDoc.getElementsByTagName('video');
-    for (var k=0; i<iframeVideoElement.length; k++) {
+    for (var k=0; k<iframeVideoElement.length; k++) {
+        var _ivonplaying = iframeVideoElement[k].onplaying;
+        iframeVideoElement[k].onplaying = function () {
+            _ivonplaying();
+            // We need to unmute all with multiple elements
+            for (var j=0; j<iframeVideoElement.length; j++) {
+                iframeVideoElement[j].muted = false;
+            }
+        };
         if (iframeVideoElement[k].hasChildNodes()) {
             console.debug("Has children");
             var children = iframeVideoElement[k].childNodes;
