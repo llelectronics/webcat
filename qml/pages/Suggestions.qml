@@ -67,7 +67,7 @@ Rectangle {
 
             onClicked: {
                 if (mediaTitle) suggestions.selectedMedia(mediaTitle,yt720p,yt480p,yt360p,yt240p,url,ytMedia)
-                else suggestions.selected(url,ytMedia)
+                else suggestions.selected(url)
             }
 
         }
