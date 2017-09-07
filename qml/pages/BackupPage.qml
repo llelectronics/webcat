@@ -6,6 +6,7 @@ Page {
     allowedOrientations: defaultAllowedOrientations
 
     SilicaFlickable {
+        id: flick
         anchors.fill: parent
         contentHeight: content.height
 
@@ -64,7 +65,7 @@ Page {
                     anchors.horizontalCenter: parent.horizontalCenter
                     onClicked: {
                         var openDialog = pageStack.push(Qt.resolvedUrl("OpenDialog.qml"),
-                                                        {"dataContainer":  backupPage, "selectMode": true, "filter" : [ "*.tar.gz", "*.gz" ]})
+                                                        {"dataContainer":  flick, "selectMode": true, "filter" : [ "*.tar.gz", "*.gz" ]})
                         openDialog.fileOpen.connect(function(file) {
                             remorse.execute(qsTr("Restoring Backup"), function() {
                                 busy.running = true;
