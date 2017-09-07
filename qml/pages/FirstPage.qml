@@ -369,6 +369,21 @@ Page {
         // Helps rendering websites that are only optimized for desktop
         experimental.preferredMinimumContentsWidth: 980
 
+        property int curZ
+
+        experimental.onEnterFullScreenRequested: {
+            console.debug("Full Screen requested")
+            webview.anchors.fill = page
+            curZ = 90
+            webview.z = 99
+        }
+
+        experimental.onExitFullScreenRequested: {
+            console.debug("Exit of Full Screen requested")
+            webview.anchors.fill = undefined
+            webview.z = curZ
+        }
+
         experimental.filePicker: Item {
             Component.onCompleted: {
                 var openDialog = pageStack.push(Qt.resolvedUrl("OpenDialog.qml"),
