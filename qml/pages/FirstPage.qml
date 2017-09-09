@@ -374,7 +374,7 @@ Page {
         experimental.onEnterFullScreenRequested: {
             console.debug("Full Screen requested")
             webview.anchors.fill = page
-            curZ = 90
+            curZ = vPlayerLoader.z - 1
             webview.z = 99
         }
 
