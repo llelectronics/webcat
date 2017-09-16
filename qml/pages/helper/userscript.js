@@ -1,5 +1,3 @@
-var frames = document.documentElement.getElementsByTagName('iframe');
-
 // Attempt to fix news.google.com not scrolling
 //var hs = document.getElementsByTagName('header');
 //for (var i=0, max = hs.length; i < max; i++) {
@@ -167,6 +165,16 @@ document.documentElement.addEventListener('click', (function(e) {
         node = node.parentNode;
     }
 }), true);
+
+//var frames = document.documentElement.getElementsByTagName('iframe');
+
+//for (var i=0; i<frames.length; i++) {
+//    frames[i].onload = function() {
+//        var link = new Object({'type':'link', 'pageX': 0, 'pageY': 0, 'target': '_blank'})
+//        if (this.contentWindow.location != "") link.href = this.contentWindow.location
+//        navigator.qt.postMessage( JSON.stringify(link) );
+//    }
+//}
 
 window.onload = function(e) {
 
