@@ -176,7 +176,8 @@ document.documentElement.addEventListener('click', (function(e) {
 //    }
 //}
 
-window.onload = function(e) {
+//Attach to window.onload instead of overwriting it
+window.addEventListener("load", function(){
 
     if (document.activeElement && document.activeElement.tagName.toLowerCase() == 'input' &&
             document.activeElement.type == 'text' || document.activeElement.tagName.toLowerCase() == 'textarea') {
@@ -214,7 +215,7 @@ window.onload = function(e) {
             navigator.qt.postMessage(JSON.stringify(inputContext))
         }
     }
-}
+}, true);
 
 window.onunload = function(e) {
     // Don't do anything simply be there
@@ -429,4 +430,4 @@ function setInputText(id, text) {
     fakeKeyUpEvent(inElem);
 }
 
-canvg();
+//canvg();
