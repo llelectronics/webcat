@@ -398,7 +398,6 @@ Page {
         experimental.preferences.fullScreenEnabled: true
         experimental.preferences.developerExtrasEnabled: true
         experimental.userStyleSheets: Qt.resolvedUrl("helper/adblock.css")
-
         experimental.userScripts: [
             Qt.resolvedUrl("helper/devicePixelRatioHack.js"),
             // Polyfills, Thx Dax89 for notifying me about those
