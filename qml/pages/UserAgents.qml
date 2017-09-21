@@ -8,7 +8,7 @@ ListModel {
     }
     ListElement {
         title: "Alternative Jolla Webkit"
-        agent: "Mozilla/5.0 (Linux; U; Jolla; Sailfish; Mobile; rv:20.0) Gecko/20.0 Firefox/20.0 Sailfish Browser/1.0 like Safari/535.19"
+        agent: "Mozilla/5.0 (Maemo; Android 4.4.2; U; Jolla; Sailfish; ; rv:38.0) Gecko/38.0 Firefox/38.0 SailfishBrowser/1.0 like Safari/538.1"
     }
     ListElement {
         title: "Jolla Sailfish Browser"
