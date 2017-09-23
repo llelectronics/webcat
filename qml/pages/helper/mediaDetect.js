@@ -1,26 +1,5 @@
 // Hmm... TODO: Need to get that out of here so it can be used from userscripts.js and mediaDetect.js
 function getImgFullUri(uri) {
-//    if ((uri.slice(0, 7) === 'http://') ||
-//        (uri.slice(0, 8) === 'https://') ||
-//        (uri.slice(0, 7) === 'file://')) {
-//        return uri;
-//    } else if (uri.slice(0, 1) === '/') {
-//        var docuri = document.documentURI;
-//        var firstcolon = docuri.indexOf('://');
-//        var protocol = 'http://';
-//        if (firstcolon !== -1) {
-//            protocol = docuri.slice(0, firstcolon + 3);
-//        }
-//        return protocol + document.domain + uri;
-//    } else {
-//        var base = document.baseURI;
-//        var lastslash = base.lastIndexOf('/');
-//        if (lastslash === -1) {
-//            return base + '/' + uri;
-//        } else {
-//            return base.slice(0, lastslash + 1) + uri;
-//        }
-//    }
     // Sometimes life can be made a lot easier
     var a;
     if (!a) a = document.createElement('a');
@@ -162,10 +141,8 @@ function getImgFullUri(uri) {
 
 // ////////////////////////////
 
-
-window.addEventListener("load", function(){
-
-    // Detect HTML5 Video
+// Detect HTML5 Video
+function detectHtmlVideo() {
     var delement = document.documentElement.getElementsByTagName('video');
 
     for (var i=0; i<delement.length; i++) {
@@ -198,9 +175,11 @@ window.addEventListener("load", function(){
             delement[i].muted=false;
         }
     }
-    // ////
+}
+// ////
 
-    // Detect HTML5 Audio
+// Detect HTML5 Audio
+function detectHtmlAudio() {
     var aelement = document.documentElement.getElementsByTagName('audio');
 
     for (var i=0; i<aelement.length; i++) {
@@ -233,10 +212,11 @@ window.addEventListener("load", function(){
             aelement[i].muted=false;
         }
     }
-    // ////
+}
+// ////
 
-    // Detect embedded Youtube Video
-
+// Detect embedded Youtube Video
+function detectYtEmbed() {
     var frames = document.documentElement.getElementsByTagName('iframe');
     for (var i=0; i<frames.length; i++) {
         var isrc = frames[i].getAttribute('src');
@@ -291,6 +271,22 @@ window.addEventListener("load", function(){
         data.isrc = isrc;
         navigator.qt.postMessage(JSON.stringify(data));
     }
+}
+
+
+window.addEventListener("load", function(){
+
+    detectHtmlAudio();
+    detectHtmlVideo();
+    detectYtEmbed();
+
+}, true);
+
+window.addEventListener("touchend",  function(){
+
+    detectHtmlAudio();
+    detectHtmlVideo();
+    detectYtEmbed();
 
 }, true);
 
