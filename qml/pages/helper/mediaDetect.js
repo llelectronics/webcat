@@ -163,118 +163,23 @@ function getImgFullUri(uri) {
 // ////////////////////////////
 
 
-// Detect and remove broken a href link on youtube mobile
+window.addEventListener("load", function(){
 
-var ytplayelem = document.getElementsByClassName('_mcqb');  // They use this classname for now (04.09.2017)
-while(ytplayelem.length > 0){
-    ytplayelem[0].parentNode.removeChild(ytplayelem[0]);
-}
+    // Detect HTML5 Video
+    var delement = document.documentElement.getElementsByTagName('video');
 
-document.body.addEventListener('DOMSubtreeModified', function(event) {
-    const elements = document.getElementsByClassName('_mcqb');
-    while (elements.length > 0) elements[0].remove();
-});
-
-// ///////////////////////////
-
-// Detect HTML5 Video
-var delement = document.documentElement.getElementsByTagName('video');
-
-for (var i=0; i<delement.length; i++) {
-    var _vonplaying = delement[i].onplaying;
-    delement[i].onplaying = function () {
-        _vonplaying();
-        // We need to unmute all with multiple elements
-        for (var j=0; j<delement.length; j++) {
-            delement[j].muted = false;
-        }
-    };
-    if (delement[i].hasChildNodes()) {
-        console.debug("Has children");
-        var children = delement[i].childNodes;
-        for (var j = 0; j < children.length; j++) {
-            if (children[j].tagName === 'SOURCE') {
-                var data = new Object({'type': 'video'})
-                if (children[j].hasAttribute('src')) data.video = getImgFullUri(children[j].getAttribute('src'));
-                navigator.qt.postMessage( JSON.stringify(data) );
-                continue;
-            }
-        }
-    }
-    else if (delement[i].hasAttribute('src')) {
-        var data = new Object({'type': 'video'})
-        data.video = getImgFullUri(delement[i].getAttribute('src'));
-        navigator.qt.postMessage( JSON.stringify(data) );
-    }
-    if (delement[i].hasAttribute('muted')) {
-        delement[i].muted=false;
-    }
-}
-// ////
-
-// Detect HTML5 Audio
-var aelement = document.documentElement.getElementsByTagName('audio');
-
-for (var i=0; i<aelement.length; i++) {
-    var _onplaying = aelement[i].onplaying;
-    aelement[i].onplaying = function () {
-        // We need to unmute all with multiple elements
-        for (var j=0; j<aelement.length; j++) {
-            aelement[j].muted = false;
-        }
-        _onplaying();
-    };
-    if (aelement[i].hasChildNodes()) {
-        console.debug("Has children");
-        var children = aelement[i].childNodes;
-        for (var j = 0; j < children.length; j++) {
-            if (children[j].tagName === 'SOURCE') {
-                var data = new Object({'type': 'video'})
-                if (children[j].hasAttribute('src')) data.video = getImgFullUri(children[j].getAttribute('src'));
-                navigator.qt.postMessage( JSON.stringify(data) );
-                continue;
-            }
-        }
-    }
-    else if (aelement[i].hasAttribute('src')) {
-        var data = new Object({'type': 'video'})
-        data.video = getImgFullUri(aelement[i].getAttribute('src'));
-        navigator.qt.postMessage( JSON.stringify(data) );
-    }
-    if (aelement[i].hasAttribute('muted')) {
-        aelement[i].muted=false;
-    }
-}
-// ////
-
-// Detect embedded Youtube Video
-
-var frames = document.documentElement.getElementsByTagName('iframe');
-for (var i=0; i<frames.length; i++) {
-    var isrc = frames[i].getAttribute('src');
-    if (isrc.slice(0, 2) === '//') {
-        isrc = "http:" + isrc
-    }
-    var data = new Object({'type':'iframe'});
-    data.isrc = isrc;
-    navigator.qt.postMessage(JSON.stringify(data));
-
-    // Detect html5 video tags hidding in iframes. This only works for iframes from the same server
-    var iframeDoc = (frames[i].contentWindow || frames[i].contentDocument);
-    if (iframeDoc.document) iframeDoc = iframeDoc.document;
-    var iframeVideoElement = iframeDoc.getElementsByTagName('video');
-    for (var k=0; k<iframeVideoElement.length; k++) {
-        var _ivonplaying = iframeVideoElement[k].onplaying;
-        iframeVideoElement[k].onplaying = function () {
-            _ivonplaying();
+    for (var i=0; i<delement.length; i++) {
+        var _vonplaying = delement[i].onplaying;
+        delement[i].onplaying = function () {
+            _vonplaying();
             // We need to unmute all with multiple elements
-            for (var j=0; j<iframeVideoElement.length; j++) {
-                iframeVideoElement[j].muted = false;
+            for (var j=0; j<delement.length; j++) {
+                delement[j].muted = false;
             }
         };
-        if (iframeVideoElement[k].hasChildNodes()) {
+        if (delement[i].hasChildNodes()) {
             console.debug("Has children");
-            var children = iframeVideoElement[k].childNodes;
+            var children = delement[i].childNodes;
             for (var j = 0; j < children.length; j++) {
                 if (children[j].tagName === 'SOURCE') {
                     var data = new Object({'type': 'video'})
@@ -284,25 +189,110 @@ for (var i=0; i<frames.length; i++) {
                 }
             }
         }
-        else if (iframeVideoElement[k].hasAttribute('src')) {
+        else if (delement[i].hasAttribute('src')) {
             var data = new Object({'type': 'video'})
-            data.video = getImgFullUri(iframeVideoElement[k].getAttribute('src'));
+            data.video = getImgFullUri(delement[i].getAttribute('src'));
             navigator.qt.postMessage( JSON.stringify(data) );
         }
+        if (delement[i].hasAttribute('muted')) {
+            delement[i].muted=false;
+        }
     }
-}
+    // ////
 
-// mobilegeeks.de uses this
-var frames = document.documentElement.getElementsByTagName('pagespeed_iframe');
-for (var i=0; i<frames.length; i++) {
-    var isrc = frames[i].getAttribute('src');
-    if (isrc.slice(0, 2) === '//') {
-        isrc = "http:" + isrc
+    // Detect HTML5 Audio
+    var aelement = document.documentElement.getElementsByTagName('audio');
+
+    for (var i=0; i<aelement.length; i++) {
+        var _onplaying = aelement[i].onplaying;
+        aelement[i].onplaying = function () {
+            // We need to unmute all with multiple elements
+            for (var j=0; j<aelement.length; j++) {
+                aelement[j].muted = false;
+            }
+            _onplaying();
+        };
+        if (aelement[i].hasChildNodes()) {
+            console.debug("Has children");
+            var children = aelement[i].childNodes;
+            for (var j = 0; j < children.length; j++) {
+                if (children[j].tagName === 'SOURCE') {
+                    var data = new Object({'type': 'video'})
+                    if (children[j].hasAttribute('src')) data.video = getImgFullUri(children[j].getAttribute('src'));
+                    navigator.qt.postMessage( JSON.stringify(data) );
+                    continue;
+                }
+            }
+        }
+        else if (aelement[i].hasAttribute('src')) {
+            var data = new Object({'type': 'video'})
+            data.video = getImgFullUri(aelement[i].getAttribute('src'));
+            navigator.qt.postMessage( JSON.stringify(data) );
+        }
+        if (aelement[i].hasAttribute('muted')) {
+            aelement[i].muted=false;
+        }
     }
-    var data = new Object({'type':'iframe'});
-    data.isrc = isrc;
-    navigator.qt.postMessage(JSON.stringify(data));
-}
+    // ////
+
+    // Detect embedded Youtube Video
+
+    var frames = document.documentElement.getElementsByTagName('iframe');
+    for (var i=0; i<frames.length; i++) {
+        var isrc = frames[i].getAttribute('src');
+        if (isrc.slice(0, 2) === '//') {
+            isrc = "http:" + isrc
+        }
+        var data = new Object({'type':'iframe'});
+        data.isrc = isrc;
+        navigator.qt.postMessage(JSON.stringify(data));
+
+        // Detect html5 video tags hidding in iframes. This only works for iframes from the same server
+        var iframeDoc = (frames[i].contentWindow || frames[i].contentDocument);
+        if (iframeDoc.document) iframeDoc = iframeDoc.document;
+        var iframeVideoElement = iframeDoc.getElementsByTagName('video');
+        for (var k=0; k<iframeVideoElement.length; k++) {
+            var _ivonplaying = iframeVideoElement[k].onplaying;
+            iframeVideoElement[k].onplaying = function () {
+                _ivonplaying();
+                // We need to unmute all with multiple elements
+                for (var j=0; j<iframeVideoElement.length; j++) {
+                    iframeVideoElement[j].muted = false;
+                }
+            };
+            if (iframeVideoElement[k].hasChildNodes()) {
+                console.debug("Has children");
+                var children = iframeVideoElement[k].childNodes;
+                for (var j = 0; j < children.length; j++) {
+                    if (children[j].tagName === 'SOURCE') {
+                        var data = new Object({'type': 'video'})
+                        if (children[j].hasAttribute('src')) data.video = getImgFullUri(children[j].getAttribute('src'));
+                        navigator.qt.postMessage( JSON.stringify(data) );
+                        continue;
+                    }
+                }
+            }
+            else if (iframeVideoElement[k].hasAttribute('src')) {
+                var data = new Object({'type': 'video'})
+                data.video = getImgFullUri(iframeVideoElement[k].getAttribute('src'));
+                navigator.qt.postMessage( JSON.stringify(data) );
+            }
+        }
+    }
+
+    // mobilegeeks.de uses this
+    var frames = document.documentElement.getElementsByTagName('pagespeed_iframe');
+    for (var i=0; i<frames.length; i++) {
+        var isrc = frames[i].getAttribute('src');
+        if (isrc.slice(0, 2) === '//') {
+            isrc = "http:" + isrc
+        }
+        var data = new Object({'type':'iframe'});
+        data.isrc = isrc;
+        navigator.qt.postMessage(JSON.stringify(data));
+    }
+
+}, true);
 
 // facebook.com uses this and detecting html5 video only does somehow not work
 // improved version by Dax89 (Thanks for that)
