@@ -9,6 +9,7 @@ Rectangle {
     opacity: 0.97
 
     property alias list: tabListView
+    property QtObject fPage: parent
 
     signal hideTriggered();
 
@@ -22,7 +23,7 @@ Rectangle {
         Rectangle {
             id: tabBg
             width: parent.width
-            height: mainWindow.firstPage.toolbarheight
+            height: fPage.toolbarheight
             color: "transparent"
             Text {
                 text: {
@@ -85,7 +86,7 @@ Rectangle {
             Text {
                 text: qsTr("Tabs")
                 width: parent.width - 2
-                font.pixelSize: mainWindow.firstPage.toolbarheight / 2.15
+                font.pixelSize: fPage.toolbarheight / 2.15
                 font.bold: true
                 color: Theme.primaryColor;
                 anchors.centerIn: parent
@@ -134,7 +135,7 @@ Rectangle {
         delegate: tabDelegate
         highlight:
             Rectangle {
-            width: parent.width; height: mainWindow.firstPage.toolbarheight
+            width: parent.width; height: fPage.toolbarheight
             gradient: Gradient {
                 GradientStop { position: 0.0; color: Theme.highlightColor }
                 GradientStop { position: 0.10; color: "#262626" }
