@@ -244,7 +244,7 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
     </message>
     <message>
         <source>Close Tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Tabblad sluiten</translation>
     </message>
     <message>
         <source>Lock Orientation</source>
@@ -583,7 +583,7 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
     </message>
     <message>
         <source>Accept</source>
-        <translation type="unfinished"></translation>
+        <translation>Aanvaarden</translation>
     </message>
 </context>
 <context>

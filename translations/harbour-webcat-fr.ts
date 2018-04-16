@@ -231,39 +231,39 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
     <name>ExtraToolbar</name>
     <message>
         <source>Minimize</source>
-        <translation type="unfinished">Réduire</translation>
+        <translation>Réduire</translation>
     </message>
     <message>
         <source>New Tab</source>
-        <translation type="unfinished">Nouvel onglet</translation>
+        <translation>Nouvel onglet</translation>
     </message>
     <message>
         <source>New Window</source>
-        <translation type="unfinished">Nouvelle fenêtre</translation>
+        <translation>Nouvelle fenêtre</translation>
     </message>
     <message>
         <source>Close Tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Fermer l&apos;onglet</translation>
     </message>
     <message>
         <source>Lock Orientation</source>
-        <translation type="unfinished">Bloquer l&apos;orientation</translation>
+        <translation>Bloquer l&apos;orientation</translation>
     </message>
     <message>
         <source>Reader Mode</source>
-        <translation type="unfinished">Mode lecture</translation>
+        <translation>Mode lecture</translation>
     </message>
     <message>
         <source>Search</source>
-        <translation type="unfinished">Recherche</translation>
+        <translation>Recherche</translation>
     </message>
     <message>
         <source>Share</source>
-        <translation type="unfinished">Partager</translation>
+        <translation>Partager</translation>
     </message>
     <message>
         <source>Close menu</source>
-        <translation type="unfinished">Fermer le menu</translation>
+        <translation>Fermer le menu</translation>
     </message>
 </context>
 <context>
@@ -582,7 +582,7 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
     </message>
     <message>
         <source>Accept</source>
-        <translation type="unfinished"></translation>
+        <translation>Accepter</translation>
     </message>
 </context>
 <context>

@@ -121,7 +121,8 @@ TRANSLATIONS += translations/harbour-webcat-de.ts \
         translations/harbour-webcat-fr.ts \
         translations/harbour-webcat-ca.ts \
         translations/harbour-webcat-fi.ts \
-        translations/harbour-webcat-sv.ts
+        translations/harbour-webcat-sv.ts \
+        translations/harbour-webcat-pl.ts
 
 
 # Hmm... not allowed for now I guess
@@ -156,6 +157,7 @@ DISTFILES += \
     qml/pages/helper/videoPlayerComponents/OpenURLPage.qml \
     qml/pages/CookiePage.qml \
     qml/pages/helper/browserComponents/Toolbar.qml \
-    qml/pages/helper/browserComponents/ExtraToolbar.qml
+    qml/pages/helper/browserComponents/ExtraToolbar.qml \
+    translations/harbour-webcat-pl.ts
 
 include(src/sortFilterProxyModel/SortFilterProxyModel.pri)

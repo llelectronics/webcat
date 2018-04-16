@@ -244,7 +244,7 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>Close Tab</source>
-        <translation></translation>
+        <translation>Cerrar pestaña</translation>
     </message>
     <message>
         <source>Lock Orientation</source>
@@ -583,7 +583,7 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>Accept</source>
-        <translation type="unfinished"></translation>
+        <translation>Aceptar</translation>
     </message>
 </context>
 <context>

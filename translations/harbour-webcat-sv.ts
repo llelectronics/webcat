@@ -244,7 +244,7 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
     </message>
     <message>
         <source>Close Tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Stäng fliken</translation>
     </message>
     <message>
         <source>Lock Orientation</source>
@@ -583,7 +583,7 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
     </message>
     <message>
         <source>Accept</source>
-        <translation type="unfinished"></translation>
+        <translation>Acceptera</translation>
     </message>
 </context>
 <context>

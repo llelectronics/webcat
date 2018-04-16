@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="pl" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="pl">
 <context>
     <name>AboutPage</name>
     <message>
@@ -15,6 +17,18 @@
     <message>
         <source>Add Bookmark</source>
         <translation>Dodaj zakładkę</translation>
+    </message>
+    <message>
+        <source>Title of the bookmark</source>
+        <translation>Tytuł zakładki</translation>
+    </message>
+    <message>
+        <source>URL of bookmark</source>
+        <translation>URL zakładki</translation>
+    </message>
+    <message>
+        <source>User Agent:</source>
+        <translation>User Agent:</translation>
     </message>
 </context>
 <context>
@@ -138,7 +152,7 @@ Jeśli nie jesteś pewien, powinieneś odrzucić certyfikat. Może to jednak uni
     </message>
     <message>
         <source>Enter URL to download</source>
-        <translation>Wprowadź URL aby pobrać</translation>
+        <translation>Wprowadź URL, aby pobrać</translation>
     </message>
     <message>
         <source>Download</source>
@@ -208,32 +222,28 @@ Jeśli nie jesteś pewien, powinieneś odrzucić certyfikat. Może to jednak uni
         <source>Pause</source>
         <translation>Wstrzymaj</translation>
     </message>
+    <message>
+        <source>none</source>
+        <translation>żaden</translation>
+    </message>
 </context>
 <context>
-    <name>FirstPage</name>
-    <message>
-        <source>Opening...</source>
-        <translation>Otwieranie...</translation>
-    </message>
-    <message>
-        <source>Enter an url</source>
-        <translation>Wprowadź url</translation>
-    </message>
+    <name>ExtraToolbar</name>
     <message>
         <source>Minimize</source>
         <translation>Minimalizuj</translation>
     </message>
     <message>
         <source>New Tab</source>
-        <translation>Nowa zakładka</translation>
+        <translation>Nowa Karta</translation>
     </message>
     <message>
         <source>New Window</source>
         <translation>Nowe okno</translation>
     </message>
     <message>
-        <source>Reload</source>
-        <translation>Przeładuj</translation>
+        <source>Close Tab</source>
+        <translation>Zamknij kartę</translation>
     </message>
     <message>
         <source>Lock Orientation</source>
@@ -255,6 +265,13 @@ Jeśli nie jesteś pewien, powinieneś odrzucić certyfikat. Może to jednak uni
         <source>Close menu</source>
         <translation>Zamknij menu</translation>
     </message>
+</context>
+<context>
+    <name>FirstPage</name>
+    <message>
+        <source>Opening...</source>
+        <translation>Otwieranie...</translation>
+    </message>
     <message>
         <source>Enter searchterm</source>
         <translation>Wprowadź zapytanie</translation>
@@ -265,7 +282,7 @@ Jeśli nie jesteś pewien, powinieneś odrzucić certyfikat. Może to jednak uni
     </message>
     <message>
         <source>Open in New Tab</source>
-        <translation>Otwórz w Nowej Zakładce</translation>
+        <translation>Otwórz w Nowej Karcie</translation>
     </message>
     <message>
         <source>Open in Private New Window</source>
@@ -285,7 +302,7 @@ Jeśli nie jesteś pewien, powinieneś odrzucić certyfikat. Może to jednak uni
     </message>
     <message>
         <source>Open Image in New Tab</source>
-        <translation>Otwórz obraz w Nowej Zakładce</translation>
+        <translation>Otwórz obraz w Nowej Karcie</translation>
     </message>
     <message>
         <source>Unknown certificate</source>
@@ -294,6 +311,14 @@ Jeśli nie jesteś pewien, powinieneś odrzucić certyfikat. Może to jednak uni
     <message>
         <source>Accept certificate from </source>
         <translation>Akceptuj certyfikat od</translation>
+    </message>
+    <message>
+        <source>Webkit engine crashed! Restarting...</source>
+        <translation>Silnik Webkit przetsał działać! Restartowanie...</translation>
+    </message>
+    <message>
+        <source>Webkit engine crashed too often!</source>
+        <translation>Silnik Webkit nie działa zbyt często!</translation>
     </message>
 </context>
 <context>
@@ -469,6 +494,20 @@ Jeśli nie jesteś pewien, powinieneś odrzucić certyfikat. Może to jednak uni
     </message>
 </context>
 <context>
+    <name>SearchEngineDialog</name>
+    <message>
+        <source>Choose Search Engine</source>
+        <translation>Wybierz silnik wyszukiwania</translation>
+    </message>
+</context>
+<context>
+    <name>SearchEngines</name>
+    <message>
+        <source>Custom</source>
+        <translation>Niestandardowy</translation>
+    </message>
+</context>
+<context>
     <name>SelectUrl</name>
     <message>
         <source>Bookmarks</source>
@@ -476,7 +515,7 @@ Jeśli nie jesteś pewien, powinieneś odrzucić certyfikat. Może to jednak uni
     </message>
     <message>
         <source>Open in new Tab</source>
-        <translation>Otwórz w nowej zakładce</translation>
+        <translation>Otwórz w nowej karcie</translation>
     </message>
     <message>
         <source>Open in new Window</source>
@@ -512,7 +551,7 @@ Jeśli nie jesteś pewien, powinieneś odrzucić certyfikat. Może to jednak uni
     </message>
     <message>
         <source>Swipe up to close tab</source>
-        <translation>Przesuń w górę aby zamknąć zakładkę</translation>
+        <translation>Przesuń w górę aby zamknąć kartę</translation>
     </message>
     <message>
         <source>Loading..</source>
@@ -524,7 +563,7 @@ Jeśli nie jesteś pewien, powinieneś odrzucić certyfikat. Może to jednak uni
     </message>
     <message>
         <source>Tabs</source>
-        <translation>Zakładki</translation>
+        <translation>Karty</translation>
     </message>
 </context>
 <context>
@@ -540,6 +579,10 @@ Jeśli nie jesteś pewien, powinieneś odrzucić certyfikat. Może to jednak uni
     <message>
         <source>Hide HTML</source>
         <translation>Ukryj HTML</translation>
+    </message>
+    <message>
+        <source>Accept</source>
+        <translation>Zaakceptuj</translation>
     </message>
 </context>
 <context>
@@ -598,7 +641,7 @@ Jeśli nie jesteś pewien, powinieneś odrzucić certyfikat. Może to jednak uni
     </message>
     <message>
         <source>Custom</source>
-        <translation>Wybrane</translation>
+        <translation>Niestandardowe</translation>
     </message>
     <message>
         <source>Private Browsing</source>
@@ -670,11 +713,11 @@ Jeśli nie jesteś pewien, powinieneś odrzucić certyfikat. Może to jednak uni
     </message>
     <message>
         <source>New Tab | Stop/Refresh</source>
-        <translation>Nowa Zakładka | Stop/Odśwież</translation>
+        <translation>Nowa Karta | Zatrzymaj/Odśwież</translation>
     </message>
     <message>
         <source>Previous Tab | Next Tab</source>
-        <translation>Poprzednia Zakładka | Następna zakładka</translation>
+        <translation>Poprzednia Karta | Następna Karta</translation>
     </message>
     <message>
         <source>Default Cover Action Group</source>
@@ -683,6 +726,10 @@ Jeśli nie jesteś pewien, powinieneś odrzucić certyfikat. Może to jednak uni
     <message>
         <source>Cookie Manager</source>
         <translation>Manager Ciasteczek</translation>
+    </message>
+    <message>
+        <source>Engine URL use %s for searchterm</source>
+        <translation>Silnik URL używa %s do wyszukiwania</translation>
     </message>
 </context>
 <context>
@@ -700,7 +747,28 @@ Jeśli nie jesteś pewien, powinieneś odrzucić certyfikat. Może to jednak uni
     </message>
     <message>
         <source>Tabs</source>
-        <translation>Zakładki</translation>
+        <translation>Karty</translation>
+    </message>
+</context>
+<context>
+    <name>Toolbar</name>
+    <message>
+        <source>Enter an url</source>
+        <translation>Wprowadź url</translation>
+    </message>
+</context>
+<context>
+    <name>UserAgentDialog</name>
+    <message>
+        <source>Choose User Agent</source>
+        <translation>Wybierz User Agent</translation>
+    </message>
+</context>
+<context>
+    <name>UserAgents</name>
+    <message>
+        <source>Custom</source>
+        <translation>Niestandardowy</translation>
     </message>
 </context>
 <context>
@@ -762,6 +830,14 @@ Na filmach z YouTube upewnij się, że jesteś zalogowany. Niektóre filmy wideo
     <message>
         <source>Opening...</source>
         <translation>Otwieranie...</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Pobierz</translation>
+    </message>
+    <message>
+        <source>Play</source>
+        <translation>Graj</translation>
     </message>
 </context>
 </TS>

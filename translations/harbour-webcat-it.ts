@@ -232,39 +232,39 @@ Se non sei sicuro, rifiuta il certificato. Ma questo può impedire il caricament
     <name>ExtraToolbar</name>
     <message>
         <source>Minimize</source>
-        <translation type="unfinished">Minimizza</translation>
+        <translation>Minimizza</translation>
     </message>
     <message>
         <source>New Tab</source>
-        <translation type="unfinished">Nuova scheda</translation>
+        <translation>Nuova scheda</translation>
     </message>
     <message>
         <source>New Window</source>
-        <translation type="unfinished">Nuova finestra</translation>
+        <translation>Nuova finestra</translation>
     </message>
     <message>
         <source>Close Tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Chiudi scheda</translation>
     </message>
     <message>
         <source>Lock Orientation</source>
-        <translation type="unfinished">Blocca orientamento</translation>
+        <translation>Blocca orientamento</translation>
     </message>
     <message>
         <source>Reader Mode</source>
-        <translation type="unfinished">Modalità Reader</translation>
+        <translation>Modalità Reader</translation>
     </message>
     <message>
         <source>Search</source>
-        <translation type="unfinished">Cerca</translation>
+        <translation>Cerca</translation>
     </message>
     <message>
         <source>Share</source>
-        <translation type="unfinished">Condividi</translation>
+        <translation>Condividi</translation>
     </message>
     <message>
         <source>Close menu</source>
-        <translation type="unfinished">Chiudi menu</translation>
+        <translation>Chiudi menu</translation>
     </message>
 </context>
 <context>
@@ -583,7 +583,7 @@ Se non sei sicuro, rifiuta il certificato. Ma questo può impedire il caricament
     </message>
     <message>
         <source>Accept</source>
-        <translation type="unfinished"></translation>
+        <translation>Accetta</translation>
     </message>
 </context>
 <context>
