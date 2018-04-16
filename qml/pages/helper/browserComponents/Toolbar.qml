@@ -17,6 +17,13 @@ Rectangle {
     property alias forIcon: forIcon
     property QtObject fPage: parent
 
+    Image {
+        anchors.fill: parent
+        fillMode: Image.Tile
+        source: "../../img/graphic-diagonal-line-texture.png"
+        visible: mainWindow.privateBrowsing
+        verticalAlignment: Image.AlignTop
+    }
 
     //color: Theme.highlightBackgroundColor // As alternative perhaps maybe someday
     gradient: Gradient {

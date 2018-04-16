@@ -290,6 +290,7 @@ Page
         anchors.bottom: if (urlPage.orientation == Orientation.Portrait || urlPage.orientation == Orientation.PortraitInverted) urlPage.bottom
         anchors.right: if (urlPage.orientation == Orientation.Landscape || urlPage.orientation == Orientation.LandscapeInverted) urlPage.right
 
+
         Rectangle {
             id: tabHead
             width: parent.width //newTabImg.width + Theme.paddingLarge
@@ -297,6 +298,13 @@ Page
             gradient: Gradient {
                 GradientStop { position: 0.0; color: "#262626" }
                 GradientStop { position: 0.85; color: "#1F1F1F"}
+            }
+            Image {
+                anchors.fill: parent
+                fillMode: Image.Tile
+                source: "img/graphic-diagonal-line-texture.png"
+                visible: mainWindow.privateBrowsing
+                verticalAlignment: Image.AlignTop
             }
             anchors.top: {
                 if (urlPage.orientation == Orientation.Portrait || urlPage.orientation == Orientation.PortraitInverted) parent.top
@@ -380,6 +388,14 @@ Page
             verticalLayoutDirection: {
                 if (urlPage.orientation == Orientation.Landscape || urlPage.orientation == Orientation.LandscapeInverted) ListView.BottomToTop
                 else ListView.TopToBottom
+            }
+
+            Image {
+                anchors.fill: parent
+                fillMode: Image.Tile
+                source: "img/graphic-diagonal-line-texture.png"
+                visible: mainWindow.privateBrowsing
+                verticalAlignment: Image.AlignTop
             }
 
             model: tabModel

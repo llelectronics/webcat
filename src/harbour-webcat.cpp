@@ -91,6 +91,7 @@ int main(int argc, char *argv[])
     bool setDefault = false;
     bool resetDefault = false;
     bool openNewWindow = false;
+    bool privateBrowsing = false;
 
     ProxyManager::loadAndSet();
 
@@ -112,6 +113,7 @@ int main(int argc, char *argv[])
             else if (QString(argv[i]).startsWith("www.")) file = "http://" + QString(argv[i]);
             else file = QString(argv[i]);
         }
+        privateBrowsing = true;
     }
     else if (QString(argv[1]) == "--no-homepage") {
         noHomepage = true;
@@ -225,6 +227,8 @@ int main(int argc, char *argv[])
     else {
         object->setProperty("vPlayerExists", false);
     }
+
+    if(privateBrowsing) object->setProperty("privateBrowsing", true);
 
     view->engine()->rootContext()->setContextProperty("_myClass", &myClass);
     view->engine()->rootContext()->setContextProperty("_manager", &manager);

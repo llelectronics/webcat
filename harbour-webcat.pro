@@ -158,6 +158,7 @@ DISTFILES += \
     qml/pages/CookiePage.qml \
     qml/pages/helper/browserComponents/Toolbar.qml \
     qml/pages/helper/browserComponents/ExtraToolbar.qml \
-    translations/harbour-webcat-pl.ts
+    translations/harbour-webcat-pl.ts \
+    qml/pages/img/graphic-diagonal-line-texture.png
 
 include(src/sortFilterProxyModel/SortFilterProxyModel.pri)
