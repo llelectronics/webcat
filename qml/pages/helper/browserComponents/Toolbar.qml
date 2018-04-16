@@ -1,5 +1,6 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import "../db.js" as DB
 
 // ToolBar
 Rectangle {
@@ -11,6 +12,9 @@ Rectangle {
     property alias toolbarSep: toolbarSep
     property alias webTitle: webTitle
     property alias bookmarkButton: bookmarkButton
+    property alias urlText: urlText
+    property alias backIcon: backIcon
+    property alias forIcon: forIcon
     property QtObject fPage: parent
 
 
@@ -270,7 +274,7 @@ Rectangle {
             else if (fPage.extraToolbar.opacity == 1 && fPage.extraToolbar.quickmenu && newWindowButton.highlighted == true) newWindowButton.clicked(undefined)
             else if (fPage.extraToolbar.opacity == 1 && fPage.extraToolbar.quickmenu && closeTabButton.highlighted == true) closeTabButton.clicked(undefined)
             else if (fPage.extraToolbar.opacity == 1 && fPage.extraToolbar.quickmenu && orientationLockButton.highlighted == true) orientationLockButton.clicked(undefined)
-            else if (fPage.extraToolbar.opacity == 1 && fPage.extraToolbar.quickmenu && readerModeButton.highlighted == true) readerModeButton.clicked(undefined)
+            else if (fPage.extraToolbar.opacity == 1 && fPage.extraToolbar.quickmenu && readerModeButton.highlighted == true) fPage.readerModeButton.clicked(undefined)
             else if (fPage.extraToolbar.opacity == 1 && fPage.extraToolbar.quickmenu && searchModeButton.highlighted == true) searchModeButton.clicked(undefined)
             else if (fPage.extraToolbar.opacity == 1 && fPage.extraToolbar.quickmenu && shareButton.highlighted == true) shareButton.clicked(undefined)
             else if (fPage.extraToolbar.opacity == 1 && fPage.extraToolbar.quickmenu && mouse.y > ((fPage.extratoolbarheight + fPage.toolbarheight) * -1)) fPage.extraToolbar.hide()
@@ -436,7 +440,7 @@ Rectangle {
             else {
                 backIcon.visible = fPage.webview.canGoBack
                 forIcon.visible = fPage.webview.canGoForward
-                if (!readerMode) bookmarkButton.visible = false
+                if (!fPage.readerMode) bookmarkButton.visible = false
                 gotoButton.searchButton = false
                 text = simplifyUrl(url)
                 if (webTitle.text != "") {
@@ -506,7 +510,7 @@ Rectangle {
             }
         }
         anchors.right: {
-            if (urlText.focus || readerMode) bookmarkButton.left
+            if (urlText.focus || fPage.readerMode) bookmarkButton.left
             else parent.right
         }
         anchors.rightMargin: Theme.paddingMedium
@@ -523,7 +527,7 @@ Rectangle {
         id: bookmarkButton
         property bool favorited: bookmarks.count > 0 && bookmarks.contains(fPage.webview.url)
         icon.source: {
-            if (readerMode) nightMode ? "image://theme/icon-camera-wb-sunny" : "image://theme/icon-camera-wb-tungsten"
+            if (fPage.readerMode) fPage.nightMode ? "image://theme/icon-camera-wb-sunny" : "image://theme/icon-camera-wb-tungsten"
             else favorited ? "image://theme/icon-m-favorite-selected" : "image://theme/icon-m-favorite"
         }
         anchors.right: parent.right
@@ -534,7 +538,7 @@ Rectangle {
         icon.height: toolbar.height
         icon.width: icon.height
         onClicked: {
-            if (readerMode) {
+            if (fPage.readerMode) {
                 if (!nightMode)
                     fPage.webview.experimental.evaluateJavaScript("document.body.style.backgroundColor=\"#262626\"; document.body.style.color=\"#FFFFFF\"");
                 else

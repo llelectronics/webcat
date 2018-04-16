@@ -85,6 +85,7 @@ Page {
     property alias mediaList: mediaList
     property bool inputFocus: false
     property variant crashUrl: []
+    property alias readerModeButton: readerModeButton
 
 // DEBUG
 //    onYt720pChanged: {
@@ -147,10 +148,10 @@ Page {
 
     function toggleReaderMode() {
         if (readerMode) {
-            bookmarkButton.visible = false
+            toolbar.bookmarkButton.visible = false
             webview.reload();
         } else {
-            bookmarkButton.visible = true
+            toolbar.bookmarkButton.visible = true
             // FIXME: dirty hack to load js from local file
             var xhr = new XMLHttpRequest;
             xhr.open("GET", "./helper/readability.js");
@@ -303,8 +304,8 @@ Page {
 
         onUrlChanged: {
             // There seems to be a bug where back and forward navigation is not shown even if webview.canGoBack or ~Forward
-            backIcon.visible = true
-            forIcon.visible = webview.canGoForward
+            toolbar.backIcon.visible = true
+            toolbar.forIcon.visible = webview.canGoForward
 //            if ((/^rtsp:/).test(url) || (/^rtmp:/).test(url) || (/^mms:/).test(url)) {
 //                if (mediaYt == true) {
 //                    mediaPlayBtn.clicked("");
@@ -313,8 +314,8 @@ Page {
 //                else vPlayerLoader.setSource("VideoPlayerComponent.qml", {dataContainer: firstPage, streamUrl: url})
 //            }
 
-            urlText.text = urlText.simplifyUrl(url)
-            urlText.fullUrl = url
+            toolbar.urlText.text = toolbar.urlText.simplifyUrl(url)
+            toolbar.urlText.fullUrl = url
 
             // reset everything on url change
             mediaDownloadRec.mediaUrl = "";
@@ -565,7 +566,7 @@ Page {
                 //console.debug("[FirstPage.qml] INPUT Box data: " + data.state)
                 if (data.state == "show") inputFocus = true;
                 else if (data.state == "hide") { inputFocus = false; inputSelected = false } // somehow sometimes an undefined is received so don't react on it
-                if (toolbar.state == "expanded" && data.state == "show" && ! urlText.focus == true) toolbar.state = "minimized"
+                if (toolbar.state == "expanded" && data.state == "show" && ! toolbar.urlText.focus == true) toolbar.state = "minimized"
             }
             case 'search': {
                 if (data.errorMsg != undefined && data.errorMsg != "") {
@@ -642,7 +643,7 @@ Page {
                 //console.debug("[FirstPage.qml] pageId: " + pageId);
                 if (pageId != "" || pageId != undefined) mainWindow.tabModel.updateUrl(pageId,url)
                 if (title != "") {
-                    toolbar.webTitle.visible = urlText.visible;
+                    toolbar.webTitle.visible = toolbar.urlText.visible;
                 }
             }
         }
@@ -769,17 +770,17 @@ Page {
             color: Theme.highlightColor // Otherwise we might end up with white decorator on white background
             height: Theme.paddingSmall // We want to see it properly
             flickable: webview
-            anchors.bottom: toolbar.top
+            y: toolbar.y - height
         }
         Keys.onPressed: {
-            if (urlText.focus == false && inputFocus == false) {
+            if (toolbar.urlText.focus == false && inputFocus == false) {
                 if (event.key == Qt.Key_T) webview.scrollToTop()
                 else if (event.key == Qt.Key_B) webview.scrollToBottom()
                 else if (event.key == Qt.Key_K) gotoButton.clicked(undefined)
                 else if (event.key == Qt.Key_S) searchModeButton.clicked(undefined)
                 else if (event.key == Qt.Key_R) readerModeButton.clicked(undefined)
                 else if (event.key == Qt.Key_L) webview.reload()
-                else if (event.key == Qt.Key_U) { toolbar.state = "expanded" ; urlText.selectAll(); urlText.forceActiveFocus() }
+                else if (event.key == Qt.Key_U) { toolbar.state = "expanded" ; toolbar.urlText.selectAll(); toolbar.urlText.forceActiveFocus() }
                 else if (event.key == Qt.Key_W && event.modifiers == Qt.ShiftModifier) newWindowButton.clicked(undefined)
                 else if (event.key == Qt.Key_W) newTabButton.clicked(undefined)
                 else if (event.key == Qt.Key_P) webview.goBack()
@@ -1499,7 +1500,7 @@ Page {
             else return max
         }
         visible: false
-        onSelected: { urlText.focus = false; suggestionView.visible = false ; webview.url = url; webview.focus = true; }
+        onSelected: { toolbar.urlText.focus = false; suggestionView.visible = false ; webview.url = url; webview.focus = true; }
         onSelectedMedia: {
             suggestionView.visible = false;
             mediaDownloadRecTitle.text = mediaTitle;
