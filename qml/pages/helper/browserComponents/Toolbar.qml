@@ -75,7 +75,7 @@ Rectangle {
             }
             PropertyChanges {
                 target: bookmarkButton
-                visible: false
+                visible: fPage.readerMode ? true : false
                 enabled: true
             }
             PropertyChanges {
