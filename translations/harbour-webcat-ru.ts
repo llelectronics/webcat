@@ -228,11 +228,7 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
 </context>
 <context>
-    <name>FirstPage</name>
-    <message>
-        <source>Opening...</source>
-        <translation>Открываю...</translation>
-    </message>
+    <name>ExtraToolbar</name>
     <message>
         <source>Minimize</source>
         <translation>Уменьшить</translation>
@@ -244,6 +240,10 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     <message>
         <source>New Window</source>
         <translation>Новое окно</translation>
+    </message>
+    <message>
+        <source>Close Tab</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Lock Orientation</source>
@@ -264,6 +264,13 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     <message>
         <source>Close menu</source>
         <translation>Закрыть меню</translation>
+    </message>
+</context>
+<context>
+    <name>FirstPage</name>
+    <message>
+        <source>Opening...</source>
+        <translation>Открываю...</translation>
     </message>
     <message>
         <source>Enter searchterm</source>
@@ -311,10 +318,6 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Webkit engine crashed too often!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Close Tab</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -227,42 +227,49 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
 </context>
 <context>
+    <name>ExtraToolbar</name>
+    <message>
+        <source>Minimize</source>
+        <translation type="unfinished">Pienennä</translation>
+    </message>
+    <message>
+        <source>New Tab</source>
+        <translation type="unfinished">Uusi välilehti</translation>
+    </message>
+    <message>
+        <source>New Window</source>
+        <translation type="unfinished">Uusi ikkuna</translation>
+    </message>
+    <message>
+        <source>Close Tab</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lock Orientation</source>
+        <translation type="unfinished">Lukitse suuntautuminen</translation>
+    </message>
+    <message>
+        <source>Reader Mode</source>
+        <translation type="unfinished">Lukutila</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation type="unfinished">Etsi</translation>
+    </message>
+    <message>
+        <source>Share</source>
+        <translation type="unfinished">Jaa</translation>
+    </message>
+    <message>
+        <source>Close menu</source>
+        <translation type="unfinished">Sulje valikko</translation>
+    </message>
+</context>
+<context>
     <name>FirstPage</name>
     <message>
         <source>Opening...</source>
         <translation>Avautuu...</translation>
-    </message>
-    <message>
-        <source>Minimize</source>
-        <translation>Pienennä</translation>
-    </message>
-    <message>
-        <source>New Tab</source>
-        <translation>Uusi välilehti</translation>
-    </message>
-    <message>
-        <source>New Window</source>
-        <translation>Uusi ikkuna</translation>
-    </message>
-    <message>
-        <source>Lock Orientation</source>
-        <translation>Lukitse suuntautuminen</translation>
-    </message>
-    <message>
-        <source>Reader Mode</source>
-        <translation>Lukutila</translation>
-    </message>
-    <message>
-        <source>Search</source>
-        <translation>Etsi</translation>
-    </message>
-    <message>
-        <source>Share</source>
-        <translation>Jaa</translation>
-    </message>
-    <message>
-        <source>Close menu</source>
-        <translation>Sulje valikko</translation>
     </message>
     <message>
         <source>Enter searchterm</source>
@@ -310,10 +317,6 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Webkit engine crashed too often!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Close Tab</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

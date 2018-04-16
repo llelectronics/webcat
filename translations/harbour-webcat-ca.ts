@@ -229,11 +229,7 @@ En cas de dubte, refuseu el certificat malgrat que això pot provocar que no es 
     </message>
 </context>
 <context>
-    <name>FirstPage</name>
-    <message>
-        <source>Opening...</source>
-        <translation>S&apos;està obrint...</translation>
-    </message>
+    <name>ExtraToolbar</name>
     <message>
         <source>Minimize</source>
         <translation>Minimitza</translation>
@@ -245,6 +241,10 @@ En cas de dubte, refuseu el certificat malgrat que això pot provocar que no es 
     <message>
         <source>New Window</source>
         <translation>Nova finestra</translation>
+    </message>
+    <message>
+        <source>Close Tab</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Lock Orientation</source>
@@ -265,6 +265,13 @@ En cas de dubte, refuseu el certificat malgrat que això pot provocar que no es 
     <message>
         <source>Close menu</source>
         <translation>Tanca el menú</translation>
+    </message>
+</context>
+<context>
+    <name>FirstPage</name>
+    <message>
+        <source>Opening...</source>
+        <translation>S&apos;està obrint...</translation>
     </message>
     <message>
         <source>Enter searchterm</source>
@@ -312,10 +319,6 @@ En cas de dubte, refuseu el certificat malgrat que això pot provocar que no es 
     </message>
     <message>
         <source>Webkit engine crashed too often!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Close Tab</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

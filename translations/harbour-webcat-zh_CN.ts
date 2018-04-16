@@ -226,7 +226,7 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
 </context>
 <context>
-    <name>FirstPage</name>
+    <name>ExtraToolbar</name>
     <message>
         <source>Minimize</source>
         <translation>最小化</translation>
@@ -238,6 +238,10 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     <message>
         <source>New Window</source>
         <translation>新窗口</translation>
+    </message>
+    <message>
+        <source>Close Tab</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Lock Orientation</source>
@@ -252,9 +256,16 @@ If you are unsure reject the certificate. That might lead to a non loading websi
         <translation>搜索</translation>
     </message>
     <message>
+        <source>Share</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Close menu</source>
         <translation>关闭菜单</translation>
     </message>
+</context>
+<context>
+    <name>FirstPage</name>
     <message>
         <source>Opening...</source>
         <translation>正在打开…</translation>
@@ -288,10 +299,6 @@ If you are unsure reject the certificate. That might lead to a non loading websi
         <translation>保存链接</translation>
     </message>
     <message>
-        <source>Share</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Open Image in New Tab</source>
         <translation type="unfinished"></translation>
     </message>
@@ -309,10 +316,6 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Webkit engine crashed too often!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Close Tab</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

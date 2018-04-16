@@ -229,42 +229,49 @@ Se non sei sicuro, rifiuta il certificato. Ma questo può impedire il caricament
     </message>
 </context>
 <context>
+    <name>ExtraToolbar</name>
+    <message>
+        <source>Minimize</source>
+        <translation type="unfinished">Minimizza</translation>
+    </message>
+    <message>
+        <source>New Tab</source>
+        <translation type="unfinished">Nuova scheda</translation>
+    </message>
+    <message>
+        <source>New Window</source>
+        <translation type="unfinished">Nuova finestra</translation>
+    </message>
+    <message>
+        <source>Close Tab</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lock Orientation</source>
+        <translation type="unfinished">Blocca orientamento</translation>
+    </message>
+    <message>
+        <source>Reader Mode</source>
+        <translation type="unfinished">Modalità Reader</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation type="unfinished">Cerca</translation>
+    </message>
+    <message>
+        <source>Share</source>
+        <translation type="unfinished">Condividi</translation>
+    </message>
+    <message>
+        <source>Close menu</source>
+        <translation type="unfinished">Chiudi menu</translation>
+    </message>
+</context>
+<context>
     <name>FirstPage</name>
     <message>
         <source>Opening...</source>
         <translation>Apertura...</translation>
-    </message>
-    <message>
-        <source>Minimize</source>
-        <translation>Minimizza</translation>
-    </message>
-    <message>
-        <source>New Tab</source>
-        <translation>Nuova scheda</translation>
-    </message>
-    <message>
-        <source>New Window</source>
-        <translation>Nuova finestra</translation>
-    </message>
-    <message>
-        <source>Lock Orientation</source>
-        <translation>Blocca orientamento</translation>
-    </message>
-    <message>
-        <source>Reader Mode</source>
-        <translation>Modalità Reader</translation>
-    </message>
-    <message>
-        <source>Search</source>
-        <translation>Cerca</translation>
-    </message>
-    <message>
-        <source>Share</source>
-        <translation>Condividi</translation>
-    </message>
-    <message>
-        <source>Close menu</source>
-        <translation>Chiudi menu</translation>
     </message>
     <message>
         <source>Enter searchterm</source>
@@ -313,10 +320,6 @@ Se non sei sicuro, rifiuta il certificato. Ma questo può impedire il caricament
     <message>
         <source>Webkit engine crashed too often!</source>
         <translation>Il motore Webkit è andato in crash troppo spesso!</translation>
-    </message>
-    <message>
-        <source>Close Tab</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

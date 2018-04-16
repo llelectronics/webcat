@@ -218,32 +218,32 @@ Rectangle {
                 fPage.extraToolbar.quickmenu = true
                 fPage.extraToolbar.show()
                 fPage.extraToolbar.height = fPage.extratoolbarheight
-                minimizeButton.highlighted = true
+                fPage.extraToolbar.minimizeButton.highlighted = true
                 mx = mouse.x
             }
         }
         onPositionChanged: {
             if (fPage.extraToolbar.opacity == 1 && fPage.extraToolbar.quickmenu && mouse.y > ((fPage.extratoolbarheight + fPage.toolbarheight) * -1)) {
                 //console.debug("X Position: " + mouse.x)
-                if (mouse.x > newTabButton.x && mouse.x < newWindowButton.x) { minimizeButton.highlighted = false; newTabButton.highlighted = true; newWindowButton.highlighted = false; closeTabButton.highlighted = false; orientationLockButton.highlighted = false; readerModeButton.highlighted = false; searchModeButton.highlighted = false; shareButton.highlighted = false; }
-                else if (mouse.x < newTabButton.x) {minimizeButton.highlighted = true; newTabButton.highlighted = false; newWindowButton.highlighted = false; closeTabButton.highlighted = false; orientationLockButton.highlighted = false; readerModeButton.highlighted = false; searchModeButton.highlighted = false; shareButton.highlighted = false; }
-                else if (mouse.x > newWindowButton.x && mouse.x < closeTabButton.x) { minimizeButton.highlighted = false; newTabButton.highlighted = false; newWindowButton.highlighted = true; closeTabButton.highlighted = false; orientationLockButton.highlighted = false; readerModeButton.highlighted = false; searchModeButton.highlighted = false; shareButton.highlighted = false; }
-                else if (mouse.x > closeTabButton.x && mouse.x < orientationLockButton.x) { minimizeButton.highlighted = false; newTabButton.highlighted = false; newWindowButton.highlighted = false; closeTabButton.highlighted = true; orientationLockButton.highlighted = false; readerModeButton.highlighted = false; searchModeButton.highlighted = false; shareButton.highlighted = false; }
-                else if (mouse.x > orientationLockButton.x && mouse.x < orientationLockButton.x + orientationLockButton.width + Theme.paddingMedium) { minimizeButton.highlighted = false; newTabButton.highlighted = false; newWindowButton.highlighted = false; closeTabButton.highlighted = false; orientationLockButton.highlighted = true; readerModeButton.highlighted = false; searchModeButton.highlighted = false; shareButton.highlighted = false; }
-                else if (mouse.x > readerModeButton.x && mouse.x < readerModeButton.x + readerModeButton.width + Theme.paddingMedium) { minimizeButton.highlighted = false; newTabButton.highlighted = false; newWindowButton.highlighted = false; closeTabButton.highlighted = false; orientationLockButton.highlighted = false; readerModeButton.highlighted = true; searchModeButton.highlighted = false; shareButton.highlighted = false; }
-                else if (mouse.x > searchModeButton.x && mouse.x < searchModeButton.x + searchModeButton.width + Theme.paddingMedium) { minimizeButton.highlighted = false; newTabButton.highlighted = false; newWindowButton.highlighted = false; closeTabButton.highlighted = false; orientationLockButton.highlighted = false; readerModeButton.highlighted = false; searchModeButton.highlighted = true; shareButton.highlighted = false;}
-                else if (mouse.x > shareButton.x && mouse.x < shareButton.x + shareButton.width + Theme.paddingMedium) { minimizeButton.highlighted = false; newTabButton.highlighted = false; newWindowButton.highlighted = false; closeTabButton.highlighted = false; orientationLockButton.highlighted = false; readerModeButton.highlighted = false; searchModeButton.highlighted = false; shareButton.highlighted = true; }
-                else if (mouse.x > shareButton.x + shareButton.width + Theme.paddingMedium) { minimizeButton.highlighted = false; newTabButton.highlighted = false; newWindowButton.highlighted = false; closeTabButton.highlighted = false; orientationLockButton.highlighted = false; readerModeButton.highlighted = false; searchModeButton.highlighted = false; shareButton.highlighted = false; }
+                if (mouse.x > fPage.extraToolbar.newTabButton.x && mouse.x < fPage.extraToolbar.newWindowButton.x) { fPage.extraToolbar.minimizeButton.highlighted = false; fPage.extraToolbar.newTabButton.highlighted = true; fPage.extraToolbar.newWindowButton.highlighted = false; fPage.extraToolbar.closeTabButton.highlighted = false; fPage.extraToolbar.orientationLockButton.highlighted = false; fPage.extraToolbar.readerModeButton.highlighted = false; fPage.extraToolbar.searchModeButton.highlighted = false; fPage.extraToolbar.shareButton.highlighted = false; }
+                else if (mouse.x < fPage.extraToolbar.newTabButton.x) {fPage.extraToolbar.minimizeButton.highlighted = true; fPage.extraToolbar.newTabButton.highlighted = false; fPage.extraToolbar.newWindowButton.highlighted = false; fPage.extraToolbar.closeTabButton.highlighted = false; fPage.extraToolbar.orientationLockButton.highlighted = false; fPage.extraToolbar.readerModeButton.highlighted = false; fPage.extraToolbar.searchModeButton.highlighted = false; fPage.extraToolbar.shareButton.highlighted = false; }
+                else if (mouse.x > fPage.extraToolbar.newWindowButton.x && mouse.x < fPage.extraToolbar.closeTabButton.x) { fPage.extraToolbar.minimizeButton.highlighted = false; fPage.extraToolbar.newTabButton.highlighted = false; fPage.extraToolbar.newWindowButton.highlighted = true; fPage.extraToolbar.closeTabButton.highlighted = false; fPage.extraToolbar.orientationLockButton.highlighted = false; fPage.extraToolbar.readerModeButton.highlighted = false; fPage.extraToolbar.searchModeButton.highlighted = false; fPage.extraToolbar.shareButton.highlighted = false; }
+                else if (mouse.x > fPage.extraToolbar.closeTabButton.x && mouse.x < fPage.extraToolbar.orientationLockButton.x) { fPage.extraToolbar.minimizeButton.highlighted = false; fPage.extraToolbar.newTabButton.highlighted = false; fPage.extraToolbar.newWindowButton.highlighted = false; fPage.extraToolbar.closeTabButton.highlighted = true; fPage.extraToolbar.orientationLockButton.highlighted = false; fPage.extraToolbar.readerModeButton.highlighted = false; fPage.extraToolbar.searchModeButton.highlighted = false; fPage.extraToolbar.shareButton.highlighted = false; }
+                else if (mouse.x > fPage.extraToolbar.orientationLockButton.x && mouse.x < fPage.extraToolbar.orientationLockButton.x + fPage.extraToolbar.orientationLockButton.width + Theme.paddingMedium) { fPage.extraToolbar.minimizeButton.highlighted = false; fPage.extraToolbar.newTabButton.highlighted = false; fPage.extraToolbar.newWindowButton.highlighted = false; fPage.extraToolbar.closeTabButton.highlighted = false; fPage.extraToolbar.orientationLockButton.highlighted = true; fPage.extraToolbar.readerModeButton.highlighted = false; fPage.extraToolbar.searchModeButton.highlighted = false; fPage.extraToolbar.shareButton.highlighted = false; }
+                else if (mouse.x > fPage.extraToolbar.readerModeButton.x && mouse.x < fPage.extraToolbar.readerModeButton.x + fPage.extraToolbar.readerModeButton.width + Theme.paddingMedium) { fPage.extraToolbar.minimizeButton.highlighted = false; fPage.extraToolbar.newTabButton.highlighted = false; fPage.extraToolbar.newWindowButton.highlighted = false; fPage.extraToolbar.closeTabButton.highlighted = false; fPage.extraToolbar.orientationLockButton.highlighted = false; fPage.extraToolbar.readerModeButton.highlighted = true; fPage.extraToolbar.searchModeButton.highlighted = false; fPage.extraToolbar.shareButton.highlighted = false; }
+                else if (mouse.x > fPage.extraToolbar.searchModeButton.x && mouse.x < fPage.extraToolbar.searchModeButton.x + fPage.extraToolbar.searchModeButton.width + Theme.paddingMedium) { fPage.extraToolbar.minimizeButton.highlighted = false; fPage.extraToolbar.newTabButton.highlighted = false; fPage.extraToolbar.newWindowButton.highlighted = false; fPage.extraToolbar.closeTabButton.highlighted = false; fPage.extraToolbar.orientationLockButton.highlighted = false; fPage.extraToolbar.readerModeButton.highlighted = false; fPage.extraToolbar.searchModeButton.highlighted = true; fPage.extraToolbar.shareButton.highlighted = false;}
+                else if (mouse.x > fPage.extraToolbar.shareButton.x && mouse.x < fPage.extraToolbar.shareButton.x + fPage.extraToolbar.shareButton.width + Theme.paddingMedium) { fPage.extraToolbar.minimizeButton.highlighted = false; fPage.extraToolbar.newTabButton.highlighted = false; fPage.extraToolbar.newWindowButton.highlighted = false; fPage.extraToolbar.closeTabButton.highlighted = false; fPage.extraToolbar.orientationLockButton.highlighted = false; fPage.extraToolbar.readerModeButton.highlighted = false; fPage.extraToolbar.searchModeButton.highlighted = false; fPage.extraToolbar.shareButton.highlighted = true; }
+                else if (mouse.x > fPage.extraToolbar.shareButton.x + fPage.extraToolbar.shareButton.width + Theme.paddingMedium) { fPage.extraToolbar.minimizeButton.highlighted = false; fPage.extraToolbar.newTabButton.highlighted = false; fPage.extraToolbar.newWindowButton.highlighted = false; fPage.extraToolbar.closeTabButton.highlighted = false; fPage.extraToolbar.orientationLockButton.highlighted = false; fPage.extraToolbar.readerModeButton.highlighted = false; fPage.extraToolbar.searchModeButton.highlighted = false; fPage.extraToolbar.shareButton.highlighted = false; }
             }
             if (mouse.y < ((fPage.extratoolbarheight + fPage.toolbarheight) * -1)) {
-                minimizeButton.highlighted = false;
-                newTabButton.highlighted = false;
-                newWindowButton.highlighted = false;
-                closeTabButton.highlighted = false;
-                orientationLockButton.highlighted = false;
-                readerModeButton.highlighted = false;
-                searchModeButton.highlighted = false;
-                shareButton.highlighted = false;
+                fPage.extraToolbar.minimizeButton.highlighted = false;
+                fPage.extraToolbar.newTabButton.highlighted = false;
+                fPage.extraToolbar.newWindowButton.highlighted = false;
+                fPage.extraToolbar.closeTabButton.highlighted = false;
+                fPage.extraToolbar.orientationLockButton.highlighted = false;
+                fPage.extraToolbar.readerModeButton.highlighted = false;
+                fPage.extraToolbar.searchModeButton.highlighted = false;
+                fPage.extraToolbar.shareButton.highlighted = false;
                 tabListOverlay.curTab = mainWindow.tabModel.getIndexFromId(mainWindow.currentTab);
                 tabListOverlay.tabCount = tabListOverlay.list.count;
                 for (var i=1; i <= tabListOverlay.tabCount ; i++) {
@@ -269,14 +269,14 @@ Rectangle {
         }
 
         onReleased: {
-            if (fPage.extraToolbar.opacity == 1 && fPage.extraToolbar.quickmenu && minimizeButton.highlighted == true) minimizeButton.clicked(undefined)
-            else if (fPage.extraToolbar.opacity == 1 && fPage.extraToolbar.quickmenu && newTabButton.highlighted == true) newTabButton.clicked(undefined)
-            else if (fPage.extraToolbar.opacity == 1 && fPage.extraToolbar.quickmenu && newWindowButton.highlighted == true) newWindowButton.clicked(undefined)
-            else if (fPage.extraToolbar.opacity == 1 && fPage.extraToolbar.quickmenu && closeTabButton.highlighted == true) closeTabButton.clicked(undefined)
-            else if (fPage.extraToolbar.opacity == 1 && fPage.extraToolbar.quickmenu && orientationLockButton.highlighted == true) orientationLockButton.clicked(undefined)
-            else if (fPage.extraToolbar.opacity == 1 && fPage.extraToolbar.quickmenu && readerModeButton.highlighted == true) fPage.readerModeButton.clicked(undefined)
-            else if (fPage.extraToolbar.opacity == 1 && fPage.extraToolbar.quickmenu && searchModeButton.highlighted == true) searchModeButton.clicked(undefined)
-            else if (fPage.extraToolbar.opacity == 1 && fPage.extraToolbar.quickmenu && shareButton.highlighted == true) shareButton.clicked(undefined)
+            if (fPage.extraToolbar.opacity == 1 && fPage.extraToolbar.quickmenu && fPage.extraToolbar.minimizeButton.highlighted == true) fPage.extraToolbar.minimizeButton.clicked(undefined)
+            else if (fPage.extraToolbar.opacity == 1 && fPage.extraToolbar.quickmenu && fPage.extraToolbar.newTabButton.highlighted == true) fPage.extraToolbar.newTabButton.clicked(undefined)
+            else if (fPage.extraToolbar.opacity == 1 && fPage.extraToolbar.quickmenu && fPage.extraToolbar.newWindowButton.highlighted == true) fPage.extraToolbar.newWindowButton.clicked(undefined)
+            else if (fPage.extraToolbar.opacity == 1 && fPage.extraToolbar.quickmenu && fPage.extraToolbar.closeTabButton.highlighted == true) fPage.extraToolbar.closeTabButton.clicked(undefined)
+            else if (fPage.extraToolbar.opacity == 1 && fPage.extraToolbar.quickmenu && fPage.extraToolbar.orientationLockButton.highlighted == true) fPage.extraToolbar.orientationLockButton.clicked(undefined)
+            else if (fPage.extraToolbar.opacity == 1 && fPage.extraToolbar.quickmenu && fPage.extraToolbar.readerModeButton.highlighted == true) fPage.extraToolbar.readerModeButton.clicked(undefined)
+            else if (fPage.extraToolbar.opacity == 1 && fPage.extraToolbar.quickmenu && fPage.extraToolbar.searchModeButton.highlighted == true) fPage.extraToolbar.searchModeButton.clicked(undefined)
+            else if (fPage.extraToolbar.opacity == 1 && fPage.extraToolbar.quickmenu && fPage.extraToolbar.shareButton.highlighted == true) fPage.extraToolbar.shareButton.clicked(undefined)
             else if (fPage.extraToolbar.opacity == 1 && fPage.extraToolbar.quickmenu && mouse.y > ((fPage.extratoolbarheight + fPage.toolbarheight) * -1)) fPage.extraToolbar.hide()
             else if (fPage.extraToolbar.opacity == 1 && fPage.extraToolbar.quickmenu && mouse.y < ((fPage.extratoolbarheight + fPage.toolbarheight) * -1)) {
                 // tabListOverlay.list click curent index item

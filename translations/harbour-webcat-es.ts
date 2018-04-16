@@ -229,11 +229,7 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
 </context>
 <context>
-    <name>FirstPage</name>
-    <message>
-        <source>Opening...</source>
-        <translation>Abriendo...</translation>
-    </message>
+    <name>ExtraToolbar</name>
     <message>
         <source>Minimize</source>
         <translation>Minimizar</translation>
@@ -245,6 +241,10 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     <message>
         <source>New Window</source>
         <translation>Nueva ventana</translation>
+    </message>
+    <message>
+        <source>Close Tab</source>
+        <translation></translation>
     </message>
     <message>
         <source>Lock Orientation</source>
@@ -265,6 +265,13 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     <message>
         <source>Close menu</source>
         <translation>Cerrar menú</translation>
+    </message>
+</context>
+<context>
+    <name>FirstPage</name>
+    <message>
+        <source>Opening...</source>
+        <translation>Abriendo...</translation>
     </message>
     <message>
         <source>Enter searchterm</source>
@@ -313,10 +320,6 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     <message>
         <source>Webkit engine crashed too often!</source>
         <translation>¡El motor webkit se cuelga con demasiada frecuencia!</translation>
-    </message>
-    <message>
-        <source>Close Tab</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

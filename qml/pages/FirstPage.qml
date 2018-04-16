@@ -85,7 +85,6 @@ Page {
     property alias mediaList: mediaList
     property bool inputFocus: false
     property variant crashUrl: []
-    property alias readerModeButton: readerModeButton
 
 // DEBUG
 //    onYt720pChanged: {
@@ -103,7 +102,7 @@ Page {
 
     Component.onCompleted: {
         _ngfEffect = Qt.createQmlObject("import org.nemomobile.ngf 1.0; NonGraphicalFeedback { event: 'pulldown_lock' }",
-                           minimizeButton, 'NonGraphicalFeedback');
+                           extraToolbar.minimizeButton, 'NonGraphicalFeedback');
     }
 
     onMediaLinkChanged: {
@@ -776,13 +775,13 @@ Page {
             if (toolbar.urlText.focus == false && inputFocus == false) {
                 if (event.key == Qt.Key_T) webview.scrollToTop()
                 else if (event.key == Qt.Key_B) webview.scrollToBottom()
-                else if (event.key == Qt.Key_K) gotoButton.clicked(undefined)
-                else if (event.key == Qt.Key_S) searchModeButton.clicked(undefined)
-                else if (event.key == Qt.Key_R) readerModeButton.clicked(undefined)
+                else if (event.key == Qt.Key_K) toolbar.gotoButton.clicked(undefined)
+                else if (event.key == Qt.Key_S) extraToolbar.searchModeButton.clicked(undefined)
+                else if (event.key == Qt.Key_R) extraToolbar.readerModeButton.clicked(undefined)
                 else if (event.key == Qt.Key_L) webview.reload()
                 else if (event.key == Qt.Key_U) { toolbar.state = "expanded" ; toolbar.urlText.selectAll(); toolbar.urlText.forceActiveFocus() }
-                else if (event.key == Qt.Key_W && event.modifiers == Qt.ShiftModifier) newWindowButton.clicked(undefined)
-                else if (event.key == Qt.Key_W) newTabButton.clicked(undefined)
+                else if (event.key == Qt.Key_W && event.modifiers == Qt.ShiftModifier) extraToolbar.newWindowButton.clicked(undefined)
+                else if (event.key == Qt.Key_W) extraToolbar.newTabButton.clicked(undefined)
                 else if (event.key == Qt.Key_P) webview.goBack()
                 else if (event.key == Qt.Key_N) webview.goForward()
                 else if (searchBar.visible == true && (event.key == Qt.Key_Enter || event.key == Qt.Key_Return)) searchIcon.clicked(undefined)
@@ -801,9 +800,6 @@ Page {
 
     Toolbar {
         id: toolbar
-        width: page.width
-        state: "expanded"
-        z: 91
     }
 
     Rectangle {
@@ -826,245 +822,8 @@ Page {
     }
 
     // Extra Toolbar
-    Rectangle {
+    ExtraToolbar {
         id: extraToolbar
-        width: page.width
-        property bool quickmenu
-        //color: Theme.highlightBackgroundColor // As alternative perhaps maybe someday
-        gradient: Gradient {
-            GradientStop { position: 0.0; color: "#353535" }
-            GradientStop { position: 0.85; color: "#262626"}
-        }
-        height: 0
-        z: 92
-        opacity: 0
-        visible: false
-        anchors.bottom: toolbar.top
-        anchors.bottomMargin: -2
-        Rectangle { // grey seperation between page and toolbar
-            id: toolbarExtraSep
-            height: 2
-            width: parent.width
-            anchors.top: parent.top
-            color: "grey"
-        }
-        SequentialAnimation {
-            id: showToolbar
-            ScriptAction { script : { extraToolbar.visible = true } }
-            ParallelAnimation {
-                NumberAnimation { target: extraToolbar; property: "opacity"; to: 1; duration: 400; easing.type: Easing.InOutQuad }
-                NumberAnimation { target: extraToolbar; property: "height"; to: extratoolbarheight; duration: 300; easing.type: Easing.InOutQuad }
-            }
-        }
-
-        SequentialAnimation {
-            id: hideToolbar
-            ParallelAnimation {
-                NumberAnimation { target: extraToolbar; property: "opacity"; to: 0; duration: 400; easing.type: Easing.InOutQuad }
-                NumberAnimation { target: extraToolbar; property: "height"; to: 0; duration: 300; easing.type: Easing.InOutQuad }
-            }
-            ScriptAction { script : { extraToolbar.visible = false } }
-        }
-
-        function hide() {
-            if (extraToolbar.opacity == 1 || extraToolbar.visible == true) {
-                hideToolbar.start();
-                extraToolbar.enabled = false;
-                extraToolbar.quickmenu = false;
-            }
-        }
-
-        function show() {
-            if (extraToolbar.opacity == 0 || extraToolbar.visible == false) {
-                showToolbar.start();
-                extraToolbar.enabled = true;
-            }
-        }
-
-        Label {
-            id: actionLbl
-            anchors.top: parent.top
-            anchors.topMargin: 3
-            anchors.horizontalCenter: parent.horizontalCenter
-            font.bold: true
-            font.pixelSize: parent.height - (minimizeButton.height + Theme.paddingLarge)
-            text: {
-                if (minimizeButton.highlighted) { _ngfEffect.play(); return qsTr("Minimize") }
-                else if (newTabButton.highlighted) { _ngfEffect.play(); return qsTr("New Tab") }
-                else if (newWindowButton.highlighted) { _ngfEffect.play(); return qsTr("New Window") }
-                else if (closeTabButton.highlighted) { _ngfEffect.play(); return qsTr("Close Tab") }
-                else if (orientationLockButton.highlighted) { _ngfEffect.play(); return qsTr("Lock Orientation") }
-                else if (readerModeButton.highlighted) { _ngfEffect.play(); return qsTr("Reader Mode") }
-                else if (searchModeButton.highlighted) { _ngfEffect.play(); return qsTr("Search") }
-                else if (shareButton.highlighted) { _ngfEffect.play(); return qsTr("Share") }
-                else if (extraToolbar.opacity == 1 && extraToolbar.quickmenu) { _ngfEffect.play(); return qsTr("Close menu") }
-                else return "Extra Toolbar"
-            }
-        }
-
-        IconButton {
-            id: minimizeButton
-            icon.source: "image://theme/icon-cover-next-song"
-            rotation: 90
-            anchors.left: extraToolbar.left
-            anchors.leftMargin: Theme.paddingSmall
-            anchors.bottom: parent.bottom
-            anchors.bottomMargin: actionLbl.height / 2
-            icon.height: height
-            icon.width: icon.height
-            height: toolbarheight / 1.5
-            width: height
-            onClicked: {
-                if (toolbar.state == "expanded") toolbar.state = "minimized"
-                highlighted = false;
-                extraToolbar.hide();
-            }
-        }
-
-        IconButton {
-            id: newTabButton
-            icon.source: "image://theme/icon-cover-new"
-            anchors.left: minimizeButton.right
-            anchors.leftMargin: Theme.paddingMedium
-            anchors.bottom: parent.bottom
-            anchors.bottomMargin: actionLbl.height / 2
-            icon.height: height
-            icon.width: icon.height
-            height: toolbarheight / 1.5
-            width: height
-            onClicked: {
-                mainWindow.loadInNewTab("about:bookmarks");
-                highlighted = false;
-                extraToolbar.hide();
-            }
-        }
-
-        IconButton {
-            id: newWindowButton
-            icon.source: "image://theme/icon-m-tab"
-            anchors.left: newTabButton.right
-            anchors.leftMargin: Theme.paddingMedium
-            anchors.bottom: parent.bottom
-            anchors.bottomMargin: actionLbl.height / 2
-            icon.height: height
-            icon.width: icon.height
-            height: toolbarheight / 1.5
-            width: height
-            Image {
-                anchors.fill: parent
-                source: "image://theme/icon-m-add"
-            }
-            onClicked: {
-                mainWindow.openNewWindow("about:bookmarks");
-                highlighted = false;
-                extraToolbar.hide();
-            }
-        }
-
-
-        IconButton {
-            id: closeTabButton
-            icon.source: "image://theme/icon-m-close"
-            anchors.left: newWindowButton.right
-            anchors.leftMargin: Theme.paddingMedium
-            anchors.bottom: parent.bottom
-            anchors.bottomMargin: actionLbl.height / 2
-            icon.height: extraToolbar.height - (extraToolbar.height / 3)
-            icon.width: icon.height
-            height: toolbarheight / 1.5
-            width: height
-            onClicked: {
-                if (enabled) {
-                    mainWindow.closeTab(mainWindow.tabModel.getIndexFromId(mainWindow.currentTab),pageId)
-                }
-                highlighted = false;
-                extraToolbar.hide();
-            }
-            enabled: mainWindow.tabModel.count > 1
-        }
-
-        IconButton {
-            id: orientationLockButton
-            icon.source: "image://theme/icon-m-backup"
-            anchors.left: closeTabButton.right
-            anchors.leftMargin: Theme.paddingMedium
-            anchors.bottom: parent.bottom
-            anchors.bottomMargin: actionLbl.height / 2
-            icon.height: extraToolbar.height - (extraToolbar.height / 3)
-            icon.width: icon.height
-            height: toolbarheight / 1.5
-            width: height
-            Image {
-                source: "image://theme/icon-m-reset"
-                anchors.fill: parent
-                visible: page.allowedOrientations !== Orientation.All
-            }
-            onClicked: {
-                if (page.allowedOrientations === Orientation.All) { page.allowedOrientations = page.orientation; mainWindow.orient = page.orientation }
-                else { page.allowedOrientations = Orientation.All; mainWindow.orient = Orientation.All; }
-                highlighted = false;
-                extraToolbar.hide();
-            }
-        }
-
-        IconButton {
-            id: readerModeButton
-            icon.source: "image://theme/icon-m-message"
-            anchors.left: orientationLockButton.right
-            anchors.leftMargin: Theme.paddingMedium
-            anchors.bottom: parent.bottom
-            anchors.bottomMargin: actionLbl.height / 2
-            icon.height: extraToolbar.height - (extraToolbar.height / 3)
-            icon.width: icon.height
-            height: toolbarheight / 1.5
-            width: height
-            onClicked: {
-                toggleReaderMode()
-                highlighted = false
-                extraToolbar.hide();
-            }
-        }
-
-        IconButton {
-            id: searchModeButton
-            icon.source: "image://theme/icon-m-search"
-            anchors.left: readerModeButton.right
-            anchors.leftMargin: Theme.paddingMedium
-            anchors.bottom: parent.bottom
-            anchors.bottomMargin: actionLbl.height / 2
-            icon.height: extraToolbar.height - (extraToolbar.height / 3)
-            icon.width: icon.height
-            height: toolbarheight / 1.5
-            width: height
-            onClicked: {
-                searchMode = !searchMode
-                highlighted = false
-                searchText.forceActiveFocus();
-                extraToolbar.hide();
-            }
-        }
-
-        IconButton {
-            id: shareButton
-            icon.source: "image://theme/icon-m-share"
-            anchors.left: searchModeButton.right
-            anchors.leftMargin: Theme.paddingMedium
-            anchors.bottom: parent.bottom
-            anchors.bottomMargin: actionLbl.height / 2
-            icon.height: extraToolbar.height - (extraToolbar.height / 3)
-            icon.width: icon.height
-            height: toolbarheight / 1.5
-            width: height
-            visible: mainWindow.transferEngine.count > 0
-            onClicked: {
-                // Open Share Context Menu
-                //console.debug("Open Share context menu here")
-                shareContextMenu.share(webview.title, webview.url);
-                highlighted = false;
-                extraToolbar.hide();
-            }
-        }
-
     }
 
     TabList {

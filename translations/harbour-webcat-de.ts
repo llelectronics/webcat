@@ -229,7 +229,7 @@ Wenn Sie sich unsicher sind lehnen sie das Zertifikat ab. Dies führt unter Umst
     </message>
 </context>
 <context>
-    <name>FirstPage</name>
+    <name>ExtraToolbar</name>
     <message>
         <source>Minimize</source>
         <translation>Minimieren</translation>
@@ -241,6 +241,10 @@ Wenn Sie sich unsicher sind lehnen sie das Zertifikat ab. Dies führt unter Umst
     <message>
         <source>New Window</source>
         <translation>Neues Fenster</translation>
+    </message>
+    <message>
+        <source>Close Tab</source>
+        <translation>Reiter schließen</translation>
     </message>
     <message>
         <source>Lock Orientation</source>
@@ -255,9 +259,16 @@ Wenn Sie sich unsicher sind lehnen sie das Zertifikat ab. Dies führt unter Umst
         <translation>Suche</translation>
     </message>
     <message>
+        <source>Share</source>
+        <translation>Teile</translation>
+    </message>
+    <message>
         <source>Close menu</source>
         <translation>Menü schließen</translation>
     </message>
+</context>
+<context>
+    <name>FirstPage</name>
     <message>
         <source>Enter searchterm</source>
         <translation>Suchbegriff eingeben</translation>
@@ -291,10 +302,6 @@ Wenn Sie sich unsicher sind lehnen sie das Zertifikat ab. Dies führt unter Umst
         <translation>Öffne...</translation>
     </message>
     <message>
-        <source>Share</source>
-        <translation>Teilen</translation>
-    </message>
-    <message>
         <source>Open Image in New Tab</source>
         <translation>Bild in neuem Reiter öffnen</translation>
     </message>
@@ -313,10 +320,6 @@ Wenn Sie sich unsicher sind lehnen sie das Zertifikat ab. Dies führt unter Umst
     <message>
         <source>Webkit engine crashed too often!</source>
         <translation>Webkit zu oft abgestürzt!</translation>
-    </message>
-    <message>
-        <source>Close Tab</source>
-        <translation>Reiter schließen</translation>
     </message>
 </context>
 <context>

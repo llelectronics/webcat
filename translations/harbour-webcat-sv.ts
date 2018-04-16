@@ -229,11 +229,7 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
     </message>
 </context>
 <context>
-    <name>FirstPage</name>
-    <message>
-        <source>Opening...</source>
-        <translation>Öppnar...</translation>
-    </message>
+    <name>ExtraToolbar</name>
     <message>
         <source>Minimize</source>
         <translation>Minimera</translation>
@@ -245,6 +241,10 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
     <message>
         <source>New Window</source>
         <translation>Nytt fönster</translation>
+    </message>
+    <message>
+        <source>Close Tab</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Lock Orientation</source>
@@ -265,6 +265,13 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
     <message>
         <source>Close menu</source>
         <translation>Stäng menyn</translation>
+    </message>
+</context>
+<context>
+    <name>FirstPage</name>
+    <message>
+        <source>Opening...</source>
+        <translation>Öppnar...</translation>
     </message>
     <message>
         <source>Enter searchterm</source>
@@ -313,10 +320,6 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
     <message>
         <source>Webkit engine crashed too often!</source>
         <translation>Webkit-motorn kraschade för ofta!</translation>
-    </message>
-    <message>
-        <source>Close Tab</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

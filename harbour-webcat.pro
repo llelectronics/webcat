@@ -155,6 +155,7 @@ DISTFILES += \
     qml/pages/helper/otherComponents/MenuPopup.qml \
     qml/pages/helper/videoPlayerComponents/OpenURLPage.qml \
     qml/pages/CookiePage.qml \
-    qml/pages/helper/browserComponents/Toolbar.qml
+    qml/pages/helper/browserComponents/Toolbar.qml \
+    qml/pages/helper/browserComponents/ExtraToolbar.qml
 
 include(src/sortFilterProxyModel/SortFilterProxyModel.pri)

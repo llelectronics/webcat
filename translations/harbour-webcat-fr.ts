@@ -228,42 +228,49 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
     </message>
 </context>
 <context>
+    <name>ExtraToolbar</name>
+    <message>
+        <source>Minimize</source>
+        <translation type="unfinished">Réduire</translation>
+    </message>
+    <message>
+        <source>New Tab</source>
+        <translation type="unfinished">Nouvel onglet</translation>
+    </message>
+    <message>
+        <source>New Window</source>
+        <translation type="unfinished">Nouvelle fenêtre</translation>
+    </message>
+    <message>
+        <source>Close Tab</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lock Orientation</source>
+        <translation type="unfinished">Bloquer l&apos;orientation</translation>
+    </message>
+    <message>
+        <source>Reader Mode</source>
+        <translation type="unfinished">Mode lecture</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation type="unfinished">Recherche</translation>
+    </message>
+    <message>
+        <source>Share</source>
+        <translation type="unfinished">Partager</translation>
+    </message>
+    <message>
+        <source>Close menu</source>
+        <translation type="unfinished">Fermer le menu</translation>
+    </message>
+</context>
+<context>
     <name>FirstPage</name>
     <message>
         <source>Opening...</source>
         <translation>Ouverture ...</translation>
-    </message>
-    <message>
-        <source>Minimize</source>
-        <translation>Réduire</translation>
-    </message>
-    <message>
-        <source>New Tab</source>
-        <translation>Nouvel onglet</translation>
-    </message>
-    <message>
-        <source>New Window</source>
-        <translation>Nouvelle fenêtre</translation>
-    </message>
-    <message>
-        <source>Lock Orientation</source>
-        <translation>Bloquer l&apos;orientation</translation>
-    </message>
-    <message>
-        <source>Reader Mode</source>
-        <translation>Mode lecture</translation>
-    </message>
-    <message>
-        <source>Search</source>
-        <translation>Recherche</translation>
-    </message>
-    <message>
-        <source>Share</source>
-        <translation>Partager</translation>
-    </message>
-    <message>
-        <source>Close menu</source>
-        <translation>Fermer le menu</translation>
     </message>
     <message>
         <source>Enter searchterm</source>
@@ -312,10 +319,6 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
     <message>
         <source>Webkit engine crashed too often!</source>
         <translation>Le moteur Webkit a planté trop souvent !</translation>
-    </message>
-    <message>
-        <source>Close Tab</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

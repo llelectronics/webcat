@@ -229,11 +229,7 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
     </message>
 </context>
 <context>
-    <name>FirstPage</name>
-    <message>
-        <source>Opening...</source>
-        <translation>Bezig met openen...</translation>
-    </message>
+    <name>ExtraToolbar</name>
     <message>
         <source>Minimize</source>
         <translation>Minimaliseren</translation>
@@ -245,6 +241,10 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
     <message>
         <source>New Window</source>
         <translation>Nieuw scherm</translation>
+    </message>
+    <message>
+        <source>Close Tab</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Lock Orientation</source>
@@ -265,6 +265,13 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
     <message>
         <source>Close menu</source>
         <translation>Menu sluiten</translation>
+    </message>
+</context>
+<context>
+    <name>FirstPage</name>
+    <message>
+        <source>Opening...</source>
+        <translation>Bezig met openen...</translation>
     </message>
     <message>
         <source>Enter searchterm</source>
@@ -313,10 +320,6 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
     <message>
         <source>Webkit engine crashed too often!</source>
         <translation>WebKit is te vaak gecrasht!</translation>
-    </message>
-    <message>
-        <source>Close Tab</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
