@@ -228,10 +228,6 @@ If you are unsure reject the certificate. That might lead to a non loading websi
 <context>
     <name>FirstPage</name>
     <message>
-        <source>Enter an url</source>
-        <translation>输入URL</translation>
-    </message>
-    <message>
         <source>Minimize</source>
         <translation>最小化</translation>
     </message>
@@ -746,6 +742,13 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     <message>
         <source>Tabs</source>
         <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Toolbar</name>
+    <message>
+        <source>Enter an url</source>
+        <translation>输入URL</translation>
     </message>
 </context>
 <context>

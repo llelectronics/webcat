@@ -235,10 +235,6 @@ En cas de dubte, refuseu el certificat malgrat que això pot provocar que no es 
         <translation>S&apos;està obrint...</translation>
     </message>
     <message>
-        <source>Enter an url</source>
-        <translation>URL</translation>
-    </message>
-    <message>
         <source>Minimize</source>
         <translation>Minimitza</translation>
     </message>
@@ -750,6 +746,13 @@ En cas de dubte, refuseu el certificat malgrat que això pot provocar que no es 
     <message>
         <source>Tabs</source>
         <translation>Pestanyes</translation>
+    </message>
+</context>
+<context>
+    <name>Toolbar</name>
+    <message>
+        <source>Enter an url</source>
+        <translation>URL</translation>
     </message>
 </context>
 <context>

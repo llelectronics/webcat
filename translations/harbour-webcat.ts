@@ -232,10 +232,6 @@ If you are unsure reject the certificate. That might lead to a non loading websi
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Enter an url</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Minimize</source>
         <translation type="unfinished"></translation>
     </message>
@@ -745,6 +741,13 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Tabs</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Toolbar</name>
+    <message>
+        <source>Enter an url</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

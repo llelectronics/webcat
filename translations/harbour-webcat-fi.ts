@@ -233,10 +233,6 @@ If you are unsure reject the certificate. That might lead to a non loading websi
         <translation>Avautuu...</translation>
     </message>
     <message>
-        <source>Enter an url</source>
-        <translation>Anna url</translation>
-    </message>
-    <message>
         <source>Minimize</source>
         <translation>Pienennä</translation>
     </message>
@@ -748,6 +744,13 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     <message>
         <source>Tabs</source>
         <translation>Välilehdet</translation>
+    </message>
+</context>
+<context>
+    <name>Toolbar</name>
+    <message>
+        <source>Enter an url</source>
+        <translation type="unfinished">Anna url</translation>
     </message>
 </context>
 <context>

@@ -1,6 +1,7 @@
 #include "myclass.h"
 //#include <QNetworkCookieJar>
 //#include <QNetworkAccessManager>
+#include <QDebug>
 
 
 MyClass::MyClass(QQuickView *v)

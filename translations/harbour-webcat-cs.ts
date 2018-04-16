@@ -232,10 +232,6 @@ If you are unsure reject the certificate. That might lead to a non loading websi
         <translation>Otevírání...</translation>
     </message>
     <message>
-        <source>Enter an url</source>
-        <translation>Zadejte odkaz</translation>
-    </message>
-    <message>
         <source>Minimize</source>
         <translation>Minimalizovat</translation>
     </message>
@@ -746,6 +742,13 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     <message>
         <source>Tabs</source>
         <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Toolbar</name>
+    <message>
+        <source>Enter an url</source>
+        <translation>Zadejte odkaz</translation>
     </message>
 </context>
 <context>

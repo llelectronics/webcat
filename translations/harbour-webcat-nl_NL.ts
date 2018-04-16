@@ -235,10 +235,6 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
         <translation>Bezig met openen...</translation>
     </message>
     <message>
-        <source>Enter an url</source>
-        <translation>Voer een URL in</translation>
-    </message>
-    <message>
         <source>Minimize</source>
         <translation>Minimaliseren</translation>
     </message>
@@ -750,6 +746,13 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
     <message>
         <source>Tabs</source>
         <translation>Tabbladen</translation>
+    </message>
+</context>
+<context>
+    <name>Toolbar</name>
+    <message>
+        <source>Enter an url</source>
+        <translation>Voer een URL in</translation>
     </message>
 </context>
 <context>

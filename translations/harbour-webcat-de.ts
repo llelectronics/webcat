@@ -231,10 +231,6 @@ Wenn Sie sich unsicher sind lehnen sie das Zertifikat ab. Dies führt unter Umst
 <context>
     <name>FirstPage</name>
     <message>
-        <source>Enter an url</source>
-        <translation>Webadresse eingeben</translation>
-    </message>
-    <message>
         <source>Minimize</source>
         <translation>Minimieren</translation>
     </message>
@@ -358,7 +354,7 @@ Wenn Sie sich unsicher sind lehnen sie das Zertifikat ab. Dies führt unter Umst
     </message>
     <message>
         <source>Download Manager</source>
-        <translation type="unfinished">Download Manager</translation>
+        <translation>Download Manager</translation>
     </message>
 </context>
 <context>
@@ -749,6 +745,13 @@ Wenn Sie sich unsicher sind lehnen sie das Zertifikat ab. Dies führt unter Umst
     <message>
         <source>Tabs</source>
         <translation>Reiter</translation>
+    </message>
+</context>
+<context>
+    <name>Toolbar</name>
+    <message>
+        <source>Enter an url</source>
+        <translation>Webadresse eingeben</translation>
     </message>
 </context>
 <context>

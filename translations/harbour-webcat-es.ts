@@ -235,10 +235,6 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
         <translation>Abriendo...</translation>
     </message>
     <message>
-        <source>Enter an url</source>
-        <translation>Introducir una url</translation>
-    </message>
-    <message>
         <source>Minimize</source>
         <translation>Minimizar</translation>
     </message>
@@ -750,6 +746,13 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     <message>
         <source>Tabs</source>
         <translation>Pestañas</translation>
+    </message>
+</context>
+<context>
+    <name>Toolbar</name>
+    <message>
+        <source>Enter an url</source>
+        <translation>Introducir una url</translation>
     </message>
 </context>
 <context>

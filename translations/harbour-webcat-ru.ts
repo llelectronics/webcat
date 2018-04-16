@@ -234,10 +234,6 @@ If you are unsure reject the certificate. That might lead to a non loading websi
         <translation>Открываю...</translation>
     </message>
     <message>
-        <source>Enter an url</source>
-        <translation>Ввести url-адрес</translation>
-    </message>
-    <message>
         <source>Minimize</source>
         <translation>Уменьшить</translation>
     </message>
@@ -749,6 +745,13 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     <message>
         <source>Tabs</source>
         <translation>Вкладки</translation>
+    </message>
+</context>
+<context>
+    <name>Toolbar</name>
+    <message>
+        <source>Enter an url</source>
+        <translation>Ввести url-адрес</translation>
     </message>
 </context>
 <context>

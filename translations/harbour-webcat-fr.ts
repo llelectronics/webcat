@@ -234,10 +234,6 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
         <translation>Ouverture ...</translation>
     </message>
     <message>
-        <source>Enter an url</source>
-        <translation>Saisir l&apos;URL</translation>
-    </message>
-    <message>
         <source>Minimize</source>
         <translation>Réduire</translation>
     </message>
@@ -749,6 +745,13 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
     <message>
         <source>Tabs</source>
         <translation>Onglets</translation>
+    </message>
+</context>
+<context>
+    <name>Toolbar</name>
+    <message>
+        <source>Enter an url</source>
+        <translation>Saisir l&apos;URL</translation>
     </message>
 </context>
 <context>

@@ -235,10 +235,6 @@ Se non sei sicuro, rifiuta il certificato. Ma questo può impedire il caricament
         <translation>Apertura...</translation>
     </message>
     <message>
-        <source>Enter an url</source>
-        <translation>Inserisci un url</translation>
-    </message>
-    <message>
         <source>Minimize</source>
         <translation>Minimizza</translation>
     </message>
@@ -750,6 +746,13 @@ Se non sei sicuro, rifiuta il certificato. Ma questo può impedire il caricament
     <message>
         <source>Tabs</source>
         <translation>Schede</translation>
+    </message>
+</context>
+<context>
+    <name>Toolbar</name>
+    <message>
+        <source>Enter an url</source>
+        <translation>Inserisci un url</translation>
     </message>
 </context>
 <context>

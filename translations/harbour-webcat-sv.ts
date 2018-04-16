@@ -235,10 +235,6 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
         <translation>Öppnar...</translation>
     </message>
     <message>
-        <source>Enter an url</source>
-        <translation>Ange en URL</translation>
-    </message>
-    <message>
         <source>Minimize</source>
         <translation>Minimera</translation>
     </message>
@@ -750,6 +746,13 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
     <message>
         <source>Tabs</source>
         <translation>Flikar</translation>
+    </message>
+</context>
+<context>
+    <name>Toolbar</name>
+    <message>
+        <source>Enter an url</source>
+        <translation>Ange en URL</translation>
     </message>
 </context>
 <context>
