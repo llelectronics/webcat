@@ -27,6 +27,7 @@ public slots:
             qDebug() << ("%s.", qPrintable(db.lastError().text()));
             return -1;
         }
+        return true;
     }
 
     int getCookies() {
@@ -38,9 +39,10 @@ public slots:
             return -1;
         }
         while (query.next()) {
-            qDebug() << ("cookie = %s.", query.value(0).toString());
+            //qDebug() << ("cookie = %s.", query.value(0).toString());
             addCookieToList(query.value(0).toString());
         }
+        return 0;
     }
 
     int removeCookie(QString cookieTxt) {
@@ -51,6 +53,7 @@ public slots:
             qDebug() << ("%s.", qPrintable(db.lastError().text()));
             return -1;
         }
+        return 0;
     }
 
 private:

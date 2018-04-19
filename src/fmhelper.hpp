@@ -92,6 +92,7 @@ class FM : public QObject
                 }
             }
             else return QFile(source).copy(target);
+            return true;
         }
         bool copyFile(const QString &source, const QString &target) {
             connect(&watcher, SIGNAL(finished()), this, SLOT(cpFinished()));
