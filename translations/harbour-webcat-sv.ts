@@ -431,6 +431,10 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
         <source>directory</source>
         <translation>mapp</translation>
     </message>
+    <message>
+        <source>File operation succeeded</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>OpenURLPage</name>

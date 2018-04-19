@@ -431,6 +431,10 @@ Se non sei sicuro, rifiuta il certificato. Ma questo può impedire il caricament
         <source>directory</source>
         <translation>cartella</translation>
     </message>
+    <message>
+        <source>File operation succeeded</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>OpenURLPage</name>

@@ -431,6 +431,10 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
         <source>directory</source>
         <translation>directorio</translation>
     </message>
+    <message>
+        <source>File operation succeeded</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>OpenURLPage</name>

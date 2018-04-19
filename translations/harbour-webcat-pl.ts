@@ -430,6 +430,10 @@ Jeśli nie jesteś pewien, powinieneś odrzucić certyfikat. Może to jednak uni
         <source>directory</source>
         <translation>katalog</translation>
     </message>
+    <message>
+        <source>File operation succeeded</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>OpenURLPage</name>

@@ -431,6 +431,10 @@ En cas de dubte, refuseu el certificat malgrat que això pot provocar que no es 
         <source>directory</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>File operation succeeded</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>OpenURLPage</name>

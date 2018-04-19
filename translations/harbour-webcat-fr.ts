@@ -430,6 +430,10 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
         <source>directory</source>
         <translation>Répertoire</translation>
     </message>
+    <message>
+        <source>File operation succeeded</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>OpenURLPage</name>

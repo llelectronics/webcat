@@ -430,6 +430,10 @@ Wenn Sie sich unsicher sind lehnen sie das Zertifikat ab. Dies führt unter Umst
         <source>directory</source>
         <translation>Ordner</translation>
     </message>
+    <message>
+        <source>File operation succeeded</source>
+        <translation>Datei Operation erfolgreich</translation>
+    </message>
 </context>
 <context>
     <name>OpenURLPage</name>
