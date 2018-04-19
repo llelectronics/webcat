@@ -342,6 +342,13 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
 </context>
 <context>
+    <name>MediaDownloadRec</name>
+    <message>
+        <source>Opening...</source>
+        <translation>Abriendo...</translation>
+    </message>
+</context>
+<context>
     <name>MenuPopup</name>
     <message>
         <source>File Manager</source>

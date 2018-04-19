@@ -341,6 +341,13 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
 </context>
 <context>
+    <name>MediaDownloadRec</name>
+    <message>
+        <source>Opening...</source>
+        <translation>Открываю...</translation>
+    </message>
+</context>
+<context>
     <name>MenuPopup</name>
     <message>
         <source>File Manager</source>

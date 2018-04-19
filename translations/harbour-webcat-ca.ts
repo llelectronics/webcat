@@ -342,6 +342,13 @@ En cas de dubte, refuseu el certificat malgrat que això pot provocar que no es 
     </message>
 </context>
 <context>
+    <name>MediaDownloadRec</name>
+    <message>
+        <source>Opening...</source>
+        <translation>S&apos;està obrint...</translation>
+    </message>
+</context>
+<context>
     <name>MenuPopup</name>
     <message>
         <source>File Manager</source>

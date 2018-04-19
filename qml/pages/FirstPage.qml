@@ -76,6 +76,7 @@ Page {
     property int extratoolbarheight: Theme.itemSizeSmall + (Theme.itemSizeSmall / 4)//Screen.height / 10
     property alias webview: webview
     property alias mediaDownloadRec: mediaDownloadRec
+    property alias vPlayerLoader: vPlayerLoader
     property string yt720p: mediaList.count > 0 && mediaYt && mediaList.get(0).yt720p ? mediaList.get(0).yt720p : ""
     property string yt480p: mediaList.count > 0 && mediaYt && mediaList.get(0).yt480p ? mediaList.get(0).yt480p : ""
     property string yt360p: mediaList.count > 0 && mediaYt && mediaList.get(0).yt360p ? mediaList.get(0).yt360p : ""
@@ -85,6 +86,7 @@ Page {
     property alias mediaList: mediaList
     property bool inputFocus: false
     property variant crashUrl: []
+    property alias ytQualChooser: ytQualChooser
 
 // DEBUG
 //    onYt720pChanged: {
@@ -220,11 +222,11 @@ Page {
             yt480p = mediaList.count > 0 && mediaYt && mediaList.get(0).yt480p ? mediaList.get(0).yt480p : ""
             yt360p = mediaList.count > 0 && mediaYt && mediaList.get(0).yt360p ? mediaList.get(0).yt360p : ""
             yt240p = mediaList.count > 0 && mediaYt && mediaList.get(0).yt240p ? mediaList.get(0).yt240p : ""
-            mediaDownloadRecTitle.text = mediaList.count > 0 && mediaYt && mediaList.get(0).mediaTitle ? mediaList.get(0).mediaTitle : ""
+            mediaDownloadRec.mediaDownloadRecTitle.text = mediaList.count > 0 && mediaYt && mediaList.get(0).mediaTitle ? mediaList.get(0).mediaTitle : ""
             //console.debug("MediaTitle = " + mediaList.get(0).mediaTitle)
         }
         onRowsInserted: {
-            mediaDownloadRecTitle.text = mediaList.get(0).mediaTitle
+            mediaDownloadRec.mediaDownloadRecTitle.text = mediaList.get(0).mediaTitle
             //console.debug("MediaTitle = " + mediaList.get(0).mediaTitle)
         }
 
@@ -843,174 +845,10 @@ Page {
     }
 
     // On Media Loaded show download button
-    Rectangle {
+    MediaDownloadRec {
         id: mediaDownloadRec
-        property string mediaUrl
+        dataContainer: page
         z:90
-
-        onMediaUrlChanged: {
-            //webview.checkYoutubeURL(mediaUrl);
-            if (mediaYt && mediaUrl != "") {
-                //console.debug("[FirstPage.qml] Youtube Media URL: " + mediaUrl + " Counter = " + counter)
-                counter = counter + 1
-                mediaList.insert(counter, {"mediaTitle": mediaUrl, "url": mediaUrl, "ytMedia":true});
-                YT.getYoutubeDirectStream(mediaUrl.toString(),page, counter);
-            }
-            else if (mediaUrl != "" && !mediaList.contains(mediaUrl)) {
-                counter = counter + 1
-                var ext = mediaUrl.substr(mediaUrl.lastIndexOf('.') + 1);
-                if (ext.length != 0)
-                    mediaList.insert(counter, {"mediaTitle": mainWindow.findBaseName(mediaUrl) + " (" + ext+ ")", "url": mediaUrl, "ytMedia": false});
-                else
-                    mediaList.insert(counter, {"mediaTitle": mainWindow.findBaseName(mediaUrl), "url": mediaUrl, "ytMedia": false});
-            }
-//            console.debug("[firstPage.qml] MediaUrl changed to:" + mediaUrl)
-        }
-
-        gradient: Gradient {
-            GradientStop { position: 0.0; color: "#262626" }
-            GradientStop { position: 0.85; color: "#1F1F1F"}
-        }
-        anchors.bottom: {
-            if (extraToolbar.enabled) return extraToolbar.top
-            //else if (loadingRec.visible == true) return loadingRec.top
-            else return toolbar.top
-        }
-        //anchors.bottomMargin: Theme.paddingSmall // This looks ugly
-        width: parent.width
-        height: toolbarheight
-        visible: false
-
-        ProgressCircle {
-            id: progressCircleYt
-            z: 90
-            anchors.centerIn: parent
-            visible: ytUrlLoading
-            height: toolbarheight / 2.25
-            width: height
-            Timer {
-                interval: 32
-                repeat: true
-                onTriggered: progressCircleYt.value = (progressCircleYt.value + 0.005) % 1.0
-                running: {
-                    if (ytUrlLoading) {
-                        if ((mediaDownloadRec.mediaUrl != "") || (yt720p != "") || (yt480p != "") || (yt360p != "") || (yt240p != "")) return true
-                    }
-                    else return false
-                }
-            }
-        }
-        Label {
-            id: mediaDownloadRecTitle
-            anchors.centerIn: parent
-            anchors.margins: Theme.paddingLarge
-            visible: !progressCircleYt.visible
-            width: parent.width - (mediaDownloadBtn.width + mediaPlayBtn.width) - Theme.paddingLarge
-            truncationMode: TruncationMode.Fade
-            text: mediaList.count > 0 ? mediaList.get(0).mediaTitle : ""
-        }
-
-        MouseArea {
-            anchors.fill: parent
-            onClicked: {
-                if (progressCircleYt.visible) {
-                    ytUrlLoading = false;
-                    mediaDownloadRec.visible = false;
-                    YT.getYoutubeDirectStream(webview.url,page);
-                }
-            }
-        }
-
-        MouseArea {
-            anchors.fill: parent
-            onClicked: {
-                if (mediaList.count > 1) {
-                    console.debug("[FirstPage.qml]: Chooser clicked because mediaList.count = " + mediaList.count);
-//                    console.debug("[FirstPage.qml] mediaList.get(0).yt360p:" + mediaList.get(0).yt360p);
-//                    console.debug("[FirstPage.qml] mediaList.get(1).yt360p:" + mediaList.get(1).yt360p);
-//                    console.debug("[FirstPage.qml] mediaList.get(2).yt360p:" + mediaList.get(2).yt360p);
-                    suggestionView.model = mediaList
-                    suggestionView.anchors.bottom = mediaDownloadRec.top
-                    suggestionView.visible = true
-                }
-            }
-        }
-
-        IconButton {
-            id: mediaDownloadBtn
-            icon.source: "image://theme/icon-m-device-download"
-            onClicked:  {
-                if (mediaYt || mediaYtEmbeded) {
-                    if (yt720p != "") pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": yt720p, "downloadName": mediaDownloadRecTitle.text, "dataContainer": webview});
-                    else if (yt480p != "") pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": yt480p, "downloadName": mediaDownloadRecTitle.text, "dataContainer": webview});
-                    else if (yt360p != "") pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": yt360p,"downloadName": mediaDownloadRecTitle.text, "dataContainer": webview});
-                    else if (yt240p != "") pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": yt240p,"downloadName": mediaDownloadRecTitle.text,"dataContainer": webview});
-                }
-                else if (mediaDownloadRec.mediaUrl != "") pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": mediaDownloadRec.mediaUrl, "dataContainer": webview});
-                else pageStack.push(Qt.resolvedUrl("DownloadManager.qml"), {"downloadUrl": url, "dataContainer": webview});
-            }
-            visible: ! progressCircleYt.visible
-            anchors.right: parent.right
-            anchors.rightMargin: Theme.paddingSmall
-            anchors.verticalCenter: parent.verticalCenter
-            height: toolbarheight / 1.2   // TODO: 1.5 looks to small. But that depends on the image. Maybe later sailfish OS versions will change something here
-            width: height
-            icon.height: height
-            icon.width: width
-            onPressAndHold: {
-                //console.debug("[FirstPage.qml] mediaList.count: " + mediaList.count);
-                //console.debug("[FirstPage.qml] mediaList.get(0).mediaTitle: " + mediaList.get(0).mediaTitle);
-                if (mediaYt || mediaYtEmbeded) ytQualChooser.setSource("helper/browserComponents/ytQualityChooserContextMenu.qml", {"url720p":yt720p, "url480p":yt480p, "url360p": yt360p, "url240p":yt240p, "download": true, "streamTitle": mediaDownloadRecTitle.text})
-                ytQualChooser.item.show();
-            }
-        }
-        IconButton {
-            id: mediaPlayBtn
-            icon.source: "image://theme/icon-m-play"
-            onClicked:  {
-                if (mainWindow.vPlayerExternal) {
-                    mainWindow.infoBanner.parent = page
-                    mainWindow.infoBanner.anchors.top = page.top
-                    mainWindow.infoBanner.showText(qsTr("Opening..."));
-                }
-                if (mediaYt || mediaYtEmbeded) {
-                    // Always try to play highest quality first // TODO: Allow setting a default
-                    if (! mainWindow.vPlayerExternal) {
-                        console.debug("Load videoPlayer in window...");
-                        if (yt720p != "") vPlayerLoader.setSource("VideoPlayerComponent.qml", {dataContainer: firstPage, streamUrl: yt720p, streamTitle: mediaDownloadRecTitle.text});
-                        else if (yt480p != "") vPlayerLoader.setSource("VideoPlayerComponent.qml", {dataContainer: firstPage, streamUrl: yt480p, streamTitle: mediaDownloadRecTitle.text});
-                        else if (yt360p != "") vPlayerLoader.setSource("VideoPlayerComponent.qml", {dataContainer: firstPage, streamUrl: yt360p, streamTitle: mediaDownloadRecTitle.text});
-                        else if (yt240p != "") vPlayerLoader.setSource("VideoPlayerComponent.qml", {dataContainer: firstPage, streamUrl: yt240p, streamTitle: mediaDownloadRecTitle.text});
-                        else if (mediaDownloadRec.mediaUrl != "") vPlayerLoader.setSource("VideoPlayerComponent.qml", {dataContainer: firstPage, streamUrl: mediaDownloadRec.mediaUrl, streamTitle: mediaDownloadRecTitle.text});
-                    }
-                    else {
-                        if (yt720p != "") mainWindow.openWithvPlayer(yt720p,mediaDownloadRecTitle.text);
-                        else if (yt480p != "") mainWindow.openWithvPlayer(yt480p,mediaDownloadRecTitle.text);
-                        else if (yt360p != "") mainWindow.openWithvPlayer(yt360p,mediaDownloadRecTitle.text);
-                        else if (yt240p != "") mainWindow.openWithvPlayer(yt240p,mediaDownloadRecTitle.text);
-                        else if (mediaDownloadRec.mediaUrl != "") mainWindow.openWithvPlayer(mediaDownloadRec.mediaUrl,mediaDownloadRecTitle.text);
-                    }
-                }
-                else if (mediaDownloadRec.mediaUrl != "" && mainWindow.vPlayerExternal) mainWindow.openWithvPlayer(mediaDownloadRec.mediaUrl,"");
-                else if (mediaDownloadRec.mediaUrl != "") vPlayerLoader.setSource("VideoPlayerComponent.qml", {dataContainer: firstPage, streamUrl: mediaDownloadRec.mediaUrl})
-                else Qt.openUrlExternally(url);
-            }
-            visible: ! progressCircleYt.visible
-            anchors.left: parent.left
-            anchors.leftMargin: Theme.paddingSmall
-            anchors.verticalCenter: parent.verticalCenter
-            height: toolbarheight / 1.2
-            width: height
-            icon.height: height
-            icon.width: width
-            onPressAndHold: {
-                //console.debug("[firstPage.qml]: 720p:" + mainWindow.yt720p + " 480p:" + mainWindow.yt480p + " 360p:" + mainWindow.yt360p + " 240p:" + mainWindow.yt240p);
-                if (mediaYt || mediaYtEmbeded) ytQualChooser.setSource("helper/browserComponents/ytQualityChooserContextMenu.qml", {"url720p":yt720p, "url480p":yt480p, "url360p": yt360p, "url240p":yt240p})
-                ytQualChooser.item.show();
-            }
-        }
-
-
     }
 
     Loader {
@@ -1059,7 +897,7 @@ Page {
             if (vPlayerLoader.status == Loader.Ready) {
                 vPlayerLoader.setSource("");  // Changing the source only seems not to work for some obscure reason
             }
-            vPlayerLoader.setSource("VideoPlayerComponent.qml", {dataContainer: firstPage, streamUrl: url, streamTitle: mediaDownloadRecTitle.text})
+            vPlayerLoader.setSource("VideoPlayerComponent.qml", {dataContainer: firstPage, streamUrl: url, streamTitle: mediaDownloadRec.mediaDownloadRecTitle.text})
             ytQualChooser.item.height = 0
             ytQualChooser.source = ""
         }
@@ -1262,7 +1100,7 @@ Page {
         onSelected: { toolbar.urlText.focus = false; suggestionView.visible = false ; webview.url = url; webview.focus = true; }
         onSelectedMedia: {
             suggestionView.visible = false;
-            mediaDownloadRecTitle.text = mediaTitle;
+            mediaDownloadRec.mediaDownloadRecTitle.text = mediaTitle;
             page.yt720p = yt720p;
             page.yt480p = yt480p;
             page.yt360p = yt360p;

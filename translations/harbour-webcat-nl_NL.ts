@@ -342,6 +342,13 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
     </message>
 </context>
 <context>
+    <name>MediaDownloadRec</name>
+    <message>
+        <source>Opening...</source>
+        <translation>Bezig met openen...</translation>
+    </message>
+</context>
+<context>
     <name>MenuPopup</name>
     <message>
         <source>File Manager</source>
