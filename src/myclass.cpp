@@ -111,6 +111,12 @@ void MyClass::openExternally(const QString &url) {
     proc->startDetached("xdg-open \"" + url + "\"");
 }
 
+void MyClass::runExternally(const QString &cmd) {
+    qDebug() << "[myclass.cpp]: trying to start " + cmd;
+    QProcess *proc = new QProcess();
+    proc->startDetached(cmd);
+}
+
 bool MyClass::isFile(const QString &url)
 {
     return QFileInfo(url).isFile();

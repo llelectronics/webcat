@@ -216,6 +216,8 @@ int main(int argc, char *argv[])
                      &myClass, SLOT(createDesktopLauncher(QString,QString,QString)));
     QObject::connect(object, SIGNAL(openExternally(QString)),
                      &myClass, SLOT(openExternally(QString)));
+    QObject::connect(object, SIGNAL(runExternally(QString)),
+                     &myClass, SLOT(runExternally(QString)));
 
     // Create download manager object
     DownloadManager manager;
