@@ -20,7 +20,7 @@ var dprWidth = origWidth / dpr
 
 function setPixelRatio() {
     // Glorious hack to fix wrong device Pixel Ratio reported by Webview (I hope Jolla will fix this soon)
-    document.querySelector("meta[name=viewport]").setAttribute('content', 'width='+dprWidth+', initial-scale='+(dpr));
+    document.querySelector("meta[name=viewport]").setAttribute('content', 'width=device-width, initial-scale='+(dpr));
 }
 
 window.addEventListener("DOMContentLoaded", function(event){

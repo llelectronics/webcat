@@ -368,6 +368,7 @@ Page {
             else if (Screen.width > 768) return 3.0;
         }
         experimental.customLayoutWidth: page.width / devicePixelRatio
+        experimental.deviceWidth: page.width / devicePixelRatio
         experimental.overview: true
 
         // Helps rendering websites that are only optimized for desktop
