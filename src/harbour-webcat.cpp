@@ -174,6 +174,14 @@ int main(int argc, char *argv[])
     QQuickView *view = SailfishApp::createView();
     view->setResizeMode(QQuickView::SizeRootObjectToView);
 
+    // Set contextProperties up before loading qml to avoid error messages
+    view->engine()->rootContext()->setContextProperty("_myClass", nullptr);
+    view->engine()->rootContext()->setContextProperty("_manager", nullptr);
+    view->engine()->rootContext()->setContextProperty("_fm", nullptr);
+    view->engine()->rootContext()->setContextProperty("_videoHelper", nullptr);
+    view->engine()->rootContext()->setContextProperty("_cookieManager", nullptr);
+    //
+
     view->setSource(SailfishApp::pathTo("qml/harbour-webcat.qml"));
 
     QObject *object = view->rootObject();
