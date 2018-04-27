@@ -376,7 +376,6 @@ Page {
 //        layer.sourceRect: webview.width + "x" + webview.height
 //        layer.textureSize: webview.width + "x" + webview.height
 
-        // Theoretically a nice function to replace the DevicePixelRatio hack but does not work as intended always
         property variant devicePixelRatio: {//1.5
             if (Screen.width <= 540) return 1.5;
             else if (Screen.width > 540 && Screen.width <= 768) return 2.0;
