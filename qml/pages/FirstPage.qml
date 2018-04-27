@@ -349,9 +349,24 @@ Page {
         experimental.preferences.autoLoadImages: mainWindow.loadImages
         experimental.preferences.offlineWebApplicationCacheEnabled: mainWindow.offlineWebApplicationCache
         experimental.preferences.privateBrowsingEnabled: mainWindow.privateBrowsing
-        //experimental.preferences.javascriptCanOpenWindows: true // Not compatible with qtwebkit 5.6
-        //experimental.preferences.mediaSourceEnabled: true  // Not compatible with qtwebkit 5.6
         // experimental.autoCorrect: true  // Nice if it would work like expected though having cursor constantly on the left instead of right. So not using for now
+
+        Component.onCompleted: {
+            console.log ("Check now for experimental features only available in certain QtWebkit versions...")
+            // Check for Features only supported in certain QtWebkit versions here and enable them if available
+            if (typeof(experimental.preferences.javascriptCanOpenWindows) !== "undefined") {
+                experimental.preferences.javascriptCanOpenWindows = true
+                console.log("Hurray you are using a QtWebkit version that supports experimental.preferences.javascriptCanOpenWindows \\o/ Enabling it.")
+            }
+            if (typeof(experimental.preferences.mediaSourceEnabled) !== "undefined") {
+                experimental.preferences.mediaSourceEnabled  = true
+                console.log("Hurray you are using a QtWebkit version that supports experimental.preferences.mediaSourceEnabled \\o/ Enabling it.")
+            }
+            if (typeof(experimental.preferences.mediaPlaybackRequiresUserGestureEnabled) !== "undefined") {
+                experimental.preferences.mediaPlaybackRequiresUserGestureEnabled = true
+                console.log("Hurray you are using a QtWebkit version that supports experimental.preferences.mediaPlaybackRequiresUserGestureEnabled \\o/ Enabling it.")
+            }
+        }
 
         // Some speed improvement things that might work or not
 //        layer.enabled: true
