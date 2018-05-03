@@ -196,6 +196,7 @@ ApplicationWindow
             currentTab = pageid;
             currentTabBg = "";
         }
+        currentTabIndex = tabModel.getIndexFromId(currentTab)
     }
 
     function switchToTab(pageid) {

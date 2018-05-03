@@ -160,6 +160,7 @@ DISTFILES += \
     qml/pages/helper/browserComponents/ExtraToolbar.qml \
     translations/harbour-webcat-pl.ts \
     qml/pages/img/graphic-diagonal-line-texture.png \
-    qml/pages/helper/browserComponents/MediaDownloadRec.qml
+    qml/pages/helper/browserComponents/MediaDownloadRec.qml \
+    qml/pages/helper/ImageButton.qml
 
 include(src/sortFilterProxyModel/SortFilterProxyModel.pri)
