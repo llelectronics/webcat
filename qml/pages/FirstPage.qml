@@ -70,7 +70,7 @@ Page {
     property string ytStreamUrl;
     property bool ytUrlLoading;
     property bool readerMode: false
-    property bool nightMode: false
+//    property bool nightMode: false
     property bool searchMode: false
     property int toolbarheight: Theme.itemSizeSmall //Screen.height / 13
     property int extratoolbarheight: Theme.itemSizeSmall + (Theme.itemSizeSmall / 4)//Screen.height / 10
@@ -147,25 +147,36 @@ Page {
         }
     }
 
+    function enableNightMode() {
+        fPage.webview.experimental.userStyleSheets.push(Qt.resolvedUrl("helper/nightmode.css"));
+//        fPage.webview.experimental.evaluateJavaScript("!function(d){d.head.appendChild(d.createElement(\"style\")).innerText=\"html,img,video{-webkit-filter:invert(1)hue-rotate(180deg);filter:invert(1)hue-rotate(180deg)}body{backgroundColor:#000000}\"}(document);");
+    }
+
+    function disableNightMode() {
+        fPage.webview.experimental.userStyleSheets.pop();
+//        fPage.webview.experimental.evaluateJavaScript("!function(d){d.head.removeChild(d.head.lastChild)}(document);");
+    }
+
     function toggleReaderMode() {
         if (readerMode) {
-            toolbar.bookmarkButton.visible = false
-            webview.reload();
+            disableNightMode();
+//            toolbar.bookmarkButton.visible = false
+//            webview.reload();
         } else {
-            toolbar.bookmarkButton.visible = true
-            // FIXME: dirty hack to load js from local file
-            var xhr = new XMLHttpRequest;
-            xhr.open("GET", "./helper/readability.js");
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState == XMLHttpRequest.DONE) {
-                    var read = new Object({'type':'readability', 'content': xhr.responseText });
-                    webview.experimental.postMessage( JSON.stringify(read) );
-                }
-            }
-            xhr.send();
+            enableNightMode();
+//            toolbar.bookmarkButton.visible = true
+//            // FIXME: dirty hack to load js from local file
+//            var xhr = new XMLHttpRequest;
+//            xhr.open("GET", "./helper/readability.js");
+//            xhr.onreadystatechange = function() {
+//                if (xhr.readyState == XMLHttpRequest.DONE) {
+//                    var read = new Object({'type':'readability', 'content': xhr.responseText });
+//                    webview.experimental.postMessage( JSON.stringify(read) );
+//                }
+//            }
+//            xhr.send();
         }
         readerMode = !readerMode;
-
     }
 
     Item{
@@ -616,9 +627,9 @@ Page {
                 //console.debug("[firstPage.qml] Load Started")
                 urlLoading = true;
                 contextMenu.visible = false;
-                readerMode = false;
+//                readerMode = false;
                 searchMode = false;
-                nightMode = false;
+//                nightMode = false;
                 toolbar.webTitle.visible = false;
                 toolbar.bookmarkButton.visible = false;
             }

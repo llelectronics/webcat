@@ -161,6 +161,7 @@ DISTFILES += \
     translations/harbour-webcat-pl.ts \
     qml/pages/img/graphic-diagonal-line-texture.png \
     qml/pages/helper/browserComponents/MediaDownloadRec.qml \
-    qml/pages/helper/ImageButton.qml
+    qml/pages/helper/ImageButton.qml \
+    qml/pages/helper/nightmode.css
 
 include(src/sortFilterProxyModel/SortFilterProxyModel.pri)

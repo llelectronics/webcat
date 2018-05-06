@@ -62,8 +62,9 @@ Rectangle
             }
             PropertyChanges {
                 target: bookmarkButton
-                visible: fPage.readerMode ? true : false
-                enabled: true
+//                visible: fPage.readerMode ? true : false
+                visible: false
+                enabled: false
             }
             PropertyChanges {
                 target: webTitle
@@ -307,7 +308,7 @@ Rectangle
                         fPage.extraToolbar.hide()
                         pageStack.push(Qt.resolvedUrl("../../SelectUrl.qml"), { dataContainer: page, siteURL: fPage.webview.url, bookmarks: fPage.bookmarks, siteTitle: fPage.webview.title})
                 }
-                property int mx
+//                property int mx
                 property bool searchButton: false
                 onPressAndHold: {
                     if (fPage.extraToolbar.opacity == 0 || fPage.extraToolbar.visible == false) {
@@ -536,7 +537,8 @@ Rectangle
                     else {
                         backIcon.visible = fPage.webview.canGoBack
                         forIcon.visible = fPage.webview.canGoForward
-                        if (!fPage.readerMode) bookmarkButton.visible = false
+//                        if (!fPage.readerMode)
+                            bookmarkButton.visible = false
                         gotoButton.searchButton = false
                         text = simplifyUrl(url)
                         if (webTitle.text != "") {
@@ -606,7 +608,8 @@ Rectangle
                     }
                 }
                 anchors.right: {
-                    if (urlText.focus || fPage.readerMode) bookmarkButton.left
+//                    if (urlText.focus || fPage.readerMode) bookmarkButton.left
+                    if (urlText.focus) bookmarkButton.left
                     else parent.right
                 }
                 anchors.rightMargin: Theme.paddingMedium
@@ -623,8 +626,10 @@ Rectangle
                 id: bookmarkButton
                 property bool favorited: bookmarks.count > 0 && bookmarks.contains(fPage.webview.url)
                 icon.source: {
-                    if (fPage.readerMode) fPage.nightMode ? "image://theme/icon-camera-wb-sunny" : "image://theme/icon-camera-wb-tungsten"
-                    else favorited ? "image://theme/icon-m-favorite-selected" : "image://theme/icon-m-favorite"
+//                    if (fPage.readerMode)
+//                        fPage.nightMode ? "image://theme/icon-camera-wb-sunny" : "image://theme/icon-camera-wb-tungsten"
+//                    else
+                        favorited ? "image://theme/icon-m-favorite-selected" : "image://theme/icon-m-favorite"
                 }
                 anchors.right: parent.right
                 anchors.rightMargin: Theme.paddingSmall
@@ -634,21 +639,21 @@ Rectangle
                 icon.height: toolbar.height
                 icon.width: icon.height
                 onClicked: {
-                    if (fPage.readerMode) {
-                        if (!nightMode)
-                            fPage.webview.experimental.evaluateJavaScript("document.body.style.backgroundColor=\"#262626\"; document.body.style.color=\"#FFFFFF\"");
-                        else
-                            fPage.webview.experimental.evaluateJavaScript("document.body.style.backgroundColor=\"#f4f4f4\"; document.body.style.color=\"#000000\"");
+//                    if (fPage.readerMode) {
+//                        if (!nightMode)
+//                            fPage.webview.experimental.evaluateJavaScript("document.body.style.backgroundColor=\"#262626\"; document.body.style.color=\"#FFFFFF\"");
+//                        else
+//                            fPage.webview.experimental.evaluateJavaScript("document.body.style.backgroundColor=\"#f4f4f4\"; document.body.style.color=\"#000000\"");
 
-                        nightMode = !nightMode
-                    }
-                    else {
+//                        nightMode = !nightMode
+//                    }
+//                    else {
                         if (favorited) {
                             bookmarks.removeBookmark(fPage.webview.url.toString())
                         } else {
                             bookmarks.addBookmark(fPage.webview.url.toString(), fPage.webview.title, userAgent)
                         }
-                    }
+//                    }
                 }
                 onPressAndHold: {
                     favIconSaver.loadImage(webIcon.source)

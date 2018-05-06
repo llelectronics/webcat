@@ -93,6 +93,7 @@ Rectangle {
             else if (closeTabButton.highlighted) { fPage._ngfEffect.play(); return qsTr("Close Tab") }
             else if (orientationLockButton.highlighted) { fPage._ngfEffect.play(); return qsTr("Lock Orientation") }
             else if (readerModeButton.highlighted) { fPage._ngfEffect.play(); return qsTr("Reader Mode") }
+            else if (readerModeButton.highlighted) { fPage._ngfEffect.play(); return qsTr("Night Mode") }
             else if (searchModeButton.highlighted) { fPage._ngfEffect.play(); return qsTr("Search") }
             else if (shareButton.highlighted) { fPage._ngfEffect.play(); return qsTr("Share") }
             else if (extraToolbar.opacity == 1 && extraToolbar.quickmenu) { fPage._ngfEffect.play(); return qsTr("Close menu") }
@@ -207,7 +208,9 @@ Rectangle {
 
     IconButton {
         id: readerModeButton
-        icon.source: "image://theme/icon-m-message"
+//        icon.source: "image://theme/icon-m-message"
+        icon.source: fPage.readerMode ? "image://theme/icon-camera-wb-sunny" : "image://theme/icon-camera-wb-tungsten"
+
         anchors.left: orientationLockButton.right
         anchors.leftMargin: Theme.paddingMedium
         anchors.bottom: parent.bottom
