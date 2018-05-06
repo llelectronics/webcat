@@ -92,7 +92,7 @@ Rectangle {
             else if (newWindowButton.highlighted) { fPage._ngfEffect.play(); return qsTr("New Window") }
             else if (closeTabButton.highlighted) { fPage._ngfEffect.play(); return qsTr("Close Tab") }
             else if (orientationLockButton.highlighted) { fPage._ngfEffect.play(); return qsTr("Lock Orientation") }
-            else if (readerModeButton.highlighted) { fPage._ngfEffect.play(); return qsTr("Reader Mode") }
+//            else if (readerModeButton.highlighted) { fPage._ngfEffect.play(); return qsTr("Reader Mode") }
             else if (readerModeButton.highlighted) { fPage._ngfEffect.play(); return qsTr("Night Mode") }
             else if (searchModeButton.highlighted) { fPage._ngfEffect.play(); return qsTr("Search") }
             else if (shareButton.highlighted) { fPage._ngfEffect.play(); return qsTr("Share") }
