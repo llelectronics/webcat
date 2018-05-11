@@ -61,6 +61,8 @@ Dialog {
         DB.addSetting("vPlayerExternal", vPlayerExternalSwitch.checked.toString());
         if (actionGroupCombo.value == qsTr("New Tab | Stop/Refresh")) DB.addSetting("coverActionGroup", 0)
         if (actionGroupCombo.value == qsTr("Previous Tab | Next Tab")) DB.addSetting("coverActionGroup", 1)
+        if (toolbarSwipeActionCombo.value == qsTr("Switch Tabs")) DB.addSetting("toolbarSwipeAction", 0)
+        if (toolbarSwipeActionCombo.value == qsTr("Navigation")) DB.addSetting("toolbarSwipeAction", 1)
         DB.getSettings();
     }
 
@@ -323,6 +325,18 @@ Dialog {
                 }
                 anchors.horizontalCenter: parent.horizontalCenter
                 onClicked: mainWindow.addDefaultBookmarks()
+            }
+            ComboBox {
+                id: toolbarSwipeActionCombo
+                anchors.horizontalCenter: parent.horizontalCenter
+                label: qsTr("Default Toolbar Swipe Action")
+                currentIndex: {
+                    return mainWindow.toolbarSwipeAction
+                }
+                menu: ContextMenu {
+                    MenuItem { text: qsTr("Switch Tabs") }
+                    MenuItem { text: qsTr("Navigation") }
+                }
             }
             SectionHeader {
                 text: qsTr("Advanced")

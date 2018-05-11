@@ -190,7 +190,11 @@ function getSettings() {
             else if (rs.rows.item(i).setting == "orientation") mainWindow.orient = rs.rows.item(i).value
             else if (rs.rows.item(i).setting == "vPlayerExternal") mainWindow.vPlayerExternal = stringToBoolean(rs.rows.item(i).value)
             else if (rs.rows.item(i).setting == "coverActionGroup") mainWindow.coverActionGroup = parseInt(rs.rows.item(i).value)
+            else if (rs.rows.item(i).setting == "toolbarSwipeAction") mainWindow.toolbarSwipeAction = parseInt(rs.rows.item(i).value)
         }
+        // sanity check
+        if (mainWindow.toolbarSwipeAction > 1)
+            console.debug("Invalid value for mainWindow.toolbarSwipeAction : " + mainWindow.toolbarSwipeAction)
     })
 }
 

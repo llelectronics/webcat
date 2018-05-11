@@ -316,8 +316,10 @@ Page {
 
         onUrlChanged: {
             // There seems to be a bug where back and forward navigation is not shown even if webview.canGoBack or ~Forward
-            toolbar.backIcon.visible = true
-            toolbar.forIcon.visible = webview.canGoForward
+            toolbar.backIcon.visible = mainWindow.toolbarSwipeAction != 1 && webview.canGoBack
+            toolbar.forIcon.visible = mainWindow.toolbarSwipeAction != 1 && webview.canGoForward
+            toolbar.niLeftButton.visible = mainWindow.toolbarSwipeAction == 1 && webview.canGoBack
+            toolbar.niRightButton.visible = mainWindow.toolbarSwipeAction == 1 && webview.canGoForward
 //            if ((/^rtsp:/).test(url) || (/^rtmp:/).test(url) || (/^mms:/).test(url)) {
 //                if (mediaYt == true) {
 //                    mediaPlayBtn.clicked("");

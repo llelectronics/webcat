@@ -21,6 +21,8 @@ Rectangle
     property alias urlText: urlText
     property alias backIcon: backIcon
     property alias forIcon: forIcon
+    property alias niLeftButton: niLeftButton
+    property alias niRightButton: niRightButton
     property QtObject fPage: parent
 
     states: [
@@ -42,12 +44,12 @@ Rectangle
             }
             PropertyChanges {
                 target: backIcon
-                visible: fPage.webview.canGoBack
+                visible: mainWindow.toolbarSwipeAction != 1 && fPage.webview.canGoBack
                 enabled: true
             }
             PropertyChanges {
                 target: forIcon
-                visible: fPage.webview.canGoForward
+                visible: mainWindow.toolbarSwipeAction != 1 && fPage.webview.canGoForward
                 enabled: true
             }
             PropertyChanges {
@@ -64,7 +66,7 @@ Rectangle
                 target: bookmarkButton
 //                visible: fPage.readerMode ? true : false
                 visible: false
-                enabled: false
+                enabled: true
             }
             PropertyChanges {
                 target: webTitle
@@ -174,17 +176,17 @@ Rectangle
             if(!dragging)
                 return;
 
-            if(niPrevTab.visible && (contentX < (-niPrevTab.width + Theme.paddingSmall))) {
-                if(selectedItem !== niPrevTab)
+            if(niLeftButton.visible && (contentX < (-niLeftButton.width + Theme.paddingSmall))) {
+                if(selectedItem !== niLeftButton)
                     ngfeffect.play();
 
-                selectedItem = niPrevTab;
+                selectedItem = niLeftButton;
             }
-            else if(niNextTab.visible && ((contentX + width) > ((niNextTab.x + niNextTab.width) - Theme.paddingSmall))) {
-                if(selectedItem !== niNextTab)
+            else if(niRightButton.visible && ((contentX + width) > ((niRightButton.x + niRightButton.width) - Theme.paddingSmall))) {
+                if(selectedItem !== niRightButton)
                     ngfeffect.play();
 
-                selectedItem = niNextTab;
+                selectedItem = niRightButton;
             }
             else {
                 if(selectedItem)
@@ -198,26 +200,38 @@ Rectangle
             if(dragging || !webview)
                 return;
 
-            if(selectedItem === niPrevTab)
-                mainWindow.switchToTab(mainWindow.tabModel.get(mainWindow.currentTabIndex-1).pageid);
-            else if(selectedItem === niNextTab)
-                mainWindow.switchToTab(mainWindow.tabModel.get(mainWindow.currentTabIndex+1).pageid);
-
+            if(mainWindow.toolbarSwipeAction == 0) {
+                if(selectedItem === niLeftButton)
+                    mainWindow.switchToTab(mainWindow.tabModel.get(mainWindow.currentTabIndex-1).pageid);
+                else if(selectedItem === niRightButton)
+                    mainWindow.switchToTab(mainWindow.tabModel.get(mainWindow.currentTabIndex+1).pageid);
+            } else if(mainWindow.toolbarSwipeAction == 1) {
+                if(selectedItem === niLeftButton)
+                    fPage.webview.goBack();
+                else if(selectedItem === niRightButton)
+                    fPage.webview.goForward();
+            }
             selectedItem = null;
         }
 
         ImageButton
         {
-            id: niPrevTab
+            id: niLeftButton
             anchors { right: toolbar.left; top: parent.top; bottom: parent.bottom }
             visible:  {
-                if (! mainWindow.currentTabIndex < 1) true
-                else false
+                if(mainWindow.toolbarSwipeAction == 0) {
+                    if (! mainWindow.currentTabIndex < 1) true
+                    else false
+                } else if(mainWindow.toolbarSwipeAction == 1) fPage.webview.canGoBack
+
             }
 
             width: visible ? parent.height : 0
-            highlighted: content.selectedItem === niPrevTab
-            source: "image://theme/icon-cover-previous"
+            highlighted: content.selectedItem === niLeftButton
+            source: {
+                if(mainWindow.toolbarSwipeAction == 0) "image://theme/icon-m-left"
+                else if(mainWindow.toolbarSwipeAction == 1) "image://theme/icon-m-back"
+            }
         }
 
         Rectangle {
@@ -226,8 +240,7 @@ Rectangle
             height: parent.height
             property alias state: toolbarParent.state
             anchors.fill: parent
-
-            gradient: toolbarParent.gradient
+            color: "transparent"
 
             Image {
                 id: webIcon
@@ -417,7 +430,7 @@ Rectangle
                 height: fPage.toolbarheight / 1.5
                 width: height
                 enabled: fPage.webview.canGoBack
-                visible: fPage.webview.canGoBack
+                visible: mainWindow.toolbarSwipeAction != 1 && fPage.webview.canGoBack
                 anchors.left: gotoButton.right
                 anchors.leftMargin: Theme.paddingMedium
                 onClicked: {
@@ -435,7 +448,7 @@ Rectangle
                 height: fPage.toolbarheight / 1.5
                 width: height
                 enabled: fPage.webview.canGoForward
-                visible: fPage.webview.canGoForward
+                visible: mainWindow.toolbarSwipeAction != 1 && fPage.webview.canGoForward
                 anchors.left: backIcon.visible ? backIcon.right : gotoButton.right
                 anchors.leftMargin: Theme.paddingMedium
                 onClicked: {
@@ -671,15 +684,20 @@ Rectangle
 
         ImageButton
         {
-            id: niNextTab
+            id: niRightButton
             anchors { left: toolbar.right; top: parent.top; bottom: parent.bottom }
             visible: {
-                if (mainWindow.currentTabIndex < mainWindow.tabModel.count-1) true
-                else false
+                if(mainWindow.toolbarSwipeAction == 0) {
+                    if (mainWindow.currentTabIndex < mainWindow.tabModel.count-1) true
+                    else false
+                } else if(mainWindow.toolbarSwipeAction == 1) fPage.webview.canGoForward
             }
             width: visible ? parent.height : 0
-            highlighted: content.selectedItem === niNextTab
-            source: "image://theme/icon-cover-next"
+            highlighted: content.selectedItem === niRightButton
+            source: {
+                if(mainWindow.toolbarSwipeAction == 0) "image://theme/icon-m-right"
+                else if(mainWindow.toolbarSwipeAction == 1) "image://theme/icon-m-forward"
+            }
         }
     }
 }

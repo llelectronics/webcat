@@ -62,7 +62,7 @@ ApplicationWindow
 
 
     property bool urlLoading: false
-    property string version: "2.9.8"
+    property string version: "2.9.9"
     property string appname: "Webcat Browser"
     property string appicon: "qrc:/harbour-webcat.png"
     property string errorText: ""
@@ -80,6 +80,7 @@ ApplicationWindow
     property bool vPlayerExternal
     property alias infoBanner: infoBanner
     property int coverActionGroup: 0
+    property int toolbarSwipeAction: 0
 
     property var firstPage
     property TransferEngine transferEngine: TransferEngine { }
