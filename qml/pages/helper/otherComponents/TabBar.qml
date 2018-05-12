@@ -6,6 +6,18 @@ Item {
     id: root
 
     property QtObject dataContainer
+    property int optimalHeight: {
+        if (Theme.itemSizeExtraSmall + (tabModel.count * Theme.itemSizeSmall) < Screen.height / 2.25)
+            Theme.itemSizeExtraSmall + (tabModel.count * Theme.itemSizeSmall) + Theme.paddingMedium
+        else
+            parent.height / 2.25
+    }
+    property alias _tabListBg: tabListBg
+    property alias _tabListView: tabListView
+
+    signal tabClicked(int idx, var pageId);
+    signal newTabClicked();
+    signal newWindowClicked();
 
     Gradient {
         id: hightlight
@@ -18,6 +30,38 @@ Item {
         id: normalBg
         GradientStop { position: 0.0; color: "#262626" }
         GradientStop { position: 0.85; color: "#1F1F1F"}
+    }
+
+    SequentialAnimation {
+        id: showToolbar
+        ScriptAction { script : { tabListBg.visible = true } }
+        ParallelAnimation {
+            NumberAnimation { target: tabListBg; property: "opacity"; to: 1; duration: 400; easing.type: Easing.InOutQuad }
+            NumberAnimation { target: tabListBg; property: "height"; to: optimalHeight; duration: 300; easing.type: Easing.InOutQuad }
+        }
+    }
+
+    SequentialAnimation {
+        id: hideToolbar
+        ParallelAnimation {
+            NumberAnimation { target: tabListBg; property: "opacity"; to: 0; duration: 400; easing.type: Easing.InOutQuad }
+            NumberAnimation { target: tabListBg; property: "height"; to: 0; duration: 300; easing.type: Easing.InOutQuad }
+        }
+        ScriptAction { script : { tabListBg.visible = false } }
+    }
+
+    function hide() {
+        if (tabListBg.opacity == 1 || tabListBg.visible == true) {
+            hideToolbar.start();
+            tabListBg.enabled = false;
+        }
+    }
+
+    function show() {
+        if (tabListBg.opacity == 0 || tabListBg.visible == false) {
+            showToolbar.start();
+            tabListBg.enabled = true;
+        }
     }
 
     Component {
@@ -66,11 +110,7 @@ Item {
                 property int ymouse;
                 anchors { top: parent.top; left: parent.left; bottom: parent.bottom; right: parent.right; rightMargin: Theme.itemSizeMedium}
                 onClicked: {
-                    if (tabListView.currentIndex == index) { pageStack.pop() }
-                    else {
-                        tabListView.currentIndex = index;
-                        mainWindow.switchToTab(model.pageid);
-                    }
+                    root.tabClicked(index,model.pageid)
                 }
             }
         }
@@ -85,7 +125,10 @@ Item {
         width: parent.width
         height: parent.height
 
-
+        onVisibleChanged: {
+            tabListView.currentIndex = mainWindow.tabModel.getIndexFromId(mainWindow.currentTab);
+            mainWindow.currentTabIndex = tabListView.currentIndex
+        }
 
         Rectangle {
             id: tabHead
@@ -138,7 +181,7 @@ Item {
                 anchors.centerIn: newTabImg
                 onClicked: {
                     //console.debug("New Tab clicked")
-                    mainWindow.openNewTab("page-"+mainWindow.salt(), "about:blank", false);
+                    root.newTabClicked();
                 }
                 onPressAndHold: {
                     ymouse = mouse.y
@@ -182,7 +225,7 @@ Item {
                     source: "image://theme/icon-m-add"
                 }
                 onClicked: {
-                    mainWindow.openNewWindow("about:bookmarks");
+                    root.newWindowClicked();
                 }
             }
 

@@ -223,5 +223,18 @@ Page
         anchors.bottom: parent.bottom
         anchors.right: if (parent.orientation == Orientation.Landscape || parent.orientation == Orientation.LandscapeInverted) parent.right
         anchors.left: if (parent.orientation == Orientation.Portrait || parent.orientation == Orientation.PortraitInverted) parent.left
+        onTabClicked: {
+            if (_tabListView.currentIndex == idx) { pageStack.pop() }
+            else {
+                _tabListView.currentIndex = idx;
+                mainWindow.switchToTab(pageId);
+            }
+        }
+        onNewWindowClicked: {
+            mainWindow.openNewWindow("about:blank");
+        }
+        onNewTabClicked: {
+            mainWindow.openNewTab("page-"+mainWindow.salt(), "about:blank", false);
+        }
     }
 }
