@@ -628,7 +628,6 @@ Page {
                 contextMenu.visible = false;
                 readerMode = false;
                 searchMode = false;
-                nightMode = false;
                 toolbar.webTitle.visible = false;
                 toolbar.bookmarkButton.visible = false;
             }
