@@ -11,7 +11,7 @@ Rectangle {
     property QtObject fPage: parent
     property alias newTabButton: newTabButton
     property alias minimizeButton: minimizeButton
-    property alias newWindowButton: newWindowButton
+    property alias nightModeButton: nightModeButton
     property alias closeTabButton: closeTabButton
     property alias orientationLockButton: orientationLockButton
     property alias readerModeButton: readerModeButton
@@ -89,7 +89,7 @@ Rectangle {
         text: {
             if (minimizeButton.highlighted) { fPage._ngfEffect.play(); return qsTr("Minimize") }
             else if (newTabButton.highlighted) { fPage._ngfEffect.play(); return qsTr("New Tab") }
-            else if (newWindowButton.highlighted) { fPage._ngfEffect.play(); return qsTr("New Window") }
+            else if (nightModeButton.highlighted) { fPage._ngfEffect.play(); if (fPage.nightMode) return qsTr("Day Mode"); else return qsTr("Night Mode") }
             else if (closeTabButton.highlighted) { fPage._ngfEffect.play(); return qsTr("Close Tab") }
             else if (orientationLockButton.highlighted) { fPage._ngfEffect.play(); return qsTr("Lock Orientation") }
             else if (readerModeButton.highlighted) { fPage._ngfEffect.play(); return qsTr("Reader Mode") }
@@ -138,22 +138,22 @@ Rectangle {
     }
 
     IconButton {
-        id: newWindowButton
-        icon.source: "image://theme/icon-m-tab"
+        id: nightModeButton
+        icon.source: fPage.nightMode ? "image://theme/icon-camera-wb-sunny" : "image://theme/icon-camera-wb-tungsten"
         anchors.left: newTabButton.right
         anchors.leftMargin: Theme.paddingMedium
         anchors.bottom: parent.bottom
         anchors.bottomMargin: actionLbl.height / 2
         icon.height: height
         icon.width: icon.height
-        height: fPage.toolbarheight / 1.5
+        height: Theme.iconSizeMedium
         width: height
-        Image {
-            anchors.fill: parent
-            source: "image://theme/icon-m-add"
-        }
         onClicked: {
-            mainWindow.openNewWindow("about:bookmarks");
+            if (!nightMode)
+                fPage.enableNightMode()
+            else
+                fPage.disableNightMode()
+
             highlighted = false;
             extraToolbar.hide();
         }
@@ -163,7 +163,7 @@ Rectangle {
     IconButton {
         id: closeTabButton
         icon.source: "image://theme/icon-m-close"
-        anchors.left: newWindowButton.right
+        anchors.left: nightModeButton.right
         anchors.leftMargin: Theme.paddingMedium
         anchors.bottom: parent.bottom
         anchors.bottomMargin: actionLbl.height / 2

@@ -236,10 +236,6 @@ If you are unsure reject the certificate. That might lead to a non loading websi
         <translation>新标签页</translation>
     </message>
     <message>
-        <source>New Window</source>
-        <translation>新窗口</translation>
-    </message>
-    <message>
         <source>Close Tab</source>
         <translation type="unfinished"></translation>
     </message>
@@ -262,6 +258,14 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     <message>
         <source>Close menu</source>
         <translation>关闭菜单</translation>
+    </message>
+    <message>
+        <source>Night Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Day Mode</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

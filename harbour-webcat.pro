@@ -162,6 +162,7 @@ DISTFILES += \
     qml/pages/helper/browserComponents/MediaDownloadRec.qml \
     qml/pages/helper/browserComponents/TabBar.qml \
     qml/pages/helper/browserComponents/LinkContextMenu.qml \
-    qml/pages/helper/otherComponents/TabBar.qml
+    qml/pages/helper/otherComponents/TabBar.qml \
+    qml/pages/helper/nightmode.css
 
 include(src/sortFilterProxyModel/SortFilterProxyModel.pri)

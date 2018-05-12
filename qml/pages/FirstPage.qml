@@ -168,6 +168,16 @@ Page {
 
     }
 
+    function enableNightMode() {
+        fPage.webview.experimental.userStyleSheets.push(Qt.resolvedUrl("helper/nightmode.css"));
+        nightMode = true;
+    }
+
+    function disableNightMode() {
+        fPage.webview.experimental.userStyleSheets.pop();
+        nightMode = false;
+    }
+
     Item{
         id: popup
         anchors.centerIn: parent

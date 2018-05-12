@@ -239,10 +239,6 @@ Wenn Sie sich unsicher sind lehnen sie das Zertifikat ab. Dies führt unter Umst
         <translation>Neuer Reiter</translation>
     </message>
     <message>
-        <source>New Window</source>
-        <translation>Neues Fenster</translation>
-    </message>
-    <message>
         <source>Close Tab</source>
         <translation>Reiter schließen</translation>
     </message>
@@ -265,6 +261,14 @@ Wenn Sie sich unsicher sind lehnen sie das Zertifikat ab. Dies führt unter Umst
     <message>
         <source>Close menu</source>
         <translation>Menü schließen</translation>
+    </message>
+    <message>
+        <source>Night Mode</source>
+        <translation>Nacht Modus</translation>
+    </message>
+    <message>
+        <source>Day Mode</source>
+        <translation>Tag Modus</translation>
     </message>
 </context>
 <context>

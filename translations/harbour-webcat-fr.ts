@@ -238,10 +238,6 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
         <translation>Nouvel onglet</translation>
     </message>
     <message>
-        <source>New Window</source>
-        <translation>Nouvelle fenêtre</translation>
-    </message>
-    <message>
         <source>Close Tab</source>
         <translation>Fermer l&apos;onglet</translation>
     </message>
@@ -264,6 +260,14 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
     <message>
         <source>Close menu</source>
         <translation>Fermer le menu</translation>
+    </message>
+    <message>
+        <source>Night Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Day Mode</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

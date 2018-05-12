@@ -239,10 +239,6 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
         <translation>Ny flik</translation>
     </message>
     <message>
-        <source>New Window</source>
-        <translation>Nytt fönster</translation>
-    </message>
-    <message>
         <source>Close Tab</source>
         <translation>Stäng fliken</translation>
     </message>
@@ -265,6 +261,14 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
     <message>
         <source>Close menu</source>
         <translation>Stäng menyn</translation>
+    </message>
+    <message>
+        <source>Night Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Day Mode</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

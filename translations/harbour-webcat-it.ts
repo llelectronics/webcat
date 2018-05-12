@@ -239,10 +239,6 @@ Se non sei sicuro, rifiuta il certificato. Ma questo può impedire il caricament
         <translation>Nuova scheda</translation>
     </message>
     <message>
-        <source>New Window</source>
-        <translation>Nuova finestra</translation>
-    </message>
-    <message>
         <source>Close Tab</source>
         <translation>Chiudi scheda</translation>
     </message>
@@ -265,6 +261,14 @@ Se non sei sicuro, rifiuta il certificato. Ma questo può impedire il caricament
     <message>
         <source>Close menu</source>
         <translation>Chiudi menu</translation>
+    </message>
+    <message>
+        <source>Night Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Day Mode</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

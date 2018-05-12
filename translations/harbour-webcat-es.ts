@@ -239,10 +239,6 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
         <translation>Nueva pestaña</translation>
     </message>
     <message>
-        <source>New Window</source>
-        <translation>Nueva ventana</translation>
-    </message>
-    <message>
         <source>Close Tab</source>
         <translation>Cerrar pestaña</translation>
     </message>
@@ -265,6 +261,14 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     <message>
         <source>Close menu</source>
         <translation>Cerrar menú</translation>
+    </message>
+    <message>
+        <source>Night Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Day Mode</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

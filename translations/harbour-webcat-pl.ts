@@ -238,10 +238,6 @@ Jeśli nie jesteś pewien, powinieneś odrzucić certyfikat. Może to jednak uni
         <translation>Nowa Karta</translation>
     </message>
     <message>
-        <source>New Window</source>
-        <translation>Nowe okno</translation>
-    </message>
-    <message>
         <source>Close Tab</source>
         <translation>Zamknij kartę</translation>
     </message>
@@ -264,6 +260,14 @@ Jeśli nie jesteś pewien, powinieneś odrzucić certyfikat. Może to jednak uni
     <message>
         <source>Close menu</source>
         <translation>Zamknij menu</translation>
+    </message>
+    <message>
+        <source>Night Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Day Mode</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

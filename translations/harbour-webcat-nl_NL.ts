@@ -239,10 +239,6 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
         <translation>Nieuw tabblad</translation>
     </message>
     <message>
-        <source>New Window</source>
-        <translation>Nieuw scherm</translation>
-    </message>
-    <message>
         <source>Close Tab</source>
         <translation>Tabblad sluiten</translation>
     </message>
@@ -265,6 +261,14 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
     <message>
         <source>Close menu</source>
         <translation>Menu sluiten</translation>
+    </message>
+    <message>
+        <source>Night Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Day Mode</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

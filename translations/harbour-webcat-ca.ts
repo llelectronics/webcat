@@ -239,10 +239,6 @@ En cas de dubte, refuseu el certificat malgrat que això pot provocar que no es 
         <translation>Nova pestanya</translation>
     </message>
     <message>
-        <source>New Window</source>
-        <translation>Nova finestra</translation>
-    </message>
-    <message>
         <source>Close Tab</source>
         <translation type="unfinished"></translation>
     </message>
@@ -265,6 +261,14 @@ En cas de dubte, refuseu el certificat malgrat que això pot provocar que no es 
     <message>
         <source>Close menu</source>
         <translation>Tanca el menú</translation>
+    </message>
+    <message>
+        <source>Night Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Day Mode</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
