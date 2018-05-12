@@ -75,7 +75,6 @@ OTHER_FILES += qml/harbour-webcat.qml \
     qml/pages/helper/VideoPoster.qml \
     qml/pages/ScreenBlank.qml \
     qml/pages/helper/ContextMenu.qml \
-    qml/pages/helper/browserComponents/ContextMenu.qml \
     qml/pages/helper/videoPlayerComponents/FastGlow.qml \
     qml/pages/helper/videoPlayerComponents/GaussianDirectionalBlur.qml \
     qml/pages/helper/videoPlayerComponents/GaussianGlow.qml \
@@ -160,6 +159,9 @@ DISTFILES += \
     qml/pages/helper/browserComponents/ExtraToolbar.qml \
     translations/harbour-webcat-pl.ts \
     qml/pages/img/graphic-diagonal-line-texture.png \
-    qml/pages/helper/browserComponents/MediaDownloadRec.qml
+    qml/pages/helper/browserComponents/MediaDownloadRec.qml \
+    qml/pages/helper/browserComponents/TabBar.qml \
+    qml/pages/helper/browserComponents/LinkContextMenu.qml \
+    qml/pages/helper/otherComponents/TabBar.qml
 
 include(src/sortFilterProxyModel/SortFilterProxyModel.pri)

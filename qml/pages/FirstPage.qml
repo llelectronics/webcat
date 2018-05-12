@@ -1008,7 +1008,7 @@ Page {
     }
 
     // Long press contextmenu for link
-    ContextMenu {
+    LinkContextMenu {
         id: contextMenu
         visible: false
         anchors.bottom: toolbar.top
