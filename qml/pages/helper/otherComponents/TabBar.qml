@@ -167,24 +167,24 @@ Item {
                 }
             }
 // Maybe maybe not
-//            IconButton {
-//                id: newWindowButton
-//                icon.source: "image://theme/icon-m-tab"
-//                anchors.left: newTabImg.right
-//                anchors.leftMargin: Theme.paddingMedium
-//                anchors.verticalCenter: parent.verticalCenter
-//                icon.height: height
-//                icon.width: icon.height
-//                height: Theme.iconSizeSmall
-//                width: height
-//                Image {
-//                    anchors.fill: parent
-//                    source: "image://theme/icon-m-add"
-//                }
-//                onClicked: {
-//                    mainWindow.openNewWindow("about:bookmarks");
-//                }
-//            }
+            IconButton {
+                id: newWindowButton
+                icon.source: "image://theme/icon-m-tab"
+                anchors.left: newTabImg.right
+                anchors.leftMargin: Theme.paddingLarge
+                anchors.verticalCenter: parent.verticalCenter
+                icon.height: height
+                icon.width: icon.height
+                height: Theme.iconSizeSmall * 1.4
+                width: height
+                Image {
+                    anchors.fill: parent
+                    source: "image://theme/icon-m-add"
+                }
+                onClicked: {
+                    mainWindow.openNewWindow("about:bookmarks");
+                }
+            }
 
         }
 

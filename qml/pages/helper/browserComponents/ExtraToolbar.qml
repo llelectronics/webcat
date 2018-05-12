@@ -110,7 +110,7 @@ Rectangle {
         anchors.bottomMargin: actionLbl.height / 2
         icon.height: height
         icon.width: icon.height
-        height: fPage.toolbarheight / 1.5
+        height: fPage.toolbarheight / 1.6
         width: height
         onClicked: {
             if (fPage.toolbar.state == "expanded") fPage.toolbar.state = "minimized"
@@ -128,7 +128,7 @@ Rectangle {
         anchors.bottomMargin: actionLbl.height / 2
         icon.height: height
         icon.width: icon.height
-        height: fPage.toolbarheight / 1.5
+        height: fPage.toolbarheight / 1.6
         width: height
         onClicked: {
             mainWindow.loadInNewTab("about:bookmarks");
@@ -141,12 +141,12 @@ Rectangle {
         id: nightModeButton
         icon.source: fPage.nightMode ? "image://theme/icon-camera-wb-sunny" : "image://theme/icon-camera-wb-tungsten"
         anchors.left: newTabButton.right
-        anchors.leftMargin: Theme.paddingMedium
+        anchors.leftMargin: Theme.paddingSmall
         anchors.bottom: parent.bottom
         anchors.bottomMargin: actionLbl.height / 2
         icon.height: height
         icon.width: icon.height
-        height: Theme.iconSizeMedium
+        height: fPage.toolbarheight / 1.25
         width: height
         onClicked: {
             if (!nightMode)
@@ -164,7 +164,7 @@ Rectangle {
         id: closeTabButton
         icon.source: "image://theme/icon-m-close"
         anchors.left: nightModeButton.right
-        anchors.leftMargin: Theme.paddingMedium
+        anchors.leftMargin: Theme.paddingSmall
         anchors.bottom: parent.bottom
         anchors.bottomMargin: actionLbl.height / 2
         icon.height: extraToolbar.height - (extraToolbar.height / 3)
