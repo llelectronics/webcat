@@ -69,6 +69,7 @@ ApplicationWindow
     cover: undefined
     property string currentTab: ""
     property string currentTabBg: ""
+    property string prevTab: ""
     property bool hasTabOpen: (tabModel.count !== 0)
     property alias tabView: tabView
     property alias tabModel: tabModel
@@ -156,12 +157,12 @@ ApplicationWindow
     }
 
     function addDefaultBookmarks() {
-        modelUrls.addBookmark("http://together.jolla.com/", "Jolla Together", userAgent);
-        modelUrls.addBookmark("http://talk.maemo.org/","Maemo forum", userAgent);
+        modelUrls.addBookmark("https://together.jolla.com/", "Jolla Together", userAgent);
+        modelUrls.addBookmark("https://talk.maemo.org/","Maemo forum", userAgent);
         modelUrls.addBookmark("http://jollausers.com/","Jolla users", userAgent);
-        modelUrls.addBookmark("http://forum.jollausers.com/","Jolla users forum", userAgent);
+        modelUrls.addBookmark("https://forum.jollausers.com/","Jolla users forum", userAgent);
         modelUrls.addBookmark("http://jollatides.com/", "Jolla Tides", userAgent);
-        modelUrls.addBookmark("http://reviewjolla.blogspot.se/", "Review Jolla", userAgent);
+        modelUrls.addBookmark("https://reviewjolla.blogspot.se/", "Review Jolla", userAgent);
     }
 
     function loadInitialTab() {
@@ -186,6 +187,7 @@ ApplicationWindow
             if (!inBackground) {
                 pageStack.clear();
                 pageStack.push(Tab.itemMap[pageid], {bookmarks: modelUrls, tabModel: tabModel, pageId: pageid, loadHP: false});
+                prevTab = currentTab;
                 currentTab = pageid;
                 currentTabBg = "";
             }
@@ -193,6 +195,7 @@ ApplicationWindow
             //console.debug("First Tab loading with Pageid: " + pageid)
             tabModel.set(0, { "title": "Loading..", "url": url, "pageid": pageid } );
             pageStack.push(Tab.itemMap[pageid], {bookmarks: modelUrls, tabModel: tabModel, pageId: pageid, loadHP: true})
+            prevTab = currentTab;
             currentTab = pageid;
             currentTabBg = "";
         }
@@ -200,6 +203,7 @@ ApplicationWindow
 
     function switchToTab(pageid) {
         //console.log("switchToTab: "+ pageid + " , from: " + currentTab); //+ ' , at ' + tabListView.currentIndex);
+        prevTab = currentTab
         pageStack.replaceAbove(null, Tab.itemMap[pageid],{bookmarks: modelUrls, tabModel: tabModel, pageId: pageid}); // Nice 'null' trick for replaceAbove thanks to jpnurmi from irc for pointing that out
         currentTab = pageid;
         currentTabIndex = tabModel.getIndexFromId(currentTab)
