@@ -110,7 +110,7 @@ Rectangle {
         anchors.bottomMargin: actionLbl.height / 2
         icon.height: height
         icon.width: icon.height
-        height: fPage.toolbarheight / 1.6
+        height: fPage.toolbarheight / 1.525
         width: height
         onClicked: {
             if (fPage.toolbar.state == "expanded") fPage.toolbar.state = "minimized"
@@ -128,7 +128,7 @@ Rectangle {
         anchors.bottomMargin: actionLbl.height / 2
         icon.height: height
         icon.width: icon.height
-        height: fPage.toolbarheight / 1.6
+        height: fPage.toolbarheight / 1.525
         width: height
         onClicked: {
             mainWindow.loadInNewTab("about:bookmarks");
