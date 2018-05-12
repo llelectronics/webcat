@@ -16,10 +16,10 @@ function initialize() {
                 function(tx,er) {
                     // Create the bookmarks table if it doesn't already exist
                     // If the table exists, this is skipped
+                    var table = tx.executeSql("SELECT name FROM sqlite_master WHERE name='bookmarks';");
                     tx.executeSql('CREATE TABLE IF NOT EXISTS bookmarks(title TEXT, url TEXT, agent TEXT)');
-                    var table  = tx.executeSql("SELECT * FROM bookmarks");
-                    // Insert default bookmarks if no bookmarks are set / empty bookmarks db
-                    if (table.rows.length === 0) {
+                    // Insert default bookmarks if bookmarks table not available on created on first start
+                    if (!table.rows.length > 0) {
                         tx.executeSql('INSERT INTO bookmarks VALUES (?,?,?);', ["Jolla Together", "http://together.jolla.com/", defaultAgent]);
                         tx.executeSql('INSERT INTO bookmarks VALUES (?,?,?);', ["Maemo forum", "http://talk.maemo.org/", defaultAgent]);
                         tx.executeSql('INSERT INTO bookmarks VALUES (?,?,?);', ["Jolla users", "http://jollausers.com/", defaultAgent]);
