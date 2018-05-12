@@ -34,20 +34,27 @@ import QtWebKit 3.0
 import "helper/db.js" as DB
 import "helper/yt.js" as YT
 import "helper/browserComponents"
+import "helper/otherComponents"
 
 Page {
     id: page
     allowedOrientations: mainWindow.orient
 
-    // minimize toolbar when switching to landscape
+    // minimize toolbar when switching to landscape & trigger hide and show tabBar and bookmarkList
     onOrientationChanged: {
         if (orientation == Orientation.Landscape && toolbar.state == "expanded") toolbar.state = "minimized"
         else if (orientation == Orientation.Portrait && toolbar.state == "minimized") toolbar.state = "expanded"
+        // Trigger hide and show to workaround visual glitches
+        if (tabBar.visible && bookmarkList.visible) {
+            delayShowBT.start();
+        }
     }
 
     property alias url: webview.url
     property alias toolbar: toolbar
     property alias extraToolbar: extraToolbar
+    property alias tabBar: tabBar
+    property alias bookmarkList: bookmarkList
     property string agent: userAgent
 
     property ListModel bookmarks
@@ -655,7 +662,7 @@ Page {
             else
             {
                 urlLoading = false;
-                if (url == "about:bookmarks" && loadHP === true) pageStack.push(Qt.resolvedUrl("SelectUrl.qml"), { dataContainer: page, siteURL: webview.url, bookmarks: page.bookmarks, siteTitle: webview.title})
+                if (url == "about:bookmarks" && loadHP === true) { bookmarkList.show(); tabBar.show() }
                 else if (url == "about:") pageStack.push(Qt.resolvedUrl("AboutPage.qml"));
                 else if (url == "about:config") pageStack.push(Qt.resolvedUrl("SettingsPage.qml"));
                 else if (url == "about:file") pageStack.push(Qt.resolvedUrl("OpenDialog.qml"), { dataContainer: webview });
@@ -823,6 +830,46 @@ Page {
         onDownScrolling: if (toolbar.state === "expanded") toolbar.state = "minimized"
     }
 
+    BookmarkList {
+        id: bookmarkList
+        y: -height
+        x: 0
+        z: mediaDownloadRec.z + 1
+        visible: false
+        opacity: 0
+        color: "black"
+        anchors.left: parent.left
+        anchors.bottom: {
+            if (parent.orientation == Orientation.Landscape || parent.orientation == Orientation.LandscapeInverted) toolbar.top
+            else tabBar.top
+        }
+
+        width: {
+            if (parent.orientation == Orientation.Landscape || parent.orientation == Orientation.LandscapeInverted) parent.width / 2
+            else parent.width
+        }
+        height: {
+            if (parent.orientation == Orientation.Landscape || parent.orientation == Orientation.LandscapeInverted) parent.height - toolbar.height
+            else parent.height - (tabBar.height + toolbar.height)  //- entryURL.height - 2*65 //- bottomBar.height
+        }
+        bookmarks: bookmarks
+        onBookmarkClicked: {
+            siteURL = url;
+            parent.url = siteURL;
+            parent.agent = agent;
+            hide();
+            if (tabBar.visible) tabBar.hide();
+        }
+        onOpenClicked: {
+            delayShowBT.start();
+        }
+    }
+
+    Timer {
+        id: delayShowBT
+        interval: 400; running: false; repeat: false
+        onTriggered: { bookmarkList.quickReShow(); tabBar.quickReShow(); }
+    }
 
     Toolbar {
         id: toolbar
@@ -850,6 +897,62 @@ Page {
     // Extra Toolbar
     ExtraToolbar {
         id: extraToolbar
+    }
+
+    // TabBar
+    TabBar {
+        id: tabBar
+        z: bookmarkList.z + 1
+        height: {
+            if (parent.orientation == Orientation.Landscape || parent.orientation == Orientation.LandscapeInverted) {
+                parent.height
+            }
+            else {
+                if (Theme.itemSizeExtraSmall + (tabModel.count * Theme.itemSizeSmall) < Screen.height / 2.25)
+                    Theme.itemSizeExtraSmall + (tabModel.count * Theme.itemSizeSmall) + Theme.paddingMedium
+                else
+                    parent.height / 2.25
+            }
+        }
+        width: {
+            if (parent.orientation == Orientation.Landscape || parent.orientation == Orientation.LandscapeInverted) parent.width / 2
+            else parent.width
+        }
+
+        anchors.bottom: toolbar.top
+        anchors.left: {
+            if (parent.orientation == Orientation.Portrait || parent.orientation == Orientation.PortraitInverted) parent.left
+            else bookmarkList.right
+        }
+
+
+        dataContainer: page
+        _tabListBg.visible: false
+        _tabListBg.opacity: 0
+        _tabListBg.height: 0
+
+        onTabClicked: {
+            if (_tabListView.currentIndex != idx) {
+                mainWindow.switchToTab(pageId);
+                _tabListView.currentIndex = idx;
+            }
+            hide();
+            if (bookmarkList.visible) bookmarkList.hide();
+        }
+        onNewWindowClicked: {
+            mainWindow.openNewWindow("about:blank");
+            hide();
+            if (bookmarkList.visible) bookmarkList.hide();
+        }
+        onNewTabClicked: {
+            mainWindow.openNewTab("page-"+mainWindow.salt(), "about:blank", false);
+            hide();
+            if (bookmarkList.visible) bookmarkList.hide();
+        }
+        onMenuClosed: {
+            hide();
+            if (bookmarkList.visible) bookmarkList.hide();
+        }
     }
 
     TabList {

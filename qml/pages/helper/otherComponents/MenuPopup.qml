@@ -10,6 +10,8 @@ Item {
     property Item _contextMenu
     property QtObject dataContainer
 
+    signal menuClosed;
+
     function show()
     {
         if (!_contextMenu)
@@ -55,6 +57,7 @@ Item {
                    pageStack.push(Qt.resolvedUrl("../../DownloadManager.qml"));
 
                 }
+                menuClosed();
                 _selectedMenu = "";
             }
 

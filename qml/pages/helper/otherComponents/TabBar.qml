@@ -7,17 +7,29 @@ Item {
 
     property QtObject dataContainer
     property int optimalHeight: {
-        if (Theme.itemSizeExtraSmall + (tabModel.count * Theme.itemSizeSmall) < Screen.height / 2.25)
-            Theme.itemSizeExtraSmall + (tabModel.count * Theme.itemSizeSmall) + Theme.paddingMedium
-        else
-            parent.height / 2.25
+        if (parent.orientation == Orientation.Landscape || parent.orientation == Orientation.LandscapeInverted) {
+            parent.height
+        }
+        else {
+            if (Theme.itemSizeExtraSmall + (tabModel.count * Theme.itemSizeSmall) < Screen.height / 2.25)
+                Theme.itemSizeExtraSmall + (tabModel.count * Theme.itemSizeSmall) + Theme.paddingMedium
+            else
+                parent.height / 2.25
+        }
     }
     property alias _tabListBg: tabListBg
     property alias _tabListView: tabListView
+    property alias _tabHead: tabHead
 
     signal tabClicked(int idx, var pageId);
     signal newTabClicked();
     signal newWindowClicked();
+    signal menuClosed();
+
+    function refreshTabs() {
+        tabListView.currentIndex = mainWindow.tabModel.getIndexFromId(mainWindow.currentTab);
+        mainWindow.currentTabIndex = tabListView.currentIndex
+    }
 
     Gradient {
         id: hightlight
@@ -61,7 +73,18 @@ Item {
         if (tabListBg.opacity == 0 || tabListBg.visible == false) {
             showToolbar.start();
             tabListBg.enabled = true;
+            refreshTabs();
         }
+    }
+
+    function quickReShow() {
+        tabListBg.visible = false
+        tabListBg.opacity = 0
+        tabListBg.height = 0
+        tabListBg.visible = true
+        tabListBg.opacity = 1
+        tabListBg.height = optimalHeight
+        refreshTabs();
     }
 
     Component {
@@ -124,11 +147,6 @@ Item {
         anchors.right: parent.right
         width: parent.width
         height: parent.height
-
-        onVisibleChanged: {
-            tabListView.currentIndex = mainWindow.tabModel.getIndexFromId(mainWindow.currentTab);
-            mainWindow.currentTabIndex = tabListView.currentIndex
-        }
 
         Rectangle {
             id: tabHead
@@ -337,6 +355,7 @@ Item {
             else tabHead.y - Theme.itemSizeMedium * 3.25
         }
         dataContainer: root.dataContainer
+        onMenuClosed: root.menuClosed()
     }
 
 }

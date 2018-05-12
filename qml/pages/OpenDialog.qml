@@ -39,7 +39,7 @@ Page {
             }
             else if ((mimeinfo[1] === "html" || mimeinfo[0] === "image")  && dataContainer) {  // TODO: Check if this works for image files aswell
                 dataContainer.url = path; // WTF this seems to work :P
-                pageStack.pop(dataContainer.parent, PageStackAction.Animated);
+                pageStack.pop(dataContainer, PageStackAction.Animated);
             } else {
                 mainWindow.infoBanner.parent = page
                 mainWindow.infoBanner.anchors.top = page.top
@@ -248,7 +248,7 @@ Page {
                         if (!selectMode) openFile(filePath)
                         else {
                             fileOpen(filePath);
-                            pageStack.pop(dataContainer.parent);
+                            pageStack.pop(dataContainer);
                         }
                     }
                 }

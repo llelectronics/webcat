@@ -216,11 +216,20 @@ Rectangle {
 
         onClicked: {
                 fPage.extraToolbar.hide()
-                pageStack.push(Qt.resolvedUrl("../../SelectUrl.qml"), { dataContainer: page, siteURL: fPage.webview.url, bookmarks: fPage.bookmarks, siteTitle: fPage.webview.title})
+                //pageStack.push(Qt.resolvedUrl("../../SelectUrl.qml"), { dataContainer: page, siteURL: fPage.webview.url, bookmarks: fPage.bookmarks, siteTitle: fPage.webview.title})
+                if (!fPage.tabBar._tabListBg.visible) { fPage.tabBar.show(); fPage.bookmarkList.show() }
+                else { fPage.tabBar.hide(); fPage.bookmarkList.hide() }
         }
+        onDoubleClicked: {
+            fPage.extraToolbar.hide()
+            if (tabBar.visible && bookmarkList.visible) { tabBar.hide(); bookmarkList.hide() }
+            if (prevTab != currentTab) mainWindow.switchToTab(prevTab);
+        }
+
         property int mx
         property bool searchButton: false
         onPressAndHold: {
+            if (tabBar.visible && bookmarkList.visible) { tabBar.hide(); bookmarkList.hide() }
             if (fPage.extraToolbar.opacity == 0 || fPage.extraToolbar.visible == false) {
                 fPage.extraToolbar.quickmenu = true
                 fPage.extraToolbar.show()
@@ -510,6 +519,7 @@ Rectangle {
             else if (icon.source == "image://theme/icon-m-refresh") fPage.webview.reload()
             else if (fPage.extraToolbar.opacity == 0 || fPage.extraToolbar.visible == false) {
                 fPage.extraToolbar.quickmenu = false
+                if (tabBar.visible && bookmarkList.visible) { tabBar.hide(); bookmarkList.hide() }
                 fPage.extraToolbar.show()
             }
             else if (fPage.extraToolbar.opacity == 1 || fPage.extraToolbar.visible == true) {
