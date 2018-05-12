@@ -553,28 +553,8 @@ Wenn Sie sich unsicher sind lehnen sie das Zertifikat ab. Dies führt unter Umst
         <translation>Verlauf</translation>
     </message>
     <message>
-        <source>Swipe up to open new window</source>
-        <translation>Nach oben wischen für neues Fenster</translation>
-    </message>
-    <message>
-        <source>Swipe up to open private window</source>
-        <translation>Nach oben wischen für privates Fenster</translation>
-    </message>
-    <message>
-        <source>Swipe up to close tab</source>
-        <translation>Nach oben wischen schließt Reiter</translation>
-    </message>
-    <message>
-        <source>Loading..</source>
-        <translation>Lade..</translation>
-    </message>
-    <message>
         <source>Split WebView</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Tabs</source>
-        <translation>Reiter</translation>
     </message>
 </context>
 <context>
@@ -748,6 +728,29 @@ Wenn Sie sich unsicher sind lehnen sie das Zertifikat ab. Dies führt unter Umst
     <message>
         <source>Share</source>
         <translation>Teile</translation>
+    </message>
+</context>
+<context>
+    <name>TabBar</name>
+    <message>
+        <source>Loading..</source>
+        <translation>Lade..</translation>
+    </message>
+    <message>
+        <source>Tabs</source>
+        <translation>Reiter</translation>
+    </message>
+    <message>
+        <source>Swipe up to open new window</source>
+        <translation>Nach oben wischen für neues Fenster</translation>
+    </message>
+    <message>
+        <source>Swipe up to open private window</source>
+        <translation>Nach oben wischen für privates Fenster</translation>
+    </message>
+    <message>
+        <source>Swipe up to close tab</source>
+        <translation>Nach oben wischen schließt Reiter</translation>
     </message>
 </context>
 <context>

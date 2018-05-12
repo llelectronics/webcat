@@ -553,28 +553,8 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
         <translation>Historique</translation>
     </message>
     <message>
-        <source>Swipe up to open new window</source>
-        <translation>Balayer vers le haut pour ouvrir une nouvelle fenêtre</translation>
-    </message>
-    <message>
-        <source>Swipe up to open private window</source>
-        <translation>Balayer vers le haut pour ouvrir une fenêtre privée</translation>
-    </message>
-    <message>
-        <source>Swipe up to close tab</source>
-        <translation>Balayer vers le haut pour fermer l&apos;onglet</translation>
-    </message>
-    <message>
-        <source>Loading..</source>
-        <translation>Chargement ...</translation>
-    </message>
-    <message>
         <source>Split WebView</source>
         <translation>Vue Web partagée</translation>
-    </message>
-    <message>
-        <source>Tabs</source>
-        <translation>Onglets</translation>
     </message>
 </context>
 <context>
@@ -748,6 +728,29 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
     <message>
         <source>Share</source>
         <translation>Partager</translation>
+    </message>
+</context>
+<context>
+    <name>TabBar</name>
+    <message>
+        <source>Loading..</source>
+        <translation>Chargement ...</translation>
+    </message>
+    <message>
+        <source>Tabs</source>
+        <translation>Onglets</translation>
+    </message>
+    <message>
+        <source>Swipe up to open new window</source>
+        <translation>Balayer vers le haut pour ouvrir une nouvelle fenêtre</translation>
+    </message>
+    <message>
+        <source>Swipe up to open private window</source>
+        <translation>Balayer vers le haut pour ouvrir une fenêtre privée</translation>
+    </message>
+    <message>
+        <source>Swipe up to close tab</source>
+        <translation>Balayer vers le haut pour fermer l&apos;onglet</translation>
     </message>
 </context>
 <context>

@@ -554,28 +554,8 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
         <translation>Historial</translation>
     </message>
     <message>
-        <source>Swipe up to open new window</source>
-        <translation>Deslizar hacia arriba para abrir nueva ventana</translation>
-    </message>
-    <message>
-        <source>Swipe up to open private window</source>
-        <translation>Deslizar hacia arriba para abrir ventana privada</translation>
-    </message>
-    <message>
-        <source>Swipe up to close tab</source>
-        <translation>Deslizar hacia arriba para cerrar pestaña</translation>
-    </message>
-    <message>
-        <source>Loading..</source>
-        <translation>Cargando..</translation>
-    </message>
-    <message>
         <source>Split WebView</source>
         <translation>Visor Web dividido</translation>
-    </message>
-    <message>
-        <source>Tabs</source>
-        <translation>Pestañas</translation>
     </message>
 </context>
 <context>
@@ -749,6 +729,29 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     <message>
         <source>Share</source>
         <translation>Compartir</translation>
+    </message>
+</context>
+<context>
+    <name>TabBar</name>
+    <message>
+        <source>Loading..</source>
+        <translation>Cargando..</translation>
+    </message>
+    <message>
+        <source>Tabs</source>
+        <translation>Pestañas</translation>
+    </message>
+    <message>
+        <source>Swipe up to open new window</source>
+        <translation>Deslizar hacia arriba para abrir nueva ventana</translation>
+    </message>
+    <message>
+        <source>Swipe up to open private window</source>
+        <translation>Deslizar hacia arriba para abrir ventana privada</translation>
+    </message>
+    <message>
+        <source>Swipe up to close tab</source>
+        <translation>Deslizar hacia arriba para cerrar pestaña</translation>
     </message>
 </context>
 <context>

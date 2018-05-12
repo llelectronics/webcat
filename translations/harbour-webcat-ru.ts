@@ -553,28 +553,8 @@ If you are unsure reject the certificate. That might lead to a non loading websi
         <translation>История</translation>
     </message>
     <message>
-        <source>Swipe up to open new window</source>
-        <translation>Свайп вверх, что бы открыть новое окно</translation>
-    </message>
-    <message>
-        <source>Swipe up to open private window</source>
-        <translation>Свайп вверх, что бы открыть приватное окно</translation>
-    </message>
-    <message>
-        <source>Swipe up to close tab</source>
-        <translation>Свайп вверх, что бы закрыть вкладку</translation>
-    </message>
-    <message>
-        <source>Loading..</source>
-        <translation>Загрузка...</translation>
-    </message>
-    <message>
         <source>Split WebView</source>
         <translation> Split-View</translation>
-    </message>
-    <message>
-        <source>Tabs</source>
-        <translation>Вкладки</translation>
     </message>
 </context>
 <context>
@@ -748,6 +728,29 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     <message>
         <source>Share</source>
         <translation>Поделиться</translation>
+    </message>
+</context>
+<context>
+    <name>TabBar</name>
+    <message>
+        <source>Loading..</source>
+        <translation>Загрузка...</translation>
+    </message>
+    <message>
+        <source>Tabs</source>
+        <translation>Вкладки</translation>
+    </message>
+    <message>
+        <source>Swipe up to open new window</source>
+        <translation>Свайп вверх, что бы открыть новое окно</translation>
+    </message>
+    <message>
+        <source>Swipe up to open private window</source>
+        <translation>Свайп вверх, что бы открыть приватное окно</translation>
+    </message>
+    <message>
+        <source>Swipe up to close tab</source>
+        <translation>Свайп вверх, что бы закрыть вкладку</translation>
     </message>
 </context>
 <context>

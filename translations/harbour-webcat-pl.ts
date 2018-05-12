@@ -553,28 +553,8 @@ Jeśli nie jesteś pewien, powinieneś odrzucić certyfikat. Może to jednak uni
         <translation>Historia</translation>
     </message>
     <message>
-        <source>Swipe up to open new window</source>
-        <translation>Przysuń w górę aby otworzyć nowe okno</translation>
-    </message>
-    <message>
-        <source>Swipe up to open private window</source>
-        <translation>Przysuń w górę aby otworzyć nowe prywatne okno</translation>
-    </message>
-    <message>
-        <source>Swipe up to close tab</source>
-        <translation>Przesuń w górę aby zamknąć kartę</translation>
-    </message>
-    <message>
-        <source>Loading..</source>
-        <translation>Ładowanie...</translation>
-    </message>
-    <message>
         <source>Split WebView</source>
         <translation>Podziel WebView</translation>
-    </message>
-    <message>
-        <source>Tabs</source>
-        <translation>Karty</translation>
     </message>
 </context>
 <context>
@@ -748,6 +728,29 @@ Jeśli nie jesteś pewien, powinieneś odrzucić certyfikat. Może to jednak uni
     <message>
         <source>Share</source>
         <translation>Udostepnij</translation>
+    </message>
+</context>
+<context>
+    <name>TabBar</name>
+    <message>
+        <source>Loading..</source>
+        <translation>Ładowanie...</translation>
+    </message>
+    <message>
+        <source>Tabs</source>
+        <translation>Karty</translation>
+    </message>
+    <message>
+        <source>Swipe up to open new window</source>
+        <translation>Przysuń w górę aby otworzyć nowe okno</translation>
+    </message>
+    <message>
+        <source>Swipe up to open private window</source>
+        <translation>Przysuń w górę aby otworzyć nowe prywatne okno</translation>
+    </message>
+    <message>
+        <source>Swipe up to close tab</source>
+        <translation>Przesuń w górę aby zamknąć kartę</translation>
     </message>
 </context>
 <context>

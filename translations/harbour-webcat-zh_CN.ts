@@ -550,27 +550,7 @@ If you are unsure reject the certificate. That might lead to a non loading websi
         <translation>浏览历史</translation>
     </message>
     <message>
-        <source>Swipe up to open new window</source>
-        <translation>向上轻扫打开新窗口</translation>
-    </message>
-    <message>
-        <source>Swipe up to open private window</source>
-        <translation>向上轻扫打开新隐私窗口</translation>
-    </message>
-    <message>
-        <source>Swipe up to close tab</source>
-        <translation>向上轻扫关闭标签页</translation>
-    </message>
-    <message>
-        <source>Loading..</source>
-        <translation>加载中…</translation>
-    </message>
-    <message>
         <source>Split WebView</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Tabs</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -745,6 +725,29 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     <message>
         <source>Share</source>
         <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>TabBar</name>
+    <message>
+        <source>Loading..</source>
+        <translation>加载中…</translation>
+    </message>
+    <message>
+        <source>Tabs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Swipe up to open new window</source>
+        <translation>向上轻扫打开新窗口</translation>
+    </message>
+    <message>
+        <source>Swipe up to open private window</source>
+        <translation>向上轻扫打开新隐私窗口</translation>
+    </message>
+    <message>
+        <source>Swipe up to close tab</source>
+        <translation>向上轻扫关闭标签页</translation>
     </message>
 </context>
 <context>

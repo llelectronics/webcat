@@ -554,28 +554,8 @@ En cas de dubte, refuseu el certificat malgrat que això pot provocar que no es 
         <translation>Historial</translation>
     </message>
     <message>
-        <source>Swipe up to open new window</source>
-        <translation>Feu lliscar cap amunt per obrir una finestra nova</translation>
-    </message>
-    <message>
-        <source>Swipe up to open private window</source>
-        <translation>Feu lliscar cap amunt per obrir una finestra privada</translation>
-    </message>
-    <message>
-        <source>Swipe up to close tab</source>
-        <translation>Feu lliscar cap amunt per tancar la pestanya</translation>
-    </message>
-    <message>
-        <source>Loading..</source>
-        <translation>S&apos;està carregant...</translation>
-    </message>
-    <message>
         <source>Split WebView</source>
         <translation>Divideix  WebView</translation>
-    </message>
-    <message>
-        <source>Tabs</source>
-        <translation>Pestanyes</translation>
     </message>
 </context>
 <context>
@@ -749,6 +729,29 @@ En cas de dubte, refuseu el certificat malgrat que això pot provocar que no es 
     <message>
         <source>Share</source>
         <translation>Comparteix</translation>
+    </message>
+</context>
+<context>
+    <name>TabBar</name>
+    <message>
+        <source>Loading..</source>
+        <translation>S&apos;està carregant...</translation>
+    </message>
+    <message>
+        <source>Tabs</source>
+        <translation>Pestanyes</translation>
+    </message>
+    <message>
+        <source>Swipe up to open new window</source>
+        <translation>Feu lliscar cap amunt per obrir una finestra nova</translation>
+    </message>
+    <message>
+        <source>Swipe up to open private window</source>
+        <translation>Feu lliscar cap amunt per obrir una finestra privada</translation>
+    </message>
+    <message>
+        <source>Swipe up to close tab</source>
+        <translation>Feu lliscar cap amunt per tancar la pestanya</translation>
     </message>
 </context>
 <context>

@@ -554,28 +554,8 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
         <translation>Geschiedenis</translation>
     </message>
     <message>
-        <source>Swipe up to open new window</source>
-        <translation>Veeg omhoog om nieuw venster te openen</translation>
-    </message>
-    <message>
-        <source>Swipe up to open private window</source>
-        <translation>Veeg omhoog om privévenster te openen</translation>
-    </message>
-    <message>
-        <source>Swipe up to close tab</source>
-        <translation>Veeg omhoog om tabblad te sluiten</translation>
-    </message>
-    <message>
-        <source>Loading..</source>
-        <translation>Laden..</translation>
-    </message>
-    <message>
         <source>Split WebView</source>
         <translation>Gesplitste WebView</translation>
-    </message>
-    <message>
-        <source>Tabs</source>
-        <translation>Tabbladen</translation>
     </message>
 </context>
 <context>
@@ -749,6 +729,29 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
     <message>
         <source>Share</source>
         <translation>Delen</translation>
+    </message>
+</context>
+<context>
+    <name>TabBar</name>
+    <message>
+        <source>Loading..</source>
+        <translation>Laden..</translation>
+    </message>
+    <message>
+        <source>Tabs</source>
+        <translation>Tabbladen</translation>
+    </message>
+    <message>
+        <source>Swipe up to open new window</source>
+        <translation>Veeg omhoog om nieuw venster te openen</translation>
+    </message>
+    <message>
+        <source>Swipe up to open private window</source>
+        <translation>Veeg omhoog om privévenster te openen</translation>
+    </message>
+    <message>
+        <source>Swipe up to close tab</source>
+        <translation>Veeg omhoog om tabblad te sluiten</translation>
     </message>
 </context>
 <context>

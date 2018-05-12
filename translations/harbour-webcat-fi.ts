@@ -552,28 +552,8 @@ If you are unsure reject the certificate. That might lead to a non loading websi
         <translation>Historia</translation>
     </message>
     <message>
-        <source>Swipe up to open new window</source>
-        <translation>Pyyhkäise ylös avataksesi uuden ikkunan.</translation>
-    </message>
-    <message>
-        <source>Swipe up to open private window</source>
-        <translation>Pyyhkäise ylös avataksesi yksityisikkunan.</translation>
-    </message>
-    <message>
-        <source>Swipe up to close tab</source>
-        <translation>Pyyhkäise ylös sulkeaksesi välilehden.</translation>
-    </message>
-    <message>
-        <source>Loading..</source>
-        <translation>Lataa...</translation>
-    </message>
-    <message>
         <source>Split WebView</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Tabs</source>
-        <translation type="unfinished">Välilehdet</translation>
     </message>
 </context>
 <context>
@@ -747,6 +727,29 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     <message>
         <source>Share</source>
         <translation>Jaa</translation>
+    </message>
+</context>
+<context>
+    <name>TabBar</name>
+    <message>
+        <source>Loading..</source>
+        <translation type="unfinished">Lataa...</translation>
+    </message>
+    <message>
+        <source>Tabs</source>
+        <translation type="unfinished">Välilehdet</translation>
+    </message>
+    <message>
+        <source>Swipe up to open new window</source>
+        <translation type="unfinished">Pyyhkäise ylös avataksesi uuden ikkunan.</translation>
+    </message>
+    <message>
+        <source>Swipe up to open private window</source>
+        <translation type="unfinished">Pyyhkäise ylös avataksesi yksityisikkunan.</translation>
+    </message>
+    <message>
+        <source>Swipe up to close tab</source>
+        <translation type="unfinished">Pyyhkäise ylös sulkeaksesi välilehden.</translation>
     </message>
 </context>
 <context>

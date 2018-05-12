@@ -550,27 +550,7 @@ If you are unsure reject the certificate. That might lead to a non loading websi
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Swipe up to open new window</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Swipe up to open private window</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Swipe up to close tab</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Loading..</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Split WebView</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Tabs</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -744,6 +724,29 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     <name>ShareContextMenu</name>
     <message>
         <source>Share</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>TabBar</name>
+    <message>
+        <source>Loading..</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tabs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Swipe up to open new window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Swipe up to open private window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Swipe up to close tab</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

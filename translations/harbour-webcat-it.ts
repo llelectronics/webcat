@@ -554,28 +554,8 @@ Se non sei sicuro, rifiuta il certificato. Ma questo può impedire il caricament
         <translation>Cronologia</translation>
     </message>
     <message>
-        <source>Swipe up to open new window</source>
-        <translation>Scorri verso l&apos;alto per aprire una nuova finestra</translation>
-    </message>
-    <message>
-        <source>Swipe up to open private window</source>
-        <translation>Scorri verso l&apos;alto per aprire una nuova finestra anonima</translation>
-    </message>
-    <message>
-        <source>Swipe up to close tab</source>
-        <translation>Scorri verso l&apos;alto per chiudere la scheda</translation>
-    </message>
-    <message>
-        <source>Loading..</source>
-        <translation>Caricamento...</translation>
-    </message>
-    <message>
         <source>Split WebView</source>
         <translation>Dividi Schermata Web</translation>
-    </message>
-    <message>
-        <source>Tabs</source>
-        <translation>Schede</translation>
     </message>
 </context>
 <context>
@@ -749,6 +729,29 @@ Se non sei sicuro, rifiuta il certificato. Ma questo può impedire il caricament
     <message>
         <source>Share</source>
         <translation>Condividi</translation>
+    </message>
+</context>
+<context>
+    <name>TabBar</name>
+    <message>
+        <source>Loading..</source>
+        <translation>Caricamento...</translation>
+    </message>
+    <message>
+        <source>Tabs</source>
+        <translation>Schede</translation>
+    </message>
+    <message>
+        <source>Swipe up to open new window</source>
+        <translation>Scorri verso l&apos;alto per aprire una nuova finestra</translation>
+    </message>
+    <message>
+        <source>Swipe up to open private window</source>
+        <translation>Scorri verso l&apos;alto per aprire una nuova finestra anonima</translation>
+    </message>
+    <message>
+        <source>Swipe up to close tab</source>
+        <translation>Scorri verso l&apos;alto per chiudere la scheda</translation>
     </message>
 </context>
 <context>

@@ -550,27 +550,7 @@ If you are unsure reject the certificate. That might lead to a non loading websi
         <translation>Historie</translation>
     </message>
     <message>
-        <source>Swipe up to open new window</source>
-        <translation>Švihnutím vzhůru otevřete nový panel</translation>
-    </message>
-    <message>
-        <source>Swipe up to open private window</source>
-        <translation>Švihnutím vzhůru otevřete soukromý panel</translation>
-    </message>
-    <message>
-        <source>Swipe up to close tab</source>
-        <translation>Švihnutím vzhůru zavřete panel</translation>
-    </message>
-    <message>
-        <source>Loading..</source>
-        <translation>Načítá se...</translation>
-    </message>
-    <message>
         <source>Split WebView</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Tabs</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -745,6 +725,29 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     <message>
         <source>Share</source>
         <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>TabBar</name>
+    <message>
+        <source>Loading..</source>
+        <translation>Načítá se...</translation>
+    </message>
+    <message>
+        <source>Tabs</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Swipe up to open new window</source>
+        <translation>Švihnutím vzhůru otevřete nový panel</translation>
+    </message>
+    <message>
+        <source>Swipe up to open private window</source>
+        <translation>Švihnutím vzhůru otevřete soukromý panel</translation>
+    </message>
+    <message>
+        <source>Swipe up to close tab</source>
+        <translation>Švihnutím vzhůru zavřete panel</translation>
     </message>
 </context>
 <context>

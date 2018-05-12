@@ -554,28 +554,8 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
         <translation>Historik</translation>
     </message>
     <message>
-        <source>Swipe up to open new window</source>
-        <translation>Svep uppåt för att öppna nytt fönster</translation>
-    </message>
-    <message>
-        <source>Swipe up to open private window</source>
-        <translation>Svep uppåt för att öppna privat fönster</translation>
-    </message>
-    <message>
-        <source>Swipe up to close tab</source>
-        <translation>Svep uppåt för att stänga flik</translation>
-    </message>
-    <message>
-        <source>Loading..</source>
-        <translation>Läser in...</translation>
-    </message>
-    <message>
         <source>Split WebView</source>
         <translation>Delad webbvy</translation>
-    </message>
-    <message>
-        <source>Tabs</source>
-        <translation>Flikar</translation>
     </message>
 </context>
 <context>
@@ -749,6 +729,29 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
     <message>
         <source>Share</source>
         <translation>Dela</translation>
+    </message>
+</context>
+<context>
+    <name>TabBar</name>
+    <message>
+        <source>Loading..</source>
+        <translation>Läser in...</translation>
+    </message>
+    <message>
+        <source>Tabs</source>
+        <translation>Flikar</translation>
+    </message>
+    <message>
+        <source>Swipe up to open new window</source>
+        <translation>Svep uppåt för att öppna nytt fönster</translation>
+    </message>
+    <message>
+        <source>Swipe up to open private window</source>
+        <translation>Svep uppåt för att öppna privat fönster</translation>
+    </message>
+    <message>
+        <source>Swipe up to close tab</source>
+        <translation>Svep uppåt för att stänga flik</translation>
     </message>
 </context>
 <context>
