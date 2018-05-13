@@ -108,6 +108,45 @@ Cal reiniciar Webcat per aplicar els canvis.</translation>
     </message>
 </context>
 <context>
+    <name>BookmarkList</name>
+    <message>
+        <source>Bookmarks</source>
+        <translation>Marcadors</translation>
+    </message>
+    <message>
+        <source>Open in new Tab</source>
+        <translation>Obre en una pestanya nova</translation>
+    </message>
+    <message>
+        <source>Open in new Window</source>
+        <translation>Obre en una finestra nova</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Edita</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Elimina</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Configuració</translation>
+    </message>
+    <message>
+        <source>Split WebView</source>
+        <translation>Divideix  WebView</translation>
+    </message>
+    <message>
+        <source>Add Bookmark</source>
+        <translation>Afegeix marcador</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Historial</translation>
+    </message>
+</context>
+<context>
     <name>ConfirmDialog</name>
     <message>
         <source>Accept ?</source>
@@ -399,30 +438,6 @@ En cas de dubte, refuseu el certificat malgrat que això pot provocar que no es 
         <translation>S&apos;està obrint...</translation>
     </message>
     <message>
-        <source>Delete</source>
-        <translation>Elimina</translation>
-    </message>
-    <message>
-        <source>Deleting </source>
-        <translation>S&apos;està eliminant</translation>
-    </message>
-    <message>
-        <source>Paste</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Error pasting file </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Cut</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Copy</source>
-        <translation>Copia</translation>
-    </message>
-    <message>
         <source>Show Filesystem Root</source>
         <translation type="unfinished"></translation>
     </message>
@@ -439,7 +454,31 @@ En cas de dubte, refuseu el certificat malgrat que això pot provocar que no es 
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Paste</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting </source>
+        <translation>S&apos;està eliminant</translation>
+    </message>
+    <message>
         <source>directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cut</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Copia</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Elimina</translation>
+    </message>
+    <message>
+        <source>Error pasting file </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -521,45 +560,6 @@ En cas de dubte, refuseu el certificat malgrat que això pot provocar que no es 
     <message>
         <source>Custom</source>
         <translation>Personalitza</translation>
-    </message>
-</context>
-<context>
-    <name>SelectUrl</name>
-    <message>
-        <source>Bookmarks</source>
-        <translation>Marcadors</translation>
-    </message>
-    <message>
-        <source>Open in new Tab</source>
-        <translation>Obre en una pestanya nova</translation>
-    </message>
-    <message>
-        <source>Open in new Window</source>
-        <translation>Obre en una finestra nova</translation>
-    </message>
-    <message>
-        <source>Edit</source>
-        <translation>Edita</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation>Elimina</translation>
-    </message>
-    <message>
-        <source>Settings</source>
-        <translation>Configuració</translation>
-    </message>
-    <message>
-        <source>Add Bookmark</source>
-        <translation>Afegeix marcador</translation>
-    </message>
-    <message>
-        <source>History</source>
-        <translation>Historial</translation>
-    </message>
-    <message>
-        <source>Split WebView</source>
-        <translation>Divideix  WebView</translation>
     </message>
 </context>
 <context>

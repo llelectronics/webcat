@@ -108,6 +108,45 @@ Bitte starten sie neu um die Änderungen zu übernehmen</translation>
     </message>
 </context>
 <context>
+    <name>BookmarkList</name>
+    <message>
+        <source>Bookmarks</source>
+        <translation>Lesezeichen</translation>
+    </message>
+    <message>
+        <source>Open in new Tab</source>
+        <translation>In neuem Reiter öffnen</translation>
+    </message>
+    <message>
+        <source>Open in new Window</source>
+        <translation>In neuem Fenster öffnen</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Bearbeiten</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Löschen</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Einstellungen</translation>
+    </message>
+    <message>
+        <source>Split WebView</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Add Bookmark</source>
+        <translation>Bookmark hinzufügen</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Verlauf</translation>
+    </message>
+</context>
+<context>
     <name>ConfirmDialog</name>
     <message>
         <source>Accept ?</source>
@@ -398,20 +437,32 @@ Wenn Sie sich unsicher sind lehnen sie das Zertifikat ab. Dies führt unter Umst
         <translation>Öffne...</translation>
     </message>
     <message>
-        <source>Delete</source>
-        <translation>Löschen</translation>
+        <source>Show Filesystem Root</source>
+        <translation>Zeige Root Dateisystem</translation>
     </message>
     <message>
-        <source>Deleting </source>
-        <translation>Lösche </translation>
+        <source>Show Home</source>
+        <translation>Zeige Home</translation>
+    </message>
+    <message>
+        <source>Show Android SDCard</source>
+        <translation>Zeige Android SDCard</translation>
+    </message>
+    <message>
+        <source>Show SDCard</source>
+        <translation>Zeige SDCard</translation>
     </message>
     <message>
         <source>Paste</source>
         <translation>Einfügen</translation>
     </message>
     <message>
-        <source>Error pasting file </source>
-        <translation>Fehler beim Einfügen von Datei </translation>
+        <source>Deleting </source>
+        <translation>Lösche </translation>
+    </message>
+    <message>
+        <source>directory</source>
+        <translation>Verzeichnis</translation>
     </message>
     <message>
         <source>Cut</source>
@@ -422,28 +473,16 @@ Wenn Sie sich unsicher sind lehnen sie das Zertifikat ab. Dies führt unter Umst
         <translation>Kopieren</translation>
     </message>
     <message>
-        <source>Show Filesystem Root</source>
-        <translation>Wurzelverzeichnis anzeigen</translation>
+        <source>Delete</source>
+        <translation>Löschen</translation>
     </message>
     <message>
-        <source>Show Home</source>
-        <translation>Homeverzeichnis anzeigen</translation>
-    </message>
-    <message>
-        <source>Show Android SDCard</source>
-        <translation>Android SDCard anzeigen</translation>
-    </message>
-    <message>
-        <source>Show SDCard</source>
-        <translation>SDCard anzeigen</translation>
-    </message>
-    <message>
-        <source>directory</source>
-        <translation>Ordner</translation>
+        <source>Error pasting file </source>
+        <translation>Fehler beim Einfügen</translation>
     </message>
     <message>
         <source>File operation succeeded</source>
-        <translation>Datei Operation erfolgreich</translation>
+        <translation>Dateioperation erfolgreich</translation>
     </message>
 </context>
 <context>
@@ -520,45 +559,6 @@ Wenn Sie sich unsicher sind lehnen sie das Zertifikat ab. Dies führt unter Umst
     <message>
         <source>Custom</source>
         <translation>Benutzerdefiniert</translation>
-    </message>
-</context>
-<context>
-    <name>SelectUrl</name>
-    <message>
-        <source>Bookmarks</source>
-        <translation>Lesezeichen</translation>
-    </message>
-    <message>
-        <source>Open in new Tab</source>
-        <translation>In neuem Reiter öffnen</translation>
-    </message>
-    <message>
-        <source>Open in new Window</source>
-        <translation>In neuem Fenster öffnen</translation>
-    </message>
-    <message>
-        <source>Edit</source>
-        <translation>Bearbeiten</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation>Löschen</translation>
-    </message>
-    <message>
-        <source>Settings</source>
-        <translation>Einstellungen</translation>
-    </message>
-    <message>
-        <source>Add Bookmark</source>
-        <translation>Lesezeichen hinzufügen</translation>
-    </message>
-    <message>
-        <source>History</source>
-        <translation>Verlauf</translation>
-    </message>
-    <message>
-        <source>Split WebView</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

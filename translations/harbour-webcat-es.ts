@@ -108,6 +108,45 @@ Por favor, reinicia para que los cambios tengan efecto.</translation>
     </message>
 </context>
 <context>
+    <name>BookmarkList</name>
+    <message>
+        <source>Bookmarks</source>
+        <translation>Favoritos</translation>
+    </message>
+    <message>
+        <source>Open in new Tab</source>
+        <translation>Abrir en nueva pestaña</translation>
+    </message>
+    <message>
+        <source>Open in new Window</source>
+        <translation>Abrir en nueva ventana</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Editar</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Borrar</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Ajustes</translation>
+    </message>
+    <message>
+        <source>Split WebView</source>
+        <translation>Visor Web dividido</translation>
+    </message>
+    <message>
+        <source>Add Bookmark</source>
+        <translation>Añadir a Favoritos</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Historial</translation>
+    </message>
+</context>
+<context>
     <name>ConfirmDialog</name>
     <message>
         <source>Accept ?</source>
@@ -399,48 +438,48 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
         <translation>Abriendo...</translation>
     </message>
     <message>
-        <source>Delete</source>
-        <translation>Borrar</translation>
+        <source>Show Filesystem Root</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show Home</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show Android SDCard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show SDCard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Paste</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Deleting </source>
         <translation>Borrando</translation>
     </message>
     <message>
-        <source>Paste</source>
-        <translation>Pegar</translation>
-    </message>
-    <message>
-        <source>Error pasting file </source>
-        <translation>Error al pegar fichero</translation>
+        <source>directory</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Cut</source>
-        <translation>Cortar</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Copy</source>
         <translation>Copiar</translation>
     </message>
     <message>
-        <source>Show Filesystem Root</source>
-        <translation>Mostrar sistema de archivos raíz</translation>
+        <source>Delete</source>
+        <translation>Borrar</translation>
     </message>
     <message>
-        <source>Show Home</source>
-        <translation>Mostrar Home</translation>
-    </message>
-    <message>
-        <source>Show Android SDCard</source>
-        <translation>Mostrar Tarjeta SD Android</translation>
-    </message>
-    <message>
-        <source>Show SDCard</source>
-        <translation>Mostrar Tarjeta SD</translation>
-    </message>
-    <message>
-        <source>directory</source>
-        <translation>directorio</translation>
+        <source>Error pasting file </source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>File operation succeeded</source>
@@ -521,45 +560,6 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     <message>
         <source>Custom</source>
         <translation>Personalizado</translation>
-    </message>
-</context>
-<context>
-    <name>SelectUrl</name>
-    <message>
-        <source>Bookmarks</source>
-        <translation>Favoritos</translation>
-    </message>
-    <message>
-        <source>Open in new Tab</source>
-        <translation>Abrir en nueva pestaña</translation>
-    </message>
-    <message>
-        <source>Open in new Window</source>
-        <translation>Abrir en nueva ventana</translation>
-    </message>
-    <message>
-        <source>Edit</source>
-        <translation>Editar</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation>Borrar</translation>
-    </message>
-    <message>
-        <source>Settings</source>
-        <translation>Ajustes</translation>
-    </message>
-    <message>
-        <source>Add Bookmark</source>
-        <translation>Añadir a Favoritos</translation>
-    </message>
-    <message>
-        <source>History</source>
-        <translation>Historial</translation>
-    </message>
-    <message>
-        <source>Split WebView</source>
-        <translation>Visor Web dividido</translation>
     </message>
 </context>
 <context>

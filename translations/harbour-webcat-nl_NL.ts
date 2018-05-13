@@ -108,6 +108,45 @@ Herstart om de wijzingen door te voeren.</translation>
     </message>
 </context>
 <context>
+    <name>BookmarkList</name>
+    <message>
+        <source>Bookmarks</source>
+        <translation>Bladwijzers</translation>
+    </message>
+    <message>
+        <source>Open in new Tab</source>
+        <translation>Openen in nieuw tabblad</translation>
+    </message>
+    <message>
+        <source>Open in new Window</source>
+        <translation>Openen in nieuw venster</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Bewerken</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Verwijderen</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Instellingen</translation>
+    </message>
+    <message>
+        <source>Split WebView</source>
+        <translation>Gesplitste WebView</translation>
+    </message>
+    <message>
+        <source>Add Bookmark</source>
+        <translation>Bladwijzer toevoegen</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Geschiedenis</translation>
+    </message>
+</context>
+<context>
     <name>ConfirmDialog</name>
     <message>
         <source>Accept ?</source>
@@ -399,48 +438,48 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
         <translation>Bezig met openen...</translation>
     </message>
     <message>
-        <source>Delete</source>
-        <translation>Verwijderen</translation>
+        <source>Show Filesystem Root</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show Home</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show Android SDCard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show SDCard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Paste</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Deleting </source>
         <translation>Bezig met verwijderen</translation>
     </message>
     <message>
-        <source>Paste</source>
-        <translation>Plakken</translation>
-    </message>
-    <message>
-        <source>Error pasting file </source>
-        <translation>Fout bij plakken van bestand</translation>
+        <source>directory</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Cut</source>
-        <translation>Knippen</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Copy</source>
         <translation>Kopiëren</translation>
     </message>
     <message>
-        <source>Show Filesystem Root</source>
-        <translation>Toon root</translation>
+        <source>Delete</source>
+        <translation>Verwijderen</translation>
     </message>
     <message>
-        <source>Show Home</source>
-        <translation>Toon persoonlijke map</translation>
-    </message>
-    <message>
-        <source>Show Android SDCard</source>
-        <translation>Toon Android-SD-kaart</translation>
-    </message>
-    <message>
-        <source>Show SDCard</source>
-        <translation>Toon SD-kaart</translation>
-    </message>
-    <message>
-        <source>directory</source>
-        <translation>map</translation>
+        <source>Error pasting file </source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>File operation succeeded</source>
@@ -521,45 +560,6 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
     <message>
         <source>Custom</source>
         <translation>Aangepast</translation>
-    </message>
-</context>
-<context>
-    <name>SelectUrl</name>
-    <message>
-        <source>Bookmarks</source>
-        <translation>Bladwijzers</translation>
-    </message>
-    <message>
-        <source>Open in new Tab</source>
-        <translation>Openen in nieuw tabblad</translation>
-    </message>
-    <message>
-        <source>Open in new Window</source>
-        <translation>Openen in nieuw venster</translation>
-    </message>
-    <message>
-        <source>Edit</source>
-        <translation>Bewerken</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation>Verwijderen</translation>
-    </message>
-    <message>
-        <source>Settings</source>
-        <translation>Instellingen</translation>
-    </message>
-    <message>
-        <source>Add Bookmark</source>
-        <translation>Bladwijzer toevoegen</translation>
-    </message>
-    <message>
-        <source>History</source>
-        <translation>Geschiedenis</translation>
-    </message>
-    <message>
-        <source>Split WebView</source>
-        <translation>Gesplitste WebView</translation>
     </message>
 </context>
 <context>

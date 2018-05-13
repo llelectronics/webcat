@@ -108,6 +108,45 @@ Veuillez redémarrer pour activer les modifications.</translation>
     </message>
 </context>
 <context>
+    <name>BookmarkList</name>
+    <message>
+        <source>Bookmarks</source>
+        <translation>Favoris</translation>
+    </message>
+    <message>
+        <source>Open in new Tab</source>
+        <translation>Ouvrir dans un nouvel onglet</translation>
+    </message>
+    <message>
+        <source>Open in new Window</source>
+        <translation>Ouvrir dans une nouvelle fenêtre</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Editer</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Supprimer</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Paramètres</translation>
+    </message>
+    <message>
+        <source>Split WebView</source>
+        <translation>Vue Web partagée</translation>
+    </message>
+    <message>
+        <source>Add Bookmark</source>
+        <translation>Ajouter un favori</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Historique</translation>
+    </message>
+</context>
+<context>
     <name>ConfirmDialog</name>
     <message>
         <source>Accept ?</source>
@@ -398,48 +437,48 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
         <translation>Ouverture ...</translation>
     </message>
     <message>
-        <source>Delete</source>
-        <translation>Supprimer</translation>
+        <source>Show Filesystem Root</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show Home</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show Android SDCard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show SDCard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Paste</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Deleting </source>
         <translation>Suppression</translation>
     </message>
     <message>
-        <source>Paste</source>
-        <translation>Coller</translation>
-    </message>
-    <message>
-        <source>Error pasting file </source>
-        <translation>Erreur lors du collage du fichier</translation>
+        <source>directory</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Cut</source>
-        <translation>Couper</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Copy</source>
         <translation>Copier</translation>
     </message>
     <message>
-        <source>Show Filesystem Root</source>
-        <translation>Afficher les fichiers système Root</translation>
+        <source>Delete</source>
+        <translation>Supprimer</translation>
     </message>
     <message>
-        <source>Show Home</source>
-        <translation>Afficher l&apos;Accueil</translation>
-    </message>
-    <message>
-        <source>Show Android SDCard</source>
-        <translation>Afficher la carte SD Android</translation>
-    </message>
-    <message>
-        <source>Show SDCard</source>
-        <translation>Afficher la carte SD</translation>
-    </message>
-    <message>
-        <source>directory</source>
-        <translation>Répertoire</translation>
+        <source>Error pasting file </source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>File operation succeeded</source>
@@ -520,45 +559,6 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
     <message>
         <source>Custom</source>
         <translation>Custom</translation>
-    </message>
-</context>
-<context>
-    <name>SelectUrl</name>
-    <message>
-        <source>Bookmarks</source>
-        <translation>Favoris</translation>
-    </message>
-    <message>
-        <source>Open in new Tab</source>
-        <translation>Ouvrir dans un nouvel onglet</translation>
-    </message>
-    <message>
-        <source>Open in new Window</source>
-        <translation>Ouvrir dans une nouvelle fenêtre</translation>
-    </message>
-    <message>
-        <source>Edit</source>
-        <translation>Editer</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation>Supprimer</translation>
-    </message>
-    <message>
-        <source>Settings</source>
-        <translation>Paramètres</translation>
-    </message>
-    <message>
-        <source>Add Bookmark</source>
-        <translation>Ajouter un favori</translation>
-    </message>
-    <message>
-        <source>History</source>
-        <translation>Historique</translation>
-    </message>
-    <message>
-        <source>Split WebView</source>
-        <translation>Vue Web partagée</translation>
     </message>
 </context>
 <context>

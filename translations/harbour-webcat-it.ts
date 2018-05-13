@@ -108,6 +108,45 @@ Prego riavviare perché le modifiche abbiano effetto.</translation>
     </message>
 </context>
 <context>
+    <name>BookmarkList</name>
+    <message>
+        <source>Bookmarks</source>
+        <translation>Segnalibri</translation>
+    </message>
+    <message>
+        <source>Open in new Tab</source>
+        <translation>Apri in una nuova scheda</translation>
+    </message>
+    <message>
+        <source>Open in new Window</source>
+        <translation>Apri in una nuova finestra</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Modifica</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Impostazioni</translation>
+    </message>
+    <message>
+        <source>Split WebView</source>
+        <translation>Dividi Schermata Web</translation>
+    </message>
+    <message>
+        <source>Add Bookmark</source>
+        <translation>Aggiungi segnalibro</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Cronologia</translation>
+    </message>
+</context>
+<context>
     <name>ConfirmDialog</name>
     <message>
         <source>Accept ?</source>
@@ -399,48 +438,48 @@ Se non sei sicuro, rifiuta il certificato. Ma questo può impedire il caricament
         <translation>Apertura...</translation>
     </message>
     <message>
-        <source>Delete</source>
-        <translation>Elimina</translation>
+        <source>Show Filesystem Root</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Show Home</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show Android SDCard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show SDCard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Paste</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Deleting </source>
         <translation>Eliminazione</translation>
     </message>
     <message>
-        <source>Paste</source>
-        <translation>Incolla</translation>
-    </message>
-    <message>
-        <source>Error pasting file </source>
-        <translation>Errore incollando il file</translation>
+        <source>directory</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Cut</source>
-        <translation>Taglia</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Copy</source>
         <translation>Copia</translation>
     </message>
     <message>
-        <source>Show Filesystem Root</source>
-        <translation>Mostra la Radice del filesystem</translation>
+        <source>Delete</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Show Home</source>
-        <translation>Mostra la Home</translation>
-    </message>
-    <message>
-        <source>Show Android SDCard</source>
-        <translation>Mostra la SDCard di Android</translation>
-    </message>
-    <message>
-        <source>Show SDCard</source>
-        <translation>Mostra la SDCard</translation>
-    </message>
-    <message>
-        <source>directory</source>
-        <translation>cartella</translation>
+        <source>Error pasting file </source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>File operation succeeded</source>
@@ -521,45 +560,6 @@ Se non sei sicuro, rifiuta il certificato. Ma questo può impedire il caricament
     <message>
         <source>Custom</source>
         <translation>Personalizzato</translation>
-    </message>
-</context>
-<context>
-    <name>SelectUrl</name>
-    <message>
-        <source>Bookmarks</source>
-        <translation>Segnalibri</translation>
-    </message>
-    <message>
-        <source>Open in new Tab</source>
-        <translation>Apri in una nuova scheda</translation>
-    </message>
-    <message>
-        <source>Open in new Window</source>
-        <translation>Apri in una nuova finestra</translation>
-    </message>
-    <message>
-        <source>Edit</source>
-        <translation>Modifica</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation>Cancella</translation>
-    </message>
-    <message>
-        <source>Settings</source>
-        <translation>Impostazioni</translation>
-    </message>
-    <message>
-        <source>Add Bookmark</source>
-        <translation>Aggiungi segnalibro</translation>
-    </message>
-    <message>
-        <source>History</source>
-        <translation>Cronologia</translation>
-    </message>
-    <message>
-        <source>Split WebView</source>
-        <translation>Dividi Schermata Web</translation>
     </message>
 </context>
 <context>

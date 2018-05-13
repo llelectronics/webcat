@@ -107,6 +107,45 @@ Please restart for changes to take effect.</source>
     </message>
 </context>
 <context>
+    <name>BookmarkList</name>
+    <message>
+        <source>Bookmarks</source>
+        <translation>Záložky</translation>
+    </message>
+    <message>
+        <source>Open in new Tab</source>
+        <translation>Otevřít v novém panelu</translation>
+    </message>
+    <message>
+        <source>Open in new Window</source>
+        <translation>Otevřít v novém okně</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Upravit</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Odstranit</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Nastavení</translation>
+    </message>
+    <message>
+        <source>Split WebView</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Add Bookmark</source>
+        <translation>Přidat záložku</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Historie</translation>
+    </message>
+</context>
+<context>
     <name>ConfirmDialog</name>
     <message>
         <source>Accept ?</source>
@@ -395,30 +434,6 @@ If you are unsure reject the certificate. That might lead to a non loading websi
         <translation>Otevírání...</translation>
     </message>
     <message>
-        <source>Delete</source>
-        <translation>Odstranit</translation>
-    </message>
-    <message>
-        <source>Deleting </source>
-        <translation>Odstraňování</translation>
-    </message>
-    <message>
-        <source>Paste</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Error pasting file </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Cut</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Copy</source>
-        <translation>Kopírovat</translation>
-    </message>
-    <message>
         <source>Show Filesystem Root</source>
         <translation type="unfinished"></translation>
     </message>
@@ -435,7 +450,31 @@ If you are unsure reject the certificate. That might lead to a non loading websi
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Paste</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting </source>
+        <translation>Odstraňování</translation>
+    </message>
+    <message>
         <source>directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cut</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Kopírovat</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Odstranit</translation>
+    </message>
+    <message>
+        <source>Error pasting file </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -517,45 +556,6 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     <message>
         <source>Custom</source>
         <translation>Vlastní</translation>
-    </message>
-</context>
-<context>
-    <name>SelectUrl</name>
-    <message>
-        <source>Bookmarks</source>
-        <translation>Záložky</translation>
-    </message>
-    <message>
-        <source>Open in new Tab</source>
-        <translation>Otevřít v novém panelu</translation>
-    </message>
-    <message>
-        <source>Open in new Window</source>
-        <translation>Otevřít v novém okně</translation>
-    </message>
-    <message>
-        <source>Edit</source>
-        <translation>Upravit</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation>Odstranit</translation>
-    </message>
-    <message>
-        <source>Settings</source>
-        <translation>Nastavení</translation>
-    </message>
-    <message>
-        <source>Add Bookmark</source>
-        <translation>Přidat záložku</translation>
-    </message>
-    <message>
-        <source>History</source>
-        <translation>Historie</translation>
-    </message>
-    <message>
-        <source>Split WebView</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

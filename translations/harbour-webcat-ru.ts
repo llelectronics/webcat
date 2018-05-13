@@ -107,6 +107,45 @@ Please restart for changes to take effect.</source>
     </message>
 </context>
 <context>
+    <name>BookmarkList</name>
+    <message>
+        <source>Bookmarks</source>
+        <translation>Закладки</translation>
+    </message>
+    <message>
+        <source>Open in new Tab</source>
+        <translation>Открыть в новой вкладке</translation>
+    </message>
+    <message>
+        <source>Open in new Window</source>
+        <translation>Открыть в новом окне</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Редактировать</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Удалить</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Настройки</translation>
+    </message>
+    <message>
+        <source>Split WebView</source>
+        <translation> Split-View</translation>
+    </message>
+    <message>
+        <source>Add Bookmark</source>
+        <translation>Добавить закладку</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>История</translation>
+    </message>
+</context>
+<context>
     <name>ConfirmDialog</name>
     <message>
         <source>Accept ?</source>
@@ -398,48 +437,48 @@ If you are unsure reject the certificate. That might lead to a non loading websi
         <translation>Открываю...</translation>
     </message>
     <message>
-        <source>Delete</source>
-        <translation>Удалить</translation>
+        <source>Show Filesystem Root</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Deleting </source>
-        <translation>Удаляю</translation>
+        <source>Show Home</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show Android SDCard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show SDCard</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Paste</source>
-        <translation>Вставить</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Error pasting file </source>
-        <translation>Ошибка при копировании файла</translation>
+        <source>Deleting </source>
+        <translation>Удаление</translation>
+    </message>
+    <message>
+        <source>directory</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Cut</source>
-        <translation>Вырезать</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Copy</source>
         <translation>Копировать</translation>
     </message>
     <message>
-        <source>Show Filesystem Root</source>
-        <translation>Показать Filesystem Root</translation>
+        <source>Delete</source>
+        <translation>Удалить</translation>
     </message>
     <message>
-        <source>Show Home</source>
-        <translation>Показать дом</translation>
-    </message>
-    <message>
-        <source>Show Android SDCard</source>
-        <translation>Показать Android SDCard</translation>
-    </message>
-    <message>
-        <source>Show SDCard</source>
-        <translation>Показать SDCard</translation>
-    </message>
-    <message>
-        <source>directory</source>
-        <translation>директория</translation>
+        <source>Error pasting file </source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>File operation succeeded</source>
@@ -520,45 +559,6 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     <message>
         <source>Custom</source>
         <translation>Пользовательский </translation>
-    </message>
-</context>
-<context>
-    <name>SelectUrl</name>
-    <message>
-        <source>Bookmarks</source>
-        <translation>Закладки</translation>
-    </message>
-    <message>
-        <source>Open in new Tab</source>
-        <translation>Открыть в новой вкладке</translation>
-    </message>
-    <message>
-        <source>Open in new Window</source>
-        <translation>Открыть в новом окне</translation>
-    </message>
-    <message>
-        <source>Edit</source>
-        <translation>Редактировать</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation>Удалить</translation>
-    </message>
-    <message>
-        <source>Settings</source>
-        <translation>Настройки</translation>
-    </message>
-    <message>
-        <source>Add Bookmark</source>
-        <translation>Добавить в закладки</translation>
-    </message>
-    <message>
-        <source>History</source>
-        <translation>История</translation>
-    </message>
-    <message>
-        <source>Split WebView</source>
-        <translation> Split-View</translation>
     </message>
 </context>
 <context>

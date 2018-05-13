@@ -108,6 +108,45 @@ Starta om Webcat för att ändringarna skall få effekt.</translation>
     </message>
 </context>
 <context>
+    <name>BookmarkList</name>
+    <message>
+        <source>Bookmarks</source>
+        <translation>Bokmärken</translation>
+    </message>
+    <message>
+        <source>Open in new Tab</source>
+        <translation>Öppna i ny flik</translation>
+    </message>
+    <message>
+        <source>Open in new Window</source>
+        <translation>Öppna i nytt fönster</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Redigera</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Ta bort</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Inställningar</translation>
+    </message>
+    <message>
+        <source>Split WebView</source>
+        <translation>Delad webbvy</translation>
+    </message>
+    <message>
+        <source>Add Bookmark</source>
+        <translation>Lägg till bokmärke</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Historik</translation>
+    </message>
+</context>
+<context>
     <name>ConfirmDialog</name>
     <message>
         <source>Accept ?</source>
@@ -399,48 +438,48 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
         <translation>Öppnar...</translation>
     </message>
     <message>
-        <source>Delete</source>
-        <translation>Ta bort</translation>
+        <source>Show Filesystem Root</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Deleting </source>
-        <translation>Tar bort </translation>
+        <source>Show Home</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show Android SDCard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show SDCard</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Paste</source>
-        <translation>Klistra in</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Error pasting file </source>
-        <translation>Kunde inte klistra in filen</translation>
+        <source>Deleting </source>
+        <translation>Tar bort</translation>
+    </message>
+    <message>
+        <source>directory</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Cut</source>
-        <translation>Klipp ut</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Copy</source>
         <translation>Kopiera</translation>
     </message>
     <message>
-        <source>Show Filesystem Root</source>
-        <translation>Visa filsystemets rotmapp</translation>
+        <source>Delete</source>
+        <translation>Ta bort</translation>
     </message>
     <message>
-        <source>Show Home</source>
-        <translation>Visa Hem</translation>
-    </message>
-    <message>
-        <source>Show Android SDCard</source>
-        <translation>Visa Android SD-kort</translation>
-    </message>
-    <message>
-        <source>Show SDCard</source>
-        <translation>Visa SD-kort</translation>
-    </message>
-    <message>
-        <source>directory</source>
-        <translation>mapp</translation>
+        <source>Error pasting file </source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>File operation succeeded</source>
@@ -521,45 +560,6 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
     <message>
         <source>Custom</source>
         <translation>Anpassat</translation>
-    </message>
-</context>
-<context>
-    <name>SelectUrl</name>
-    <message>
-        <source>Bookmarks</source>
-        <translation>Bokmärken</translation>
-    </message>
-    <message>
-        <source>Open in new Tab</source>
-        <translation>Öppna i ny flik</translation>
-    </message>
-    <message>
-        <source>Open in new Window</source>
-        <translation>Öppna i nytt fönster</translation>
-    </message>
-    <message>
-        <source>Edit</source>
-        <translation>Redigera</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation>Ta bort</translation>
-    </message>
-    <message>
-        <source>Settings</source>
-        <translation>Inställningar</translation>
-    </message>
-    <message>
-        <source>Add Bookmark</source>
-        <translation>Lägg till bokmärke</translation>
-    </message>
-    <message>
-        <source>History</source>
-        <translation>Historik</translation>
-    </message>
-    <message>
-        <source>Split WebView</source>
-        <translation>Delad webbvy</translation>
     </message>
 </context>
 <context>

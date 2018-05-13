@@ -108,6 +108,45 @@ Käynnistä uudelleen että muutokset tulevat voimaan.</translation>
     </message>
 </context>
 <context>
+    <name>BookmarkList</name>
+    <message>
+        <source>Bookmarks</source>
+        <translation type="unfinished">Kirjanmerkit</translation>
+    </message>
+    <message>
+        <source>Open in new Tab</source>
+        <translation type="unfinished">Avaa uudessa välilehdessä</translation>
+    </message>
+    <message>
+        <source>Open in new Window</source>
+        <translation type="unfinished">Avaa uudessa ikkunassa</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation type="unfinished">Muokkaa</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation type="unfinished">Poista</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished">Asetukset</translation>
+    </message>
+    <message>
+        <source>Split WebView</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add Bookmark</source>
+        <translation type="unfinished">Lisää kirjanmerkki</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation type="unfinished">Historia</translation>
+    </message>
+</context>
+<context>
     <name>ConfirmDialog</name>
     <message>
         <source>Accept ?</source>
@@ -394,31 +433,7 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     <name>OpenDialog</name>
     <message>
         <source>Opening...</source>
-        <translation>Avautuu...</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation>Poista</translation>
-    </message>
-    <message>
-        <source>Deleting </source>
-        <translation>Poistaa...</translation>
-    </message>
-    <message>
-        <source>Paste</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Error pasting file </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Cut</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Copy</source>
-        <translation type="unfinished">Kopioi</translation>
     </message>
     <message>
         <source>Show Filesystem Root</source>
@@ -437,7 +452,31 @@ If you are unsure reject the certificate. That might lead to a non loading websi
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Paste</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting </source>
+        <translation type="unfinished">Poistaa...</translation>
+    </message>
+    <message>
         <source>directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cut</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation type="unfinished">Kopioi</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation type="unfinished">Poista</translation>
+    </message>
+    <message>
+        <source>Error pasting file </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -519,45 +558,6 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     <message>
         <source>Custom</source>
         <translation type="unfinished">Muokattu</translation>
-    </message>
-</context>
-<context>
-    <name>SelectUrl</name>
-    <message>
-        <source>Bookmarks</source>
-        <translation>Kirjanmerkit</translation>
-    </message>
-    <message>
-        <source>Open in new Tab</source>
-        <translation>Avaa uudessa välilehdessä</translation>
-    </message>
-    <message>
-        <source>Open in new Window</source>
-        <translation>Avaa uudessa ikkunassa</translation>
-    </message>
-    <message>
-        <source>Edit</source>
-        <translation>Muokkaa</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation>Poista</translation>
-    </message>
-    <message>
-        <source>Settings</source>
-        <translation>Asetukset</translation>
-    </message>
-    <message>
-        <source>Add Bookmark</source>
-        <translation>Lisää kirjanmerkki</translation>
-    </message>
-    <message>
-        <source>History</source>
-        <translation>Historia</translation>
-    </message>
-    <message>
-        <source>Split WebView</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
