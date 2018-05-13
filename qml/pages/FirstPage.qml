@@ -948,14 +948,14 @@ Page {
             if (bookmarkList.visible) bookmarkList.hide();
         }
         onNewWindowClicked: {
-            mainWindow.openNewWindow("about:blank");
             hide();
             if (bookmarkList.visible) bookmarkList.hide();
+            mainWindow.openNewWindow("about:blank");
         }
         onNewTabClicked: {
-            mainWindow.openNewTab("page-"+mainWindow.salt(), "about:blank", false);
             hide();
             if (bookmarkList.visible) bookmarkList.hide();
+            mainWindow.openNewTab("page-"+mainWindow.salt(), "about:blank", false);
         }
         onMenuClosed: {
             hide();
