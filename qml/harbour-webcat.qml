@@ -98,6 +98,10 @@ ApplicationWindow
 
     property WebCatInterface webcatinterface: WebCatInterface { }
 
+    onApplicationActiveChanged: {
+        firstPage.workaroundRefresh()
+    }
+
     Component {
         id: tabView
         FirstPage {

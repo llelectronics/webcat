@@ -185,6 +185,13 @@ Page {
         nightMode = false;
     }
 
+    function workaroundRefresh() {
+        //console.log("Application Active change. Try workaround rendering bug by changing height of webview")
+        var tempHeight = webview.height
+        webview.height += 1
+        webview.height = tempHeight
+    }
+
     Item{
         id: popup
         anchors.centerIn: parent
@@ -297,6 +304,7 @@ Page {
                 }
             }
         }
+
         // We don't want pageStackNavigation to interfere
         overridePageStackNavigation: true
         header: PageHeader {height: 0}
