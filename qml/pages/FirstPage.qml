@@ -1232,7 +1232,16 @@ Page {
             else return max
         }
         visible: false
-        onSelected: { toolbar.urlText.focus = false; suggestionView.visible = false ; webview.url = url; webview.focus = true; }
+        onSelected: {
+            toolbar.urlText.focus = false;
+            suggestionView.visible = false ;
+            webview.url = url;
+            webview.focus = true;
+            if (bookmarkList.visible || tabBar.visible) {
+                bookmarkList.hide()
+                tabBar.hide()
+            }
+        }
         onSelectedMedia: {
             suggestionView.visible = false;
             mediaDownloadRec.mediaDownloadRecTitle.text = mediaTitle;
@@ -1245,8 +1254,15 @@ Page {
             // Need to destroy player here as it has probably the wrong URL
             vPlayerLoader.setSource("");
             if (!webview.visible) webview.visible = true
+            if (bookmarkList.visible || tabBar.visible) {
+                bookmarkList.hide()
+                tabBar.hide()
+            }
         }
-        z: vPlayerLoader.z + 1
+        z: {
+            if (tabBar.visible) tabBar.z + 1
+            else vPlayerLoader.z + 1
+        }
     }
     TextArea {
         id: hiddenTxtBox

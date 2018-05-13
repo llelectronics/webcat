@@ -479,6 +479,10 @@ Rectangle {
             fPage.webview.url = fixUrl(urlText.text);
             urlText.focus = false;  // Close keyboard
             fPage.webview.focus = true;
+            if (bookmarkList.visible || tabBar.visible) {
+                bookmarkList.hide()
+                tabBar.hide()
+            }
         }
 
         Keys.onReturnPressed: {
@@ -486,6 +490,10 @@ Rectangle {
             fPage.webview.url = fixUrl(urlText.text);
             urlText.focus = false;
             fPage.webview.focus = true;
+            if (bookmarkList.visible || tabBar.visible) {
+                bookmarkList.hide()
+                tabBar.hide()
+            }
         }
         function simplifyUrl(url) {
             url = url.toString();
