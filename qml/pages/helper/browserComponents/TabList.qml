@@ -78,7 +78,7 @@ Rectangle {
         // Tab Header
         header: Rectangle {
             width: parent.width
-            height: mainWindow.firstPage.toolbarheight
+            height: toolbarheight
             gradient: Gradient {
                 GradientStop { position: 0.0; color: "#262626" }
                 GradientStop { position: 0.85; color: "#1F1F1F"}

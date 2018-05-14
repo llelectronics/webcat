@@ -7,6 +7,7 @@ ContextMenu {
     id: shareContextMenu
     visible: false
     property alias shareContextList: listview
+
     height: 0
 
     property var content
@@ -25,7 +26,7 @@ ContextMenu {
 
     Column {
         width: parent.width
-        anchors { left: parent.left; top: contextLbl.bottom; right: parent.right; bottom: parent.bottom }
+        anchors { left: parent.left; top: typeof(contextLbl) !== "undefined" ? contextLbl.bottom : parent.top ; right: parent.right; bottom: parent.bottom }
         anchors.topMargin: -10
         ListItem {
             id: sailfishBrowserItem

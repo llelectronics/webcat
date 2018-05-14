@@ -229,6 +229,7 @@ ApplicationWindow
 
         Tab.itemMap[pageid].destroy();
         delete(Tab.itemMap[pageid]);
+        firstPage.workaroundRefresh();
     }
 
     function closeAllTabs() {

@@ -188,8 +188,13 @@ Page {
     function workaroundRefresh() {
         //console.log("Application Active change. Try workaround rendering bug by changing height of webview")
         var tempHeight = webview.height
+        var curOrient = page.orientation
         webview.height += 1
         webview.height = tempHeight
+        mainWindow.update();
+        if (curOrient === Orientation.PortraitMask)  page.orientation = Orientation.Landscape
+        else  page.orientation = Orientation.Portrait
+        page.orientation = curOrient
     }
 
     Item{
@@ -899,7 +904,7 @@ Page {
         id: shareContextMenu
         anchors.bottom: toolbar.top
         anchors.bottomMargin: -toolbar.toolbarSep.height
-        width: parent.width;
+        width: page.width;
     }
 
     // Extra Toolbar
