@@ -3,7 +3,7 @@ import Sailfish.Silica 1.0
 import harbour.webcat.DBus.TransferEngine 1.0
 import "."
 
-ContextMenu {
+LinkContextMenu {
     id: shareContextMenu
     visible: false
     property alias shareContextList: listview
