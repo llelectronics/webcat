@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="pl">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="pl" version="2.1">
 <context>
     <name>AboutPage</name>
     <message>
@@ -274,7 +272,7 @@ Jeśli nie jesteś pewien, powinieneś odrzucić certyfikat. Może to jednak uni
     </message>
     <message>
         <source>New Tab</source>
-        <translation>Nowa Karta</translation>
+        <translation>Nowa karta</translation>
     </message>
     <message>
         <source>Close Tab</source>
@@ -282,7 +280,7 @@ Jeśli nie jesteś pewien, powinieneś odrzucić certyfikat. Może to jednak uni
     </message>
     <message>
         <source>Lock Orientation</source>
-        <translation>Zablokuj Orientację Ekranu</translation>
+        <translation>Zablokuj położenie</translation>
     </message>
     <message>
         <source>Reader Mode</source>
@@ -294,7 +292,7 @@ Jeśli nie jesteś pewien, powinieneś odrzucić certyfikat. Może to jednak uni
     </message>
     <message>
         <source>Share</source>
-        <translation>Udostępnij</translation>
+        <translation>Udostepnij</translation>
     </message>
     <message>
         <source>Close menu</source>
@@ -302,11 +300,11 @@ Jeśli nie jesteś pewien, powinieneś odrzucić certyfikat. Może to jednak uni
     </message>
     <message>
         <source>Night Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Tryb nocny</translation>
     </message>
     <message>
         <source>Day Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Tryb dzienny</translation>
     </message>
 </context>
 <context>
@@ -438,23 +436,23 @@ Jeśli nie jesteś pewien, powinieneś odrzucić certyfikat. Może to jednak uni
     </message>
     <message>
         <source>Show Filesystem Root</source>
-        <translation type="unfinished"></translation>
+        <translation>Pokaż katalog Roota</translation>
     </message>
     <message>
         <source>Show Home</source>
-        <translation type="unfinished"></translation>
+        <translation>Pokaż katalog domowy</translation>
     </message>
     <message>
         <source>Show Android SDCard</source>
-        <translation type="unfinished"></translation>
+        <translation>Pokaż kartę pamięci Adroida</translation>
     </message>
     <message>
         <source>Show SDCard</source>
-        <translation type="unfinished"></translation>
+        <translation>Pokaż kartę pamięci</translation>
     </message>
     <message>
         <source>Paste</source>
-        <translation type="unfinished"></translation>
+        <translation>Wklej</translation>
     </message>
     <message>
         <source>Deleting </source>
@@ -462,11 +460,11 @@ Jeśli nie jesteś pewien, powinieneś odrzucić certyfikat. Może to jednak uni
     </message>
     <message>
         <source>directory</source>
-        <translation type="unfinished"></translation>
+        <translation>katalog</translation>
     </message>
     <message>
         <source>Cut</source>
-        <translation type="unfinished"></translation>
+        <translation>Wytnij</translation>
     </message>
     <message>
         <source>Copy</source>
@@ -478,11 +476,11 @@ Jeśli nie jesteś pewien, powinieneś odrzucić certyfikat. Może to jednak uni
     </message>
     <message>
         <source>Error pasting file </source>
-        <translation type="unfinished"></translation>
+        <translation>Błąd wklejania pliku</translation>
     </message>
     <message>
         <source>File operation succeeded</source>
-        <translation type="unfinished"></translation>
+        <translation>Operacja na pliku zakończona sukcesem</translation>
     </message>
 </context>
 <context>
@@ -746,15 +744,15 @@ Jeśli nie jesteś pewien, powinieneś odrzucić certyfikat. Może to jednak uni
     </message>
     <message>
         <source>Swipe up to open new window</source>
-        <translation>Przysuń w górę aby otworzyć nowe okno</translation>
+        <translation>Przesuń do gory, aby otworzyć nowe okno</translation>
     </message>
     <message>
         <source>Swipe up to open private window</source>
-        <translation>Przysuń w górę aby otworzyć nowe prywatne okno</translation>
+        <translation>Przesuń do gory, aby otworzyć prywatne okno</translation>
     </message>
     <message>
         <source>Swipe up to close tab</source>
-        <translation>Przesuń w górę aby zamknąć kartę</translation>
+        <translation>Przesuń do gory, aby zaknąć kartę</translation>
     </message>
 </context>
 <context>
