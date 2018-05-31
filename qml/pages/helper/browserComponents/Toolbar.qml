@@ -214,16 +214,34 @@ Rectangle {
         icon.width: icon.height
         anchors.verticalCenter: toolbar.verticalCenter
 
-        onClicked: {
-                fPage.extraToolbar.hide()
-                //pageStack.push(Qt.resolvedUrl("../../SelectUrl.qml"), { dataContainer: page, siteURL: fPage.webview.url, bookmarks: fPage.bookmarks, siteTitle: fPage.webview.title})
-                if (!fPage.tabBar._tabListBg.visible) { fPage.tabBar.show(); fPage.bookmarkList.show() }
-                else { fPage.tabBar.hide(); fPage.bookmarkList.hide() }
+        function singleClick() {
+            fPage.extraToolbar.hide()
+            //pageStack.push(Qt.resolvedUrl("../../SelectUrl.qml"), { dataContainer: page, siteURL: fPage.webview.url, bookmarks: fPage.bookmarks, siteTitle: fPage.webview.title})
+            if (!fPage.tabBar._tabListBg.visible) { fPage.tabBar.show(); fPage.bookmarkList.show(); }
+            else { fPage.tabBar.hide(); fPage.bookmarkList.hide() }
         }
-        onDoubleClicked: {
+
+        function dblClick() {
             fPage.extraToolbar.hide()
             if (tabBar.visible && bookmarkList.visible) { tabBar.hide(); bookmarkList.hide() }
             if (prevTab != currentTab) mainWindow.switchToTab(prevTab);
+            webview.visible = true
+        }
+
+        Timer {
+            id:clickTimer
+            interval: 200
+            onTriggered: gotoButton.singleClick()
+        }
+
+        onClicked: {
+            if(clickTimer.running)
+            {
+                gotoButton.dblClick()
+                clickTimer.stop()
+            }
+            else
+                clickTimer.restart()
         }
 
         property int mx
