@@ -15,10 +15,12 @@ Rectangle {
             NumberAnimation { target: bg; property: "opacity"; to: 1; duration: 400; easing.type: Easing.InOutQuad }
             NumberAnimation { target: bg; property: "y"; to: 0; duration: 300; easing.type: Easing.InOutQuad }
         }
+        ScriptAction { script : { webview.visible = false } }
     }
 
     SequentialAnimation {
         id: hideAnim
+        ScriptAction { script : { webview.visible = true } }
         ParallelAnimation {
             NumberAnimation { target: bg; property: "opacity"; to: 0; duration: 400; easing.type: Easing.InOutQuad }
             NumberAnimation { target: bg; property: "y"; to: -height; duration: 300; easing.type: Easing.InOutQuad }
