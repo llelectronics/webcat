@@ -9,6 +9,7 @@ Page {
     property string fileIcon;
     property string fileSize;
     property string fileModified;
+    property bool fileIsDir;
     property QtObject dataContainer;
     property QtObject father;
 
@@ -99,7 +100,11 @@ Page {
                     id: openButton
                     width: parent.width
                     height: openArea.height
-                    onClicked: console.debug("Do something on click")
+                    onClicked: {
+                        if (!fileIsDir) {
+                            father.openFile(path)
+                        }
+                    }
 
                     Column {
                         id: openArea
