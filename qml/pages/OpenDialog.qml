@@ -27,7 +27,7 @@ Page {
             console.debug("[OpenDialog] Detected mimetype: " + mime);
             var mimeinfo = mime.toString().split("/");
 
-            if(mimeinfo[0] === "video")
+            if(mimeinfo[0] === "video" || mimeinfo[0] === "audio")
             {
                 mainWindow.openWithvPlayer(path,"");
                 if (mainWindow.vPlayerExternal) {
@@ -287,7 +287,7 @@ Page {
                     MenuItem {
                         text: qsTr("Properties")
                         onClicked: {
-                            pageStack.push(Qt.resolvedUrl("helper/fmComponents/FileProperties.qml"), {"path": filePath, dataContainer: dataContainer, "fileIcon": fileIcon.source, "fileSize": humanSize(fileSize), "fileModified": fileModified, "father": page})
+                            pageStack.push(Qt.resolvedUrl("helper/fmComponents/FileProperties.qml"), {"path": filePath, dataContainer: dataContainer, "fileIcon": fileIcon.source, "fileSize": humanSize(fileSize), "fileModified": fileModified, "fileIsDir": fileIsDir, "father": page})
                         }
                     }
                 }
