@@ -284,6 +284,12 @@ Page {
                             bgdelegate.remove();
                         }
                     }
+                    MenuItem {
+                        text: qsTr("Properties")
+                        onClicked: {
+                            pageStack.push(Qt.resolvedUrl("helper/fmComponents/FileProperties.qml"), {"path": filePath, dataContainer: dataContainer, "fileIcon": fileIcon.source, "fileSize": humanSize(fileSize), "fileModified": fileModified, "father": page})
+                        }
+                    }
                 }
             }
 

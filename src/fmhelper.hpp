@@ -72,6 +72,10 @@ class FM : public QObject
         {
             return QFileInfo(url).isFile();
         }
+        bool isSymLink(const QString &url)
+        {
+            return QFileInfo(url).isSymLink();
+        }
         bool cpFile(const QString &source, const QString &target)
         {
             QFileInfo srcFileInfo(source);
@@ -115,6 +119,35 @@ class FM : public QObject
         {
             return QFileInfo(url).size();
         }
+        QString getSymLinkTarget(const QString &url)
+        {
+            return QFileInfo(url).symLinkTarget();
+        }
+        QString getPermissions(const QString &url)
+        {
+            QFile::Permissions permissions;
+            permissions = QFileInfo(url).permissions();
+            char str[] = "---------";
+            int oc = 0;
+            if (permissions & 0x4000) { str[0] = 'r'; oc += 400; }
+            if (permissions & 0x2000) { str[1] = 'w'; oc += 200; }
+            if (permissions & 0x1000) { str[2] = 'x'; oc += 100; }
+            if (permissions & 0x0040) { str[3] = 'r'; oc += 40; }
+            if (permissions & 0x0020) { str[4] = 'w'; oc += 20; }
+            if (permissions & 0x0010) { str[5] = 'x'; oc += 10; }
+            if (permissions & 0x0004) { str[6] = 'r'; oc += 4; }
+            if (permissions & 0x0002) { str[7] = 'w'; oc += 2; }
+            if (permissions & 0x0001) { str[8] = 'x'; oc += 1; }
+            return QString::fromLatin1(str) + " (" + QString::number(oc) + ")";
+        }
+        QString getOwner(const QString &url)
+        {
+            return QFileInfo(url).owner();
+        }
+        QString getGroup(const QString &url)
+        {
+            return QFileInfo(url).group();
+        }
         QString getMime(const QString &url)
         {
             QMimeDatabase db;
@@ -124,7 +157,6 @@ class FM : public QObject
             QRegExp regex(QRegExp("[_\\d\\w\\-\\. ]+\\.[_\\d\\w\\-\\. ]+"));
             QString filename = url.split('/').last();
             int idx = filename.indexOf(regex);
-
             if(filename.isEmpty() || (idx == -1))
                 mime = db.mimeTypeForUrl(path);
             else

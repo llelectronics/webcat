@@ -164,6 +164,7 @@ DISTFILES += \
     qml/pages/helper/browserComponents/LinkContextMenu.qml \
     qml/pages/helper/otherComponents/TabBar.qml \
     qml/pages/helper/nightmode.css \
-    qml/pages/helper/otherComponents/BookmarkList.qml
+    qml/pages/helper/otherComponents/BookmarkList.qml \
+    qml/pages/helper/fmComponents/FileProperties.qml
 
 include(src/sortFilterProxyModel/SortFilterProxyModel.pri)
