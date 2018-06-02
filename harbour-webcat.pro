@@ -167,6 +167,8 @@ DISTFILES += \
     qml/pages/helper/otherComponents/BookmarkList.qml \
     qml/pages/helper/fmComponents/FileProperties.qml \
     qml/pages/helper/fmComponents/RenameDialog.qml \
-    qml/pages/helper/fmComponents/CreateDirDialog.qml
+    qml/pages/helper/fmComponents/CreateDirDialog.qml \
+    qml/pages/helper/fmComponents/PermissionDialog.qml \
+    qml/pages/helper/fmComponents/LetterSwitch.qml
 
 include(src/sortFilterProxyModel/SortFilterProxyModel.pri)

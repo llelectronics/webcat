@@ -375,6 +375,10 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
         <source>Rename</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Change Permissions</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>FirstPage</name>
@@ -573,6 +577,49 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
     <message>
         <source>URL to media file/stream</source>
         <translation>URL naar mediabestand/-stream</translation>
+    </message>
+</context>
+<context>
+    <name>PermissionDialog</name>
+    <message>
+        <source>Could not change permission</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Change Permissions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Change permissions for</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Read</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Write</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Execute</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Others</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

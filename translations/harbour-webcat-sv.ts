@@ -375,6 +375,10 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
         <source>Rename</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Change Permissions</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>FirstPage</name>
@@ -573,6 +577,49 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
     <message>
         <source>URL to media file/stream</source>
         <translation>URL till mediafil/-ström</translation>
+    </message>
+</context>
+<context>
+    <name>PermissionDialog</name>
+    <message>
+        <source>Could not change permission</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Change Permissions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Change permissions for</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Read</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Write</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Execute</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Others</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

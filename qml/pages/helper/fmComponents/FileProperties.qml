@@ -13,6 +13,8 @@ Page {
     property QtObject dataContainer;
     property QtObject father;
 
+    property alias fileData: fileData
+
     SilicaFlickable {
         id: flickable
         anchors.fill: parent
@@ -38,19 +40,27 @@ Page {
         // TODO: Implement
 
             PullDownMenu {
-//                MenuItem {
-//                    text: qsTr("Change Permissions")
-//                    onClicked: {
-//                        var dialog = pageStack.push(Qt.resolvedUrl("PermissionsDialog.qml"),
-//                                                    { path: page.file })
-//                        dialog.accepted.connect(function() {
-//                            if (dialog.errorMessage === "")
-//                                fileData.refresh();
-//                            else
-//                                notificationPanel.showTextWithTimer(dialog.errorMessage, "");
-//                        })
-//                    }
-//                }
+                MenuItem {
+                    text: qsTr("Change Permissions")
+                    onClicked: {
+                        var dialog = pageStack.push(Qt.resolvedUrl("PermissionDialog.qml"),
+                                                    { "path": path, "father": propertiesPage })
+                        dialog.accepted.connect(function() {
+                            if (dialog.errorMessage !== "") {
+                                console.debug(dialog.errorMessage)
+                                infoBanner.parent = propertiesPage
+                                infoBanner.anchors.top = propertiesPage.top
+                                infoBanner.showText(dialog.errorMessage)
+                            }
+                            else {
+                                // Refresh
+                                var oldPath = path
+                                path = ""
+                                path = oldPath
+                            }
+                        })
+                    }
+                }
                 MenuItem {
                     text: qsTr("Rename")
                     onClicked: {
@@ -58,7 +68,7 @@ Page {
                                                     { "path": path, "oldName": fileData.name })
                         dialog.accepted.connect(function() {
                             if (dialog.errorMessage !== "") {
-                                console.debug("Rename fail: " + dialog.errorMessage)
+                                console.debug(dialog.errorMessage)
                                 infoBanner.parent = propertiesPage
                                 infoBanner.anchors.top = propertiesPage.top
                                 infoBanner.showText(dialog.errorMessage)
