@@ -119,6 +119,11 @@ class FM : public QObject
         {
             return QFile(source).rename(target);
         }
+        bool createDir(const QString &target)
+        {
+            QDir newDir;
+            return newDir.mkdir(target);
+        }
         int getSize(const QString &url)
         {
             return QFileInfo(url).size();

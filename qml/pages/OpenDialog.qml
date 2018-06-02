@@ -108,6 +108,21 @@ Page {
 
         PullDownMenu {
             MenuItem {
+                text: qsTr("Create Folder")
+                onClicked: {
+                    var dialog = pageStack.push(Qt.resolvedUrl("helper/fmComponents/CreateDirDialog.qml"),
+                                                { "path": path })
+                    dialog.accepted.connect(function() {
+                        if (dialog.errorMessage !== "") {
+                            console.debug(dialog.errorMessage)
+                            infoBanner.parent = propertiesPage
+                            infoBanner.anchors.top = propertiesPage.top
+                            infoBanner.showText(dialog.errorMessage)
+                        }
+                    })
+                }
+            }
+            MenuItem {
                 text: qsTr("Show Filesystem Root")
                 onClicked: fileModel.folder = _fm.getRoot();
             }
@@ -152,7 +167,10 @@ Page {
 
             function remove() {
                 var removal = removalComponent.createObject(bgdelegate)
-                removal.execute(delegate,qsTr("Deleting ") + fileName, function() { _fm.remove(filePath); })
+                if (fileIsDir)
+                    removal.execute(delegate,qsTr("Deleting ") + fileName, function() { _fm.removeDir(filePath); })
+                else
+                    removal.execute(delegate,qsTr("Deleting ") + fileName, function() { _fm.remove(filePath); })
             }
 
             function copy() {

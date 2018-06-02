@@ -181,6 +181,29 @@ En cas de dubte, refuseu el certificat malgrat que això pot provocar que no es 
     </message>
 </context>
 <context>
+    <name>CreateDirDialog</name>
+    <message>
+        <source>Error creating new directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Create Folder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Create</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Create a new folder under</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Folder name</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>DownloadManager</name>
     <message>
         <source>Add Download</source>
@@ -530,6 +553,10 @@ En cas de dubte, refuseu el certificat malgrat que això pot provocar que no es 
     </message>
     <message>
         <source>Properties</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Create Folder</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

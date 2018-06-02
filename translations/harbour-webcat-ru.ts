@@ -180,6 +180,29 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
 </context>
 <context>
+    <name>CreateDirDialog</name>
+    <message>
+        <source>Error creating new directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Create Folder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Create</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Create a new folder under</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Folder name</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>DownloadManager</name>
     <message>
         <source>Add Download</source>
@@ -529,6 +552,10 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Properties</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Create Folder</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

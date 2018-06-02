@@ -166,6 +166,7 @@ DISTFILES += \
     qml/pages/helper/nightmode.css \
     qml/pages/helper/otherComponents/BookmarkList.qml \
     qml/pages/helper/fmComponents/FileProperties.qml \
-    qml/pages/helper/fmComponents/RenameDialog.qml
+    qml/pages/helper/fmComponents/RenameDialog.qml \
+    qml/pages/helper/fmComponents/CreateDirDialog.qml
 
 include(src/sortFilterProxyModel/SortFilterProxyModel.pri)
