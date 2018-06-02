@@ -347,6 +347,10 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
         <source>Properties</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Rename</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>FirstPage</name>
@@ -588,6 +592,25 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
     <message>
         <source>Tor is free software for enabling anonymous communication. This will setup the proxy automatically to use tor. Tor service must be running on the system for this to work.</source>
         <translation>Tor est un logiciel libre permettant la communication anonyme. Ceci configurera automatiquement le proxy pour utiliser Tor. Le service Tor doit fonctionner sur le système pour fonctionner. </translation>
+    </message>
+</context>
+<context>
+    <name>RenameDialog</name>
+    <message>
+        <source>Error renaming</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rename</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Give a new name for</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New name</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

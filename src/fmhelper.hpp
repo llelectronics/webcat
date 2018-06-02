@@ -115,9 +115,35 @@ class FM : public QObject
             }
             else return false;
         }
+        bool renameFile(const QString &source, const QString &target)
+        {
+            return QFile(source).rename(target);
+        }
         int getSize(const QString &url)
         {
             return QFileInfo(url).size();
+        }
+        quint64 getDirSize(const QString &url)
+        {
+            quint64 sizex = 0;
+            QFileInfo url_info(url);
+            if (url_info.isDir())
+            {
+                QDir dir(url);
+                QFileInfoList list = dir.entryInfoList(QDir::Files | QDir::Dirs |  QDir::Hidden | QDir::NoSymLinks | QDir::NoDotAndDotDot);
+                for (int i = 0; i < list.size(); ++i)
+                {
+                    QFileInfo fileInfo = list.at(i);
+                    if(fileInfo.isDir())
+                    {
+                            sizex += getDirSize(fileInfo.absoluteFilePath());
+                    }
+                    else
+                        sizex += fileInfo.size();
+
+                }
+            }
+            return sizex;
         }
         QString getSymLinkTarget(const QString &url)
         {

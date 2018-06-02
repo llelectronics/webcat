@@ -37,47 +37,49 @@ Page {
 
         // TODO: Implement
 
-        //    PullDownMenu {
-        //        MenuItem {
-        //            text: qsTr("Change Permissions")
-        //            onClicked: {
-        //                var dialog = pageStack.push(Qt.resolvedUrl("PermissionsDialog.qml"),
-        //                                            { path: page.file })
-        //                dialog.accepted.connect(function() {
-        //                    if (dialog.errorMessage === "")
-        //                        fileData.refresh();
-        //                    else
-        //                        notificationPanel.showTextWithTimer(dialog.errorMessage, "");
-        //                })
-        //            }
-        //        }
-        //        MenuItem {
-        //            text: qsTr("Rename")
-        //            onClicked: {
-        //                var dialog = pageStack.push(Qt.resolvedUrl("RenameDialog.qml"),
-        //                                            { path: page.file })
-        //                dialog.accepted.connect(function() {
-        //                    if (dialog.errorMessage === "")
-        //                        page.file = dialog.newPath;
-        //                    else
-        //                        notificationPanel.showTextWithTimer(dialog.errorMessage, "");
-        //                })
-        //            }
-        //        }
+            PullDownMenu {
+//                MenuItem {
+//                    text: qsTr("Change Permissions")
+//                    onClicked: {
+//                        var dialog = pageStack.push(Qt.resolvedUrl("PermissionsDialog.qml"),
+//                                                    { path: page.file })
+//                        dialog.accepted.connect(function() {
+//                            if (dialog.errorMessage === "")
+//                                fileData.refresh();
+//                            else
+//                                notificationPanel.showTextWithTimer(dialog.errorMessage, "");
+//                        })
+//                    }
+//                }
+                MenuItem {
+                    text: qsTr("Rename")
+                    onClicked: {
+                        var dialog = pageStack.push(Qt.resolvedUrl("RenameDialog.qml"),
+                                                    { "path": path, "oldName": fileData.name })
+                        dialog.accepted.connect(function() {
+                            if (dialog.errorMessage !== "") {
+                                console.debug("Rename fail: " + dialog.errorMessage)
+                                infoBanner.parent = propertiesPage
+                                infoBanner.anchors.top = propertiesPage.top
+                                infoBanner.showText(dialog.errorMessage)
+                            }
+                            else
+                                propertiesPage.path = dialog.newPath;
+                        })
+                    }
+                }
+//                MenuItem {
+//                    text: qsTr("View Contents")
+//                    visible: !fileData.isDir
+//                    onClicked: viewContents()
+//                }
 
-
-        //        MenuItem {
-        //            text: qsTr("View Contents")
-        //            visible: !fileData.isDir
-        //            onClicked: viewContents()
-        //        }
-
-        //        MenuItem {
-        //            text: qsTr("Go to Target")
-        //            visible: fileData.isSymLink && fileData.isDir
-        //            onClicked: Functions.goToFolder(fileData.symLinkTarget);
-        //        }
-        //    }
+//                MenuItem {
+//                    text: qsTr("Go to Target")
+//                    visible: fileData.isSymLink && fileData.isDir
+//                    onClicked: Functions.goToFolder(fileData.symLinkTarget);
+//                }
+            }
 
         Column {
             id: column
@@ -174,7 +176,7 @@ Page {
                 }
                 DetailItem {
                     label: qsTr("Size")
-                    value: fileSize
+                    value: fileIsDir? father.humanSize(_fm.getDirSize(path)) : fileSize
                 }
                 DetailItem {
                     label: qsTr("Permissions")
