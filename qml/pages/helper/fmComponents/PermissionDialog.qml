@@ -71,7 +71,7 @@ Dialog {
             Row {
                 width: parent.width
                 Label {
-                    width: parent.width/2
+                    width: parent.width/2 - 2*Theme.paddingLarge
                     text: " "
                 }
 
@@ -104,7 +104,7 @@ Dialog {
             Row {
                 width: parent.width
                 Column {
-                    width: parent.width/2
+                    width: parent.width/2 - 2 * Theme.paddingLarge
                     Label {
                         id: ownerName
                         width: parent.width - Theme.paddingLarge
@@ -142,7 +142,7 @@ Dialog {
                 id: groupRow
                 width: parent.width
                 Column {
-                    width: parent.width/2
+                    width: parent.width/2 - 2 * Theme.paddingLarge
                     Label {
                         id: groupName
                         width: parent.width - Theme.paddingLarge
@@ -180,7 +180,7 @@ Dialog {
                 width: parent.width
                 height: groupRow.height
                 Item {
-                    width: parent.width/2
+                    width: parent.width/2 - 2 * Theme.paddingLarge
                     height: parent.height
                     Label {
                         width: parent.width - Theme.paddingLarge
