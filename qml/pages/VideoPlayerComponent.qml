@@ -288,6 +288,11 @@ Item {
                 pulley.visible = true
             }
 
+            _maxTime.anchors.rightMargin: {
+                if (fsIcon.visible) fsIcon.width + (1.5 * Theme.paddingLarge)
+                else (2 * Theme.paddingLarge)
+            }
+
 
             onClicked: {
                 if (mediaPlayer.playbackState == MediaPlayer.PlayingState) {
@@ -342,8 +347,8 @@ Item {
             onClicked: switchScreen()
             anchors.right: mediaItem.right
             anchors.rightMargin: Theme.paddingMedium
-            y: headerBg.height
-            anchors.topMargin: Theme.paddingLarge * 2
+            anchors.bottom: mediaItem.bottom
+            anchors.bottomMargin: Theme.paddingMedium
             visible: (videoPage == false)
             opacity: videoPoster.controls.opacity
             width: height
@@ -355,8 +360,8 @@ Item {
             id: closeIcon
             icon.source: "img/close-icon.png"
             onClicked: closePlayer()
-            anchors.left: mediaItem.left
-            anchors.leftMargin: Theme.paddingMedium
+            anchors.right: mediaItem.right
+            anchors.rightMargin: Theme.paddingMedium
             y: headerBg.height
             visible: (videoPage == false)
             anchors.topMargin: Theme.paddingLarge * 2
