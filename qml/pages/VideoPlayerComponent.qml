@@ -293,6 +293,9 @@ Item {
                 else (2 * Theme.paddingLarge)
             }
 
+            _positionSlider.anchors.rightMargin: {
+                if (fsIcon.visible && !_maxTime.visible) fsIcon.width + (1.5 * Theme.paddingLarge)
+            }
 
             onClicked: {
                 if (mediaPlayer.playbackState == MediaPlayer.PlayingState) {
@@ -348,7 +351,7 @@ Item {
             anchors.right: mediaItem.right
             anchors.rightMargin: Theme.paddingMedium
             anchors.bottom: mediaItem.bottom
-            anchors.bottomMargin: Theme.paddingMedium
+            anchors.bottomMargin: Theme.paddingMedium * 1.5
             visible: (videoPage == false)
             opacity: videoPoster.controls.opacity
             width: height

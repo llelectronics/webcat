@@ -998,6 +998,10 @@ Page {
         //source: "VideoPlayer.qml"
         z:80
         onLoaded: if (webview.visible) webview.visible = false
+        onRotationChanged: {
+            width = page.width
+            height = page.height - toolbar.height - mediaDownloadRec.height
+        }
     }
 
     Connections {
