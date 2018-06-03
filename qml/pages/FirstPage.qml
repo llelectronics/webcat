@@ -994,14 +994,13 @@ Page {
     Loader {
         id: vPlayerLoader
         width: page.width
-        height: page.height - toolbar.height - mediaDownloadRec.height
+        anchors.top: page.top
+        anchors.left: page.left
+        anchors.right: page.right
+        anchors.bottom: mediaDownloadRec.visible ? mediaDownloadRec.top : toolbar.top
         //source: "VideoPlayer.qml"
         z:80
         onLoaded: if (webview.visible) webview.visible = false
-        onRotationChanged: {
-            width = page.width
-            height = page.height - toolbar.height - mediaDownloadRec.height
-        }
     }
 
     Connections {
@@ -1012,10 +1011,13 @@ Page {
                 vPlayerLoader.z = 99 //Above everything else
             }
             else {
-                vPlayerLoader.anchors.fill = webview
-                vPlayerLoader.width = page.width
-                vPlayerLoader.height = page.height - toolbar.height - mediaDownloadRec.height
                 if (toolbar.state == "expanded") toolbar.state = "minimized"
+                vPlayerLoader.anchors.fill = undefined
+                vPlayerLoader.anchors.top = page.top
+                vPlayerLoader.anchors.left = page.left
+                vPlayerLoader.anchors.right = page.right
+                vPlayerLoader.anchors.bottom = page.bottom
+                vPlayerLoader.anchors.bottom = mediaDownloadRec.visible ? mediaDownloadRec.top : toolbar.top
                 vPlayerLoader.z = 80
             }
         }
