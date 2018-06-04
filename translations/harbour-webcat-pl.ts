@@ -507,22 +507,6 @@ Jeśli nie jesteś pewien, powinieneś odrzucić certyfikat. Może to jednak uni
         <translation>Otwieranie...</translation>
     </message>
     <message>
-        <source>Show Filesystem Root</source>
-        <translation>Pokaż katalog Roota</translation>
-    </message>
-    <message>
-        <source>Show Home</source>
-        <translation>Pokaż katalog domowy</translation>
-    </message>
-    <message>
-        <source>Show Android SDCard</source>
-        <translation>Pokaż kartę pamięci Adroida</translation>
-    </message>
-    <message>
-        <source>Show SDCard</source>
-        <translation>Pokaż kartę pamięci</translation>
-    </message>
-    <message>
         <source>Paste</source>
         <translation>Wklej</translation>
     </message>

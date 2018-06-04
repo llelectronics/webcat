@@ -508,22 +508,6 @@ En cas de dubte, refuseu el certificat malgrat que això pot provocar que no es 
         <translation>S&apos;està obrint...</translation>
     </message>
     <message>
-        <source>Show Filesystem Root</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Show Home</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Show Android SDCard</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Show SDCard</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Paste</source>
         <translation type="unfinished"></translation>
     </message>

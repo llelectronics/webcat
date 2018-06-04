@@ -132,22 +132,22 @@ Page {
                     })
                 }
             }
-            MenuItem {
-                text: qsTr("Show Filesystem Root")
-                onClicked: fileModel.folder = _fm.getRoot();
-            }
-            MenuItem {
-                text: qsTr("Show Home")
-                onClicked: fileModel.folder = _fm.getHome();
-            }
-            MenuItem {
-                text: qsTr("Show Android SDCard")
-                onClicked: fileModel.folder = _fm.getHome() + "/android_storage";
-            }
-            MenuItem {
-                text: qsTr("Show SDCard")
-                onClicked: fileModel.folder = _fm.getRoot() + "media/sdcard";
-            }
+//            MenuItem {
+//                text: qsTr("Show Filesystem Root")
+//                onClicked: fileModel.folder = _fm.getRoot();
+//            }
+//            MenuItem {
+//                text: qsTr("Show Home")
+//                onClicked: fileModel.folder = _fm.getHome();
+//            }
+//            MenuItem {
+//                text: qsTr("Show Android SDCard")
+//                onClicked: fileModel.folder = _fm.getHome() + "/android_storage";
+//            }
+//            MenuItem {
+//                text: qsTr("Show SDCard")
+//                onClicked: fileModel.folder = _fm.getRoot() + "media/sdcard";
+//            }
             MenuItem {
                 id: pasteMenuEntry
                 visible: { if (_fm.sourceUrl != "" && _fm.sourceUrl != undefined) return true;
@@ -164,6 +164,15 @@ Page {
                         //console.debug("Copy " + _fm.sourceUrl + " to " + findFullPath(fileModel.folder)+ "/" + findBaseName(_fm.sourceUrl));
                         _fm.copyFile(_fm.sourceUrl,findFullPath(fileModel.folder) + "/" + findBaseName(_fm.sourceUrl))
                     }
+                }
+            }
+            MenuItem {
+                text: qsTr("Properties")
+                onClicked: {
+                    pageStack.push(Qt.resolvedUrl("helper/fmComponents/FileProperties.qml"),
+                                          {"path": findFullPath(fileModel.folder), dataContainer: dataContainer, "fileIcon": "image://theme/icon-m-folder", "fileSize": "4k",
+                                           "fileModified": fileModel.fileModified, "fileIsDir": true, "father": page})
+                    console.debug("Path: " + findFullPath(fileModel.folder))
                 }
             }
         }

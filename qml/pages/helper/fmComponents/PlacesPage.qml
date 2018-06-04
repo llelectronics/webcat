@@ -141,7 +141,4 @@ Page {
         // End Section Places
 
     }
-    Component.onCompleted: {
-        console.debug("SDCardDir: " + sdCardDir)
-    }
 }

@@ -507,22 +507,6 @@ Wenn Sie sich unsicher sind lehnen sie das Zertifikat ab. Dies führt unter Umst
         <translation>Öffne...</translation>
     </message>
     <message>
-        <source>Show Filesystem Root</source>
-        <translation>Zeige Root Dateisystem</translation>
-    </message>
-    <message>
-        <source>Show Home</source>
-        <translation>Zeige Home</translation>
-    </message>
-    <message>
-        <source>Show Android SDCard</source>
-        <translation>Zeige Android SDCard</translation>
-    </message>
-    <message>
-        <source>Show SDCard</source>
-        <translation>Zeige SDCard</translation>
-    </message>
-    <message>
         <source>Paste</source>
         <translation>Einfügen</translation>
     </message>

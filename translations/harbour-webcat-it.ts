@@ -508,22 +508,6 @@ Se non sei sicuro, rifiuta il certificato. Ma questo può impedire il caricament
         <translation>Apertura...</translation>
     </message>
     <message>
-        <source>Show Filesystem Root</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>Show Home</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Show Android SDCard</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Show SDCard</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Paste</source>
         <translation type="unfinished"></translation>
     </message>

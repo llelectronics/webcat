@@ -508,22 +508,6 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
         <translation>Öppnar...</translation>
     </message>
     <message>
-        <source>Show Filesystem Root</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Show Home</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Show Android SDCard</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Show SDCard</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Paste</source>
         <translation type="unfinished"></translation>
     </message>

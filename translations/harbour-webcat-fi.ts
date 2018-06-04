@@ -506,22 +506,6 @@ If you are unsure reject the certificate. That might lead to a non loading websi
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Show Filesystem Root</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Show Home</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Show Android SDCard</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Show SDCard</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Paste</source>
         <translation type="unfinished"></translation>
     </message>
