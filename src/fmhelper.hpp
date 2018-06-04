@@ -14,6 +14,7 @@
 #include <QFuture>
 #include <QtConcurrent/QtConcurrent>
 #include <QFutureWatcher>
+#include <QStorageInfo>
 
 class FM : public QObject
 {   Q_OBJECT
@@ -55,6 +56,17 @@ class FM : public QObject
         QString getRoot()
         {    //qDebug() << "Called the C++ slot and request removal of:" << url;
              return QDir::rootPath();
+        }
+        QString getSDCard()
+        {
+            foreach (const QStorageInfo &storage, QStorageInfo::mountedVolumes()) {
+                    if (storage.isValid() && storage.isReady() && storage.device().indexOf("mmcblk1p1") != -1) {
+//                        qDebug() << "DEBUG STORAGE rootPath: " + storage.rootPath();
+//                        qDebug() << "DEBUG STORAGE device: " + storage.device();
+                        return storage.rootPath();
+                    }
+            }
+            return "";
         }
         QString data_dir()
         {

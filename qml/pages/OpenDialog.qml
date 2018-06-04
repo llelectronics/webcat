@@ -12,12 +12,22 @@ Page {
     property string path
     property variant filter: [ "*" ]
 
+    property bool _loaded: false
+
     property QtObject dataContainer
 
     signal fileOpen(string path);
 
     onPathChanged: {
         openFile(path);
+    }
+
+    onStatusChanged: {
+        if (status == PageStatus.Active && !_loaded) {
+            pageStack.pushAttached(Qt.resolvedUrl("helper/fmComponents/PlacesPage.qml"),
+                                   { "father": page })
+            _loaded = true
+        }
     }
 
     function openFile(path) {

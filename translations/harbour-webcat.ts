@@ -619,6 +619,53 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
 </context>
 <context>
+    <name>PlacesPage</name>
+    <message>
+        <source>Phone memory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SD Card</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Home</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Documents</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Downloads</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Music</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pictures</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Videos</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Places</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Devices</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Common</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ProxySettingsPage</name>
     <message>
         <source>Save</source>

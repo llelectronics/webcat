@@ -169,6 +169,9 @@ DISTFILES += \
     qml/pages/helper/fmComponents/RenameDialog.qml \
     qml/pages/helper/fmComponents/CreateDirDialog.qml \
     qml/pages/helper/fmComponents/PermissionDialog.qml \
-    qml/pages/helper/fmComponents/LetterSwitch.qml
+    qml/pages/helper/fmComponents/LetterSwitch.qml \
+    qml/pages/helper/fmComponents/PlacesPage.qml \
+    qml/pages/helper/fmComponents/DirEntryDelegate.qml \
+    qml/pages/img/sdcard.png
 
 include(src/sortFilterProxyModel/SortFilterProxyModel.pri)
