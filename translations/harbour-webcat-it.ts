@@ -609,10 +609,6 @@ Se non sei sicuro, rifiuta il certificato. Ma questo può impedire il caricament
 <context>
     <name>PlacesPage</name>
     <message>
-        <source>Phone memory</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>SD Card</source>
         <translation type="unfinished"></translation>
     </message>
@@ -650,6 +646,10 @@ Se non sei sicuro, rifiuta il certificato. Ma questo può impedire il caricament
     </message>
     <message>
         <source>Common</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Device memory</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

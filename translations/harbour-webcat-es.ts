@@ -609,10 +609,6 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
 <context>
     <name>PlacesPage</name>
     <message>
-        <source>Phone memory</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>SD Card</source>
         <translation type="unfinished"></translation>
     </message>
@@ -650,6 +646,10 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>Common</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Device memory</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

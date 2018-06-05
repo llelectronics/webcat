@@ -608,10 +608,6 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
 <context>
     <name>PlacesPage</name>
     <message>
-        <source>Phone memory</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>SD Card</source>
         <translation type="unfinished"></translation>
     </message>
@@ -649,6 +645,10 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
     </message>
     <message>
         <source>Common</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Device memory</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

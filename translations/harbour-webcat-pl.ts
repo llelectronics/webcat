@@ -608,10 +608,6 @@ Jeśli nie jesteś pewien, powinieneś odrzucić certyfikat. Może to jednak uni
 <context>
     <name>PlacesPage</name>
     <message>
-        <source>Phone memory</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>SD Card</source>
         <translation type="unfinished"></translation>
     </message>
@@ -649,6 +645,10 @@ Jeśli nie jesteś pewien, powinieneś odrzucić certyfikat. Może to jednak uni
     </message>
     <message>
         <source>Common</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Device memory</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -609,10 +609,6 @@ En cas de dubte, refuseu el certificat malgrat que això pot provocar que no es 
 <context>
     <name>PlacesPage</name>
     <message>
-        <source>Phone memory</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>SD Card</source>
         <translation type="unfinished"></translation>
     </message>
@@ -650,6 +646,10 @@ En cas de dubte, refuseu el certificat malgrat que això pot provocar que no es 
     </message>
     <message>
         <source>Common</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Device memory</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

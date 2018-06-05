@@ -609,10 +609,6 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
 <context>
     <name>PlacesPage</name>
     <message>
-        <source>Phone memory</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>SD Card</source>
         <translation type="unfinished"></translation>
     </message>
@@ -650,6 +646,10 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
     </message>
     <message>
         <source>Common</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Device memory</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

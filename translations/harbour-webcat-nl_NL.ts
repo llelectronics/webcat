@@ -609,10 +609,6 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
 <context>
     <name>PlacesPage</name>
     <message>
-        <source>Phone memory</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>SD Card</source>
         <translation type="unfinished"></translation>
     </message>
@@ -650,6 +646,10 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
     </message>
     <message>
         <source>Common</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Device memory</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
