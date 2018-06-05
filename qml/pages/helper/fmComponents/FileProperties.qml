@@ -10,6 +10,7 @@ Page {
     property string fileSize;
     property string fileModified;
     property bool fileIsDir;
+    property var fileSizeDir: if (fileIsDir) { busyDirSize.running = true;  _fm.getDirSize(path) }
     property QtObject dataContainer;
     property QtObject father;
 
@@ -186,7 +187,22 @@ Page {
                 }
                 DetailItem {
                     label: qsTr("Size")
-                    value: fileIsDir? father.humanSize(_fm.getDirSize(path)) : fileSize
+                    value: {
+                        if (fileIsDir) {
+                            if (fileSizeDir != "-1") father.humanSize(fileSizeDir)
+                            else "Calculating..."
+                        }
+                        else
+                            fileSize
+                    }
+                    BusyIndicator {
+                        id: busyDirSize
+                        anchors.left: parent.left
+                        anchors.leftMargin: parent.width - Theme.paddingLarge * 2
+                        anchors.verticalCenter: parent.verticalCenter
+                        visible: running
+                        size: BusyIndicatorSize.ExtraSmall
+                    }
                 }
                 DetailItem {
                     label: qsTr("Permissions")
@@ -205,6 +221,14 @@ Page {
                     value: fileModified
                 }
             }
+        }
+    }
+    Connections {
+        target: _fm
+        onDirSizeChanged: {
+            busyDirSize.running = false
+            //console.debug("DirSize: " + dirSize)
+            fileSizeDir = dirSize
         }
     }
 }

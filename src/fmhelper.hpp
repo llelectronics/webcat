@@ -26,13 +26,16 @@ class FM : public QObject
     signals:
         void sourceUrlChanged();
         void cpResultChanged();
+        void dirSizeChanged(quint64 dirSize);
     private:
         QString m_sourceUrl;
         bool m_moveMode;
         QString m_dataDir = QStandardPaths::writableLocation(QStandardPaths::DataLocation);
         QString m_docDir = QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation);
         QFutureWatcher<bool> watcher;
+        QFutureWatcher<quint64> dirWatcher;
         bool m_cpResult;
+        quint64 m_dirSize;
     private slots:
         void setSourceUrl(const QString &url) { m_sourceUrl = url; emit sourceUrlChanged();}
         void setMoveMode(bool &mode) { m_moveMode = mode;}
@@ -40,6 +43,7 @@ class FM : public QObject
         QString sourceUrl() {return m_sourceUrl;}
         bool isMoveMode() {return m_moveMode;}
         bool cpResult() {return m_cpResult;}
+        //quint64 dirSize() { return m_dirSize; }
     public slots:
         void remove(const QString &url)
         {    //qDebug() << "Called the C++ slot and request removal of:" << url;
@@ -161,7 +165,14 @@ class FM : public QObject
         {
             return QFileInfo(url).size();
         }
-        quint64 getDirSize(const QString &url)
+        int getDirSize(const QString &url)
+        {
+            connect(&dirWatcher, SIGNAL(finished()), this, SLOT(dirSizeFinished()));
+            QFuture<quint64> future = QtConcurrent::run(this, &FM::_getDirSize,url);
+            dirWatcher.setFuture(future);
+            return -1;
+        }
+        quint64 _getDirSize(const QString &url)
         {
             quint64 sizex = 0;
             QFileInfo url_info(url);
@@ -174,7 +185,7 @@ class FM : public QObject
                     QFileInfo fileInfo = list.at(i);
                     if(fileInfo.isDir())
                     {
-                            sizex += getDirSize(fileInfo.absoluteFilePath());
+                            sizex += _getDirSize(fileInfo.absoluteFilePath());
                     }
                     else
                         sizex += fileInfo.size();
@@ -232,6 +243,12 @@ class FM : public QObject
            m_cpResult = watcher.future().result();
            qDebug() << "m_cpResult = " << m_cpResult;
            emit cpResultChanged();
+        }
+        void dirSizeFinished()
+        {
+           m_dirSize = dirWatcher.future().result();
+           //qDebug() << "m_dirSize = " << m_dirSize;
+           emit dirSizeChanged(m_dirSize);
         }
 };
 
