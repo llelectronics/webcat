@@ -547,6 +547,10 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
         <source>Create Folder</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Add to places</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>OpenURLPage</name>
@@ -609,6 +613,10 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
 <context>
     <name>PlacesPage</name>
     <message>
+        <source>Device memory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>SD Card</source>
         <translation type="unfinished"></translation>
     </message>
@@ -649,8 +657,12 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Device memory</source>
+        <source>Custom</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting </source>
+        <translation type="unfinished">Tar bort</translation>
     </message>
 </context>
 <context>

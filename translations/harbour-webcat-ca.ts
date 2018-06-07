@@ -547,6 +547,10 @@ En cas de dubte, refuseu el certificat malgrat que això pot provocar que no es 
         <source>Create Folder</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Add to places</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>OpenURLPage</name>
@@ -609,6 +613,10 @@ En cas de dubte, refuseu el certificat malgrat que això pot provocar que no es 
 <context>
     <name>PlacesPage</name>
     <message>
+        <source>Device memory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>SD Card</source>
         <translation type="unfinished"></translation>
     </message>
@@ -649,8 +657,12 @@ En cas de dubte, refuseu el certificat malgrat que això pot provocar que no es 
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Device memory</source>
-        <translation type="unfinished"></translation>
+        <source>Custom</source>
+        <translation type="unfinished">Personalitza</translation>
+    </message>
+    <message>
+        <source>Deleting </source>
+        <translation type="unfinished">S&apos;està eliminant</translation>
     </message>
 </context>
 <context>

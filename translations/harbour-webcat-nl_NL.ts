@@ -547,6 +547,10 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
         <source>Create Folder</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Add to places</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>OpenURLPage</name>
@@ -609,6 +613,10 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
 <context>
     <name>PlacesPage</name>
     <message>
+        <source>Device memory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>SD Card</source>
         <translation type="unfinished"></translation>
     </message>
@@ -649,8 +657,12 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Device memory</source>
-        <translation type="unfinished"></translation>
+        <source>Custom</source>
+        <translation type="unfinished">Aangepast</translation>
+    </message>
+    <message>
+        <source>Deleting </source>
+        <translation type="unfinished">Bezig met verwijderen</translation>
     </message>
 </context>
 <context>

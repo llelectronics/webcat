@@ -543,6 +543,10 @@ If you are unsure reject the certificate. That might lead to a non loading websi
         <source>Create Folder</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Add to places</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>OpenURLPage</name>
@@ -605,6 +609,10 @@ If you are unsure reject the certificate. That might lead to a non loading websi
 <context>
     <name>PlacesPage</name>
     <message>
+        <source>Device memory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>SD Card</source>
         <translation type="unfinished"></translation>
     </message>
@@ -645,8 +653,12 @@ If you are unsure reject the certificate. That might lead to a non loading websi
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Device memory</source>
-        <translation type="unfinished"></translation>
+        <source>Custom</source>
+        <translation type="unfinished">Vlastní</translation>
+    </message>
+    <message>
+        <source>Deleting </source>
+        <translation type="unfinished">Odstraňování</translation>
     </message>
 </context>
 <context>

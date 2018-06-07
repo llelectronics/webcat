@@ -547,6 +547,10 @@ Se non sei sicuro, rifiuta il certificato. Ma questo può impedire il caricament
         <source>Create Folder</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Add to places</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>OpenURLPage</name>
@@ -609,6 +613,10 @@ Se non sei sicuro, rifiuta il certificato. Ma questo può impedire il caricament
 <context>
     <name>PlacesPage</name>
     <message>
+        <source>Device memory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>SD Card</source>
         <translation type="unfinished"></translation>
     </message>
@@ -649,8 +657,12 @@ Se non sei sicuro, rifiuta il certificato. Ma questo può impedire il caricament
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Device memory</source>
-        <translation type="unfinished"></translation>
+        <source>Custom</source>
+        <translation type="unfinished">Personalizzato</translation>
+    </message>
+    <message>
+        <source>Deleting </source>
+        <translation type="unfinished">Eliminazione</translation>
     </message>
 </context>
 <context>

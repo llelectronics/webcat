@@ -1,6 +1,7 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 import harbour.webcat.FolderListModel 1.0
+import Nemo.Configuration 1.0
 
 Page {
     id: page
@@ -17,6 +18,24 @@ Page {
     property QtObject dataContainer
 
     signal fileOpen(string path);
+
+   property var customPlaces: [
+//       {
+//           name: qsTr("Android Storage"),
+//           path: _fm.getHome() + "/android_storage",
+//           icon: "image://theme/icon-m-folder"
+//       }
+   ]
+
+
+    ConfigurationGroup {
+        id: customPlacesSettings
+        path: "/apps/harbour-llsfileman"
+    }
+
+    onCustomPlacesChanged: {
+        saveCustomPlaces();
+    }
 
     onPathChanged: {
         openFile(path);
@@ -57,6 +76,12 @@ Page {
                 Qt.openUrlExternally(path);
             }
         }
+    }
+
+    function saveCustomPlaces() {
+        var customPlacesJson = JSON.stringify(customPlaces);
+        //console.debug(customPlacesJson);
+        customPlacesSettings.setValue("places",customPlacesJson);
     }
 
     FolderListModel {
@@ -148,6 +173,20 @@ Page {
 //                text: qsTr("Show SDCard")
 //                onClicked: fileModel.folder = _fm.getRoot() + "media/sdcard";
 //            }
+            MenuItem {
+                text: qsTr("Add to places")
+                onClicked: {
+                    customPlaces.push(
+                                {
+                                    name: findBaseName(path),
+                                    path: path,
+                                    icon: "image://theme/icon-m-folder"
+                                }
+                                )
+                    customPlacesChanged()
+                }
+            }
+
             MenuItem {
                 id: pasteMenuEntry
                 visible: { if (_fm.sourceUrl != "" && _fm.sourceUrl != undefined) return true;

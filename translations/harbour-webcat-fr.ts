@@ -546,6 +546,10 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
         <source>Create Folder</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Add to places</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>OpenURLPage</name>
@@ -608,6 +612,10 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
 <context>
     <name>PlacesPage</name>
     <message>
+        <source>Device memory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>SD Card</source>
         <translation type="unfinished"></translation>
     </message>
@@ -648,8 +656,12 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Device memory</source>
+        <source>Custom</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting </source>
+        <translation type="unfinished">Suppression</translation>
     </message>
 </context>
 <context>

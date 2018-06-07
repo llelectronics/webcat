@@ -546,6 +546,10 @@ Jeśli nie jesteś pewien, powinieneś odrzucić certyfikat. Może to jednak uni
         <source>Create Folder</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Add to places</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>OpenURLPage</name>
@@ -608,6 +612,10 @@ Jeśli nie jesteś pewien, powinieneś odrzucić certyfikat. Może to jednak uni
 <context>
     <name>PlacesPage</name>
     <message>
+        <source>Device memory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>SD Card</source>
         <translation type="unfinished"></translation>
     </message>
@@ -648,8 +656,12 @@ Jeśli nie jesteś pewien, powinieneś odrzucić certyfikat. Może to jednak uni
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Device memory</source>
+        <source>Custom</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting </source>
+        <translation type="unfinished">Usuwanie</translation>
     </message>
 </context>
 <context>

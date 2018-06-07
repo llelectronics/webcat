@@ -546,6 +546,10 @@ Wenn Sie sich unsicher sind lehnen sie das Zertifikat ab. Dies führt unter Umst
         <source>Create Folder</source>
         <translation>Ordner erstellen</translation>
     </message>
+    <message>
+        <source>Add to places</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>OpenURLPage</name>
@@ -608,48 +612,56 @@ Wenn Sie sich unsicher sind lehnen sie das Zertifikat ab. Dies führt unter Umst
 <context>
     <name>PlacesPage</name>
     <message>
+        <source>Device memory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>SD Card</source>
-        <translation>SD Speicherkarte</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Home</source>
-        <translation>Persönlicher Ordner</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Documents</source>
-        <translation>Dokumente</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Downloads</source>
-        <translation>Downloads</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Music</source>
-        <translation>Musik</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Pictures</source>
-        <translation>Bilder</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Videos</source>
-        <translation>Videos</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Places</source>
-        <translation>Orte</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Devices</source>
-        <translation>Geräte</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Common</source>
-        <translation>Bekannte</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Device memory</source>
-        <translation>Gerätespeicher</translation>
+        <source>Custom</source>
+        <translation type="unfinished">Benutzerdefiniert</translation>
+    </message>
+    <message>
+        <source>Deleting </source>
+        <translation type="unfinished">Lösche </translation>
     </message>
 </context>
 <context>
