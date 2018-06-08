@@ -13,10 +13,6 @@ Dialog {
 
     onAccepted: {
         newPath = path.replace(oldName,newName.text)
-        var isRenamed = _fm.renameFile(path, newPath);
-        if (!isRenamed) {
-            errorMessage = qsTr("Error renaming")
-        }
     }
 
     Component.onCompleted: {

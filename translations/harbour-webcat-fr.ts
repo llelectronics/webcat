@@ -378,6 +378,10 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
         <source>Change Permissions</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Error renaming</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>FirstPage</name>
@@ -713,10 +717,6 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
 </context>
 <context>
     <name>RenameDialog</name>
-    <message>
-        <source>Error renaming</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <source>Rename</source>
         <translation type="unfinished"></translation>

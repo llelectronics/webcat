@@ -379,6 +379,10 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
         <source>Change Permissions</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Error renaming</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>FirstPage</name>
@@ -714,10 +718,6 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
 </context>
 <context>
     <name>RenameDialog</name>
-    <message>
-        <source>Error renaming</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <source>Rename</source>
         <translation type="unfinished"></translation>

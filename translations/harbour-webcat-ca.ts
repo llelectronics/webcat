@@ -379,6 +379,10 @@ En cas de dubte, refuseu el certificat malgrat que això pot provocar que no es 
         <source>Change Permissions</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Error renaming</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>FirstPage</name>
@@ -714,10 +718,6 @@ En cas de dubte, refuseu el certificat malgrat que això pot provocar que no es 
 </context>
 <context>
     <name>RenameDialog</name>
-    <message>
-        <source>Error renaming</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <source>Rename</source>
         <translation type="unfinished"></translation>

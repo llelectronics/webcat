@@ -379,6 +379,10 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
         <source>Change Permissions</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Error renaming</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>FirstPage</name>
@@ -714,10 +718,6 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
 </context>
 <context>
     <name>RenameDialog</name>
-    <message>
-        <source>Error renaming</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <source>Rename</source>
         <translation type="unfinished"></translation>

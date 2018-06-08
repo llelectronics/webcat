@@ -379,6 +379,10 @@ Wenn Sie sich unsicher sind lehnen sie das Zertifikat ab. Dies führt unter Umst
         <source>Change Permissions</source>
         <translation>Berechtigungen ändern</translation>
     </message>
+    <message>
+        <source>Error renaming</source>
+        <translation>Umbenennen fehlgeschlagen</translation>
+    </message>
 </context>
 <context>
     <name>FirstPage</name>
@@ -713,10 +717,6 @@ Wenn Sie sich unsicher sind lehnen sie das Zertifikat ab. Dies führt unter Umst
 </context>
 <context>
     <name>RenameDialog</name>
-    <message>
-        <source>Error renaming</source>
-        <translation>Umbenennen fehlgeschlagen</translation>
-    </message>
     <message>
         <source>Rename</source>
         <translation>Umbenennen</translation>

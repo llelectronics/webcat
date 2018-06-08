@@ -379,6 +379,10 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
         <source>Change Permissions</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Error renaming</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>FirstPage</name>
@@ -714,10 +718,6 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
 </context>
 <context>
     <name>RenameDialog</name>
-    <message>
-        <source>Error renaming</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <source>Rename</source>
         <translation type="unfinished"></translation>
