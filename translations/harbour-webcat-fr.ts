@@ -667,6 +667,10 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
         <source>Deleting </source>
         <translation type="unfinished">Suppression</translation>
     </message>
+    <message>
+        <source>Rename</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ProxySettingsPage</name>

@@ -668,6 +668,10 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
         <source>Deleting </source>
         <translation type="unfinished">Borrando</translation>
     </message>
+    <message>
+        <source>Rename</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ProxySettingsPage</name>

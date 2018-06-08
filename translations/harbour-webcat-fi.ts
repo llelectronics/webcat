@@ -666,6 +666,10 @@ If you are unsure reject the certificate. That might lead to a non loading websi
         <source>Deleting </source>
         <translation type="unfinished">Poistaa...</translation>
     </message>
+    <message>
+        <source>Rename</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ProxySettingsPage</name>

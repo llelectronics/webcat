@@ -668,6 +668,10 @@ Se non sei sicuro, rifiuta il certificato. Ma questo può impedire il caricament
         <source>Deleting </source>
         <translation type="unfinished">Eliminazione</translation>
     </message>
+    <message>
+        <source>Rename</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ProxySettingsPage</name>

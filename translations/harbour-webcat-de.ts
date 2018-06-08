@@ -667,6 +667,10 @@ Wenn Sie sich unsicher sind lehnen sie das Zertifikat ab. Dies führt unter Umst
         <source>Deleting </source>
         <translation>Lösche </translation>
     </message>
+    <message>
+        <source>Rename</source>
+        <translation>Umbenennen</translation>
+    </message>
 </context>
 <context>
     <name>ProxySettingsPage</name>

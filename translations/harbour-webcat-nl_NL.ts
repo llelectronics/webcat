@@ -668,6 +668,10 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
         <source>Deleting </source>
         <translation type="unfinished">Bezig met verwijderen</translation>
     </message>
+    <message>
+        <source>Rename</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ProxySettingsPage</name>

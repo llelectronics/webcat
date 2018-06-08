@@ -668,6 +668,10 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
         <source>Deleting </source>
         <translation type="unfinished">Tar bort</translation>
     </message>
+    <message>
+        <source>Rename</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ProxySettingsPage</name>
