@@ -483,6 +483,10 @@ Wenn Sie sich unsicher sind lehnen sie das Zertifikat ab. Dies führt unter Umst
         <source>Download Manager</source>
         <translation>Download Manager</translation>
     </message>
+    <message>
+        <source>Created Desktop Launcher for Webcat Fileman</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MyClass</name>

@@ -483,6 +483,10 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
         <source>Download Manager</source>
         <translation>Downloadbeheerder</translation>
     </message>
+    <message>
+        <source>Created Desktop Launcher for Webcat Fileman</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MyClass</name>

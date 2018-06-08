@@ -483,6 +483,10 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
         <source>Download Manager</source>
         <translation>Nerladdningshanterare</translation>
     </message>
+    <message>
+        <source>Created Desktop Launcher for Webcat Fileman</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MyClass</name>

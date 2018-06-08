@@ -483,6 +483,10 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
         <source>Download Manager</source>
         <translation>Gestor de descargas</translation>
     </message>
+    <message>
+        <source>Created Desktop Launcher for Webcat Fileman</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MyClass</name>

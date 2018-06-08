@@ -41,7 +41,7 @@ Item {
     Component {
         id: contextMenuComponent
         ContextMenu {
-
+            id: ctm
             // delayed action so that menu has already closed when page transition happens
             onClosed: {
                 if (_selectedMenu === "fm") {
@@ -56,6 +56,13 @@ Item {
                 } else if (_selectedMenu === "dm") {
                    pageStack.push(Qt.resolvedUrl("../../DownloadManager.qml"));
 
+                } else if (_selectedMenu === "fmCreateIcon") {
+                    var favIconPath = _fm.getRoot() + "/usr/share/harbour-webcat/qml/pages/img/fileman.png"
+                    //console.debug("[FirstPage.qml] Saving FavIcon: " + savingFav)
+                    mainWindow.infoBanner.parent = fPage
+                    mainWindow.infoBanner.anchors.top = fPage.top
+                    mainWindow.createDesktopLauncher(favIconPath ,"Webcat Fileman","about:file");
+                    mainWindow.infoBanner.showText(qsTr("Created Desktop Launcher for " + "Webcat Fileman"));
                 }
                 menuClosed();
                 _selectedMenu = "";
@@ -64,6 +71,18 @@ Item {
             MenuItem {
                 text: qsTr("File Manager")
                 onClicked: _selectedMenu = "fm"
+                IconButton {
+                    anchors.right: parent.right
+                    anchors.rightMargin: Theme.paddingMedium
+                    height: parent.height
+                    width: height
+                    icon.source: "image://theme/icon-s-favorite"
+                    onClicked: {
+                        _selectedMenu = "fmCreateIcon"
+                        ctm.hide()
+                    }
+
+                }
             }
             MenuItem {
                 text: qsTr("Backup Manager")

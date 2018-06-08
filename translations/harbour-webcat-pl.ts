@@ -482,6 +482,10 @@ Jeśli nie jesteś pewien, powinieneś odrzucić certyfikat. Może to jednak uni
         <source>Download Manager</source>
         <translation>Manager pobierania</translation>
     </message>
+    <message>
+        <source>Created Desktop Launcher for Webcat Fileman</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MyClass</name>

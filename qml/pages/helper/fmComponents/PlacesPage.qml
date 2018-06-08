@@ -19,13 +19,13 @@ Page {
     property string vidDir: _fm.getHome() + "/Videos"
 
     property var customPlaces: father.customPlaces
-//        [
-//        {
-//        name: qsTr("Device memory"),
-//        path: rootDir,
-//        icon: "image://theme/icon-m-phone"
-//        }
-//        ]
+    //        [
+    //        {
+    //        name: qsTr("Device memory"),
+    //        path: rootDir,
+    //        icon: "image://theme/icon-m-phone"
+    //        }
+    //        ]
 
     property var devicesModel: [
          {

@@ -481,6 +481,10 @@ If you are unsure reject the certificate. That might lead to a non loading websi
         <source>Download Manager</source>
         <translation type="unfinished">Latausten hallinta</translation>
     </message>
+    <message>
+        <source>Created Desktop Launcher for Webcat Fileman</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MyClass</name>

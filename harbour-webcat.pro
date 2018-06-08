@@ -172,6 +172,7 @@ DISTFILES += \
     qml/pages/helper/fmComponents/LetterSwitch.qml \
     qml/pages/helper/fmComponents/PlacesPage.qml \
     qml/pages/helper/fmComponents/DirEntryDelegate.qml \
-    qml/pages/img/sdcard.png
+    qml/pages/img/sdcard.png \
+    qml/pages/img/fileman.png
 
 include(src/sortFilterProxyModel/SortFilterProxyModel.pri)

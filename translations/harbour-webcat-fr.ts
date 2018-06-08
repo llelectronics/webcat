@@ -482,6 +482,10 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
         <source>Download Manager</source>
         <translation>Gestionnaire de téléchargements</translation>
     </message>
+    <message>
+        <source>Created Desktop Launcher for Webcat Fileman</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MyClass</name>

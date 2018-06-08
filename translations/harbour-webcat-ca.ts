@@ -483,6 +483,10 @@ En cas de dubte, refuseu el certificat malgrat que això pot provocar que no es 
         <source>Download Manager</source>
         <translation>Gestor de descàrregues</translation>
     </message>
+    <message>
+        <source>Created Desktop Launcher for Webcat Fileman</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MyClass</name>
