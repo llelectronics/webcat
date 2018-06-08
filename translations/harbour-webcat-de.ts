@@ -485,7 +485,7 @@ Wenn Sie sich unsicher sind lehnen sie das Zertifikat ab. Dies führt unter Umst
     </message>
     <message>
         <source>Created Desktop Launcher for Webcat Fileman</source>
-        <translation type="unfinished"></translation>
+        <translation>Desktop Verknüpfung für Webcat Fileman erstellt</translation>
     </message>
 </context>
 <context>
