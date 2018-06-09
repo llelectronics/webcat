@@ -190,10 +190,10 @@ Rectangle {
             //                    text: qsTr("Download Manager")
             //                    onClicked: pageStack.push(Qt.resolvedUrl("DownloadManager.qml"));
             //                }
-            MenuItem {
-                text: qsTr("Split WebView")
-                onClicked: pageStack.push(Qt.resolvedUrl("../../SplitWeb.qml"), {bookmarks: bookmarks} );
-            }
+//            MenuItem {
+//                text: qsTr("Split WebView")
+//                onClicked: pageStack.push(Qt.resolvedUrl("../../SplitWeb.qml"), {bookmarks: bookmarks} );
+//            }
             MenuItem {
                 text: qsTr("Add Bookmark")
                 onClicked: pageStack.push(Qt.resolvedUrl("../../AddBookmark.qml"), { bookmarks: bookmarks });
