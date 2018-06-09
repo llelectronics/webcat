@@ -1007,6 +1007,7 @@ Page {
         target: vPlayerLoader.item
         onSwitchFullscreen: {
             if (vPlayerLoader.item.fullscreen === true) {
+                vPlayerLoader.anchors.bottom = undefined
                 vPlayerLoader.anchors.fill = page
                 vPlayerLoader.z = 99 //Above everything else
             }
@@ -1016,7 +1017,7 @@ Page {
                 vPlayerLoader.anchors.top = page.top
                 vPlayerLoader.anchors.left = page.left
                 vPlayerLoader.anchors.right = page.right
-                vPlayerLoader.anchors.bottom = page.bottom
+                vPlayerLoader.anchors.bottom = toolbar.top
                 vPlayerLoader.anchors.bottom = mediaDownloadRec.visible ? mediaDownloadRec.top : toolbar.top
                 vPlayerLoader.z = 80
             }

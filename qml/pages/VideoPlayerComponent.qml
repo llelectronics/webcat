@@ -297,6 +297,26 @@ Item {
                 if (fsIcon.visible && !_maxTime.visible) fsIcon.width + (1.5 * Theme.paddingLarge)
             }
 
+            Timer {
+                id:clickTimer
+                interval: 200
+                onTriggered: videoPoster.toggleControls();
+            }
+
+            function dblClick() {
+                switchScreen();
+            }
+
+            function dblClickChecker() {
+                if(clickTimer.running)
+                {
+                    dblClick()
+                    clickTimer.stop()
+                }
+                else
+                    clickTimer.restart()
+            }
+
             onClicked: {
                 if (mediaPlayer.playbackState == MediaPlayer.PlayingState) {
                     //console.debug("Mouse values:" + mouse.x + " x " + mouse.y)
@@ -310,12 +330,12 @@ Item {
                         if (! mediaPlayer.seekable) mediaPlayer.stop();
                     }
                     else {
-                        toggleControls();
+                        dblClickChecker();
                     }
                 } else {
                     //mediaPlayer.play()
                     //console.debug("clicked something else")
-                    toggleControls();
+                    dblClickChecker();
                 }
             }
         }
