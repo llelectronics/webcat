@@ -134,10 +134,6 @@ Veuillez redémarrer pour activer les modifications.</translation>
         <translation>Paramètres</translation>
     </message>
     <message>
-        <source>Split WebView</source>
-        <translation>Vue Web partagée</translation>
-    </message>
-    <message>
         <source>Add Bookmark</source>
         <translation>Ajouter un favori</translation>
     </message>

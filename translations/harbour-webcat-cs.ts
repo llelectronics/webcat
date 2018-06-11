@@ -133,10 +133,6 @@ Please restart for changes to take effect.</source>
         <translation>Nastavení</translation>
     </message>
     <message>
-        <source>Split WebView</source>
-        <translation></translation>
-    </message>
-    <message>
         <source>Add Bookmark</source>
         <translation>Přidat záložku</translation>
     </message>

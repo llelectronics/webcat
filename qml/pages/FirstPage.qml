@@ -1023,7 +1023,12 @@ Page {
             }
         }
         onClosePlayer: {
-            vPlayerLoader.anchors.fill = webview
+            vPlayerLoader.anchors.fill = undefined
+            vPlayerLoader.anchors.top = page.top
+            vPlayerLoader.anchors.left = page.left
+            vPlayerLoader.anchors.right = page.right
+            vPlayerLoader.anchors.bottom = toolbar.top
+            vPlayerLoader.anchors.bottom = mediaDownloadRec.visible ? mediaDownloadRec.top : toolbar.top
             vPlayerLoader.z = 80
             vPlayerLoader.setSource(""); 
             if (!webview.visible) webview.visible = true

@@ -134,10 +134,6 @@ Herstart om de wijzingen door te voeren.</translation>
         <translation>Instellingen</translation>
     </message>
     <message>
-        <source>Split WebView</source>
-        <translation>Gesplitste WebView</translation>
-    </message>
-    <message>
         <source>Add Bookmark</source>
         <translation>Bladwijzer toevoegen</translation>
     </message>

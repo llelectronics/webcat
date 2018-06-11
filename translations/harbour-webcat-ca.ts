@@ -134,10 +134,6 @@ Cal reiniciar Webcat per aplicar els canvis.</translation>
         <translation>Configuració</translation>
     </message>
     <message>
-        <source>Split WebView</source>
-        <translation>Divideix  WebView</translation>
-    </message>
-    <message>
         <source>Add Bookmark</source>
         <translation>Afegeix marcador</translation>
     </message>

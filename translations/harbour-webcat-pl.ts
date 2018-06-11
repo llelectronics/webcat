@@ -133,10 +133,6 @@ Please restart for changes to take effect.</source>
         <translation>Ustawienia</translation>
     </message>
     <message>
-        <source>Split WebView</source>
-        <translation>Podziel WebView</translation>
-    </message>
-    <message>
         <source>Add Bookmark</source>
         <translation>Dodaj zakładkę</translation>
     </message>

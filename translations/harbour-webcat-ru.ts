@@ -133,10 +133,6 @@ Please restart for changes to take effect.</source>
         <translation>Настройки</translation>
     </message>
     <message>
-        <source>Split WebView</source>
-        <translation> Split-View</translation>
-    </message>
-    <message>
         <source>Add Bookmark</source>
         <translation>Добавить закладку</translation>
     </message>

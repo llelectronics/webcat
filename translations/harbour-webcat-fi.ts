@@ -134,10 +134,6 @@ Käynnistä uudelleen että muutokset tulevat voimaan.</translation>
         <translation type="unfinished">Asetukset</translation>
     </message>
     <message>
-        <source>Split WebView</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Add Bookmark</source>
         <translation type="unfinished">Lisää kirjanmerkki</translation>
     </message>

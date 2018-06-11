@@ -134,10 +134,6 @@ Prego riavviare perché le modifiche abbiano effetto.</translation>
         <translation>Impostazioni</translation>
     </message>
     <message>
-        <source>Split WebView</source>
-        <translation>Dividi Schermata Web</translation>
-    </message>
-    <message>
         <source>Add Bookmark</source>
         <translation>Aggiungi segnalibro</translation>
     </message>

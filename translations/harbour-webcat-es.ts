@@ -134,10 +134,6 @@ Por favor, reinicia para que los cambios tengan efecto.</translation>
         <translation>Ajustes</translation>
     </message>
     <message>
-        <source>Split WebView</source>
-        <translation>Visor Web dividido</translation>
-    </message>
-    <message>
         <source>Add Bookmark</source>
         <translation>Añadir a Favoritos</translation>
     </message>

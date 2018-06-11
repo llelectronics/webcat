@@ -134,10 +134,6 @@ Bitte starten sie neu um die Änderungen zu übernehmen</translation>
         <translation>Einstellungen</translation>
     </message>
     <message>
-        <source>Split WebView</source>
-        <translation></translation>
-    </message>
-    <message>
         <source>Add Bookmark</source>
         <translation>Bookmark hinzufügen</translation>
     </message>

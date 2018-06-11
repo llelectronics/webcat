@@ -133,10 +133,6 @@ Please restart for changes to take effect.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Split WebView</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Add Bookmark</source>
         <translation type="unfinished"></translation>
     </message>

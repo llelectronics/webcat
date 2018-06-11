@@ -134,10 +134,6 @@ Starta om Webcat för att ändringarna skall få effekt.</translation>
         <translation>Inställningar</translation>
     </message>
     <message>
-        <source>Split WebView</source>
-        <translation>Delad webbvy</translation>
-    </message>
-    <message>
         <source>Add Bookmark</source>
         <translation>Lägg till bokmärke</translation>
     </message>
