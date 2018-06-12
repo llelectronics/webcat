@@ -1029,6 +1029,7 @@ Page {
                 else {
                     vPlayerLoader.anchors.bottom = undefined
                     vPlayerLoader.height = page.height / 3.1337
+                    if (!webview.visible) webview.visible = true
                 }
                 vPlayerLoader.z = 80
             }
