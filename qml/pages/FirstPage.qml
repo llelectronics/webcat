@@ -345,6 +345,7 @@ Page {
 //                else vPlayerLoader.setSource("VideoPlayerComponent.qml", {dataContainer: firstPage, streamUrl: url})
 //            }
 
+            toolbar.webTitle.visible = false
             toolbar.urlText.text = toolbar.urlText.simplifyUrl(url)
             toolbar.urlText.fullUrl = url
 

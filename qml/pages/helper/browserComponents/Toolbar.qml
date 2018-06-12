@@ -405,7 +405,7 @@ Rectangle {
                 height = Theme.fontSizeSmall / 1.337 + Theme.paddingSmall
             }
             else {
-                urlText.anchors.topMargin = parent.height / 2 - urlText.height / 4
+                urlText.anchors.topMargin = parent.height / 2 - urlText.font.pixelSize / 1.337
                 height = 0
             }
         }
@@ -433,15 +433,15 @@ Rectangle {
         inputMethodHints: Qt.ImhUrlCharactersOnly
         placeholderText: qsTr("Enter an url")
         font.pixelSize: {
-            if (webTitle.height != 0 && !focus && webTitle.text != "") Theme.fontSizeTiny
+            if (webTitle.height != 0 && !focus && webTitle.text != "" && webTitle.visible) Theme.fontSizeTiny
             else Theme.fontSizeMedium
         }
         //y: parent.height / 2 - height / 4
         anchors.top: {
-            if (webTitle.height != 0 && webTitle.text != "") webTitle.bottom
+            if (webTitle.height != 0 && webTitle.text != "" && webTitle.visible) webTitle.bottom
             else parent.top
         }
-        anchors.topMargin: parent.height / 2 - height / 4
+        anchors.topMargin: parent.height / 2 - urlText.font.pixelSize / 1.337
         background: null
         color: Theme.primaryColor
         property string fullUrl: url
@@ -461,6 +461,7 @@ Rectangle {
         }
         onFocusChanged: {
             if (focus) {
+                webTitle.visible = false
                 backIcon.visible = false
                 forIcon.visible = false
                 bookmarkButton.visible = true
@@ -468,8 +469,8 @@ Rectangle {
                 text = fullUrl
                 color = Theme.primaryColor
                 suggestionView.visible = false
-                webTitle.visible = false
                 selectAll();
+                anchors.topMargin = parent.height / 2 - urlText.font.pixelSize / 1.337
             }
             else {
                 backIcon.visible = fPage.webview.canGoBack
@@ -501,6 +502,7 @@ Rectangle {
                 bookmarkList.hide()
                 tabBar.hide()
             }
+            urlTitle.visible = false
         }
 
         Keys.onReturnPressed: {
@@ -512,6 +514,7 @@ Rectangle {
                 bookmarkList.hide()
                 tabBar.hide()
             }
+            urlTitle.visible = false
         }
         function simplifyUrl(url) {
             url = url.toString();
