@@ -87,15 +87,15 @@ Rectangle {
         font.bold: true
         font.pixelSize: parent.height - (minimizeButton.height + Theme.paddingLarge)
         text: {
-            if (minimizeButton.highlighted) { fPage._ngfEffect.play(); return qsTr("Minimize") }
-            else if (newTabButton.highlighted) { fPage._ngfEffect.play(); return qsTr("New Tab") }
-            else if (nightModeButton.highlighted) { fPage._ngfEffect.play(); if (fPage.nightMode) return qsTr("Day Mode"); else return qsTr("Night Mode") }
-            else if (closeTabButton.highlighted) { fPage._ngfEffect.play(); return qsTr("Close Tab") }
-            else if (orientationLockButton.highlighted) { fPage._ngfEffect.play(); return qsTr("Lock Orientation") }
-            else if (readerModeButton.highlighted) { fPage._ngfEffect.play(); return qsTr("Reader Mode") }
-            else if (searchModeButton.highlighted) { fPage._ngfEffect.play(); return qsTr("Search") }
-            else if (shareButton.highlighted) { fPage._ngfEffect.play(); return qsTr("Share") }
-            else if (extraToolbar.opacity == 1 && extraToolbar.quickmenu) { fPage._ngfEffect.play(); return qsTr("Close menu") }
+            if (minimizeButton.highlighted) { return qsTr("Minimize") }
+            else if (newTabButton.highlighted) { return qsTr("New Tab") }
+            else if (nightModeButton.highlighted) { if (fPage.nightMode) return qsTr("Day Mode"); else return qsTr("Night Mode") }
+            else if (closeTabButton.highlighted) {return qsTr("Close Tab") }
+            else if (orientationLockButton.highlighted) { return qsTr("Lock Orientation") }
+            else if (readerModeButton.highlighted) { return qsTr("Reader Mode") }
+            else if (searchModeButton.highlighted) { return qsTr("Search") }
+            else if (shareButton.highlighted) { return qsTr("Share") }
+            else if (extraToolbar.opacity == 1 && extraToolbar.quickmenu) { return qsTr("Close menu") }
             else return "Extra Toolbar"
         }
     }
