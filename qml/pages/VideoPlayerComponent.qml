@@ -41,6 +41,8 @@ Item {
 
     signal switchFullscreen()
     signal closePlayer()
+    signal swipeUp()
+    signal swipeDown()
 
     function switchScreen() {
         if (fullscreen === false) {
@@ -249,6 +251,9 @@ Item {
             width: videoPlayerPage.width
             height: videoPlayerPage.height
 
+            property var firstY
+            property bool touch
+
             player: mediaPlayer
 
             //duration: videoDuration
@@ -337,6 +342,30 @@ Item {
                     //console.debug("clicked something else")
                     dblClickChecker();
                 }
+            }
+            function checkSwipe(minDistance) {
+                // get distance of current position to starting point
+                var distance = mouseY - firstY
+
+                // check for swipes
+                if(Math.abs(distance) > minDistance) {
+                    if(distance > 0)
+                        swipeDown()
+                    else
+                        swipeUp()
+
+                    touch = false
+                }
+            }
+            onPressed: {
+                if(!touch && !fullscreen)
+                    firstY = mouseY
+                touch = true
+            }
+            onReleased: {
+                if(touch && !fullscreen)
+                    checkSwipe(15)
+                touch = false
             }
         }
 

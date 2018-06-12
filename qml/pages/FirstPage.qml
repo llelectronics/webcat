@@ -1049,6 +1049,20 @@ Page {
             vPlayerLoader.setSource(""); 
             if (!webview.visible) webview.visible = true
         }
+        onSwipeDown: {
+            if (page.orientation == Orientation.Portrait || page.orientation == Orientation.PortraitInverted) {
+                vPlayerLoader.anchors.bottom = mediaDownloadRec.visible ? mediaDownloadRec.top : toolbar.top
+                vPlayerLoader.anchors.top = undefined
+                vPlayerLoader.height = page.height / 3.1337
+            }
+        }
+        onSwipeUp: {
+            if (page.orientation == Orientation.Portrait || page.orientation == Orientation.PortraitInverted) {
+                vPlayerLoader.anchors.top = page.top
+                vPlayerLoader.anchors.bottom = undefined
+                vPlayerLoader.height = page.height / 3.1337
+            }
+        }
     }
 
     Loader {
