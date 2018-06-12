@@ -433,7 +433,7 @@ Rectangle {
         inputMethodHints: Qt.ImhUrlCharactersOnly
         placeholderText: qsTr("Enter an url")
         font.pixelSize: {
-            if (webTitle.height != 0 && !focus) Theme.fontSizeTiny
+            if (webTitle.height != 0 && !focus && webTitle.text != "") Theme.fontSizeTiny
             else Theme.fontSizeMedium
         }
         //y: parent.height / 2 - height / 4
