@@ -997,10 +997,17 @@ Page {
         anchors.top: page.top
         anchors.left: page.left
         anchors.right: page.right
-        anchors.bottom: mediaDownloadRec.visible ? mediaDownloadRec.top : toolbar.top
+        height: if (page.orientation == Orientation.Portrait || page.orientation == Orientation.PortraitInverted) page.height / 3.1337
+        anchors.bottom: {
+            if (page.orientation == Orientation.Portrait || page.orientation == Orientation.PortraitInverted) undefined
+            else mediaDownloadRec.visible ? mediaDownloadRec.top : toolbar.top
+        }
         //source: "VideoPlayer.qml"
         z:80
-        onLoaded: if (webview.visible) webview.visible = false
+        onLoaded: {
+            if (page.orientation == Orientation.Portrait || page.orientation == Orientation.PortraitInverted) webview.visible = true
+            else webview.visible = false
+        }
     }
 
     Connections {
@@ -1017,8 +1024,12 @@ Page {
                 vPlayerLoader.anchors.top = page.top
                 vPlayerLoader.anchors.left = page.left
                 vPlayerLoader.anchors.right = page.right
-                vPlayerLoader.anchors.bottom = toolbar.top
-                vPlayerLoader.anchors.bottom = mediaDownloadRec.visible ? mediaDownloadRec.top : toolbar.top
+                if (page.orientation == Orientation.Landscape || page.orientation == Orientation.LandscapeInverted)
+                    vPlayerLoader.anchors.bottom = mediaDownloadRec.visible ? mediaDownloadRec.top : toolbar.top
+                else {
+                    vPlayerLoader.anchors.bottom = undefined
+                    vPlayerLoader.height = page.height / 3.1337
+                }
                 vPlayerLoader.z = 80
             }
         }
@@ -1028,7 +1039,12 @@ Page {
             vPlayerLoader.anchors.left = page.left
             vPlayerLoader.anchors.right = page.right
             vPlayerLoader.anchors.bottom = toolbar.top
-            vPlayerLoader.anchors.bottom = mediaDownloadRec.visible ? mediaDownloadRec.top : toolbar.top
+            if (page.orientation == Orientation.Landscape || page.orientation == Orientation.LandscapeInverted)
+                vPlayerLoader.anchors.bottom = mediaDownloadRec.visible ? mediaDownloadRec.top : toolbar.top
+            else {
+                vPlayerLoader.anchors.bottom = undefined
+                vPlayerLoader.height = page.height / 3.1337
+            }
             vPlayerLoader.z = 80
             vPlayerLoader.setSource(""); 
             if (!webview.visible) webview.visible = true
