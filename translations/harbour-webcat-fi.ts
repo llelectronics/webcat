@@ -291,14 +291,6 @@ If you are unsure reject the certificate. That might lead to a non loading websi
         <translation type="unfinished">Pienennä</translation>
     </message>
     <message>
-        <source>New Tab</source>
-        <translation type="unfinished">Uusi välilehti</translation>
-    </message>
-    <message>
-        <source>Close Tab</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Lock Orientation</source>
         <translation type="unfinished">Lukitse suuntautuminen</translation>
     </message>

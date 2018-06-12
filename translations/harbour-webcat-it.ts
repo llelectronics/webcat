@@ -293,14 +293,6 @@ Se non sei sicuro, rifiuta il certificato. Ma questo può impedire il caricament
         <translation>Minimizza</translation>
     </message>
     <message>
-        <source>New Tab</source>
-        <translation>Nuova scheda</translation>
-    </message>
-    <message>
-        <source>Close Tab</source>
-        <translation>Chiudi scheda</translation>
-    </message>
-    <message>
         <source>Lock Orientation</source>
         <translation>Blocca orientamento</translation>
     </message>

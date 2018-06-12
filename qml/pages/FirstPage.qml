@@ -827,8 +827,8 @@ Page {
                 else if (event.key == Qt.Key_R) extraToolbar.readerModeButton.clicked(undefined)
                 else if (event.key == Qt.Key_L) webview.reload()
                 else if (event.key == Qt.Key_U) { toolbar.state = "expanded" ; toolbar.urlText.selectAll(); toolbar.urlText.forceActiveFocus() }
-                else if (event.key == Qt.Key_W && event.modifiers == Qt.ShiftModifier) extraToolbar.newWindowButton.clicked(undefined)
-                else if (event.key == Qt.Key_W) extraToolbar.newTabButton.clicked(undefined)
+                else if (event.key == Qt.Key_W && event.modifiers == Qt.ShiftModifier) mainWindow.openNewWindow("about:bookmarks")
+                else if (event.key == Qt.Key_W) mainWindow.loadInNewTab("about:bookmarks");
                 else if (event.key == Qt.Key_P) webview.goBack()
                 else if (event.key == Qt.Key_N) webview.goForward()
                 else if (searchBar.visible == true && (event.key == Qt.Key_Enter || event.key == Qt.Key_Return)) searchIcon.clicked(undefined)

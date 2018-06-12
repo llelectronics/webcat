@@ -293,14 +293,6 @@ En cas de dubte, refuseu el certificat malgrat que això pot provocar que no es 
         <translation>Minimitza</translation>
     </message>
     <message>
-        <source>New Tab</source>
-        <translation>Nova pestanya</translation>
-    </message>
-    <message>
-        <source>Close Tab</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Lock Orientation</source>
         <translation>Fixa l&apos;orientació</translation>
     </message>

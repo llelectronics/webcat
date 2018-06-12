@@ -293,14 +293,6 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
         <translation>Minimizar</translation>
     </message>
     <message>
-        <source>New Tab</source>
-        <translation>Nueva pestaña</translation>
-    </message>
-    <message>
-        <source>Close Tab</source>
-        <translation>Cerrar pestaña</translation>
-    </message>
-    <message>
         <source>Lock Orientation</source>
         <translation>Bloquear orientación</translation>
     </message>

@@ -293,14 +293,6 @@ Wenn Sie sich unsicher sind lehnen sie das Zertifikat ab. Dies führt unter Umst
         <translation>Minimieren</translation>
     </message>
     <message>
-        <source>New Tab</source>
-        <translation>Neuer Reiter</translation>
-    </message>
-    <message>
-        <source>Close Tab</source>
-        <translation>Reiter schließen</translation>
-    </message>
-    <message>
         <source>Lock Orientation</source>
         <translation>Ausrichtung sperren</translation>
     </message>

@@ -293,14 +293,6 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
         <translation>Minimera</translation>
     </message>
     <message>
-        <source>New Tab</source>
-        <translation>Ny flik</translation>
-    </message>
-    <message>
-        <source>Close Tab</source>
-        <translation>Stäng fliken</translation>
-    </message>
-    <message>
         <source>Lock Orientation</source>
         <translation>Lås orienteringsläget</translation>
     </message>

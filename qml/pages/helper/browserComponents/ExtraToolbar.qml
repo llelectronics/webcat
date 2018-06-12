@@ -9,10 +9,8 @@ Rectangle {
 
     property bool quickmenu
     property QtObject fPage: parent
-    property alias newTabButton: newTabButton
     property alias minimizeButton: minimizeButton
     property alias nightModeButton: nightModeButton
-    property alias closeTabButton: closeTabButton
     property alias orientationLockButton: orientationLockButton
     property alias readerModeButton: readerModeButton
     property alias searchModeButton: searchModeButton
@@ -85,12 +83,10 @@ Rectangle {
         anchors.topMargin: 3
         anchors.horizontalCenter: parent.horizontalCenter
         font.bold: true
-        font.pixelSize: parent.height - (minimizeButton.height + Theme.paddingLarge)
+        font.pixelSize: Theme.fontSizeSmall
         text: {
             if (minimizeButton.highlighted) { return qsTr("Minimize") }
-            else if (newTabButton.highlighted) { return qsTr("New Tab") }
             else if (nightModeButton.highlighted) { if (fPage.nightMode) return qsTr("Day Mode"); else return qsTr("Night Mode") }
-            else if (closeTabButton.highlighted) {return qsTr("Close Tab") }
             else if (orientationLockButton.highlighted) { return qsTr("Lock Orientation") }
             else if (readerModeButton.highlighted) { return qsTr("Reader Mode") }
             else if (searchModeButton.highlighted) { return qsTr("Search") }
@@ -102,15 +98,14 @@ Rectangle {
 
     IconButton {
         id: minimizeButton
-        icon.source: "image://theme/icon-cover-next-song"
-        rotation: 90
+        icon.source: "image://theme/icon-m-page-down"
         anchors.left: extraToolbar.left
         anchors.leftMargin: Theme.paddingSmall
-        anchors.bottom: parent.bottom
-        anchors.bottomMargin: actionLbl.height / 2
+        anchors.top: actionLbl.bottom
+        anchors.topMargin: Theme.paddingSmall / 8
         icon.height: height
         icon.width: icon.height
-        height: fPage.toolbarheight / 1.525
+        height: Theme.iconSizeMedium
         width: height
         onClicked: {
             if (fPage.toolbar.state == "expanded") fPage.toolbar.state = "minimized"
@@ -125,11 +120,12 @@ Rectangle {
         anchors.left: minimizeButton.right
         anchors.leftMargin: Theme.paddingMedium
         anchors.bottom: parent.bottom
-        anchors.bottomMargin: actionLbl.height / 2
+        anchors.bottomMargin: actionLbl.height / 3
         icon.height: height
         icon.width: icon.height
-        height: fPage.toolbarheight / 1.525
+        height: Theme.iconSizeMedium
         width: height
+        visible: false
         onClicked: {
             mainWindow.loadInNewTab("about:bookmarks");
             highlighted = false;
@@ -140,13 +136,13 @@ Rectangle {
     IconButton {
         id: nightModeButton
         icon.source: fPage.nightMode ? "image://theme/icon-camera-wb-sunny" : "image://theme/icon-camera-wb-tungsten"
-        anchors.left: newTabButton.right
+        anchors.left: minimizeButton.right
         anchors.leftMargin: Theme.paddingSmall
-        anchors.bottom: parent.bottom
-        anchors.bottomMargin: actionLbl.height / 2
+        anchors.top: actionLbl.bottom
+        anchors.topMargin: Theme.paddingSmall / 8
         icon.height: height
         icon.width: icon.height
-        height: fPage.toolbarheight / 1.25
+        height: Theme.iconSizeMedium
         width: height
         onClicked: {
             if (!nightMode)
@@ -166,11 +162,12 @@ Rectangle {
         anchors.left: nightModeButton.right
         anchors.leftMargin: Theme.paddingSmall
         anchors.bottom: parent.bottom
-        anchors.bottomMargin: actionLbl.height / 2
-        icon.height: extraToolbar.height - (extraToolbar.height / 3)
+        anchors.bottomMargin: actionLbl.height / 3
+        icon.height: height
         icon.width: icon.height
-        height: fPage.toolbarheight / 1.5
+        height: Theme.iconSizeMedium
         width: height
+        visible: false
         onClicked: {
             if (enabled) {
                 mainWindow.closeTab(mainWindow.tabModel.getIndexFromId(mainWindow.currentTab),pageId)
@@ -183,14 +180,14 @@ Rectangle {
 
     IconButton {
         id: orientationLockButton
-        icon.source: "image://theme/icon-m-backup"
-        anchors.left: closeTabButton.right
+        icon.source: "image://theme/icon-m-rotate"
+        anchors.left: nightModeButton.right
         anchors.leftMargin: Theme.paddingMedium
-        anchors.bottom: parent.bottom
-        anchors.bottomMargin: actionLbl.height / 2
-        icon.height: extraToolbar.height - (extraToolbar.height / 3)
+        anchors.top: actionLbl.bottom
+        anchors.topMargin: Theme.paddingSmall / 8
+        icon.height: height
         icon.width: icon.height
-        height: fPage.toolbarheight / 1.5
+        height: Theme.iconSizeMedium
         width: height
         Image {
             source: "image://theme/icon-m-reset"
@@ -210,11 +207,11 @@ Rectangle {
         icon.source: "image://theme/icon-m-message"
         anchors.left: orientationLockButton.right
         anchors.leftMargin: Theme.paddingMedium
-        anchors.bottom: parent.bottom
-        anchors.bottomMargin: actionLbl.height / 2
-        icon.height: extraToolbar.height - (extraToolbar.height / 3)
+        anchors.top: actionLbl.bottom
+        anchors.topMargin: Theme.paddingSmall / 8
+        icon.height: height
         icon.width: icon.height
-        height: fPage.toolbarheight / 1.5
+        height: Theme.iconSizeMedium
         width: height
         onClicked: {
             fPage.toggleReaderMode()
@@ -228,11 +225,11 @@ Rectangle {
         icon.source: "image://theme/icon-m-search"
         anchors.left: readerModeButton.right
         anchors.leftMargin: Theme.paddingMedium
-        anchors.bottom: parent.bottom
-        anchors.bottomMargin: actionLbl.height / 2
-        icon.height: extraToolbar.height - (extraToolbar.height / 3)
+        anchors.top: actionLbl.bottom
+        anchors.topMargin: Theme.paddingSmall / 8
+        icon.height: height
         icon.width: icon.height
-        height: fPage.toolbarheight / 1.5
+        height: Theme.iconSizeMedium
         width: height
         onClicked: {
             searchMode = !searchMode
@@ -247,11 +244,11 @@ Rectangle {
         icon.source: "image://theme/icon-m-share"
         anchors.left: searchModeButton.right
         anchors.leftMargin: Theme.paddingMedium
-        anchors.bottom: parent.bottom
-        anchors.bottomMargin: actionLbl.height / 2
-        icon.height: extraToolbar.height - (extraToolbar.height / 3)
+        anchors.top: actionLbl.bottom
+        anchors.topMargin: Theme.paddingSmall / 8
+        icon.height: height
         icon.width: icon.height
-        height: fPage.toolbarheight / 1.5
+        height: Theme.iconSizeMedium
         width: height
         visible: mainWindow.transferEngine.count > 0
         onClicked: {

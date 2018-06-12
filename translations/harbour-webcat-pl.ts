@@ -292,14 +292,6 @@ Jeśli nie jesteś pewien, powinieneś odrzucić certyfikat. Może to jednak uni
         <translation>Minimalizuj</translation>
     </message>
     <message>
-        <source>New Tab</source>
-        <translation>Nowa karta</translation>
-    </message>
-    <message>
-        <source>Close Tab</source>
-        <translation>Zamknij kartę</translation>
-    </message>
-    <message>
         <source>Lock Orientation</source>
         <translation>Zablokuj położenie</translation>
     </message>

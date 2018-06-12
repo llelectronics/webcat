@@ -290,14 +290,6 @@ If you are unsure reject the certificate. That might lead to a non loading websi
         <translation>最小化</translation>
     </message>
     <message>
-        <source>New Tab</source>
-        <translation>新标签页</translation>
-    </message>
-    <message>
-        <source>Close Tab</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Lock Orientation</source>
         <translation>锁定屏幕方向</translation>
     </message>

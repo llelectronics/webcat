@@ -290,14 +290,6 @@ If you are unsure reject the certificate. That might lead to a non loading websi
         <translation>Minimalizovat</translation>
     </message>
     <message>
-        <source>New Tab</source>
-        <translation>Nový panel</translation>
-    </message>
-    <message>
-        <source>Close Tab</source>
-        <translation></translation>
-    </message>
-    <message>
         <source>Lock Orientation</source>
         <translation>Zamknout otáčení</translation>
     </message>

@@ -293,14 +293,6 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
         <translation>Minimaliseren</translation>
     </message>
     <message>
-        <source>New Tab</source>
-        <translation>Nieuw tabblad</translation>
-    </message>
-    <message>
-        <source>Close Tab</source>
-        <translation>Tabblad sluiten</translation>
-    </message>
-    <message>
         <source>Lock Orientation</source>
         <translation>Lock-oriëntatie</translation>
     </message>

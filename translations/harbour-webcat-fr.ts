@@ -292,14 +292,6 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
         <translation>Réduire</translation>
     </message>
     <message>
-        <source>New Tab</source>
-        <translation>Nouvel onglet</translation>
-    </message>
-    <message>
-        <source>Close Tab</source>
-        <translation>Fermer l&apos;onglet</translation>
-    </message>
-    <message>
         <source>Lock Orientation</source>
         <translation>Bloquer l&apos;orientation</translation>
     </message>
