@@ -1,5 +1,6 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import "../browserComponents"
 
 // This component displays a list of options on top of a page
 Item {
@@ -10,6 +11,30 @@ Item {
     property Item _contextMenu
     property QtObject dataContainer
 
+
+   property var menuItems: [
+        {
+            txt: qsTr("File Manager"),
+            cmd: "fm",
+            extraCmd: "fmCreateIcon"
+        },
+        {
+            txt: qsTr("Backup Manager"),
+            cmd: "bm",
+            extraCmd: ""
+        },
+        {
+            txt: qsTr("Video Player"),
+            cmd: "vp",
+            extraCmd: ""
+        },
+        {
+            txt: qsTr("Download Manager"),
+            cmd: "dm",
+            extraCmd: ""
+        }
+    ]
+
     signal menuClosed;
 
     function show()
@@ -18,85 +43,113 @@ Item {
             _contextMenu = contextMenuComponent.createObject(rect);
         _selectedMenu = "";
 
-        _contextMenu.show(rect);
+        _contextMenu.height = (menuItems.length * Theme.itemSizeSmall)
+        _contextMenu.y = menuTop
+    }
+
+    function close()
+    {
+        if (_selectedMenu === "fm") {
+            pageStack.push(Qt.resolvedUrl("../../OpenDialog.qml"), { dataContainer: dataContainer });
+
+        } else if (_selectedMenu === "bm") {
+            pageStack.push(Qt.resolvedUrl("../../BackupPage.qml"));
+
+        } else if (_selectedMenu === "vp") {
+            pageStack.push(Qt.resolvedUrl("../../VideoPlayer.qml"), { dataContainer: dataContainer});
+
+        } else if (_selectedMenu === "dm") {
+            pageStack.push(Qt.resolvedUrl("../../DownloadManager.qml"));
+
+        } else if (_selectedMenu === "fmCreateIcon") {
+            var favIconPath = _fm.getRoot() + "/usr/share/harbour-webcat/qml/pages/img/fileman.png"
+            //console.debug("[FirstPage.qml] Saving FavIcon: " + savingFav)
+            mainWindow.infoBanner.parent = fPage
+            mainWindow.infoBanner.anchors.top = fPage.top
+            mainWindow.createDesktopLauncher(favIconPath ,"Webcat Fileman","about:file");
+            mainWindow.infoBanner.showText(qsTr("Created Desktop Launcher for " + "Webcat Fileman"));
+        }
+        menuClosed();
+        _selectedMenu = "";
+        _contextMenu.height = 0;
+        _contextMenu.destroy();
+    }
+
+    MouseArea {
+        anchors.fill: parent
+        enabled: {
+            if (_contextMenu) return true
+            else return false
+        }
+        onClicked: {
+            close();
+        }
     }
 
     Column {
         anchors.fill: parent
 
-        Item {
-            id: spacer
-            width: parent.width
-            height: menuTop
-        }
         // bg rectangle for context menu so it covers underlying items
         Rectangle {
             id: rect
             color: "black"
             width: parent.width
-            height: _contextMenu ? _contextMenu.height : 0
+            //height: _contextMenu ? _contextMenu.height : 0
         }
     }
 
     Component {
         id: contextMenuComponent
-        ContextMenu {
-            id: ctm
-            // delayed action so that menu has already closed when page transition happens
-            onClosed: {
-                if (_selectedMenu === "fm") {
-                    pageStack.push(Qt.resolvedUrl("../../OpenDialog.qml"), { dataContainer: dataContainer });
 
-                } else if (_selectedMenu === "bm") {
-                    pageStack.push(Qt.resolvedUrl("../../BackupPage.qml"));
+        LinkContextMenu {
+            width: parent.width
 
-                } else if (_selectedMenu === "vp") {
-                    pageStack.push(Qt.resolvedUrl("../../VideoPlayer.qml"), { dataContainer: dataContainer});
+            SilicaListView
+            {
+                id: listview
+                width: parent.width
+                height: count * Theme.itemSizeSmall
+                clip: true
+                model: menuItems
 
-                } else if (_selectedMenu === "dm") {
-                   pageStack.push(Qt.resolvedUrl("../../DownloadManager.qml"));
+                delegate: BackgroundItem {
+                    property var item: model.modelData ? model.modelData : model
+                    contentWidth: parent.width
+                    contentHeight: Theme.itemSizeSmall
 
-                } else if (_selectedMenu === "fmCreateIcon") {
-                    var favIconPath = _fm.getRoot() + "/usr/share/harbour-webcat/qml/pages/img/fileman.png"
-                    //console.debug("[FirstPage.qml] Saving FavIcon: " + savingFav)
-                    mainWindow.infoBanner.parent = fPage
-                    mainWindow.infoBanner.anchors.top = fPage.top
-                    mainWindow.createDesktopLauncher(favIconPath ,"Webcat Fileman","about:file");
-                    mainWindow.infoBanner.showText(qsTr("Created Desktop Launcher for " + "Webcat Fileman"));
-                }
-                menuClosed();
-                _selectedMenu = "";
-            }
+                    Label {
+                        id: lbltext
+                        width: parent.width
+                        anchors.verticalCenter: parent.verticalCenter
+                        horizontalAlignment: Text.AlignHCenter
+                        verticalAlignment: Text.AlignVCenter
+                        font.pixelSize: Theme.fontSizeMedium
+                        text: item.txt
+                    }
+                    IconButton {
+                        anchors.right: parent.right
+                        anchors.rightMargin: Theme.paddingMedium
+                        height: parent.height
+                        width: height
+                        visible: item.extraCmd != ""
+                        icon.source: "image://theme/icon-s-favorite"
+                        onClicked: {
+                            _selectedMenu = item.extraCmd
+                            close()
+                        }
 
-            MenuItem {
-                text: qsTr("File Manager")
-                onClicked: _selectedMenu = "fm"
-                IconButton {
-                    anchors.right: parent.right
-                    anchors.rightMargin: Theme.paddingMedium
-                    height: parent.height
-                    width: height
-                    icon.source: "image://theme/icon-s-favorite"
-                    onClicked: {
-                        _selectedMenu = "fmCreateIcon"
-                        ctm.hide()
                     }
 
+                    onClicked: {
+                        _selectedMenu = item.cmd
+                        close()
+                    }
                 }
-            }
-            MenuItem {
-                text: qsTr("Backup Manager")
-                onClicked: _selectedMenu = "bm"
-            }
-            MenuItem {
-                text: qsTr("Video Player")
-                onClicked: _selectedMenu = "vp"
-            }
-            MenuItem {
-                text: qsTr("Download Manager")
-                onClicked: _selectedMenu = "dm"
+
+                VerticalScrollDecorator { flickable: listview }
             }
         }
+
     }
 
 }

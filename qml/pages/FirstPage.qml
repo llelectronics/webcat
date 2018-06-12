@@ -53,6 +53,7 @@ Page {
     property alias url: webview.url
     property alias toolbar: toolbar
     property alias extraToolbar: extraToolbar
+    property alias menuPopup: menuPopup
     property alias tabBar: tabBar
     property alias bookmarkList: bookmarkList
     property string agent: userAgent
@@ -911,6 +912,13 @@ Page {
     // Extra Toolbar
     ExtraToolbar {
         id: extraToolbar
+    }
+
+    MenuPopup {
+        id: menuPopup
+        anchors.fill: parent
+        menuTop: extraToolbar.y - 4 * Theme.itemSizeSmall
+        dataContainer: page
     }
 
     // TabBar

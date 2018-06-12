@@ -260,5 +260,23 @@ Rectangle {
         }
     }
 
+    IconButton {
+        id: moreButton
+        icon.source: "image://theme/icon-m-up"
+        anchors.left: shareButton.right
+        anchors.leftMargin: Theme.paddingMedium
+        anchors.top: actionLbl.bottom
+        anchors.topMargin: Theme.paddingSmall / 8
+        icon.height: height
+        icon.width: icon.height
+        height: Theme.iconSizeMedium
+        width: height
+        visible: mainWindow.transferEngine.count > 0
+        onClicked: {
+            if (!fPage.menuPopup._contextMenu) fPage.menuPopup.show();
+            else fPage.menuPopup.close();
+        }
+    }
+
 }
 
