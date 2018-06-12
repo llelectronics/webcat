@@ -1017,6 +1017,7 @@ Page {
                 vPlayerLoader.anchors.bottom = undefined
                 vPlayerLoader.anchors.fill = page
                 vPlayerLoader.z = 99 //Above everything else
+                webview.visible = false
             }
             else {
                 if (toolbar.state == "expanded") toolbar.state = "minimized"
