@@ -71,8 +71,10 @@ Item {
         }
         menuClosed();
         _selectedMenu = "";
-        _contextMenu.height = 0;
-        _contextMenu.destroy();
+        if (_contextMenu) {
+            _contextMenu.height = 0;
+            _contextMenu.destroy();
+        }
     }
 
     MouseArea {

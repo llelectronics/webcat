@@ -71,6 +71,7 @@ Rectangle {
             hideToolbar.start();
             extraToolbar.enabled = false;
             extraToolbar.quickmenu = false;
+            fPage.menuPopup.close()
         }
     }
 
