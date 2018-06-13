@@ -689,8 +689,8 @@ Page {
                 // Update url for tabModel
                 //console.debug("[FirstPage.qml] pageId: " + pageId);
                 if (pageId != "" || pageId != undefined) mainWindow.tabModel.updateUrl(pageId,url)
-                if (title != "") {
-                    toolbar.webTitle.visible = toolbar.urlText.visible;
+                if (title.length != 0 && title != "" && toolbar.state == "expanded") {
+                    toolbar.webTitle.visible = true;
                 }
             }
         }

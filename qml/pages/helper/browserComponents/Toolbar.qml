@@ -342,11 +342,17 @@ Rectangle {
         visible: false
         onVisibleChanged: {
             if (visible) {
-                urlText.anchors.topMargin = Theme.paddingSmall / 2
+//                urlText.anchors.top = undefined
+//                urlText.anchors.top = webTitle.bottom
+//                urlText.anchors.topMargin = Theme.paddingSmall / 2
+                urlText.visible = false
                 height = Theme.fontSizeSmall / 1.337 + Theme.paddingSmall
             }
             else {
-                urlText.anchors.topMargin = parent.height / 2 - urlText.font.pixelSize / 1.337
+//                urlText.anchors.top = undefined
+//                urlText.anchors.top = parent.top
+//                urlText.anchors.topMargin = parent.height / 2 - urlText.font.pixelSize / 1.337
+                urlText.visible = true
                 height = 0
             }
         }
@@ -358,30 +364,45 @@ Rectangle {
         }
         width: urlText.width
         truncationMode: TruncationMode.Fade
-        MouseArea {
-            enabled: parent.visible
-            anchors.fill: parent
-            onClicked: {
-                urlText.forceActiveFocus()
-            }
+    }
+    Label {
+        id: urlLabelSmall
+        text: urlText.text
+        font.pixelSize: Theme.fontSizeTiny
+        anchors.top: webTitle.bottom
+        anchors.topMargin: Theme.paddingSmall
+        anchors.left: webTitle.left
+        color: urlText.color
+        visible: webTitle.visible && !urlText.visible && toolbar.state == "expanded"
+        width: urlText.width
+        truncationMode: TruncationMode.Fade
+    }
+    MouseArea {
+        enabled: webTitle.visible && !urlText.visible
+        anchors.left: webTitle.left
+        anchors.right: webTitle.right
+        height: parent.height
+        onClicked: {
+            urlText.forceActiveFocus()
         }
     }
+
     // Url textbox here
     TextField{
         id: urlText
-        visible: true
+        visible: !webTitle.visible
         text: simplifyUrl(url)
         inputMethodHints: Qt.ImhUrlCharactersOnly
         placeholderText: qsTr("Enter an url")
-        font.pixelSize: {
-            if (webTitle.height != 0 && !focus && webTitle.text != "" && webTitle.visible) Theme.fontSizeTiny
+        font.pixelSize: Theme.fontSizeMedium /*{
+            if (webTitle.visible) Theme.fontSizeTiny
             else Theme.fontSizeMedium
-        }
+        }*/
         //y: parent.height / 2 - height / 4
-        anchors.top: {
-            if (webTitle.height != 0 && webTitle.text != "" && webTitle.visible) webTitle.bottom
+        anchors.top: parent.top /*{
+            if (webTitle.visible) webTitle.bottom
             else parent.top
-        }
+        }*/
         anchors.topMargin: parent.height / 2 - urlText.font.pixelSize / 1.337
         background: null
         color: Theme.primaryColor
