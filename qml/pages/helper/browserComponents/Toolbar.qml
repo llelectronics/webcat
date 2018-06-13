@@ -245,6 +245,7 @@ Rectangle {
         }
 
         Image {
+            id: torLogo
             anchors.fill: parent
             anchors.margins: {
                 left: Theme.paddingMedium
@@ -253,6 +254,8 @@ Rectangle {
                 bottom: Theme.paddingMedium
             }
             source: "../../img/tor.png"
+            smooth: true
+            opacity: 0.7
             visible: mainWindow.torProxyEnabled
         }
 
@@ -262,7 +265,12 @@ Rectangle {
             anchors.centerIn: parent
             font.pixelSize: Theme.fontSizeExtraSmall
             font.bold: true
-            color: gotoButton.down ? Theme.highlightColor : Theme.primaryColor
+            color: {
+                if (!torLogo.visible)
+                    gotoButton.down ? Theme.highlightColor : Theme.primaryColor
+                else
+                    "yellow"
+            }
             horizontalAlignment: Text.AlignHCenter
         }
         ProgressCircle {
