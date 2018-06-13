@@ -919,6 +919,7 @@ Page {
         anchors.fill: parent
         menuTop: extraToolbar.y - 4 * Theme.itemSizeSmall
         dataContainer: page
+        z: mediaDownloadRec.z + 1
     }
 
     // TabBar
