@@ -87,7 +87,7 @@ Rectangle {
             }
             PropertyChanges {
                 target: webTitle
-                visible: (webTitle.text != "" && webTitle.height != 0) ? true : false
+                visible: (webTitle.text != "") ? true : false
                 enabled: true
             }
         },
