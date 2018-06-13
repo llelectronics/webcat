@@ -165,7 +165,6 @@ ApplicationWindow
         modelUrls.addBookmark("https://talk.maemo.org/","Maemo forum", userAgent);
         modelUrls.addBookmark("http://jollausers.com/","Jolla users", userAgent);
         modelUrls.addBookmark("https://forum.jollausers.com/","Jolla users forum", userAgent);
-        modelUrls.addBookmark("http://jollatides.com/", "Jolla Tides", userAgent);
         modelUrls.addBookmark("https://reviewjolla.blogspot.se/", "Review Jolla", userAgent);
     }
 

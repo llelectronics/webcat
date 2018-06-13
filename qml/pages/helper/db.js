@@ -24,7 +24,6 @@ function initialize() {
                         tx.executeSql('INSERT INTO bookmarks VALUES (?,?,?);', ["Maemo forum", "http://talk.maemo.org/", defaultAgent]);
                         tx.executeSql('INSERT INTO bookmarks VALUES (?,?,?);', ["Jolla users", "http://jollausers.com/", defaultAgent]);
                         tx.executeSql('INSERT INTO bookmarks VALUES (?,?,?);', ["Jolla users forum", "http://forum.jollausers.com/", defaultAgent]);
-                        tx.executeSql('INSERT INTO bookmarks VALUES (?,?,?);', ["Jolla Tides", "http://jollatides.com/", defaultAgent]);
                         tx.executeSql('INSERT INTO bookmarks VALUES (?,?,?);', ["Review Jolla", "http://reviewjolla.blogspot.se/", defaultAgent]);
                     }
                     tx.executeSql('CREATE TABLE IF NOT EXISTS settings(setting TEXT, value TEXT)');
