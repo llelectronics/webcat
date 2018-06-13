@@ -13,10 +13,12 @@ Dialog
     canAccept: tsproxydisabled.checked || ((tfhost.text.length > 0) && (tfport.text.length > 0))
 
     onAccepted: {
-        mainWindow.infoBanner.parent = proxySettingsPage
-        mainWindow.infoBanner.anchors.top = proxySettingsPage.top
+        mainWindow.infoBanner.parent = mainWindow
+        mainWindow.infoBanner.anchors.top = mainWindow.top
         mainWindow.infoBanner.showText(qsTr("Please restart Webcat"))
         if(tsproxydisabled.checked) {
+            mainWindow.torProxyEnabled = false
+            DB.addSetting("torProxyEnabled", "false");
             proxymanager.unset();
             proxymanager.remove();
             return;
