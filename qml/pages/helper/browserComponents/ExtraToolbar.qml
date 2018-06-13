@@ -119,25 +119,6 @@ Rectangle {
     }
 
     IconButton {
-        id: newTabButton
-        icon.source: "image://theme/icon-cover-new"
-        anchors.left: minimizeButton.right
-        anchors.leftMargin: Theme.paddingMedium
-        anchors.bottom: parent.bottom
-        anchors.bottomMargin: actionLbl.height / 3
-        icon.height: height
-        icon.width: icon.height
-        height: Theme.iconSizeMedium
-        width: height
-        visible: false
-        onClicked: {
-            mainWindow.loadInNewTab("about:bookmarks");
-            highlighted = false;
-            extraToolbar.hide();
-        }
-    }
-
-    IconButton {
         id: nightModeButton
         icon.source: fPage.nightMode ? "image://theme/icon-camera-wb-sunny" : "image://theme/icon-camera-wb-tungsten"
         anchors.left: minimizeButton.right
@@ -157,29 +138,6 @@ Rectangle {
             highlighted = false;
             extraToolbar.hide();
         }
-    }
-
-
-    IconButton {
-        id: closeTabButton
-        icon.source: "image://theme/icon-m-close"
-        anchors.left: nightModeButton.right
-        anchors.leftMargin: Theme.paddingSmall
-        anchors.bottom: parent.bottom
-        anchors.bottomMargin: actionLbl.height / 3
-        icon.height: height
-        icon.width: icon.height
-        height: Theme.iconSizeMedium
-        width: height
-        visible: false
-        onClicked: {
-            if (enabled) {
-                mainWindow.closeTab(mainWindow.tabModel.getIndexFromId(mainWindow.currentTab),pageId)
-            }
-            highlighted = false;
-            extraToolbar.hide();
-        }
-        enabled: mainWindow.tabModel.count > 1
     }
 
     IconButton {
