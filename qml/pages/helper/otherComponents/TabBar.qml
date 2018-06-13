@@ -170,16 +170,12 @@ Item {
 
             Label {
                 id: tabHeadLbl
-                text: qsTr("Tabs") + mainWindow.unicodeBlackDownPointingTriangle()
+                text: qsTr("Tabs")
                 anchors.right: parent.right
                 anchors.rightMargin: Theme.paddingMedium
                 font.pixelSize: Theme.fontSizeMedium
                 color: Theme.highlightColor
                 anchors.verticalCenter: parent.verticalCenter
-            }
-            MouseArea {
-                anchors.fill: tabHeadLbl
-                onClicked: menuPopup.show();
             }
 
             Image {
@@ -346,16 +342,4 @@ Item {
 
         }
     }
-
-    MenuPopup {
-        id: menuPopup
-        anchors.fill: parent
-        menuTop: {
-            if (root.parent.orientation == Orientation.Portrait || root.parent.orientation == Orientation.PortraitInverted) tabListBg.y - Theme.itemSizeMedium * 3.25  // 4 MenuItems for the moment
-            else tabHead.y - Theme.itemSizeMedium * 3.25
-        }
-        dataContainer: root.dataContainer
-        onMenuClosed: root.menuClosed()
-    }
-
 }
