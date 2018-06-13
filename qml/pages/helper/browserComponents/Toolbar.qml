@@ -244,6 +244,18 @@ Rectangle {
                 clickTimer.restart()
         }
 
+        Image {
+            anchors.fill: parent
+            anchors.margins: {
+                left: Theme.paddingMedium
+                right: Theme.paddingMedium
+                top: Theme.paddingMedium
+                bottom: Theme.paddingMedium
+            }
+            source: "../../img/tor.png"
+            visible: mainWindow.torProxyEnabled
+        }
+
         Label {
             id: tabNumberLbl
             text: mainWindow.tabModel.count

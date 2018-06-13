@@ -81,6 +81,7 @@ ApplicationWindow
     property bool vPlayerExternal
     property alias infoBanner: infoBanner
     property int coverActionGroup: 0
+    property bool torProxyEnabled: false
 
     property var firstPage
     property TransferEngine transferEngine: TransferEngine { }

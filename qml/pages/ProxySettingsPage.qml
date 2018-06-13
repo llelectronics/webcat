@@ -1,6 +1,7 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
 import harbour.webcat.Network 1.0
+import "helper/db.js" as DB
 
 Dialog
 {
@@ -24,6 +25,8 @@ Dialog
         proxymanager.host = tfhost.text;
         proxymanager.port = parseInt(tfport.text);
         proxymanager.save();
+        mainWindow.torProxyEnabled = torSwitch.checked
+        DB.addSetting("torProxyEnabled", torSwitch.checked.toString());
     }
 
     ProxyManager
