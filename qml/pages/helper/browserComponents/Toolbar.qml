@@ -87,7 +87,7 @@ Rectangle {
             }
             PropertyChanges {
                 target: webTitle
-                visible: urlText.visible
+                visible: (webTitle.text != "") ? true : false
                 enabled: true
             }
         },
@@ -386,7 +386,6 @@ Rectangle {
                 backIcon.visible = false
                 forIcon.visible = false
                 bookmarkButton.visible = true
-                gotoButton.searchButton = true
                 text = fullUrl
                 color = Theme.primaryColor
                 suggestionView.visible = false
@@ -397,7 +396,6 @@ Rectangle {
                 backIcon.visible = fPage.webview.canGoBack
                 forIcon.visible = fPage.webview.canGoForward
                 if (!fPage.readerMode) bookmarkButton.visible = false
-                gotoButton.searchButton = false
                 text = simplifyUrl(url)
                 if (webTitle.text != "") {
                     webTitle.visible = urlText.visible
