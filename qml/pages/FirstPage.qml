@@ -81,7 +81,7 @@ Page {
     property bool nightMode: false
     property bool searchMode: false
     property int toolbarheight: Theme.itemSizeSmall //Screen.height / 13
-    property int extratoolbarheight: Theme.itemSizeSmall + (Theme.itemSizeSmall / 4)//Screen.height / 10
+    property int extratoolbarheight: Theme.itemSizeSmall + (Theme.itemSizeSmall / 3)//Screen.height / 10
     property alias webview: webview
     property alias mediaDownloadRec: mediaDownloadRec
     property alias vPlayerLoader: vPlayerLoader
