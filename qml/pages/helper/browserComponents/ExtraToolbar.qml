@@ -16,6 +16,10 @@ Rectangle {
     property alias searchModeButton: searchModeButton
     property alias shareButton: shareButton
 
+    property int optimalMargin: (width - 7 * Theme.iconSizeMedium) / 8 // 7 Items
+
+    Component.onCompleted: console.debug("optimalMargin: " + optimalMargin)
+
 
     Image {
         anchors.fill: parent
@@ -100,7 +104,7 @@ Rectangle {
         id: minimizeButton
         icon.source: "image://theme/icon-m-page-down"
         anchors.left: extraToolbar.left
-        anchors.leftMargin: Theme.paddingSmall
+        anchors.leftMargin: optimalMargin
         anchors.top: actionLbl.bottom
         anchors.topMargin: Theme.paddingSmall / 8
         icon.height: height
@@ -137,7 +141,7 @@ Rectangle {
         id: nightModeButton
         icon.source: fPage.nightMode ? "image://theme/icon-camera-wb-sunny" : "image://theme/icon-camera-wb-tungsten"
         anchors.left: minimizeButton.right
-        anchors.leftMargin: Theme.paddingSmall
+        anchors.leftMargin: optimalMargin
         anchors.top: actionLbl.bottom
         anchors.topMargin: Theme.paddingSmall / 8
         icon.height: height
@@ -182,7 +186,7 @@ Rectangle {
         id: orientationLockButton
         icon.source: "image://theme/icon-m-rotate"
         anchors.left: nightModeButton.right
-        anchors.leftMargin: Theme.paddingMedium
+        anchors.leftMargin: optimalMargin
         anchors.top: actionLbl.bottom
         anchors.topMargin: Theme.paddingSmall / 8
         icon.height: height
@@ -206,7 +210,7 @@ Rectangle {
         id: readerModeButton
         icon.source: "image://theme/icon-m-message"
         anchors.left: orientationLockButton.right
-        anchors.leftMargin: Theme.paddingMedium
+        anchors.leftMargin: optimalMargin
         anchors.top: actionLbl.bottom
         anchors.topMargin: Theme.paddingSmall / 8
         icon.height: height
@@ -224,7 +228,7 @@ Rectangle {
         id: searchModeButton
         icon.source: "image://theme/icon-m-search"
         anchors.left: readerModeButton.right
-        anchors.leftMargin: Theme.paddingMedium
+        anchors.leftMargin: optimalMargin
         anchors.top: actionLbl.bottom
         anchors.topMargin: Theme.paddingSmall / 8
         icon.height: height
@@ -243,7 +247,7 @@ Rectangle {
         id: shareButton
         icon.source: "image://theme/icon-m-share"
         anchors.left: searchModeButton.right
-        anchors.leftMargin: Theme.paddingMedium
+        anchors.leftMargin: optimalMargin
         anchors.top: actionLbl.bottom
         anchors.topMargin: Theme.paddingSmall / 8
         icon.height: height
@@ -264,7 +268,7 @@ Rectangle {
         id: moreButton
         icon.source: "image://theme/icon-m-up"
         anchors.left: shareButton.right
-        anchors.leftMargin: Theme.paddingMedium
+        anchors.leftMargin: optimalMargin
         anchors.top: actionLbl.bottom
         anchors.topMargin: Theme.paddingSmall / 8
         icon.height: height
