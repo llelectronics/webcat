@@ -275,13 +275,17 @@ Item {
             highlight:
 
                 Rectangle {
-                width: root.width; height: Theme.itemSizeSmall
-                gradient: Gradient {
-                    GradientStop { position: 0.0; color: Theme.highlightColor }
-                    GradientStop { position: 0.10; color: "#262626" }
-                    GradientStop { position: 0.95; color: "#1F1F1F"}
-                    GradientStop { position: 0.98; color: Theme.highlightColor }
-                }
+                width: parent.width; height: Theme.itemSizeSmall
+                //color: "#000048"
+                color: Theme.highlightBackgroundColor
+                opacity: 0.5
+//                gradient: Gradient {
+//                    GradientStop { position: 0.0; color: Theme.highlightColor }
+////                    GradientStop { position: 0.10; color: "#262626" }
+////                    GradientStop { position: 0.95; color: "#1F1F1F"}
+//                    GradientStop { position: 0.2; color: Theme.highlightBackgroundColor }
+//                    //GradientStop { position: 0.98; color: Theme.highlightColor }
+//                }
             }
             add: Transition {
                 NumberAnimation { property: "opacity"; from: 0; to: 1.0; duration: 200 }
