@@ -39,8 +39,8 @@ Item {
             anchors.bottomMargin: Theme.paddingMedium
             anchors.horizontalCenter: rectUp.horizontalCenter
             source: "image://theme/icon-m-page-up"
-            height: Theme.itemSizeMedium
-            width: Theme.itemSizeMedium
+            height: Theme.itemSizeExtraSmall
+            width: Theme.itemSizeExtraSmall
 
         }
 
@@ -78,8 +78,8 @@ Item {
             anchors.topMargin: Theme.paddingMedium
             anchors.horizontalCenter: rectDown.horizontalCenter
             source: "image://theme/icon-m-page-down"
-            height: Theme.itemSizeMedium
-            width: Theme.itemSizeMedium
+            height: Theme.itemSizeExtraSmall
+            width: Theme.itemSizeExtraSmall
         }
 
         onPressed: {
