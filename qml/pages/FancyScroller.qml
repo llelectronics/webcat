@@ -6,9 +6,91 @@ Item {
     property int threshold: 500
     property bool _activeUp
     property bool _activeDown
+    property bool activateFastScroll: false
     signal upScrolling
     signal downScrolling
     width: parent.width
+
+    BackgroundItem {
+        visible: opacity > 0 && activateFastScroll
+        y: 0
+        width: flickable.width / 6
+        height: flickable.height / 2
+        highlighted: pressed
+        opacity: _activeUp || _activeDown ? 1 : 0
+        anchors.right: parent.right
+
+        Behavior on opacity {
+            NumberAnimation { duration: 300; easing.type: Easing.InOutQuad }
+        }
+
+        Rectangle {
+            id: rectUp
+            anchors.fill: parent
+            opacity: 0.7
+            gradient: Gradient {
+                GradientStop { position: 0.0; color: "transparent" }
+                GradientStop { position: 1.0; color: Theme.highlightColor }
+            }
+        }
+
+        Image {
+            anchors.right: parent.right
+            anchors.rightMargin: Theme.paddingLarge
+            anchors.bottom: parent.bottom
+            anchors.bottomMargin: Theme.paddingMedium
+            anchors.horizontalCenter: rectUp.horizontalCenter
+            source: "image://theme/icon-m-page-up"
+            height: Theme.iconSizeMedium
+            width: Theme.iconSizeSmall / 8
+
+        }
+
+        onPressed: {
+            flickable.cancelFlick();
+            flickable.scrollToTop();
+        }
+    }
+
+    BackgroundItem {
+        visible: opacity > 0 && activateFastScroll
+        y: flickable.height - height
+        width: flickable.width / 6
+        height: flickable.height / 2
+        highlighted: pressed
+        opacity: _activeDown || _activeUp ? 1 : 0
+        anchors.right: parent.right
+
+        Behavior on opacity {
+            NumberAnimation { duration: 300; easing.type: Easing.InOutQuad }
+        }
+
+        Rectangle {
+            id: rectDown
+            anchors.fill: parent
+            opacity: 0.7
+            gradient: Gradient {
+                GradientStop { position: 0.0; color: Theme.highlightColor }
+                GradientStop { position: 1.0; color: "transparent" }
+            }
+        }
+
+        Image {
+            anchors.right: parent.right
+            anchors.rightMargin: Theme.paddingLarge
+            anchors.top: parent.top
+            anchors.topMargin: Theme.paddingMedium
+            anchors.horizontalCenter: rectDown.horizontalCenter
+            source: "image://theme/icon-m-page-down"
+            height: Theme.iconSizeMedium
+            width: Theme.iconSizeSmall / 8
+        }
+
+        onPressed: {
+            flickable.cancelFlick();
+            flickable.scrollToBottom();
+        }
+    }
 
     Connections {
         target: flickable
@@ -26,7 +108,7 @@ Item {
             }
 
             if (target.verticalVelocity < -threshold &&
-                target.contentHeight > 3 * target.height)
+                    target.contentHeight > 3 * target.height)
             {
                 _activeUp = true;
                 _activeDown = false;
