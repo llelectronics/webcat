@@ -36,7 +36,7 @@ Item {
 
         Image {
             anchors.bottom: parent.bottom
-            anchors.bottomMargin: Theme.paddingMedium
+            anchors.bottomMargin: Theme.paddingLarge
             anchors.horizontalCenter: rectUp.horizontalCenter
             source: "image://theme/icon-m-page-up"
             height: Theme.itemSizeExtraSmall
@@ -75,7 +75,7 @@ Item {
 
         Image {
             anchors.top: parent.top
-            anchors.topMargin: Theme.paddingMedium
+            anchors.topMargin: Theme.paddingLarge
             anchors.horizontalCenter: rectDown.horizontalCenter
             source: "image://theme/icon-m-page-down"
             height: Theme.itemSizeExtraSmall
