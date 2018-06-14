@@ -136,6 +136,11 @@ Rectangle {
                 visible: false
                 enabled: false
             }
+            PropertyChanges {
+                target: urlLabelSmall
+                visible: false
+                enabled: false
+            }
         }
     ]
 
@@ -345,14 +350,14 @@ Rectangle {
 //                urlText.anchors.top = undefined
 //                urlText.anchors.top = webTitle.bottom
 //                urlText.anchors.topMargin = Theme.paddingSmall / 2
-                urlText.visible = false
+                if (parent.state == "expanded") urlText.visible = false
                 height = Theme.fontSizeSmall / 1.337 + Theme.paddingSmall
             }
             else {
 //                urlText.anchors.top = undefined
 //                urlText.anchors.top = parent.top
 //                urlText.anchors.topMargin = parent.height / 2 - urlText.font.pixelSize / 1.337
-                urlText.visible = true
+                if (parent.state == "expanded") urlText.visible = true
                 height = 0
             }
         }
@@ -390,7 +395,7 @@ Rectangle {
     // Url textbox here
     TextField{
         id: urlText
-        visible: !webTitle.visible
+        visible: !webTitle.visible && parent.state == "expanded"
         text: simplifyUrl(url)
         inputMethodHints: Qt.ImhUrlCharactersOnly
         placeholderText: qsTr("Enter an url")
