@@ -280,36 +280,62 @@ Page {
         focus: true
 
         property variant itemSelectorIndex: -1
+        property var mediaDownloadRecVisible
 
         smooth: false
         maximumFlickVelocity: Theme.maximumFlickVelocity / 2
 
-        width: {
-            if (!page.orientationTransitionRunning) {
-                if (page.orientation == Orientation.Portrait || page.orientation == Orientation.PortraitInverted)  {
-                    mainWindow.width
-                } else {
-                    mainWindow.height
+        anchors.top: parent.top
+        anchors.left: parent.left
+        anchors.right: parent.right
+        anchors.bottom: parent.bottom
+        anchors.bottomMargin: toolbarheight / 3
+
+        onAtYEndChanged: {
+            if (atYEnd) {
+                console.debug("Minimize toolbar")
+                toolbar.state == "minimized"
+                if (mediaDownloadRec.visible) {
+                    mediaDownloadRecVisible = true
+                    mediaDownloadRec.visible = false
                 }
+                if (extraToolbar.visible)
+                    extraToolbar.hide();
+            }
+            else {
+               if (mediaDownloadRecVisible) {
+                   mediaDownloadRec.visible = true
+                   mediaDownloadRecVisible = false
+               }
             }
         }
-        height: { //page.height - 20 // minimized toolbar size. We don't want to set the toolbar.height here otherwise it would make webview resizing which is painfully slow
-            if (!page.orientationTransitionRunning) {
-                if (page.orientation == Orientation.Portrait || page.orientation == Orientation.PortraitInverted)  {
-                    //console.debug("Not in Landscape")
-                    if (inputFocus && mediaDownloadRec.visible) mainWindow.height - (toolbarheight / 3) - mediaDownloadRec.height - Qt.inputMethod.keyboardRectangle.height
-                    else if (mediaDownloadRec.visible) mainWindow.height - (toolbarheight / 3) - mediaDownloadRec.height
-                    else if (inputFocus) mainWindow.height - (toolbarheight /3) - Qt.inputMethod.keyboardRectangle.height
-                    else mainWindow.height - (toolbarheight /3)
-                } else {
-                    //console.debug("In Landscape")
-                    if (inputFocus && mediaDownloadRec.visible) mainWindow.width - (toolbarheight / 3) - mediaDownloadRec.height - Qt.inputMethod.keyboardRectangle.width
-                    else if (mediaDownloadRec.visible) mainWindow.width - (toolbarheight / 3) - mediaDownloadRec.height
-                    else if (inputFocus) mainWindow.width - (toolbarheight /3) - Qt.inputMethod.keyboardRectangle.width
-                    else mainWindow.width - (toolbarheight /3)
-                }
-            }
-        }
+
+//        width: {
+//            if (!page.orientationTransitionRunning) {
+//                if (page.orientation == Orientation.Portrait || page.orientation == Orientation.PortraitInverted)  {
+//                    mainWindow.width
+//                } else {
+//                    mainWindow.height
+//                }
+//            }
+//        }
+//        height: { //page.height - 20 // minimized toolbar size. We don't want to set the toolbar.height here otherwise it would make webview resizing which is painfully slow
+//            if (!page.orientationTransitionRunning) {
+//                if (page.orientation == Orientation.Portrait || page.orientation == Orientation.PortraitInverted)  {
+//                    //console.debug("Not in Landscape")
+//                    if (inputFocus && mediaDownloadRec.visible) mainWindow.height - (toolbarheight / 3) - mediaDownloadRec.height - Qt.inputMethod.keyboardRectangle.height
+//                    else if (mediaDownloadRec.visible) mainWindow.height - (toolbarheight / 3) - mediaDownloadRec.height
+//                    else if (inputFocus) mainWindow.height - (toolbarheight /3) - Qt.inputMethod.keyboardRectangle.height
+//                    else mainWindow.height - (toolbarheight /3)
+//                } else {
+//                    //console.debug("In Landscape")
+//                    if (inputFocus && mediaDownloadRec.visible) mainWindow.width - (toolbarheight / 3) - mediaDownloadRec.height - Qt.inputMethod.keyboardRectangle.width
+//                    else if (mediaDownloadRec.visible) mainWindow.width - (toolbarheight / 3) - mediaDownloadRec.height
+//                    else if (inputFocus) mainWindow.width - (toolbarheight /3) - Qt.inputMethod.keyboardRectangle.width
+//                    else mainWindow.width - (toolbarheight /3)
+//                }
+//            }
+//        }
 
         // We don't want pageStackNavigation to interfere
         overridePageStackNavigation: true
