@@ -35,14 +35,12 @@ Item {
         }
 
         Image {
-            anchors.right: parent.right
-            anchors.rightMargin: Theme.paddingLarge
             anchors.bottom: parent.bottom
             anchors.bottomMargin: Theme.paddingMedium
             anchors.horizontalCenter: rectUp.horizontalCenter
             source: "image://theme/icon-m-page-up"
-            height: Theme.iconSizeMedium
-            width: Theme.iconSizeSmall / 8
+            height: Theme.itemSizeMedium
+            width: Theme.itemSizeMedium
 
         }
 
@@ -76,14 +74,12 @@ Item {
         }
 
         Image {
-            anchors.right: parent.right
-            anchors.rightMargin: Theme.paddingLarge
             anchors.top: parent.top
             anchors.topMargin: Theme.paddingMedium
             anchors.horizontalCenter: rectDown.horizontalCenter
             source: "image://theme/icon-m-page-down"
-            height: Theme.iconSizeMedium
-            width: Theme.iconSizeSmall / 8
+            height: Theme.itemSizeMedium
+            width: Theme.itemSizeMedium
         }
 
         onPressed: {
