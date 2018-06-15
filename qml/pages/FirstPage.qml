@@ -295,7 +295,7 @@ Page {
                 if (!emptyPage && !loading) {
                     toolbar.state = "minimized"
                 }
-                if (mediaDownloadRec.visible) {
+                if (mediaDownloadRec.visible && !atYBeginning) {
                     mediaDownloadRecVisible = true
                     mediaDownloadRec.visible = false
                 }
