@@ -291,7 +291,7 @@ Page {
 
         onAtYEndChanged: {
             if (atYEnd) {
-                toolbar.state == "minimized"
+                toolbar.state = "minimized"
                 if (mediaDownloadRec.visible) {
                     mediaDownloadRecVisible = true
                     mediaDownloadRec.visible = false
