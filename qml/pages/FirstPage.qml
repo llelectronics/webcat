@@ -335,41 +335,39 @@ Page {
 
         onUrlChanged: {
             // There seems to be a bug where back and forward navigation is not shown even if webview.canGoBack or ~Forward
-            if (!emptyPage && url.toString().indexOf("about:") == -1) {
+            toolbar.backIcon.visible = true
+            toolbar.forIcon.visible = webview.canGoForward
 
-                toolbar.backIcon.visible = true
-                toolbar.forIcon.visible = webview.canGoForward
+            toolbar.webTitle.visible = false
+            toolbar.urlText.text = toolbar.urlText.simplifyUrl(url)
+            toolbar.urlText.fullUrl = url
 
-                toolbar.webTitle.visible = false
-                toolbar.urlText.text = toolbar.urlText.simplifyUrl(url)
-                toolbar.urlText.fullUrl = url
+            // reset everything on url change
+            mediaDownloadRec.mediaUrl = "";
+            mediaYtEmbeded = false;
+            mediaYt = false;
+            mediaLink = false;
+            page.mediaTitle = "";
+            // For mediaList
+            counter = -1;
+            itemSelectorIndex = -1;
+            mediaList.clear();
 
-                // reset everything on url change
-                mediaDownloadRec.mediaUrl = "";
-                mediaYtEmbeded = false;
-                mediaYt = false;
-                mediaLink = false;
-                page.mediaTitle = "";
-                // For mediaList
-                counter = -1;
-                itemSelectorIndex = -1;
-                mediaList.clear();
+            inputFocus = false;
+            inputSelected = false;
+            // Remove selection if still visible
+            if (selection.visible) selection.visible = false
+
+            if (url.toString().indexOf("about:") != -1) {
+                emptyPage = true
+            }
+            else {
+                emptyPage = false
 
                 checkYoutubeURL(url);
 
                 // Add to url history
                 DB.addHistory(url.toString());
-
-                inputFocus = false;
-                inputSelected = false;
-                // Remove selection if still visible
-                if (selection.visible) selection.visible = false
-            }
-            else if (url.toString().indexOf("about:") != -1) {
-                emptyPage = true
-            }
-            else {
-                emptyPage = false
             }
         }
 
