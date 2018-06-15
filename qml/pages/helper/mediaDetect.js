@@ -282,13 +282,13 @@ window.addEventListener("load", function(){
 
 }, true);
 
-window.addEventListener("touchend",  function(){
+//window.addEventListener("touchend",  function(){
 
-    detectHtmlAudio();
-    detectHtmlVideo();
-    detectYtEmbed();
+//    detectHtmlAudio();
+//    detectHtmlVideo();
+//    detectYtEmbed();
 
-}, true);
+//}, true);
 
 // facebook.com uses this and detecting html5 video only does somehow not work
 // improved version by Dax89 (Thanks for that)
