@@ -291,7 +291,7 @@ Page {
 
         onAtYEndChanged: {
             if (atYEnd) {
-                toolbar.state = "minimized"
+                if (url.indexOf("about:") != -1) toolbar.state = "minimized"
                 if (mediaDownloadRec.visible) {
                     mediaDownloadRecVisible = true
                     mediaDownloadRec.visible = false
