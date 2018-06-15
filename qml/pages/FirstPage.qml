@@ -292,8 +292,7 @@ Page {
 
         onAtYEndChanged: {
             if (atYEnd) {
-                if (!emptyPage) {
-                    console.debug("Empty Page: " + emptyPage)
+                if (!emptyPage && !loading) {
                     toolbar.state = "minimized"
                 }
                 if (mediaDownloadRec.visible) {
