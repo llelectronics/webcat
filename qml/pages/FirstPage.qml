@@ -95,6 +95,7 @@ Page {
     property bool inputFocus: false
     property variant crashUrl: []
     property alias ytQualChooser: ytQualChooser
+    property bool emptyPage: true
 
 // DEBUG
 //    onYt720pChanged: {
@@ -291,7 +292,10 @@ Page {
 
         onAtYEndChanged: {
             if (atYEnd) {
-                if (url.indexOf("about:") != -1) toolbar.state = "minimized"
+                if (!emptyPage) {
+                    console.debug("Empty Page: " + emptyPage)
+                    toolbar.state = "minimized"
+                }
                 if (mediaDownloadRec.visible) {
                     mediaDownloadRecVisible = true
                     mediaDownloadRec.visible = false
@@ -332,40 +336,42 @@ Page {
 
         onUrlChanged: {
             // There seems to be a bug where back and forward navigation is not shown even if webview.canGoBack or ~Forward
-            toolbar.backIcon.visible = true
-            toolbar.forIcon.visible = webview.canGoForward
-//            if ((/^rtsp:/).test(url) || (/^rtmp:/).test(url) || (/^mms:/).test(url)) {
-//                if (mediaYt == true) {
-//                    mediaPlayBtn.clicked("");
-//                }
-//                else if (mainWindow.vPlayerExternal) mainWindow.openWithvPlayer(url);
-//                else vPlayerLoader.setSource("VideoPlayerComponent.qml", {dataContainer: firstPage, streamUrl: url})
-//            }
+            if (!emptyPage && url.toString().indexOf("about:") == -1) {
 
-            toolbar.webTitle.visible = false
-            toolbar.urlText.text = toolbar.urlText.simplifyUrl(url)
-            toolbar.urlText.fullUrl = url
+                toolbar.backIcon.visible = true
+                toolbar.forIcon.visible = webview.canGoForward
 
-            // reset everything on url change
-            mediaDownloadRec.mediaUrl = "";
-            mediaYtEmbeded = false;
-            mediaYt = false;
-            mediaLink = false;
-            page.mediaTitle = "";
-            // For mediaList
-            counter = -1;
-            itemSelectorIndex = -1;
-            mediaList.clear();
+                toolbar.webTitle.visible = false
+                toolbar.urlText.text = toolbar.urlText.simplifyUrl(url)
+                toolbar.urlText.fullUrl = url
 
-            checkYoutubeURL(url);
+                // reset everything on url change
+                mediaDownloadRec.mediaUrl = "";
+                mediaYtEmbeded = false;
+                mediaYt = false;
+                mediaLink = false;
+                page.mediaTitle = "";
+                // For mediaList
+                counter = -1;
+                itemSelectorIndex = -1;
+                mediaList.clear();
 
-            // Add to url history
-            DB.addHistory(url.toString());
+                checkYoutubeURL(url);
 
-            inputFocus = false;
-            inputSelected = false;
-            // Remove selection if still visible
-            if (selection.visible) selection.visible = false
+                // Add to url history
+                DB.addHistory(url.toString());
+
+                inputFocus = false;
+                inputSelected = false;
+                // Remove selection if still visible
+                if (selection.visible) selection.visible = false
+            }
+            else if (url.toString().indexOf("about:") != -1) {
+                emptyPage = true
+            }
+            else {
+                emptyPage = false
+            }
         }
 
         // Settings loaded from mainWindow
