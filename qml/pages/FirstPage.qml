@@ -293,6 +293,8 @@ Page {
         anchors.bottomMargin: toolbarheight / 3
         quickScroll: true
 
+        pixelAligned: true
+
         onAtYEndChanged: {
             if (atYEnd) {
                 if (!emptyPage && !loading) {
