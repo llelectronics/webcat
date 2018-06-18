@@ -100,7 +100,9 @@ ApplicationWindow
     property WebCatInterface webcatinterface: WebCatInterface { }
 
     onApplicationActiveChanged: {
-        firstPage.workaroundRefresh()
+        if (applicationActive) {
+            if (firstPage) firstPage.workaroundRefresh()
+        }
     }
 
     Component {

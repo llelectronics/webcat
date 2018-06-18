@@ -191,12 +191,15 @@ Page {
         //console.log("Application Active change. Try workaround rendering bug by changing height of webview")
         var tempHeight = webview.height
         var curOrient = page.orientation
-        webview.height += 1
-        webview.height = tempHeight
+        webview.update();
         mainWindow.update();
-        if (curOrient === Orientation.PortraitMask)  page.orientation = Orientation.Landscape
-        else  page.orientation = Orientation.Portrait
-        page.orientation = curOrient
+        webview.visible = false;
+        webview.update();
+        webview.visible = true;
+        webview.update();
+//        if (curOrient === Orientation.PortraitMask)  page.orientation = Orientation.Landscape
+//        else  page.orientation = Orientation.Portrait
+//        page.orientation = curOrient
     }
 
     Item{
