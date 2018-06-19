@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="es">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="es" version="2.1">
 <context>
     <name>AboutPage</name>
     <message>
@@ -12,19 +10,19 @@
     <name>AddBookmark</name>
     <message>
         <source>Edit Bookmark</source>
-        <translation>Editar favorito</translation>
+        <translation>Editar marcador</translation>
     </message>
     <message>
         <source>Add Bookmark</source>
-        <translation>Añadir a Favoritos</translation>
+        <translation>Añadir a marcadores</translation>
     </message>
     <message>
         <source>Title of the bookmark</source>
-        <translation>Titulo del favorito</translation>
+        <translation>Titulo del marcador</translation>
     </message>
     <message>
         <source>URL of bookmark</source>
-        <translation>URL del favorito</translation>
+        <translation>URL del marcador</translation>
     </message>
     <message>
         <source>User Agent:</source>
@@ -47,7 +45,7 @@
     </message>
     <message>
         <source>User name</source>
-        <translation>Nombre usuario</translation>
+        <translation>Nombre de usuario</translation>
     </message>
     <message>
         <source>Enter password</source>
@@ -74,11 +72,11 @@
     </message>
     <message>
         <source>Backup saved successfully!</source>
-        <translation>¡La copia de seguridad se ha guardado correctamente!</translation>
+        <translation>¡Copia de seguridad guardada con éxito!</translation>
     </message>
     <message>
         <source>The Backup includes all cookies, bookmarks, history and settings for Webcat.</source>
-        <translation>La copia de seguridad incluye las cookies, favoritos, historial y ajustes de Webcat.</translation>
+        <translation>La copia de seguridad incluye las cookies, marcadores, historial y ajustes de Webcat.</translation>
     </message>
     <message>
         <source>Restore Backup</source>
@@ -86,7 +84,7 @@
     </message>
     <message>
         <source>Backups overwrite current configurations</source>
-        <translation>Reemplazará la configuración actual</translation>
+        <translation>Las copias de seguridad reemplazan la configuración actual</translation>
     </message>
     <message>
         <source>Backup restored! Please restart Webcat</source>
@@ -95,8 +93,8 @@
     <message>
         <source>Restoring overwrites all cookies, bookmarks, history and settings for Webcat from the backup file.
 Please restart for changes to take effect.</source>
-        <translation>Al restaurar la copia de seguridad se reemplazarán las cookies, favoritos, historial y ajustes de Webcat.
-Por favor, reinicia para que los cambios tengan efecto.</translation>
+        <translation>Al restaurar se sobrescriben las cookies, marcadores, historial y ajustes de Webcat con los de la copia de seguridad.
+Por favor, reinicia para que los cambios surtan efecto.</translation>
     </message>
     <message>
         <source>Restoring Backup</source>
@@ -104,14 +102,14 @@ Por favor, reinicia para que los cambios tengan efecto.</translation>
     </message>
     <message>
         <source>Backups are saved to Documents directory</source>
-        <translation>Se guardan en la carpeta Documents</translation>
+        <translation>Las copias de seguridad se guardan en Documentos</translation>
     </message>
 </context>
 <context>
     <name>BookmarkList</name>
     <message>
         <source>Bookmarks</source>
-        <translation>Favoritos</translation>
+        <translation>Marcadores</translation>
     </message>
     <message>
         <source>Open in new Tab</source>
@@ -135,7 +133,7 @@ Por favor, reinicia para que los cambios tengan efecto.</translation>
     </message>
     <message>
         <source>Add Bookmark</source>
-        <translation>Añadir a Favoritos</translation>
+        <translation>Añadir a marcadores</translation>
     </message>
     <message>
         <source>History</source>
@@ -152,9 +150,9 @@ Por favor, reinicia para que los cambios tengan efecto.</translation>
         <source>Certificates are used to identify and make sure that the website you see is provided by the author you expect.
 Unknown certificates are either ones that are missing in the global configuration of your browser. Outdated ones or compromised ones.
 If you are unsure reject the certificate. That might lead to a non loading website though.</source>
-        <translation>Los certificados se usan para identificar y tener la seguridad de que la página Web es proporcionada por el autor esperado.
-Los certificados desconocidos son los que faltan en el global de la configuración de tu navegador. Los obsoletos o comprometidos.
-Si no estás seguro de rechazar el certificado. Esto podría hacer que no se cargara el sitio Web.</translation>
+        <translation>Los certificados se usan para identificar y asegurar que la página Web que se muestra es del autor esperado.
+Los certificados desconocidos son los que faltan en la configuración global de tu navegador. Los obsoletos o comprometidos.
+Si no estás seguro, rechaza el certificado. Esto podría hacer que la página no se cargue.</translation>
     </message>
 </context>
 <context>
@@ -180,23 +178,23 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     <name>CreateDirDialog</name>
     <message>
         <source>Error creating new directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Error al crear nuevo directorio</translation>
     </message>
     <message>
         <source>Create Folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Crear carpeta</translation>
     </message>
     <message>
         <source>Create</source>
-        <translation type="unfinished"></translation>
+        <translation>Crear</translation>
     </message>
     <message>
         <source>Create a new folder under</source>
-        <translation type="unfinished"></translation>
+        <translation>Crear nueva carpeta bajo</translation>
     </message>
     <message>
         <source>Folder name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nombre de carpeta</translation>
     </message>
 </context>
 <context>
@@ -223,7 +221,7 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>Active Downloads: </source>
-        <translation>Descargas activas:</translation>
+        <translation>Descargas activas: </translation>
     </message>
     <message>
         <source>Status</source>
@@ -255,7 +253,7 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>Deleting </source>
-        <translation>Borrando</translation>
+        <translation>Borrando </translation>
     </message>
     <message>
         <source>Delete</source>
@@ -314,62 +312,62 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>Night Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Modo noche</translation>
     </message>
     <message>
         <source>Day Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Modo día</translation>
     </message>
 </context>
 <context>
     <name>FileProperties</name>
     <message>
         <source>Location</source>
-        <translation type="unfinished"></translation>
+        <translation>Ubicación</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation type="unfinished"></translation>
+        <translation>Tipo</translation>
     </message>
     <message>
         <source>Link to %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Enlace a %1</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Tamaño</translation>
     </message>
     <message>
         <source>Permissions</source>
-        <translation type="unfinished"></translation>
+        <translation>Permisos</translation>
     </message>
     <message>
         <source>Owner</source>
-        <translation type="unfinished"></translation>
+        <translation>Propietario</translation>
     </message>
     <message>
         <source>Group</source>
-        <translation type="unfinished"></translation>
+        <translation>Grupo</translation>
     </message>
     <message>
         <source>Last modified</source>
-        <translation type="unfinished"></translation>
+        <translation>Última actualización</translation>
     </message>
     <message>
         <source>Properties</source>
-        <translation type="unfinished"></translation>
+        <translation>Propiedades</translation>
     </message>
     <message>
         <source>Rename</source>
-        <translation type="unfinished"></translation>
+        <translation>Renombrar</translation>
     </message>
     <message>
         <source>Change Permissions</source>
-        <translation type="unfinished"></translation>
+        <translation>Cambiar permisos</translation>
     </message>
     <message>
         <source>Error renaming</source>
-        <translation type="unfinished"></translation>
+        <translation>Error al renombrar</translation>
     </message>
 </context>
 <context>
@@ -380,7 +378,7 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>Enter searchterm</source>
-        <translation>Introducir término de la búsqueda</translation>
+        <translation>Introduce término de búsqueda</translation>
     </message>
     <message>
         <source>Open in New Window</source>
@@ -416,11 +414,11 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>Accept certificate from </source>
-        <translation>Aceptar certificado de</translation>
+        <translation>Aceptar certificado de </translation>
     </message>
     <message>
         <source>Webkit engine crashed! Restarting...</source>
-        <translation>¡Se colgó el motor webkit! Reiniciando...</translation>
+        <translation>¡El motor webkit se ha quedado colgado! Reiniciando...</translation>
     </message>
     <message>
         <source>Webkit engine crashed too often!</source>
@@ -457,7 +455,7 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     <name>MenuPopup</name>
     <message>
         <source>File Manager</source>
-        <translation>Gestor de ficheros</translation>
+        <translation>Gestor de archivos</translation>
     </message>
     <message>
         <source>Backup Manager</source>
@@ -473,27 +471,27 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>Created Desktop Launcher for Webcat Fileman</source>
-        <translation type="unfinished"></translation>
+        <translation>Creado lanzador para Webcat Fileman</translation>
     </message>
 </context>
 <context>
     <name>MyClass</name>
     <message>
         <source>Webcat config dir not found</source>
-        <translation>No se ha encontrado el directorio de configuración de Webcat</translation>
+        <translation>No se ha encontrado el dir. de config. de Webcat</translation>
     </message>
     <message>
         <source>File not found.</source>
-        <translation>Fichero no encontrado.</translation>
+        <translation>Archivo no encontrado.</translation>
     </message>
     <message>
         <source>No valid Backup file. Did not find harbour-webcat Folder.</source>
-        <translation>Copia de seguridad no válida. No se ha encotrado la carpeta harbour-webcat.</translation>
+        <translation>Copia de seguridad no válida. No se ha encontrado la carpeta harbour-webcat.</translation>
     </message>
     <message>
         <source>Could not verify Backup file.
 </source>
-        <translation>No se ha podido verficar el archivo de la copia de seguridad.
+        <translation>No se pudo verificar la copia de seguridad.
 </translation>
     </message>
 </context>
@@ -505,19 +503,19 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>Paste</source>
-        <translation type="unfinished"></translation>
+        <translation>Pegar</translation>
     </message>
     <message>
         <source>Deleting </source>
-        <translation>Borrando</translation>
+        <translation>Borrando </translation>
     </message>
     <message>
         <source>directory</source>
-        <translation type="unfinished"></translation>
+        <translation>directorio</translation>
     </message>
     <message>
         <source>Cut</source>
-        <translation type="unfinished"></translation>
+        <translation>Cortar</translation>
     </message>
     <message>
         <source>Copy</source>
@@ -529,23 +527,23 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>Error pasting file </source>
-        <translation type="unfinished"></translation>
+        <translation>Error al pegar archivo </translation>
     </message>
     <message>
         <source>File operation succeeded</source>
-        <translation type="unfinished"></translation>
+        <translation>Operación de archivo completada</translation>
     </message>
     <message>
         <source>Properties</source>
-        <translation type="unfinished"></translation>
+        <translation>Propiedades</translation>
     </message>
     <message>
         <source>Create Folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Crear carpeta</translation>
     </message>
     <message>
         <source>Add to places</source>
-        <translation type="unfinished"></translation>
+        <translation>Añadir a lugares</translation>
     </message>
 </context>
 <context>
@@ -560,109 +558,109 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>URL to media file/stream</source>
-        <translation>URL de fichero multimedia/transmisión</translation>
+        <translation>URL de archivo multimedia/transmisión</translation>
     </message>
 </context>
 <context>
     <name>PermissionDialog</name>
     <message>
         <source>Could not change permission</source>
-        <translation type="unfinished"></translation>
+        <translation>No se pudo cambiar permiso</translation>
     </message>
     <message>
         <source>Change Permissions</source>
-        <translation type="unfinished"></translation>
+        <translation>Cambiar permisos</translation>
     </message>
     <message>
         <source>Change</source>
-        <translation type="unfinished"></translation>
+        <translation>Cambiar</translation>
     </message>
     <message>
         <source>Change permissions for</source>
-        <translation type="unfinished"></translation>
+        <translation>Cambiar permisos de</translation>
     </message>
     <message>
         <source>Read</source>
-        <translation type="unfinished"></translation>
+        <translation>Lectura</translation>
     </message>
     <message>
         <source>Write</source>
-        <translation type="unfinished"></translation>
+        <translation>Escritura</translation>
     </message>
     <message>
         <source>Execute</source>
-        <translation type="unfinished"></translation>
+        <translation>Ejecución</translation>
     </message>
     <message>
         <source>Owner</source>
-        <translation type="unfinished"></translation>
+        <translation>Propietario</translation>
     </message>
     <message>
         <source>Group</source>
-        <translation type="unfinished"></translation>
+        <translation>Grupo</translation>
     </message>
     <message>
         <source>Others</source>
-        <translation type="unfinished"></translation>
+        <translation>Otros</translation>
     </message>
 </context>
 <context>
     <name>PlacesPage</name>
     <message>
         <source>Device memory</source>
-        <translation type="unfinished"></translation>
+        <translation>Memoria del dispositivo</translation>
     </message>
     <message>
         <source>SD Card</source>
-        <translation type="unfinished"></translation>
+        <translation>Tarjeta SD</translation>
     </message>
     <message>
         <source>Home</source>
-        <translation type="unfinished"></translation>
+        <translation>Carpeta personal</translation>
     </message>
     <message>
         <source>Documents</source>
-        <translation type="unfinished"></translation>
+        <translation>Documentos</translation>
     </message>
     <message>
         <source>Downloads</source>
-        <translation type="unfinished"></translation>
+        <translation>Descargas</translation>
     </message>
     <message>
         <source>Music</source>
-        <translation type="unfinished"></translation>
+        <translation>Música</translation>
     </message>
     <message>
         <source>Pictures</source>
-        <translation type="unfinished"></translation>
+        <translation>Imágenes</translation>
     </message>
     <message>
         <source>Videos</source>
-        <translation type="unfinished"></translation>
+        <translation>Vídeos</translation>
     </message>
     <message>
         <source>Places</source>
-        <translation type="unfinished"></translation>
+        <translation>Lugares</translation>
     </message>
     <message>
         <source>Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Dispositivos</translation>
     </message>
     <message>
         <source>Common</source>
-        <translation type="unfinished"></translation>
+        <translation>Común</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>Personalizado</translation>
     </message>
     <message>
         <source>Deleting </source>
-        <translation type="unfinished">Borrando</translation>
+        <translation>Borrando </translation>
     </message>
     <message>
         <source>Rename</source>
-        <translation type="unfinished"></translation>
+        <translation>Renombrar</translation>
     </message>
 </context>
 <context>
@@ -709,22 +707,22 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>Tor is free software for enabling anonymous communication. This will setup the proxy automatically to use tor. Tor service must be running on the system for this to work.</source>
-        <translation>Tor es un programa libre que permite la comunicación anónima. Esto establecerá el proxy automáticamente para  usar tor. El servicio Tor debe estar ejecutándose en el sistema para que esto funcione.</translation>
+        <translation>Tor es un programa libre que permite la comunicación anónima. Esto establecerá el proxy automáticamente para usar tor. El servicio Tor debe estar ejecutándose en el sistema para que esto funcione.</translation>
     </message>
 </context>
 <context>
     <name>RenameDialog</name>
     <message>
         <source>Rename</source>
-        <translation type="unfinished"></translation>
+        <translation>Renombrar</translation>
     </message>
     <message>
         <source>Give a new name for</source>
-        <translation type="unfinished"></translation>
+        <translation>Dar un nuevo nombre a</translation>
     </message>
     <message>
         <source>New name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nuevo nombre</translation>
     </message>
 </context>
 <context>
@@ -788,15 +786,15 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>Default Font Size</source>
-        <translation>Tamaño de la fuente por defecto</translation>
+        <translation>Tamaño de letra por defecto</translation>
     </message>
     <message>
         <source>Default Fixed Font Size</source>
-        <translation>Tamaño fijo de la fuente por defecto</translation>
+        <translation>Tamaño fijo de letra por defecto</translation>
     </message>
     <message>
         <source>Minimum Font Size</source>
-        <translation>Tamaño mínimo de la fuente</translation>
+        <translation>Tamaño mínimo de letra</translation>
     </message>
     <message>
         <source>Default Orientation</source>
@@ -824,7 +822,7 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>Add Default Bookmarks</source>
-        <translation>Añadir favoritos predeterminados</translation>
+        <translation>Añadir marcadores por defecto</translation>
     </message>
     <message>
         <source>User Agent:</source>
@@ -864,7 +862,7 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>Clear Bookmarks</source>
-        <translation>Limpiar Favoritos</translation>
+        <translation>Limpiar marcadores</translation>
     </message>
     <message>
         <source>Use external video player</source>
@@ -900,7 +898,7 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     </message>
     <message>
         <source>Cookie Manager</source>
-        <translation>Gestor de Cookies</translation>
+        <translation>Gestor de cookies</translation>
     </message>
     <message>
         <source>Engine URL use %s for searchterm</source>
@@ -952,7 +950,7 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     <name>Toolbar</name>
     <message>
         <source>Enter an url</source>
-        <translation>Introducir una url</translation>
+        <translation>Introduce una url</translation>
     </message>
 </context>
 <context>
@@ -973,7 +971,7 @@ Si no estás seguro de rechazar el certificado. Esto podría hacer que no se car
     <name>VideoPlayer</name>
     <message>
         <source>Open File</source>
-        <translation>Abrir fichero</translation>
+        <translation>Abrir archivo</translation>
     </message>
     <message>
         <source>Open Stream</source>
@@ -1002,7 +1000,7 @@ El vídeo no pudo reproducirse por problemas en la red.</translation>
         <source>
 The video cannot be played because the media service could not be instantiated.</source>
         <translation>
-El vídeo no pudo reproducirse porque el servicio de comunicación no pudo instanciarse.</translation>
+No es posible reproducir vídeo porque el servicio de comunicación no se pudo instanciar.</translation>
     </message>
     <message>
         <source>
@@ -1020,7 +1018,7 @@ Por favor, asegúrate de haber iniciado sesión en YouTube. El acceso a algunos 
     </message>
     <message>
         <source>Pull down to load file or stream</source>
-        <translation>Desliza hacia abajo para cargar fichero o transmisión</translation>
+        <translation>Desliza hacia abajo para cargar archivo o transmisión</translation>
     </message>
 </context>
 <context>
