@@ -307,6 +307,7 @@ Item {
 
     Rectangle {
         id: tabCloseMsg
+        parent: root.parent
         gradient: Gradient {
             GradientStop { position: 0.0; color: "transparent" }
             GradientStop { position: 0.25; color: "#262626" }
@@ -317,11 +318,11 @@ Item {
         opacity: 0
         width: parent.width
         height: Theme.fontSizeLarge + Theme.paddingLarge + Theme.iconSizeLarge
-        parent: root.parent
         anchors.top: parent.top
         anchors.topMargin: tabListBg.height + 2 * Theme.paddingLarge
         property alias text: tabCloseMsgTxt.text
         property alias icon: tabCloseIcon.source
+        z: 99
         Behavior on opacity {
             NumberAnimation { target: tabCloseMsg; property: "opacity"; duration: 200; easing.type: Easing.InOutQuad }
         }
