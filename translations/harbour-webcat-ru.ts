@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="ru" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="ru">
 <context>
     <name>AboutPage</name>
     <message>
@@ -18,15 +20,15 @@
     </message>
     <message>
         <source>Title of the bookmark</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>URL of bookmark</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>User Agent:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">Поисковый движок:</translation>
     </message>
 </context>
 <context>
@@ -108,35 +110,35 @@ Please restart for changes to take effect.</source>
     <name>BookmarkList</name>
     <message>
         <source>Bookmarks</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Open in new Tab</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Open in new Window</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">Удалить</translation>
     </message>
     <message>
         <source>Settings</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Add Bookmark</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">Добавить закладку</translation>
     </message>
     <message>
         <source>History</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">История</translation>
     </message>
 </context>
 <context>
@@ -177,23 +179,23 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     <name>CreateDirDialog</name>
     <message>
         <source>Error creating new directory</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Create Folder</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Create</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Create a new folder under</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Folder name</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -280,93 +282,93 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>none</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>ExtraToolbar</name>
     <message>
         <source>Minimize</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Lock Orientation</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Reader Mode</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Search</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Share</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">Поделиться</translation>
     </message>
     <message>
         <source>Close menu</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Night Mode</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Day Mode</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>FileProperties</name>
     <message>
         <source>Location</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Type</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Link to %1</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Size</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Permissions</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Owner</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Group</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Last modified</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Properties</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Rename</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Change Permissions</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Error renaming</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -417,11 +419,11 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Webkit engine crashed! Restarting...</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Webkit engine crashed too often!</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -447,7 +449,7 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     <name>MediaDownloadRec</name>
     <message>
         <source>Opening...</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">Открываю...</translation>
     </message>
 </context>
 <context>
@@ -470,7 +472,7 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Created Desktop Launcher for Webcat Fileman</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -530,19 +532,19 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>File operation succeeded</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Properties</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Create Folder</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Add to places</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -564,102 +566,102 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     <name>PermissionDialog</name>
     <message>
         <source>Could not change permission</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Change Permissions</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Change</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Change permissions for</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Read</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Write</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Execute</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Owner</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Group</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Others</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>PlacesPage</name>
     <message>
         <source>Device memory</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>SD Card</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Home</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Documents</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Downloads</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Music</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Pictures</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Videos</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Places</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Devices</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Common</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">Пользовательский </translation>
     </message>
     <message>
         <source>Deleting </source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Rename</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -713,29 +715,29 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     <name>RenameDialog</name>
     <message>
         <source>Rename</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Give a new name for</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>New name</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>SearchEngineDialog</name>
     <message>
         <source>Choose Search Engine</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>SearchEngines</name>
     <message>
         <source>Custom</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">Пользовательский </translation>
     </message>
 </context>
 <context>
@@ -754,7 +756,7 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Accept</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -889,11 +891,11 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Previous Tab | Next Tab</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Default Cover Action Group</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Cookie Manager</source>
@@ -901,7 +903,7 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Engine URL use %s for searchterm</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -915,23 +917,23 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     <name>TabBar</name>
     <message>
         <source>Loading..</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">Загрузка...</translation>
     </message>
     <message>
         <source>Tabs</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">Вкладки</translation>
     </message>
     <message>
         <source>Swipe up to open new window</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Swipe up to open private window</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Swipe up to close tab</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -949,21 +951,21 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     <name>Toolbar</name>
     <message>
         <source>Enter an url</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>UserAgentDialog</name>
     <message>
         <source>Choose User Agent</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>UserAgents</name>
     <message>
         <source>Custom</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">Пользовательский </translation>
     </message>
 </context>
 <context>
@@ -1018,7 +1020,7 @@ On Youtube Videos please make sure to be logged in. Some videos might be geobloc
     </message>
     <message>
         <source>Pull down to load file or stream</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1029,11 +1031,11 @@ On Youtube Videos please make sure to be logged in. Some videos might be geobloc
     </message>
     <message>
         <source>Download</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">Загрузить</translation>
     </message>
     <message>
         <source>Play</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>
