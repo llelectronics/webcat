@@ -129,15 +129,23 @@ bool MyClass::existsPath(const QString &url)
 
 void MyClass::setMime(const QString &mimeType, const QString &desktopFile)
 {
-    // Workaround for SailfishOS which only works if defaults.list is available. Xdg-mime only produces mimeapps.list however
-    if (!isFile(h + "/.local/share/applications/defaults.list"))  {
-        QProcess linking;
-        linking.start("ln -sf " + h + "/.local/share/applications/mimeapps.list " + h + "/.local/share/applications/defaults.list");
-        linking.waitForFinished();
-    }
     QProcess mimeProc;
     mimeProc.start("xdg-mime default " + desktopFile + " " + mimeType);
     mimeProc.waitForFinished();
+    // Workaround for SailfishOS which only works if defaults.list is available. Xdg-mime only produces mimeapps.list however
+    if (!isFile(h + "/.local/share/applications/defaults.list"))  {
+        if (isFile(h + "/.local/share/applications/mimeapps.list")) {
+            QProcess linking;
+            linking.start("ln -sf " + h + "/.config/mimeapps.list " + h + "/.local/share/applications/defaults.list");
+            linking.waitForFinished();
+        }
+        // Newer SailfishOS Versions put mimeapps.list in config
+        if (isFile(h + "/.config/mimeapps.list")) {
+            QProcess linking;
+            linking.start("ln -sf " + h + "/.config/mimeapps.list " + h + "/.local/share/applications/defaults.list");
+            linking.waitForFinished();
+        }
+    }
 }
 
 void MyClass::setDefaultBrowser()
