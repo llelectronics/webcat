@@ -828,6 +828,7 @@ Page {
                 if (event.key == Qt.Key_T) webview.scrollToTop()
                 else if (event.key == Qt.Key_B) webview.scrollToBottom()
                 else if (event.key == Qt.Key_K) toolbar.gotoButton.clicked(undefined)
+                else if (event.key == Qt.Key_Q) toolbar.gotoButton.clicked(undefined)
                 else if (event.key == Qt.Key_S) extraToolbar.searchModeButton.clicked(undefined)
                 else if (event.key == Qt.Key_R) extraToolbar.readerModeButton.clicked(undefined)
                 else if (event.key == Qt.Key_L) webview.reload()
