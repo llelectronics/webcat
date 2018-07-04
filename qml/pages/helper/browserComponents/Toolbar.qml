@@ -549,6 +549,15 @@ Rectangle {
         anchors.verticalCenter: toolbar.verticalCenter
         icon.height: toolbar.height
         icon.width: icon.height
+        function addFavorite() {
+            if (!favorited) {
+                mainWindow.infoBanner.parent = page
+                mainWindow.infoBanner.anchors.top = fPage.top
+                mainWindow.infoBanner.showText(fPage.webview.title + qsTr(" added to Bookmarks"));
+                bookmarks.addBookmark(fPage.webview.url.toString(), fPage.webview.title, userAgent)
+            }
+        }
+
         onClicked: {
             if (fPage.readerMode) {
                 if (!nightMode)
@@ -560,7 +569,7 @@ Rectangle {
                 if (favorited) {
                     bookmarks.removeBookmark(fPage.webview.url.toString())
                 } else {
-                    bookmarks.addBookmark(fPage.webview.url.toString(), fPage.webview.title, userAgent)
+                    addFavorite();
                 }
             }
         }
