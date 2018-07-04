@@ -405,11 +405,13 @@ Rectangle {
             else Theme.fontSizeMedium
         }*/
         //y: parent.height / 2 - height / 4
-        anchors.top: parent.top /*{
+        /*anchors.top: parent.top*/ /*{
             if (webTitle.visible) webTitle.bottom
             else parent.top
         }*/
-        anchors.topMargin: parent.height / 2 - urlText.font.pixelSize / 1.337
+        //anchors.topMargin: parent.height / 2 - urlText.font.pixelSize / 1.337
+        anchors.verticalCenter: parent.verticalCenter
+        anchors.verticalCenterOffset: urlText.font.pixelSize / 1.337
         background: null
         color: Theme.primaryColor
         property string fullUrl: url
