@@ -146,12 +146,12 @@ Page {
                 text: qsTr("Create Folder")
                 onClicked: {
                     var dialog = pageStack.push(Qt.resolvedUrl("helper/fmComponents/CreateDirDialog.qml"),
-                                                { "path": path })
+                                                { "path": findFullPath(fileModel.folder.toString()) })
                     dialog.accepted.connect(function() {
                         if (dialog.errorMessage !== "") {
                             console.debug(dialog.errorMessage)
-                            infoBanner.parent = propertiesPage
-                            infoBanner.anchors.top = propertiesPage.top
+                            infoBanner.parent = page
+                            infoBanner.anchors.top = page.top
                             infoBanner.showText(dialog.errorMessage)
                         }
                     })
@@ -179,7 +179,7 @@ Page {
                     customPlaces.push(
                                 {
                                     name: findBaseName(path),
-                                    path: path,
+                                    path: findFullPath(fileModel.folder.toString()),
                                     icon: "image://theme/icon-m-folder"
                                 }
                                 )
