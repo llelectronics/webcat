@@ -14,7 +14,7 @@ Item {
     BackgroundItem {
         visible: opacity > 0 && activateFastScroll
         y: 0
-        width: flickable.width / 6
+        width: flickable.width / 7
         height: flickable.height / 2
         highlighted: pressed
         opacity: _activeUp || _activeDown ? 1 : 0
@@ -53,7 +53,7 @@ Item {
     BackgroundItem {
         visible: opacity > 0 && activateFastScroll
         y: flickable.height - height
-        width: flickable.width / 6
+        width: flickable.width / 7
         height: flickable.height / 2
         highlighted: pressed
         opacity: _activeDown || _activeUp ? 1 : 0
