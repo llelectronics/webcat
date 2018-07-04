@@ -185,6 +185,7 @@ Page {
                                 )
                     customPlacesChanged()
                 }
+                visible: findFullPath(fileModel.folder.toString()) !== _fm.getHome()
             }
 
             MenuItem {
