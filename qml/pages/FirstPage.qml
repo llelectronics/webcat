@@ -874,7 +874,7 @@ Page {
             if (parent.orientation == Orientation.Landscape || parent.orientation == Orientation.LandscapeInverted) parent.height - toolbar.height
             else parent.height - (tabBar.height + toolbar.height)  //- entryURL.height - 2*65 //- bottomBar.height
         }
-        bookmarks: bookmarks
+        bookmarks: page.bookmarks
         onBookmarkClicked: {
             siteURL = url;
             parent.url = siteURL;
