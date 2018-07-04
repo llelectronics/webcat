@@ -15,6 +15,7 @@ Rectangle {
     property alias urlText: urlText
     property alias backIcon: backIcon
     property alias forIcon: forIcon
+    property alias gotoButton: gotoButton
     property QtObject fPage: parent
 
     Image {
