@@ -953,6 +953,10 @@ Jeśli nie jesteś pewien, powinieneś odrzucić certyfikat. Może to jednak uni
         <source>Enter an url</source>
         <translation>Wprowadź url</translation>
     </message>
+    <message>
+        <source> added to Bookmarks</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UserAgentDialog</name>

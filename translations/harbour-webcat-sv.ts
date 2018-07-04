@@ -954,6 +954,10 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
         <source>Enter an url</source>
         <translation>Ange en URL</translation>
     </message>
+    <message>
+        <source> added to Bookmarks</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UserAgentDialog</name>

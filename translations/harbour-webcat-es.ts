@@ -954,6 +954,10 @@ Si no estás seguro, rechaza el certificado. Esto podría hacer que la página n
         <source>Enter an url</source>
         <translation>Introduce una url</translation>
     </message>
+    <message>
+        <source> added to Bookmarks</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UserAgentDialog</name>

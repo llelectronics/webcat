@@ -954,6 +954,10 @@ En cas de dubte, refuseu el certificat malgrat que això pot provocar que no es 
         <source>Enter an url</source>
         <translation>URL</translation>
     </message>
+    <message>
+        <source> added to Bookmarks</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UserAgentDialog</name>

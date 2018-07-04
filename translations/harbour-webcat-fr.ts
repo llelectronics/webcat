@@ -953,6 +953,10 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
         <source>Enter an url</source>
         <translation>Saisir un url</translation>
     </message>
+    <message>
+        <source> added to Bookmarks</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UserAgentDialog</name>

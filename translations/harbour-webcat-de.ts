@@ -953,6 +953,10 @@ Wenn Sie sich unsicher sind lehnen sie das Zertifikat ab. Dies führt unter Umst
         <source>Enter an url</source>
         <translation>Webadresse eingeben</translation>
     </message>
+    <message>
+        <source> added to Bookmarks</source>
+        <translation> zu Lesezeichen hinzugefügt</translation>
+    </message>
 </context>
 <context>
     <name>UserAgentDialog</name>

@@ -950,6 +950,10 @@ If you are unsure reject the certificate. That might lead to a non loading websi
         <source>Enter an url</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source> added to Bookmarks</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UserAgentDialog</name>

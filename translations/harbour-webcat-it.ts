@@ -954,6 +954,10 @@ Se non sei sicuro, rifiuta il certificato. Ma questo può impedire il caricament
         <source>Enter an url</source>
         <translation>Inserisci un url</translation>
     </message>
+    <message>
+        <source> added to Bookmarks</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UserAgentDialog</name>
