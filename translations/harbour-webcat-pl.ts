@@ -775,7 +775,7 @@ Jeśli nie jesteś pewien, powinieneś odrzucić certyfikat. Może to jednak uni
     </message>
     <message>
         <source>About </source>
-        <translation>O Webcat</translation>
+        <translation>O </translation>
     </message>
     <message>
         <source>Load Defaults</source>
