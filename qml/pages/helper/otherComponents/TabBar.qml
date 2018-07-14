@@ -275,7 +275,7 @@ Item {
             highlight:
 
                 Rectangle {
-                width: parent.width; height: Theme.itemSizeSmall
+                width: tabListView.width; height: Theme.itemSizeSmall
                 //color: "#000048"
                 color: Theme.highlightBackgroundColor
                 opacity: 0.5
