@@ -35,6 +35,7 @@ import "helper/db.js" as DB
 import "helper/yt.js" as YT
 import "helper/browserComponents"
 import "helper/otherComponents"
+import "private"
 
 Page {
     id: page
@@ -844,13 +845,19 @@ Page {
 
 
     } // WebView
-    FancyScroller {
-        flickable: webview
 
-        onUpScrolling: if (toolbar.state === "minimized") toolbar.state = "expanded"
-        onDownScrolling: if (toolbar.state === "expanded") toolbar.state = "minimized"
-        activateFastScroll: page.orientation == Orientation.Landscape || page.orientation == Orientation.LandscapeInverted
+    QuickScroll {
+        id: quickScroll
+        flickable: webview
     }
+
+//    FancyScroller {
+//        flickable: webview
+
+//        onUpScrolling: if (toolbar.state === "minimized") toolbar.state = "expanded"
+//        onDownScrolling: if (toolbar.state === "expanded") toolbar.state = "minimized"
+//        activateFastScroll: page.orientation == Orientation.Landscape || page.orientation == Orientation.LandscapeInverted
+//    }
 
     BookmarkList {
         id: bookmarkList
