@@ -4,7 +4,7 @@ import Sailfish.Silica 1.0
 Item {
     property SilicaWebView flickable: parent
     property int threshold: 500
-    property int extraThreshold: threshold * 3.75
+    property int extraThreshold: threshold * (Screen.width / 170)
     property bool _activeUp
     property bool _activeDown
     property bool activateFastScroll: false
