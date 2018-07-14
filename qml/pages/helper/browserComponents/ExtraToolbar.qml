@@ -18,7 +18,7 @@ Rectangle {
 
     property int optimalMargin: (width - 7 * Theme.iconSizeMedium) / 8 // 7 Items
 
-    Component.onCompleted: console.debug("optimalMargin: " + optimalMargin)
+    //Component.onCompleted: console.debug("optimalMargin: " + optimalMargin)
 
 
     Image {

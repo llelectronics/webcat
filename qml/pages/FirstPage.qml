@@ -427,14 +427,14 @@ Page {
         property int curZ
 
         experimental.onEnterFullScreenRequested: {
-            console.debug("Full Screen requested")
+            //console.debug("Full Screen requested")
             webview.anchors.fill = page
             curZ = vPlayerLoader.z - 1
             webview.z = 99
         }
 
         experimental.onExitFullScreenRequested: {
-            console.debug("Exit of Full Screen requested")
+            //console.debug("Exit of Full Screen requested")
             webview.anchors.fill = undefined
             webview.z = curZ
         }
@@ -494,7 +494,7 @@ Page {
         experimental.onProcessDidCrash: {
             // Crash of Webkit
             crashUrl[crashUrl.length] = url
-            console.debug("[CrashUrl.length]: " + crashUrl.length)
+            //console.debug("[CrashUrl.length]: " + crashUrl.length)
             if (crashUrl.length == 3) {
                 if (crashUrl[0] == crashUrl[1] == crashUrl[2]) {
                     mainWindow.infoBanner.parent = page
@@ -591,7 +591,7 @@ Page {
                     selection.mimedata = data.text;
                     selection.show(data.left, data.top, data.width, data.height)
                     if (data.input) {
-                        console.debug("Text Input field long pressed")
+                        //console.debug("Text Input field long pressed")
                         inputSelected = true
                         inputValue = data.input
                         inputElem = data.id
@@ -663,10 +663,10 @@ Page {
                 errorText = "Load failed\n"+loadRequest.errorString
                 // Don't show error on rtsp, rtmp or mms links as they are opened externally
                 if (! ((/^rtsp:/).test(url.toString()) || (/^rtmp:/).test(url.toString()) || (/^mms:/).test(url.toString()) || (/^magnet:/).test(url.toString()) )) {
-                    console.debug("Load failed rtsp,rtmp or mms not detected and no valid http or https");
-                    console.debug("[FirstPage.qml] Error text:" + errorText + " test(errorText): " + (/Path is a directory/).test(errorText));
+                    //console.debug("Load failed rtsp,rtmp or mms not detected and no valid http or https");
+                    //console.debug("[FirstPage.qml] Error text:" + errorText + " test(errorText): " + (/Path is a directory/).test(errorText));
                     if (! ((/handled by the media engine/).test(errorText) || (/Path is a directory/).test(errorText))) {
-                        console.debug("Load failed audio or video file not detected and no valid http or https");
+                        //console.debug("Load failed audio or video file not detected and no valid http or https");
                         popup.visible = true
                     }
                     else if ((/handled by the media engine/).test(errorText)) {
@@ -996,7 +996,7 @@ Page {
         property variant tabCount
 
         onHideTriggered: {
-            console.debug("[FirstPage.qml] tabListOverlay hide triggered")
+            //console.debug("[FirstPage.qml] tabListOverlay hide triggered")
             extraToolbar.hide()
         }
     }
