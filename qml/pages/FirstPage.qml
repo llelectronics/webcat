@@ -442,7 +442,7 @@ Page {
         experimental.filePicker: Item {
             Component.onCompleted: {
                 var openDialog = pageStack.push(Qt.resolvedUrl("OpenDialog.qml"),
-                                            {"dataContainer":  webview, "selectMode": true})
+                                            {"dataContainer":  page, "selectMode": true})
                 openDialog.fileOpen.connect(function(file) {
                     model.accept(file);
                 })
