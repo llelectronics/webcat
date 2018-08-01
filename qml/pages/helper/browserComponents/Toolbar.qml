@@ -219,6 +219,7 @@ Rectangle {
         icon.height: toolbar.height
         icon.width: icon.height
         anchors.verticalCenter: toolbar.verticalCenter
+        property alias tabLbl: tabLbl
 
         function singleClick() {
             fPage.extraToolbar.hide()
@@ -268,6 +269,24 @@ Rectangle {
         Label {
             id: tabNumberLbl
             text: mainWindow.tabModel.count
+            anchors.centerIn: parent
+            font.pixelSize: Theme.fontSizeExtraSmall
+            font.bold: true
+            color: {
+                if (!torLogo.visible)
+                    gotoButton.down ? Theme.highlightColor : Theme.primaryColor
+                else
+                    "yellow"
+            }
+            horizontalAlignment: Text.AlignHCenter
+        }
+        Label {
+            id: tabLbl
+            visible: false
+            onVisibleChanged: {
+                if (visible) tabNumberLbl.visible = false
+                else tabNumberLbl.visible = true
+            }
             anchors.centerIn: parent
             font.pixelSize: Theme.fontSizeExtraSmall
             font.bold: true
@@ -388,8 +407,36 @@ Rectangle {
         anchors.left: webTitle.left
         anchors.right: webTitle.right
         height: parent.height
+        property int tabSwitchThreshold: toolbar.width / 4
+        property int mX
+        property bool clickActivated: true
+        onPressed: {
+            mX = mouse.x
+        }
+        onMouseXChanged: {
+          if (mouse.x < mX - tabSwitchThreshold) {
+              gotoButton.tabLbl.text = "->"
+              gotoButton.tabLbl.visible = true
+              clickActivated = false
+          }
+          else if (mouse.x > mX + tabSwitchThreshold) {
+              gotoButton.tabLbl.text = "<-"
+              gotoButton.tabLbl.visible = true
+              clickActivated = false
+          }
+          else {
+              clickActivated = true
+              gotoButton.tabLbl.visible = false
+          }
+        }
+        onReleased: {
+            if (mouse.x < mX - tabSwitchThreshold) mainWindow.switchToTab(mainWindow.tabModel.get(mainWindow.tabModel.nextTab()).pageid) // Tab forward
+            else if (mouse.x > mX + tabSwitchThreshold) mainWindow.switchToTab(mainWindow.tabModel.get(mainWindow.tabModel.prevTab()).pageid) // Tab backwards
+            gotoButton.tabLbl.visible = false
+        }
         onClicked: {
-            urlText.forceActiveFocus()
+            if (clickActivated) urlText.forceActiveFocus()
+            else clickActivated = true
         }
     }
 
