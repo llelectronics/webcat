@@ -839,6 +839,15 @@ Page {
                 else if (event.key == Qt.Key_P) webview.goBack()
                 else if (event.key == Qt.Key_N) webview.goForward()
                 else if (searchBar.visible == true && (event.key == Qt.Key_Enter || event.key == Qt.Key_Return)) searchIcon.clicked(undefined)
+                else if (event.modifiers == Qt.ControlModifier) {
+                    if (event.key == Qt.Key_Tab) {
+                        mainWindow.switchToTab(mainWindow.tabModel.get(mainWindow.tabModel.nextTab()).pageid) // Tab forward
+                        event.accepted = true; }
+                    if (event.key == Qt.Key_Backtab) {
+                        console.log("Backwards tab switch triggered")
+                        mainWindow.switchToTab(mainWindow.tabModel.get(mainWindow.tabModel.prevTab()).pageid) // Tab backwards
+                        event.accepted = true; }
+                }
             }
         }
 
@@ -962,12 +971,12 @@ Page {
         _tabListBg.height: 0
 
         onTabClicked: {
+            hide();
+            if (bookmarkList.visible) bookmarkList.hide();
             if (_tabListView.currentIndex != idx) {
                 mainWindow.switchToTab(pageId);
                 _tabListView.currentIndex = idx;
             }
-            hide();
-            if (bookmarkList.visible) bookmarkList.hide();
         }
         onNewWindowClicked: {
             hide();
