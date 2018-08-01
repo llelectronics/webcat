@@ -309,8 +309,8 @@ ApplicationWindow
         }
         function prevTab() {
             var curIndex = getIndexFromId(mainWindow.currentTab)
-            if (curIndex-1 > 0) return curIndex - 1
-            else return count
+            if (curIndex-1 >= 0) return curIndex - 1
+            else return count-1
         }
 
     }

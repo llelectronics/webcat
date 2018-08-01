@@ -843,11 +843,11 @@ Page {
                     if (event.key == Qt.Key_Tab) {
                         mainWindow.switchToTab(mainWindow.tabModel.get(mainWindow.tabModel.nextTab()).pageid) // Tab forward
                         event.accepted = true; }
-                    if (event.key == Qt.Key_Backtab) {
-                        console.log("Backwards tab switch triggered")
-                        mainWindow.switchToTab(mainWindow.tabModel.get(mainWindow.tabModel.prevTab()).pageid) // Tab backwards
-                        event.accepted = true; }
                 }
+                else if (event.key == Qt.Key_Backtab && event.modifiers & Qt.ControlModifier) {
+                    console.log("Backwards tab switch triggered with prevTab: " + mainWindow.tabModel.prevTab());
+                    mainWindow.switchToTab(mainWindow.tabModel.get(mainWindow.tabModel.prevTab()).pageid) // Tab backwards
+                    event.accepted = true; }
             }
         }
 
