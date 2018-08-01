@@ -375,56 +375,56 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
 <context>
     <name>FirstPage</name>
     <message>
-        <source>Opening...</source>
-        <translation>Bezig met openen...</translation>
-    </message>
-    <message>
-        <source>Enter searchterm</source>
-        <translation>Voer zoekterm in</translation>
-    </message>
-    <message>
-        <source>Open in New Window</source>
-        <translation>Openen in nieuw venster</translation>
-    </message>
-    <message>
-        <source>Open in New Tab</source>
-        <translation>Openen in nieuw tabblad</translation>
-    </message>
-    <message>
-        <source>Open in Private New Window</source>
-        <translation>Openen in nieuw privévenster</translation>
-    </message>
-    <message>
-        <source>Copy Link</source>
-        <translation>Koppeling kopiëren</translation>
-    </message>
-    <message>
-        <source>Save Image</source>
-        <translation>Afbeelding opslaan</translation>
-    </message>
-    <message>
-        <source>Save Link</source>
-        <translation>Koppeling opslaan</translation>
-    </message>
-    <message>
-        <source>Open Image in New Tab</source>
-        <translation>Afbeelding openen in nieuw tabblad</translation>
-    </message>
-    <message>
         <source>Unknown certificate</source>
-        <translation>Onbekend certificaat</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Accept certificate from </source>
-        <translation>Certificaat aanvaarden van</translation>
-    </message>
-    <message>
-        <source>Webkit engine crashed! Restarting...</source>
-        <translation>WebKit is gecrasht en wordt nu herstart...</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Webkit engine crashed too often!</source>
-        <translation>WebKit is te vaak gecrasht!</translation>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Webkit engine crashed! Restarting...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Opening...</source>
+        <translation type="unfinished">Bezig met openen...</translation>
+    </message>
+    <message>
+        <source>Enter searchterm</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open in New Window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open in New Tab</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open in Private New Window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open Image in New Tab</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy Link</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save Image</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save Link</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

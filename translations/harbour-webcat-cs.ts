@@ -372,42 +372,6 @@ If you are unsure reject the certificate. That might lead to a non loading websi
 <context>
     <name>FirstPage</name>
     <message>
-        <source>Opening...</source>
-        <translation>Otevírání...</translation>
-    </message>
-    <message>
-        <source>Enter searchterm</source>
-        <translation>Zadejte text hledání</translation>
-    </message>
-    <message>
-        <source>Open in New Window</source>
-        <translation>Otevřít v novém okně</translation>
-    </message>
-    <message>
-        <source>Open in New Tab</source>
-        <translation>Otevřít v novém panelu</translation>
-    </message>
-    <message>
-        <source>Open in Private New Window</source>
-        <translation>Otevřít v novém soukromém okně</translation>
-    </message>
-    <message>
-        <source>Copy Link</source>
-        <translation>Kopírovat odkaz</translation>
-    </message>
-    <message>
-        <source>Save Image</source>
-        <translation>Uložit obrázek</translation>
-    </message>
-    <message>
-        <source>Save Link</source>
-        <translation>Uložit odkaz</translation>
-    </message>
-    <message>
-        <source>Open Image in New Tab</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Unknown certificate</source>
         <translation type="unfinished"></translation>
     </message>
@@ -416,11 +380,47 @@ If you are unsure reject the certificate. That might lead to a non loading websi
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Webkit engine crashed too often!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Webkit engine crashed! Restarting...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Webkit engine crashed too often!</source>
+        <source>Opening...</source>
+        <translation type="unfinished">Otevírání...</translation>
+    </message>
+    <message>
+        <source>Enter searchterm</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open in New Window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open in New Tab</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open in Private New Window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open Image in New Tab</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy Link</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save Image</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save Link</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -372,6 +372,22 @@ If you are unsure reject the certificate. That might lead to a non loading websi
 <context>
     <name>FirstPage</name>
     <message>
+        <source>Unknown certificate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Accept certificate from </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Webkit engine crashed too often!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Webkit engine crashed! Restarting...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Opening...</source>
         <translation type="unfinished"></translation>
     </message>
@@ -392,6 +408,10 @@ If you are unsure reject the certificate. That might lead to a non loading websi
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Open Image in New Tab</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Copy Link</source>
         <translation type="unfinished"></translation>
     </message>
@@ -401,26 +421,6 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Save Link</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Open Image in New Tab</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Unknown certificate</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Accept certificate from </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Webkit engine crashed! Restarting...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Webkit engine crashed too often!</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

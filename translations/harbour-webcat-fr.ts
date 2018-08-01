@@ -374,56 +374,56 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
 <context>
     <name>FirstPage</name>
     <message>
-        <source>Opening...</source>
-        <translation>Ouverture ...</translation>
-    </message>
-    <message>
-        <source>Enter searchterm</source>
-        <translation>Saisir le terme de recherche</translation>
-    </message>
-    <message>
-        <source>Open in New Window</source>
-        <translation>Ouvrir dans une nouvelle fenêtre</translation>
-    </message>
-    <message>
-        <source>Open in New Tab</source>
-        <translation>Ouvrir dans un nouvel onglet</translation>
-    </message>
-    <message>
-        <source>Open in Private New Window</source>
-        <translation>Ouvrir dans une nouvelle fenêtre privée</translation>
-    </message>
-    <message>
-        <source>Copy Link</source>
-        <translation>Copier le lien</translation>
-    </message>
-    <message>
-        <source>Save Image</source>
-        <translation>Enregistrer l&apos;image</translation>
-    </message>
-    <message>
-        <source>Save Link</source>
-        <translation>Enregistrer le lien</translation>
-    </message>
-    <message>
-        <source>Open Image in New Tab</source>
-        <translation>Afficher l&apos;image dans un nouvel onglet</translation>
-    </message>
-    <message>
         <source>Unknown certificate</source>
-        <translation>Certificat inconnu</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Accept certificate from </source>
-        <translation>Accepter le certificat de </translation>
-    </message>
-    <message>
-        <source>Webkit engine crashed! Restarting...</source>
-        <translation>Le moteur Webkit a planté ! Redémarrage ...</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Webkit engine crashed too often!</source>
-        <translation>Le moteur Webkit a planté trop souvent !</translation>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Webkit engine crashed! Restarting...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Opening...</source>
+        <translation type="unfinished">Ouverture ...</translation>
+    </message>
+    <message>
+        <source>Enter searchterm</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open in New Window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open in New Tab</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open in Private New Window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open Image in New Tab</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy Link</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save Image</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save Link</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

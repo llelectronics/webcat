@@ -374,55 +374,55 @@ If you are unsure reject the certificate. That might lead to a non loading websi
 <context>
     <name>FirstPage</name>
     <message>
-        <source>Opening...</source>
-        <translation>Открываю...</translation>
-    </message>
-    <message>
-        <source>Enter searchterm</source>
-        <translation>Ввести текст для поиска</translation>
-    </message>
-    <message>
-        <source>Open in New Window</source>
-        <translation>Открыть в новом окне</translation>
-    </message>
-    <message>
-        <source>Open in New Tab</source>
-        <translation>Открыть новую вкладку</translation>
-    </message>
-    <message>
-        <source>Open in Private New Window</source>
-        <translation>Открыть в новом приватном окне</translation>
-    </message>
-    <message>
-        <source>Copy Link</source>
-        <translation>Копировать ссылку</translation>
-    </message>
-    <message>
-        <source>Save Image</source>
-        <translation>Сохранить изображение</translation>
-    </message>
-    <message>
-        <source>Save Link</source>
-        <translation>Сохранить ссылку</translation>
-    </message>
-    <message>
-        <source>Open Image in New Tab</source>
-        <translation>Открыть картинку в новой вкладке</translation>
-    </message>
-    <message>
         <source>Unknown certificate</source>
-        <translation>Неизвестный сертификат</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Accept certificate from </source>
-        <translation>Сертификат принят от</translation>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Webkit engine crashed too often!</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Webkit engine crashed! Restarting...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Webkit engine crashed too often!</source>
+        <source>Opening...</source>
+        <translation type="unfinished">Открываю...</translation>
+    </message>
+    <message>
+        <source>Enter searchterm</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open in New Window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open in New Tab</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open in Private New Window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open Image in New Tab</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy Link</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save Image</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save Link</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -373,38 +373,6 @@ If you are unsure reject the certificate. That might lead to a non loading websi
 <context>
     <name>FirstPage</name>
     <message>
-        <source>Opening...</source>
-        <translation>Avautuu...</translation>
-    </message>
-    <message>
-        <source>Enter searchterm</source>
-        <translation>Anna hakusana</translation>
-    </message>
-    <message>
-        <source>Open in New Window</source>
-        <translation>Avaa uudessa ikkunassa</translation>
-    </message>
-    <message>
-        <source>Open in New Tab</source>
-        <translation>Avaa uudessa välilehdessä</translation>
-    </message>
-    <message>
-        <source>Open in Private New Window</source>
-        <translation>Avaa uudessa yksityisikkunassa</translation>
-    </message>
-    <message>
-        <source>Copy Link</source>
-        <translation>Kopioi linkki</translation>
-    </message>
-    <message>
-        <source>Save Image</source>
-        <translation>Tallenna kuva</translation>
-    </message>
-    <message>
-        <source>Save Link</source>
-        <translation>Tallenna linkki</translation>
-    </message>
-    <message>
         <source>Unknown certificate</source>
         <translation type="unfinished"></translation>
     </message>
@@ -413,7 +381,7 @@ If you are unsure reject the certificate. That might lead to a non loading websi
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Open Image in New Tab</source>
+        <source>Webkit engine crashed too often!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -421,7 +389,39 @@ If you are unsure reject the certificate. That might lead to a non loading websi
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Webkit engine crashed too often!</source>
+        <source>Opening...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enter searchterm</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open in New Window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open in New Tab</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open in Private New Window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open Image in New Tab</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy Link</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save Image</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save Link</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
