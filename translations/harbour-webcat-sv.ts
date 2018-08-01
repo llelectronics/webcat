@@ -375,56 +375,56 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
 <context>
     <name>FirstPage</name>
     <message>
-        <source>Unknown certificate</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Accept certificate from </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Webkit engine crashed too often!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Webkit engine crashed! Restarting...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Opening...</source>
-        <translation type="unfinished">Öppnar...</translation>
+        <translation>Öppnar...</translation>
     </message>
     <message>
         <source>Enter searchterm</source>
-        <translation type="unfinished"></translation>
+        <translation>Ange sökterm</translation>
     </message>
     <message>
         <source>Open in New Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Öppna i nytt fönster</translation>
     </message>
     <message>
         <source>Open in New Tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Öppna i ny flik</translation>
     </message>
     <message>
         <source>Open in Private New Window</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Open Image in New Tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Öppna i nytt privat fönster</translation>
     </message>
     <message>
         <source>Copy Link</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopiera länk</translation>
     </message>
     <message>
         <source>Save Image</source>
-        <translation type="unfinished"></translation>
+        <translation>Spara bild</translation>
     </message>
     <message>
         <source>Save Link</source>
-        <translation type="unfinished"></translation>
+        <translation>Spara länk</translation>
+    </message>
+    <message>
+        <source>Open Image in New Tab</source>
+        <translation>Öppna bild i ny flik</translation>
+    </message>
+    <message>
+        <source>Unknown certificate</source>
+        <translation>Okänt certifikat</translation>
+    </message>
+    <message>
+        <source>Accept certificate from </source>
+        <translation>Acceptera certifikat från</translation>
+    </message>
+    <message>
+        <source>Webkit engine crashed! Restarting...</source>
+        <translation>Webkit-motorn kraschade! Startar om...</translation>
+    </message>
+    <message>
+        <source>Webkit engine crashed too often!</source>
+        <translation>Webkit-motorn kraschade för ofta!</translation>
     </message>
 </context>
 <context>

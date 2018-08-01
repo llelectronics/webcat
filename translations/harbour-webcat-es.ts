@@ -375,56 +375,56 @@ Si no estás seguro, rechaza el certificado. Esto podría hacer que la página n
 <context>
     <name>FirstPage</name>
     <message>
-        <source>Unknown certificate</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Accept certificate from </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Webkit engine crashed too often!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Webkit engine crashed! Restarting...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Opening...</source>
-        <translation type="unfinished">Abriendo...</translation>
+        <translation>Abriendo...</translation>
     </message>
     <message>
         <source>Enter searchterm</source>
-        <translation type="unfinished"></translation>
+        <translation>Introduce término de búsqueda</translation>
     </message>
     <message>
         <source>Open in New Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Abrir en nueva ventana</translation>
     </message>
     <message>
         <source>Open in New Tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Abrir en nueva pestaña</translation>
     </message>
     <message>
         <source>Open in Private New Window</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Open Image in New Tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Abrir en nueva ventana privada</translation>
     </message>
     <message>
         <source>Copy Link</source>
-        <translation type="unfinished"></translation>
+        <translation>Copiar enlace</translation>
     </message>
     <message>
         <source>Save Image</source>
-        <translation type="unfinished"></translation>
+        <translation>Guardar imagen</translation>
     </message>
     <message>
         <source>Save Link</source>
-        <translation type="unfinished"></translation>
+        <translation>Guardar enlace</translation>
+    </message>
+    <message>
+        <source>Open Image in New Tab</source>
+        <translation>Abrir imagen en nueva pestaña</translation>
+    </message>
+    <message>
+        <source>Unknown certificate</source>
+        <translation>Certificado desconocido</translation>
+    </message>
+    <message>
+        <source>Accept certificate from </source>
+        <translation>Aceptar certificado de </translation>
+    </message>
+    <message>
+        <source>Webkit engine crashed! Restarting...</source>
+        <translation>¡El motor webkit se ha quedado colgado! Reiniciando...</translation>
+    </message>
+    <message>
+        <source>Webkit engine crashed too often!</source>
+        <translation>¡El motor webkit se cuelga con demasiada frecuencia!</translation>
     </message>
 </context>
 <context>

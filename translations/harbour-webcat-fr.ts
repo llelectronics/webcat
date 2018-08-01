@@ -374,56 +374,56 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
 <context>
     <name>FirstPage</name>
     <message>
-        <source>Unknown certificate</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Accept certificate from </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Webkit engine crashed too often!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Webkit engine crashed! Restarting...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Opening...</source>
-        <translation type="unfinished">Ouverture ...</translation>
+        <translation>Ouverture ...</translation>
     </message>
     <message>
         <source>Enter searchterm</source>
-        <translation type="unfinished"></translation>
+        <translation>Saisir le terme de recherche</translation>
     </message>
     <message>
         <source>Open in New Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Ouvrir dans une nouvelle fenêtre</translation>
     </message>
     <message>
         <source>Open in New Tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Ouvrir dans un nouvel onglet</translation>
     </message>
     <message>
         <source>Open in Private New Window</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Open Image in New Tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Ouvrir dans une nouvelle fenêtre privée</translation>
     </message>
     <message>
         <source>Copy Link</source>
-        <translation type="unfinished"></translation>
+        <translation>Copier le lien</translation>
     </message>
     <message>
         <source>Save Image</source>
-        <translation type="unfinished"></translation>
+        <translation>Enregistrer l&apos;image</translation>
     </message>
     <message>
         <source>Save Link</source>
-        <translation type="unfinished"></translation>
+        <translation>Enregistrer le lien</translation>
+    </message>
+    <message>
+        <source>Open Image in New Tab</source>
+        <translation>Afficher l&apos;image dans un nouvel onglet</translation>
+    </message>
+    <message>
+        <source>Unknown certificate</source>
+        <translation>Certificat inconnu</translation>
+    </message>
+    <message>
+        <source>Accept certificate from </source>
+        <translation>Accepter le certificat de </translation>
+    </message>
+    <message>
+        <source>Webkit engine crashed! Restarting...</source>
+        <translation>Le moteur Webkit a planté ! Redémarrage ...</translation>
+    </message>
+    <message>
+        <source>Webkit engine crashed too often!</source>
+        <translation>Le moteur Webkit a planté trop souvent !</translation>
     </message>
 </context>
 <context>

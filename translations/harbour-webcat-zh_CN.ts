@@ -372,6 +372,42 @@ If you are unsure reject the certificate. That might lead to a non loading websi
 <context>
     <name>FirstPage</name>
     <message>
+        <source>Opening...</source>
+        <translation>正在打开…</translation>
+    </message>
+    <message>
+        <source>Enter searchterm</source>
+        <translation>输入搜索关键词</translation>
+    </message>
+    <message>
+        <source>Open in New Window</source>
+        <translation>在新窗口中打开</translation>
+    </message>
+    <message>
+        <source>Open in New Tab</source>
+        <translation>在新标签页中打开</translation>
+    </message>
+    <message>
+        <source>Open in Private New Window</source>
+        <translation>在新隐私窗口中打开</translation>
+    </message>
+    <message>
+        <source>Copy Link</source>
+        <translation>复制链接</translation>
+    </message>
+    <message>
+        <source>Save Image</source>
+        <translation>保存图像</translation>
+    </message>
+    <message>
+        <source>Save Link</source>
+        <translation>保存链接</translation>
+    </message>
+    <message>
+        <source>Open Image in New Tab</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Unknown certificate</source>
         <translation type="unfinished"></translation>
     </message>
@@ -380,47 +416,11 @@ If you are unsure reject the certificate. That might lead to a non loading websi
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Webkit engine crashed too often!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Webkit engine crashed! Restarting...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Opening...</source>
-        <translation type="unfinished">正在打开…</translation>
-    </message>
-    <message>
-        <source>Enter searchterm</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Open in New Window</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Open in New Tab</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Open in Private New Window</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Open Image in New Tab</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Copy Link</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Save Image</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Save Link</source>
+        <source>Webkit engine crashed too often!</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -375,56 +375,56 @@ Wenn Sie sich unsicher sind lehnen sie das Zertifikat ab. Dies führt unter Umst
 <context>
     <name>FirstPage</name>
     <message>
-        <source>Unknown certificate</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Accept certificate from </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Webkit engine crashed too often!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Webkit engine crashed! Restarting...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Opening...</source>
-        <translation type="unfinished">Öffne...</translation>
-    </message>
-    <message>
         <source>Enter searchterm</source>
-        <translation type="unfinished"></translation>
+        <translation>Suchbegriff eingeben</translation>
     </message>
     <message>
         <source>Open in New Window</source>
-        <translation type="unfinished"></translation>
+        <translation>In neuem Fenster öffnen</translation>
     </message>
     <message>
         <source>Open in New Tab</source>
-        <translation type="unfinished"></translation>
+        <translation>In neuem Reiter öffnen</translation>
     </message>
     <message>
         <source>Open in Private New Window</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Open Image in New Tab</source>
-        <translation type="unfinished"></translation>
+        <translation>In neuem privaten Fenster öffnen</translation>
     </message>
     <message>
         <source>Copy Link</source>
-        <translation type="unfinished"></translation>
+        <translation>Link kopieren</translation>
     </message>
     <message>
         <source>Save Image</source>
-        <translation type="unfinished"></translation>
+        <translation>Bild speichern</translation>
     </message>
     <message>
         <source>Save Link</source>
-        <translation type="unfinished"></translation>
+        <translation>Link speichern</translation>
+    </message>
+    <message>
+        <source>Opening...</source>
+        <translation>Öffne...</translation>
+    </message>
+    <message>
+        <source>Open Image in New Tab</source>
+        <translation>Bild in neuem Reiter öffnen</translation>
+    </message>
+    <message>
+        <source>Unknown certificate</source>
+        <translation>Unbekanntes Zertifikat</translation>
+    </message>
+    <message>
+        <source>Accept certificate from </source>
+        <translation>Akzeptiere Zertifikat von </translation>
+    </message>
+    <message>
+        <source>Webkit engine crashed! Restarting...</source>
+        <translation>Webkit abgestürtzt! Neuladen...</translation>
+    </message>
+    <message>
+        <source>Webkit engine crashed too often!</source>
+        <translation>Webkit zu oft abgestürzt!</translation>
     </message>
 </context>
 <context>

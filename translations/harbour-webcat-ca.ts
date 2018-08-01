@@ -375,55 +375,55 @@ En cas de dubte, refuseu el certificat malgrat que això pot provocar que no es 
 <context>
     <name>FirstPage</name>
     <message>
+        <source>Opening...</source>
+        <translation>S&apos;està obrint...</translation>
+    </message>
+    <message>
+        <source>Enter searchterm</source>
+        <translation>Paràmetre de cerca</translation>
+    </message>
+    <message>
+        <source>Open in New Window</source>
+        <translation>Obre en una finestra nova</translation>
+    </message>
+    <message>
+        <source>Open in New Tab</source>
+        <translation>Obre en una pestanya nova</translation>
+    </message>
+    <message>
+        <source>Open in Private New Window</source>
+        <translation>Obre en una finestra privada nova</translation>
+    </message>
+    <message>
+        <source>Copy Link</source>
+        <translation>Copia l&apos;enllaç</translation>
+    </message>
+    <message>
+        <source>Save Image</source>
+        <translation>Desa la imatge</translation>
+    </message>
+    <message>
+        <source>Save Link</source>
+        <translation>Desa l&apos;enllaç</translation>
+    </message>
+    <message>
+        <source>Open Image in New Tab</source>
+        <translation>Obre la imatge en una pestanya nova</translation>
+    </message>
+    <message>
         <source>Unknown certificate</source>
-        <translation type="unfinished"></translation>
+        <translation>Certificat desconegut</translation>
     </message>
     <message>
         <source>Accept certificate from </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Webkit engine crashed too often!</source>
-        <translation type="unfinished"></translation>
+        <translation>Accepta el certificat de</translation>
     </message>
     <message>
         <source>Webkit engine crashed! Restarting...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Opening...</source>
-        <translation type="unfinished">S&apos;està obrint...</translation>
-    </message>
-    <message>
-        <source>Enter searchterm</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Open in New Window</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Open in New Tab</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Open in Private New Window</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Open Image in New Tab</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Copy Link</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Save Image</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Save Link</source>
+        <source>Webkit engine crashed too often!</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
