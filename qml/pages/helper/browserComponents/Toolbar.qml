@@ -189,15 +189,16 @@ Rectangle {
         anchors.fill: toolbar
         onClicked: if (toolbar.state == "minimized") toolbar.state = "expanded"
         property int mx
+        property int swipeThreshold: toolbar.width / 8
         onPressed: {
             // Gesture detecting here
             mx = mouse.x
         }
         onReleased: {
-            if (mx != -1 && mouse.x < mx - 150) { //Right to left swipe
+            if (mx != -1 && mouse.x < mx - swipeThreshold) { //Right to left swipe
                 fPage.webview.goBack();
             }
-            else if (mx != -1 && mouse.x > mx + 150) { // Left to right swipe
+            else if (mx != -1 && mouse.x > mx + swipeThreshold) { // Left to right swipe
                 fPage.webview.goForward();
             }
         }
@@ -407,19 +408,19 @@ Rectangle {
         anchors.left: webTitle.left
         anchors.right: webTitle.right
         height: parent.height
-        property int tabSwitchThreshold: toolbar.width / 4
+        property int tabSwitchThreshold: toolbar.width / 5
         property int mX
         property bool clickActivated: true
         onPressed: {
             mX = mouse.x
         }
         onMouseXChanged: {
-          if (mouse.x < mX - tabSwitchThreshold) {
+          if (mouse.x < mX - tabSwitchThreshold && mainWindow.tabModel.count > 1) {
               gotoButton.tabLbl.text = "->"
               gotoButton.tabLbl.visible = true
               clickActivated = false
           }
-          else if (mouse.x > mX + tabSwitchThreshold) {
+          else if (mouse.x > mX + tabSwitchThreshold && mainWindow.tabModel.count > 1) {
               gotoButton.tabLbl.text = "<-"
               gotoButton.tabLbl.visible = true
               clickActivated = false
@@ -430,8 +431,8 @@ Rectangle {
           }
         }
         onReleased: {
-            if (mouse.x < mX - tabSwitchThreshold) mainWindow.switchToTab(mainWindow.tabModel.get(mainWindow.tabModel.nextTab()).pageid) // Tab forward
-            else if (mouse.x > mX + tabSwitchThreshold) mainWindow.switchToTab(mainWindow.tabModel.get(mainWindow.tabModel.prevTab()).pageid) // Tab backwards
+            if (mouse.x < mX - tabSwitchThreshold && mainWindow.tabModel.count > 1) mainWindow.switchToTab(mainWindow.tabModel.get(mainWindow.tabModel.nextTab()).pageid) // Tab forward
+            else if (mouse.x > mX + tabSwitchThreshold && mainWindow.tabModel.count > 1) mainWindow.switchToTab(mainWindow.tabModel.get(mainWindow.tabModel.prevTab()).pageid) // Tab backwards
             gotoButton.tabLbl.visible = false
         }
         onClicked: {

@@ -841,10 +841,10 @@ Page {
                 else if (event.key == Qt.Key_Escape && !event.modifiers) webview.stop();
                 else if (searchBar.visible == true && (event.key == Qt.Key_Enter || event.key == Qt.Key_Return)) searchIcon.clicked(undefined)
                 else if (event.modifiers == Qt.ControlModifier) {
-                    if (event.key == Qt.Key_Tab) {
+                    if (event.key == Qt.Key_Tab && mainWindow.tabModel.count > 1) {
                         mainWindow.switchToTab(mainWindow.tabModel.get(mainWindow.tabModel.nextTab()).pageid) // Tab forward
                         event.accepted = true; }
-                    else if (event.key == Qt.Key_W) {
+                    else if (event.key == Qt.Key_W && mainWindow.tabModel.count > 1) {
                         mainWindow.closeTab(mainWindow.tabModel.getIndexFromId(mainWindow.currentTab),mainWindow.currentTab);
                     }
                     else if (event.key == Qt.Key_T) {
@@ -854,7 +854,7 @@ Page {
                         mainWindow.openNewWindow("about:bookmarks")
                     }
                 }
-                else if (event.key == Qt.Key_Backtab && event.modifiers & Qt.ControlModifier) {
+                else if (event.key == Qt.Key_Backtab && event.modifiers & Qt.ControlModifier && mainWindow.tabModel.count > 1) {
                     console.log("Backwards tab switch triggered with prevTab: " + mainWindow.tabModel.prevTab());
                     mainWindow.switchToTab(mainWindow.tabModel.get(mainWindow.tabModel.prevTab()).pageid) // Tab backwards
                     event.accepted = true; }
