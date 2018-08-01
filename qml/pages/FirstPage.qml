@@ -825,7 +825,7 @@ Page {
         }
         Keys.onPressed: {
             if (toolbar.urlText.focus == false && inputFocus == false) {
-                if (event.key == Qt.Key_T) webview.scrollToTop()
+                if (event.key == Qt.Key_T && !event.modifiers) webview.scrollToTop()
                 else if (event.key == Qt.Key_B) webview.scrollToBottom()
                 else if (event.key == Qt.Key_K) toolbar.gotoButton.clicked(undefined)
                 else if (event.key == Qt.Key_Q) toolbar.gotoButton.clicked(undefined)
@@ -835,14 +835,24 @@ Page {
                 else if (event.key == Qt.Key_L) webview.reload()
                 else if (event.key == Qt.Key_U) { toolbar.state = "expanded" ; toolbar.urlText.forceActiveFocus() }
                 else if (event.key == Qt.Key_W && event.modifiers == Qt.ShiftModifier) mainWindow.openNewWindow("about:bookmarks")
-                else if (event.key == Qt.Key_W) mainWindow.loadInNewTab("about:bookmarks");
+                else if (event.key == Qt.Key_W && !event.modifiers) mainWindow.loadInNewTab("about:bookmarks");
                 else if (event.key == Qt.Key_P) webview.goBack()
-                else if (event.key == Qt.Key_N) webview.goForward()
+                else if (event.key == Qt.Key_N && !event.modifiers) webview.goForward()
+                else if (event.key == Qt.Key_Escape && !event.modifiers) webview.stop();
                 else if (searchBar.visible == true && (event.key == Qt.Key_Enter || event.key == Qt.Key_Return)) searchIcon.clicked(undefined)
                 else if (event.modifiers == Qt.ControlModifier) {
                     if (event.key == Qt.Key_Tab) {
                         mainWindow.switchToTab(mainWindow.tabModel.get(mainWindow.tabModel.nextTab()).pageid) // Tab forward
                         event.accepted = true; }
+                    else if (event.key == Qt.Key_W) {
+                        mainWindow.closeTab(mainWindow.tabModel.getIndexFromId(mainWindow.currentTab),mainWindow.currentTab);
+                    }
+                    else if (event.key == Qt.Key_T) {
+                        mainWindow.loadInNewTab("about:bookmarks");
+                    }
+                    else if (event.key == Qt.Key_N) {
+                        mainWindow.openNewWindow("about:bookmarks")
+                    }
                 }
                 else if (event.key == Qt.Key_Backtab && event.modifiers & Qt.ControlModifier) {
                     console.log("Backwards tab switch triggered with prevTab: " + mainWindow.tabModel.prevTab());
