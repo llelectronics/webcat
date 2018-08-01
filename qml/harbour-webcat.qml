@@ -205,14 +205,16 @@ ApplicationWindow
             currentTab = pageid;
             currentTabBg = "";
         }
+        pageStack.currentPage.webview.forceActiveFocus(); // Keyboard shortcuts should work (Ctrl+Tab)
     }
 
     function switchToTab(pageid) {
         //console.log("switchToTab: "+ pageid + " , from: " + currentTab); //+ ' , at ' + tabListView.currentIndex);
         prevTab = currentTab
-        pageStack.replaceAbove(null, Tab.itemMap[pageid],{bookmarks: modelUrls, tabModel: tabModel, pageId: pageid}); // Nice 'null' trick for replaceAbove thanks to jpnurmi from irc for pointing that out
+        pageStack.replaceAbove(null, Tab.itemMap[pageid],{bookmarks: modelUrls, tabModel: tabModel, pageId: pageid}, PageStackAction.Immediate); // Nice 'null' trick for replaceAbove thanks to jpnurmi from irc for pointing that out
         currentTab = pageid;
         currentTabIndex = tabModel.getIndexFromId(currentTab)
+        pageStack.currentPage.webview.forceActiveFocus(); // Keyboard shortcuts should work (Ctrl+Tab)
     }
 
     function closeTab(deleteIndex, pageid) {
@@ -298,6 +300,17 @@ ApplicationWindow
             var idx = getIndexFromId(id);
             //console.debug("Updating index:" + idx + " with url:" + url);
             setProperty(idx, "url", String(url));
+        }
+
+        function nextTab() {
+            var curIndex = getIndexFromId(mainWindow.currentTab)
+            if (curIndex+1 < count) return curIndex + 1
+            else return 0
+        }
+        function prevTab() {
+            var curIndex = getIndexFromId(mainWindow.currentTab)
+            if (curIndex-1 > 0) return curIndex - 1
+            else return count
         }
 
     }
