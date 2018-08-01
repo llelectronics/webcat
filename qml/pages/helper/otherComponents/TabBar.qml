@@ -91,7 +91,7 @@ Item {
         id: tabDelegate
         Rectangle {
             id: tabBg
-            width: parent.width - (2* Theme.paddingSmall)
+            width: parent.width
             height: Theme.itemSizeSmall //if (dataContainer) dataContainer.toolbarheight
             color: "transparent"
             Text {
