@@ -40,7 +40,7 @@ Item {
                                         { key: Qt.Key_W, modifiers: Qt.NoModifier,
                                             methods:['openNewTab'], readableKeys:['W']},
                                         { key: Qt.Key_T, modifiers: Qt.ControlModifier,
-                                            methods:['openNewTab'], readableKeys:[qsTr('Ctrl', 'Key'),'B']},
+                                            methods:['openNewTab'], readableKeys:[qsTr('Ctrl', 'Key'),'T']},
                                         { key: Qt.Key_W, modifiers: Qt.ShiftModifier,
                                             methods:['openNewWindow'], readableKeys:[qsTr('Shift', 'Key'),'W']},
                                         { key: Qt.Key_N, modifiers: Qt.ControlModifier,
@@ -54,6 +54,10 @@ Item {
                                         { key: Qt.Key_Backtab, modifiers: Qt.ControlModifier + Qt.ShiftModifier,
                                             requirements: mainWindow.tabModel.count > 1,
                                             methods:['focusPreviousTab'], readableKeys:[qsTr('Ctrl', 'Key'),qsTr('Shift', 'Key'), qsTr('Tab', 'Key')]},
+                                        //TOHKBD2 compatibility (does not send ctrl AND shift) but is quite safe for Key_Backtab:
+                                        { key: Qt.Key_Backtab, modifiers: Qt.ShiftModifier,
+                                            requirements: mainWindow.tabModel.count > 1,
+                                            methods:['focusPreviousTab'], readableKeys:[]},
                                         //no private window shortcut in bb10
 
                                         /* in-page search */
@@ -117,6 +121,10 @@ Item {
                                            { key: Qt.Key_Backtab, modifiers: Qt.ControlModifier + Qt.ShiftModifier,
                                                requirements: mainWindow.tabModel.count > 1,
                                                methods:['focusPreviousTab'], readableKeys:[qsTr('Ctrl', 'Key'),qsTr('Shift', 'Key'),qsTr('Tab', 'Key')]},
+                                           //TOHKBD2 compatibility (does not send ctrl AND shift) but is quite safe for Key_Backtab:
+                                           { key: Qt.Key_Backtab, modifiers: Qt.ShiftModifier,
+                                               requirements: mainWindow.tabModel.count > 1,
+                                               methods:['focusPreviousTab'], readableKeys:[]},
                                            // firefox variant
                                            { key: Qt.Key_P, modifiers: Qt.ControlModifier,
                                                methods:['openPrivateNewWindow'], readableKeys:[qsTr('Ctrl', 'Key'),'P']},
@@ -200,7 +208,6 @@ Item {
                 for(var methodsIndex=0;methodsIndex < keyboardSettings[i].methods.length; methodsIndex++) {
                     keyCommandsOverview[keyboardSettings[i].methods[methodsIndex]].method();
                 }
-
                 event.accepted = true;
                 debounceTimer.start()
                 break;
