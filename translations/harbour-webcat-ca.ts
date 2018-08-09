@@ -449,6 +449,46 @@ En cas de dubte, refuseu el certificat malgrat que això pot provocar que no es 
 <context>
     <name>KeyboardCommands</name>
     <message>
+        <source></source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Page History: Go back</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Page History: Go forward</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open new tab</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open new window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close current tab</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Switch to next tab</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Switch to previous tab</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Toggle reader mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Focus URL bar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Esc</source>
         <comment>Key</comment>
         <translation type="unfinished"></translation>
@@ -492,18 +532,6 @@ En cas de dubte, refuseu el certificat malgrat que això pot provocar que no es 
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Reload current website</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Page History: Go back</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Page History: Go forward</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Stop loading the current website</source>
         <translation type="unfinished"></translation>
     </message>
@@ -516,31 +544,7 @@ En cas de dubte, refuseu el certificat malgrat que això pot provocar que no es 
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Open new tab</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Open new window</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Close current tab</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Switch to next tab</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Switch to previous tab</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Open new private window</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Show in-page search</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -552,15 +556,15 @@ En cas de dubte, refuseu el certificat malgrat que això pot provocar que no es 
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Toggle reader mode</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Focus URL bar</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Close current WebCat window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show in-page search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reload current website</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1040,11 +1044,11 @@ En cas de dubte, refuseu el certificat malgrat que això pot provocar que no es 
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>BB10 Hardware Keyboard shortcuts</source>
+        <source>When unchecked, common multi-key shortcuts from other browsers are used</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>When unchecked, common multi-key shortcuts from other browsers are used</source>
+        <source>BB10 Hardware Keyboard shortcuts</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
