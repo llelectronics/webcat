@@ -26,7 +26,7 @@ Item {
                                         { key: Qt.Key_N, modifiers: Qt.NoModifier,
                                             methods:['goForward'], readableKeys:['N']},
                                         { key: Qt.Key_Escape, modifiers: Qt.NoModifier,
-                                            methods:['stopLoading', 'hideSearchBar'], readableKeys:[qsTr('Esc', 'Key')]},
+                                            methods:['stopLoading', 'hideSearchBar', 'hideBookmarks'], readableKeys:[qsTr('Esc', 'Key')]},
 
                                         /* bookmarks */
                                         { key: Qt.Key_A, modifiers: Qt.NoModifier,
@@ -92,7 +92,7 @@ Item {
                                            { key: Qt.Key_Right, modifiers: Qt.AltModifier,
                                                methods:['goForward'], readableKeys:[qsTr('Alt', 'Key'),'→']},
                                            { key: Qt.Key_Escape, modifiers: Qt.NoModifier,
-                                               methods:['stopLoading', 'hideSearchBar'], readableKeys:[qsTr('Esc', 'Key')]},
+                                               methods:['stopLoading', 'hideSearchBar', 'hideBookmarks'], readableKeys:[qsTr('Esc', 'Key')]},
 
                                            /* bookmarks */
                                            { key: Qt.Key_D, modifiers: Qt.ControlModifier,
@@ -161,6 +161,12 @@ Item {
                                            // bookmarks
                                            addBookmark: {text:qsTr("Add current website as a bookmark"), method:function(){toolbar.bookmarkButton.addFavorite()}},
                                            showBookmarks: {text:qsTr("Show list of bookmarks"), method:function(){ toolbar.gotoButton.clicked(undefined)}},
+                                           hideBookmarks: {text:qsTr("Hide list of bookmarks"), method:function(){
+                                               if (page.tabBar._tabListBg.visible) {
+                                                   toolbar.gotoButton.clicked(undefined)
+                                               }
+                                           }
+                                           },
 
                                            // tabs/windows
                                            openNewTab: {text:qsTr("Open new tab"), method:function(){ mainWindow.loadInNewTab("about:bookmarks");}},

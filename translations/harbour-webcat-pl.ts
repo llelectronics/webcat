@@ -566,6 +566,10 @@ Jeśli nie jesteś pewien, powinieneś odrzucić certyfikat. Może to jednak uni
         <source>Reload current website</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Hide list of bookmarks</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>KeyboardOverviewPage</name>

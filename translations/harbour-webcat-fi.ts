@@ -565,6 +565,10 @@ If you are unsure reject the certificate. That might lead to a non loading websi
         <source>Reload current website</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Hide list of bookmarks</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>KeyboardOverviewPage</name>

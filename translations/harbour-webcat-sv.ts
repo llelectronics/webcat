@@ -567,6 +567,10 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
         <source>Reload current website</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Hide list of bookmarks</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>KeyboardOverviewPage</name>

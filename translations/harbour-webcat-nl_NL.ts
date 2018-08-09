@@ -567,6 +567,10 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
         <source>Reload current website</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Hide list of bookmarks</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>KeyboardOverviewPage</name>

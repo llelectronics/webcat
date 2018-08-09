@@ -566,6 +566,10 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
         <source>Reload current website</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Hide list of bookmarks</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>KeyboardOverviewPage</name>

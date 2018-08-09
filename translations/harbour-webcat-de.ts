@@ -563,6 +563,10 @@ Wenn Sie sich unsicher sind lehnen sie das Zertifikat ab. Dies führt unter Umst
         <source>Show in-page search</source>
         <translation>Zeige &quot;Suche auf Seite&quot;</translation>
     </message>
+    <message>
+        <source>Hide list of bookmarks</source>
+        <translation>Verberge Bookmarks</translation>
+    </message>
 </context>
 <context>
     <name>KeyboardOverviewPage</name>
