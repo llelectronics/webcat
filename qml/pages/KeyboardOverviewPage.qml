@@ -126,6 +126,7 @@ Page {
                     id: commandLabel
                     color: Theme.highlightColor
                     width: parent.width - keyColumn.width
+                    wrapMode: Text.WrapAtWordBoundaryOrAnywhere
                     text: descr
                 }
             }
