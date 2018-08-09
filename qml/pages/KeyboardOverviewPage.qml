@@ -36,7 +36,6 @@ Page {
         var tmpObjKeys = Object.keys(tmpObj);
         currentShortcutsModel.clear();
         for(var i = 0; i<tmpObjKeys.length;i++) {
-            console.log('append', i, JSON.stringify(tmpObj[tmpObjKeys[i]]))
             currentShortcutsModel.append(tmpObj[tmpObjKeys[i]]);
         }
     }
