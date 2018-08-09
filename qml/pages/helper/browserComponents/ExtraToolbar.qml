@@ -197,7 +197,11 @@ Rectangle {
         onClicked: {
             searchMode = !searchMode
             highlighted = false
-            searchText.forceActiveFocus();
+            if(searchMode) {
+                searchText.forceActiveFocus();
+            } else {
+                page.webview.forceActiveFocus();
+            }
             extraToolbar.hide();
         }
     }

@@ -1141,7 +1141,7 @@ Page {
         visible: searchMode
 
         function search() {
-            searchText.focus = false;  // Close keyboard
+            webview.forceActiveFocus();  // Close keyboard
             var message = new Object
             message.type = 'search'
             message.searchTerm = searchText.text
@@ -1153,7 +1153,7 @@ Page {
             id: closeSearchButton
             icon.source: "image://theme/icon-m-close"
             onClicked:  {
-                searchMode = false;
+                extraToolbar.searchModeButton.clicked(undefined)
             }
             anchors.right: parent.right
             anchors.rightMargin: Theme.paddingSmall
@@ -1191,6 +1191,11 @@ Page {
                searchBar.search();
                webview.forceActiveFocus();
             }
+
+            Keys.onEscapePressed: {
+                extraToolbar.searchModeButton.clicked(undefined)
+            }
+
 
         }
 
