@@ -194,14 +194,6 @@ Item {
         }
 
         for (var i=0; i<keyboardSettings.length; i++) {
-            if(event.key === keyboardSettings[i].key) {
-                console.log('at least key matches',
-                            keyboardSettings[i].methods.join('|'),
-                            event.modifiers,
-                            keyboardSettings[i].modifiers,
-                            'b:', keyboardSettings[i].requirements)
-            }
-
             if(event.key === keyboardSettings[i].key
                     && (typeof keyboardSettings[i].modifiers !== 'undefined' ? event.modifiers === keyboardSettings[i].modifiers : true)
                     && (typeof keyboardSettings[i].requirements !== 'undefined' ? keyboardSettings[i].requirements : true)) {
