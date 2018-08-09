@@ -508,9 +508,17 @@ Rectangle {
                 fPage.suggestionView.visible = false;
             }
         }
-
-        Keys.onEnterPressed: {
+        function enterPress(event){
             if (fPage.suggestionView.visible) fPage.suggestionView.visible = false;
+
+            if(event.modifiers === Qt.ControlModifier) {
+                urlText.text = urlText.text + '.com'
+            } else if(event.modifiers === Qt.ShiftModifier) {
+                urlText.text = urlText.text + '.net'
+            } else if(event.modifiers === Qt.ControlModifier + Qt.ShiftModifier) {
+                urlText.text = urlText.text + '.org'
+            }
+
             fPage.webview.url = fixUrl(urlText.text);
             urlText.focus = false;  // Close keyboard
             fPage.webview.focus = true;
@@ -520,18 +528,8 @@ Rectangle {
             }
             urlTitle.visible = false
         }
-
-        Keys.onReturnPressed: {
-            if (fPage.suggestionView.visible) fPage.suggestionView.visible = false;
-            fPage.webview.url = fixUrl(urlText.text);
-            urlText.focus = false;
-            fPage.webview.focus = true;
-            if (bookmarkList.visible || tabBar.visible) {
-                bookmarkList.hide()
-                tabBar.hide()
-            }
-            urlTitle.visible = false
-        }
+        Keys.onEnterPressed: enterPress(event)
+        Keys.onReturnPressed: enterPress(event)
         function simplifyUrl(url) {
             url = url.toString();
             if(url.match(/http:\/\//))
