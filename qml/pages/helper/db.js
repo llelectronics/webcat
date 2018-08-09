@@ -190,6 +190,7 @@ function getSettings() {
             else if (rs.rows.item(i).setting == "vPlayerExternal") mainWindow.vPlayerExternal = stringToBoolean(rs.rows.item(i).value)
             else if (rs.rows.item(i).setting == "coverActionGroup") mainWindow.coverActionGroup = parseInt(rs.rows.item(i).value)
             else if (rs.rows.item(i).setting == "torProxyEnabled") mainWindow.torProxyEnabled = stringToBoolean(rs.rows.item(i).value)
+            else if (rs.rows.item(i).setting == "useBB10KeyboardShortcuts") mainWindow.useBB10KeyboardShortcuts = stringToBoolean(rs.rows.item(i).value)
         }
     })
 }

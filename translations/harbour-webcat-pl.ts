@@ -446,6 +446,139 @@ Jeśli nie jesteś pewien, powinieneś odrzucić certyfikat. Może to jednak uni
     </message>
 </context>
 <context>
+    <name>KeyboardCommands</name>
+    <message>
+        <source>Esc</source>
+        <comment>Key</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl</source>
+        <comment>Key</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Shift</source>
+        <comment>Key</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tab</source>
+        <comment>Key</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>End</source>
+        <comment>Key</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Home</source>
+        <comment>Key</comment>
+        <translation type="unfinished">Katalog domowy</translation>
+    </message>
+    <message>
+        <source>Alt</source>
+        <comment>Key</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scroll current website to bottom</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scroll current website to top</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reload current website</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Page History: Go back</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Page History: Go forward</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stop loading the current website</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add current website as a bookmark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show list of bookmarks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open new tab</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open new window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close current tab</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Switch to next tab</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Switch to previous tab</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open new private window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show in-page search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hide in-page search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Start in-page search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Toggle reader mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Focus URL bar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close current WebCat window</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>KeyboardOverviewPage</name>
+    <message>
+        <source>Current Keyboard Shortcuts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You have selected BB10 (Blackberry 10) compatible keyboard shortcuts. Take a look at the list below to see what they are.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You have selected keyboard shortcuts which mimic some current popular browsers. Take a look at the list below to see what they are.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>MediaDownloadRec</name>
     <message>
         <source>Opening...</source>
@@ -904,6 +1037,14 @@ Jeśli nie jesteś pewien, powinieneś odrzucić certyfikat. Może to jednak uni
     <message>
         <source>Engine URL use %s for searchterm</source>
         <translation>Silnik URL używa %s do wyszukiwania</translation>
+    </message>
+    <message>
+        <source>BB10 Hardware Keyboard shortcuts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When unchecked, common multi-key shortcuts from other browsers are used</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

@@ -82,6 +82,7 @@ ApplicationWindow
     property alias infoBanner: infoBanner
     property int coverActionGroup: 0
     property bool torProxyEnabled: false
+    property bool useBB10KeyboardShortcuts: true
 
     property var firstPage
     property TransferEngine transferEngine: TransferEngine { }
