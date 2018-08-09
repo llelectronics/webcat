@@ -115,7 +115,6 @@ Page {
                                         color: Theme.highlightColor
                                         anchors.left: plusLabel.right
                                         anchors.top: parent.top
-
                                     }
                                 }
                             }

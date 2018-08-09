@@ -548,6 +548,10 @@ Rectangle {
             }
             return url;
         }
+
+        Keys.onEscapePressed: {
+            fPage.webview.focus = true
+        }
     }
 
 
