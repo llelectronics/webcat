@@ -578,11 +578,11 @@ Jeśli nie jesteś pewien, powinieneś odrzucić certyfikat. Może to jednak uni
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>You have selected BB10 (Blackberry 10) compatible keyboard shortcuts. Take a look at the list below to see what they are.</source>
+        <source>You have selected keyboard shortcuts which mimic some current popular browsers. Take a look at the list below to see what they are or try them out.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>You have selected keyboard shortcuts which mimic some current popular browsers. Take a look at the list below to see what they are.</source>
+        <source>You have selected BB10 (Blackberry 10) compatible keyboard shortcuts. Take a look at the list below to see what they are or try them out.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -575,12 +575,12 @@ Wenn Sie sich unsicher sind lehnen sie das Zertifikat ab. Dies führt unter Umst
         <translation>Aktuelle Tastenkürzel</translation>
     </message>
     <message>
-        <source>You have selected BB10 (Blackberry 10) compatible keyboard shortcuts. Take a look at the list below to see what they are.</source>
-        <translation>Du hast BB10-kompatible (Blackberry 10) Tastenkürzel ausgewählt. Schau auf die folgende Liste, um zu sehen, welche es gibt.</translation>
+        <source>You have selected BB10 (Blackberry 10) compatible keyboard shortcuts. Take a look at the list below to see what they are or try them out.</source>
+        <translation>Du hast BB10-kompatible (Blackberry 10) Tastenkürzel ausgewählt. Schau auf die folgende Liste, um zu sehen, welche es gibt – oder probiere sie aus.</translation>
     </message>
     <message>
-        <source>You have selected keyboard shortcuts which mimic some current popular browsers. Take a look at the list below to see what they are.</source>
-        <translation>Du hast Tastenkürzel ausgewählt, die denen einiger populärer Browser entsprechen. Schau auf die folgende Liste, um zu sehen, welche es gibt.</translation>
+        <source>You have selected keyboard shortcuts which mimic some current popular browsers. Take a look at the list below to see what they are or try them out.</source>
+        <translation>Du hast Tastenkürzel ausgewählt, die denen einiger populärer Browser entsprechen. Schau auf die folgende Liste, um zu sehen, welche es gibt – oder probiere sie aus.</translation>
     </message>
 </context>
 <context>
