@@ -37,6 +37,7 @@ Dialog {
         searchEngineCombo.value = "Google"
         orientationCombo.value = "Orientation.All"
         vPlayerExternalSwitch.checked = false;
+        useBB10KeyboardShortcutsSwitch.checked = true;
     }
 
     function saveSettings() {
@@ -48,6 +49,7 @@ Dialog {
         DB.addSetting("loadImages", loadImagesSwitch.checked.toString());
         DB.addSetting("privateBrowsing", privateBrowsingSwitch.checked.toString());
         DB.addSetting("dnsPrefetch", dnsPrefetchSwitch.checked.toString());
+        DB.addSetting("useBB10KeyboardShortcuts", useBB10KeyboardShortcutsSwitch.checked.toString());
         DB.addSetting("userAgent", agentString.text);
         DB.addSetting("offlineWebApplicationCache", offlineWebApplicationCacheSwitch.checked.toString());
         if (userAgentCombo.value == qsTr("Custom")) DB.addSetting("userAgentName", "Custom");
@@ -391,6 +393,24 @@ Dialog {
                 menu: ContextMenu {
                     MenuItem { text: qsTr("New Tab | Stop/Refresh") }
                     MenuItem { text: qsTr("Previous Tab | Next Tab") }
+                }
+            }
+            Row {
+                width: parent.width
+                height: useBB10KeyboardShortcutsSwitch.height
+                TextSwitch {
+                    id: useBB10KeyboardShortcutsSwitch
+                    width: parent.width - keyboardOverviewButton.width
+                    text: qsTr("BB10 Hardware Keyboard shortcuts")
+                    description: qsTr("When unchecked, common multi-key shortcuts from other browsers are used")
+                    checked: mainWindow.useBB10KeyboardShortcuts
+                }
+                IconButton {
+                    id: keyboardOverviewButton
+                    width: Theme.itemSizeMedium
+                    height: Theme.itemSizeMedium
+                    icon.source: 'image://theme/icon-m-keyboard'
+                    onClicked: pageStack.push(Qt.resolvedUrl("KeyboardOverviewPage.qml"), {isBB10:useBB10KeyboardShortcutsSwitch.checked})
                 }
             }
 //            BackgroundItem {

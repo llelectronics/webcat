@@ -823,41 +823,12 @@ Page {
             flickable: webview
             y: toolbar.y - height
         }
+        KeyboardCommands {
+            id: keyboardCommands
+        }
         Keys.onPressed: {
             if (toolbar.urlText.focus == false && inputFocus == false) {
-                if (event.key == Qt.Key_T && !event.modifiers) webview.scrollToTop()
-                else if (event.key == Qt.Key_B) webview.scrollToBottom()
-                else if (event.key == Qt.Key_K) toolbar.gotoButton.clicked(undefined)
-                else if (event.key == Qt.Key_Q) toolbar.gotoButton.clicked(undefined)
-                else if (event.key == Qt.Key_A) toolbar.bookmarkButton.addFavorite();
-                else if (event.key == Qt.Key_S) extraToolbar.searchModeButton.clicked(undefined)
-                else if (event.key == Qt.Key_R) extraToolbar.readerModeButton.clicked(undefined)
-                else if (event.key == Qt.Key_L) webview.reload()
-                else if (event.key == Qt.Key_U) { toolbar.state = "expanded" ; toolbar.urlText.forceActiveFocus() }
-                else if (event.key == Qt.Key_W && event.modifiers == Qt.ShiftModifier) mainWindow.openNewWindow("about:bookmarks")
-                else if (event.key == Qt.Key_W && !event.modifiers) mainWindow.loadInNewTab("about:bookmarks");
-                else if (event.key == Qt.Key_P) webview.goBack()
-                else if (event.key == Qt.Key_N && !event.modifiers) webview.goForward()
-                else if (event.key == Qt.Key_Escape && !event.modifiers) webview.stop();
-                else if (searchBar.visible == true && (event.key == Qt.Key_Enter || event.key == Qt.Key_Return)) searchIcon.clicked(undefined)
-                else if (event.modifiers == Qt.ControlModifier) {
-                    if (event.key == Qt.Key_Tab && mainWindow.tabModel.count > 1) {
-                        mainWindow.switchToTab(mainWindow.tabModel.get(mainWindow.tabModel.nextTab()).pageid) // Tab forward
-                        event.accepted = true; }
-                    else if (event.key == Qt.Key_W && mainWindow.tabModel.count > 1) {
-                        mainWindow.closeTab(mainWindow.tabModel.getIndexFromId(mainWindow.currentTab),mainWindow.currentTab);
-                    }
-                    else if (event.key == Qt.Key_T) {
-                        mainWindow.loadInNewTab("about:bookmarks");
-                    }
-                    else if (event.key == Qt.Key_N) {
-                        mainWindow.openNewWindow("about:bookmarks")
-                    }
-                }
-                else if (event.key == Qt.Key_Backtab && event.modifiers & Qt.ControlModifier && mainWindow.tabModel.count > 1) {
-                    console.log("Backwards tab switch triggered with prevTab: " + mainWindow.tabModel.prevTab());
-                    mainWindow.switchToTab(mainWindow.tabModel.get(mainWindow.tabModel.prevTab()).pageid) // Tab backwards
-                    event.accepted = true; }
+                keyboardCommands.handleKeyPress(event)
             }
         }
 
@@ -1141,7 +1112,7 @@ Page {
         visible: searchMode
 
         function search() {
-            searchText.focus = false;  // Close keyboard
+            webview.forceActiveFocus();  // Close keyboard
             var message = new Object
             message.type = 'search'
             message.searchTerm = searchText.text
@@ -1153,7 +1124,7 @@ Page {
             id: closeSearchButton
             icon.source: "image://theme/icon-m-close"
             onClicked:  {
-                searchMode = false;
+                extraToolbar.searchModeButton.clicked(undefined)
             }
             anchors.right: parent.right
             anchors.rightMargin: Theme.paddingSmall
@@ -1191,6 +1162,11 @@ Page {
                searchBar.search();
                webview.forceActiveFocus();
             }
+
+            Keys.onEscapePressed: {
+                extraToolbar.searchModeButton.clicked(undefined)
+            }
+
 
         }
 

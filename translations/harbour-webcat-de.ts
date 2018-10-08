@@ -447,6 +447,143 @@ Wenn Sie sich unsicher sind lehnen sie das Zertifikat ab. Dies führt unter Umst
     </message>
 </context>
 <context>
+    <name>KeyboardCommands</name>
+    <message>
+        <source>Reload current website</source>
+        <translation>Aktuelle Webseite neuladen</translation>
+    </message>
+    <message>
+        <source>Page History: Go back</source>
+        <translation>Navigiere eine Seite vor</translation>
+    </message>
+    <message>
+        <source>Page History: Go forward</source>
+        <translation>Navigiere eine Seite zurück</translation>
+    </message>
+    <message>
+        <source>Open new tab</source>
+        <translation>Neuen Tab öffnen</translation>
+    </message>
+    <message>
+        <source>Open new window</source>
+        <translation>Neues Fenster öffnen</translation>
+    </message>
+    <message>
+        <source>Close current tab</source>
+        <translation>Aktuellen Tab schließen</translation>
+    </message>
+    <message>
+        <source>Switch to next tab</source>
+        <translation>Zu nächstem Tab wechseln</translation>
+    </message>
+    <message>
+        <source>Switch to previous tab</source>
+        <translation>Zu vorigem Tab wechseln</translation>
+    </message>
+    <message>
+        <source>Toggle reader mode</source>
+        <translation>Lesemodus umschalten</translation>
+    </message>
+    <message>
+        <source>Focus URL bar</source>
+        <translation>URL-Leiste fokussieren</translation>
+    </message>
+    <message>
+        <source>Esc</source>
+        <comment>Key</comment>
+        <translation>Esc</translation>
+    </message>
+    <message>
+        <source>Ctrl</source>
+        <comment>Key</comment>
+        <translation>Strg</translation>
+    </message>
+    <message>
+        <source>Shift</source>
+        <comment>Key</comment>
+        <translation>Umschalt</translation>
+    </message>
+    <message>
+        <source>Tab</source>
+        <comment>Key</comment>
+        <translation>Tab</translation>
+    </message>
+    <message>
+        <source>End</source>
+        <comment>Key</comment>
+        <translation>Ende</translation>
+    </message>
+    <message>
+        <source>Home</source>
+        <comment>Key</comment>
+        <translation>Pos1</translation>
+    </message>
+    <message>
+        <source>Alt</source>
+        <comment>Key</comment>
+        <translation>Alt</translation>
+    </message>
+    <message>
+        <source>Scroll current website to bottom</source>
+        <translation>Aktuelle Webseite komplett nach unten scrollen</translation>
+    </message>
+    <message>
+        <source>Scroll current website to top</source>
+        <translation>Aktuelle Webseite komplett nach oben scrollen</translation>
+    </message>
+    <message>
+        <source>Stop loading the current website</source>
+        <translation>Aktuelles Seitenladen unterbrechen</translation>
+    </message>
+    <message>
+        <source>Add current website as a bookmark</source>
+        <translation>Füge aktuelle Webseite als Bookmark hinzu</translation>
+    </message>
+    <message>
+        <source>Show list of bookmarks</source>
+        <translation>Zeige Bookmarks</translation>
+    </message>
+    <message>
+        <source>Open new private window</source>
+        <translation>Öffne neues, privates Fenster</translation>
+    </message>
+    <message>
+        <source>Hide in-page search</source>
+        <translation>Blende &quot;Suche auf Seite&quot; aus</translation>
+    </message>
+    <message>
+        <source>Start in-page search</source>
+        <translation>Suche auf Seite</translation>
+    </message>
+    <message>
+        <source>Close current WebCat window</source>
+        <translation>Schließe aktuelles WebCatfenster</translation>
+    </message>
+    <message>
+        <source>Show in-page search</source>
+        <translation>Zeige &quot;Suche auf Seite&quot;</translation>
+    </message>
+    <message>
+        <source>Hide list of bookmarks</source>
+        <translation>Verberge Bookmarks</translation>
+    </message>
+</context>
+<context>
+    <name>KeyboardOverviewPage</name>
+    <message>
+        <source>Current Keyboard Shortcuts</source>
+        <translation>Aktuelle Tastenkürzel</translation>
+    </message>
+    <message>
+        <source>You have selected BB10 (Blackberry 10) compatible keyboard shortcuts. Take a look at the list below to see what they are or try them out.</source>
+        <translation>Du hast BB10-kompatible (Blackberry 10) Tastenkürzel ausgewählt. Schau auf die folgende Liste, um zu sehen, welche es gibt – oder probiere sie aus.</translation>
+    </message>
+    <message>
+        <source>You have selected keyboard shortcuts which mimic some current popular browsers. Take a look at the list below to see what they are or try them out.</source>
+        <translation>Du hast Tastenkürzel ausgewählt, die denen einiger populärer Browser entsprechen. Schau auf die folgende Liste, um zu sehen, welche es gibt – oder probiere sie aus.</translation>
+    </message>
+</context>
+<context>
     <name>MediaDownloadRec</name>
     <message>
         <source>Opening...</source>
@@ -904,6 +1041,14 @@ Wenn Sie sich unsicher sind lehnen sie das Zertifikat ab. Dies führt unter Umst
     <message>
         <source>Engine URL use %s for searchterm</source>
         <translation>Suchmaschinen URL eingeben %s für Suchbegriff</translation>
+    </message>
+    <message>
+        <source>When unchecked, common multi-key shortcuts from other browsers are used</source>
+        <translation>Wenn nicht angehakt, werden übliche Mehrtastenkürzel anderer Browser genutzt</translation>
+    </message>
+    <message>
+        <source>BB10 Hardware Keyboard shortcuts</source>
+        <translation>BB10 Hardwaretastenkürzel</translation>
     </message>
 </context>
 <context>

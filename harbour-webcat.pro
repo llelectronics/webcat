@@ -150,6 +150,7 @@ DISTFILES += \
     qml/pages/helper/es6-collections.min.js \
     qml/pages/helper/canvg.min.js \
     qml/pages/SplitWeb.qml \
+    qml/pages/KeyboardOverviewPage.qml \
     qml/pages/helper/otherComponents/SectionHeader.qml \
     translations/harbour-webcat-sv.ts \
     qml/pages/helper/otherComponents/MenuPopup.qml \
