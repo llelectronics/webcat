@@ -20,6 +20,18 @@ MyClass::MyClass(QQuickView *v)
 
     documents_dir = QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation);
 
+
+    // Make sure mimer is able to set webcat as default browser
+    QFile cpFile;
+    if (!isFile(h + "/.local/share/applications/harbour-webcat-open-url.desktop")) {
+        cpFile.copy("/usr/share/harbour-webcat/harbour-webcat-open-url.desktop", h + "/.local/share/applications/harbour-webcat-open-url.desktop");
+    }
+    if (!existsPath(h + "/.local/share/dbus-1/services")) {
+        QDir makePath;
+        makePath.mkpath(h + "/.local/share/dbus-1/services");
+    }
+    cpFile.copy("/usr/share/harbour-webcat/org.harbour.webcat.service", h+ "/.local/share/dbus-1/services/org.harbour.webcat.service");
+
     //qDebug() << data_dir;
 }
 
@@ -150,15 +162,6 @@ void MyClass::setMime(const QString &mimeType, const QString &desktopFile)
 
 void MyClass::setDefaultBrowser()
 {
-    QFile cpFile;
-    if (!isFile(h + "/.local/share/applications/harbour-webcat-open-url.desktop")) {
-        cpFile.copy("/usr/share/harbour-webcat/harbour-webcat-open-url.desktop", h + "/.local/share/applications/harbour-webcat-open-url.desktop");
-    }
-    if (!existsPath(h + "/.local/share/dbus-1/services")) {
-        QDir makePath;
-        makePath.mkpath(h + "/.local/share/dbus-1/services");
-    }
-    cpFile.copy("/usr/share/harbour-webcat/org.harbour.webcat.service", h+ "/.local/share/dbus-1/services/org.harbour.webcat.service");
     setMime("text/html", "harbour-webcat-open-url.desktop");
     setMime("x-scheme-handler/http", "harbour-webcat-open-url.desktop");
     setMime("x-scheme-handler/https", "harbour-webcat-open-url.desktop");
