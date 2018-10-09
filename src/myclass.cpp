@@ -151,24 +151,24 @@ void MyClass::setMime(const QString &mimeType, const QString &desktopFile)
 void MyClass::setDefaultBrowser()
 {
     QFile cpFile;
-    if (!isFile(h + "/.local/share/applications/open-url-webcat.desktop")) {
-        cpFile.copy("/usr/share/harbour-webcat/open-url-webcat.desktop", h + "/.local/share/applications/open-url-webcat.desktop");
+    if (!isFile(h + "/.local/share/applications/harbour-webcat-open-url.desktop")) {
+        cpFile.copy("/usr/share/harbour-webcat/harbour-webcat-open-url.desktop", h + "/.local/share/applications/harbour-webcat-open-url.desktop");
     }
     if (!existsPath(h + "/.local/share/dbus-1/services")) {
         QDir makePath;
         makePath.mkpath(h + "/.local/share/dbus-1/services");
     }
     cpFile.copy("/usr/share/harbour-webcat/org.harbour.webcat.service", h+ "/.local/share/dbus-1/services/org.harbour.webcat.service");
-    setMime("text/html", "open-url-webcat.desktop");
-    setMime("x-maemo-urischeme/http", "open-url-webcat.desktop");
-    setMime("x-maemo-urischeme/https", "open-url-webcat.desktop");
+    setMime("text/html", "harbour-webcat-open-url.desktop");
+    setMime("x-scheme-handler/http", "harbour-webcat-open-url.desktop");
+    setMime("x-scheme-handler/https", "harbour-webcat-open-url.desktop");
 }
 
 void MyClass::resetDefaultBrowser()
 {
     setMime("text/html", "open-url.desktop");
-    setMime("x-maemo-urischeme/http", "open-url.desktop");
-    setMime("x-maemo-urischeme/https", "open-url.desktop");
+    setMime("x-scheme-handler/http", "open-url.desktop");
+    setMime("x-scheme-handler/https", "open-url.desktop");
 }
 
 void MyClass::backupConfig()

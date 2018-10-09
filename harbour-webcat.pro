@@ -82,8 +82,7 @@ OTHER_FILES += qml/harbour-webcat.qml \
     qml/pages/helper/videoPlayerComponents/VideoPoster.qml \
     qml/pages/helper/browserComponents/ShareContextMenu.qml \
     qml/pages/helper/browserComponents/TabList.qml \
-    org.harbour.webcat.service \
-    open-url-webcat.desktop
+    org.harbour.webcat.service
 
 RESOURCES += \
     qrc.qrc
@@ -131,7 +130,7 @@ QT += dbus
 dbus.files = org.harbour.webcat.service
 dbus.path = /usr/share/harbour-webcat
 
-opendesktopfile.files = open-url-webcat.desktop
+opendesktopfile.files = harbour-webcat-open-url.desktop
 opendesktopfile.path = /usr/share/harbour-webcat
 
 QT += sql
@@ -174,6 +173,7 @@ DISTFILES += \
     qml/pages/helper/fmComponents/PlacesPage.qml \
     qml/pages/helper/fmComponents/DirEntryDelegate.qml \
     qml/pages/img/sdcard.png \
-    qml/pages/img/fileman.png
+    qml/pages/img/fileman.png \
+    harbour-webcat-open-url.desktop
 
 include(src/sortFilterProxyModel/SortFilterProxyModel.pri)
