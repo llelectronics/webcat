@@ -453,35 +453,35 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
     </message>
     <message>
         <source>Page History: Go back</source>
-        <translation type="unfinished"></translation>
+        <translation>Historique de la page : Revenir en arrière</translation>
     </message>
     <message>
         <source>Page History: Go forward</source>
-        <translation type="unfinished"></translation>
+        <translation>Historique de la page : Avancer</translation>
     </message>
     <message>
         <source>Open new tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Ouvrir un nouvel onglet</translation>
     </message>
     <message>
         <source>Open new window</source>
-        <translation type="unfinished"></translation>
+        <translation>Ouvrir une nouvelle fenêtre</translation>
     </message>
     <message>
         <source>Close current tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Fermer l&apos;onglet en cours</translation>
     </message>
     <message>
         <source>Switch to next tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Passer à l&apos;onglet suivant</translation>
     </message>
     <message>
         <source>Switch to previous tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Revenir à l&apos;onglet précédent</translation>
     </message>
     <message>
         <source>Toggle reader mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Basculer en mode lecture</translation>
     </message>
     <message>
         <source>Focus URL bar</source>
@@ -490,100 +490,100 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
     <message>
         <source>Esc</source>
         <comment>Key</comment>
-        <translation type="unfinished"></translation>
+        <translation>Esc</translation>
     </message>
     <message>
         <source>Ctrl</source>
         <comment>Key</comment>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl</translation>
     </message>
     <message>
         <source>Shift</source>
         <comment>Key</comment>
-        <translation type="unfinished"></translation>
+        <translation>Shift</translation>
     </message>
     <message>
         <source>Tab</source>
         <comment>Key</comment>
-        <translation type="unfinished"></translation>
+        <translation>Onglet</translation>
     </message>
     <message>
         <source>End</source>
         <comment>Key</comment>
-        <translation type="unfinished"></translation>
+        <translation>End</translation>
     </message>
     <message>
         <source>Home</source>
         <comment>Key</comment>
-        <translation type="unfinished">Accueil</translation>
+        <translation>Accueil</translation>
     </message>
     <message>
         <source>Alt</source>
         <comment>Key</comment>
-        <translation type="unfinished"></translation>
+        <translation>Alt</translation>
     </message>
     <message>
         <source>Scroll current website to bottom</source>
-        <translation type="unfinished"></translation>
+        <translation>Faire défiler le site web vers le bas</translation>
     </message>
     <message>
         <source>Scroll current website to top</source>
-        <translation type="unfinished"></translation>
+        <translation>Faire défiler le site web vers le haut</translation>
     </message>
     <message>
         <source>Stop loading the current website</source>
-        <translation type="unfinished"></translation>
+        <translation>Arrêter le chargement du site web</translation>
     </message>
     <message>
         <source>Add current website as a bookmark</source>
-        <translation type="unfinished"></translation>
+        <translation>Ajouter le site web actuel comme signet</translation>
     </message>
     <message>
         <source>Show list of bookmarks</source>
-        <translation type="unfinished"></translation>
+        <translation>Afficher la liste des signets</translation>
     </message>
     <message>
         <source>Open new private window</source>
-        <translation type="unfinished"></translation>
+        <translation>Ouvrir une nouvelle fenêtre privée</translation>
     </message>
     <message>
         <source>Hide in-page search</source>
-        <translation type="unfinished"></translation>
+        <translation>Masquer la recherche dans la page</translation>
     </message>
     <message>
         <source>Start in-page search</source>
-        <translation type="unfinished"></translation>
+        <translation>Démarrer une recherche dans la page</translation>
     </message>
     <message>
         <source>Close current WebCat window</source>
-        <translation type="unfinished"></translation>
+        <translation>Fermer la fenêtre WebCat actuelle</translation>
     </message>
     <message>
         <source>Show in-page search</source>
-        <translation type="unfinished"></translation>
+        <translation>Afficher la recherche dans la page</translation>
     </message>
     <message>
         <source>Reload current website</source>
-        <translation type="unfinished"></translation>
+        <translation>Recharger le site web actuel</translation>
     </message>
     <message>
         <source>Hide list of bookmarks</source>
-        <translation type="unfinished"></translation>
+        <translation>Masquer la liste des signets</translation>
     </message>
 </context>
 <context>
     <name>KeyboardOverviewPage</name>
     <message>
         <source>Current Keyboard Shortcuts</source>
-        <translation type="unfinished"></translation>
+        <translation>Raccourcis clavier actuels</translation>
     </message>
     <message>
         <source>You have selected keyboard shortcuts which mimic some current popular browsers. Take a look at the list below to see what they are or try them out.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vous avez sélectionné des raccourcis clavier qui imitent certains navigateurs populaires actuels. Jetez un coup d&apos;œil à la liste ci-dessous pour voir ce qu&apos;ils sont ou essayez-les.</translation>
     </message>
     <message>
         <source>You have selected BB10 (Blackberry 10) compatible keyboard shortcuts. Take a look at the list below to see what they are or try them out.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vous avez sélectionné des raccourcis clavier compatibles BB10 (Blackberry 10). Jetez un coup d&apos;œil à la liste ci-dessous pour voir ce qu&apos;ils sont ou essayez-les.</translation>
     </message>
 </context>
 <context>
@@ -1048,11 +1048,11 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
     </message>
     <message>
         <source>When unchecked, common multi-key shortcuts from other browsers are used</source>
-        <translation type="unfinished"></translation>
+        <translation>Si non coché, les raccourcis multi-touches courants des autres navigateurs sont utilisés.</translation>
     </message>
     <message>
         <source>BB10 Hardware Keyboard shortcuts</source>
-        <translation type="unfinished"></translation>
+        <translation>raccourcis clavier BB10</translation>
     </message>
 </context>
 <context>
@@ -1104,7 +1104,7 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
     </message>
     <message>
         <source> added to Bookmarks</source>
-        <translation type="unfinished"></translation>
+        <translation>Ajouter aux favoris</translation>
     </message>
 </context>
 <context>
