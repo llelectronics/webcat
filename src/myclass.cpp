@@ -35,7 +35,9 @@ MyClass::MyClass(QQuickView *v)
         QDir makePath;
         makePath.mkpath(h + "/.local/share/dbus-1/services");
     }
-    cpFile.copy("/usr/share/harbour-webcat/org.harbour.webcat.service", h+ "/.local/share/dbus-1/services/org.harbour.webcat.service");
+    if (!isFile(h + "/.local/share/dbus-1/services/org.harbour.webcat.service")) {
+        cpFile.copy("/usr/share/harbour-webcat/org.harbour.webcat.service", h+ "/.local/share/dbus-1/services/org.harbour.webcat.service");
+    }
 
     //qDebug() << data_dir;
 }
