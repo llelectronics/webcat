@@ -454,137 +454,137 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
     </message>
     <message>
         <source>Page History: Go back</source>
-        <translation type="unfinished"></translation>
+        <translation>Sidhistorik: Gå tillbaka</translation>
     </message>
     <message>
         <source>Page History: Go forward</source>
-        <translation type="unfinished"></translation>
+        <translation>Sidhistorik: Gå framåt</translation>
     </message>
     <message>
         <source>Open new tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Öppna ny flik</translation>
     </message>
     <message>
         <source>Open new window</source>
-        <translation type="unfinished"></translation>
+        <translation>Öppna nytt fönster</translation>
     </message>
     <message>
         <source>Close current tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Stäng aktuell flik</translation>
     </message>
     <message>
         <source>Switch to next tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Växla till nästa flik</translation>
     </message>
     <message>
         <source>Switch to previous tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Växla till föregående flik</translation>
     </message>
     <message>
         <source>Toggle reader mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Växla läsläge</translation>
     </message>
     <message>
         <source>Focus URL bar</source>
-        <translation type="unfinished"></translation>
+        <translation>Fokusera adressfältet</translation>
     </message>
     <message>
         <source>Esc</source>
         <comment>Key</comment>
-        <translation type="unfinished"></translation>
+        <translation>Esc</translation>
     </message>
     <message>
         <source>Ctrl</source>
         <comment>Key</comment>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl</translation>
     </message>
     <message>
         <source>Shift</source>
         <comment>Key</comment>
-        <translation type="unfinished"></translation>
+        <translation>Shift</translation>
     </message>
     <message>
         <source>Tab</source>
         <comment>Key</comment>
-        <translation type="unfinished"></translation>
+        <translation>Tab</translation>
     </message>
     <message>
         <source>End</source>
         <comment>Key</comment>
-        <translation type="unfinished"></translation>
+        <translation>End</translation>
     </message>
     <message>
         <source>Home</source>
         <comment>Key</comment>
-        <translation type="unfinished">Hem</translation>
+        <translation>Hem</translation>
     </message>
     <message>
         <source>Alt</source>
         <comment>Key</comment>
-        <translation type="unfinished"></translation>
+        <translation>Alt</translation>
     </message>
     <message>
         <source>Scroll current website to bottom</source>
-        <translation type="unfinished"></translation>
+        <translation>Skrolla aktuell webbsida till slutet</translation>
     </message>
     <message>
         <source>Scroll current website to top</source>
-        <translation type="unfinished"></translation>
+        <translation>Skrolla aktuell webbsida till början</translation>
     </message>
     <message>
         <source>Stop loading the current website</source>
-        <translation type="unfinished"></translation>
+        <translation>Sluta hämta aktuell webbsida</translation>
     </message>
     <message>
         <source>Add current website as a bookmark</source>
-        <translation type="unfinished"></translation>
+        <translation>Lägg till aktuell webbsida som bokmärke</translation>
     </message>
     <message>
         <source>Show list of bookmarks</source>
-        <translation type="unfinished"></translation>
+        <translation>Visa bokmärkeslistan</translation>
     </message>
     <message>
         <source>Open new private window</source>
-        <translation type="unfinished"></translation>
+        <translation>Öppna ett nytt privat fönster</translation>
     </message>
     <message>
         <source>Hide in-page search</source>
-        <translation type="unfinished"></translation>
+        <translation>Dölj på-sidan-sök</translation>
     </message>
     <message>
         <source>Start in-page search</source>
-        <translation type="unfinished"></translation>
+        <translation>Starta på-sidan-sök</translation>
     </message>
     <message>
         <source>Close current WebCat window</source>
-        <translation type="unfinished"></translation>
+        <translation>Stäng aktuellt WebCat-fönster</translation>
     </message>
     <message>
         <source>Show in-page search</source>
-        <translation type="unfinished"></translation>
+        <translation>Visa på-sidan-sök</translation>
     </message>
     <message>
         <source>Reload current website</source>
-        <translation type="unfinished"></translation>
+        <translation>Hämta om aktuell webbsida</translation>
     </message>
     <message>
         <source>Hide list of bookmarks</source>
-        <translation type="unfinished"></translation>
+        <translation>Dölj bokmärkeslistan</translation>
     </message>
 </context>
 <context>
     <name>KeyboardOverviewPage</name>
     <message>
         <source>Current Keyboard Shortcuts</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktuella tangentbordsgenvägar</translation>
     </message>
     <message>
         <source>You have selected keyboard shortcuts which mimic some current popular browsers. Take a look at the list below to see what they are or try them out.</source>
-        <translation type="unfinished"></translation>
+        <translation>Du har valt tangentbordsgenvägar som efterliknar vissa populära webbläsare. Ta en titt på listan nedan för att se vad de är, eller prova dem.</translation>
     </message>
     <message>
         <source>You have selected BB10 (Blackberry 10) compatible keyboard shortcuts. Take a look at the list below to see what they are or try them out.</source>
-        <translation type="unfinished"></translation>
+        <translation>Du har valt BB10-kompatibla (BlackBerry 10) tangentbordsgenvägar. Ta en titt på listan nedan för att se vad de är, eller prova dem.</translation>
     </message>
 </context>
 <context>
@@ -1049,11 +1049,11 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
     </message>
     <message>
         <source>When unchecked, common multi-key shortcuts from other browsers are used</source>
-        <translation type="unfinished"></translation>
+        <translation>Vid avmarkering används vanliga tangentbordsgenvägar från andra webbläsare</translation>
     </message>
     <message>
         <source>BB10 Hardware Keyboard shortcuts</source>
-        <translation type="unfinished"></translation>
+        <translation>BB10-hårdvarutangentbordsgenvägar</translation>
     </message>
 </context>
 <context>
@@ -1105,7 +1105,7 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
     </message>
     <message>
         <source> added to Bookmarks</source>
-        <translation type="unfinished"></translation>
+        <translation>Bokmärke tillagt</translation>
     </message>
 </context>
 <context>
