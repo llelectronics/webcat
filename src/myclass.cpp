@@ -26,6 +26,11 @@ MyClass::MyClass(QQuickView *v)
     if (!isFile(h + "/.local/share/applications/harbour-webcat-open-url.desktop")) {
         cpFile.copy("/usr/share/harbour-webcat/harbour-webcat-open-url.desktop", h + "/.local/share/applications/harbour-webcat-open-url.desktop");
     }
+    if (!isFile(h + "/.local/share/applications/open-url.desktop")) {
+        cpFile.copy("/usr/share/applications/open-url.desktop", h + "/.local/share/applications/open-url.desktop");
+        QProcess *proc = new QProcess();
+        proc->start("update-desktop-database "+ h +"/.local/share/applications");
+    }
     if (!existsPath(h + "/.local/share/dbus-1/services")) {
         QDir makePath;
         makePath.mkpath(h + "/.local/share/dbus-1/services");

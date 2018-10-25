@@ -7,3 +7,4 @@ NotShowIn=X-MeeGo;
 MimeType=text/html;x-scheme-handler/http;x-scheme-handler/https;
 X-Maemo-Service=org.harbour.webcat
 X-Maemo-Method=org.harbour.webcat.openUrl
+Hidden=true;
