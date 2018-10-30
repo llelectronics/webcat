@@ -78,7 +78,7 @@
     </message>
     <message>
         <source>The Backup includes all cookies, bookmarks, history and settings for Webcat.</source>
-        <translation>La copia de seguridad incluye las cookies, marcadores, historial y ajustes de Webcat.</translation>
+        <translation>La copia de seguridad incluye cookies, marcadores, historial y ajustes de Webcat.</translation>
     </message>
     <message>
         <source>Restore Backup</source>
@@ -95,8 +95,8 @@
     <message>
         <source>Restoring overwrites all cookies, bookmarks, history and settings for Webcat from the backup file.
 Please restart for changes to take effect.</source>
-        <translation>Al restaurar se sobrescriben las cookies, marcadores, historial y ajustes de Webcat con los de la copia de seguridad.
-Por favor, reinicia para que los cambios surtan efecto.</translation>
+        <translation>Al restaurar se sobrescriben cookies, marcadores, historial y ajustes de Webcat con los de la copia de seguridad.
+Reinicia para que los cambios surtan efecto.</translation>
     </message>
     <message>
         <source>Restoring Backup</source>
@@ -454,137 +454,137 @@ Si no estás seguro, rechaza el certificado. Esto podría hacer que la página n
     </message>
     <message>
         <source>Page History: Go back</source>
-        <translation type="unfinished"></translation>
+        <translation>Historial de página: atrás</translation>
     </message>
     <message>
         <source>Page History: Go forward</source>
-        <translation type="unfinished"></translation>
+        <translation>Historial de página: siguiente</translation>
     </message>
     <message>
         <source>Open new tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Abrir nueva pestaña</translation>
     </message>
     <message>
         <source>Open new window</source>
-        <translation type="unfinished"></translation>
+        <translation>Abrir nueva ventana</translation>
     </message>
     <message>
         <source>Close current tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Cerrar pestaña actual</translation>
     </message>
     <message>
         <source>Switch to next tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Cambiar a siguiente pestaña</translation>
     </message>
     <message>
         <source>Switch to previous tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Cambiar a pestaña anterior</translation>
     </message>
     <message>
         <source>Toggle reader mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Cambiar a modo lectura</translation>
     </message>
     <message>
         <source>Focus URL bar</source>
-        <translation type="unfinished"></translation>
+        <translation>Situar cursor en barra de direcciones</translation>
     </message>
     <message>
         <source>Esc</source>
         <comment>Key</comment>
-        <translation type="unfinished"></translation>
+        <translation>Esc</translation>
     </message>
     <message>
         <source>Ctrl</source>
         <comment>Key</comment>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl</translation>
     </message>
     <message>
         <source>Shift</source>
         <comment>Key</comment>
-        <translation type="unfinished"></translation>
+        <translation>Shift</translation>
     </message>
     <message>
         <source>Tab</source>
         <comment>Key</comment>
-        <translation type="unfinished"></translation>
+        <translation>Tab</translation>
     </message>
     <message>
         <source>End</source>
         <comment>Key</comment>
-        <translation type="unfinished"></translation>
+        <translation>Fin</translation>
     </message>
     <message>
         <source>Home</source>
         <comment>Key</comment>
-        <translation type="unfinished">Carpeta personal</translation>
+        <translation>Inicio</translation>
     </message>
     <message>
         <source>Alt</source>
         <comment>Key</comment>
-        <translation type="unfinished"></translation>
+        <translation>Alt</translation>
     </message>
     <message>
         <source>Scroll current website to bottom</source>
-        <translation type="unfinished"></translation>
+        <translation>Ir al final de la página actual</translation>
     </message>
     <message>
         <source>Scroll current website to top</source>
-        <translation type="unfinished"></translation>
+        <translation>Ir al principio de la página actual</translation>
     </message>
     <message>
         <source>Stop loading the current website</source>
-        <translation type="unfinished"></translation>
+        <translation>Detener la carga de la página actual</translation>
     </message>
     <message>
         <source>Add current website as a bookmark</source>
-        <translation type="unfinished"></translation>
+        <translation>Añadir página actual a marcadores</translation>
     </message>
     <message>
         <source>Show list of bookmarks</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar lista de marcadores</translation>
     </message>
     <message>
         <source>Open new private window</source>
-        <translation type="unfinished"></translation>
+        <translation>Abrir nueva ventana privada</translation>
     </message>
     <message>
         <source>Hide in-page search</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocultar búsqueda en página</translation>
     </message>
     <message>
         <source>Start in-page search</source>
-        <translation type="unfinished"></translation>
+        <translation>Iniciar búsqueda en página</translation>
     </message>
     <message>
         <source>Close current WebCat window</source>
-        <translation type="unfinished"></translation>
+        <translation>Cerrar ventana actual de WebCat</translation>
     </message>
     <message>
         <source>Show in-page search</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar búsqueda en página</translation>
     </message>
     <message>
         <source>Reload current website</source>
-        <translation type="unfinished"></translation>
+        <translation>Volver a cargar página actual</translation>
     </message>
     <message>
         <source>Hide list of bookmarks</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocultar lista de marcadores</translation>
     </message>
 </context>
 <context>
     <name>KeyboardOverviewPage</name>
     <message>
         <source>Current Keyboard Shortcuts</source>
-        <translation type="unfinished"></translation>
+        <translation>Atajos de teclado actual</translation>
     </message>
     <message>
         <source>You have selected keyboard shortcuts which mimic some current popular browsers. Take a look at the list below to see what they are or try them out.</source>
-        <translation type="unfinished"></translation>
+        <translation>Has seleccionado atajos de teclado como tienen algunos de los navegadores populares de hoy. Echa un vistazo a la lista de abajo para ver cuáles son o probarlos.</translation>
     </message>
     <message>
         <source>You have selected BB10 (Blackberry 10) compatible keyboard shortcuts. Take a look at the list below to see what they are or try them out.</source>
-        <translation type="unfinished"></translation>
+        <translation>Has seleccionado atajos de teclado compatible con BB10 (Blackberry 10). Echa un vistazo a la lista de abajo para ver cuáles son o probarlos.</translation>
     </message>
 </context>
 <context>
@@ -1049,11 +1049,11 @@ Si no estás seguro, rechaza el certificado. Esto podría hacer que la página n
     </message>
     <message>
         <source>When unchecked, common multi-key shortcuts from other browsers are used</source>
-        <translation type="unfinished"></translation>
+        <translation>Al desmarcar se usan los atajos de teclado comunes de otros navegadores</translation>
     </message>
     <message>
         <source>BB10 Hardware Keyboard shortcuts</source>
-        <translation type="unfinished"></translation>
+        <translation>Atajos de teclado BB10</translation>
     </message>
 </context>
 <context>
@@ -1105,7 +1105,7 @@ Si no estás seguro, rechaza el certificado. Esto podría hacer que la página n
     </message>
     <message>
         <source> added to Bookmarks</source>
-        <translation type="unfinished"></translation>
+        <translation> añadido a marcadores</translation>
     </message>
 </context>
 <context>
