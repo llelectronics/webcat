@@ -14,8 +14,8 @@ Rectangle {
     radius: 5
     //color: "white"
     gradient: Gradient {
-        GradientStop { position: 0.0; color: "#262626" }
-        GradientStop { position: 0.85; color: "#1F1F1F"}
+        GradientStop { position: 0.0; color: isLightTheme ? "#E9E9E9" : "#262626" }
+        GradientStop { position: 0.85; color: isLightTheme ? "#DFDFDF" : "#1F1F1F"}
     }
     border {
         color: Theme.secondaryHighlightColor
@@ -57,7 +57,7 @@ Rectangle {
                         right: parent.right
                     }
                     elide: Text.ElideRight
-                    color: "white"
+                    color: isLightTheme ? "black" : "white"
                     text: {
                         if (mediaTitle) return mediaTitle
                         else return url

@@ -94,7 +94,7 @@ Item {
         // bg rectangle for context menu so it covers underlying items
         Rectangle {
             id: rect
-            color: "black"
+            color: isLightTheme ? "white" : "black"
             width: parent.width
             //height: _contextMenu ? _contextMenu.height : 0
         }

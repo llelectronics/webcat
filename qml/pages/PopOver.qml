@@ -43,7 +43,7 @@ MouseArea {
             radius: 5
             anchors.centerIn: parent
             antialiasing: true;
-            color: "black"
+            color: isLightTheme ? "#DFDFDF" :"black"
 
             Text {
                 id: popoverUpCaret
@@ -79,7 +79,7 @@ MouseArea {
                         Text {
                             anchors { left: parent.left; leftMargin: Theme.paddingSmall; right: parent.right; rightMargin: Theme.paddingSmall; verticalCenter: parent.verticalCenter }
                             text: model.text
-                            color: model.selected ? Theme.highlightColor : "white"
+                            color: model.selected ? Theme.highlightColor : isLightTheme ? "black" : "white"
                             font { pixelSize: Theme.fontSizeSmall }
                             elide: Text.ElideRight
                         }

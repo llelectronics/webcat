@@ -32,8 +32,8 @@ Rectangle {
     }
 
     gradient: Gradient {
-        GradientStop { position: 0.0; color: "#262626" }
-        GradientStop { position: 0.85; color: "#1F1F1F"}
+        GradientStop { position: 0.0; color: isLightTheme ? "#dfdfdf" : "#262626" }
+        GradientStop { position: 0.85; color: isLightTheme ? "#dfdfdf" : "#1F1F1F"}
     }
     anchors.bottom: {
         if (dataContainer.extraToolbar.enabled) return dataContainer.extraToolbar.top

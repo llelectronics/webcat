@@ -849,7 +849,7 @@ Page {
         z: mediaDownloadRec.z + 1
         visible: false
         opacity: 0
-        color: "black"
+        color: isLightTheme ? "white" : "black"
         anchors.left: parent.left
         anchors.bottom: {
             if (parent.orientation == Orientation.Landscape || parent.orientation == Orientation.LandscapeInverted) toolbar.top

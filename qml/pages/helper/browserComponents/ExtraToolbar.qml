@@ -31,8 +31,8 @@ Rectangle {
 
     //color: Theme.highlightBackgroundColor // As alternative perhaps maybe someday
     gradient: Gradient {
-        GradientStop { position: 0.0; color: "#353535" }
-        GradientStop { position: 0.85; color: "#262626"}
+        GradientStop { position: 0.0; color: isLightTheme? "#f1f1f1" : "#353535" }
+        GradientStop { position: 0.85; color: isLightTheme ? "#e9e9e9" : "#262626" }
     }
 
     height: 0

@@ -58,10 +58,10 @@ MouseArea {
             anchors.centerIn: parent
             width: playPauseImg.width + 64
             height: playPauseImg.height + 64
-            color: "black"
+            color: isLightTheme ? "white" : "black"
             opacity: 0.4
             radius: width / 2
-            border.color: "white"
+            border.color: isLightTheme ? "black" : "white"
             border.width: 2
         }
 
@@ -99,7 +99,7 @@ MouseArea {
             //opacity: 0.5
             gradient: Gradient {
                 GradientStop { position: 0.0; color: "transparent" }
-                GradientStop { position: 1.0; color: "black" } //Theme.highlightColor} // Black seems to look and work better
+                GradientStop { position: 1.0; color: isLightTheme ? "white" : "black" } //Theme.highlightColor} // Black seems to look and work better
             }
             Label {
                 id: maxTime

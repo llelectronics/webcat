@@ -28,8 +28,8 @@ Rectangle {
 
     //color: Theme.highlightBackgroundColor // As alternative perhaps maybe someday
     gradient: Gradient {
-        GradientStop { position: 0.0; color: "#262626" }
-        GradientStop { position: 0.85; color: "#1F1F1F"}
+        GradientStop { position: 0.0; color: isLightTheme ? "#E9E9E9" : "#262626" }
+        GradientStop { position: 0.85; color: isLightTheme ? "#DFDFDF" : "#1F1F1F"}
     }
     height: fPage.toolbarheight
     anchors.bottom: fPage.bottom
@@ -277,7 +277,7 @@ Rectangle {
                 if (!torLogo.visible)
                     gotoButton.down ? Theme.highlightColor : Theme.primaryColor
                 else
-                    "yellow"
+                    isLightTheme ? "darkorange" : "yellow"
             }
             horizontalAlignment: Text.AlignHCenter
         }
@@ -295,7 +295,7 @@ Rectangle {
                 if (!torLogo.visible)
                     gotoButton.down ? Theme.highlightColor : Theme.primaryColor
                 else
-                    "yellow"
+                    isLightTheme ? "darkorange" : "yellow"
             }
             horizontalAlignment: Text.AlignHCenter
         }
@@ -539,7 +539,7 @@ Rectangle {
             }
             if(url.match(/https:\/\//))
             {
-                color = "lightgreen" // Indicator for https
+                color = isLightTheme ? "darkgreen" : "lightgreen" // Indicator for https
                 url = url.substring(8);
             }
             if(url.match(/^www\./))

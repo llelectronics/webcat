@@ -34,14 +34,14 @@ Item {
     Gradient {
         id: hightlight
         GradientStop { position: 0.0; color: Theme.highlightColor }
-        GradientStop { position: 0.10; color: "#262626" }
-        GradientStop { position: 0.85; color: "#1F1F1F"}
+        GradientStop { position: 0.10; color: isLightTheme ? "#e9e9e9" : "#262626" }
+        GradientStop { position: 0.85; color: isLightTheme ? "#dfdfdf" : "#1F1F1F"}
     }
 
     Gradient {
         id: normalBg
-        GradientStop { position: 0.0; color: "#262626" }
-        GradientStop { position: 0.85; color: "#1F1F1F"}
+        GradientStop { position: 0.0; color: isLightTheme ? "#e9e9e9" : "#262626" }
+        GradientStop { position: 0.85; color: isLightTheme ? "#dfdfdf" :"#1F1F1F"}
     }
 
     SequentialAnimation {
@@ -153,8 +153,8 @@ Item {
             width: parent.width //newTabImg.width + Theme.paddingLarge
             height: Theme.itemSizeExtraSmall //if (dataContainer) dataContainer.toolbarheight
             gradient: Gradient {
-                GradientStop { position: 0.0; color: "#262626" }
-                GradientStop { position: 0.85; color: "#1F1F1F"}
+                GradientStop { position: 0.0; color: isLightTheme ? "#e9e9e9" : "#262626" }
+                GradientStop { position: 0.85; color: isLightTheme ? "#dfdfdf" : "#1F1F1F"}
             }
             Image {
                 anchors.fill: parent
@@ -310,9 +310,9 @@ Item {
         parent: root.parent
         gradient: Gradient {
             GradientStop { position: 0.0; color: "transparent" }
-            GradientStop { position: 0.25; color: "#262626" }
-            GradientStop { position: 0.5; color: "#262626" }
-            GradientStop { position: 0.75; color: "#262626" }
+            GradientStop { position: 0.25; color: isLightTheme ? "#e9e9e9" : "#262626" }
+            GradientStop { position: 0.5; color: isLightTheme ? "#e9e9e9" : "#262626" }
+            GradientStop { position: 0.75; color: isLightTheme ? "#e9e9e9" : "#262626" }
             GradientStop { position: 0.95; color: "transparent"}
         }
         opacity: 0

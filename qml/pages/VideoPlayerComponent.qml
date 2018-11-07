@@ -1,6 +1,7 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 import QtMultimedia 5.0
+import QtGraphicalEffects 1.0
 import "helper/videoPlayerComponents"
 
 Item {
@@ -84,17 +85,17 @@ Item {
         id: headerBg
         width:parent.width
         height: {
-            if (urlHeader.visible && videoPage == false) urlHeader.height * 2
-            else if (urlHeader.visible) urlHeader.height + Theme.paddingLarge
-            else if (titleHeader.visible && videoPage == false) titleHeader.height * 2
-            else if (titleHeader.visible) titleHeader.height + Theme.paddingLarge
+            if (urlHeader.visible && videoPage == false) Theme.itemSizeExtraSmall + Theme.paddingLarge * 1.5
+            else if (urlHeader.visible) Theme.itemSizeExtraSmall + Theme.paddingLarge * 1.5
+            else if (titleHeader.visible && videoPage == false) Theme.itemSizeExtraSmall + Theme.paddingLarge * 1.5
+            else if (titleHeader.visible) Theme.itemSizeExtraSmall + Theme.paddingLarge * 1.5
         }
         visible: {
             if (urlHeader.visible || titleHeader.visible) return true
             else return false
         }
         gradient: Gradient {
-            GradientStop { position: 0.0; color: "black" }
+            GradientStop { position: 0.0; color: isLightTheme ? "white" : "black" }
             GradientStop { position: 1.0; color: "transparent" } //Theme.highlightColor} // Black seems to look and work better
         }
     }
@@ -112,7 +113,7 @@ Item {
             else return false
         }
         font.pixelSize: mainWindow.applicationActive ? Theme.fontSizeMedium : Theme.fontSizeHuge
-        color: "white"
+        color: isLightTheme ? "black" : "white"
         states: [
             State {
                 name: "cover"
@@ -136,7 +137,7 @@ Item {
             else return false
         }
         font.pixelSize: mainWindow.applicationActive ? Theme.fontSizeMedium : Theme.fontSizeHuge
-        color: "white"
+        color: isLightTheme ? "black" : "white"
         states: [
             State {
                 name: "cover"
@@ -373,10 +374,10 @@ Item {
             anchors.centerIn: fsIcon
             width: fsIcon.width + 2
             height: fsIcon.height + 2
-            color: "black"
+            color: isLightTheme ? "white" : "black"
             opacity: 0.4
             radius: width / 2
-            border.color: "white"
+            border.color: isLightTheme ? "black" : "white"
             border.width: 2
             visible: videoPoster.controls.opacity && (videoPage == false)
         }
@@ -385,10 +386,10 @@ Item {
             anchors.centerIn: closeIcon
             width: closeIcon.width + 2
             height: closeIcon.height + 2
-            color: "black"
+            color: isLightTheme ? "white" : "black"
             opacity: 0.4
             radius: width / 2
-            border.color: "white"
+            border.color: isLightTheme ? "black" : "white"
             border.width: 2
             visible: videoPoster.controls.opacity && (videoPage == false)
         }
@@ -407,6 +408,12 @@ Item {
             height: Theme.iconSizeMedium
             icon.width: width
             icon.height: height
+            ColorOverlay {
+                anchors.fill: parent
+                source: parent
+                color: "black"
+                visible: isLightTheme
+            }
         }
         IconButton {
             id: closeIcon
@@ -416,12 +423,20 @@ Item {
             anchors.rightMargin: Theme.paddingMedium
             y: headerBg.height
             visible: (videoPage == false)
+            anchors.top: urlHeader.bottom
             anchors.topMargin: Theme.paddingLarge * 2
             opacity: videoPoster.controls.opacity
             width: height
             height: Theme.iconSizeMedium
             icon.width: width
             icon.height: height
+
+            ColorOverlay {
+                anchors.fill: parent
+                source: parent
+                color: "black"
+                visible: isLightTheme
+            }
         }
     }
 
@@ -479,7 +494,7 @@ Item {
         width: parent.width
         height: Theme.fontSizeHuge
         y: coverTime.y + 10
-        color: "black"
+        color: isLightTheme ? "white" : "black"
         opacity: 0.4
         visible: coverTime.visible
     }

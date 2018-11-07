@@ -46,14 +46,14 @@ Rectangle {
     }
 
     gradient: Gradient {
-        GradientStop { position: 0.0; color: "#262626" }
-        GradientStop { position: 0.85; color: "#1F1F1F"}
+        GradientStop { position: 0.0; color: isLightTheme ? "#e9e9e9" : "#262626" }
+        GradientStop { position: 0.85; color: isLightTheme ? "#dfdfdf" : "#1F1F1F"}
     }
     opacity: 0.98
 
     TextField { // Allows copying
         id: contextLabel
-        color: "white"
+        color: isLightTheme ? "black" : "white"
         readOnly: true
         anchors {
             top: parent.top; left: parent.left; right: parent.right;
@@ -62,7 +62,7 @@ Rectangle {
     }
     TextField { // Allows copying for images
         id: imageLabel
-        color: "white"
+        color: isLightTheme ? "black" : "white"
         readOnly: true
         visible: contextLabel.text == ""
         anchors {

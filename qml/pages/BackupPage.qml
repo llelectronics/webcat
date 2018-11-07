@@ -97,7 +97,7 @@ Please restart for changes to take effect.")
     }
 
     Rectangle {
-        color: "black"
+        color: isLightTheme ? "white": "black"
         opacity: 0.60
         anchors.fill: parent
         visible: {
