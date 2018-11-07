@@ -31,6 +31,14 @@ MouseArea {
         videoItem.player.play();
     }
 
+    function ffwd(seconds) {
+        videoItem.player.seek((positionSlider.value*1000) + (seconds * 1000))
+    }
+
+    function rew(seconds) {
+        videoItem.player.seek((positionSlider.value*1000) - (seconds * 1000))
+    }
+
     Connections {
         target: videoItem._loaded ? videoItem.player : null
 
@@ -48,6 +56,8 @@ MouseArea {
         id: controls
         width: videoItem.width
         height: videoItem.height
+        property alias rew: rewRec
+        property alias ffwd: ffwdRec
 
         opacity: 1.0
         Behavior on opacity { FadeAnimation { id: controlFade } }
@@ -58,6 +68,30 @@ MouseArea {
             anchors.centerIn: parent
             width: playPauseImg.width + 64
             height: playPauseImg.height + 64
+            color: isLightTheme ? "white" : "black"
+            opacity: 0.4
+            radius: width / 2
+            border.color: isLightTheme ? "black" : "white"
+            border.width: 2
+        }
+
+        Rectangle {
+            id: ffwdRec
+            anchors.centerIn: ffwdImg
+            width: playPauseImg.width + Theme.iconSizeSmall
+            height: playPauseImg.height + Theme.iconSizeSmall
+            color: isLightTheme ? "white" : "black"
+            opacity: 0.4
+            radius: width / 2
+            border.color: isLightTheme ? "black" : "white"
+            border.width: 2
+        }
+
+        Rectangle {
+            id: rewRec
+            anchors.centerIn: rewImg
+            width: playPauseImg.width + Theme.iconSizeSmall
+            height: playPauseImg.height + Theme.iconSizeSmall
             color: isLightTheme ? "white" : "black"
             opacity: 0.4
             radius: width / 2
@@ -86,6 +120,53 @@ MouseArea {
                         videoItem.playClicked();
                         videoItem.player.source = videoItem.source;
                         videoItem.player.play();
+                    }
+                }
+            }
+        }
+
+        Image {
+            id: ffwdImg
+            anchors.verticalCenter: playPauseImg.verticalCenter
+            anchors.left: playPauseImg.right
+            anchors.leftMargin: Theme.paddingLarge * 2 + Theme.paddingMedium
+            source: "image://theme/icon-m-enter-accept"
+            width: Theme.iconSizeMedium
+            height: width
+            MouseArea {
+                anchors.centerIn: parent
+                width: parent.width + Theme.iconSizeMedium
+                height: parent.height + Theme.iconSizeMedium
+                enabled: { if (controls.opacity == 1.0) return true; else return false; }
+                onClicked: {
+                    //console.debug("VideoItem.source length = " + videoItem.source.toString().length)
+                    if (videoItem.source.toString().length !== 0) {
+                        //console.debug("Yeah we have a video source")
+                        ffwd(10)
+                    }
+                }
+            }
+        }
+
+        Image {
+            id: rewImg
+            anchors.verticalCenter: playPauseImg.verticalCenter
+            anchors.right: playPauseImg.left
+            anchors.rightMargin: Theme.paddingLarge * 2 + Theme.paddingMedium
+            source: "image://theme/icon-m-enter-accept"
+            width: Theme.iconSizeMedium
+            height: width
+            mirror: true
+            MouseArea {
+                anchors.centerIn: parent
+                width: parent.width + Theme.iconSizeMedium
+                height: parent.height + Theme.iconSizeMedium
+                enabled: { if (controls.opacity == 1.0) return true; else return false; }
+                onClicked: {
+                    //console.debug("VideoItem.source length = " + videoItem.source.toString().length)
+                    if (videoItem.source.toString().length !== 0) {
+                        //console.debug("Yeah we have a video source")
+                        rew(5)
                     }
                 }
             }
