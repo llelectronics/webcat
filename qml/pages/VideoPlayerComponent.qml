@@ -442,10 +442,10 @@ Item {
 
     children: [
 
-        // Always use a black background
+        // Use a black background if not isLightTheme
         Rectangle {
             anchors.fill: parent
-            color: "black"
+            color: isLightTheme ? "white" : "black"
             visible: mediaItem.active
         },
 
