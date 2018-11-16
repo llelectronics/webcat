@@ -255,7 +255,7 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
     </message>
     <message>
         <source>Deleting </source>
-        <translation>Tar bort</translation>
+        <translation>Tar bort </translation>
     </message>
     <message>
         <source>Delete</source>
@@ -416,7 +416,7 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
     </message>
     <message>
         <source>Accept certificate from </source>
-        <translation>Acceptera certifikat från</translation>
+        <translation>Acceptera certifikat från </translation>
     </message>
     <message>
         <source>Webkit engine crashed! Restarting...</source>
@@ -670,7 +670,7 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
     </message>
     <message>
         <source>Error pasting file </source>
-        <translation>Kunde inte klistra in filen</translation>
+        <translation>Kunde inte klistra in filen </translation>
     </message>
     <message>
         <source>File operation succeeded</source>
@@ -799,7 +799,7 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
     </message>
     <message>
         <source>Deleting </source>
-        <translation>Tar bort</translation>
+        <translation>Tar bort </translation>
     </message>
     <message>
         <source>Rename</source>
@@ -1105,7 +1105,7 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
     </message>
     <message>
         <source> added to Bookmarks</source>
-        <translation>Bokmärke tillagt</translation>
+        <translation> tillagt i Bokmärken</translation>
     </message>
 </context>
 <context>
