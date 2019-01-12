@@ -137,14 +137,17 @@ Page {
     // Todo: Need to merge fixUrl with loadUrl if latter is even necessary anymore
     function fixUrl(nonFixedUrl) {
         var valid = nonFixedUrl
-        if (valid.indexOf(":")<0) {
+        if (!isUrl(valid)) {
+            if (valid.indexOf("file://") || valid.indexOf("about:")) return valid;
             if (valid.indexOf(".")<0 || valid.indexOf(" ")>=0) {
                 return url = mainWindow.searchEngine.replace("%s",encodeURIComponent(valid))
             } else {
                 return "http://"+valid;
             }
         }
-        else return valid;
+        else {
+            return valid;
+        }
     }
 
     function showContextMenu(hrefUrl) {
