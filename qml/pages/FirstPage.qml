@@ -145,6 +145,9 @@ Page {
                 return "http://"+valid;
             }
         }
+        else if (valid.indexOf("://")<0){
+            return "http://"  + valid;
+        }
         else {
             return valid;
         }
