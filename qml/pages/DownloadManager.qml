@@ -225,7 +225,7 @@ Page {
             SilicaListView {
                 id: downloadList
                 width: parent.width
-                height: parent.height / 2.75
+                height: isPortrait ? parent.height / 2.75 : parent.height / 3
                 model: downloadVisualModel
                 clip: true
             }
@@ -285,6 +285,8 @@ Page {
                 id: activeDownloadLabel
                 text: qsTr("Active Downloads: ") + (_manager.activeDownloads == 0 ? qsTr("none") : "1/" + _manager.totalDownloads)
                 color: Theme.primaryColor
+                anchors.left: parent.left
+                anchors.leftMargin: Theme.paddingMedium
                 font.pixelSize: _manager.activeDownloads == 0 ? Theme.fontSizeMedium : Theme.fontSizeSmall
             }
 

@@ -138,8 +138,8 @@ Page {
     function fixUrl(nonFixedUrl) {
         var valid = nonFixedUrl
         if (!isUrl(valid)) {
-            if (valid.indexOf("file://") || valid.indexOf("about:")) return valid;
-            if (valid.indexOf(".")<0 || valid.indexOf(" ")>=0) {
+            if (valid.indexOf("file://") == 0 || valid.indexOf("about:") == 0) return valid;
+            else if (valid.indexOf(".")<0 || valid.indexOf(" ")>=0) {
                 return url = mainWindow.searchEngine.replace("%s",encodeURIComponent(valid))
             } else {
                 return "http://"+valid;
