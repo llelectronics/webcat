@@ -266,6 +266,7 @@ Page {
             Component {
                 id: statusPage
                 Page {
+                    allowedOrientations: mainWindow.orient
                     PageHeader {
                         id: pheader
                         title: qsTr("Download Status")
@@ -287,6 +288,7 @@ Page {
             Component {
                 id: errorPage
                 Page {
+                    allowedOrientations: mainWindow.orient
                     PageHeader {
                         id: pheader
                         title: qsTr("Download Errors")
