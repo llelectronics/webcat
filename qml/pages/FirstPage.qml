@@ -212,8 +212,8 @@ Page {
         id: popup
         anchors.centerIn: parent
         z: 3
-        width: 400
-        height: 400
+        width: parent.width - (2 * Theme.paddingLarge)
+        height: parent.height / 3
         visible: false
         Rectangle {
             anchors.fill: parent
