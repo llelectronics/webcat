@@ -221,10 +221,6 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
         <translation>Interrompre</translation>
     </message>
     <message>
-        <source>Active Downloads: </source>
-        <translation>Téléchargements en cours :</translation>
-    </message>
-    <message>
         <source>Status</source>
         <translation>Etat</translation>
     </message>
@@ -261,10 +257,6 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
         <translation>Supprimer</translation>
     </message>
     <message>
-        <source>Current operation</source>
-        <translation>Opération en cours</translation>
-    </message>
-    <message>
         <source>Details</source>
         <translation>Détails</translation>
     </message>
@@ -279,10 +271,6 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
     <message>
         <source>Pause</source>
         <translation>Pause</translation>
-    </message>
-    <message>
-        <source>none</source>
-        <translation>Aucun</translation>
     </message>
 </context>
 <context>

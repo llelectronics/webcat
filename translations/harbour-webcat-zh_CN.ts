@@ -219,10 +219,6 @@ If you are unsure reject the certificate. That might lead to a non loading websi
         <translation>中止下载</translation>
     </message>
     <message>
-        <source>Active Downloads: </source>
-        <translation>当前下载任务：</translation>
-    </message>
-    <message>
         <source>Status</source>
         <translation>查看状态信息</translation>
     </message>
@@ -259,10 +255,6 @@ If you are unsure reject the certificate. That might lead to a non loading websi
         <translation>删除</translation>
     </message>
     <message>
-        <source>Current operation</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Details</source>
         <translation type="unfinished"></translation>
     </message>
@@ -276,10 +268,6 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Pause</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>none</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

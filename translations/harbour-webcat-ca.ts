@@ -222,10 +222,6 @@ En cas de dubte, refuseu el certificat malgrat que això pot provocar que no es 
         <translation>Atura</translation>
     </message>
     <message>
-        <source>Active Downloads: </source>
-        <translation>Descàrregues actives</translation>
-    </message>
-    <message>
         <source>Status</source>
         <translation>Estat</translation>
     </message>
@@ -262,10 +258,6 @@ En cas de dubte, refuseu el certificat malgrat que això pot provocar que no es 
         <translation>Elimina</translation>
     </message>
     <message>
-        <source>Current operation</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Details</source>
         <translation type="unfinished"></translation>
     </message>
@@ -279,10 +271,6 @@ En cas de dubte, refuseu el certificat malgrat que això pot provocar que no es 
     </message>
     <message>
         <source>Pause</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>none</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

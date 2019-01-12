@@ -230,65 +230,18 @@ Page {
                 clip: true
             }
 
-            SectionHeader {
-                text: qsTr("Current operation")
-            }
+//            SectionHeader {
+//                text: qsTr("Current operation")
+//            }
 
-            Label {
-                id: curDownloadLabel
-                text: _manager.curName
-                color: Theme.primaryColor
-                anchors.horizontalCenter: parent.horizontalCenter
-                font.pixelSize: Theme.fontSizeSmall
-                truncationMode: TruncationMode.Fade
-                visible: {
-                    if (_manager.activeDownloads != 0) return true
-                    else false
-                }
-            }
-
-            ProgressBar {
-                width: parent.width
-                maximumValue: _manager.progressTotal
-                value: _manager.progressValue
-                label: _manager.progressMessage
-                visible: {
-                    if (_manager.activeDownloads != 0) return true
-                    else false
-                }
-            }
-
-            Row {
-                visible: {
-                    if (_manager.activeDownloads != 0) return true
-                    else false
-                }
-                anchors.horizontalCenter: parent.horizontalCenter
-                spacing: Theme.paddingLarge
-                Button {
-                    id: pauseButton
-                    text: _manager.isPaused ? qsTr("Resume") : qsTr("Pause")
-                    onClicked: {
-                        if (!_manager.isPaused) _manager.pause();
-                        else _manager.resume();
-                    }
-                }
-
-                Button {
-                    id: abortButton
-                    text: qsTr("Abort")
-                    onClicked: { _manager.downloadAbort(); }
-                }
-            }
-
-            Label {
-                id: activeDownloadLabel
-                text: qsTr("Active Downloads: ") + (_manager.activeDownloads == 0 ? qsTr("none") : "1/" + _manager.totalDownloads)
-                color: Theme.primaryColor
-                anchors.left: parent.left
-                anchors.leftMargin: Theme.paddingMedium
-                font.pixelSize: _manager.activeDownloads == 0 ? Theme.fontSizeMedium : Theme.fontSizeSmall
-            }
+//            Label {
+//                id: activeDownloadLabel
+//                text: qsTr("Active Downloads: ") + (_manager.activeDownloads == 0 ? qsTr("none") : "1/" + _manager.totalDownloads)
+//                color: Theme.primaryColor
+//                anchors.left: parent.left
+//                anchors.leftMargin: Theme.paddingMedium
+//                font.pixelSize: _manager.activeDownloads == 0 ? Theme.fontSizeMedium : Theme.fontSizeSmall
+//            }
 
             SectionHeader {
                 text: qsTr("Details")
@@ -396,5 +349,75 @@ Page {
             //                }
             //            }
         }
+    }
+    DockedPanel {
+        id: activeDownloadPanel
+
+        width: parent.width
+        height: activeDownloadColumn.height + Theme.paddingMedium
+
+        dock: Dock.Bottom
+        open: _manager.activeDownloads != 0
+
+        Rectangle {
+            anchors.fill: parent
+            color: Theme.overlayBackgroundColor
+            opacity: 0.8
+        }
+
+        Column {
+            id: activeDownloadColumn
+
+            width: parent.width
+            spacing: Theme.paddingMedium
+
+            Label {
+                id: curDownloadLabel
+                text: _manager.curName
+                color: Theme.primaryColor
+                anchors.horizontalCenter: parent.horizontalCenter
+                font.pixelSize: Theme.fontSizeSmall
+                truncationMode: TruncationMode.Fade
+                visible: {
+                    if (_manager.activeDownloads != 0) return true
+                    else false
+                }
+            }
+
+            ProgressBar {
+                width: parent.width
+                maximumValue: _manager.progressTotal
+                value: _manager.progressValue
+                label: _manager.progressMessage
+                visible: {
+                    if (_manager.activeDownloads != 0) return true
+                    else false
+                }
+            }
+
+            Row {
+                visible: {
+                    if (_manager.activeDownloads != 0) return true
+                    else false
+                }
+                anchors.horizontalCenter: parent.horizontalCenter
+                spacing: Theme.paddingLarge
+                Button {
+                    id: pauseButton
+                    text: _manager.isPaused ? qsTr("Resume") : qsTr("Pause")
+                    onClicked: {
+                        if (!_manager.isPaused) _manager.pause();
+                        else _manager.resume();
+                    }
+                }
+
+                Button {
+                    id: abortButton
+                    text: qsTr("Abort")
+                    onClicked: { _manager.downloadAbort(); }
+                }
+            }
+        }
+
     }
 }

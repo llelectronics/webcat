@@ -222,10 +222,6 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
         <translation>Avbryt</translation>
     </message>
     <message>
-        <source>Active Downloads: </source>
-        <translation>Aktiva nerladdningar: </translation>
-    </message>
-    <message>
         <source>Status</source>
         <translation>Status</translation>
     </message>
@@ -262,10 +258,6 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
         <translation>Ta bort</translation>
     </message>
     <message>
-        <source>Current operation</source>
-        <translation>Aktuell åtgärd</translation>
-    </message>
-    <message>
         <source>Details</source>
         <translation>Detaljerat</translation>
     </message>
@@ -280,10 +272,6 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
     <message>
         <source>Pause</source>
         <translation>Paus</translation>
-    </message>
-    <message>
-        <source>none</source>
-        <translation>ingen</translation>
     </message>
 </context>
 <context>

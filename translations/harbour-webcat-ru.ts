@@ -221,10 +221,6 @@ If you are unsure reject the certificate. That might lead to a non loading websi
         <translation>Прервать</translation>
     </message>
     <message>
-        <source>Active Downloads: </source>
-        <translation>Активные загрузки:</translation>
-    </message>
-    <message>
         <source>Status</source>
         <translation>Статус</translation>
     </message>
@@ -261,10 +257,6 @@ If you are unsure reject the certificate. That might lead to a non loading websi
         <translation>Удалить</translation>
     </message>
     <message>
-        <source>Current operation</source>
-        <translation>Текущая операция</translation>
-    </message>
-    <message>
         <source>Details</source>
         <translation>Детали</translation>
     </message>
@@ -279,10 +271,6 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     <message>
         <source>Pause</source>
         <translation>Пауза</translation>
-    </message>
-    <message>
-        <source>none</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

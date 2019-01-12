@@ -222,10 +222,6 @@ Si no estás seguro, rechaza el certificado. Esto podría hacer que la página n
         <translation>Cancelar</translation>
     </message>
     <message>
-        <source>Active Downloads: </source>
-        <translation>Descargas activas: </translation>
-    </message>
-    <message>
         <source>Status</source>
         <translation>Estado</translation>
     </message>
@@ -262,10 +258,6 @@ Si no estás seguro, rechaza el certificado. Esto podría hacer que la página n
         <translation>Borrar</translation>
     </message>
     <message>
-        <source>Current operation</source>
-        <translation>Operación actual</translation>
-    </message>
-    <message>
         <source>Details</source>
         <translation>Detalles</translation>
     </message>
@@ -280,10 +272,6 @@ Si no estás seguro, rechaza el certificado. Esto podría hacer que la página n
     <message>
         <source>Pause</source>
         <translation>Detener</translation>
-    </message>
-    <message>
-        <source>none</source>
-        <translation>ninguno</translation>
     </message>
 </context>
 <context>

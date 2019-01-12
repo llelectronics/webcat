@@ -221,10 +221,6 @@ Jeśli nie jesteś pewien, powinieneś odrzucić certyfikat. Może to jednak uni
         <translation>Przerwij</translation>
     </message>
     <message>
-        <source>Active Downloads: </source>
-        <translation>Aktywne pobieranie:</translation>
-    </message>
-    <message>
         <source>Status</source>
         <translation>Status</translation>
     </message>
@@ -261,10 +257,6 @@ Jeśli nie jesteś pewien, powinieneś odrzucić certyfikat. Może to jednak uni
         <translation>Usuń</translation>
     </message>
     <message>
-        <source>Current operation</source>
-        <translation>Bieżąca operacja</translation>
-    </message>
-    <message>
         <source>Details</source>
         <translation>Szczegóły</translation>
     </message>
@@ -279,10 +271,6 @@ Jeśli nie jesteś pewien, powinieneś odrzucić certyfikat. Może to jednak uni
     <message>
         <source>Pause</source>
         <translation>Wstrzymaj</translation>
-    </message>
-    <message>
-        <source>none</source>
-        <translation>żaden</translation>
     </message>
 </context>
 <context>

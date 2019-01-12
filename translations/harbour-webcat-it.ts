@@ -222,10 +222,6 @@ Se non sei sicuro, rifiuta il certificato. Ma questo può impedire il caricament
         <translation>Annulla</translation>
     </message>
     <message>
-        <source>Active Downloads: </source>
-        <translation>Scaricamenti attivi:</translation>
-    </message>
-    <message>
         <source>Status</source>
         <translation>Stato</translation>
     </message>
@@ -262,10 +258,6 @@ Se non sei sicuro, rifiuta il certificato. Ma questo può impedire il caricament
         <translation>Elimina</translation>
     </message>
     <message>
-        <source>Current operation</source>
-        <translation>Operazione corrente</translation>
-    </message>
-    <message>
         <source>Details</source>
         <translation>Dettagli</translation>
     </message>
@@ -280,10 +272,6 @@ Se non sei sicuro, rifiuta il certificato. Ma questo può impedire il caricament
     <message>
         <source>Pause</source>
         <translation>Pausa</translation>
-    </message>
-    <message>
-        <source>none</source>
-        <translation>nessuno</translation>
     </message>
 </context>
 <context>

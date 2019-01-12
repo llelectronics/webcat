@@ -220,10 +220,6 @@ If you are unsure reject the certificate. That might lead to a non loading websi
         <translation>Keskeytä</translation>
     </message>
     <message>
-        <source>Active Downloads: </source>
-        <translation>Käynnissä olevat lataukset:</translation>
-    </message>
-    <message>
         <source>Status</source>
         <translation>Tila</translation>
     </message>
@@ -264,10 +260,6 @@ If you are unsure reject the certificate. That might lead to a non loading websi
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Current operation</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Details</source>
         <translation type="unfinished"></translation>
     </message>
@@ -277,10 +269,6 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Pause</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>none</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

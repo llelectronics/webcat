@@ -222,10 +222,6 @@ Wenn Sie sich unsicher sind lehnen sie das Zertifikat ab. Dies führt unter Umst
         <translation>Abbrechen</translation>
     </message>
     <message>
-        <source>Active Downloads: </source>
-        <translation>Aktive Downloads:</translation>
-    </message>
-    <message>
         <source>Status</source>
         <translation>Status</translation>
     </message>
@@ -262,10 +258,6 @@ Wenn Sie sich unsicher sind lehnen sie das Zertifikat ab. Dies führt unter Umst
         <translation>Löschen</translation>
     </message>
     <message>
-        <source>Current operation</source>
-        <translation>Laufende Operationen</translation>
-    </message>
-    <message>
         <source>Details</source>
         <translation>Details</translation>
     </message>
@@ -280,10 +272,6 @@ Wenn Sie sich unsicher sind lehnen sie das Zertifikat ab. Dies führt unter Umst
     <message>
         <source>Pause</source>
         <translation>Pausieren</translation>
-    </message>
-    <message>
-        <source>none</source>
-        <translation>keine</translation>
     </message>
 </context>
 <context>

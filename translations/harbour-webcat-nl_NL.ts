@@ -222,10 +222,6 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
         <translation>Afbreken</translation>
     </message>
     <message>
-        <source>Active Downloads: </source>
-        <translation>Actieve downloads:</translation>
-    </message>
-    <message>
         <source>Status</source>
         <translation>Status</translation>
     </message>
@@ -262,10 +258,6 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
         <translation>Verwijderen</translation>
     </message>
     <message>
-        <source>Current operation</source>
-        <translation>Huidige bewerking</translation>
-    </message>
-    <message>
         <source>Details</source>
         <translation>Details</translation>
     </message>
@@ -280,10 +272,6 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
     <message>
         <source>Pause</source>
         <translation>Pauzeren</translation>
-    </message>
-    <message>
-        <source>none</source>
-        <translation>geen</translation>
     </message>
 </context>
 <context>
