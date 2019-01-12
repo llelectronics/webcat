@@ -687,7 +687,7 @@ Page {
                 if (url == "about:bookmarks" && loadHP === true) { bookmarkList.show(); tabBar.show() }
                 else if (url == "about:") pageStack.push(Qt.resolvedUrl("AboutPage.qml"));
                 else if (url == "about:config") pageStack.push(Qt.resolvedUrl("SettingsPage.qml"));
-                else if (url == "about:file") pageStack.push(Qt.resolvedUrl("OpenDialog.qml"), { dataContainer: webview },PageStackAction.Immediate);
+                else if (url == "about:file") pageStack.push(Qt.resolvedUrl("OpenDialog.qml"), { dataContainer: page },PageStackAction.Immediate);
                 else if (url == "about:backup") pageStack.push(Qt.resolvedUrl("BackupPage.qml"));
                 else if (url == "about:download") pageStack.push(Qt.resolvedUrl("DownloadManager.qml"));
                 else if (url == "about:video") pageStack.push(Qt.resolvedUrl("VideoPlayer.qml"), { dataContainer: webview });
