@@ -225,7 +225,7 @@ Page {
             SilicaListView {
                 id: downloadList
                 width: parent.width
-                height: isPortrait ? parent.height / 2.75 : parent.height / 3
+                height: isPortrait ? parent.height / 2.75 : parent.height / 3.75
                 model: downloadVisualModel
                 clip: true
             }
