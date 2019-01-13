@@ -65,7 +65,7 @@ Page {
                     anchors.horizontalCenter: parent.horizontalCenter
                     onClicked: {
                         var openDialog = pageStack.push(Qt.resolvedUrl("OpenDialog.qml"),
-                                                        {"dataContainer":  flick, "selectMode": true, "filter" : [ "*.tar.gz", "*.gz" ]})
+                                                        {"dataContainer":  backupPage, "selectMode": true, "filter" : [ "*.tar.gz", "*.gz" ]})
                         openDialog.fileOpen.connect(function(file) {
                             remorse.execute(qsTr("Restoring Backup"), function() {
                                 busy.running = true;

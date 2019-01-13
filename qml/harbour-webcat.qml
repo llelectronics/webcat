@@ -432,7 +432,7 @@ ApplicationWindow
     }
     InfoBanner {
         id: infoBanner
-        z:1
+        z:99
     }
 }
 
