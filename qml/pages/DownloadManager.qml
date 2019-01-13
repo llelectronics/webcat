@@ -380,6 +380,8 @@ Page {
                 anchors.horizontalCenter: parent.horizontalCenter
                 font.pixelSize: Theme.fontSizeSmall
                 truncationMode: TruncationMode.Fade
+                horizontalAlignment: Text.AlignHCenter
+                width: parent.width
                 visible: {
                     if (_manager.activeDownloads != 0) return true
                     else false
