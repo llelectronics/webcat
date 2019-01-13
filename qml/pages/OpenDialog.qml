@@ -11,7 +11,7 @@ Page {
     property bool selectMode: false
     property bool onlyFolders: false
     property bool hiddenShow: false
-    property string path
+    property string path:  _fm.getHome()
     property variant filter: [ "*" ]
 
     property bool _loaded: false
@@ -87,7 +87,7 @@ Page {
 
     FolderListModel {
         id: fileModel
-        folder: path ? path: _fm.getHome()
+        folder: path
         showDirsFirst: true
         showDotAndDotDot: false
         showOnlyReadable: true
@@ -97,7 +97,7 @@ Page {
     // WORKAROUND showHidden buggy not refreshing
     FolderListModel {
         id: fileModelHidden
-        folder: path ? path: _fm.getHome()
+        folder: path
         showDirsFirst: true
         showDotAndDotDot: false
         showOnlyReadable: true
@@ -148,20 +148,18 @@ Page {
         anchors.fill: parent
 
         header: PageHeader {
-            title: findBaseName((fileModel.folder).toString())
-            description: findFullPath(fileModel.folder.toString())
+            title: findBaseName((path).toString())
+            description: hiddenShow ? path + " [.*]" : path
             MouseArea {
                 anchors.fill: parent
                 onClicked: {
                     if (!hiddenShow) {
                         view.model = fileModelHidden
                         view.model.showHidden = true
-                        parent.description = findFullPath(fileModel.folder.toString()) + " [.*]"
                     }
                     else {
                         view.model = fileModel
                         view.model.showHidden = false
-                        parent.description = findFullPath(fileModel.folder.toString())
                     }
                     hiddenShow = !hiddenShow
                 }
