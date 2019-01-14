@@ -664,6 +664,7 @@ Page {
                 searchMode = false;
                 toolbar.webTitle.visible = false;
                 toolbar.bookmarkButton.visible = false;
+                popup.visible = false;
             }
             else if (loadRequest.status == WebView.LoadFailedStatus)
             {
