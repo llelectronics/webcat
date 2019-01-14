@@ -140,6 +140,7 @@ Page {
         if (!isUrl(valid)) {
             if (valid.indexOf("file://") == 0 || valid.indexOf("about:") == 0) return valid;
             else if (/^\//.test(valid)) return "file://" + valid;
+            else if (/^https:/.test(valid) || /^http:/.test(valid)) return valid;
             else if (valid.indexOf(".")<0 || valid.indexOf(" ")>=0) {
                 return url = mainWindow.searchEngine.replace("%s",encodeURIComponent(valid))
             } else {
