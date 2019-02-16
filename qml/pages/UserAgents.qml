@@ -4,7 +4,7 @@ ListModel {
     id: userAgentModel
     ListElement {
         title: "Default Jolla Webkit"
-        agent: "Mozilla/5.0 (Maemo; Linux; U; Jolla; Sailfish; like Android) AppleWebKit/538.1 (KHTML, like Gecko) Version/5.1 Chrome/30.0.0.0 Mobile Safari/538.1 (compatible)"
+        agent: "Mozilla/5.0 (Maemo; Linux; U; Jolla; Sailfish; Android 2.3.5) AppleWebKit/538.1 (KHTML, like Gecko) Version/5.1 Chrome/30.0.0.0 Mobile Safari/538.1 (compatible)"
     }
     ListElement {
         title: "Alternative Jolla Webkit"
