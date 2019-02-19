@@ -185,6 +185,11 @@ Page {
 
     }
 
+    function enableDesktopScaling() {
+        webview.experimental.evaluateJavaScript(
+                    "document.querySelector(\"meta[name=viewport]\").setAttribute('content', 'width=device-width, initial-scale=1.0');");
+    }
+
     function enableNightMode() {
         fPage.webview.experimental.userStyleSheets.push(Qt.resolvedUrl("helper/nightmode.css"));
         nightMode = true;

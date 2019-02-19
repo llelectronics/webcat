@@ -181,6 +181,10 @@ Rectangle {
             highlighted = false
             extraToolbar.hide();
         }
+        onPressAndHold: {
+            console.log("Enable Desktop Scaling...")
+            fPage.enableDesktopScaling()
+        }
     }
 
     IconButton {
