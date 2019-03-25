@@ -2,6 +2,7 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 import harbour.webcat.FolderListModel 1.0
 import Nemo.Configuration 1.0
+import "helper/fmComponents"
 
 Page {
     id: page
@@ -67,9 +68,14 @@ Page {
                 }
                 return;
             }
-            else if ((mimeinfo[1] === "html" || mimeinfo[0] === "image")  && dataContainer) {  // TODO: Check if this works for image files aswell
+            else if ((mimeinfo[1] === "html")  && dataContainer) {  // TODO: Check if this works for image files aswell
                 dataContainer.url = path; // WTF this seems to work :P
                 pageStack.pop(dataContainer, PageStackAction.Animated);
+            }
+            else if (mimeinfo[0] === "image" && dataContainer) {
+                compoImgViewer.createObject (overlay, {
+                                                 "source" : path,
+                                             });
             } else {
                 mainWindow.infoBanner.parent = page
                 mainWindow.infoBanner.anchors.top = page.top
@@ -427,6 +433,38 @@ Page {
         anchors.topMargin: Theme.paddingLarge
         anchors.left: parent.left
         anchors.leftMargin: Theme.paddingLarge
+    }
+
+    Component {
+            id: compoImgViewer;
+
+            TouchBlocker {
+                id: blocker;
+                anchors.fill: parent;
+
+                property alias source : imgViewer.source;
+
+                Rectangle {
+                    color: Qt.rgba (1.0 - Theme.primaryColor.r, 1.0 - Theme.primaryColor.g, 1.0 - Theme.primaryColor.b, 0.85);
+                    anchors.fill: parent;
+                }
+                ImageViewer {
+                    id: imgViewer;
+                    source: "";
+                    active: true;
+                    anchors.fill: parent;
+                    onClicked: {
+                        blocker.destroy ();
+                    }
+
+                    property var root : mainWindow; // NOTE : to avoid QML warnings because it' baldy coded...
+                }
+            }
+        }
+
+    Item {
+        id: overlay;
+        anchors.fill: page;
     }
 
 }

@@ -174,6 +174,7 @@ DISTFILES += \
     qml/pages/helper/fmComponents/DirEntryDelegate.qml \
     qml/pages/img/sdcard.png \
     qml/pages/img/fileman.png \
-    harbour-webcat-open-url.desktop
+    harbour-webcat-open-url.desktop \
+    qml/pages/helper/fmComponents/ImageViewer.qml
 
 include(src/sortFilterProxyModel/SortFilterProxyModel.pri)

@@ -2,6 +2,14 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="fi">
 <context>
+    <name></name>
+    <message id="components_gallery-la-image-loading-failed">
+        <source>Oops, can&apos;t display the image</source>
+        <extracomment>Image loading failed</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>AboutPage</name>
     <message>
         <source>A simple webbrowser based on webkit.</source>
