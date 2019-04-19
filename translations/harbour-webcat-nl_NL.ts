@@ -6,21 +6,21 @@
     <message id="components_gallery-la-image-loading-failed">
         <source>Oops, can&apos;t display the image</source>
         <extracomment>Image loading failed</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Oeps, kan de afbeelding niet tonen</translation>
     </message>
 </context>
 <context>
     <name>AboutPage</name>
     <message>
         <source>A simple webbrowser based on webkit.</source>
-        <translation>Een eenvoudige webbrowser gebaseerd op webkit.</translation>
+        <translation>Een eenvoudige webbrowser gebaseerd op WebKit.</translation>
     </message>
 </context>
 <context>
     <name>AddBookmark</name>
     <message>
         <source>Edit Bookmark</source>
-        <translation>Bladwijzer bijwerken</translation>
+        <translation>Bladwijzer bewerken</translation>
     </message>
     <message>
         <source>Add Bookmark</source>
@@ -43,11 +43,11 @@
     <name>AuthenticationDialog</name>
     <message>
         <source>Authenticate</source>
-        <translation>Beveiligde verificatie</translation>
+        <translation>Authenticeren</translation>
     </message>
     <message>
         <source>The server %1 requires authentication. The server says: %2</source>
-        <translation>De server %1 vereist beveiligde verificatie. De server zegt: %2</translation>
+        <translation>De server %1 vereist authenticatie. De server zegt: %2</translation>
     </message>
     <message>
         <source>Enter your user name</source>
@@ -59,7 +59,7 @@
     </message>
     <message>
         <source>Enter password</source>
-        <translation>Wachtwoord invoeren</translation>
+        <translation>Voer je wachtwoord in</translation>
     </message>
     <message>
         <source>Password</source>
@@ -82,7 +82,7 @@
     </message>
     <message>
         <source>Backup saved successfully!</source>
-        <translation>Back-up opslaan geslaagd!</translation>
+        <translation>Back-up opgeslagen!</translation>
     </message>
     <message>
         <source>The Backup includes all cookies, bookmarks, history and settings for Webcat.</source>
@@ -154,14 +154,14 @@ Herstart om de wijzingen door te voeren.</translation>
     <name>ConfirmDialog</name>
     <message>
         <source>Accept ?</source>
-        <translation>Aanvaarden?</translation>
+        <translation>Accepteren?</translation>
     </message>
     <message>
         <source>Certificates are used to identify and make sure that the website you see is provided by the author you expect.
 Unknown certificates are either ones that are missing in the global configuration of your browser. Outdated ones or compromised ones.
 If you are unsure reject the certificate. That might lead to a non loading website though.</source>
         <translation>Certificaten worden gebruikt om de website die je bezoekt te identificeren en ervoor te zorgen dat ze aangeboden wordt door wie je verwacht.
-Onbekende certificaten zijn ofwel certificaten die ontbreken in de globale configuratie van je browser, verouderde of gecompromitteerde certificaten.
+Onbekende certificaten zijn ofwel certificaten die ontbreken in de globale configuratie van je browser, ofwel verouderde of gecompromitteerde certificaten.
 Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden dat de website niet meer laadt.</translation>
     </message>
 </context>
@@ -181,30 +181,30 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
     </message>
     <message>
         <source>Search..</source>
-        <translation>Zoeken...</translation>
+        <translation>Zoeken…</translation>
     </message>
 </context>
 <context>
     <name>CreateDirDialog</name>
     <message>
         <source>Error creating new directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Fout bij aanmaken van nieuwe map</translation>
     </message>
     <message>
         <source>Create Folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Map aanmaken</translation>
     </message>
     <message>
         <source>Create</source>
-        <translation type="unfinished"></translation>
+        <translation>Aanmaken</translation>
     </message>
     <message>
         <source>Create a new folder under</source>
-        <translation type="unfinished"></translation>
+        <translation>Maak een nieuwe map aan onder</translation>
     </message>
     <message>
         <source>Folder name</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapnaam</translation>
     </message>
 </context>
 <context>
@@ -247,11 +247,11 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
     </message>
     <message>
         <source>Opening...</source>
-        <translation>Bezig met openen...</translation>
+        <translation>Bezig met openen…</translation>
     </message>
     <message>
         <source>Show Downloadfolder</source>
-        <translation>Downloadmap weergeven</translation>
+        <translation>Downloadmap tonen</translation>
     </message>
     <message>
         <source>Clear Downloads</source>
@@ -259,7 +259,7 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
     </message>
     <message>
         <source>Deleting </source>
-        <translation>Bezig met verwijderen</translation>
+        <translation>Wordt verwijderd</translation>
     </message>
     <message>
         <source>Delete</source>
@@ -290,11 +290,11 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
     </message>
     <message>
         <source>Lock Orientation</source>
-        <translation>Lock-oriëntatie</translation>
+        <translation>Oriëntatie vergrendelen</translation>
     </message>
     <message>
         <source>Reader Mode</source>
-        <translation>Lezermodus</translation>
+        <translation>Leesmodus</translation>
     </message>
     <message>
         <source>Search</source>
@@ -310,69 +310,69 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
     </message>
     <message>
         <source>Night Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Nachtmodus</translation>
     </message>
     <message>
         <source>Day Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Dagmodus</translation>
     </message>
 </context>
 <context>
     <name>FileProperties</name>
     <message>
         <source>Location</source>
-        <translation type="unfinished"></translation>
+        <translation>Locatie</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation type="unfinished"></translation>
+        <translation>Type</translation>
     </message>
     <message>
         <source>Link to %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Koppeling naar %1</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Grootte</translation>
     </message>
     <message>
         <source>Permissions</source>
-        <translation type="unfinished"></translation>
+        <translation>Bestandsrechten</translation>
     </message>
     <message>
         <source>Owner</source>
-        <translation type="unfinished"></translation>
+        <translation>Eigenaar</translation>
     </message>
     <message>
         <source>Group</source>
-        <translation type="unfinished"></translation>
+        <translation>Groep</translation>
     </message>
     <message>
         <source>Last modified</source>
-        <translation type="unfinished"></translation>
+        <translation>Laatst bijgewerkt</translation>
     </message>
     <message>
         <source>Properties</source>
-        <translation type="unfinished"></translation>
+        <translation>Eigenschappen</translation>
     </message>
     <message>
         <source>Rename</source>
-        <translation type="unfinished"></translation>
+        <translation>Hernoemen</translation>
     </message>
     <message>
         <source>Change Permissions</source>
-        <translation type="unfinished"></translation>
+        <translation>Bestandsrechten wijzigen</translation>
     </message>
     <message>
         <source>Error renaming</source>
-        <translation type="unfinished"></translation>
+        <translation>Fout bij hernoemen</translation>
     </message>
 </context>
 <context>
     <name>FirstPage</name>
     <message>
         <source>Opening...</source>
-        <translation>Bezig met openen...</translation>
+        <translation>Bezig met openen…</translation>
     </message>
     <message>
         <source>Enter searchterm</source>
@@ -416,7 +416,7 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
     </message>
     <message>
         <source>Webkit engine crashed! Restarting...</source>
-        <translation>WebKit is gecrasht en wordt nu herstart...</translation>
+        <translation>WebKit is gecrasht en wordt nu herstart…</translation>
     </message>
     <message>
         <source>Webkit engine crashed too often!</source>
@@ -439,7 +439,7 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
     </message>
     <message>
         <source>Load Last Session</source>
-        <translation>Laad laatste sessie</translation>
+        <translation>Laatste sessie laden</translation>
     </message>
 </context>
 <context>
@@ -450,144 +450,144 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
     </message>
     <message>
         <source>Page History: Go back</source>
-        <translation type="unfinished"></translation>
+        <translation>Paginageschiedenis: teruggaan</translation>
     </message>
     <message>
         <source>Page History: Go forward</source>
-        <translation type="unfinished"></translation>
+        <translation>Paginageschiedenis: vooruitgaan</translation>
     </message>
     <message>
         <source>Open new tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Nieuw tabblad openen</translation>
     </message>
     <message>
         <source>Open new window</source>
-        <translation type="unfinished"></translation>
+        <translation>Nieuw venster openen</translation>
     </message>
     <message>
         <source>Close current tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Huidig tabblad sluiten</translation>
     </message>
     <message>
         <source>Switch to next tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Wisselen naar volgend tabblad</translation>
     </message>
     <message>
         <source>Switch to previous tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Wisselen naar vorig tabblad</translation>
     </message>
     <message>
         <source>Toggle reader mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Leesmodus in-/uitschakelen</translation>
     </message>
     <message>
         <source>Focus URL bar</source>
-        <translation type="unfinished"></translation>
+        <translation>Focus op URL-balk plaatsen</translation>
     </message>
     <message>
         <source>Esc</source>
         <comment>Key</comment>
-        <translation type="unfinished"></translation>
+        <translation>Esc</translation>
     </message>
     <message>
         <source>Ctrl</source>
         <comment>Key</comment>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl</translation>
     </message>
     <message>
         <source>Shift</source>
         <comment>Key</comment>
-        <translation type="unfinished"></translation>
+        <translation>Shift</translation>
     </message>
     <message>
         <source>Tab</source>
         <comment>Key</comment>
-        <translation type="unfinished"></translation>
+        <translation>Tab</translation>
     </message>
     <message>
         <source>End</source>
         <comment>Key</comment>
-        <translation type="unfinished"></translation>
+        <translation>End</translation>
     </message>
     <message>
         <source>Home</source>
         <comment>Key</comment>
-        <translation type="unfinished"></translation>
+        <translation>Home</translation>
     </message>
     <message>
         <source>Alt</source>
         <comment>Key</comment>
-        <translation type="unfinished"></translation>
+        <translation>Alt</translation>
     </message>
     <message>
         <source>Scroll current website to bottom</source>
-        <translation type="unfinished"></translation>
+        <translation>Scrollen naar onderkant van huidige website</translation>
     </message>
     <message>
         <source>Scroll current website to top</source>
-        <translation type="unfinished"></translation>
+        <translation>Scrollen naar bovenkant van huidige website</translation>
     </message>
     <message>
         <source>Stop loading the current website</source>
-        <translation type="unfinished"></translation>
+        <translation>Laden van huidige website stoppen</translation>
     </message>
     <message>
         <source>Add current website as a bookmark</source>
-        <translation type="unfinished"></translation>
+        <translation>Huidige website toevoegen als bladwijzer</translation>
     </message>
     <message>
         <source>Show list of bookmarks</source>
-        <translation type="unfinished"></translation>
+        <translation>Lijst met bladwijzers tonen</translation>
     </message>
     <message>
         <source>Open new private window</source>
-        <translation type="unfinished"></translation>
+        <translation>Nieuw privévenster openen</translation>
     </message>
     <message>
         <source>Hide in-page search</source>
-        <translation type="unfinished"></translation>
+        <translation>Zoekregel voor pagina verbergen</translation>
     </message>
     <message>
         <source>Start in-page search</source>
-        <translation type="unfinished"></translation>
+        <translation>Zoeken op deze pagina</translation>
     </message>
     <message>
         <source>Close current WebCat window</source>
-        <translation type="unfinished"></translation>
+        <translation>Huidig Webcat-venster sluiten</translation>
     </message>
     <message>
         <source>Show in-page search</source>
-        <translation type="unfinished"></translation>
+        <translation>Zoekregel voor pagina tonen</translation>
     </message>
     <message>
         <source>Reload current website</source>
-        <translation type="unfinished"></translation>
+        <translation>Huidige website herladen</translation>
     </message>
     <message>
         <source>Hide list of bookmarks</source>
-        <translation type="unfinished"></translation>
+        <translation>Lijst met bladwijzers verbergen</translation>
     </message>
 </context>
 <context>
     <name>KeyboardOverviewPage</name>
     <message>
         <source>Current Keyboard Shortcuts</source>
-        <translation type="unfinished"></translation>
+        <translation>Huidige sneltoetsen</translation>
     </message>
     <message>
         <source>You have selected keyboard shortcuts which mimic some current popular browsers. Take a look at the list below to see what they are or try them out.</source>
-        <translation type="unfinished"></translation>
+        <translation>Je hebt sneltoetsen geselecteerd die die van enkele populaire browsers nabootsen. Kijk even op de lijst hieronder welke sneltoetsen er zijn, en probeer ze eens uit.</translation>
     </message>
     <message>
         <source>You have selected BB10 (Blackberry 10) compatible keyboard shortcuts. Take a look at the list below to see what they are or try them out.</source>
-        <translation type="unfinished"></translation>
+        <translation>Je hebt sneltoetsen geselecteerd die compatibel zijn met BB10 (BlackBerry 10). Kijk even op de lijst hieronder welke sneltoetsen er zijn, en probeer ze eens uit.</translation>
     </message>
 </context>
 <context>
     <name>MediaDownloadRec</name>
     <message>
         <source>Opening...</source>
-        <translation>Bezig met openen...</translation>
+        <translation>Bezig met openen…</translation>
     </message>
 </context>
 <context>
@@ -610,7 +610,7 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
     </message>
     <message>
         <source>Created Desktop Launcher for Webcat Fileman</source>
-        <translation type="unfinished"></translation>
+        <translation>Starter voor Webcat-bestandsbeheerder aangemaakt</translation>
     </message>
 </context>
 <context>
@@ -625,12 +625,12 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
     </message>
     <message>
         <source>No valid Backup file. Did not find harbour-webcat Folder.</source>
-        <translation>Ongeldig back-upbestand. Map harbour-webcat kon niet gevonden worden.</translation>
+        <translation>Ongeldig back-upbestand. Map harbour-webcat kon niet worden gevonden.</translation>
     </message>
     <message>
         <source>Could not verify Backup file.
 </source>
-        <translation>Back-upbestand kon niet geverifieerd worden.
+        <translation>Back-upbestand kon niet worden geverifieerd.
 </translation>
     </message>
 </context>
@@ -638,23 +638,23 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
     <name>OpenDialog</name>
     <message>
         <source>Opening...</source>
-        <translation>Bezig met openen...</translation>
+        <translation>Bezig met openen…</translation>
     </message>
     <message>
         <source>Paste</source>
-        <translation type="unfinished"></translation>
+        <translation>Plakken</translation>
     </message>
     <message>
         <source>Deleting </source>
-        <translation>Bezig met verwijderen</translation>
+        <translation>Wordt verwijderd</translation>
     </message>
     <message>
         <source>directory</source>
-        <translation type="unfinished"></translation>
+        <translation>map</translation>
     </message>
     <message>
         <source>Cut</source>
-        <translation type="unfinished"></translation>
+        <translation>Knippen</translation>
     </message>
     <message>
         <source>Copy</source>
@@ -666,23 +666,23 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
     </message>
     <message>
         <source>Error pasting file </source>
-        <translation type="unfinished"></translation>
+        <translation>Fout bij plakken van bestand</translation>
     </message>
     <message>
         <source>File operation succeeded</source>
-        <translation type="unfinished"></translation>
+        <translation>Bestandsbewerking voltooid</translation>
     </message>
     <message>
         <source>Properties</source>
-        <translation type="unfinished"></translation>
+        <translation>Eigenschappen</translation>
     </message>
     <message>
         <source>Create Folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Map aanmaken</translation>
     </message>
     <message>
         <source>Add to places</source>
-        <translation type="unfinished"></translation>
+        <translation>Toevoegen aan plaatsen</translation>
     </message>
 </context>
 <context>
@@ -704,102 +704,102 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
     <name>PermissionDialog</name>
     <message>
         <source>Could not change permission</source>
-        <translation type="unfinished"></translation>
+        <translation>Kon bestandsrechten niet wijzigen</translation>
     </message>
     <message>
         <source>Change Permissions</source>
-        <translation type="unfinished"></translation>
+        <translation>Bestandsrechten wijzigen</translation>
     </message>
     <message>
         <source>Change</source>
-        <translation type="unfinished"></translation>
+        <translation>Wijzigen</translation>
     </message>
     <message>
         <source>Change permissions for</source>
-        <translation type="unfinished"></translation>
+        <translation>Bestandsrechten wijzigen voor</translation>
     </message>
     <message>
         <source>Read</source>
-        <translation type="unfinished"></translation>
+        <translation>Lezen</translation>
     </message>
     <message>
         <source>Write</source>
-        <translation type="unfinished"></translation>
+        <translation>Schrijven</translation>
     </message>
     <message>
         <source>Execute</source>
-        <translation type="unfinished"></translation>
+        <translation>Uitvoeren</translation>
     </message>
     <message>
         <source>Owner</source>
-        <translation type="unfinished"></translation>
+        <translation>Eigenaar</translation>
     </message>
     <message>
         <source>Group</source>
-        <translation type="unfinished"></translation>
+        <translation>Groep</translation>
     </message>
     <message>
         <source>Others</source>
-        <translation type="unfinished"></translation>
+        <translation>Anderen</translation>
     </message>
 </context>
 <context>
     <name>PlacesPage</name>
     <message>
         <source>Device memory</source>
-        <translation type="unfinished"></translation>
+        <translation>Intern geheugen</translation>
     </message>
     <message>
         <source>SD Card</source>
-        <translation type="unfinished"></translation>
+        <translation>SD-kaart</translation>
     </message>
     <message>
         <source>Home</source>
-        <translation type="unfinished"></translation>
+        <translation>Persoonlijke map</translation>
     </message>
     <message>
         <source>Documents</source>
-        <translation type="unfinished"></translation>
+        <translation>Documenten</translation>
     </message>
     <message>
         <source>Downloads</source>
-        <translation type="unfinished"></translation>
+        <translation>Downloads</translation>
     </message>
     <message>
         <source>Music</source>
-        <translation type="unfinished"></translation>
+        <translation>Muziek</translation>
     </message>
     <message>
         <source>Pictures</source>
-        <translation type="unfinished"></translation>
+        <translation>Afbeeldingen</translation>
     </message>
     <message>
         <source>Videos</source>
-        <translation type="unfinished"></translation>
+        <translation>Video’s</translation>
     </message>
     <message>
         <source>Places</source>
-        <translation type="unfinished"></translation>
+        <translation>Plaatsen</translation>
     </message>
     <message>
         <source>Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Apparaten</translation>
     </message>
     <message>
         <source>Common</source>
-        <translation type="unfinished"></translation>
+        <translation>Algemeen</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation type="unfinished">Aangepast</translation>
+        <translation>Aangepast</translation>
     </message>
     <message>
         <source>Deleting </source>
-        <translation type="unfinished">Bezig met verwijderen</translation>
+        <translation>Wordt verwijderd</translation>
     </message>
     <message>
         <source>Rename</source>
-        <translation type="unfinished"></translation>
+        <translation>Hernoemen</translation>
     </message>
 </context>
 <context>
@@ -853,22 +853,22 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
     <name>RenameDialog</name>
     <message>
         <source>Rename</source>
-        <translation type="unfinished"></translation>
+        <translation>Hernoemen</translation>
     </message>
     <message>
         <source>Give a new name for</source>
-        <translation type="unfinished"></translation>
+        <translation>Geef een nieuwe naam aan</translation>
     </message>
     <message>
         <source>New name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nieuwe naam</translation>
     </message>
 </context>
 <context>
     <name>SearchEngineDialog</name>
     <message>
         <source>Choose Search Engine</source>
-        <translation>Kies zoekmachine</translation>
+        <translation>Kies een zoekmachine</translation>
     </message>
 </context>
 <context>
@@ -886,7 +886,7 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
     </message>
     <message>
         <source>Show HTML</source>
-        <translation>HTML weergeven</translation>
+        <translation>HTML tonen</translation>
     </message>
     <message>
         <source>Hide HTML</source>
@@ -917,7 +917,7 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
     </message>
     <message>
         <source>Load Defaults</source>
-        <translation>Laad standaard waarden</translation>
+        <translation>Standaardwaarden laden</translation>
     </message>
     <message>
         <source>Appearance</source>
@@ -925,15 +925,15 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
     </message>
     <message>
         <source>Default Font Size</source>
-        <translation>Standaard lettertype grootte</translation>
+        <translation>Standaardlettergrootte</translation>
     </message>
     <message>
         <source>Default Fixed Font Size</source>
-        <translation>Standaard vaste lettertype grootte</translation>
+        <translation>Standaardvastelettergrootte</translation>
     </message>
     <message>
         <source>Minimum Font Size</source>
-        <translation>Minimale lettertype grootte</translation>
+        <translation>Minimale lettergrootte</translation>
     </message>
     <message>
         <source>Default Orientation</source>
@@ -957,7 +957,7 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
     </message>
     <message>
         <source>Private Browsing</source>
-        <translation>Privé browsen</translation>
+        <translation>Privébrowsen</translation>
     </message>
     <message>
         <source>Add Default Bookmarks</source>
@@ -973,7 +973,7 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
     </message>
     <message>
         <source>Start Private Window</source>
-        <translation>Start privévenster</translation>
+        <translation>Privévenster starten</translation>
     </message>
     <message>
         <source>Load Images</source>
@@ -985,11 +985,11 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
     </message>
     <message>
         <source>DNS Prefetch</source>
-        <translation>DNS Prefetch</translation>
+        <translation>DNS-prefetch</translation>
     </message>
     <message>
         <source>Offline Web Application Cache</source>
-        <translation>Offline web applicatie cache</translation>
+        <translation>Offline webappcache</translation>
     </message>
     <message>
         <source>Privacy</source>
@@ -1013,7 +1013,7 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
     </message>
     <message>
         <source>Set Webcat as default browser</source>
-        <translation>Stel Webcat in als standaardbrowser</translation>
+        <translation>Webcat instellen als standaardbrowser</translation>
     </message>
     <message>
         <source>Proxy Settings</source>
@@ -1025,11 +1025,11 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
     </message>
     <message>
         <source>New Tab | Stop/Refresh</source>
-        <translation>Volgend tabblad ¦ Stoppen/herladen</translation>
+        <translation>Volgend tabblad | Stoppen/herladen</translation>
     </message>
     <message>
         <source>Previous Tab | Next Tab</source>
-        <translation>Vorig tabblad ¦ Volgend tabblad</translation>
+        <translation>Vorig tabblad | Volgend tabblad</translation>
     </message>
     <message>
         <source>Default Cover Action Group</source>
@@ -1045,11 +1045,11 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
     </message>
     <message>
         <source>When unchecked, common multi-key shortcuts from other browsers are used</source>
-        <translation type="unfinished"></translation>
+        <translation>Indien niet geselecteerd, worden algemene sneltoetsen van andere browsers gebruikt</translation>
     </message>
     <message>
         <source>BB10 Hardware Keyboard shortcuts</source>
-        <translation type="unfinished"></translation>
+        <translation>BB10-hardwaresneltoetsen</translation>
     </message>
 </context>
 <context>
@@ -1063,7 +1063,7 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
     <name>TabBar</name>
     <message>
         <source>Loading..</source>
-        <translation>Laden..</translation>
+        <translation>Bezig met laden…</translation>
     </message>
     <message>
         <source>Tabs</source>
@@ -1071,22 +1071,22 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
     </message>
     <message>
         <source>Swipe up to open new window</source>
-        <translation>Veeg omhoog om nieuw venster te openen</translation>
+        <translation>Veeg omhoog om een nieuw venster te openen</translation>
     </message>
     <message>
         <source>Swipe up to open private window</source>
-        <translation>Veeg omhoog om privévenster te openen</translation>
+        <translation>Veeg omhoog om een privévenster te openen</translation>
     </message>
     <message>
         <source>Swipe up to close tab</source>
-        <translation>Veeg omhoog om tabblad te sluiten</translation>
+        <translation>Veeg omhoog om het tabblad te sluiten</translation>
     </message>
 </context>
 <context>
     <name>TabList</name>
     <message>
         <source>Loading..</source>
-        <translation>Laden..</translation>
+        <translation>Bezig met laden…</translation>
     </message>
     <message>
         <source>Tabs</source>
@@ -1101,14 +1101,14 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
     </message>
     <message>
         <source> added to Bookmarks</source>
-        <translation type="unfinished"></translation>
+        <translation>toegevoegd aan bladwijzers</translation>
     </message>
 </context>
 <context>
     <name>UserAgentDialog</name>
     <message>
         <source>Choose User Agent</source>
-        <translation>Kies gebruikersagent</translation>
+        <translation>Kies een gebruikersagent</translation>
     </message>
 </context>
 <context>
@@ -1165,7 +1165,7 @@ The video cannot be played due to a problem allocating resources.
 On Youtube Videos please make sure to be logged in. Some videos might be geoblocked or require you to be logged into youtube.</source>
         <translation>
 De video kan niet worden afgespeeld wegens een probleem bij het toewijzen van bronnen.
-Zorg er voor dat je ingelogd bent bij YouTube Videos. Sommige videos kunnen geblokkeerd zijn op geografische basis of vereisen dat je ingelogd bent bij YouTube.</translation>
+Zorg er voor dat je ingelogd bent bij YouTube Videos. Sommige video’s kunnen geblokkeerd zijn op geografische basis of vereisen dat je ingelogd bent bij YouTube.</translation>
     </message>
     <message>
         <source>Pull down to load file or stream</source>
@@ -1176,7 +1176,7 @@ Zorg er voor dat je ingelogd bent bij YouTube Videos. Sommige videos kunnen gebl
     <name>ytQualityChooserContextMenu</name>
     <message>
         <source>Opening...</source>
-        <translation>Bezig met openen...</translation>
+        <translation>Bezig met openen…</translation>
     </message>
     <message>
         <source>Download</source>

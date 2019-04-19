@@ -481,7 +481,7 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
     </message>
     <message>
         <source>Focus URL bar</source>
-        <translation type="unfinished"></translation>
+        <translation>Focus barre URL</translation>
     </message>
     <message>
         <source>Esc</source>

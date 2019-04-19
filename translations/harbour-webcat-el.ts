@@ -1,168 +1,168 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="sv">
+<TS version="2.1" language="el">
 <context>
     <name></name>
     <message id="components_gallery-la-image-loading-failed">
         <source>Oops, can&apos;t display the image</source>
         <extracomment>Image loading failed</extracomment>
-        <translation>Hoppsan! Kan inte visa bilden.</translation>
+        <translation>Ωχ, δεν είναι δυνατή η εμφάνιση της εικόνας</translation>
     </message>
 </context>
 <context>
     <name>AboutPage</name>
     <message>
         <source>A simple webbrowser based on webkit.</source>
-        <translation>En enkel webbläsare, baserad på webkit.</translation>
+        <translation>Ένας απλός περιηγητής ιστού που βασίζεται στο webkit.</translation>
     </message>
 </context>
 <context>
     <name>AddBookmark</name>
     <message>
         <source>Edit Bookmark</source>
-        <translation>Redigera bokmärke</translation>
+        <translation>Επεξεργασία Σελιδοδείκτη</translation>
     </message>
     <message>
         <source>Add Bookmark</source>
-        <translation>Lägg till bokmärke</translation>
+        <translation>Προσθήκη σελιδοδείκτη</translation>
     </message>
     <message>
         <source>Title of the bookmark</source>
-        <translation>Bokmärkestitel</translation>
+        <translation>Τίτλος σελιδοδείκτη</translation>
     </message>
     <message>
         <source>URL of bookmark</source>
-        <translation>Bokmärkets URL</translation>
+        <translation>URL του σελιδοδείκτη</translation>
     </message>
     <message>
         <source>User Agent:</source>
-        <translation>Användaragent:</translation>
+        <translation>User Agent:</translation>
     </message>
 </context>
 <context>
     <name>AuthenticationDialog</name>
     <message>
         <source>Authenticate</source>
-        <translation>Verifiera</translation>
+        <translation>Αυθεντικοποίηση</translation>
     </message>
     <message>
         <source>The server %1 requires authentication. The server says: %2</source>
-        <translation>Servern %1 kräver verifiering. Servern säger: %2</translation>
+        <translation>Ο διακομιστής% 1 απαιτεί έλεγχο ταυτότητας. Ο διακομιστής λέει:% 2</translation>
     </message>
     <message>
         <source>Enter your user name</source>
-        <translation>Ange användarnamn</translation>
+        <translation>Εισαγάγετε το όνομα χρήστη σας</translation>
     </message>
     <message>
         <source>User name</source>
-        <translation>Användarnamn</translation>
+        <translation>Όνομα χρήστη</translation>
     </message>
     <message>
         <source>Enter password</source>
-        <translation>Ange lösenord</translation>
+        <translation>Εισάγεται κωδικό</translation>
     </message>
     <message>
         <source>Password</source>
-        <translation>Lösenord</translation>
+        <translation>Κωδικός</translation>
     </message>
 </context>
 <context>
     <name>BackupPage</name>
     <message>
         <source>Backups</source>
-        <translation>Säkerhetskopior</translation>
+        <translation>Αντίγραφα Ασφαλείας</translation>
     </message>
     <message>
         <source>Create Backup</source>
-        <translation>Skapa säkerhetskopia</translation>
+        <translation>Δημιουργία Αντιγράφου Ασφαλέιας</translation>
     </message>
     <message>
         <source>Dismiss</source>
-        <translation>Avvisa</translation>
+        <translation>Απόριψη</translation>
     </message>
     <message>
         <source>Backup saved successfully!</source>
-        <translation>Säkerhetskopia sparad!</translation>
+        <translation>Το Αντίγραφο Ασφαλείας αποθηκεύτηκε με επιτυχία!</translation>
     </message>
     <message>
         <source>The Backup includes all cookies, bookmarks, history and settings for Webcat.</source>
-        <translation>Säkerhetskopian inkluderar alla cookies, bokmärken, historik och inställningar för Webcat.</translation>
+        <translation>Το αντίγραφο ασφαλείας περιλαμβάνει όλα τα cookies, σελιδοδείκτες, ιστορικό και ρυθμίσεις για το Webcat.</translation>
     </message>
     <message>
         <source>Restore Backup</source>
-        <translation>Återställ från säkerhetskopia</translation>
+        <translation>Επαναφορά Αντιγράφου Ασφαλέιας</translation>
     </message>
     <message>
         <source>Backups overwrite current configurations</source>
-        <translation>Säkerhetskopior skriver över aktuella konfigurationer</translation>
+        <translation>Τα αντίγραφα ασφαλείας αντικαθιστούν τις τρέχουσες διαμορφώσεις</translation>
     </message>
     <message>
         <source>Backup restored! Please restart Webcat</source>
-        <translation>Säkerhetskopia återställd! Starta om Webcat.</translation>
+        <translation>Το αντίγραφο ασφαλείας αποκαταστάθηκε! Παρακαλώ, κάντε επανεκκίνηση το Webcat</translation>
     </message>
     <message>
         <source>Restoring overwrites all cookies, bookmarks, history and settings for Webcat from the backup file.
 Please restart for changes to take effect.</source>
-        <translation>Återställning skriver över alla cookies, bokmärken, historik och inställningar för Webcat, från säkerhetskopian.
-Starta om Webcat för att ändringarna skall få effekt.</translation>
+        <translation>Η επαναφορά αντικαθιστά όλα τα cookies, σελιδοδείκτες, ιστορικό και ρυθμίσεις για το Webcat από το αρχείο αντιγράφου ασφαλείας.
+Κάντε επανεκκίνηση για να εφαρμοστούν οι αλλαγές.</translation>
     </message>
     <message>
         <source>Restoring Backup</source>
-        <translation>Återställer från säkerhetskopia</translation>
+        <translation>Επαναφορά Αντιγράφου Ασφαλέιας</translation>
     </message>
     <message>
         <source>Backups are saved to Documents directory</source>
-        <translation>Säkerhetskopior sparas i dokumentmappen</translation>
+        <translation>Τα Αντίγραφα Ασφαλείας αποθηκεύονται στον φάκελο των Εγγράφων</translation>
     </message>
 </context>
 <context>
     <name>BookmarkList</name>
     <message>
         <source>Bookmarks</source>
-        <translation>Bokmärken</translation>
+        <translation>Σελιδοδείκτες</translation>
     </message>
     <message>
         <source>Open in new Tab</source>
-        <translation>Öppna i ny flik</translation>
+        <translation>Άνοιγμα σε νέα Καρτέλα</translation>
     </message>
     <message>
         <source>Open in new Window</source>
-        <translation>Öppna i nytt fönster</translation>
+        <translation>Άνοιγμα σε νέο Παράθυρο</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Redigera</translation>
+        <translation>Επεξεργασία</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>Ta bort</translation>
+        <translation>Διαγραφή</translation>
     </message>
     <message>
         <source>Settings</source>
-        <translation>Inställningar</translation>
+        <translation>Ρυθμίσεις</translation>
     </message>
     <message>
         <source>Add Bookmark</source>
-        <translation>Lägg till bokmärke</translation>
+        <translation>Προσθήκη σελιδοδείκτη</translation>
     </message>
     <message>
         <source>History</source>
-        <translation>Historik</translation>
+        <translation>Ιστορικό</translation>
     </message>
 </context>
 <context>
     <name>ConfirmDialog</name>
     <message>
         <source>Accept ?</source>
-        <translation>Acceptera?</translation>
+        <translation>Αποδοχή;</translation>
     </message>
     <message>
         <source>Certificates are used to identify and make sure that the website you see is provided by the author you expect.
 Unknown certificates are either ones that are missing in the global configuration of your browser. Outdated ones or compromised ones.
 If you are unsure reject the certificate. That might lead to a non loading website though.</source>
-        <translation>Certifikat används till att identifiera och säkerställa att webbsidan du ser, tillhandahålles av förväntad utgivare.
-Okända certifikat är sådana som saknas i den övergripande konfigurationen av din webbläsare. Utdaterade certifikat är komprometterade.
-Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att webbsidan inte läses in.</translation>
+        <translation>Τα πιστοποιητικά χρησιμοποιούνται για την ταυτοποίηση και τη διασφάλιση καταγωγής του παρόχου του ιστότοπου που βλέπετε.
+Άγνωστα πιστοποιητικά είναι είτε αυτά που λείπουν από τις ρυθμίσεις του προγράμματος περιήγησης. Τα απαρχαιωμένα ή τα εκτεθιμένα σε κίνδυνο.
+Εάν δεν είστε βέβαιοι απορρίψτε το πιστοποιητικό. Αυτό ίσως να οδηγήσει σε αδυναμία φόρτωσης του ιστότοπου.</translation>
     </message>
 </context>
 <context>
@@ -173,273 +173,273 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
     </message>
     <message>
         <source>Clear Cookies</source>
-        <translation>Ta bort cookies</translation>
+        <translation>Καθαρισμός Cookies</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>Ta bort</translation>
+        <translation>Διαγραφή</translation>
     </message>
     <message>
         <source>Search..</source>
-        <translation>Sök...</translation>
+        <translation>Αναζήτηση...</translation>
     </message>
 </context>
 <context>
     <name>CreateDirDialog</name>
     <message>
         <source>Error creating new directory</source>
-        <translation>Kunde inte skapa ny mapp</translation>
+        <translation>Σφάλμα δημιουργίας καταλόγου</translation>
     </message>
     <message>
         <source>Create Folder</source>
-        <translation>Skapa mapp</translation>
+        <translation>Δημιουργία Φακέλου</translation>
     </message>
     <message>
         <source>Create</source>
-        <translation>Skapa</translation>
+        <translation>Δημιουργία</translation>
     </message>
     <message>
         <source>Create a new folder under</source>
-        <translation>Skapa ny mapp under</translation>
+        <translation>Δημιουργία νέου φακέλου σε</translation>
     </message>
     <message>
         <source>Folder name</source>
-        <translation>Mappnamn</translation>
+        <translation>Όνομα φακέλου</translation>
     </message>
 </context>
 <context>
     <name>DownloadManager</name>
     <message>
         <source>Add Download</source>
-        <translation>Lägg till nerladdning</translation>
+        <translation>Προσθήκη Λήψης</translation>
     </message>
     <message>
         <source>Download Manager</source>
-        <translation>Nerladdningshanterare</translation>
+        <translation>Διαχειριστής Λήψεων</translation>
     </message>
     <message>
         <source>Enter URL to download</source>
-        <translation>Ange URL för nerladdning</translation>
+        <translation>Καταχωρίστε τη διεύθυνση URL για λήψη</translation>
     </message>
     <message>
         <source>Download</source>
-        <translation>Ladda ner</translation>
+        <translation>Λήψη</translation>
     </message>
     <message>
         <source>Abort</source>
-        <translation>Avbryt</translation>
+        <translation>Ακύρωση</translation>
     </message>
     <message>
         <source>Status</source>
-        <translation>Status</translation>
+        <translation>Κατάσταση</translation>
     </message>
     <message>
         <source>Errors</source>
-        <translation>Fel</translation>
+        <translation>Σφάλματα</translation>
     </message>
     <message>
         <source>Download Status</source>
-        <translation>Nerladdningsstatus</translation>
+        <translation>Κατάσταση Λήψης</translation>
     </message>
     <message>
         <source>Download Errors</source>
-        <translation>Nerladdningsfel</translation>
+        <translation>Σφάλματα Λήψεων</translation>
     </message>
     <message>
         <source>Opening...</source>
-        <translation>Öppnar...</translation>
+        <translation>Άνοιγμα...</translation>
     </message>
     <message>
         <source>Show Downloadfolder</source>
-        <translation>Visa nerladdningsmappen</translation>
+        <translation>Εμφάνιση Φακέλου Λήψεων</translation>
     </message>
     <message>
         <source>Clear Downloads</source>
-        <translation>Ta bort nerladdningar</translation>
+        <translation>Καθάρισμα Λήψεων</translation>
     </message>
     <message>
         <source>Deleting </source>
-        <translation>Tar bort</translation>
+        <translation>Διαγραφή</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>Ta bort</translation>
+        <translation>Διαγραφή</translation>
     </message>
     <message>
         <source>Details</source>
-        <translation>Detaljerat</translation>
+        <translation>Λεπτομέριες</translation>
     </message>
     <message>
         <source>Download list</source>
-        <translation>Nerladdningslista</translation>
+        <translation>Λίστα λήψεων</translation>
     </message>
     <message>
         <source>Resume</source>
-        <translation>Återuppta</translation>
+        <translation>Συνέχισε</translation>
     </message>
     <message>
         <source>Pause</source>
-        <translation>Paus</translation>
+        <translation>Παύση</translation>
     </message>
 </context>
 <context>
     <name>ExtraToolbar</name>
     <message>
         <source>Minimize</source>
-        <translation>Minimera</translation>
+        <translation>Ελαχιστοποίηση</translation>
     </message>
     <message>
         <source>Lock Orientation</source>
-        <translation>Lås skärmorientering</translation>
+        <translation>Κλείδωμα Προσανατολισμού</translation>
     </message>
     <message>
         <source>Reader Mode</source>
-        <translation>Läsläge</translation>
+        <translation>Λειτουργία Ανάγνωσης</translation>
     </message>
     <message>
         <source>Search</source>
-        <translation>Sök</translation>
+        <translation>Αναζήτηση</translation>
     </message>
     <message>
         <source>Share</source>
-        <translation>Dela</translation>
+        <translation>Κοινοποίηση</translation>
     </message>
     <message>
         <source>Close menu</source>
-        <translation>Stäng menyn</translation>
+        <translation>Κλείσιμο Μενού</translation>
     </message>
     <message>
         <source>Night Mode</source>
-        <translation>Nattläge</translation>
+        <translation>Νυχτερινή Λειτουργία</translation>
     </message>
     <message>
         <source>Day Mode</source>
-        <translation>Dagläge</translation>
+        <translation>Λειτουργία ημέρας</translation>
     </message>
 </context>
 <context>
     <name>FileProperties</name>
     <message>
         <source>Location</source>
-        <translation>Plats</translation>
+        <translation>Τοποθεσία</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation>typ</translation>
+        <translation>Τύπος</translation>
     </message>
     <message>
         <source>Link to %1</source>
-        <translation>Länk till %1</translation>
+        <translation>Σύνδεση στο %1</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation>Storlek</translation>
+        <translation>Μέγεθος</translation>
     </message>
     <message>
         <source>Permissions</source>
-        <translation>Rättigheter</translation>
+        <translation>Δικαιώματα</translation>
     </message>
     <message>
         <source>Owner</source>
-        <translation>Ägare</translation>
+        <translation>Ιδιοκτήτης</translation>
     </message>
     <message>
         <source>Group</source>
-        <translation>Grupp</translation>
+        <translation>Ομάδα</translation>
     </message>
     <message>
         <source>Last modified</source>
-        <translation>Ändrad</translation>
+        <translation>Τελευταία αλλαγή</translation>
     </message>
     <message>
         <source>Properties</source>
-        <translation>Egenskaper</translation>
+        <translation>Ιδιότητες</translation>
     </message>
     <message>
         <source>Rename</source>
-        <translation>Byt namn</translation>
+        <translation>Μετονομασία</translation>
     </message>
     <message>
         <source>Change Permissions</source>
-        <translation>Ändra rättigheter</translation>
+        <translation>Αλλαγή Δικαιωμάτων</translation>
     </message>
     <message>
         <source>Error renaming</source>
-        <translation>Kunde inte byta namn</translation>
+        <translation>Σφάλμα κατά την μετονομασία</translation>
     </message>
 </context>
 <context>
     <name>FirstPage</name>
     <message>
         <source>Opening...</source>
-        <translation>Öppnar...</translation>
+        <translation>Άνοιγμα...</translation>
     </message>
     <message>
         <source>Enter searchterm</source>
-        <translation>Ange sökterm</translation>
+        <translation>Εισαγάγετε τον όρο αναζήτησης</translation>
     </message>
     <message>
         <source>Open in New Window</source>
-        <translation>Öppna i nytt fönster</translation>
+        <translation>Άνοιγμα σε Νέο Παράθυρο</translation>
     </message>
     <message>
         <source>Open in New Tab</source>
-        <translation>Öppna i ny flik</translation>
+        <translation>Άνοιγμα σε Νέα Καρτέλα</translation>
     </message>
     <message>
         <source>Open in Private New Window</source>
-        <translation>Öppna i nytt privat fönster</translation>
+        <translation>Άνοιγμα σε Νέο Ιδιοτικό Παράθυρο</translation>
     </message>
     <message>
         <source>Copy Link</source>
-        <translation>Kopiera länk</translation>
+        <translation>Αντιγραφή Συνδέσμου</translation>
     </message>
     <message>
         <source>Save Image</source>
-        <translation>Spara bild</translation>
+        <translation>Αποθήκευση Εικόνας</translation>
     </message>
     <message>
         <source>Save Link</source>
-        <translation>Spara länk</translation>
+        <translation>Αποθήκευση Συνδέσμου</translation>
     </message>
     <message>
         <source>Open Image in New Tab</source>
-        <translation>Öppna bild i ny flik</translation>
+        <translation>Άνοιγμα Εικόνας σε Νέα Καρτέλα</translation>
     </message>
     <message>
         <source>Unknown certificate</source>
-        <translation>Okänt certifikat</translation>
+        <translation>Άγνωστο πιστοποιητικό</translation>
     </message>
     <message>
         <source>Accept certificate from </source>
-        <translation>Acceptera certifikat från</translation>
+        <translation>Αποδοχή πιστοποιητικού από</translation>
     </message>
     <message>
         <source>Webkit engine crashed! Restarting...</source>
-        <translation>Webkit-motorn kraschade! Startar om...</translation>
+        <translation>Η μηχανή Webkit κράσαρε! Επανεκκίνηση...</translation>
     </message>
     <message>
         <source>Webkit engine crashed too often!</source>
-        <translation>Webkit-motorn kraschade för ofta!</translation>
+        <translation>Η μηχανή Webkit κρασάρει πολύ συχνά!</translation>
     </message>
 </context>
 <context>
     <name>HistoryPage</name>
     <message>
         <source>History</source>
-        <translation>Historik</translation>
+        <translation>Ιστορικό</translation>
     </message>
     <message>
         <source>Clear History</source>
-        <translation>Rensa historiken</translation>
+        <translation>Διαγραφή Ιστορικού</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>Ta bort</translation>
+        <translation>Διαγραφή</translation>
     </message>
     <message>
         <source>Load Last Session</source>
-        <translation>Läs in senaste sessionen</translation>
+        <translation>Φόρτωση Προηγούμενης Συνεδρίας</translation>
     </message>
 </context>
 <context>
@@ -450,39 +450,39 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
     </message>
     <message>
         <source>Page History: Go back</source>
-        <translation>Sidhistorik: Gå tillbaka</translation>
+        <translation>Ιστορικό σελίδας: Πηγαίνετε πίσω</translation>
     </message>
     <message>
         <source>Page History: Go forward</source>
-        <translation>Sidhistorik: Gå framåt</translation>
+        <translation>Ιστορικό σελίδας: Προχωρήστε</translation>
     </message>
     <message>
         <source>Open new tab</source>
-        <translation>Öppna ny flik</translation>
+        <translation>Άνοιγμα νέας καρτέλας</translation>
     </message>
     <message>
         <source>Open new window</source>
-        <translation>Öppna nytt fönster</translation>
+        <translation>Άνοιγμα νέου Παραθύρου</translation>
     </message>
     <message>
         <source>Close current tab</source>
-        <translation>Stäng aktuell flik</translation>
+        <translation>Κλείσιμο τρέχουσας καρτέλας</translation>
     </message>
     <message>
         <source>Switch to next tab</source>
-        <translation>Växla till nästa flik</translation>
+        <translation>Μετάβαση στην επόμενη καρτέλα</translation>
     </message>
     <message>
         <source>Switch to previous tab</source>
-        <translation>Växla till föregående flik</translation>
+        <translation>Μετάβαση στην προηγούμενη καρτέλα</translation>
     </message>
     <message>
         <source>Toggle reader mode</source>
-        <translation>Växla läsläge</translation>
+        <translation>Εναλλαγή λειτουργίας ανάγνωσης</translation>
     </message>
     <message>
         <source>Focus URL bar</source>
-        <translation>Fokusera adressfältet</translation>
+        <translation>Εστίασε στη μπάρα URL</translation>
     </message>
     <message>
         <source>Esc</source>
@@ -512,7 +512,7 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
     <message>
         <source>Home</source>
         <comment>Key</comment>
-        <translation>Hem</translation>
+        <translation>Home</translation>
     </message>
     <message>
         <source>Alt</source>
@@ -521,116 +521,116 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
     </message>
     <message>
         <source>Scroll current website to bottom</source>
-        <translation>Skrolla aktuell webbsida till slutet</translation>
+        <translation>Μετακινηθείτε στο κάτω μέρος της τρέχουσας ιστοσελίδας</translation>
     </message>
     <message>
         <source>Scroll current website to top</source>
-        <translation>Skrolla aktuell webbsida till början</translation>
+        <translation>Μετακινηθείτε στην κορυφή της τρέχουσας ιστοσελίδας</translation>
     </message>
     <message>
         <source>Stop loading the current website</source>
-        <translation>Sluta hämta aktuell webbsida</translation>
+        <translation>Διακοπή φόρτωσης τρέχουσας ιστοσελίδας</translation>
     </message>
     <message>
         <source>Add current website as a bookmark</source>
-        <translation>Lägg till aktuell webbsida som bokmärke</translation>
+        <translation>Προσθήκη τρέχουσας ιστοσελίδας ως σελιδοδείκτη</translation>
     </message>
     <message>
         <source>Show list of bookmarks</source>
-        <translation>Visa bokmärkeslistan</translation>
+        <translation>Εμφάνιση λίστας σελιδοδεικτών</translation>
     </message>
     <message>
         <source>Open new private window</source>
-        <translation>Öppna ett nytt privat fönster</translation>
+        <translation>Άνοιγμα νέου ιδιοτικού παραθύρου</translation>
     </message>
     <message>
         <source>Hide in-page search</source>
-        <translation>Dölj på-sidan-sök</translation>
+        <translation>Απόκρυψη αναζήτησης στη σελίδα</translation>
     </message>
     <message>
         <source>Start in-page search</source>
-        <translation>Starta på-sidan-sök</translation>
+        <translation>Εκκίνηση της αναζήτησης στη σελίδα</translation>
     </message>
     <message>
         <source>Close current WebCat window</source>
-        <translation>Stäng aktuellt WebCat-fönster</translation>
+        <translation>Κλείστε το τρέχον παράθυρο WebCat</translation>
     </message>
     <message>
         <source>Show in-page search</source>
-        <translation>Visa på-sidan-sök</translation>
+        <translation>Εμφάνιση αναζήτησης στη σελίδα</translation>
     </message>
     <message>
         <source>Reload current website</source>
-        <translation>Hämta om aktuell webbsida</translation>
+        <translation>Επαναφόρτωση τρέχουσας ιστοσελίδας</translation>
     </message>
     <message>
         <source>Hide list of bookmarks</source>
-        <translation>Dölj bokmärkeslistan</translation>
+        <translation>Απόκρυψη λίστας σελιδοδεικτών</translation>
     </message>
 </context>
 <context>
     <name>KeyboardOverviewPage</name>
     <message>
         <source>Current Keyboard Shortcuts</source>
-        <translation>Aktuella tangentbordsgenvägar</translation>
+        <translation>Τρέχουσες συντομεύσεις πληκτρολογίου</translation>
     </message>
     <message>
         <source>You have selected keyboard shortcuts which mimic some current popular browsers. Take a look at the list below to see what they are or try them out.</source>
-        <translation>Du har valt tangentbordsgenvägar som efterliknar vissa populära webbläsare. Ta en titt på listan nedan för att se vad de är, eller prova dem.</translation>
+        <translation>Έχετε επιλέξει συντομεύσεις πληκτρολογίου που μιμούνται ορισμένα τρέχοντα δημοφιλή προγράμματα περιήγησης. Ρίξτε μια ματιά στην παρακάτω λίστα για να δείτε ποιές είναι ή για να τις δοκιμάσετε.</translation>
     </message>
     <message>
         <source>You have selected BB10 (Blackberry 10) compatible keyboard shortcuts. Take a look at the list below to see what they are or try them out.</source>
-        <translation>Du har valt BB10-kompatibla (BlackBerry 10) tangentbordsgenvägar. Ta en titt på listan nedan för att se vad de är, eller prova dem.</translation>
+        <translation>Έχετε επιλέξει συντομεύσεις πληκτρολογίου BB10 (Blackberry 10). Ρίξτε μια ματιά στην παρακάτω λίστα για να δείτε τι είναι ή για να τις δοκιμάσετε.</translation>
     </message>
 </context>
 <context>
     <name>MediaDownloadRec</name>
     <message>
         <source>Opening...</source>
-        <translation>Öppnar...</translation>
+        <translation>Άνοιγμα...</translation>
     </message>
 </context>
 <context>
     <name>MenuPopup</name>
     <message>
         <source>File Manager</source>
-        <translation>Filhanterare</translation>
+        <translation>Διαχειριστής Αρχείων</translation>
     </message>
     <message>
         <source>Backup Manager</source>
-        <translation>Säkerhetskopiering</translation>
+        <translation>Διαχειριστής Αντιγράφων Ασφαλέιας</translation>
     </message>
     <message>
         <source>Video Player</source>
-        <translation>Video-spelare</translation>
+        <translation>Αναπαραγωγέας Βίντεο</translation>
     </message>
     <message>
         <source>Download Manager</source>
-        <translation>Nerladdningshanterare</translation>
+        <translation>Διαχειριστής Λήψεων</translation>
     </message>
     <message>
         <source>Created Desktop Launcher for Webcat Fileman</source>
-        <translation>Skapade programstartare för Webcat Fileman</translation>
+        <translation>Εικονίδιο εκκίνησης για το Webcat Fileman δημιουργήθηκε</translation>
     </message>
 </context>
 <context>
     <name>MyClass</name>
     <message>
         <source>Webcat config dir not found</source>
-        <translation>Webcats konfigurationsmapp kunde inte hittas</translation>
+        <translation>Ο κατάλογος ρυθμίσεων του webcat config δεν βρέθηκε</translation>
     </message>
     <message>
         <source>File not found.</source>
-        <translation>Filen kunde inte hittas.</translation>
+        <translation>Το αρχείο δεν βρέθηκε.</translation>
     </message>
     <message>
         <source>No valid Backup file. Did not find harbour-webcat Folder.</source>
-        <translation>Ingen giltig säkerhetskopia. Mappen &apos;harbour-webcat&apos; kunde inte hittas.</translation>
+        <translation>Δεν υπάρχει έγκυρο αρχείο αντιγράφου ασφαλείας. Αδυναμία εύρεσης του φακέλου harbour-webcat.</translation>
     </message>
     <message>
         <source>Could not verify Backup file.
 </source>
-        <translation>Kunde inte verifiera säkerhetskopian.
+        <translation>Αδυναμία πιστοποίησης Αντιγράφου ασφαλέιας.
 </translation>
     </message>
 </context>
@@ -638,330 +638,330 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
     <name>OpenDialog</name>
     <message>
         <source>Opening...</source>
-        <translation>Öppnar...</translation>
+        <translation>Άνοιγμα...</translation>
     </message>
     <message>
         <source>Paste</source>
-        <translation>Klistra in</translation>
+        <translation>Επικόληση</translation>
     </message>
     <message>
         <source>Deleting </source>
-        <translation>Tar bort </translation>
+        <translation>Διαγραφή</translation>
     </message>
     <message>
         <source>directory</source>
-        <translation>mapp</translation>
+        <translation>φάκελος</translation>
     </message>
     <message>
         <source>Cut</source>
-        <translation>Klipp ut</translation>
+        <translation>Αποκοπή</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation>Kopiera</translation>
+        <translation>Αντιγραφή</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>Ta bort</translation>
+        <translation>Διαγραφή</translation>
     </message>
     <message>
         <source>Error pasting file </source>
-        <translation>Kunde inte klistra in filen</translation>
+        <translation>Σφάλμα επικόλησης αρχείου</translation>
     </message>
     <message>
         <source>File operation succeeded</source>
-        <translation>Filoperationen lyckades</translation>
+        <translation>Η λειτουργία αρχείου επιτεύχθηκε</translation>
     </message>
     <message>
         <source>Properties</source>
-        <translation>Egenskaper</translation>
+        <translation>Ιδιότητες</translation>
     </message>
     <message>
         <source>Create Folder</source>
-        <translation>Skapa mapp</translation>
+        <translation>Δημιουργία Φακέλου</translation>
     </message>
     <message>
         <source>Add to places</source>
-        <translation>Lägg till i Platser</translation>
+        <translation>Προσθήκη στα μέρη</translation>
     </message>
 </context>
 <context>
     <name>OpenURLPage</name>
     <message>
         <source>Load URL</source>
-        <translation>Läs in URL</translation>
+        <translation>Φόρτωση διεύθυνσης URL</translation>
     </message>
     <message>
         <source>Type in URL here</source>
-        <translation>Skriv URL här</translation>
+        <translation>Πληκτρολογήστε τη διεύθυνση URL εδώ</translation>
     </message>
     <message>
         <source>URL to media file/stream</source>
-        <translation>URL till mediafil/-ström</translation>
+        <translation>Διεύθυνση URL αρχείου πολυμέσων / ροής</translation>
     </message>
 </context>
 <context>
     <name>PermissionDialog</name>
     <message>
         <source>Could not change permission</source>
-        <translation>Kunde inte ändra rättigheter</translation>
+        <translation>Αδυναμία αλλαγής δικαιωμάτων</translation>
     </message>
     <message>
         <source>Change Permissions</source>
-        <translation>Ändra rättigheter</translation>
+        <translation>Αλλαγή Δικαιωμάτων</translation>
     </message>
     <message>
         <source>Change</source>
-        <translation>Ändra</translation>
+        <translation>Αλλαγή</translation>
     </message>
     <message>
         <source>Change permissions for</source>
-        <translation>Ändra rättigheter för</translation>
+        <translation>Αλλαγή δικαιωμάτων για</translation>
     </message>
     <message>
         <source>Read</source>
-        <translation>Läs</translation>
+        <translation>Ανάγνωση</translation>
     </message>
     <message>
         <source>Write</source>
-        <translation>Skriv</translation>
+        <translation>Εγγραφή</translation>
     </message>
     <message>
         <source>Execute</source>
-        <translation>Kör</translation>
+        <translation>Εκτέλεση</translation>
     </message>
     <message>
         <source>Owner</source>
-        <translation>Ägare</translation>
+        <translation>Ιδιοκτήτης</translation>
     </message>
     <message>
         <source>Group</source>
-        <translation>Grupp</translation>
+        <translation>Ομάδα</translation>
     </message>
     <message>
         <source>Others</source>
-        <translation>Annat</translation>
+        <translation>Άλλα</translation>
     </message>
 </context>
 <context>
     <name>PlacesPage</name>
     <message>
         <source>Device memory</source>
-        <translation>Enhetens minne</translation>
+        <translation>Μνήμη συσκευής</translation>
     </message>
     <message>
         <source>SD Card</source>
-        <translation>SD-kort</translation>
+        <translation>Κάρτα SD</translation>
     </message>
     <message>
         <source>Home</source>
-        <translation>Hem</translation>
+        <translation>Home</translation>
     </message>
     <message>
         <source>Documents</source>
-        <translation>Dokument</translation>
+        <translation>Έγγραφα</translation>
     </message>
     <message>
         <source>Downloads</source>
-        <translation>Nerladdningar</translation>
+        <translation>Λήψεις</translation>
     </message>
     <message>
         <source>Music</source>
-        <translation>Musik</translation>
+        <translation>Μουσική</translation>
     </message>
     <message>
         <source>Pictures</source>
-        <translation>Bilder</translation>
+        <translation>Εικόνες</translation>
     </message>
     <message>
         <source>Videos</source>
-        <translation>Videor</translation>
+        <translation>Βίντεο</translation>
     </message>
     <message>
         <source>Places</source>
-        <translation>Platser</translation>
+        <translation>Μέρη</translation>
     </message>
     <message>
         <source>Devices</source>
-        <translation>Enheter</translation>
+        <translation>Συσκευές</translation>
     </message>
     <message>
         <source>Common</source>
-        <translation>Gemensamma</translation>
+        <translation>Κοινά</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Anpassat</translation>
+        <translation>Προσαρμοσμένο</translation>
     </message>
     <message>
         <source>Deleting </source>
-        <translation>Tar bort</translation>
+        <translation>Διαγραφή</translation>
     </message>
     <message>
         <source>Rename</source>
-        <translation>Byt namn</translation>
+        <translation>Μετονομασία</translation>
     </message>
 </context>
 <context>
     <name>ProxySettingsPage</name>
     <message>
         <source>Save</source>
-        <translation>Spara</translation>
+        <translation>Αποθήκευση</translation>
     </message>
     <message>
         <source>Proxy Disabled</source>
-        <translation>Ingen proxy</translation>
+        <translation>Ο Διαμεσολαβητής Απενεργοποιήθηκε</translation>
     </message>
     <message>
         <source>You need to restart Webcat</source>
-        <translation>Du måste starta om Webcat</translation>
+        <translation>Πρέπει να επανεκκινήσετε το Webcat</translation>
     </message>
     <message>
         <source>Proxy Settings (Restart needed)</source>
-        <translation>Proxyinställningar (Omstart krävs)</translation>
+        <translation>Ρυθμίσεις Διαμεσολαβητή (Αναγκάια Επανεκκίνηση)</translation>
     </message>
     <message>
         <source>Host or Ip Address</source>
-        <translation>Värd eller IP-adress</translation>
+        <translation>Διεύθυνση host ή IP</translation>
     </message>
     <message>
         <source>Port</source>
-        <translation>Port</translation>
+        <translation>Θύρα</translation>
     </message>
     <message>
         <source>Please restart Webcat</source>
-        <translation>Starta om Webcat</translation>
+        <translation>Παρακαλώ επανεκκινήστε το Webcat</translation>
     </message>
     <message>
         <source>Use Socks</source>
-        <translation>Använd Socks</translation>
+        <translation>Χρήση Socks</translation>
     </message>
     <message>
         <source>Socket Secure (SOCKS) is an Internet protocol that exchanges network packets between a client and server through a proxy server.</source>
-        <translation>Socket Secure (SOCKS) är ett Internet-protokoll som utväxlar nätverkspaket mellan en klient och server, genom en proxyserver.</translation>
+        <translation>Το Socket Secure (SOCKS) είναι ένα διαδικτυακό πρωτόκολλο που ανταλλάσσει πακέτα δικτύου μεταξύ ενός πελάτη και ενός διακομιστή μέσω ενός διακομιστή μεσολάβησης.</translation>
     </message>
     <message>
         <source>Use Tor</source>
-        <translation>Använd TOR</translation>
+        <translation>Χρήση Tor</translation>
     </message>
     <message>
         <source>Tor is free software for enabling anonymous communication. This will setup the proxy automatically to use tor. Tor service must be running on the system for this to work.</source>
-        <translation>TOR är fri mjukvara för anonym kommunikation. Detta sätter automatiskt upp en proxy för att använda TOR. TOR-tjänsten måste vara aktiv i systemet för att detta skall fungera.</translation>
+        <translation>Το Tor είναι δωρεάν λογισμικό για την ενεργοποίηση ανώνυμης επικοινωνίας. Η παρούσα ρύθμιση θα ορίσει αυτόματα τον διαμεσολαβητή για να χρησιμοποιήσει το tor. Μια υπηρεσία Tor πρέπει να λειτουργεί στο σύστημα για να λειτουργήσει αυτή η ρύθμιση.</translation>
     </message>
 </context>
 <context>
     <name>RenameDialog</name>
     <message>
         <source>Rename</source>
-        <translation>Byt namn</translation>
+        <translation>Μετονομασία</translation>
     </message>
     <message>
         <source>Give a new name for</source>
-        <translation>Ange ett namn för</translation>
+        <translation>Δώστε ένα νέο όνομα για</translation>
     </message>
     <message>
         <source>New name</source>
-        <translation>Nytt namn</translation>
+        <translation>Νέο όνομα</translation>
     </message>
 </context>
 <context>
     <name>SearchEngineDialog</name>
     <message>
         <source>Choose Search Engine</source>
-        <translation>Välj sökmotor</translation>
+        <translation>Επιλογή Μηχανής Αναζήτησης</translation>
     </message>
 </context>
 <context>
     <name>SearchEngines</name>
     <message>
         <source>Custom</source>
-        <translation>Anpassat</translation>
+        <translation>Προσαρμοσμένο</translation>
     </message>
 </context>
 <context>
     <name>SelectionEditPage</name>
     <message>
         <source>Copy</source>
-        <translation>Kopiera</translation>
+        <translation>Αντιγραφή</translation>
     </message>
     <message>
         <source>Show HTML</source>
-        <translation>Visa HTML</translation>
+        <translation>Προβολή HTML</translation>
     </message>
     <message>
         <source>Hide HTML</source>
-        <translation>Dölj HTML</translation>
+        <translation>Απόκρυψη HTML</translation>
     </message>
     <message>
         <source>Accept</source>
-        <translation>Acceptera</translation>
+        <translation>Αποδοχή</translation>
     </message>
 </context>
 <context>
     <name>SettingsPage</name>
     <message>
         <source>Clear cache</source>
-        <translation>Rensa cache</translation>
+        <translation>Καθαρισμός cache</translation>
     </message>
     <message>
         <source>Clear History</source>
-        <translation>Rensa historik</translation>
+        <translation>Διαγραφή Ιστορικού</translation>
     </message>
     <message>
         <source>Save Settings</source>
-        <translation>Spara inställningar</translation>
+        <translation>Αποθήκευση Ρυθμίσεων</translation>
     </message>
     <message>
         <source>About </source>
-        <translation>Om </translation>
+        <translation>Σχετικά</translation>
     </message>
     <message>
         <source>Load Defaults</source>
-        <translation>Läs in standard</translation>
+        <translation>Φόρτωση αρχικών ρυθμίσεων</translation>
     </message>
     <message>
         <source>Appearance</source>
-        <translation>Utseende</translation>
+        <translation>Εμφάνιση</translation>
     </message>
     <message>
         <source>Default Font Size</source>
-        <translation>Standardteckenstorlek</translation>
+        <translation>Προεπιλεγμένο Μέγεθος Γραμματοσειράς</translation>
     </message>
     <message>
         <source>Default Fixed Font Size</source>
-        <translation>Standard för fast teckenstorlek</translation>
+        <translation>Προεπιλεγμένο σταθερό μέγεθος γραμματοσειράς</translation>
     </message>
     <message>
         <source>Minimum Font Size</source>
-        <translation>Minsta teckenstorlek</translation>
+        <translation>Ελάχιστο Μέγεθος Γραμματοσειράς</translation>
     </message>
     <message>
         <source>Default Orientation</source>
-        <translation>Standardorientering</translation>
+        <translation>Προεπιλεγμένος προσανατολισμός</translation>
     </message>
     <message>
         <source>General</source>
-        <translation>Allmänt</translation>
+        <translation>Γενικά</translation>
     </message>
     <message>
         <source>Homepage</source>
-        <translation>Hemsida</translation>
+        <translation>Αρχική σελίδα</translation>
     </message>
     <message>
         <source>Search Engine:</source>
-        <translation>Sökmotor:</translation>
+        <translation>Μηχανή αναζήτησης:</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Anpassat</translation>
+        <translation>Προσαρμοσμένο</translation>
     </message>
     <message>
         <source>Private Browsing</source>
-        <translation>Privat surfning</translation>
+        <translation>Ιδιωτική περιήγηση</translation>
     </message>
     <message>
         <source>Add Default Bookmarks</source>
-        <translation>Lägg till standardbokmärken</translation>
+        <translation>Προσθήκη Προκαθορισμένων Σελιδοδεικτών</translation>
     </message>
     <message>
         <source>User Agent:</source>
@@ -969,222 +969,222 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
     </message>
     <message>
         <source>Clear Cookies</source>
-        <translation>Rensa cookies</translation>
+        <translation>Καθαρισμός Cookies</translation>
     </message>
     <message>
         <source>Start Private Window</source>
-        <translation>Öppna privat fönster</translation>
+        <translation>Άνοιγμα σε Ιδιοτικό Παράθυρο</translation>
     </message>
     <message>
         <source>Load Images</source>
-        <translation>Läs in bilder</translation>
+        <translation>Φόρτωση Εικόνων</translation>
     </message>
     <message>
         <source>Advanced</source>
-        <translation>Avancerat</translation>
+        <translation>Προχωρημένα</translation>
     </message>
     <message>
         <source>DNS Prefetch</source>
-        <translation>DNS-prefetch</translation>
+        <translation>DNS Prefetch</translation>
     </message>
     <message>
         <source>Offline Web Application Cache</source>
-        <translation>Nedkopplad programcache</translation>
+        <translation>Προσωρινή μνήμη εφαρμογών ιστού εκτός σύνδεσης</translation>
     </message>
     <message>
         <source>Privacy</source>
-        <translation>Sekretess</translation>
+        <translation>Απόρητο</translation>
     </message>
     <message>
         <source>Clear Cache</source>
-        <translation>Rensa cache</translation>
+        <translation>Καθαρισμός cache</translation>
     </message>
     <message>
         <source>Clear Bookmarks</source>
-        <translation>Rensa bokmärken</translation>
+        <translation>Καθαρισμός Σελιδοδεικτών</translation>
     </message>
     <message>
         <source>Use external video player</source>
-        <translation>Använd extern videospelare</translation>
+        <translation>Χρήση εξωτερικής εφαρμογής αναπαραγωγής βίντεο</translation>
     </message>
     <message>
         <source>Reset default browser</source>
-        <translation>Återställ standardwebbläsare</translation>
+        <translation>Επαναφορά προεπιλεγμένου προγράμματος περιήγησης</translation>
     </message>
     <message>
         <source>Set Webcat as default browser</source>
-        <translation>Ange Webcat som standardwebbläsare</translation>
+        <translation>Ορίστε το Webcat ως προεπιλεγμένο πρόγραμμα περιήγησης</translation>
     </message>
     <message>
         <source>Proxy Settings</source>
-        <translation>Proxyinställningar</translation>
+        <translation>Ρυθμίσεις Διαμεσολαβητή</translation>
     </message>
     <message>
         <source>Backup Manager</source>
-        <translation>Säkerhetskopiering</translation>
+        <translation>Διαχειριστής Αντιγράφων Ασφαλέιας</translation>
     </message>
     <message>
         <source>New Tab | Stop/Refresh</source>
-        <translation>Ny flik | Stopp/Uppdatera</translation>
+        <translation>Νέα Καρτέλα | Διακοπή/Ανανέωση</translation>
     </message>
     <message>
         <source>Previous Tab | Next Tab</source>
-        <translation>Föregående flik | Nästa flik</translation>
+        <translation>Προηγούμενη Καρτέλα | Επόμενη Καρτέλα</translation>
     </message>
     <message>
         <source>Default Cover Action Group</source>
-        <translation>Standard miniatyråtgärdsgrupp</translation>
+        <translation>Προκαθορισμένη ομάδα ενεργειών καλύματος</translation>
     </message>
     <message>
         <source>Cookie Manager</source>
-        <translation>Cookie-hanterare</translation>
+        <translation>Διαχειριστής Cookie</translation>
     </message>
     <message>
         <source>Engine URL use %s for searchterm</source>
-        <translation>Sökmotor-URL, använd %s för sökterm</translation>
+        <translation>Η μηχανή URL χρησιμοποιε ί% s για τον όρο αναζήτησης</translation>
     </message>
     <message>
         <source>When unchecked, common multi-key shortcuts from other browsers are used</source>
-        <translation>Vid avmarkering används vanliga tangentbordsgenvägar från andra webbläsare</translation>
+        <translation>Όταν η παρούσα επιλογή δεν είναι επιλεγμένη, χρησιμοποιούνται κοινές συντομεύσεις πολλαπλών πλήκτρων από άλλα προγράμματα περιήγησης</translation>
     </message>
     <message>
         <source>BB10 Hardware Keyboard shortcuts</source>
-        <translation>BB10-hårdvarutangentbordsgenvägar</translation>
+        <translation>Συντομεύσεις φυσικού πληκτρολογίου BB10</translation>
     </message>
 </context>
 <context>
     <name>ShareContextMenu</name>
     <message>
         <source>Share</source>
-        <translation>Dela</translation>
+        <translation>Κοινοποίηση</translation>
     </message>
 </context>
 <context>
     <name>TabBar</name>
     <message>
         <source>Loading..</source>
-        <translation>Läser in...</translation>
+        <translation>Φόρτωση...</translation>
     </message>
     <message>
         <source>Tabs</source>
-        <translation>Flikar</translation>
+        <translation>Καρτέλες</translation>
     </message>
     <message>
         <source>Swipe up to open new window</source>
-        <translation>Svep uppåt för att öppna nytt fönster</translation>
+        <translation>Σύρετε προς τα πάνω για να ανοίξετε νέο παράθυρο</translation>
     </message>
     <message>
         <source>Swipe up to open private window</source>
-        <translation>Svep uppåt för att öppna privat fönster</translation>
+        <translation>Σύρετε προς τα επάνω για να ανοίξετε το ιδιωτικό παράθυρο</translation>
     </message>
     <message>
         <source>Swipe up to close tab</source>
-        <translation>Svep uppåt för att stänga flik</translation>
+        <translation>Σύρετε προς τα πάνω για να κλείσετε την καρτέλα</translation>
     </message>
 </context>
 <context>
     <name>TabList</name>
     <message>
         <source>Loading..</source>
-        <translation>Läser in...</translation>
+        <translation>Φόρτωση...</translation>
     </message>
     <message>
         <source>Tabs</source>
-        <translation>Flikar</translation>
+        <translation>Καρτέλες</translation>
     </message>
 </context>
 <context>
     <name>Toolbar</name>
     <message>
         <source>Enter an url</source>
-        <translation>Ange en URL</translation>
+        <translation>Εισαγάγετε μια διεύθυνση url</translation>
     </message>
     <message>
         <source> added to Bookmarks</source>
-        <translation>Bokmärke tillagt</translation>
+        <translation>προστέθηκε στους σελιδοδείκτες</translation>
     </message>
 </context>
 <context>
     <name>UserAgentDialog</name>
     <message>
         <source>Choose User Agent</source>
-        <translation>Välj användaragent</translation>
+        <translation>Επιλέξτε User Agent</translation>
     </message>
 </context>
 <context>
     <name>UserAgents</name>
     <message>
         <source>Custom</source>
-        <translation>Anpassad</translation>
+        <translation>Προσαρμοσμένο</translation>
     </message>
 </context>
 <context>
     <name>VideoPlayer</name>
     <message>
         <source>Open File</source>
-        <translation>Öppna fil</translation>
+        <translation>Άνοιγμα Αρχείου</translation>
     </message>
     <message>
         <source>Open Stream</source>
-        <translation>Öppna ström</translation>
+        <translation>Άνοιγμα Ροής</translation>
     </message>
 </context>
 <context>
     <name>VideoPlayerComponent</name>
     <message>
         <source>Dismiss</source>
-        <translation>Avfärda</translation>
+        <translation>Απόριψη</translation>
     </message>
     <message>
         <source>
 The audio and or video format is not supported.</source>
         <translation>
-Stöd saknas för ljud- och/eller filmformatet.</translation>
+Η μορφή ήχου ή βίντεο δεν υποστηρίζεται.</translation>
     </message>
     <message>
         <source>
 The video cannot be played due to network issues.</source>
         <translation>
-Filmen kan inte spelas upp på grund av nätverksproblem.</translation>
+Το βίντεο δεν μπορεί να αναπαραχθεί λόγω προβλημάτων δικτύου.</translation>
     </message>
     <message>
         <source>
 The video cannot be played because the media service could not be instantiated.</source>
         <translation>
-Filmen kan inte spelas upp på grund av att medietjänsten inte kunde instansieras.</translation>
+Δεν είναι δυνατή η αναπαραγωγή του βίντεο επειδή η υπηρεσία πολυμέσων δεν μπορεί να εκτελεστεί.</translation>
     </message>
     <message>
         <source>
 The video cannot be played due to insufficient permissions.</source>
         <translation>
-Filmen kan inte spelas upp på grund av otillräcklig behörighet.</translation>
+Το βίντεο δεν μπορεί να αναπαραχθεί λόγω ανεπαρκών δικαιωμάτων.</translation>
     </message>
     <message>
         <source>
 The video cannot be played due to a problem allocating resources.
 On Youtube Videos please make sure to be logged in. Some videos might be geoblocked or require you to be logged into youtube.</source>
         <translation>
-Filmen kan inte spelas upp på grund av problem att komma åt resurser.
-Se till att logga in på Youtube. Några filmer kan vara geografiskt blockerade eller kräver att du skall vara inloggad på Youtube.</translation>
+Το βίντεο δεν μπορεί να αναπαραχθεί εξαιτίας ενός προβλήματος κατανομής πόρων.
+Στα Βίντεο Youtube, βεβαιωθείτε ότι έχετε συνδεθεί. Ορισμένα βίντεο ενδέχεται να είναι μπλοκαρισμένα γεωγραφικά ή απαιτούν να συνδεθείτε στο youtube.</translation>
     </message>
     <message>
         <source>Pull down to load file or stream</source>
-        <translation>Dra neråt för att läsa in fil eller ström</translation>
+        <translation>Τραβήξτε προς τα κάτω για να φορτώσετε αρχείο ή ροή</translation>
     </message>
 </context>
 <context>
     <name>ytQualityChooserContextMenu</name>
     <message>
         <source>Opening...</source>
-        <translation>Öppnar...</translation>
+        <translation>Άνοιγμα...</translation>
     </message>
     <message>
         <source>Download</source>
-        <translation>Ladda ner</translation>
+        <translation>Λήψη</translation>
     </message>
     <message>
         <source>Play</source>
-        <translation>Spela</translation>
+        <translation>Αναπαραγωγή</translation>
     </message>
 </context>
 </TS>

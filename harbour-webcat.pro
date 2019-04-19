@@ -120,7 +120,8 @@ TRANSLATIONS += translations/harbour-webcat-de.ts \
         translations/harbour-webcat-ca.ts \
         translations/harbour-webcat-fi.ts \
         translations/harbour-webcat-sv.ts \
-        translations/harbour-webcat-pl.ts
+        translations/harbour-webcat-pl.ts \
+        translations/harbour-webcat-el.ts
 
 
 # Hmm... not allowed for now I guess
@@ -175,6 +176,7 @@ DISTFILES += \
     qml/pages/img/sdcard.png \
     qml/pages/img/fileman.png \
     harbour-webcat-open-url.desktop \
-    qml/pages/helper/fmComponents/ImageViewer.qml
+    qml/pages/helper/fmComponents/ImageViewer.qml \
+    translations/harbour-webcat-el.ts
 
 include(src/sortFilterProxyModel/SortFilterProxyModel.pri)

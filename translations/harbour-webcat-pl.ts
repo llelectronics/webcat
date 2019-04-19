@@ -449,11 +449,11 @@ Jeśli nie jesteś pewien, powinieneś odrzucić certyfikat. Może to jednak uni
     </message>
     <message>
         <source>Page History: Go back</source>
-        <translation>Strona hostorii: Wróć</translation>
+        <translation>Historia strony: Wstecz</translation>
     </message>
     <message>
         <source>Page History: Go forward</source>
-        <translation>Strona histotii: Dalej</translation>
+        <translation>Historia strony: Naprzód </translation>
     </message>
     <message>
         <source>Open new tab</source>
@@ -465,7 +465,7 @@ Jeśli nie jesteś pewien, powinieneś odrzucić certyfikat. Może to jednak uni
     </message>
     <message>
         <source>Close current tab</source>
-        <translation>Zamknij tą kartę</translation>
+        <translation>Zamknij zakładkę</translation>
     </message>
     <message>
         <source>Switch to next tab</source>
@@ -477,7 +477,7 @@ Jeśli nie jesteś pewien, powinieneś odrzucić certyfikat. Może to jednak uni
     </message>
     <message>
         <source>Toggle reader mode</source>
-        <translation>Przełącz w tryb czytnika</translation>
+        <translation>Włącz tryb czytnika</translation>
     </message>
     <message>
         <source>Focus URL bar</source>
@@ -528,7 +528,7 @@ Jeśli nie jesteś pewien, powinieneś odrzucić certyfikat. Może to jednak uni
     </message>
     <message>
         <source>Stop loading the current website</source>
-        <translation>Zatrzymaj ładowanie strony</translation>
+        <translation>Przerwij ładowanie strony</translation>
     </message>
     <message>
         <source>Add current website as a bookmark</source>
@@ -540,15 +540,15 @@ Jeśli nie jesteś pewien, powinieneś odrzucić certyfikat. Może to jednak uni
     </message>
     <message>
         <source>Open new private window</source>
-        <translation>Otwórz nowe prywatne okno</translation>
+        <translation>Otwórz w nowym, prywatnym oknie</translation>
     </message>
     <message>
         <source>Hide in-page search</source>
-        <translation>Ukryj pole wyszukiwania</translation>
+        <translation>Ukryj wyszukiwanie na stronie</translation>
     </message>
     <message>
         <source>Start in-page search</source>
-        <translation>Zasznij wyszukiwać</translation>
+        <translation> Uruchom wyszukiwanie na stronie</translation>
     </message>
     <message>
         <source>Close current WebCat window</source>
@@ -556,11 +556,11 @@ Jeśli nie jesteś pewien, powinieneś odrzucić certyfikat. Może to jednak uni
     </message>
     <message>
         <source>Show in-page search</source>
-        <translation>Pokaż pole wyszukiwania</translation>
+        <translation>Pokaż wyszukiwanie na stronie</translation>
     </message>
     <message>
         <source>Reload current website</source>
-        <translation>Przeładuj stronę</translation>
+        <translation>Załaduj ponownie stronę</translation>
     </message>
     <message>
         <source>Hide list of bookmarks</source>
@@ -571,7 +571,7 @@ Jeśli nie jesteś pewien, powinieneś odrzucić certyfikat. Może to jednak uni
     <name>KeyboardOverviewPage</name>
     <message>
         <source>Current Keyboard Shortcuts</source>
-        <translation>Skróty klawiatury</translation>
+        <translation>Skróty kalwiatury</translation>
     </message>
     <message>
         <source>You have selected keyboard shortcuts which mimic some current popular browsers. Take a look at the list below to see what they are or try them out.</source>
@@ -908,11 +908,11 @@ Jeśli nie jesteś pewien, powinieneś odrzucić certyfikat. Może to jednak uni
     </message>
     <message>
         <source>Save Settings</source>
-        <translation>Zapisz Ustawienia</translation>
+        <translation>Zapisz </translation>
     </message>
     <message>
         <source>About </source>
-        <translation>O </translation>
+        <translation>O Webcat</translation>
     </message>
     <message>
         <source>Load Defaults</source>
@@ -972,7 +972,7 @@ Jeśli nie jesteś pewien, powinieneś odrzucić certyfikat. Może to jednak uni
     </message>
     <message>
         <source>Start Private Window</source>
-        <translation>Uruchom Pywatne Okno</translation>
+        <translation>Uruchom Prywatne Okno</translation>
     </message>
     <message>
         <source>Load Images</source>
