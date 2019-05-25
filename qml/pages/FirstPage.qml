@@ -1092,7 +1092,7 @@ Page {
         id: ytQualChooser
         anchors.bottom: mediaDownloadRec.top
         anchors.bottomMargin: -toolbar.toolbarSep.height
-        width: parent.width;
+        width: parent.width
         z: 90
     }
 
