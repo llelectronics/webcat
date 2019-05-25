@@ -81,7 +81,8 @@ public slots:
         QFile ytdlBin;
         ytdlBin.setFileName(data_dir + "/youtube-dl");
         if (!ytdlBin.exists()) {
-            if (ytdlBin.setFileName("/usr/share/harbour-videoPlayer/qml/pages/helper/youtube-dl").exists()) {
+            ytdlBin.setFileName("/usr/share/harbour-videoPlayer/qml/pages/helper/youtube-dl");
+            if (ytdlBin.exists()) {
                 ytdlBin.setFileName("/usr/share/harbour-videoPlayer/qml/pages/helper/youtube-dl");
                 ytdlBin.copy(data_dir + "/youtube-dl");
             }
@@ -90,9 +91,10 @@ public slots:
                 ytdlBinDownload->start("curl -L https://yt-dl.org/downloads/latest/youtube-dl -o " + data_dir + "/youtube-dl");
                 ytdlBinDownload->waitForFinished();
             }
+            ytdlBin.setFileName(data_dir + "/youtube-dl");
         }
         ytdlBin.setPermissions(QFileDevice::ExeUser|QFileDevice::ExeGroup|QFileDevice::ExeOther|QFileDevice::ReadUser|QFileDevice::ReadGroup|QFileDevice::ReadOther|QFileDevice::WriteUser|QFileDevice::WriteGroup|QFileDevice::WriteOther);
-
+        updateYtdl();
 //        // Detect ffmpeg binary from Encode App
 //        QFile ffmpegBin;
 //        ffmpegBin.setFileName("/usr/share/harbour-encode/ffmpeg_static");
@@ -112,7 +114,7 @@ public slots:
     }
     void updateYtdl()
     {
-        checkAndInstall();
+        //checkAndInstall();
         updateBinary.start(data_dir + "/youtube-dl -U");
         connect(&updateBinary, SIGNAL(finished(int)), this, SLOT(getUpdateStatus(int)));
     }

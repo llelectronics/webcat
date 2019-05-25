@@ -19,6 +19,9 @@ Rectangle {
             counter = counter + 1
             dataContainer.mediaList.insert(counter, {"mediaTitle": mediaUrl, "url": mediaUrl, "ytMedia":true});
             YT.getYoutubeDirectStream(mediaUrl.toString(),page, counter);
+            _ytdl.setUrl(mediaUrl.toString());
+            _ytdl.setParameter("-f 18"); // MP4 360p
+            _ytdl.getStreamUrl();
         }
         else if (mediaUrl != "" && !dataContainer.mediaList.contains(mediaUrl)) {
             counter = counter + 1

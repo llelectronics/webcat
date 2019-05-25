@@ -58,11 +58,11 @@ function getYoutubeDirectStream(url,firstPage,listId) {
     catch(e) {
         //console.debug("[yt.js]: " + e)
         //console.debug("Assuming it is probably not a youtube video link")
-        firstPage.ytUrlLoading = false
-        firstPage.mediaYt = false
-        firstPage.mediaLink = false
-        firstPage.mediaDownloadRec.visible = false
-        firstPage.mediaDownloadRec.mediaUrl = ""
+//        firstPage.ytUrlLoading = false
+//        firstPage.mediaYt = false
+//        firstPage.mediaLink = false
+//        firstPage.mediaDownloadRec.visible = false
+//        firstPage.mediaDownloadRec.mediaUrl = ""
         return;
     }
     try {
@@ -208,9 +208,9 @@ function getYoutubeStream(youtube_id, firstPage, listId) {
                 } else {
                     var msg = "Couldn't find video either in MP4 720p, FLV 480p, MP4 360p and FLV 240p";
                     //console.debug(msg);
-                    firstPage.ytUrlLoading = false
-                    firstPage.mediaYt = false
-                    firstPage.mediaDownloadRec.visible = false
+//                    firstPage.ytUrlLoading = false
+//                    firstPage.mediaYt = false
+//                    firstPage.mediaDownloadRec.visible = false
                     return;
                 }
             } catch(e) {

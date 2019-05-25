@@ -1018,7 +1018,7 @@ Page {
         anchors.top: page.top
         anchors.left: page.left
         anchors.right: page.right
-        height: if (page.orientation == Orientation.Portrait || page.orientation == Orientation.PortraitInverted) page.height / 3.1337
+        height: if (page.orientation == Orientation.Portrait || page.orientation == Orientation.PortraitInverted) page.height / 2.5
         anchors.bottom: {
             if (page.orientation == Orientation.Portrait || page.orientation == Orientation.PortraitInverted) undefined
             else mediaDownloadRec.visible ? mediaDownloadRec.top : toolbar.top
@@ -1050,7 +1050,7 @@ Page {
                     vPlayerLoader.anchors.bottom = mediaDownloadRec.visible ? mediaDownloadRec.top : toolbar.top
                 else {
                     vPlayerLoader.anchors.bottom = undefined
-                    vPlayerLoader.height = page.height / 3.1337
+                    vPlayerLoader.height = page.height / 2.5
                     if (!webview.visible) webview.visible = true
                 }
                 vPlayerLoader.z = 80
@@ -1066,7 +1066,7 @@ Page {
                 vPlayerLoader.anchors.bottom = mediaDownloadRec.visible ? mediaDownloadRec.top : toolbar.top
             else {
                 vPlayerLoader.anchors.bottom = undefined
-                vPlayerLoader.height = page.height / 3.1337
+                vPlayerLoader.height = page.height / 2.5
             }
             vPlayerLoader.z = 80
             vPlayerLoader.setSource(""); 
@@ -1076,14 +1076,14 @@ Page {
             if (page.orientation == Orientation.Portrait || page.orientation == Orientation.PortraitInverted) {
                 vPlayerLoader.anchors.bottom = mediaDownloadRec.visible ? mediaDownloadRec.top : toolbar.top
                 vPlayerLoader.anchors.top = undefined
-                vPlayerLoader.height = page.height / 3.1337
+                vPlayerLoader.height = page.height / 2.5
             }
         }
         onSwipeUp: {
             if (page.orientation == Orientation.Portrait || page.orientation == Orientation.PortraitInverted) {
                 vPlayerLoader.anchors.top = page.top
                 vPlayerLoader.anchors.bottom = undefined
-                vPlayerLoader.height = page.height / 3.1337
+                vPlayerLoader.height = page.height / 2.5
             }
         }
     }
@@ -1105,6 +1105,29 @@ Page {
             vPlayerLoader.setSource("VideoPlayerComponent.qml", {dataContainer: firstPage, streamUrl: url, streamTitle: mediaDownloadRec.mediaDownloadRecTitle.text})
             ytQualChooser.item.height = 0
             ytQualChooser.source = ""
+        }
+    }
+
+    Connections {
+        target: _ytdl
+        onStreamUrlChanged: {
+            if (changedUrl != "") {  // Don't load empty stuff
+                page.yt360p = changedUrl;
+                page.ytStreamUrl = changedUrl;
+                page.ytUrlLoading = false;
+                page.mediaDownloadRec.visible = true;
+            }
+            else if (changedUrl == "") {
+                // Fail silently
+                console.log("")
+            }
+            else {
+                page.ytUrlLoading = false
+                page.mediaYt = false
+                page.mediaLink = false
+                page.mediaDownloadRec.visible = false
+                page.mediaDownloadRec.mediaUrl = ""
+            }
         }
     }
 

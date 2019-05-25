@@ -101,7 +101,8 @@ HEADERS += \
     src/dbus/webcatadaptor.h \
     src/dbus/webcatinterface.h \
     src/proxymanager.h \
-    src/cookiemanager.hpp
+    src/cookiemanager.hpp \
+    src/youtubedl-helper.hpp
 
 QT += network
 

@@ -43,6 +43,7 @@
 #include "dbus/webcatinterface.h"
 #include "proxymanager.h"
 #include "cookiemanager.hpp"
+#include "youtubedl-helper.hpp"
 
 // Compile everything needed for faster startup and less memory usage
 #include <QQuickItem>
@@ -181,6 +182,7 @@ int main(int argc, char *argv[])
     view->engine()->rootContext()->setContextProperty("_fm", nullptr);
     view->engine()->rootContext()->setContextProperty("_videoHelper", nullptr);
     view->engine()->rootContext()->setContextProperty("_cookieManager", nullptr);
+    view->engine()->rootContext()->setContextProperty("_ytdl", nullptr);
     //
 
     view->setSource(SailfishApp::pathTo("qml/harbour-webcat.qml"));
@@ -252,6 +254,9 @@ int main(int argc, char *argv[])
 
     CookieManager *cookieManager = new CookieManager();
     view->engine()->rootContext()->setContextProperty("_cookieManager", cookieManager);
+
+    ythelper *youtubedl = new ythelper();
+    view->engine()->rootContext()->setContextProperty("_ytdl", youtubedl);
 
     view->showFullScreen();
 
