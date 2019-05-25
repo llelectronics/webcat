@@ -10,6 +10,8 @@
 #include <QFile>
 #include <QStandardPaths>
 #include <QFileDevice>
+#include <QFileInfo>
+#include <QDateTime>
 
 class ythelper : public QObject
 {   Q_OBJECT
@@ -94,7 +96,16 @@ public slots:
             ytdlBin.setFileName(data_dir + "/youtube-dl");
         }
         ytdlBin.setPermissions(QFileDevice::ExeUser|QFileDevice::ExeGroup|QFileDevice::ExeOther|QFileDevice::ReadUser|QFileDevice::ReadGroup|QFileDevice::ReadOther|QFileDevice::WriteUser|QFileDevice::WriteGroup|QFileDevice::WriteOther);
-        updateYtdl();
+        QFileInfo ytdlFileInfo; ytdlFileInfo.setFile(ytdlBin);
+        QDateTime created = ytdlFileInfo.lastModified();
+        QDateTime now = QDateTime::currentDateTime();
+        if (created.daysTo(now) > 10) {
+            qDebug() << "Youtube-DL more than 10 days old. Updating in the background ...";
+            updateYtdl();
+        }
+        else {
+            qDebug() << "Youtube-DL does not need an update yet.";
+        }
 //        // Detect ffmpeg binary from Encode App
 //        QFile ffmpegBin;
 //        ffmpegBin.setFileName("/usr/share/harbour-encode/ffmpeg_static");
