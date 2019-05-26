@@ -509,8 +509,6 @@ Rectangle {
             }
         }
         function enterPress(event){
-            if (fPage.suggestionView.visible) fPage.suggestionView.visible = false;
-
             if(event.modifiers === Qt.ControlModifier) {
                 urlText.text = urlText.text + '.com'
             } else if(event.modifiers === Qt.ShiftModifier) {
@@ -522,6 +520,7 @@ Rectangle {
             fPage.webview.url = fixUrl(urlText.text);
             urlText.focus = false;  // Close keyboard
             fPage.webview.focus = true;
+            if (fPage.suggestionView.visible) fPage.suggestionView.visible = false;
             if (bookmarkList.visible || tabBar.visible) {
                 bookmarkList.hide()
                 tabBar.hide()

@@ -1330,6 +1330,7 @@ Page {
             else return max
         }
         visible: false
+
         onSelected: {
             toolbar.urlText.focus = false;
             suggestionView.visible = false ;
