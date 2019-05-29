@@ -21,7 +21,6 @@ public:
     QString streamTitle;
     QString errorMsg;
     QString parameter;
-    QProcess streamProcess;
     QProcess titleProcess;
     QProcess updateBinary;
     QString data_dir = QStandardPaths::writableLocation(QStandardPaths::DataLocation);
@@ -134,8 +133,9 @@ public slots:
     {
         //qDebug() << "Starting process with url:" << reqUrl;
         checkAndInstall();
-        streamProcess.start(data_dir + "/youtube-dl " + parameter + " -g " + reqUrl);
-        connect(&streamProcess, SIGNAL(finished(int)), this, SLOT(getStreamUrlOutput(int)));
+        QProcess *streamProcess = new QProcess;
+        streamProcess->start(data_dir + "/youtube-dl " + parameter + " -g " + reqUrl);
+        connect(streamProcess, SIGNAL(finished(int)), this, SLOT(getStreamUrlOutput(int)));
     }
     void getStreamTitle()
     {
@@ -222,15 +222,17 @@ public slots:
     }
     void getStreamUrlOutput(int exitCode)
     {
+        QProcess *streamProcess = dynamic_cast<QProcess *>(sender());
         if (exitCode == 0) {
-            QByteArray out = streamProcess.readAllStandardOutput();
+
+            QByteArray out = streamProcess->readAllStandardOutput();
             QList<QByteArray> outputList = out.split('\n');
             qDebug() << "Called the C++ slot and got following url:" << outputList[0];
             streamUrl = outputList[0];
             streamUrlChanged(streamUrl);
         }
         else {
-            printError(&streamProcess);
+            printError(streamProcess);
         }
     }
     void printError(QProcess *pProcess)

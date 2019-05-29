@@ -215,6 +215,14 @@ Page {
 //        page.orientation = curOrient
     }
 
+    function hideMediaBar() {
+        page.ytUrlLoading = false
+        page.mediaYt = false
+        page.mediaLink = false
+        page.mediaDownloadRec.visible = false
+        page.mediaDownloadRec.mediaUrl = ""
+    }
+
     Item{
         id: popup
         anchors.centerIn: parent
@@ -1112,23 +1120,22 @@ Page {
     Connections {
         target: _ytdl
         onStreamUrlChanged: {
-            if (changedUrl != "") {  // Don't load empty stuff
-                page.yt360p = changedUrl;
-                page.ytStreamUrl = changedUrl;
-                page.ytUrlLoading = false;
-                page.mediaDownloadRec.visible = true;
-            }
-            else if (changedUrl == "") {
-                // Fail silently
-                console.log("")
-            }
-            else {
-                page.ytUrlLoading = false
-                page.mediaYt = false
-                page.mediaLink = false
-                page.mediaDownloadRec.visible = false
-                page.mediaDownloadRec.mediaUrl = ""
-            }
+            if (_ytdl.getReqUrl() == page.webview.url) {
+                if (changedUrl != "") {  // Don't load empty stuff
+                    page.yt360p = changedUrl;
+                    page.ytStreamUrl = changedUrl;
+                    page.ytUrlLoading = false;
+                    page.mediaDownloadRec.visible = true;
+                }
+                else if (changedUrl == "") {
+                    // Fail silently
+                    console.log("_ytdl.empty")
+                }
+                else {
+                    console.log("_ytdl hide mediabar")
+                    page.hideMediaBar();
+                }
+            } // if reqUrl
         }
     }
 
