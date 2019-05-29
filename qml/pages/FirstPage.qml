@@ -707,7 +707,7 @@ Page {
                 // Update url for tabModel
                 //console.debug("[FirstPage.qml] pageId: " + pageId);
                 if (pageId != "" || pageId != undefined) mainWindow.tabModel.updateUrl(pageId,url)
-                if (title.length != 0 && title != "" && toolbar.state == "expanded") {
+                if (title.length != 0 && title != "" && toolbar.state == "expanded" && toolbar.urlText.focus != true) {
                     toolbar.webTitle.visible = true;
                 }
             }
@@ -742,6 +742,7 @@ Page {
                     // delegate request.url here
                 }
             }*/
+            if (suggestionView.visible) suggestionView.visible = false;
         }
 
         Selection {
