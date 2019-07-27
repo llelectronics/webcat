@@ -129,7 +129,7 @@ function getYoutubeStream(youtube_id, firstPage, listId) {
                     //}
 
 
-                    var url="", sig="", itag="";
+                    var url="", sig="", itag="", sp="";
                     var resolutionFormat;
                     for (var j = 0; j < secondSplit.length; j++) {
                         paramPair = secondSplit[j].split("=");
@@ -162,7 +162,12 @@ function getYoutubeStream(youtube_id, firstPage, listId) {
                         // Try to get 720p HD video stream first
                         if (itag === "22" && typeof url !== 'undefined' && url != "") { // 7 parameters per video 2 of them unidentified; itag 22 is "MP4 720p", see http://userscripts.org/scripts/review/25105
                             resolutionFormat = "MP4 720p"
-                            url += "&signature=" + sig;
+                            if (!!sig) {
+                                url += "&signature=" + sig;
+                            }
+                            else if (!!sp) {
+                                url += "&sp=" + sp;
+                            }
                             firstPage.mediaList.set(listId,{"yt720p": url});
                             found = true;
                             //console.debug("[yt.js] Found 720p video with listId: " + listId + " and stream: " + url);
@@ -171,7 +176,13 @@ function getYoutubeStream(youtube_id, firstPage, listId) {
                         // If above fails try to get 480p video stream
                         else if (itag === "35" && typeof url !== 'undefined' && url != "") { // 7 parameters per video 2 of them unidentified; itag 35 is "FLV 480p", see http://userscripts.org/scripts/review/25105
                             resolutionFormat = "FLV 480p"
-                            firstPage.mediaList.set(listId,{"yt480p": url += "&signature=" + sig});
+                            if (!!sig) {
+                                url += "&signature=" + sig;
+                            }
+                            else if (!!sp) {
+                                url += "&sp=" + sp;
+                            }
+                            firstPage.mediaList.set(listId,{"yt480p": url});
                             if (found == false) url += "&signature=" + sig;
                             found = true;
                             //console.debug("[yt.js] Found 480p video")
@@ -180,7 +191,13 @@ function getYoutubeStream(youtube_id, firstPage, listId) {
                         // If above fails try to get 360p video stream
                         else if (itag === "18" && typeof url !== 'undefined' && url != "") { // 7 parameters per video 2 of them unidentified; itag 18 is "MP4 360p", see http://userscripts.org/scripts/review/25105
                             resolutionFormat = "MP4 360p"
-                            firstPage.mediaList.set(listId,{"yt360p": url += "&signature=" + sig});
+                            if (!!sig) {
+                                url += "&signature=" + sig;
+                            }
+                            else if (!!sp) {
+                                url += "&sp=" + sp;
+                            }
+                            firstPage.mediaList.set(listId,{"yt360p": url});
                             if (found == false) url += "&signature=" + sig;
                             found = true;
                             //console.debug("[yt.js] Found 360p video")
@@ -189,7 +206,13 @@ function getYoutubeStream(youtube_id, firstPage, listId) {
                         // If above fails try to get 240p video stream
                         else if (itag === "36" && typeof url !== 'undefined' && url != "") { // 7 parameters per video 2 of them unidentified; itag 36 is "3GPP 240p", see http://userscripts.org/scripts/review/25105
                             resolutionFormat = "FLV 240p"
-                            firstPage.mediaList.set(listId,{"yt240p": url += "&signature=" + sig});
+                            if (!!sig) {
+                                url += "&signature=" + sig;
+                            }
+                            else if (!!sp) {
+                                url += "&sp=" + sp;
+                            }
+                            firstPage.mediaList.set(listId,{"yt240p": url});
                             if (found == false) url += "&signature=" + sig;
                             found = true;
                             //console.debug("[yt.js] Found 240p video")
