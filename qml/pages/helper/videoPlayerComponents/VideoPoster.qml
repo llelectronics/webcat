@@ -10,6 +10,7 @@ MouseArea {
     property url source
     property string mimeType
     property int duration
+    property int pressTime: 1
     onDurationChanged: positionSlider.maximumValue = duration
     property alias controls: controls
     property alias position: positionSlider.value
@@ -125,6 +126,14 @@ MouseArea {
             }
         }
 
+        Timer {
+            id: pressTimer
+            running: false;
+            interval: 1500
+            onTriggered: { stop() }
+            triggeredOnStart: false
+        }
+
         Image {
             id: ffwdImg
             anchors.verticalCenter: playPauseImg.verticalCenter
@@ -141,8 +150,16 @@ MouseArea {
                 onClicked: {
                     //console.debug("VideoItem.source length = " + videoItem.source.toString().length)
                     if (videoItem.source.toString().length !== 0) {
-                        //console.debug("Yeah we have a video source")
-                        ffwd(10)
+                        if (!pressTimer.running) {
+                            pressTime = 1;
+                            pressTimer.start();
+                            ffwd(10)
+                        }
+                        else {
+                            pressTime += 1
+                            forwardIndicator.visible = true
+                            ffwd(10*pressTime)
+                        }
                     }
                 }
             }
@@ -165,8 +182,16 @@ MouseArea {
                 onClicked: {
                     //console.debug("VideoItem.source length = " + videoItem.source.toString().length)
                     if (videoItem.source.toString().length !== 0) {
-                        //console.debug("Yeah we have a video source")
-                        rew(5)
+                        if (!pressTimer.running) {
+                            pressTime = 1;
+                            pressTimer.start();
+                            rew(5)
+                        }
+                        else {
+                            pressTime += 1
+                            backwardIndicator.visible = true
+                            rew(5*pressTime)
+                        }
                     }
                 }
             }
@@ -228,6 +253,82 @@ MouseArea {
                     }
                 }
             }
+        }
+        Row {
+            id: backwardIndicator
+            anchors.horizontalCenter: parent.horizontalCenter
+            y: parent.width / 2 - (playPauseImg.height + Theme.paddingLarge)
+            visible: false
+            spacing: -Theme.paddingLarge*2
+
+            Image {
+                id: prev1
+                width: Theme.itemSizeLarge
+                height: Theme.itemSizeLarge
+                anchors.verticalCenter: parent.verticalCenter
+                fillMode: Image.PreserveAspectFit
+                source: "image://theme/icon-cover-play"
+
+                transform: Rotation{
+                    angle: 180
+                    origin.x: prev1.width/2
+                    origin.y: prev1.height/2
+                }
+            }
+            Image {
+                id: prev2
+                width: Theme.itemSizeLarge
+                height: Theme.itemSizeLarge
+                anchors.verticalCenter: parent.verticalCenter
+                fillMode: Image.PreserveAspectFit
+                source: "image://theme/icon-cover-play"
+
+                transform: Rotation{
+                    angle: 180
+                    origin.x: prev2.width/2
+                    origin.y: prev2.height/2
+                }
+            }
+
+            Timer {
+                id: hideBackward
+                interval: 300
+                onTriggered: backwardIndicator.visible = false
+            }
+
+            onVisibleChanged: if (backwardIndicator.visible) hideBackward.start()
+        }
+
+        Row {
+            id: forwardIndicator
+            anchors.horizontalCenter: parent.horizontalCenter
+            y: parent.width / 2 - (playPauseImg.height + Theme.paddingLarge)
+            visible: false
+            spacing: -Theme.paddingLarge*2
+
+            Image {
+                width: Theme.itemSizeLarge
+                height: Theme.itemSizeLarge
+                anchors.verticalCenter: parent.verticalCenter
+                fillMode: Image.PreserveAspectFit
+                source: "image://theme/icon-cover-play"
+
+            }
+            Image {
+                width: Theme.itemSizeLarge
+                height: Theme.itemSizeLarge
+                anchors.verticalCenter: parent.verticalCenter
+                fillMode: Image.PreserveAspectFit
+                source: "image://theme/icon-cover-play"
+            }
+
+            Timer {
+                id: hideForward
+                interval: 300
+                onTriggered: forwardIndicator.visible = false
+            }
+
+            onVisibleChanged: if (forwardIndicator.visible) hideForward.start()
         }
     }
 }
