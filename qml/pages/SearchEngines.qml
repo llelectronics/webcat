@@ -43,6 +43,10 @@ ListModel {
         uri: "https://www.baidu.com/s?&wd=%s"
     }
     ListElement {
+        title: "QWant"
+        uri: "https://www.qwant.com/?q=%s"
+    }
+    ListElement {
         title: qsTr("Custom")
         uri: ""
     }
