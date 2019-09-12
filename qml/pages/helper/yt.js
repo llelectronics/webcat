@@ -87,6 +87,8 @@ function getYoutubeStream(youtube_id, firstPage, listId) {
 
             var videoInfoSplit = videoInfo.split("&");
             var streams;
+            var response;
+            var streamData;
             var paramPair;
 
             for (var i = 0; i < videoInfo.length; i++) {
@@ -97,9 +99,16 @@ function getYoutubeStream(youtube_id, firstPage, listId) {
                     //console.debug("[yt.js]: " + e)
                     continue;
                 }
-                if (paramPair[0] === "url_encoded_fmt_stream_map") {
-                    //console.debug("[yt.js] Streams found")
-                    streams = decodeURIComponent(paramPair[1]);
+                if (paramPair[0] === "player_response") {
+                    //console.log("player response found: " + paramPair[1]);
+                    response = JSON.parse(decodeURIComponent(paramPair[1]));
+                    //console.log("Response:" + response);
+                    streamData = response["streamingData"];
+                    //console.log("StreamData:" + JSON.stringify(streamData));
+                    streams = streamData["formats"];
+                    //console.log("Formats: " + JSON.stringify(streams));
+
+                    //streams = response.stream //decodeURIComponent(paramPair[1]);
                     break;
                 }
             }
@@ -115,33 +124,14 @@ function getYoutubeStream(youtube_id, firstPage, listId) {
             }
 
             try {
-                var streamsSplit = streams.split(",");
-            } catch(e) {
-                  msg = "[yt.js]: " + e
-//                console.debug(msg)
-            }
-            try {
-                var secondSplit;
-                var found = false;
-                for (var i = 0; i < streamsSplit.length; i++) {
-                    secondSplit = streamsSplit[i].split("&");
-                    //console.debug(" --- STREAMSPLIT 2 --- : " + secondSplit[0] + " , " + secondSplit[1]);
-                    //}
-
-
-                    var url="", sig="", itag="", sp="";
+                for (var i = 0; i < streams.length; i++) {
+                    var streamObject = streams[i];
+                    console.log("Get streamObject " + i + " : " + JSON.stringify(streamObject))
+                    var url=decodeURIComponent(streamObject["url"]), sig="", itag=streamObject["itag"], sp="";
+                    if ("cipher" in streamObject) sig=streamObject.cipher
+                    var found = false;
                     var resolutionFormat;
-                    for (var j = 0; j < secondSplit.length; j++) {
-                        paramPair = secondSplit[j].split("=");
-//                        console.debug(" --- STREAMS PARAM PAIR : " + j);
-//                        console.debug(" --- STREAMS PARAM PAIR --- : " + paramPair[0] + " = " + paramPair[1]);
-                        if (paramPair[0] === "url") {
-                            url = decodeURIComponent(paramPair[1]);
-                        } else if (paramPair[0] === "sig") {
-                            sig = paramPair[1]; // do not decode, as we would have to encode it later (although decoding/encoding has currently no effect for the signature)
-                        } else if (paramPair[0] === "itag") {
-                            itag = paramPair[1];
-                        }
+
                         //***********************************************//
                         //     List of video formats as of 2015.12.02    //
                         // fmt=17   144p        vq=?           ?    vorbis   //
@@ -160,7 +150,7 @@ function getYoutubeStream(youtube_id, firstPage, listId) {
                         //***********************************************//
 
                         // Try to get 720p HD video stream first
-                        if (itag === "22" && typeof url !== 'undefined' && url != "") { // 7 parameters per video 2 of them unidentified; itag 22 is "MP4 720p", see http://userscripts.org/scripts/review/25105
+                        if (itag === 22) { // 7 parameters per video 2 of them unidentified; itag 22 is "MP4 720p", see http://userscripts.org/scripts/review/25105
                             resolutionFormat = "MP4 720p"
                             if (!!sig) {
                                 url += "&signature=" + sig;
@@ -171,10 +161,10 @@ function getYoutubeStream(youtube_id, firstPage, listId) {
                             firstPage.mediaList.set(listId,{"yt720p": url});
                             found = true;
                             //console.debug("[yt.js] Found 720p video with listId: " + listId + " and stream: " + url);
-                            break;
+                            continue;
                         }
                         // If above fails try to get 480p video stream
-                        else if (itag === "35" && typeof url !== 'undefined' && url != "") { // 7 parameters per video 2 of them unidentified; itag 35 is "FLV 480p", see http://userscripts.org/scripts/review/25105
+                        else if (itag === 35) { // 7 parameters per video 2 of them unidentified; itag 35 is "FLV 480p", see http://userscripts.org/scripts/review/25105
                             resolutionFormat = "FLV 480p"
                             if (!!sig) {
                                 url += "&signature=" + sig;
@@ -186,10 +176,10 @@ function getYoutubeStream(youtube_id, firstPage, listId) {
                             if (found == false) url += "&signature=" + sig;
                             found = true;
                             //console.debug("[yt.js] Found 480p video")
-                            break;
+                            continue;
                         }
                         // If above fails try to get 360p video stream
-                        else if (itag === "18" && typeof url !== 'undefined' && url != "") { // 7 parameters per video 2 of them unidentified; itag 18 is "MP4 360p", see http://userscripts.org/scripts/review/25105
+                        else if (itag === 18) { // 7 parameters per video 2 of them unidentified; itag 18 is "MP4 360p", see http://userscripts.org/scripts/review/25105
                             resolutionFormat = "MP4 360p"
                             if (!!sig) {
                                 url += "&signature=" + sig;
@@ -201,10 +191,10 @@ function getYoutubeStream(youtube_id, firstPage, listId) {
                             if (found == false) url += "&signature=" + sig;
                             found = true;
                             //console.debug("[yt.js] Found 360p video")
-                            break;
+                            continue;
                         }
                         // If above fails try to get 240p video stream
-                        else if (itag === "36" && typeof url !== 'undefined' && url != "") { // 7 parameters per video 2 of them unidentified; itag 36 is "3GPP 240p", see http://userscripts.org/scripts/review/25105
+                        else if (itag === 36) { // 7 parameters per video 2 of them unidentified; itag 36 is "3GPP 240p", see http://userscripts.org/scripts/review/25105
                             resolutionFormat = "FLV 240p"
                             if (!!sig) {
                                 url += "&signature=" + sig;
@@ -216,9 +206,9 @@ function getYoutubeStream(youtube_id, firstPage, listId) {
                             if (found == false) url += "&signature=" + sig;
                             found = true;
                             //console.debug("[yt.js] Found 240p video")
-                            break;
+                            continue;
                         }
-                    }
+
                 }
 
                 if (found) {
