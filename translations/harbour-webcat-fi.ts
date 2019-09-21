@@ -647,10 +647,6 @@ If you are unsure reject the certificate. That might lead to a non loading websi
         <translation type="unfinished">Poistaa...</translation>
     </message>
     <message>
-        <source>directory</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Cut</source>
         <translation type="unfinished"></translation>
     </message>

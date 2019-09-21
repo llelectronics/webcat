@@ -649,10 +649,6 @@ Se non sei sicuro, rifiuta il certificato. Ma questo può impedire il caricament
         <translation>Eliminazione</translation>
     </message>
     <message>
-        <source>directory</source>
-        <translation>cartella</translation>
-    </message>
-    <message>
         <source>Cut</source>
         <translation>Taglia</translation>
     </message>

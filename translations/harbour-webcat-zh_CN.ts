@@ -645,10 +645,6 @@ If you are unsure reject the certificate. That might lead to a non loading websi
         <translation>正在删除</translation>
     </message>
     <message>
-        <source>directory</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Cut</source>
         <translation type="unfinished"></translation>
     </message>

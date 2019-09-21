@@ -649,10 +649,6 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
         <translation>Tar bort </translation>
     </message>
     <message>
-        <source>directory</source>
-        <translation>mapp</translation>
-    </message>
-    <message>
         <source>Cut</source>
         <translation>Klipp ut</translation>
     </message>

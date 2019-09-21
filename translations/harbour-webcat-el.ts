@@ -649,10 +649,6 @@ If you are unsure reject the certificate. That might lead to a non loading websi
         <translation>Διαγραφή</translation>
     </message>
     <message>
-        <source>directory</source>
-        <translation>φάκελος</translation>
-    </message>
-    <message>
         <source>Cut</source>
         <translation>Αποκοπή</translation>
     </message>

@@ -648,10 +648,6 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
         <translation>Suppression</translation>
     </message>
     <message>
-        <source>directory</source>
-        <translation>Répertoire</translation>
-    </message>
-    <message>
         <source>Cut</source>
         <translation>Couper</translation>
     </message>

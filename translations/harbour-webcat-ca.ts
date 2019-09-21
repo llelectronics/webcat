@@ -649,10 +649,6 @@ En cas de dubte, refuseu el certificat malgrat que això pot provocar que no es 
         <translation>S&apos;està eliminant</translation>
     </message>
     <message>
-        <source>directory</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Cut</source>
         <translation type="unfinished"></translation>
     </message>

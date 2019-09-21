@@ -649,10 +649,6 @@ Si no estás seguro, rechaza el certificado. Esto podría hacer que la página n
         <translation>Borrando </translation>
     </message>
     <message>
-        <source>directory</source>
-        <translation>directorio</translation>
-    </message>
-    <message>
         <source>Cut</source>
         <translation>Cortar</translation>
     </message>

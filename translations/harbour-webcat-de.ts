@@ -644,10 +644,6 @@ Wenn Sie sich unsicher sind lehnen sie das Zertifikat ab. Dies führt unter Umst
         <translation>Lösche </translation>
     </message>
     <message>
-        <source>directory</source>
-        <translation>Verzeichnis</translation>
-    </message>
-    <message>
         <source>Cut</source>
         <translation>Ausschneiden</translation>
     </message>

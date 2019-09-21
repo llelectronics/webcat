@@ -649,10 +649,6 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
         <translation>Wordt verwijderd</translation>
     </message>
     <message>
-        <source>directory</source>
-        <translation>map</translation>
-    </message>
-    <message>
         <source>Cut</source>
         <translation>Knippen</translation>
     </message>

@@ -648,10 +648,6 @@ Jeśli nie jesteś pewien, powinieneś odrzucić certyfikat. Może to jednak uni
         <translation>Usuwanie</translation>
     </message>
     <message>
-        <source>directory</source>
-        <translation>katalog</translation>
-    </message>
-    <message>
         <source>Cut</source>
         <translation>Wytnij</translation>
     </message>

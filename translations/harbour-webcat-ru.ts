@@ -648,10 +648,6 @@ If you are unsure reject the certificate. That might lead to a non loading websi
         <translation>Удаляю</translation>
     </message>
     <message>
-        <source>directory</source>
-        <translation>директория</translation>
-    </message>
-    <message>
         <source>Cut</source>
         <translation>Вырезать</translation>
     </message>
