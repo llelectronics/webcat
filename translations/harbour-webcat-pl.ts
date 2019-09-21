@@ -317,6 +317,29 @@ Jeśli nie jesteś pewien, powinieneś odrzucić certyfikat. Może to jednak uni
     </message>
 </context>
 <context>
+    <name>FileItemDelegate</name>
+    <message>
+        <source>Deleting </source>
+        <translation type="unfinished">Usuwanie</translation>
+    </message>
+    <message>
+        <source>Cut</source>
+        <translation type="unfinished">Wytnij</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation type="unfinished">Kopiuj</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation type="unfinished">Usuń</translation>
+    </message>
+    <message>
+        <source>Properties</source>
+        <translation type="unfinished">Właściwości</translation>
+    </message>
+</context>
+<context>
     <name>FileProperties</name>
     <message>
         <source>Location</source>
@@ -644,22 +667,6 @@ Jeśli nie jesteś pewien, powinieneś odrzucić certyfikat. Może to jednak uni
         <translation>Wklej</translation>
     </message>
     <message>
-        <source>Deleting </source>
-        <translation>Usuwanie</translation>
-    </message>
-    <message>
-        <source>Cut</source>
-        <translation>Wytnij</translation>
-    </message>
-    <message>
-        <source>Copy</source>
-        <translation>Kopiuj</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation>Usuń</translation>
-    </message>
-    <message>
         <source>Error pasting file </source>
         <translation>Błąd wklejania pliku</translation>
     </message>
@@ -678,6 +685,26 @@ Jeśli nie jesteś pewien, powinieneś odrzucić certyfikat. Może to jednak uni
     <message>
         <source>Add to places</source>
         <translation>Dodaj miejsca</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation type="unfinished">Rozmiar</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation type="unfinished">Typ</translation>
+    </message>
+    <message>
+        <source>Sort by: </source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

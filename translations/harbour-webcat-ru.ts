@@ -317,6 +317,29 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
 </context>
 <context>
+    <name>FileItemDelegate</name>
+    <message>
+        <source>Deleting </source>
+        <translation type="unfinished">Удаление</translation>
+    </message>
+    <message>
+        <source>Cut</source>
+        <translation type="unfinished">Вырезать</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation type="unfinished">Копировать</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation type="unfinished">Удалить</translation>
+    </message>
+    <message>
+        <source>Properties</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>FileProperties</name>
     <message>
         <source>Location</source>
@@ -644,22 +667,6 @@ If you are unsure reject the certificate. That might lead to a non loading websi
         <translation>Вставить</translation>
     </message>
     <message>
-        <source>Deleting </source>
-        <translation>Удаляю</translation>
-    </message>
-    <message>
-        <source>Cut</source>
-        <translation>Вырезать</translation>
-    </message>
-    <message>
-        <source>Copy</source>
-        <translation>Копировать</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation>Удалить</translation>
-    </message>
-    <message>
         <source>Error pasting file </source>
         <translation>Ошибка при копировании файла</translation>
     </message>
@@ -677,6 +684,26 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Add to places</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sort by: </source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -790,7 +817,7 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Deleting </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Удаление</translation>
     </message>
     <message>
         <source>Rename</source>

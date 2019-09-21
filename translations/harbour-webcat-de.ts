@@ -318,6 +318,29 @@ Wenn Sie sich unsicher sind lehnen sie das Zertifikat ab. Dies führt unter Umst
     </message>
 </context>
 <context>
+    <name>FileItemDelegate</name>
+    <message>
+        <source>Deleting </source>
+        <translation type="unfinished">Lösche </translation>
+    </message>
+    <message>
+        <source>Cut</source>
+        <translation type="unfinished">Ausschneiden</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation type="unfinished">Kopieren</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation type="unfinished">Löschen</translation>
+    </message>
+    <message>
+        <source>Properties</source>
+        <translation type="unfinished">Eigenschaften</translation>
+    </message>
+</context>
+<context>
     <name>FileProperties</name>
     <message>
         <source>Location</source>
@@ -640,22 +663,6 @@ Wenn Sie sich unsicher sind lehnen sie das Zertifikat ab. Dies führt unter Umst
         <translation>Einfügen</translation>
     </message>
     <message>
-        <source>Deleting </source>
-        <translation>Lösche </translation>
-    </message>
-    <message>
-        <source>Cut</source>
-        <translation>Ausschneiden</translation>
-    </message>
-    <message>
-        <source>Copy</source>
-        <translation>Kopieren</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation>Löschen</translation>
-    </message>
-    <message>
         <source>Error pasting file </source>
         <translation>Fehler beim Einfügen</translation>
     </message>
@@ -674,6 +681,26 @@ Wenn Sie sich unsicher sind lehnen sie das Zertifikat ab. Dies führt unter Umst
     <message>
         <source>Add to places</source>
         <translation>Zu Orte hinzufügen</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation type="unfinished">Größe</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation type="unfinished">Typ</translation>
+    </message>
+    <message>
+        <source>Sort by: </source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

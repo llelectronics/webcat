@@ -317,6 +317,29 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
     </message>
 </context>
 <context>
+    <name>FileItemDelegate</name>
+    <message>
+        <source>Deleting </source>
+        <translation type="unfinished">Suppression</translation>
+    </message>
+    <message>
+        <source>Cut</source>
+        <translation type="unfinished">Couper</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation type="unfinished">Copier</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation type="unfinished">Supprimer</translation>
+    </message>
+    <message>
+        <source>Properties</source>
+        <translation type="unfinished">Propriétés</translation>
+    </message>
+</context>
+<context>
     <name>FileProperties</name>
     <message>
         <source>Location</source>
@@ -644,22 +667,6 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
         <translation>Coller</translation>
     </message>
     <message>
-        <source>Deleting </source>
-        <translation>Suppression</translation>
-    </message>
-    <message>
-        <source>Cut</source>
-        <translation>Couper</translation>
-    </message>
-    <message>
-        <source>Copy</source>
-        <translation>Copier</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation>Supprimer</translation>
-    </message>
-    <message>
         <source>Error pasting file </source>
         <translation>Erreur lors du collage du fichier</translation>
     </message>
@@ -678,6 +685,26 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
     <message>
         <source>Add to places</source>
         <translation>Ajouter aux lieux</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation type="unfinished">Taille</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation type="unfinished">Type</translation>
+    </message>
+    <message>
+        <source>Sort by: </source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

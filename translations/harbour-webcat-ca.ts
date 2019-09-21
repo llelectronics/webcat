@@ -318,6 +318,29 @@ En cas de dubte, refuseu el certificat malgrat que això pot provocar que no es 
     </message>
 </context>
 <context>
+    <name>FileItemDelegate</name>
+    <message>
+        <source>Deleting </source>
+        <translation type="unfinished">S&apos;està eliminant</translation>
+    </message>
+    <message>
+        <source>Cut</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation type="unfinished">Copia</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation type="unfinished">Elimina</translation>
+    </message>
+    <message>
+        <source>Properties</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>FileProperties</name>
     <message>
         <source>Location</source>
@@ -645,22 +668,6 @@ En cas de dubte, refuseu el certificat malgrat que això pot provocar que no es 
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Deleting </source>
-        <translation>S&apos;està eliminant</translation>
-    </message>
-    <message>
-        <source>Cut</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Copy</source>
-        <translation>Copia</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation>Elimina</translation>
-    </message>
-    <message>
         <source>Error pasting file </source>
         <translation type="unfinished"></translation>
     </message>
@@ -678,6 +685,26 @@ En cas de dubte, refuseu el certificat malgrat que això pot provocar que no es 
     </message>
     <message>
         <source>Add to places</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sort by: </source>
         <translation type="unfinished"></translation>
     </message>
 </context>

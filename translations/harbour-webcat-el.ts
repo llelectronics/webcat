@@ -318,6 +318,29 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
 </context>
 <context>
+    <name>FileItemDelegate</name>
+    <message>
+        <source>Deleting </source>
+        <translation type="unfinished">Διαγραφή</translation>
+    </message>
+    <message>
+        <source>Cut</source>
+        <translation type="unfinished">Αποκοπή</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation type="unfinished">Αντιγραφή</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation type="unfinished">Διαγραφή</translation>
+    </message>
+    <message>
+        <source>Properties</source>
+        <translation type="unfinished">Ιδιότητες</translation>
+    </message>
+</context>
+<context>
     <name>FileProperties</name>
     <message>
         <source>Location</source>
@@ -645,22 +668,6 @@ If you are unsure reject the certificate. That might lead to a non loading websi
         <translation>Επικόληση</translation>
     </message>
     <message>
-        <source>Deleting </source>
-        <translation>Διαγραφή</translation>
-    </message>
-    <message>
-        <source>Cut</source>
-        <translation>Αποκοπή</translation>
-    </message>
-    <message>
-        <source>Copy</source>
-        <translation>Αντιγραφή</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation>Διαγραφή</translation>
-    </message>
-    <message>
         <source>Error pasting file </source>
         <translation>Σφάλμα επικόλησης αρχείου</translation>
     </message>
@@ -679,6 +686,26 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     <message>
         <source>Add to places</source>
         <translation>Προσθήκη στα μέρη</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation type="unfinished">Μέγεθος</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation type="unfinished">Τύπος</translation>
+    </message>
+    <message>
+        <source>Sort by: </source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

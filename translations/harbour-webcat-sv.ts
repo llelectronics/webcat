@@ -318,6 +318,29 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
     </message>
 </context>
 <context>
+    <name>FileItemDelegate</name>
+    <message>
+        <source>Deleting </source>
+        <translation type="unfinished">Tar bort</translation>
+    </message>
+    <message>
+        <source>Cut</source>
+        <translation type="unfinished">Klipp ut</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation type="unfinished">Kopiera</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation type="unfinished">Ta bort</translation>
+    </message>
+    <message>
+        <source>Properties</source>
+        <translation type="unfinished">Egenskaper</translation>
+    </message>
+</context>
+<context>
     <name>FileProperties</name>
     <message>
         <source>Location</source>
@@ -645,22 +668,6 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
         <translation>Klistra in</translation>
     </message>
     <message>
-        <source>Deleting </source>
-        <translation>Tar bort </translation>
-    </message>
-    <message>
-        <source>Cut</source>
-        <translation>Klipp ut</translation>
-    </message>
-    <message>
-        <source>Copy</source>
-        <translation>Kopiera</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation>Ta bort</translation>
-    </message>
-    <message>
         <source>Error pasting file </source>
         <translation>Kunde inte klistra in filen</translation>
     </message>
@@ -679,6 +686,26 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
     <message>
         <source>Add to places</source>
         <translation>Lägg till i Platser</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation type="unfinished">Storlek</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation type="unfinished">typ</translation>
+    </message>
+    <message>
+        <source>Sort by: </source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

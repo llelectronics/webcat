@@ -318,6 +318,29 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
     </message>
 </context>
 <context>
+    <name>FileItemDelegate</name>
+    <message>
+        <source>Deleting </source>
+        <translation type="unfinished">Wordt verwijderd</translation>
+    </message>
+    <message>
+        <source>Cut</source>
+        <translation type="unfinished">Knippen</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation type="unfinished">Kopiëren</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation type="unfinished">Verwijderen</translation>
+    </message>
+    <message>
+        <source>Properties</source>
+        <translation type="unfinished">Eigenschappen</translation>
+    </message>
+</context>
+<context>
     <name>FileProperties</name>
     <message>
         <source>Location</source>
@@ -645,22 +668,6 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
         <translation>Plakken</translation>
     </message>
     <message>
-        <source>Deleting </source>
-        <translation>Wordt verwijderd</translation>
-    </message>
-    <message>
-        <source>Cut</source>
-        <translation>Knippen</translation>
-    </message>
-    <message>
-        <source>Copy</source>
-        <translation>Kopiëren</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation>Verwijderen</translation>
-    </message>
-    <message>
         <source>Error pasting file </source>
         <translation>Fout bij plakken van bestand</translation>
     </message>
@@ -679,6 +686,26 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
     <message>
         <source>Add to places</source>
         <translation>Toevoegen aan plaatsen</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation type="unfinished">Grootte</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation type="unfinished">Type</translation>
+    </message>
+    <message>
+        <source>Sort by: </source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

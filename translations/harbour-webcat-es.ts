@@ -318,6 +318,29 @@ Si no estás seguro, rechaza el certificado. Esto podría hacer que la página n
     </message>
 </context>
 <context>
+    <name>FileItemDelegate</name>
+    <message>
+        <source>Deleting </source>
+        <translation type="unfinished">Borrando </translation>
+    </message>
+    <message>
+        <source>Cut</source>
+        <translation type="unfinished">Cortar</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation type="unfinished">Copiar</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation type="unfinished">Borrar</translation>
+    </message>
+    <message>
+        <source>Properties</source>
+        <translation type="unfinished">Propiedades</translation>
+    </message>
+</context>
+<context>
     <name>FileProperties</name>
     <message>
         <source>Location</source>
@@ -645,22 +668,6 @@ Si no estás seguro, rechaza el certificado. Esto podría hacer que la página n
         <translation>Pegar</translation>
     </message>
     <message>
-        <source>Deleting </source>
-        <translation>Borrando </translation>
-    </message>
-    <message>
-        <source>Cut</source>
-        <translation>Cortar</translation>
-    </message>
-    <message>
-        <source>Copy</source>
-        <translation>Copiar</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation>Borrar</translation>
-    </message>
-    <message>
         <source>Error pasting file </source>
         <translation>Error al pegar archivo </translation>
     </message>
@@ -679,6 +686,26 @@ Si no estás seguro, rechaza el certificado. Esto podría hacer que la página n
     <message>
         <source>Add to places</source>
         <translation>Añadir a lugares</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation type="unfinished">Tamaño</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation type="unfinished">Tipo</translation>
+    </message>
+    <message>
+        <source>Sort by: </source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
