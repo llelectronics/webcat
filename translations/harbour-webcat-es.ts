@@ -797,6 +797,10 @@ Si no estás seguro, rechaza el certificado. Esto podría hacer que la página n
         <source>Rename</source>
         <translation>Renombrar</translation>
     </message>
+    <message>
+        <source>Android Storage</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ProxySettingsPage</name>

@@ -797,6 +797,10 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
         <source>Rename</source>
         <translation>Hernoemen</translation>
     </message>
+    <message>
+        <source>Android Storage</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ProxySettingsPage</name>

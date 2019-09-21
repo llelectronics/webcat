@@ -793,6 +793,10 @@ If you are unsure reject the certificate. That might lead to a non loading websi
         <source>Rename</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Android Storage</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ProxySettingsPage</name>

@@ -796,6 +796,10 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
         <source>Rename</source>
         <translation>Renommer</translation>
     </message>
+    <message>
+        <source>Android Storage</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ProxySettingsPage</name>

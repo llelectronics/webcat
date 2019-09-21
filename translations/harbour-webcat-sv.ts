@@ -797,6 +797,10 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
         <source>Rename</source>
         <translation>Byt namn</translation>
     </message>
+    <message>
+        <source>Android Storage</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ProxySettingsPage</name>
