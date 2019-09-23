@@ -1198,6 +1198,14 @@ Si esteu a Youtube, cal verificar que estigueu connectats al vostre compte. Algu
         <source>Pull down to load file or stream</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Zoomed to fit screen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Original</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ytQualityChooserContextMenu</name>

@@ -1198,6 +1198,14 @@ Por favor, asegúrate de haber iniciado sesión en YouTube. El acceso a algunos 
         <source>Pull down to load file or stream</source>
         <translation>Desliza hacia abajo para cargar archivo o transmisión</translation>
     </message>
+    <message>
+        <source>Zoomed to fit screen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Original</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ytQualityChooserContextMenu</name>

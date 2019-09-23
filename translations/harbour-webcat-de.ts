@@ -1189,6 +1189,14 @@ Bei Youtube Videos stellen Sie sicher angemeldet zu sein. Einige Videos könnten
         <source>Pull down to load file or stream</source>
         <translation>Herunterziehen zum Laden von Datei oder Stream</translation>
     </message>
+    <message>
+        <source>Zoomed to fit screen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Original</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ytQualityChooserContextMenu</name>

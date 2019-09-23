@@ -1197,6 +1197,14 @@ Na filmach z YouTube upewnij się, że jesteś zalogowany. Niektóre filmy wideo
         <source>Pull down to load file or stream</source>
         <translation>Przeciągnij w dół aby załadować plik lub strumień</translation>
     </message>
+    <message>
+        <source>Zoomed to fit screen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Original</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ytQualityChooserContextMenu</name>

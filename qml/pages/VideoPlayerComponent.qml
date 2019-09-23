@@ -34,11 +34,13 @@ Item {
     property bool fullscreen: false
     property bool videoPage: false
     property bool isNewSource: false
+    property bool allowScaling: false
 
     property alias showTimeAndTitle: showTimeAndTitle
     property alias pulley: pulley
     property alias onlyMusic: onlyMusic
     property alias videoPoster: videoPoster
+    property alias video: video
 
     signal switchFullscreen()
     signal closePlayer()
@@ -155,6 +157,14 @@ Item {
         else if (videoPoster.source.toString().length !== 0) videoPoster.player.play();
         if (videoPoster.controls.opacity === 0.0) videoPoster.toggleControls();
 
+    }
+
+    function toggleAspectRatio() {
+        // This switches between different aspect ratio fill modes
+        //console.debug("video.fillMode= " + video.fillMode)
+        if (video.fillMode == VideoOutput.PreserveAspectFit) video.fillMode = VideoOutput.PreserveAspectCrop
+        else video.fillMode = VideoOutput.PreserveAspectFit
+        showScaleIndicator.start();
     }
 
     Item {
@@ -440,6 +450,34 @@ Item {
         }
     }
 
+    PinchArea {
+        id: pincher
+        enabled: allowScaling
+        anchors.fill: parent
+        pinch.target: video
+        pinch.minimumScale: 1
+        pinch.maximumScale: 1 + (((videoPlayerPage.width/videoPlayerPage.height) - (video.sourceRect.width/video.sourceRect.height)) / (video.sourceRect.width/video.sourceRect.height))
+        pinch.dragAxis: Pinch.XAndYAxis
+        property bool pinchIn: false
+        onPinchUpdated: {
+            if (pinch.previousScale < pinch.scale) {
+                pinchIn = true
+            }
+            else if (pinch.previousScale > pinch.scale) {
+                pinchIn = false
+            }
+        }
+        onPinchFinished: {
+            if (pinchIn) {
+                video.fillMode = VideoOutput.PreserveAspectCrop
+            }
+            else {
+                video.fillMode = VideoOutput.PreserveAspectFit
+            }
+            showScaleIndicator.start();
+        }
+    }
+
     children: [
 
         // Use a black background if not isLightTheme
@@ -452,6 +490,16 @@ Item {
         VideoOutput {
             id: video
             anchors.fill: parent
+
+            function checkScaleStatus() {
+                if ((videoPlayerPage.width/videoPlayerPage.height) > sourceRect.width/sourceRect.height) allowScaling = true;
+                console.log(videoPlayerPage.width/videoPlayerPage.height + " - " + sourceRect.width/sourceRect.height);
+            }
+
+            onFillModeChanged: {
+                if (fillMode === VideoOutput.PreserveAspectCrop) scale = 1 + (((videoPlayerPage.width/videoPlayerPage.height) - (sourceRect.width/sourceRect.height)) / (sourceRect.width/sourceRect.height))
+                else scale=1
+            }
 
             source: mediaPlayer
 
@@ -466,6 +514,58 @@ Item {
 
         }
     ]
+
+    Item {
+        id: scaleIndicator
+
+        anchors.horizontalCenter: videoPlayerPage.horizontalCenter
+        anchors.top: parent.top
+        anchors.topMargin: 4 * Theme.paddingLarge
+        opacity: 0
+        property alias fadeOut: fadeOut
+
+        NumberAnimation on opacity {
+            id: fadeOut
+            to: 0
+            duration: 400;
+            easing.type: Easing.InOutCubic
+        }
+
+        Rectangle {
+            width: scaleLblIndicator.width + 2 * Theme.paddingMedium
+            height: scaleLblIndicator.height + 2 * Theme.paddingMedium
+            color: isLightTheme? "white" : "black"
+            opacity: 0.4
+            anchors.centerIn: parent
+            radius: 2
+        }
+        Label {
+            id: scaleLblIndicator
+            font.pixelSize: Theme.fontSizeSmall
+            anchors.centerIn: parent
+            text: (video.fillMode === VideoOutput.PreserveAspectCrop) ? qsTr("Zoomed to fit screen") : qsTr("Original")
+            color: Theme.primaryColor
+        }
+    }
+
+    Timer {
+        id: showScaleIndicator
+        interval: 1000
+        property int count: 0
+        triggeredOnStart: true
+        repeat: true
+        onTriggered: {
+            ++count
+            if (count == 2) {
+                scaleIndicator.fadeOut.start();
+                count = 0;
+                stop();
+            }
+            else {
+                scaleIndicator.opacity = 1.0
+            }
+        }
+    }
 
     // Need some more time to figure that out completely
     Timer {

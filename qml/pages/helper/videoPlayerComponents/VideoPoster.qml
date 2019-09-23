@@ -207,10 +207,27 @@ MouseArea {
                 GradientStop { position: 0.0; color: "transparent" }
                 GradientStop { position: 1.0; color: isLightTheme ? "white" : "black" } //Theme.highlightColor} // Black seems to look and work better
             }
+            BackgroundItem {
+                id: aspectBtn
+                anchors.right: parent.right
+                anchors.rightMargin: Theme.paddingMedium
+                anchors.bottom: parent.bottom
+                anchors.bottomMargin: Theme.paddingMedium
+                width: height
+                height: Theme.iconSizeMedium
+                visible: allowScaling
+                onClicked: {
+                    toggleAspectRatio();
+                }
+                Image {
+                    source: "image://theme/icon-m-scale"
+                    anchors.fill: parent
+                }
+            }
             Label {
                 id: maxTime
-                anchors.right: parent.right
-                anchors.rightMargin: (2 * Theme.paddingLarge)
+                anchors.right: (aspectBtn.visible) ? aspectBtn.left : parent.right
+                anchors.rightMargin: aspectBtn.visible ? Theme.paddingMedium : (2 * Theme.paddingLarge)
                 anchors.bottom: parent.bottom
                 anchors.bottomMargin: Theme.paddingLarge
                 text: {
@@ -235,8 +252,10 @@ MouseArea {
                 enabled: { if (controls.opacity == 1.0) return true; else return false; }
                 height: Theme.itemSizeSmall
                 width: {
-                    if (maxTime.visible) parent.width - (maxTime.width)
-                    else parent.width
+                    var slidWidth = parent.width
+                    if (maxTime.visible) slidWidth =- maxTime.width
+                    if (aspectBtn.visible) slidWidth =- aspectBtn.width
+                    return slidWidth
                 }
                 handleVisible: down ? true : false
                 minimumValue: 0

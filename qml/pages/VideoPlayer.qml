@@ -8,6 +8,10 @@ Page {
     id: videoPlayerPage
     allowedOrientations: Orientation.All
 
+    onOrientationChanged: videoComponent.video.checkScaleStatus()
+    onHeightChanged: videoComponent.video.checkScaleStatus()
+    onWidthChanged: videoComponent.video.checkScaleStatus()
+
     focus: true
 
     property alias dataContainer: videoComponent.dataContainer

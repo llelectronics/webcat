@@ -1198,6 +1198,14 @@ On Youtube Videos please make sure to be logged in. Some videos might be geobloc
         <source>Pull down to load file or stream</source>
         <translation>Τραβήξτε προς τα κάτω για να φορτώσετε αρχείο ή ροή</translation>
     </message>
+    <message>
+        <source>Zoomed to fit screen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Original</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ytQualityChooserContextMenu</name>

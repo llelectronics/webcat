@@ -1198,6 +1198,14 @@ Zorg er voor dat je ingelogd bent bij YouTube Videos. Sommige video’s kunnen g
         <source>Pull down to load file or stream</source>
         <translation>Trek omlaag om bestand of stream te laden</translation>
     </message>
+    <message>
+        <source>Zoomed to fit screen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Original</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ytQualityChooserContextMenu</name>

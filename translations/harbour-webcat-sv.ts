@@ -1198,6 +1198,14 @@ Se till att logga in på Youtube. Några filmer kan vara geografiskt blockerade 
         <source>Pull down to load file or stream</source>
         <translation>Dra neråt för att läsa in fil eller ström</translation>
     </message>
+    <message>
+        <source>Zoomed to fit screen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Original</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ytQualityChooserContextMenu</name>

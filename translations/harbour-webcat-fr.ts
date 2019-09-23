@@ -1197,6 +1197,14 @@ Assurez-vous d&apos;être connecté à Youtube videos. Certaines vidéos peuvent
         <source>Pull down to load file or stream</source>
         <translation>Tirer vers le bas pour charger un fichier ou un flux</translation>
     </message>
+    <message>
+        <source>Zoomed to fit screen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Original</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ytQualityChooserContextMenu</name>
