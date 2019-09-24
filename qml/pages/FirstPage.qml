@@ -1037,6 +1037,7 @@ Page {
         onLoaded: {
             if (page.orientation == Orientation.Portrait || page.orientation == Orientation.PortraitInverted) webview.visible = true
             else webview.visible = false
+            item.video.checkScaleStatus()
         }
     }
 

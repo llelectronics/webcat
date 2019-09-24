@@ -17,6 +17,7 @@ MouseArea {
     signal playClicked;
     property alias _positionSlider: positionSlider
     property alias _maxTime: maxTime
+    property alias _aspectBtn: aspectBtn
 
     property bool transpose
 

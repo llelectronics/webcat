@@ -1,6 +1,8 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="nl_NL" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="nl_NL">
 <context>
-    <name/>
+    <name></name>
     <message id="components_gallery-la-image-loading-failed">
         <source>Oops, can&apos;t display the image</source>
         <extracomment>Image loading failed</extracomment>
@@ -466,8 +468,8 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
 <context>
     <name>KeyboardCommands</name>
     <message>
-        <source/>
-        <translation type="unfinished"/>
+        <source></source>
+        <translation></translation>
     </message>
     <message>
         <source>Page History: Go back</source>
@@ -1198,11 +1200,11 @@ Zorg er voor dat je ingelogd bent bij YouTube Videos. Sommige video’s kunnen g
     </message>
     <message>
         <source>Zoomed to fit screen</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Original</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

@@ -9,6 +9,9 @@ Item {
     objectName: "videoPlayerPage"
     //allowedOrientations: Orientation.All
 
+    onHeightChanged: video.checkScaleStatus()
+    onWidthChanged: video.checkScaleStatus()
+
     focus: true
 
     property QtObject dataContainer
@@ -255,6 +258,7 @@ Item {
         id: mediaItem
         property bool active : false
         visible: active && mainWindow.applicationActive
+        parent: pincher.enabled ? pincher : videoPlayerPage
         anchors.fill: parent
 
         VideoPoster {
@@ -307,6 +311,11 @@ Item {
             _maxTime.anchors.rightMargin: {
                 if (fsIcon.visible) fsIcon.width + (1.5 * Theme.paddingLarge)
                 else (2 * Theme.paddingLarge)
+            }
+
+            _aspectBtn.anchors.rightMargin: {
+                if (fsIcon.visible) fsIcon.width + (1.5 * Theme.paddingLarge)
+                else (Theme.paddingMedium)
             }
 
             _positionSlider.anchors.rightMargin: {
@@ -452,7 +461,8 @@ Item {
 
     PinchArea {
         id: pincher
-        enabled: allowScaling
+        enabled: allowScaling && !pulley.visible && !errorBox.visible
+        visible: enabled
         anchors.fill: parent
         pinch.target: video
         pinch.minimumScale: 1
