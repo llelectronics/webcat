@@ -1,8 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="nl_NL">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="nl_NL" version="2.1">
 <context>
-    <name></name>
+    <name/>
     <message id="components_gallery-la-image-loading-failed">
         <source>Oops, can&apos;t display the image</source>
         <extracomment>Image loading failed</extracomment>
@@ -321,23 +319,23 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
     <name>FileItemDelegate</name>
     <message>
         <source>Deleting </source>
-        <translation type="unfinished">Wordt verwijderd</translation>
+        <translation>Wordt verwijderd</translation>
     </message>
     <message>
         <source>Cut</source>
-        <translation type="unfinished">Knippen</translation>
+        <translation>Knippen</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation type="unfinished">Kopiëren</translation>
+        <translation>Kopiëren</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">Verwijderen</translation>
+        <translation>Verwijderen</translation>
     </message>
     <message>
         <source>Properties</source>
-        <translation type="unfinished">Eigenschappen</translation>
+        <translation>Eigenschappen</translation>
     </message>
 </context>
 <context>
@@ -468,8 +466,8 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
 <context>
     <name>KeyboardCommands</name>
     <message>
-        <source></source>
-        <translation></translation>
+        <source/>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Page History: Go back</source>
@@ -689,23 +687,23 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Naam</translation>
     </message>
     <message>
         <source>Time</source>
-        <translation type="unfinished"></translation>
+        <translation>Tijd</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation type="unfinished">Grootte</translation>
+        <translation>Grootte</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation type="unfinished">Type</translation>
+        <translation>Type</translation>
     </message>
     <message>
         <source>Sort by: </source>
-        <translation type="unfinished"></translation>
+        <translation>Sorteren op:</translation>
     </message>
 </context>
 <context>
@@ -826,7 +824,7 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
     </message>
     <message>
         <source>Android Storage</source>
-        <translation type="unfinished"></translation>
+        <translation>Android-opslag</translation>
     </message>
 </context>
 <context>
@@ -1200,11 +1198,11 @@ Zorg er voor dat je ingelogd bent bij YouTube Videos. Sommige video’s kunnen g
     </message>
     <message>
         <source>Zoomed to fit screen</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Original</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
