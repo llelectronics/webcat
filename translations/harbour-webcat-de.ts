@@ -6,7 +6,7 @@
     <message id="components_gallery-la-image-loading-failed">
         <source>Oops, can&apos;t display the image</source>
         <extracomment>Image loading failed</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Bild konnte nicht geladen werden</translation>
     </message>
 </context>
 <context>
@@ -321,23 +321,23 @@ Wenn Sie sich unsicher sind lehnen sie das Zertifikat ab. Dies führt unter Umst
     <name>FileItemDelegate</name>
     <message>
         <source>Deleting </source>
-        <translation type="unfinished">Lösche </translation>
+        <translation>Lösche </translation>
     </message>
     <message>
         <source>Cut</source>
-        <translation type="unfinished">Ausschneiden</translation>
+        <translation>Ausschneiden</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation type="unfinished">Kopieren</translation>
+        <translation>Kopieren</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">Löschen</translation>
+        <translation>Löschen</translation>
     </message>
     <message>
         <source>Properties</source>
-        <translation type="unfinished">Eigenschaften</translation>
+        <translation>Eigenschaften</translation>
     </message>
 </context>
 <context>
@@ -684,23 +684,23 @@ Wenn Sie sich unsicher sind lehnen sie das Zertifikat ab. Dies führt unter Umst
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Name</translation>
     </message>
     <message>
         <source>Time</source>
-        <translation type="unfinished"></translation>
+        <translation>Datum</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation type="unfinished">Größe</translation>
+        <translation>Größe</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation type="unfinished">Typ</translation>
+        <translation>Typ</translation>
     </message>
     <message>
         <source>Sort by: </source>
-        <translation type="unfinished"></translation>
+        <translation>Sortiere nach: </translation>
     </message>
 </context>
 <context>
@@ -821,7 +821,7 @@ Wenn Sie sich unsicher sind lehnen sie das Zertifikat ab. Dies führt unter Umst
     </message>
     <message>
         <source>Android Storage</source>
-        <translation type="unfinished"></translation>
+        <translation>Android Datenspeicher</translation>
     </message>
 </context>
 <context>
@@ -1191,11 +1191,11 @@ Bei Youtube Videos stellen Sie sicher angemeldet zu sein. Einige Videos könnten
     </message>
     <message>
         <source>Zoomed to fit screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Auf Bildschirmgröße gezoomt</translation>
     </message>
     <message>
         <source>Original</source>
-        <translation type="unfinished"></translation>
+        <translation>Original</translation>
     </message>
 </context>
 <context>
