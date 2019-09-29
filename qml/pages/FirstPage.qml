@@ -1131,12 +1131,17 @@ Page {
                 else if (changedUrl == "") {
                     // Fail silently
                     console.log("_ytdl.empty")
+                    page.ytUrlLoading = false;
                 }
                 else {
                     console.log("_ytdl hide mediabar")
+                    page.ytUrlLoading = false;
                     page.hideMediaBar();
                 }
             } // if reqUrl
+        }
+        onError: {
+            if (yt240p !== "" || yt360p !== "" || yt480p !== "" || yt720p !== "") page.ytUrlLoading = false;
         }
     }
 
