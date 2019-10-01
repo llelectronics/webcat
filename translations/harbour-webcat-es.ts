@@ -6,7 +6,7 @@
     <message id="components_gallery-la-image-loading-failed">
         <source>Oops, can&apos;t display the image</source>
         <extracomment>Image loading failed</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ups, no se pudo mostrar la imagen</translation>
     </message>
 </context>
 <context>
@@ -689,15 +689,15 @@ Si no estás seguro, rechaza el certificado. Esto podría hacer que la página n
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nombre</translation>
     </message>
     <message>
         <source>Time</source>
-        <translation type="unfinished"></translation>
+        <translation>Hora</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation type="unfinished">Tamaño</translation>
+        <translation>Tamaño</translation>
     </message>
     <message>
         <source>Type</source>
@@ -705,7 +705,7 @@ Si no estás seguro, rechaza el certificado. Esto podría hacer que la página n
     </message>
     <message>
         <source>Sort by: </source>
-        <translation type="unfinished"></translation>
+        <translation>Ordenar por:</translation>
     </message>
 </context>
 <context>
@@ -826,7 +826,7 @@ Si no estás seguro, rechaza el certificado. Esto podría hacer que la página n
     </message>
     <message>
         <source>Android Storage</source>
-        <translation type="unfinished"></translation>
+        <translation>Almacenamiento Android</translation>
     </message>
 </context>
 <context>
@@ -1200,11 +1200,11 @@ Por favor, asegúrate de haber iniciado sesión en YouTube. El acceso a algunos 
     </message>
     <message>
         <source>Zoomed to fit screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Ajustado a la pantalla</translation>
     </message>
     <message>
         <source>Original</source>
-        <translation type="unfinished"></translation>
+        <translation>Original</translation>
     </message>
 </context>
 <context>
