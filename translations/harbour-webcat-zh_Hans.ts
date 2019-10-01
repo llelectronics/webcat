@@ -1,6 +1,8 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="zh-Hans" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="zh-Hans">
 <context>
-    <name/>
+    <name></name>
     <message id="components_gallery-la-image-loading-failed">
         <source>Oops, can&apos;t display the image</source>
         <extracomment>Image loading failed</extracomment>
@@ -466,8 +468,8 @@ If you are unsure reject the certificate. That might lead to a non loading websi
 <context>
     <name>KeyboardCommands</name>
     <message>
-        <source/>
-        <translation type="unfinished"/>
+        <source></source>
+        <translation></translation>
     </message>
     <message>
         <source>Page History: Go back</source>

@@ -1200,11 +1200,11 @@ Zorg er voor dat je ingelogd bent bij YouTube Videos. Sommige video’s kunnen g
     </message>
     <message>
         <source>Zoomed to fit screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Schermvullend</translation>
     </message>
     <message>
         <source>Original</source>
-        <translation type="unfinished"></translation>
+        <translation>Oorspronkelijk</translation>
     </message>
 </context>
 <context>
