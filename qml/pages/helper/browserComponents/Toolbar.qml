@@ -233,6 +233,7 @@ Rectangle {
             fPage.extraToolbar.hide()
             if (tabBar.visible && bookmarkList.visible) { tabBar.hide(); bookmarkList.hide() }
             if (prevTab != currentTab) mainWindow.switchToTab(prevTab);
+            if (prevTab == currentTab && currentTabBg != "") mainWindow.switchToTab(currentTabBg);
             webview.visible = true
         }
 
