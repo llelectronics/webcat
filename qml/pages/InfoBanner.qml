@@ -23,7 +23,7 @@ Rectangle {
     width: parent.width
     height: 0
 
-    color: Theme.highlightDimmerColor
+    color: Theme.overlayBackgroundColor
     opacity: 0.0
     // On top of everything
     z: 1
