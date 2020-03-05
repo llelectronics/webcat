@@ -314,7 +314,7 @@ Page {
         anchors.bottomMargin: toolbarheight / 3
         quickScroll: true
 
-        pixelAligned: true
+        pixelAligned: false
 
         onAtYEndChanged: {
             if (atYEnd) {
