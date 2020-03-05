@@ -309,6 +309,7 @@ Page {
 
         smooth: false
         maximumFlickVelocity: Theme.maximumFlickVelocity / 2
+        flickDeceleration: Theme.flickDeceleration * 0.85
 
         anchors.fill: parent
         anchors.bottomMargin: toolbarheight / 3
