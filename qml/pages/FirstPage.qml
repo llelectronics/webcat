@@ -297,6 +297,14 @@ Page {
 //        }
     }
 
+    Image {
+        id: reloadImgBg
+        source: "image://theme/icon-m-refresh"
+        anchors.top: parent.top
+        anchors.topMargin: parent.height / 8
+        anchors.horizontalCenter: parent.horizontalCenter
+    }
+
     SilicaWebView {
         id: webview
         url: ""
@@ -307,6 +315,8 @@ Page {
         property variant itemSelectorIndex: -1
         property var mediaDownloadRecVisible
 
+        property var _flickRefresh
+
         smooth: false
         maximumFlickVelocity: Theme.maximumFlickVelocity / 2
         flickDeceleration: Theme.flickDeceleration * 0.85
@@ -316,6 +326,21 @@ Page {
         quickScroll: true
 
         pixelAligned: false
+
+        boundsBehavior: Flickable.DragOverBounds
+
+        onFlickStarted: {
+            _flickRefresh = atYBeginning
+            console.log("contentY flick start:" + contentY)
+        }
+
+        onFlickEnded: {
+            if ( atYBeginning && _flickRefresh )
+            {
+                console.log("contentY flick stop:" + contentY)
+                reload()
+            }
+        }
 
         onAtYEndChanged: {
             if (atYEnd) {
