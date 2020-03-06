@@ -226,7 +226,8 @@ class FM : public QObject
             QUrl path(url);
             QMimeType mime;
 
-            QRegExp regex(QRegExp("[_\\d\\w\\-\\. ]+\\.[_\\d\\w\\-\\. ]+"));
+            //QRegExp regex(QRegExp("[_\\d\\w\\-\\. ]+\\.[_\\d\\w\\-\\. ]+"));
+            QRegExp regex(QRegExp("^(.*[\\\/])?(.*?)(\.[^.]*?|)$"));
             QString filename = url.split('/').last();
             int idx = filename.indexOf(regex);
             if(filename.isEmpty() || (idx == -1))
