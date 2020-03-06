@@ -1330,7 +1330,7 @@ Page {
         anchors.bottom: toolbar.top
         anchors.bottomMargin: - 3
         anchors.horizontalCenter: parent.horizontalCenter
-        width: parent.width - 60
+        width: parent.width
         height: //parent.height / 2
         {
             var max = parent.height / 1.25

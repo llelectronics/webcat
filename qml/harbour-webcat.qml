@@ -147,7 +147,6 @@ ApplicationWindow
             return true;
         }
     }
-
     // Deactivated as long as gstreamer is so crashy. I don't want the browser to be unusable just because gstreamer crashed again
     function openWithvPlayer(url,title) {
         if (!vPlayerExternal) pageStack.push(Qt.resolvedUrl("pages/VideoPlayer.qml"), {dataContainer: firstPage, streamUrl: url, streamTitle: title});
@@ -269,6 +268,25 @@ ApplicationWindow
     function findHostname(url) {
         var f = /:\/\/(.[^/]+)/;
         return url.toString().match(f)[1];
+    }
+
+    function simpleUrl(url) {
+        url = url.toString();
+        var fileName = url.substring(url.lastIndexOf('/') + 1);
+        var dotEnd = fileName.lastIndexOf('.');
+        if (dotEnd != -1) {
+            fileName = fileName.substring(0,dotEnd);
+            var dotFirst = fileName.indexOf('.');
+            //console.debug("--DEBUG--: " + fileName.substring(0,dotFirst))
+            if (dotFirst != -1) {
+                if (fileName.substring(0,dotFirst) == "www") {
+                    //console.debug("--DEBUG2--: " + fileName.substring(dotFirst+1,fileName.length))
+                    return fileName.substring(dotFirst+1,fileName.length)
+                }
+            }
+            return fileName
+        }
+        else return fileName
     }
 
     ListModel {

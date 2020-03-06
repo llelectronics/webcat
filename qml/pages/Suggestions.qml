@@ -54,6 +54,7 @@ Rectangle {
                     anchors {
                         top: parent.top
                         left: parent.left
+                        leftMargin: Theme.paddingMedium
                         right: parent.right
                     }
                     elide: Text.ElideRight
@@ -61,6 +62,22 @@ Rectangle {
                     text: {
                         if (mediaTitle) return mediaTitle
                         else return url
+                    }
+                }
+                Label {
+                    id: titlbl
+                    anchors {
+                        top: label.bottom
+                        left: parent.left
+                        leftMargin: Theme.paddingMedium
+                        right: parent.right
+                    }
+                    elide: Text.ElideRight
+                    color: isLightTheme ? "darkslategray" : "lightgray"
+                    font.pixelSize: Theme.fontSizeTiny
+                    text: {
+                        if (mediaTitle) return ""
+                        else return simpleUrl(url)
                     }
                 }
             }
