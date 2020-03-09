@@ -1280,7 +1280,14 @@ Page {
             Button {
                 text: qsTr("Open in New Tab")
                 width: widestBtn.width
-                onClicked: { mainWindow.openNewTab("page"+salt(), fixUrl(contextMenu.contextLbl.text), true); contextMenu.visible = false; if (selection.visible) selection.visible = false}
+                onClicked: {
+                    var newTab = "page"+salt()
+                    mainWindow.openNewTab(newTab, fixUrl(contextMenu.contextLbl.text), true);
+                    contextMenu.visible = false;
+                    if (selection.visible) selection.visible = false
+                    remorseNewTab.newTab = newTab;
+                    remorseNewTab.execute(_helperRemorse, qsTr("New Tab opened"), function() { })
+                }
                 visible: contextMenu.contextLbl.text != ""
             }
             Button {
@@ -1315,6 +1322,24 @@ Page {
             }
         }
     }
+
+   RemorseItem {
+       id: remorseNewTab
+       property var newTab
+       height: Theme.itemSizeSmall
+       cancelText: qsTr("Switch")
+       onCanceled: {
+           switchToTab(newTab)
+       }
+   }
+   Rectangle {
+       id: _helperRemorse
+       width: parent.width
+       height: toolbarheight
+       color: "transparent"
+       anchors.bottom: toolbar.top
+   }
+
     MouseArea {
         id: suggestionsOverlay;
         anchors.fill: parent;

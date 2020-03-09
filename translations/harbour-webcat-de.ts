@@ -445,6 +445,14 @@ Wenn Sie sich unsicher sind lehnen sie das Zertifikat ab. Dies führt unter Umst
         <source>Webkit engine crashed too often!</source>
         <translation>Webkit zu oft abgestürzt!</translation>
     </message>
+    <message>
+        <source>New Tab opened</source>
+        <translation>Neuer Reiter geöffnet</translation>
+    </message>
+    <message>
+        <source>Switch</source>
+        <translation>Wechseln</translation>
+    </message>
 </context>
 <context>
     <name>HistoryPage</name>

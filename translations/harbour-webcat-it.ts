@@ -445,6 +445,14 @@ Se non sei sicuro, rifiuta il certificato. Ma questo può impedire il caricament
         <source>Webkit engine crashed too often!</source>
         <translation>Il motore Webkit è andato in crash troppo spesso!</translation>
     </message>
+    <message>
+        <source>New Tab opened</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Switch</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>HistoryPage</name>

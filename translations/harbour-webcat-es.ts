@@ -445,6 +445,14 @@ Si no estás seguro, rechaza el certificado. Esto podría hacer que la página n
         <source>Webkit engine crashed too often!</source>
         <translation>¡El motor webkit se cuelga con demasiada frecuencia!</translation>
     </message>
+    <message>
+        <source>New Tab opened</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Switch</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>HistoryPage</name>

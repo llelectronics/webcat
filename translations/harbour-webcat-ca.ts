@@ -445,6 +445,14 @@ En cas de dubte, refuseu el certificat malgrat que això pot provocar que no es 
         <source>Webkit engine crashed too often!</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>New Tab opened</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Switch</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>HistoryPage</name>

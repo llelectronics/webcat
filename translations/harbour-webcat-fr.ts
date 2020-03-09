@@ -444,6 +444,14 @@ Les certificats inconnus sont soit manquants dans la configuration de votre navi
         <source>Webkit engine crashed too often!</source>
         <translation>Le moteur Webkit a planté trop souvent !</translation>
     </message>
+    <message>
+        <source>New Tab opened</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Switch</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>HistoryPage</name>

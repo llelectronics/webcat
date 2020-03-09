@@ -445,6 +445,14 @@ Om du är osäker, bör du förkasta certifikatet. Det kan dock leda till att we
         <source>Webkit engine crashed too often!</source>
         <translation>Webkit-motorn kraschade för ofta!</translation>
     </message>
+    <message>
+        <source>New Tab opened</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Switch</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>HistoryPage</name>

@@ -445,6 +445,14 @@ If you are unsure reject the certificate. That might lead to a non loading websi
         <source>Webkit engine crashed too often!</source>
         <translation>Η μηχανή Webkit κρασάρει πολύ συχνά!</translation>
     </message>
+    <message>
+        <source>New Tab opened</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Switch</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>HistoryPage</name>
