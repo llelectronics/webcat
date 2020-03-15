@@ -453,6 +453,10 @@ Wenn Sie sich unsicher sind lehnen sie das Zertifikat ab. Dies führt unter Umst
         <source>Switch</source>
         <translation>Wechseln</translation>
     </message>
+    <message>
+        <source>WARNING: You are using an outdated Webkit render engine</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>HistoryPage</name>

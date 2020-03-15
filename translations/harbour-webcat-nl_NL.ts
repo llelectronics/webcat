@@ -453,6 +453,10 @@ Als je niet zeker bent, weiger dan het certificaat. Dit kan er wel toe leiden da
         <source>Switch</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>WARNING: You are using an outdated Webkit render engine</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>HistoryPage</name>

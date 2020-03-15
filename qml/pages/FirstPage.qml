@@ -415,15 +415,19 @@ Page {
             if (typeof(experimental.preferences.javascriptCanOpenWindows) !== "undefined") {
                 experimental.preferences.javascriptCanOpenWindows = true
                 console.log("Hurray you are using a QtWebkit version that supports experimental.preferences.javascriptCanOpenWindows \\o/ Enabling it.")
-            }
+            } else oldWebkitMsg();
             if (typeof(experimental.preferences.mediaSourceEnabled) !== "undefined") {
                 experimental.preferences.mediaSourceEnabled  = true
                 console.log("Hurray you are using a QtWebkit version that supports experimental.preferences.mediaSourceEnabled \\o/ Enabling it.")
-            }
+            } else oldWebkitMsg();
             if (typeof(experimental.preferences.mediaPlaybackRequiresUserGestureEnabled) !== "undefined") {
                 experimental.preferences.mediaPlaybackRequiresUserGestureEnabled = true
                 console.log("Hurray you are using a QtWebkit version that supports experimental.preferences.mediaPlaybackRequiresUserGestureEnabled \\o/ Enabling it.")
-            }
+            } else oldWebkitMsg();
+        }
+
+        function oldWebkitMsg() {
+            infoBanner.showText(qsTr("WARNING: You are using an outdated Webkit render engine"))
         }
 
         // Some speed improvement things that might work or not

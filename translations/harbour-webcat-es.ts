@@ -453,6 +453,10 @@ Si no estás seguro, rechaza el certificado. Esto podría hacer que la página n
         <source>Switch</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>WARNING: You are using an outdated Webkit render engine</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>HistoryPage</name>
