@@ -415,7 +415,7 @@ Page {
             if (typeof(experimental.preferences.javascriptCanOpenWindows) !== "undefined") {
                 experimental.preferences.javascriptCanOpenWindows = true
                 console.log("Hurray you are using a QtWebkit version that supports experimental.preferences.javascriptCanOpenWindows \\o/ Enabling it.")
-            } else oldWebkitMsg();
+            } //else oldWebkitMsg();
             if (typeof(experimental.preferences.mediaSourceEnabled) !== "undefined") {
                 experimental.preferences.mediaSourceEnabled  = true
                 console.log("Hurray you are using a QtWebkit version that supports experimental.preferences.mediaSourceEnabled \\o/ Enabling it.")
