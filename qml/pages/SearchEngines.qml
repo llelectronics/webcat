@@ -16,7 +16,7 @@ ListModel {
     }
     ListElement {
         title: "MetaGer"
-        uri: "https://metager.de/meta/cgi-bin/meta.ger1?ui=en&lang=en&wikiboost=on&QuickTips=off&langfilter=yes&eingabe=%s&mm=and&time=1&exalead=on&fastbot=on&yacy=on&nebel=on&atsearch=on&acoon=on&overture=on&base=on&yandex=on&onenewspage=on&dmozint=on"
+        uri: "https://metager.de/meta/meta.ger3?eingabe=%s"
     }
     ListElement {
         title: "Bing"
