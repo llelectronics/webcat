@@ -32,22 +32,22 @@ function getYoutubeVid(url,firstPage,listId) {
 }
 
 function getYoutubeTitle(url,firstPage,listId) {
-    var youtube_id;
-    youtube_id = getYtID(url);
-    var xhr = new XMLHttpRequest();
-    xhr.open("GET","https://www.googleapis.com/youtube/v3/videos?id=" + youtube_id + "&key="+ ytApiKey + "&fields=items(snippet(title))&part=snippet",true);
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState === 4) {
-            if (xhr.status === 200) {
-                var jsonObject = eval('(' + xhr.responseText + ')');
-                console.log("Youtube Title: " + jsonObject.items[0].snippet.title);
-                firstPage.mediaList.set(listId,{"mediaTitle": jsonObject.items[0].snippet.title});
-            } else {
-                console.log("responseText", xhr.responseText);
-            }
-        }
-    }
-    xhr.send();
+//    var youtube_id;
+//    youtube_id = getYtID(url);
+//    var xhr = new XMLHttpRequest();
+//    xhr.open("GET","https://www.googleapis.com/youtube/v3/videos?id=" + youtube_id + "&key="+ ytApiKey + "&fields=items(snippet(title))&part=snippet",true);
+//    xhr.onreadystatechange = function() {
+//        if (xhr.readyState === 4) {
+//            if (xhr.status === 200) {
+//                var jsonObject = eval('(' + xhr.responseText + ')');
+//                console.log("Youtube Title: " + jsonObject.items[0].snippet.title);
+//                firstPage.mediaList.set(listId,{"mediaTitle": jsonObject.items[0].snippet.title});
+//            } else {
+//                console.log("responseText", xhr.responseText);
+//            }
+//        }
+//    }
+//    xhr.send();
 }
 
 function getYoutubeDirectStream(url,firstPage,listId) {
@@ -90,6 +90,8 @@ function getYoutubeStream(youtube_id, firstPage, listId) {
             var response;
             var streamData;
             var paramPair;
+            var videoDetailsData;
+            var videoTitle;
 
             for (var i = 0; i < videoInfo.length; i++) {
                 try {
@@ -109,6 +111,8 @@ function getYoutubeStream(youtube_id, firstPage, listId) {
                     //console.log("Formats: " + JSON.stringify(streams));
 
                     //streams = response.stream //decodeURIComponent(paramPair[1]);
+                    videoDetailsData = response["videoDetails"];
+                    videoTitle = videoDetailsData["title"];
                     break;
                 }
             }
@@ -216,6 +220,10 @@ function getYoutubeStream(youtube_id, firstPage, listId) {
                     firstPage.ytStreamUrl = url
                     firstPage.ytUrlLoading = false
                     firstPage.mediaDownloadRec.visible = true
+                    if (videoTitle) {
+                        var vT = videoTitle.replace(/\+/g, " ");
+                        firstPage.mediaList.set(listId,{"mediaTitle": vT});
+                    }
                     return url;
 
                 } else {
