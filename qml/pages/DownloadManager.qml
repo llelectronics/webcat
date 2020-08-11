@@ -17,11 +17,11 @@ Page {
     }
 
     function download() {
-        if (downloadName != "") {
+        if (downloadName != "" && !isUrl(downloadName)) {
             _manager.setDownloadName(downloadName);
         }
         downLoc = _manager.saveFileName(downloadUrl);
-        if (downloadName === "") downloadName = downLoc.substring(downLoc.lastIndexOf('/')+1)
+        if (downloadName === "" || isUrl(downloadName)) downloadName = downLoc.substring(downLoc.lastIndexOf('/')+1)
         _manager.downloadUrl(downloadUrl);
         console.debug("[DownloadManager.qml] downloadName = " + downloadName);
         downloadVisualModel.model.append({"name": downloadName, "url": downloadUrl, "downLocation": downLoc.toString()})
