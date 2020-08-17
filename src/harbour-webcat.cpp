@@ -172,7 +172,7 @@ int main(int argc, char *argv[])
     }
 
     //app->setOrganizationName("Webcat");
-    app->setApplicationVersion("3.0.0");
+    app->setApplicationVersion("3.1.0");
     QQuickView *view = SailfishApp::createView();
     view->setResizeMode(QQuickView::SizeRootObjectToView);
 
