@@ -705,6 +705,8 @@ On Youtube Videos please make sure to be logged in. Some videos might be geobloc
                 isNewSource = false
                 play()
             } else if(isNewSource) pause()
+            if (bufferProgress < 0.05) pause()
+            if (bufferProgress == 1.0 && !isNewSource) play()
         }
     }
 
