@@ -104,7 +104,6 @@ ApplicationWindow
 
     property WebCatInterface webcatinterface: WebCatInterface { }
 
-    _backgroundVisible: false
     _clippingItem.opacity: 1.0
 
     onApplicationActiveChanged: {
