@@ -448,7 +448,7 @@ Page {
         experimental.overview: true
 
         // Helps rendering websites that are only optimized for desktop
-        experimental.preferredMinimumContentsWidth: 980
+        experimental.preferredMinimumContentsWidth: 667
 
         property int curZ
 
