@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="zh-Hans">
+<TS version="2.1" language="zh_CN">
 <context>
     <name></name>
     <message id="components_gallery-la-image-loading-failed">
@@ -13,7 +13,7 @@
     <name>AboutPage</name>
     <message>
         <source>A simple webbrowser based on webkit.</source>
-        <translation>基于webkit的简单浏览器</translation>
+        <translation>基于 webkit 的简单浏览器</translation>
     </message>
 </context>
 <context>
@@ -82,11 +82,11 @@
     </message>
     <message>
         <source>Backup saved successfully!</source>
-        <translation>备份已成功保存</translation>
+        <translation>备份已成功保存！</translation>
     </message>
     <message>
         <source>The Backup includes all cookies, bookmarks, history and settings for Webcat.</source>
-        <translation>备份包含Webcat的全部cookies、书签、历史及设置</translation>
+        <translation>备份包含 Webcat 的全部cookies、书签、历史及设置</translation>
     </message>
     <message>
         <source>Restore Backup</source>
@@ -98,12 +98,12 @@
     </message>
     <message>
         <source>Backup restored! Please restart Webcat</source>
-        <translation>备份已恢复!请重启Webcat</translation>
+        <translation>备份已恢复！请重启 Webcat</translation>
     </message>
     <message>
         <source>Restoring overwrites all cookies, bookmarks, history and settings for Webcat from the backup file.
 Please restart for changes to take effect.</source>
-        <translation>正在从备份文件恢复Webcat的全部Cookies、书签、历史及设置。请重启软件以生效。</translation>
+        <translation>正在从备份文件恢复 Webcat 的全部 Cookies、书签、历史及设置。请重启软件以生效。</translation>
     </message>
     <message>
         <source>Restoring Backup</source>
@@ -111,7 +111,7 @@ Please restart for changes to take effect.</source>
     </message>
     <message>
         <source>Backups are saved to Documents directory</source>
-        <translation>备份已保存到Documents目录</translation>
+        <translation>备份已保存到 Documents 目录</translation>
     </message>
 </context>
 <context>
@@ -172,7 +172,7 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Clear Cookies</source>
-        <translation>清除Cookie</translation>
+        <translation>清除 Cookies</translation>
     </message>
     <message>
         <source>Delete</source>
@@ -218,7 +218,7 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Enter URL to download</source>
-        <translation>输入待下载的URL</translation>
+        <translation>输入待下载的 URL</translation>
     </message>
     <message>
         <source>Download</source>
@@ -415,11 +415,11 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Webkit engine crashed! Restarting...</source>
-        <translation>Webkit引擎出错!正在重启……</translation>
+        <translation>Webkit 引擎出错！正在重启……</translation>
     </message>
     <message>
         <source>Webkit engine crashed too often!</source>
-        <translation>Webkit引擎频繁出错!</translation>
+        <translation>Webkit 引擎频繁出错!</translation>
     </message>
 </context>
 <context>
@@ -506,12 +506,12 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     <message>
         <source>End</source>
         <comment>Key</comment>
-        <translation typ>End</translation>
+        <translation>End</translation>
     </message>
     <message>
         <source>Home</source>
         <comment>Key</comment>
-        <translation>Home</translation>
+        <translation>主页</translation>
     </message>
     <message>
         <source>Alt</source>
@@ -552,7 +552,7 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Close current WebCat window</source>
-        <translation>关闭当前Webcat窗口</translation>
+        <translation>关闭当前 Webcat 窗口</translation>
     </message>
     <message>
         <source>Show in-page search</source>
@@ -579,14 +579,14 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>You have selected BB10 (Blackberry 10) compatible keyboard shortcuts. Take a look at the list below to see what they are or try them out.</source>
-        <translation>你已选择BB10（黑莓10）看看下方加以了解并使用。>/translation>
+        <translation>你已选择 BB10（黑莓10）看看下方加以了解并使用。>/translation>
     </message>
 </context>
 <context>
     <name>MediaDownloadRec</name>
     <message>
         <source>Opening...</source>
-        <translation>正在打开…</translation>
+        <translation>正在打开……</translation>
     </message>
 </context>
 <context>
@@ -609,22 +609,22 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Created Desktop Launcher for Webcat Fileman</source>
-        <translation>为Webcat Fileman创建桌面快捷方式</translation>
+        <translation>为 Webcat Fileman 创建桌面快捷方式</translation>
     </message>
 </context>
 <context>
     <name>MyClass</name>
     <message>
         <source>Webcat config dir not found</source>
-        <translation>未找到Webcat配置目录</translation>
+        <translation>未找到 Webcat 配置目录</translation>
     </message>
     <message>
         <source>File not found.</source>
-        <translation>未找到文件</translation>
+        <translation>未找到文件。</translation>
     </message>
     <message>
         <source>No valid Backup file. Did not find harbour-webcat Folder.</source>
-        <translation>无有效文件，没有发现harbour-webcat文件夹</translation>
+        <translation>无有效文件，没有发现  harbour-webcat 文件夹</translation>
     </message>
     <message>
         <source>Could not verify Backup file.
@@ -636,7 +636,7 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     <name>OpenDialog</name>
     <message>
         <source>Opening...</source>
-        <translation>正在打开…</translation>
+        <translation>正在打开……</translation>
     </message>
     <message>
         <source>Paste</source>
@@ -793,7 +793,7 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Deleting</source>
-        <translation>正在删除</translation>
+        <translation>删除</translation>
     </message>
     <message>
         <source>Rename</source>
@@ -812,7 +812,7 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>You need to restart Webcat</source>
-        <translation>你需要重启Webcat</translation>
+        <translation>你需要重启 Webcat</translation>
     </message>
     <message>
         <source>Proxy Settings (Restart needed)</source>
@@ -820,7 +820,7 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Host or Ip Address</source>
-        <translation>主机或IP地址</translation>
+        <translation>主机或 IP 地址</translation>
     </message>
     <message>
         <source>Port</source>
@@ -828,23 +828,23 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Please restart Webcat</source>
-        <translation>请重启Webcat</translation>
+        <translation>请重启 Webcat</translation>
     </message>
     <message>
         <source>Use Socks</source>
-        <translation>使用Socks</translation>
+        <translation>使用 Socks</translation>
     </message>
     <message>
         <source>Socket Secure (SOCKS) is an Internet protocol that exchanges network packets between a client and server through a proxy server.</source>
-        <translation>Socket Secure(SOCKS)是一个通过代理服务器在服务器与客户端之间交互数据包的网络协议。</translation>
+        <translation>Socket Secure(SOCKS) 是一个通过代理服务器在服务器与客户端之间交互数据包的网络协议。</translation>
     </message>
     <message>
         <source>Use Tor</source>
-        <translation>使用Tor</translation>
+        <translation>使用 Tor</translation>
     </message>
     <message>
         <source>Tor is free software for enabling anonymous communication. This will setup the proxy automatically to use tor. Tor service must be running on the system for this to work.</source>
-        <translation>Tor是开启匿名通讯的软件，它会自动设置代理以使用Tor。你需要在系统开启此项服务才能使用。</translation>
+        <translation>Tor 是开启匿名通讯的软件，它会自动设置代理以使用 Tor。你需要在系统开启此项服务才能使用。</translation>
     </message>
 </context>
 <context>
@@ -884,11 +884,11 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Show HTML</source>
-        <translation>显示HTML</translation>
+        <translation>显示 HTML</translation>
     </message>
     <message>
         <source>Hide HTML</source>
-        <translation>隐藏HTML</translation>
+        <translation>隐藏 HTML</translation>
     </message>
     <message>
         <source>Accept</source>
@@ -983,11 +983,11 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>DNS Prefetch</source>
-        <translation>DNS预读取</translation>
+        <translation>DNS 预读取</translation>
     </message>
     <message>
         <source>Offline Web Application Cache</source>
-        <translation>为离线web应用启用缓存</translation>
+        <translation>为离线 web 应用启用缓存</translation>
     </message>
     <message>
         <source>Privacy</source>
@@ -1011,7 +1011,7 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Set Webcat as default browser</source>
-        <translation>将Webcat设为默认浏览器</translation>
+        <translation>将 Webcat 设为默认浏览器</translation>
     </message>
     <message>
         <source>Proxy Settings</source>
@@ -1023,11 +1023,11 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>New Tab | Stop/Refresh</source>
-        <translation>新标签|停止/刷新</translation>
+        <translation>新标签｜停止/刷新</translation>
     </message>
     <message>
         <source>Previous Tab | Next Tab</source>
-        <translation>上一个标签|下一个标签</translation>
+        <translation>上一个标签｜下一个标签</translation>
     </message>
     <message>
         <source>Default Cover Action Group</source>
@@ -1035,7 +1035,7 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Cookie Manager</source>
-        <translation>Cookie管理器</translation>
+        <translation>Cookie 管理器</translation>
     </message>
     <message>
         <source>Engine URL use %s for searchterm</source>
@@ -1047,7 +1047,7 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>BB10 Hardware Keyboard shortcuts</source>
-        <translation>BB10硬件键盘快捷方式</translation>
+        <translation>BB10 硬件键盘快捷方式</translation>
     </message>
 </context>
 <context>
@@ -1061,7 +1061,7 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     <name>TabBar</name>
     <message>
         <source>Loading..</source>
-        <translation>加载中…</translation>
+        <translation>加载中……</translation>
     </message>
     <message>
         <source>Tabs</source>
@@ -1084,7 +1084,7 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     <name>TabList</name>
     <message>
         <source>Loading..</source>
-        <translation>加载中…</translation>
+        <translation>加载中……</translation>
     </message>
     <message>
         <source>Tabs</source>
@@ -1157,7 +1157,7 @@ The video cannot be played due to insufficient permissions.</source>
         <source>
 The video cannot be played due to a problem allocating resources.
 On Youtube Videos please make sure to be logged in. Some videos might be geoblocked or require you to be logged into youtube.</source>
-        <translation>因分配资源原因无法播放视频。某些Youtube视频受到地理位置限制或要求你登录Youtube账号才能播放。</translation>
+        <translation>因分配资源原因无法播放视频。某些 Youtube 视频受到地理位置限制或要求你登录 Youtube 账号才能播放。</translation>
     </message>
     <message>
         <source>Pull down to load file or stream</source>
@@ -1168,7 +1168,7 @@ On Youtube Videos please make sure to be logged in. Some videos might be geobloc
     <name>ytQualityChooserContextMenu</name>
     <message>
         <source>Opening...</source>
-        <translation>正在打开…</translation>
+        <translation>正在打开……</translation>
     </message>
     <message>
         <source>Download</source>
