@@ -97,7 +97,7 @@ Rectangle {
             else if (searchModeButton.highlighted) { return qsTr("Search") }
             else if (shareButton.highlighted) { return qsTr("Share") }
             else if (extraToolbar.opacity == 1 && extraToolbar.quickmenu) { return qsTr("Close menu") }
-            else return "Extra Toolbar"
+            else return qsTr("Extra Toolbar")
         }
     }
 
