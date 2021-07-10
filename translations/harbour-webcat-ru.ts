@@ -6,7 +6,7 @@
     <message id="components_gallery-la-image-loading-failed">
         <source>Oops, can&apos;t display the image</source>
         <extracomment>Image loading failed</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Не получается показать изображение</translation>
     </message>
 </context>
 <context>
@@ -28,15 +28,15 @@
     </message>
     <message>
         <source>Title of the bookmark</source>
-        <translation type="unfinished"></translation>
+        <translation>Имя закладки</translation>
     </message>
     <message>
         <source>URL of bookmark</source>
-        <translation type="unfinished"></translation>
+        <translation>URL</translation>
     </message>
     <message>
         <source>User Agent:</source>
-        <translation type="unfinished">Поисковый движок:</translation>
+        <translation>Идентификатор платформы:</translation>
     </message>
 </context>
 <context>
@@ -78,23 +78,23 @@
     </message>
     <message>
         <source>Dismiss</source>
-        <translation>Отменить </translation>
+        <translation>Отменить</translation>
     </message>
     <message>
         <source>Backup saved successfully!</source>
-        <translation>Бэкап успешно сохранен!</translation>
+        <translation>Резервная копия успешно сохранена!</translation>
     </message>
     <message>
         <source>The Backup includes all cookies, bookmarks, history and settings for Webcat.</source>
-        <translation>Бэкап включает все куки, закладки, историю и настройки браузера.</translation>
+        <translation>Резервная копия включает все файлы cookie, закладки, историю и настройки браузера.</translation>
     </message>
     <message>
         <source>Restore Backup</source>
-        <translation>Восстановить  резервную копию</translation>
+        <translation>Восстановить из резервной копии</translation>
     </message>
     <message>
         <source>Backups overwrite current configurations</source>
-        <translation>Бэкап перезапишет текущую конфигурацию</translation>
+        <translation>Восстановление перезаписывает текущую конфигурацию</translation>
     </message>
     <message>
         <source>Backup restored! Please restart Webcat</source>
@@ -103,7 +103,7 @@
     <message>
         <source>Restoring overwrites all cookies, bookmarks, history and settings for Webcat from the backup file.
 Please restart for changes to take effect.</source>
-        <translation>Восстановление бэкапа перезапишет все куки, закладки, историю и настройки браузера. Необходим перезапуск.</translation>
+        <translation>Восстановление из резервной копии перезапишет все файлы cookie, закладки, историю и настройки браузера. Необходим перезапуск.</translation>
     </message>
     <message>
         <source>Restoring Backup</source>
@@ -111,42 +111,42 @@ Please restart for changes to take effect.</source>
     </message>
     <message>
         <source>Backups are saved to Documents directory</source>
-        <translation>Резервные копии сохранены в папку Документы</translation>
+        <translation>Резервные копии сохраняются в папку Документы (Documents)</translation>
     </message>
 </context>
 <context>
     <name>BookmarkList</name>
     <message>
         <source>Bookmarks</source>
-        <translation type="unfinished"></translation>
+        <translation>Закладки</translation>
     </message>
     <message>
         <source>Open in new Tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Открыть в новой вкладке</translation>
     </message>
     <message>
         <source>Open in new Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Открыть в новом окне</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Редактировать</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">Удалить</translation>
+        <translation>Удалить</translation>
     </message>
     <message>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Настройка</translation>
     </message>
     <message>
         <source>Add Bookmark</source>
-        <translation type="unfinished">Добавить закладку</translation>
+        <translation>Добавить закладку</translation>
     </message>
     <message>
         <source>History</source>
-        <translation type="unfinished">История</translation>
+        <translation>История</translation>
     </message>
 </context>
 <context>
@@ -168,11 +168,11 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     <name>CookiePage</name>
     <message>
         <source>Cookies</source>
-        <translation>Cookies-файлы </translation>
+        <translation>Файлы cookie</translation>
     </message>
     <message>
         <source>Clear Cookies</source>
-        <translation>Очистить cookies-файлы </translation>
+        <translation>Удалить файлы cookie</translation>
     </message>
     <message>
         <source>Delete</source>
@@ -187,23 +187,23 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     <name>CreateDirDialog</name>
     <message>
         <source>Error creating new directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Ошибка при создании нового каталога</translation>
     </message>
     <message>
         <source>Create Folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Новая папка</translation>
     </message>
     <message>
         <source>Create</source>
-        <translation type="unfinished"></translation>
+        <translation>Создать</translation>
     </message>
     <message>
         <source>Create a new folder under</source>
-        <translation type="unfinished"></translation>
+        <translation>Новая папка в</translation>
     </message>
     <message>
         <source>Folder name</source>
-        <translation type="unfinished"></translation>
+        <translation>Имя папки</translation>
     </message>
 </context>
 <context>
@@ -218,7 +218,7 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Enter URL to download</source>
-        <translation>Введите url-адрес для загрузки</translation>
+        <translation>Введите URL</translation>
     </message>
     <message>
         <source>Download</source>
@@ -238,11 +238,11 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Download Status</source>
-        <translation>Статус скачивания</translation>
+        <translation>Статус загрузки</translation>
     </message>
     <message>
         <source>Download Errors</source>
-        <translation>Ошибки скачивания</translation>
+        <translation>Ошибки загрузки</translation>
     </message>
     <message>
         <source>Opening...</source>
@@ -266,7 +266,7 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Details</source>
-        <translation>Детали</translation>
+        <translation>Подробности</translation>
     </message>
     <message>
         <source>Download list</source>
@@ -284,121 +284,125 @@ If you are unsure reject the certificate. That might lead to a non loading websi
 <context>
     <name>ExtraToolbar</name>
     <message>
+        <source>Extra Toolbar</source>
+        <translation>Дополнительные инструменты</translation>
+    </message>
+    <message>
         <source>Minimize</source>
-        <translation type="unfinished"></translation>
+        <translation>Свернуть</translation>
     </message>
     <message>
         <source>Lock Orientation</source>
-        <translation type="unfinished"></translation>
+        <translation>Запретить поворот экрана</translation>
     </message>
     <message>
         <source>Reader Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Режим чтения</translation>
     </message>
     <message>
         <source>Search</source>
-        <translation type="unfinished"></translation>
+        <translation>Поиск по странице</translation>
     </message>
     <message>
         <source>Share</source>
-        <translation type="unfinished">Поделиться</translation>
+        <translation>Поделиться</translation>
     </message>
     <message>
         <source>Close menu</source>
-        <translation type="unfinished"></translation>
+        <translation>Закрыть меню</translation>
     </message>
     <message>
         <source>Night Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Ночной режим</translation>
     </message>
     <message>
         <source>Day Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Дневной режим</translation>
     </message>
 </context>
 <context>
     <name>FileItemDelegate</name>
     <message>
         <source>Deleting </source>
-        <translation type="unfinished">Удаление</translation>
+        <translation>Удаление</translation>
     </message>
     <message>
         <source>Cut</source>
-        <translation type="unfinished">Вырезать</translation>
+        <translation>Вырезать</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation type="unfinished">Копировать</translation>
+        <translation>Копировать</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">Удалить</translation>
+        <translation>Удалить</translation>
     </message>
     <message>
         <source>Properties</source>
-        <translation type="unfinished"></translation>
+        <translation>Свойства</translation>
     </message>
 </context>
 <context>
     <name>FileProperties</name>
     <message>
         <source>Location</source>
-        <translation type="unfinished"></translation>
+        <translation>Местоположение</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation type="unfinished"></translation>
+        <translation>Тип</translation>
     </message>
     <message>
         <source>Link to %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ссылка на %1</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Размер</translation>
     </message>
     <message>
         <source>Permissions</source>
-        <translation type="unfinished"></translation>
+        <translation>Права доступа</translation>
     </message>
     <message>
         <source>Owner</source>
-        <translation type="unfinished"></translation>
+        <translation>Владелец</translation>
     </message>
     <message>
         <source>Group</source>
-        <translation type="unfinished"></translation>
+        <translation>Группа</translation>
     </message>
     <message>
         <source>Last modified</source>
-        <translation type="unfinished"></translation>
+        <translation>Изменено</translation>
     </message>
     <message>
         <source>Properties</source>
-        <translation type="unfinished"></translation>
+        <translation>Свойства</translation>
     </message>
     <message>
         <source>Rename</source>
-        <translation type="unfinished"></translation>
+        <translation>Переименовать</translation>
     </message>
     <message>
         <source>Change Permissions</source>
-        <translation type="unfinished"></translation>
+        <translation>Изменить права</translation>
     </message>
     <message>
         <source>Error renaming</source>
-        <translation type="unfinished"></translation>
+        <translation>Ошибка при переименовании</translation>
     </message>
 </context>
 <context>
     <name>FirstPage</name>
     <message>
         <source>Opening...</source>
-        <translation>Открываю...</translation>
+        <translation>Открытие...</translation>
     </message>
     <message>
         <source>Enter searchterm</source>
-        <translation>Ввести текст для поиска</translation>
+        <translation>Введите текст для поиска</translation>
     </message>
     <message>
         <source>Open in New Window</source>
@@ -426,7 +430,7 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Open Image in New Tab</source>
-        <translation>Открыть картинку в новой вкладке</translation>
+        <translation>Открыть изображение в новой вкладке</translation>
     </message>
     <message>
         <source>Unknown certificate</source>
@@ -438,23 +442,23 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Webkit engine crashed! Restarting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ошибка Webkit! Перезапуск... </translation>
     </message>
     <message>
         <source>Webkit engine crashed too often!</source>
-        <translation type="unfinished"></translation>
+        <translation>Ошибки Webkit происходят слишком часто!</translation>
     </message>
     <message>
         <source>New Tab opened</source>
-        <translation type="unfinished"></translation>
+        <translation>Открыта новая вкладка</translation>
     </message>
     <message>
         <source>Switch</source>
-        <translation type="unfinished"></translation>
+        <translation>Переключить</translation>
     </message>
     <message>
         <source>WARNING: You are using an outdated Webkit render engine</source>
-        <translation type="unfinished"></translation>
+        <translation>ВНИМАНИЕ: Вы пользуетесь старой версией движка отрисовки страниц Webkit!</translation>
     </message>
 </context>
 <context>
@@ -473,7 +477,7 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Load Last Session</source>
-        <translation>Загрузить последний сеанс</translation>
+        <translation>Восстановить предыдущий сеанс</translation>
     </message>
 </context>
 <context>
@@ -484,144 +488,145 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Page History: Go back</source>
-        <translation type="unfinished"></translation>
+        <translation>История: Назад</translation>
     </message>
     <message>
         <source>Page History: Go forward</source>
-        <translation type="unfinished"></translation>
+        <translation>История: Вперед</translation>
     </message>
     <message>
         <source>Open new tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Открыть новую вкладку</translation>
     </message>
     <message>
         <source>Open new window</source>
-        <translation type="unfinished"></translation>
+        <translation>Открыть новое окно</translation>
     </message>
     <message>
         <source>Close current tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Закрыть текущую вкладку</translation>
     </message>
     <message>
         <source>Switch to next tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Следующая вкладка</translation>
     </message>
     <message>
         <source>Switch to previous tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Предыдущая вкладка</translation>
     </message>
     <message>
         <source>Toggle reader mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Включить режим чтения</translation>
     </message>
     <message>
         <source>Focus URL bar</source>
-        <translation type="unfinished"></translation>
+        <translation>Перейти в адресную строку</translation>
     </message>
     <message>
         <source>Esc</source>
         <comment>Key</comment>
-        <translation type="unfinished"></translation>
+        <translation>Esc</translation>
     </message>
     <message>
         <source>Ctrl</source>
         <comment>Key</comment>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl</translation>
     </message>
     <message>
         <source>Shift</source>
         <comment>Key</comment>
-        <translation type="unfinished"></translation>
+        <translation>Shift</translation>
     </message>
     <message>
         <source>Tab</source>
         <comment>Key</comment>
-        <translation type="unfinished"></translation>
+        <translation>Таб</translation>
     </message>
     <message>
         <source>End</source>
         <comment>Key</comment>
-        <translation type="unfinished"></translation>
+        <translation>End</translation>
     </message>
     <message>
         <source>Home</source>
         <comment>Key</comment>
-        <translation type="unfinished"></translation>
+        <translation>Home</translation>
     </message>
     <message>
         <source>Alt</source>
         <comment>Key</comment>
-        <translation type="unfinished"></translation>
+        <translation>Alt</translation>
     </message>
     <message>
         <source>Scroll current website to bottom</source>
-        <translation type="unfinished"></translation>
+        <translation>Прокрутить в конец страницы</translation>
     </message>
     <message>
         <source>Scroll current website to top</source>
-        <translation type="unfinished"></translation>
+        <translation>Прокрутить в начало страницы</translation>
     </message>
     <message>
         <source>Stop loading the current website</source>
-        <translation type="unfinished"></translation>
+        <translation>Остановить загрузку страницы</translation>
     </message>
     <message>
         <source>Add current website as a bookmark</source>
-        <translation type="unfinished"></translation>
+        <translation>Сделать закладку</translation>
     </message>
     <message>
         <source>Show list of bookmarks</source>
-        <translation type="unfinished"></translation>
+        <translation>Показать список закладок</translation>
     </message>
     <message>
         <source>Open new private window</source>
-        <translation type="unfinished"></translation>
+        <translation>Открыть новое приватное окно</translation>
     </message>
     <message>
         <source>Hide in-page search</source>
-        <translation type="unfinished"></translation>
+        <translation>Скрыть поиск по содержимому страницы</translation>
     </message>
     <message>
         <source>Start in-page search</source>
-        <translation type="unfinished"></translation>
+        <translation>Поиск по содержимому страницы</translation>
     </message>
     <message>
         <source>Close current WebCat window</source>
-        <translation type="unfinished"></translation>
+        <translation>Закрыть окно WebCat</translation>
     </message>
     <message>
         <source>Show in-page search</source>
-        <translation type="unfinished"></translation>
+        <translation>Показать поиск по содержимому страницы</translation>
     </message>
     <message>
         <source>Reload current website</source>
-        <translation type="unfinished"></translation>
+        <translation>Перезагрузить страницу</translation>
     </message>
     <message>
         <source>Hide list of bookmarks</source>
-        <translation type="unfinished"></translation>
+        <translation>Скрыть список закладок</translation>
     </message>
 </context>
 <context>
     <name>KeyboardOverviewPage</name>
     <message>
         <source>Current Keyboard Shortcuts</source>
-        <translation type="unfinished"></translation>
+        <translation>Горячие клавиши</translation>
     </message>
     <message>
         <source>You have selected keyboard shortcuts which mimic some current popular browsers. Take a look at the list below to see what they are or try them out.</source>
-        <translation type="unfinished"></translation>
+        <translation>Выбран набор горячих клавиш подобный принятым в некоторых популярнх
+браузерах. Посмотрите сочетания клавиш в нижеследующем списке и попробуйте их.</translation>
     </message>
     <message>
         <source>You have selected BB10 (Blackberry 10) compatible keyboard shortcuts. Take a look at the list below to see what they are or try them out.</source>
-        <translation type="unfinished"></translation>
+        <translation>Выбран набор горячих клавиш аналогичный BB10 (Blackberry 10). Посмотрите сочетания клавиш в нижеследующем списке и попробуйте их.</translation>
     </message>
 </context>
 <context>
     <name>MediaDownloadRec</name>
     <message>
         <source>Opening...</source>
-        <translation type="unfinished">Открываю...</translation>
+        <translation>Открытие...</translation>
     </message>
 </context>
 <context>
@@ -632,11 +637,11 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Backup Manager</source>
-        <translation>Backup менеджер</translation>
+        <translation>Менеджер резервных копий</translation>
     </message>
     <message>
         <source>Video Player</source>
-        <translation>Видео плеер</translation>
+        <translation>Видеопроигрыватель</translation>
     </message>
     <message>
         <source>Download Manager</source>
@@ -644,22 +649,22 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Created Desktop Launcher for Webcat Fileman</source>
-        <translation type="unfinished"></translation>
+        <translation>Создан значок запуска менеджера файлов Webcat</translation>
     </message>
 </context>
 <context>
     <name>MyClass</name>
     <message>
         <source>Webcat config dir not found</source>
-        <translation>Директория конфигурации Webcat не найдена </translation>
+        <translation>Каталог конфигурации Webcat не найден</translation>
     </message>
     <message>
         <source>File not found.</source>
-        <translation>Файл не найдет</translation>
+        <translation>Файл не найдет.</translation>
     </message>
     <message>
         <source>No valid Backup file. Did not find harbour-webcat Folder.</source>
-        <translation>Недействительный файл резервной копии. </translation>
+        <translation>Нет годного файла резервной копии. Не найдена папка harbour-webcat.</translation>
     </message>
     <message>
         <source>Could not verify Backup file.
@@ -672,7 +677,7 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     <name>OpenDialog</name>
     <message>
         <source>Opening...</source>
-        <translation>Открываю...</translation>
+        <translation>Открытие...</translation>
     </message>
     <message>
         <source>Paste</source>
@@ -684,46 +689,46 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>File operation succeeded</source>
-        <translation type="unfinished"></translation>
+        <translation>Файловая операция завершена успешно</translation>
     </message>
     <message>
         <source>Properties</source>
-        <translation type="unfinished"></translation>
+        <translation>Свойства</translation>
     </message>
     <message>
         <source>Create Folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Создать папку</translation>
     </message>
     <message>
         <source>Add to places</source>
-        <translation type="unfinished"></translation>
+        <translation>Добавить в список мест</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Имя</translation>
     </message>
     <message>
         <source>Time</source>
-        <translation type="unfinished"></translation>
+        <translation>Время</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Размер</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation type="unfinished"></translation>
+        <translation>Тип</translation>
     </message>
     <message>
         <source>Sort by: </source>
-        <translation type="unfinished"></translation>
+        <translation>Сортировать по: </translation>
     </message>
 </context>
 <context>
     <name>OpenURLPage</name>
     <message>
         <source>Load URL</source>
-        <translation>Загрузить URL</translation>
+        <translation>Открыть URL</translation>
     </message>
     <message>
         <source>Type in URL here</source>
@@ -731,113 +736,113 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>URL to media file/stream</source>
-        <translation>URL to media file/stream</translation>
+        <translation>URL медиафайла/потока</translation>
     </message>
 </context>
 <context>
     <name>PermissionDialog</name>
     <message>
         <source>Could not change permission</source>
-        <translation type="unfinished"></translation>
+        <translation>Невозможно изменить права</translation>
     </message>
     <message>
         <source>Change Permissions</source>
-        <translation type="unfinished"></translation>
+        <translation>Изменить права</translation>
     </message>
     <message>
         <source>Change</source>
-        <translation type="unfinished"></translation>
+        <translation>Изменить</translation>
     </message>
     <message>
         <source>Change permissions for</source>
-        <translation type="unfinished"></translation>
+        <translation>Изменить права доступа к</translation>
     </message>
     <message>
         <source>Read</source>
-        <translation type="unfinished"></translation>
+        <translation>Чтение</translation>
     </message>
     <message>
         <source>Write</source>
-        <translation type="unfinished"></translation>
+        <translation>Запись</translation>
     </message>
     <message>
         <source>Execute</source>
-        <translation type="unfinished"></translation>
+        <translation>Запуск</translation>
     </message>
     <message>
         <source>Owner</source>
-        <translation type="unfinished"></translation>
+        <translation>Владелец</translation>
     </message>
     <message>
         <source>Group</source>
-        <translation type="unfinished"></translation>
+        <translation>Группа</translation>
     </message>
     <message>
         <source>Others</source>
-        <translation type="unfinished"></translation>
+        <translation>Прочие</translation>
     </message>
 </context>
 <context>
     <name>PlacesPage</name>
     <message>
         <source>Device memory</source>
-        <translation type="unfinished"></translation>
+        <translation>Встроенная память</translation>
     </message>
     <message>
         <source>SD Card</source>
-        <translation type="unfinished"></translation>
+        <translation>SD карта</translation>
     </message>
     <message>
         <source>Home</source>
-        <translation type="unfinished"></translation>
+        <translation>Домашний каталог</translation>
     </message>
     <message>
         <source>Documents</source>
-        <translation type="unfinished"></translation>
+        <translation>Документы</translation>
     </message>
     <message>
         <source>Downloads</source>
-        <translation type="unfinished"></translation>
+        <translation>Загрузки</translation>
     </message>
     <message>
         <source>Music</source>
-        <translation type="unfinished"></translation>
+        <translation>Музыка</translation>
     </message>
     <message>
         <source>Pictures</source>
-        <translation type="unfinished"></translation>
+        <translation>Изображения</translation>
     </message>
     <message>
         <source>Videos</source>
-        <translation type="unfinished"></translation>
+        <translation>Видео</translation>
     </message>
     <message>
         <source>Places</source>
-        <translation type="unfinished"></translation>
+        <translation>Места</translation>
     </message>
     <message>
         <source>Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Устройства</translation>
     </message>
     <message>
         <source>Common</source>
-        <translation type="unfinished"></translation>
+        <translation>Общие</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation type="unfinished">Пользовательский </translation>
+        <translation>Пользовательские</translation>
     </message>
     <message>
         <source>Deleting </source>
-        <translation type="unfinished">Удаление</translation>
+        <translation>Удаление </translation>
     </message>
     <message>
         <source>Rename</source>
-        <translation type="unfinished"></translation>
+        <translation>Переименовать</translation>
     </message>
     <message>
         <source>Android Storage</source>
-        <translation type="unfinished"></translation>
+        <translation>Хранилище Android</translation>
     </message>
 </context>
 <context>
@@ -848,7 +853,7 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Proxy Disabled</source>
-        <translation>Прокси отключён </translation>
+        <translation>Прокси отключён</translation>
     </message>
     <message>
         <source>You need to restart Webcat</source>
@@ -856,11 +861,11 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Proxy Settings (Restart needed)</source>
-        <translation>Настройки прокси (требуется перезагрузка) </translation>
+        <translation>Настройка прокси (требуется перезагрузка)</translation>
     </message>
     <message>
         <source>Host or Ip Address</source>
-        <translation>Хост или Ip-адрес </translation>
+        <translation>Сервер или IP-адрес</translation>
     </message>
     <message>
         <source>Port</source>
@@ -868,7 +873,7 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Please restart Webcat</source>
-        <translation>Пожалуйста перезагрузите браузер</translation>
+        <translation>Пожалуйста перезапустите Webcat</translation>
     </message>
     <message>
         <source>Use Socks</source>
@@ -884,36 +889,36 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Tor is free software for enabling anonymous communication. This will setup the proxy automatically to use tor. Tor service must be running on the system for this to work.</source>
-        <translation>Tor является бесплатным программным обеспечением для анонимного общения. Эти настройки прокси будут автоматически использовать Tor. Сервис Tor  должен быть запущен.</translation>
+        <translation>Tor - свободное программное обеспечение для анонимной передачи данных. Этот вариант настраивает прокси на использование Tor. Сервис Tor должен быть запущен.</translation>
     </message>
 </context>
 <context>
     <name>RenameDialog</name>
     <message>
         <source>Rename</source>
-        <translation type="unfinished"></translation>
+        <translation>Переименовать</translation>
     </message>
     <message>
         <source>Give a new name for</source>
-        <translation type="unfinished"></translation>
+        <translation>Введите новое имя</translation>
     </message>
     <message>
         <source>New name</source>
-        <translation type="unfinished"></translation>
+        <translation>Новое имя</translation>
     </message>
 </context>
 <context>
     <name>SearchEngineDialog</name>
     <message>
         <source>Choose Search Engine</source>
-        <translation type="unfinished"></translation>
+        <translation>Выберите движок поиска</translation>
     </message>
 </context>
 <context>
     <name>SearchEngines</name>
     <message>
         <source>Custom</source>
-        <translation type="unfinished">Пользовательский </translation>
+        <translation>Пользовательский</translation>
     </message>
 </context>
 <context>
@@ -932,7 +937,7 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Accept</source>
-        <translation type="unfinished"></translation>
+        <translation>Принять</translation>
     </message>
 </context>
 <context>
@@ -947,11 +952,11 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Save Settings</source>
-        <translation>Сохранить настройки</translation>
+        <translation>Сохранить настройку</translation>
     </message>
     <message>
         <source>About </source>
-        <translation>О приложении</translation>
+        <translation>О программе </translation>
     </message>
     <message>
         <source>Load Defaults</source>
@@ -967,7 +972,7 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Default Fixed Font Size</source>
-        <translation>Фиксированный размер шрифта по умолчанию</translation>
+        <translation>Размер моноширинного шрифта по умолчанию</translation>
     </message>
     <message>
         <source>Minimum Font Size</source>
@@ -991,23 +996,23 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Custom</source>
-        <translation>Пользовательский </translation>
+        <translation>Пользовательский</translation>
     </message>
     <message>
         <source>Private Browsing</source>
-        <translation>Приватный серфинг </translation>
+        <translation>Приватный серфинг</translation>
     </message>
     <message>
         <source>Add Default Bookmarks</source>
-        <translation>Добавить по умолчанию закладки</translation>
+        <translation>Добавить стандартные закладки</translation>
     </message>
     <message>
         <source>User Agent:</source>
-        <translation>Поисковый движок:</translation>
+        <translation>Идентификатор платформы:</translation>
     </message>
     <message>
         <source>Clear Cookies</source>
-        <translation>Очистить cookies-файлы</translation>
+        <translation>Удалить файлы cookie</translation>
     </message>
     <message>
         <source>Start Private Window</source>
@@ -1019,15 +1024,15 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Advanced</source>
-        <translation>Расширенный</translation>
+        <translation>Расширенные</translation>
     </message>
     <message>
         <source>DNS Prefetch</source>
-        <translation>DNS Prefetch</translation>
+        <translation>Запрашивать адреса в DNS заранее</translation>
     </message>
     <message>
         <source>Offline Web Application Cache</source>
-        <translation>Offline Web Application Cache</translation>
+        <translation>Кэш для веб-приложений оффлайн</translation>
     </message>
     <message>
         <source>Privacy</source>
@@ -1039,27 +1044,27 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Clear Bookmarks</source>
-        <translation>Очистить закладки</translation>
+        <translation>Удалить закладки</translation>
     </message>
     <message>
         <source>Use external video player</source>
-        <translation>Использовать другой видеоплеер </translation>
+        <translation>Внешний проигрыватель видео</translation>
     </message>
     <message>
         <source>Reset default browser</source>
-        <translation>Восстановить стандартный браузер</translation>
+        <translation>Вернуть стандартный браузер</translation>
     </message>
     <message>
         <source>Set Webcat as default browser</source>
-        <translation>Установить WebCat как браузерер по умолчанию</translation>
+        <translation>Назначить WebCat браузером по умолчанию</translation>
     </message>
     <message>
         <source>Proxy Settings</source>
-        <translation>Настройки proxy </translation>
+        <translation>Настройка proxy</translation>
     </message>
     <message>
         <source>Backup Manager</source>
-        <translation>Backup менеджер</translation>
+        <translation>Менеджер резервных копий</translation>
     </message>
     <message>
         <source>New Tab | Stop/Refresh</source>
@@ -1067,11 +1072,11 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Previous Tab | Next Tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Предыдущая вкладка | Следующая вкладка</translation>
     </message>
     <message>
         <source>Default Cover Action Group</source>
-        <translation type="unfinished"></translation>
+        <translation>Действия доступные через обложку</translation>
     </message>
     <message>
         <source>Cookie Manager</source>
@@ -1079,15 +1084,15 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Engine URL use %s for searchterm</source>
-        <translation type="unfinished"></translation>
+        <translation>%s обозначает ключевые слова</translation>
     </message>
     <message>
         <source>When unchecked, common multi-key shortcuts from other browsers are used</source>
-        <translation type="unfinished"></translation>
+        <translation>Если снять отметку, то будут использоваться типичные для других браузеров сочетания клавиш</translation>
     </message>
     <message>
         <source>BB10 Hardware Keyboard shortcuts</source>
-        <translation type="unfinished"></translation>
+        <translation>Сочетания клавиш BB10</translation>
     </message>
 </context>
 <context>
@@ -1101,23 +1106,23 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     <name>TabBar</name>
     <message>
         <source>Loading..</source>
-        <translation type="unfinished">Загрузка...</translation>
+        <translation>Загрузка...</translation>
     </message>
     <message>
         <source>Tabs</source>
-        <translation type="unfinished">Вкладки</translation>
+        <translation>Вкладки</translation>
     </message>
     <message>
         <source>Swipe up to open new window</source>
-        <translation type="unfinished"></translation>
+        <translation>Открывать новое окно жестом вверх</translation>
     </message>
     <message>
         <source>Swipe up to open private window</source>
-        <translation type="unfinished"></translation>
+        <translation>Открывать приватное окно жестом вверх</translation>
     </message>
     <message>
         <source>Swipe up to close tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Закрывать вкладку жестом вверх</translation>
     </message>
 </context>
 <context>
@@ -1135,25 +1140,25 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     <name>Toolbar</name>
     <message>
         <source>Enter an url</source>
-        <translation type="unfinished"></translation>
+        <translation>Введите URL</translation>
     </message>
     <message>
         <source> added to Bookmarks</source>
-        <translation type="unfinished"></translation>
+        <translation> добавлено в закладки</translation>
     </message>
 </context>
 <context>
     <name>UserAgentDialog</name>
     <message>
         <source>Choose User Agent</source>
-        <translation type="unfinished"></translation>
+        <translation>Выберите идентификатор платформы</translation>
     </message>
 </context>
 <context>
     <name>UserAgents</name>
     <message>
         <source>Custom</source>
-        <translation type="unfinished">Пользовательский </translation>
+        <translation>Пользовательский</translation>
     </message>
 </context>
 <context>
@@ -1164,14 +1169,14 @@ If you are unsure reject the certificate. That might lead to a non loading websi
     </message>
     <message>
         <source>Open Stream</source>
-        <translation>Открыть Stream</translation>
+        <translation>Открыть поток</translation>
     </message>
 </context>
 <context>
     <name>VideoPlayerComponent</name>
     <message>
         <source>Dismiss</source>
-        <translation>Отменить </translation>
+        <translation>Отменить</translation>
     </message>
     <message>
         <source>
@@ -1195,43 +1200,42 @@ The video cannot be played because the media service could not be instantiated.<
         <source>
 The video cannot be played due to insufficient permissions.</source>
         <translation>
-Видео не может быть воспроизведено из-за недостаточных разрешений.</translation>
+Видео не может быть воспроизведено из-за недостаточных прав доступа.</translation>
     </message>
     <message>
         <source>
 The video cannot be played due to a problem allocating resources.
 On Youtube Videos please make sure to be logged in. Some videos might be geoblocked or require you to be logged into youtube.</source>
         <translation>
-Видео не может быть воспроизведено из-за проблем на стороне источника.
-
-Пожалуйста, убедитесь, что вы ввели логин\пароль. Некоторые сервисы могут быть заблокированы в Вашей стране или требуют, чтобы вы вошли в Youtube .</translation>
+Видео не может быть воспроизведено из-за проблем с выделением ресурсов.
+В Youtube убедитесь, что вы ввели логин и пароль. Некоторые ролики могут быть заблокированы в вашей стране или требовать входа в Youtube.</translation>
     </message>
     <message>
         <source>Pull down to load file or stream</source>
-        <translation type="unfinished"></translation>
+        <translation>Потяните вниз, чтобы открыть файл или поток.</translation>
     </message>
     <message>
         <source>Zoomed to fit screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Согласно размеру экрана</translation>
     </message>
     <message>
         <source>Original</source>
-        <translation type="unfinished"></translation>
+        <translation>Исходный</translation>
     </message>
 </context>
 <context>
     <name>ytQualityChooserContextMenu</name>
     <message>
         <source>Opening...</source>
-        <translation>Открываю...</translation>
+        <translation>Открытие...</translation>
     </message>
     <message>
         <source>Download</source>
-        <translation type="unfinished">Загрузить</translation>
+        <translation>Загрузить</translation>
     </message>
     <message>
         <source>Play</source>
-        <translation type="unfinished"></translation>
+        <translation>Играть</translation>
     </message>
 </context>
 </TS>
